@@ -10,17 +10,24 @@ Os códigos são em python 3.7+ e tem como dependência principal o pytest. Mas 
 Finalmente, para rodar os códigos, mude para o diretório do Dojo, por exemplo 20220701, e digite `pytest test.py`.
 
 ## O que é?
+
 A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação através de exercícios práticos.
 
 Para mais informações sobre os nossos coding dojos anteriores acesse os respectivos diretórios dos dojos e leia o REAME.md.
 
-## Algumas detalhes:
+## Alguns detalhes
 
 Não é competivivo, mas sim colaborativo. Vamos nos juntar para resolver o problema.
+
 Todos os níveis são bem-vindos.
+
 Somos encorajados a tentar novas ideias, sair da caixa. A ideia é treinar
-Quem pode participar?
-Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências. Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
+
+## Quem pode participar?
+
+Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.
+
+Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
 
 ## Como conduzir?
 Uma descrição de como conduzir o dojo (2h):

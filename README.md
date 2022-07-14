@@ -9,6 +9,7 @@ Os códigos são em python 3.7+ e tem como dependência principal o pytest. Mas 
 
 Finalmente, para rodar os códigos, mude para o diretório do Dojo, por exemplo 20220701, e digite `pytest test.py`.
 
+[Mais detalhes sobre os coding-dojo](docs/README.md)
 ## O que é?
 
 A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação através de exercícios práticos.

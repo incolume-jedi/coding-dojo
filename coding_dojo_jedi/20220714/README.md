@@ -7,4 +7,5 @@
 ## Exemplo
 
 Entrada: Python
+
 Experado: nohtyP

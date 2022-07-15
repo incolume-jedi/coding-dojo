@@ -5,11 +5,12 @@ Aqui é mantido um repositório com as soluções que trabalhamos no [dojo de co
 
 Os códigos estão organizados em diretórios, sendo que cada diretório representa um dia do dojo, formado por YYYYMMDD, de forma que o primeiro dojo estará no topo, e o ultimo na base.
 
-Os códigos são em python 3.7+ e tem como dependência principal o pytest. Mas para facilitar a instalação das dependências, apenas execute pip install -r requirements.txt no diretório em que você baixou os códigos.
+Os códigos são em python 3.7+ e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido para controle de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo pyproject.toml`
 
 Finalmente, para rodar os códigos, mude para o diretório do Dojo, por exemplo 20220701, e digite `pytest test.py`.
 
-[Mais detalhes sobre os coding-dojo](docs/README.md)
+[Mais detalhes sobre os coding-dojo](/docs/)
+
 ## O que é?
 
 A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação através de exercícios práticos.
@@ -31,6 +32,7 @@ Todos são convidados a participar, não existe nível inicial, a ideia é apren
 Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
 
 ## Como conduzir?
+
 Uma descrição de como conduzir o dojo (2h):
 
 - 10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (3 problemas é suficiente);
@@ -41,7 +43,7 @@ Uma descrição de como conduzir o dojo (2h):
 - 40 minutos de programação;
 - 10 minutos de revisão sobre o que aprendemos e o que podemos melhorar no próximo dojo;
 
-### Sobre o período de programação:
+### Sobre o período de programação
 
 - Um programador pilota;
 - Um programador co-pilota;

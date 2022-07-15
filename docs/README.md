@@ -1,4 +1,13 @@
+# Perguntas Frequentes (FAQ)
 
+- ## Como o dojo pode me ajudar a crescer com a programação?
 
-- [Os 10 sites da web mais populares com desafios de programação](coding_challenge/README.md)
+O coding dojo, tem o propósito de auxiliar o desenvolvimento da capacidade em programar.
+Isto com distribuição de taferas coordenadas, e com auxílio supervisionado de multuo aprefeiçoamento, ou de desenvolvedores mais experientes.
 
+- ## Como exercitar a habilidade em programar?
+
+É como na matemática, só aprende fazendo! E existem alguns sites de coding challenge (desafios de código),
+ para exercitar a programação, inclusive em diversas linguagens além de Python.
+
+Separei alguns [sites populares com desafios de programação](/docs/coding_challenge)

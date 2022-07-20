@@ -29,7 +29,7 @@ Somos encorajados a tentar novas ideias, sair da caixa. A ideia é treinar
 
 Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.
 
-Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
+Se você não se sentir confortável em participar programando, está convidado a participar como um membro da plateia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
 
 ## Como conduzir?
 

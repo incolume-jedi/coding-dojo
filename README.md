@@ -13,7 +13,7 @@ Finalmente, para rodar os códigos, mude para o diretório do Dojo, por exemplo 
 
 ## O que é?
 
-A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação através de exercícios práticos.
+A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação por meio da realização de exercícios práticos.
 
 Para mais informações sobre os nossos coding dojos anteriores acesse os respectivos diretórios dos dojos e leia o REAME.md.
 

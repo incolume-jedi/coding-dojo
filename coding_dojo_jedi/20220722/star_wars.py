@@ -1,10 +1,5 @@
-from unittest import result
 import requests
-import json
 from pprint import pprint
-
-
-
 
 
 resposta =[]
@@ -20,5 +15,5 @@ while True:
         pagina += 1
     except KeyError:
         break
-    
+
 print(len(resposta))

@@ -33,7 +33,15 @@ Se você não se sentir confortável em participar programando, está convidado 
 
 ## Como conduzir?
 
-Uma descrição de como conduzir o dojo (2h):
+### Gerenciamento do tempo
+
+- Não exceder o tempo máximo de 120' (2h);
+- Finalizar o dojo entre 100' e 120';
+- Com o problema finalizado o dojo pode ser encerrado a qualquer momento;
+- Se o tempo for insuficiente para solução do problema proposto, fracione-o em etapas,
+finalize a primeira etapa, encerre o dojo, e continue a etapa seguinte no proximo dojo;
+
+### Uma descrição de como conduzir o dojo (no maximo 2h):
 
 - 10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (3 problemas é suficiente);
 - 5 minutos para decidir sobre qual problema vamos resolver;
@@ -51,3 +59,8 @@ Uma descrição de como conduzir o dojo (2h):
 - Após cinco minutos trocam as posições: piloto -> co-piloto, co-piloto -> platéia, platéia -> piloto;
 - A ideia é que todos tenham uma chance de programar ao menos uma vez;
 - Toda a comunicação entre o piloto e copiloto deve ser em voz alta para que todos escutem;
+
+### Salvaguarda do aprendizado
+
+- Sempre salve as soluções no fork do dojo;
+- Solicite um pull request para consolidação;

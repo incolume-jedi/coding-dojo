@@ -54,6 +54,7 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
 
 
 if __name__ == "__main__":
+    pass
     print(research("Tion Medon"), end='\n\n')
     print(research("Luke Skywalker"), end='\n\n')
     print(research("Obi-Wan Kenobi"), end='\n\n')

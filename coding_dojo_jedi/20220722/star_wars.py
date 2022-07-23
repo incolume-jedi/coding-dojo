@@ -5,6 +5,7 @@ import json
 import dotenv
 import os
 from pathlib import Path
+from tempfile import gettempdir
 
 
 dotenv.load_dotenv()
@@ -17,7 +18,8 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
     name = name or "Luke Skywalker"
     pagina = pagina or 1
     url = url or "https://swapi.dev/api/people/?page={}"
-    cache_file = Path(__file__).parent.joinpath('personagens.json').resolve()
+    # cache_file = Path(__file__).parent.joinpath('personagens.json').resolve()
+    cache_file = Path(gettempdir()).joinpath('personagens.json')
     logging.info(f'{cache_file=}')
     logging.info(f'{cache_file.is_file()=}')
     if not cache_file.is_file():

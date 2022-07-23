@@ -46,16 +46,14 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
 
     logging.info(personagens)
     logging.info(personagens.get(name))
-    print(f'* Nome: {personagens.get(name)["name"]}\n'\
-        f'* Altura: {personagens.get(name)["height"]}cm\n'\
-        f'* Ano de nascimento: {personagens.get(name)["birth_year"]}\n'\
-        f'* Quantidade de filmes: {len(personagens.get(name)["films"])}'
-        )
+
     # print(len(personagens.get(name)['films']))
     # print("* Nome: {name}\n* Altura: {height}\n* Ano de Nascimento: {birth_year}\n* Filmes: {films}\n".format(**personagens.get(name)))
     # print('''* Nome: {name}\n* Altura: {height}cm\n* Ano de nascimento: {birth_year}\n* Quantidade de filmes: {len(films)}'''.format(**personagens.get(name)))
+    return personagens.get(name)
 
 
 if __name__ == "__main__":
-    # research("Tion Medon")
-    research("Luke Skywalker")
+    print(research("Tion Medon"), end='\n\n')
+    print(research("Luke Skywalker"), end='\n\n')
+    print(research("Obi-Wan Kenobi"), end='\n\n')

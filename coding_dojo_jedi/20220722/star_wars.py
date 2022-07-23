@@ -2,8 +2,12 @@ import requests
 from pprint import pprint
 import logging
 import json
+import dotenv
+import os
 
-logging.basicConfig(level=logging.INFO)
+
+dotenv.load_dotenv()
+logging.basicConfig(level=int(os.environ.get('LOGGING-LEVEL', logging.INFO)))
 
 
 def research(name: str = "", url: str = "", pagina=0) -> None:

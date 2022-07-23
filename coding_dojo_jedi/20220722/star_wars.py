@@ -9,7 +9,7 @@ from tempfile import gettempdir
 
 
 dotenv.load_dotenv()
-logging.basicConfig(level=int(os.environ.get('LOGGING-LEVEL', logging.INFO)))
+logging.basicConfig(level=int(os.environ.get('LOGGING-LEVEL', logging.WARNING)))
 
 
 def research(name: str = "", url: str = "", pagina=0) -> None:

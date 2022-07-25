@@ -34,7 +34,7 @@ _obs_: você pode optar por uma das opções:
     * Caso contrário, a pesquisa é exata
 
 
-[... Continuação dos exercícios ...](/coding_dojo_jedi/20220725/README.md)
+[... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
 ## Referências
 

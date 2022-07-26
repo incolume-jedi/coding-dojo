@@ -16,14 +16,33 @@
 
 [...  exercício 6 ...](/coding_dojo_jedi/20220723/README.md)
 
-[...  exercício 7 ...](/coding_dojo_jedi/20220725/README.md)
+**7. Se não encontrar pelo termo pesquisado, de sugestões**
 
-**8. A imaginação é o limite**
+Quando recebemos entradas no formato `python main.py --nome "Skywalker"`, pode ser que
+ocorra um erro de digitação, por exemplo `python main.py --nome "Skywaler"`.
+Nesse caso, seria interessante mostrar para o usuário uma mensagem do tipo
+_Nenhum personagem "Skywaler" encontrado, mas encontrei: "Luke Skywalker", "Anakin Skywalker"_.
 
-Que tal tentar adicionar novos comandos ao `main.py`?
-Pode ser um comando para listar os `n` personagens que mais aparecem em filmes.
-Outro ideia é listar os filmes de forma ordenada pela quantidade de personagems que aparecem no filme.
-Outras ideias? Vá em frente e tente :D
+Para resolver esse problema, podemos usar a biblioteca [`fuzzywuzzy`](https://github.com/seatgeek/fuzzywuzzy).
+Basta instalar a biblioteca e comparar as strings com
+`fuzz.partial_ratio('skywaler', 'Luke Skywalker')`.
+Essa função retorna um "grau de confiança" entre 0 e 100.
+Portanto, podemos assumir que, se houve comparação perfeita ou parcial (partes 5 e 6), você pode sugerir os nomes que tenham um grau de confiança maior que 75.
+
+``` python
+exemplo
+
+python main.py --nome "skywaler"
+Nenhum personagem "Skywaler" encontrado, mas encontrei: "Luke Skywalker", "Anakin Skywalker"
+
+# nesse exemplo, não encontrou nenhum personagem com nome "skywaler"
+# mas ao calcular fuzz.partial_ratio('skywaler', 'Luke Skywalker')
+# temos um grau de confiança de 88, logo pode ser que o usuário quis dizer "Luke Skywalker"
+# ao invés de "skywaler"
+# o mesmo acontece com fuzz.partial_ratio('skywaler', 'Anakin Skywalker')
+```
+
+[... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
 ## Referências
 

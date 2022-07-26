@@ -18,6 +18,7 @@
 
 Na mesma aplicação, se encontrar um personagem com um nome exatamente igual,
 mostre as informações dele (feito na parte anterior).
+
 Entretanto, permita uma pesquisa parcial do nome.
 Por exemplo, `python main.py --nome "Skywalker"` deve imprimir as informações de
 _Luke Skywalker_ e _Anakin Skywalker_.

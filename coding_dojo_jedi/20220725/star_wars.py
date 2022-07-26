@@ -12,7 +12,7 @@ dotenv.load_dotenv()
 logging.basicConfig(level=int(os.environ.get('LOGGING-LEVEL', logging.WARNING)))
 
 
-def research(name: str = "", url: str = "", pagina=0) -> None:
+def research(name: str = "", url: str = "", pagina=0) -> list[dict]:
     resposta = []
     personagens = {}
     name = name or "Luke Skywalker"
@@ -32,7 +32,8 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
                 pagina += 1
             except KeyError:
                 break
-        personagens = {p.get("name"): p for p in resposta}
+        personagens = {p.get("name").casefold(): p for p in resposta}
+        logging.info(f'{personagens=}')
         with cache_file.open('w') as f:
             json.dump(personagens, f, indent=4)
 
@@ -44,13 +45,19 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
         with cache_file.open() as f:
             personagens = json.load(f)
 
-    logging.info(personagens)
-    logging.info(personagens.get(name))
+    logging.info(f">>> {personagens=}")
+    logging.info(f">>> {personagens.get(name)=}")
 
     # print(len(personagens.get(name)['films']))
     # print("* Nome: {name}\n* Altura: {height}\n* Ano de Nascimento: {birth_year}\n* Filmes: {films}\n".format(**personagens.get(name)))
     # print('''* Nome: {name}\n* Altura: {height}cm\n* Ano de nascimento: {birth_year}\n* Quantidade de filmes: {len(films)}'''.format(**personagens.get(name)))
-    return personagens.get(name)
+    result = personagens.get(name.casefold())
+    if result:
+        return [result]
+    else:
+        return [personagem for key, personagem in personagens.items() if name.casefold() in key.split()]
+
+
 
 
 if __name__ == "__main__":

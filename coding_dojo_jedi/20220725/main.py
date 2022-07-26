@@ -28,15 +28,17 @@ def cli(name):
             click.echo(ctx.get_help())
 
     # click.echo(f'{name}')
-    personagem = research(name)
-    if not personagem:
-        msg = f'Personagem "{name}" não encontrado'
-    else:
-        msg = f'* Nome: {personagem.get("name")}\n'\
-            f'* Altura: {personagem.get("height")}cm\n'\
-            f'* Ano de nascimento: {personagem.get("birth_year")}\n'\
-            f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
-    click.echo(msg)
+    personagens = research(name)
+
+    for personagem in personagens:
+        if personagem:
+            msg = f'* Nome: {personagem.get("name")}\n'\
+                f'* Altura: {personagem.get("height")}cm\n'\
+                f'* Ano de nascimento: {personagem.get("birth_year")}\n'\
+                f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
+            click.echo(msg)
+        else:
+            msg = f'Personagem "{name}" não encontrado'
 
 
 if __name__ == '__main__':

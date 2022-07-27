@@ -14,7 +14,7 @@
 
 [...  exercício 5 ...](/coding_dojo_jedi/20220722/README.md)
 
-[...  exercício 6 ...](/coding_dojo_jedi/20220723/README.md)
+[...  exercício 6 ...](/coding_dojo_jedi/20220725/README.md)
 
 **7. Se não encontrar pelo termo pesquisado, de sugestões**
 

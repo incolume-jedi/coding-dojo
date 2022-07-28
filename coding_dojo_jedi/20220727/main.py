@@ -30,12 +30,16 @@ def cli(name):
     # click.echo(f'{name}')
     personagens = research(name)
     if personagens:
-        for personagem in personagens:
-            msg = f'* Nome: {personagem.get("name")}\n'\
-               f'* Altura: {personagem.get("height")}cm\n'\
-               f'* Ano de nascimento: {personagem.get("birth_year")}\n'\
-               f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
-            click.echo(msg)
+        try:
+            for personagem in personagens:
+                msg = f'* Nome: {personagem.get("name")}\n'\
+                   f'* Altura: {personagem.get("height")}cm\n'\
+                   f'* Ano de nascimento: {personagem.get("birth_year")}\n'\
+                   f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
+                click.echo(msg)
+        except:
+            encontrados = ', '.join([f'"{f}"' for f in personagens])
+            click.secho(f'Nenhum personagem "{name}" encontrado, mas encontrei: {encontrados}', fg='yellow')
     else:
         click.secho(f'Personagem "{name}" não encontrado', fg='red')
 

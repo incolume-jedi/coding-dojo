@@ -1,2 +1,2 @@
 def dna2rna(dna: str) -> str:
-    return dna.replace('T', 'U')
+    return dna.translate(dna.maketrans({'T': 'U'}))

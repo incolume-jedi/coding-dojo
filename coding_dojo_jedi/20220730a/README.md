@@ -22,7 +22,7 @@
 
 Que tal tentar adicionar novos comandos ao `main.py`?
 Pode ser um comando para listar os `n` personagens que mais aparecem em filmes.
-Outro ideia é listar os filmes de forma ordenada pela quantidade de personagems que aparecem no filme.
+Outra ideia é listar os filmes de forma ordenada pela quantidade de personagens que aparecem no filme.
 Outras ideias? Vá em frente e tente :D
 
 ## Referências

@@ -10,6 +10,7 @@ from dojo import bmi
         (90, 1.80, "Overweight"),
         (110, 1.80, "Obese"),
         (50, 1.50, "Normal"),
+        (70, 1.50, "Obese"),
     ]
 )
 def test_bmi(peso, altura, esperado):

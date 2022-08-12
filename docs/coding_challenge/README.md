@@ -1,4 +1,24 @@
-# Os 10 sites da web mais populares com desafios de programação
+# Os sites da web mais populares com desafios de programação
+
+## [codewars](https://www.codewars.com/)
+
+O Codewars tem uma grande coleção de desafios de programação enviados e editados por sua própria comunidade, cujo os membros são ranqueados por cores. Você pode resolver os desafios on-line diretamente no editor do site em várias linguagens. Você pode ver as discussões de cada um dos desafios, bem como as soluções dos outros usuários.
+
+## [Rosalind](https://rosalind.info/problems/list-view/)
+
+Rosalind é uma plataforma para aprender bioinformática e programação através da resolução de problemas.
+
+Aprender bioinformática geralmente requer a resolução de problemas computacionais de dificuldade variada que são extraídos de desafios reais da biologia molecular.
+
+Uma plataforma para aprender bioinformática por meio da resolução de problemas, que tornar o aprendizado de bioinformática divertido e fácil.
+
+Além disso oferece uma série de problemas intelectualmente estimulantes que crescem em complexidade biológica e computacional; cada problema é verificado automaticamente, de modo que o único recurso necessário para aprender bioinformática é uma conexão com a internet.
+
+## [leetcode](https://leetcode.com/)
+
+O LeetCode é um juiz on-line conhecido, que fornece uma lista de mais de 190 desafios que podem ajudar você a se preparar para entrevistas técnicas de emprego. Você pode resolver os desafios diretamente on-line em uma das 9 linguagens de programação. Você não pode ver as soluções dos outros usuários, mas recebe estatísticas para suas soluções, como a velocidade de execução do seu código em comparação com os códigos de outros usuários.
+
+Eles também têm uma seção de simulação de entrevista, as Mock Interviews, especificamente para a preparação para entrevistas de emprego. O site hospeda suas próprias competições de programação, além de ter uma seção para os artigos que vão ajudar você a entender melhor determinados problemas.
 
 ## [TopCoder](https://www.topcoder.com/challenges/?pageIndex=1)
 
@@ -33,16 +53,6 @@ O CodeChef é um site indiano de programação competitiva que fornece centenas 
 O Exercism é um site de desafios de programação que oferece mais de 3100 desafios em 52 linguagens de programação diversas. Depois de escolher a linguagem que você quer dominar, você faz os desafios de programação diretamente de sua máquina (o Exercism tem sua própria interface de linha de comando que você pode baixar do GitHub).
 
 Ele é um pouco diferente dos outros sites de desafios de programação, pois você pode trabalhar com um mentor após concluir cada desafio. O mentor revisa suas resposta on-line e ajuda você a melhorá-la, se necessário. Depois que suas respostas foram aprovadas e enviadas, você desbloqueia mais desafios.
-
-## [codewars](https://www.codewars.com/)
-
-O Codewars tem uma grande coleção de desafios de programação enviados e editados por sua própria comunidade, cujo os membros são ranqueados por cores. Você pode resolver os desafios on-line diretamente no editor do site em várias linguagens. Você pode ver as discussões de cada um dos desafios, bem como as soluções dos outros usuários.
-
-## [leetcode](https://leetcode.com/)
-
-O LeetCode é um juiz on-line conhecido, que fornece uma lista de mais de 190 desafios que podem ajudar você a se preparar para entrevistas técnicas de emprego. Você pode resolver os desafios diretamente on-line em uma das 9 linguagens de programação. Você não pode ver as soluções dos outros usuários, mas recebe estatísticas para suas soluções, como a velocidade de execução do seu código em comparação com os códigos de outros usuários.
-
-Eles também têm uma seção de simulação de entrevista, as Mock Interviews, especificamente para a preparação para entrevistas de emprego. O site hospeda suas próprias competições de programação, além de ter uma seção para os artigos que vão ajudar você a entender melhor determinados problemas.
 
 ## [Sphere Online Judge (SPOJ)](http://www.spoj.com/)
 

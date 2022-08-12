@@ -1,21 +1,10 @@
-# Coding Dojo
-
-**Guilda JEDI Incolume - Grupo Python Incolume**
-
----
-
-## Problema
-
-**TDD Pytest**
-
-Baseado no exercício [TDD para Pytest](https://bitbucket.org/incolume-dev/calculadora_pytest)
-
-```python
 # tests.py
 # -*- encode: utf-8 -*-
 
 import pytest
 from dojo import calculadora
+import re
+
 
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
@@ -64,15 +53,3 @@ def test_calculadora(entrance, expected):
 def test_calculadora_except(entrance, expected):
     with pytest.raises(**expected):
         calculadora(*entrance)
-
-```
-
-## Exemplos
-
-```bash
-pytest tests.py
-```
-
-## Referências
-
-https://bitbucket.org/incolume-dev/calculadora_pytest

@@ -16,7 +16,7 @@
 
 [...  exercício 6 ...](/coding_dojo_jedi/20220723/README.md)
 
-[...  exercício 7 ...](/coding_dojo_jedi/20220725/README.md)
+[...  exercício 7 ...](/coding_dojo_jedi/20220727/README.md)
 
 **8. A imaginação é o limite**
 

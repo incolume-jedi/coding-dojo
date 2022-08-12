@@ -2,15 +2,17 @@
 
 **Guilda JEDI Incolume - Grupo Python Incolume**
 
+---
+
 ## Problema
 
 **Notas e Moedas**
 
-Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário. 
-A seguir, calcule o menor número de notas e moedas possíveis no qual o valor pode ser decomposto. 
+Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário.
+A seguir, calcule o menor número de notas e moedas possíveis no qual o valor pode ser decomposto.
 
-As notas consideradas são de 100, 50, 20, 10, 5, 2. 
-As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01. 
+As notas consideradas são de 100, 50, 20, 10, 5, 2.
+As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01.
 A seguir mostre a relação de notas necessárias.
 
 **Entrada**
@@ -24,7 +26,8 @@ Obs: Utilize ponto (.) para separar a parte decimal.
 ## Exemplos
 
 Exemplo de Entrada = Exemplo de Saída
-   bash
+
+```bash
 576.73 =
 NOTAS:
 5 nota(s) de R$ 100.00;
@@ -72,10 +75,11 @@ MOEDAS:
 0 moeda(s) de R$ 0.10;
 0 moeda(s) de R$ 0.05;
 1 moeda(s) de R$ 0.01;
-   
+```
 
-## Referencias
+## Referências
 
 Exemplo de dojo realizado pela comunidade python de Blumenau em [20190129](https://github.com/pythonbnu/dojo/blob/master/2019_01_29/dojo.py)
 
-[beecrowd | 1021](https://www.beecrowd.com.br/repository/UOJ_1021.html) Por Neilor Tonin, URI  Brasil
+[beecrowd | 1021](https://www.beecrowd.com.br/repository/UOJ_1021.html)
+Por Neilor Tonin, URI  Brasil

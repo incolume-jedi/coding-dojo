@@ -19,11 +19,12 @@ Você foi contratado para desenvolver o programa que monta esta tabela de preço
 ## Exemplos
 
 Lojas Quase Dois - Tabela de preços
+```
 1 - R$ 1.99
 2 - R$ 3.98
 ..
 50 - R$ 99.50
-
+```
 
 ## Referências
 

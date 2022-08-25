@@ -15,6 +15,7 @@ Você foi contratado para desenvolver o programa que monta a tabela de preços p
 ## Exemplos
 
 Panificadora Pão de Ontem - Tabela de preços
+```
 1 - R$ 2.18
 2 - R$ 55.36
 ..
@@ -23,7 +24,7 @@ Panificadora Pão de Ontem - Tabela de preços
 ..
 90 - ..
 100 - R$ 218.00
-
+```
 
 ## Referências
 

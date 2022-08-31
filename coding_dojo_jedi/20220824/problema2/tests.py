@@ -1,6 +1,6 @@
 import pytest
 from dojo import millisseconds
-
+from re import escape
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),
@@ -23,6 +23,8 @@ def test_millissenconds(entrance, expected):
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     (
+        ((0, 0, 0), {'expected_exception': TypeError, 'match': r'millisseconds\(\) takes 0 positional arguments but 3 were given'}),
+        ((1, 1, 1), {'expected_exception': TypeError, 'match': escape('millisseconds() takes 0 positional arguments but 3 were given')}),
         ({'h': -1, 'm': 0, 's': 0}, {'expected_exception': ValueError, 'match': '0 <= h <= 23'}),
         ({'h': 24, 'm': 0, 's': 0}, {'expected_exception': ValueError, 'match': '0 <= h <= 23'}),
         ({'h': 0, 'm': -1, 's': 0}, {'expected_exception': ValueError, 'match': '0 <= m <= 59'}),
@@ -33,4 +35,7 @@ def test_millissenconds(entrance, expected):
 )
 def test_millissenconds_exception(entrance, expected):
     with pytest.raises(**expected):
-        millisseconds(**entrance)
+        if isinstance(entrance, dict):
+            millisseconds(**entrance)
+        else:
+            millisseconds(*entrance)

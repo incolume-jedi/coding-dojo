@@ -283,6 +283,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "unidecode"
+version = "1.3.4"
+description = "ASCII transliterations of Unicode text"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "urllib3"
 version = "1.26.10"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -310,7 +318,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "ce4e7618c6a59bf38202b9ed1bb212765c7e90768ded0032ac3d93448052e0b2"
+content-hash = "c4e50fe3e180e81d3fec1fabec0bf790b128348a3c57c4fddb0a33a2172102c4"
 
 [metadata.files]
 atomicwrites = []
@@ -394,5 +402,9 @@ tomli = [
 ]
 typed-ast = []
 typing-extensions = []
+unidecode = [
+    {file = "Unidecode-1.3.4-py3-none-any.whl", hash = "sha256:afa04efcdd818a93237574791be9b2817d7077c25a068b00f8cff7baa4e59257"},
+    {file = "Unidecode-1.3.4.tar.gz", hash = "sha256:8e4352fb93d5a735c788110d2e7ac8e8031eb06ccbfe8d324ab71735015f9342"},
+]
 urllib3 = []
 zipp = []

@@ -25,6 +25,9 @@ import pytest
         ('Deezer Student', 9.9),
         ('Deezer Free', 0.0),
         ('disney starzplay', 55.9),
+        ('disney free', 'Plano Indisponível'),
+        ('foo free', 'Plano Indisponível'),
+        ('netflix free', 'Plano Indisponível'),
     ),
 )
 def test_stream(entrance, expected):

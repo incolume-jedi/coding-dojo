@@ -31,4 +31,4 @@ Os números Fizz e Buzz sempre serão inteiros entre 1 e 50, e a sequência ter�
 
 ## Referências
 
-https://www.codewars.com/kata/59ad13d5589d2a1d84000020
+https://www.codewars.com/kata/59ad13d5589d2a1d84000020

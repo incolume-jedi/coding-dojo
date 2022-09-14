@@ -8,9 +8,9 @@
 
 **Qual dia da semana**
 
-Se hoje é terça feira, daqui a 180 dias será?
+Se hoje é terça-feira, daqui a 180 dias será?
 
-# Exemplo 
+# Exemplo
 
 ```
 weekday('terça-feira', 0) == terça-feira

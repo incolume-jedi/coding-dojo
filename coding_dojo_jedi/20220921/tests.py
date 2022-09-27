@@ -16,6 +16,7 @@ from dojo import to_roman
         (9, "IX"),
         (10, "X"),
         (50, "L"),
+        (80, "LXXX"),
         (100, "C"),
         (500, "D"),
         (900, 'CM'),

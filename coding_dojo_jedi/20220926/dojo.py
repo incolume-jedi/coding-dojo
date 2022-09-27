@@ -1,3 +1,9 @@
+def aminoacid(string: str, codons: dict) -> str:
+    if len(string) <= 3:
+        return codons.get(string)
+    return '{}{}'.format(codons.get(string[:3]), aminoacid(string[3:], codons))
+
+
 def protein(chain: str) -> str:
     codons = {
         'UUC': 'F', 'UUU': 'F',
@@ -23,14 +29,7 @@ def protein(chain: str) -> str:
         # 'UAA': 'Stop', 'UGA': 'Stop', 'UAG': 'Stop',
         'UAA': '', 'UGA': '', 'UAG': '',
     }
-    result = ''
-
-    def aminoacid(string: str):
-        if len(string) <= 3:
-            return codons.get(string)
-        return '{}{}'.format(codons.get(string[:3]), aminoacid(string[3:]))
-
-    return aminoacid(chain.upper())
+    return aminoacid(chain.upper(), codons)
 
 
 if __name__ == '__main__':    # pragma: no cover

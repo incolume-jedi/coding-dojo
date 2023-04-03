@@ -25,6 +25,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
 prerelease = {cmd='v=$(poetry version prerelease) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)'}
+prepatch = {cmd='v=$(poetry version prepatch) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)'}
 preminor = {cmd='v=$(poetry version preminor) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)'}
 premajor = {cmd='v=$(poetry version premajor) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)'}
 patch = {cmd='v=$(poetry version patch) && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)'}

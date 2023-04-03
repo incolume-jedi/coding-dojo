@@ -47,6 +47,9 @@ def aminoacid1(string: str, codons: dict) -> str:
 
 
 def protein1(chain: str) -> str:
+    """Exemplo aplicado com correção de função aninha.
+    função aninha extraída
+    """
     codons = {
         'UUC': 'F', 'UUU': 'F',
         'UUA': 'L', 'UUG': 'L', 'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L',
@@ -75,6 +78,8 @@ def protein1(chain: str) -> str:
 
 
 def protein(chain: str) -> str:
+    """Fatoração com recursividade integrada."""
+
     codons = {
         'UUC': 'F', 'UUU': 'F',
         'UUA': 'L', 'UUG': 'L', 'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L',

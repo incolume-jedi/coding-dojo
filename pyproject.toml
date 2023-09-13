@@ -33,6 +33,10 @@ testpaths = [
   "tests",
   "coding_dojo_jedi",
 ]
+python_files = [
+  "test_*.py",
+  "tests.py"
+]
 
 markers = [
   "slow: marks tests as slow (deselect with '-m \"not slow\"')",

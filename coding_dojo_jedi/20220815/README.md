@@ -6,6 +6,6 @@
 
 Nesse Dojo resolvemos 3 problemas:
 
-- [Sequencia de caracteres](./problema1/README.md)
-- [Sequencia de caracteres II](./problema2/README.md)
-- [Adedonha](./problema3/README.md)
+- [Sequencia de caracteres](./problema1.md)
+- [Sequencia de caracteres II](./problema2.md)
+- [Adedonha](./problema3.md)

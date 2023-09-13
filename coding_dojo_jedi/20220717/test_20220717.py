@@ -1,22 +1,23 @@
 import pytest
-import dojo
+import dojo20220717
 
 
-def test_dojo1():
-    assert dojo.palindrome('Python') == False
+def test_dojo202207171():
+    assert dojo20220717.palindrome("Python") == False
 
-def test_dojo2():
-    assert dojo.palindrome('anna') == True
+
+def test_dojo202207172():
+    assert dojo20220717.palindrome("anna") == True
 
 
 @pytest.mark.parametrize(
-    ['entrada', 'esperado'],
+    ["entrada", "esperado"],
     (
         ("walter", False),
         (12321, True),
         (123456, False),
         ("ada", True),
-    )
+    ),
 )
-def test_dojo(entrada, esperado):
-    assert dojo.palindrome(entrada) == esperado
+def test_dojo20220717(entrada, esperado):
+    assert dojo20220717.palindrome(entrada) == esperado

@@ -1,5 +1,6 @@
 import pytest
-from dojo import trocar_dinheiro
+from dojo20220902 import trocar_dinheiro
+
 
 @pytest.mark.skip("skiped..")
 def test_moedas_150():
@@ -7,11 +8,13 @@ def test_moedas_150():
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 0, 0, 0, 0]
 
+
 @pytest.mark.skip("skiped..")
 def test_moedas_191():
     (notas, moedas) = trocar_dinheiro(1.91)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 1]
+
 
 @pytest.mark.skip("skiped..")
 def test_moedas_192():
@@ -19,17 +22,20 @@ def test_moedas_192():
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 2]
 
+
 @pytest.mark.skip("skiped..")
 def test_notas_101():
     (notas, moedas) = trocar_dinheiro(101)
     assert notas == [0, 1, 0, 0, 0, 0, 0]
     assert moedas == [1, 0, 0, 0, 0, 0]
 
+
 @pytest.mark.skip("skiped..")
 def test_notas_101_92():
     (notas, moedas) = trocar_dinheiro(101.92)
     assert notas == [0, 1, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 2]
+
 
 @pytest.mark.skip("skiped..")
 def test_notas_0():
@@ -39,7 +45,7 @@ def test_notas_0():
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ("entrance", "expected"),
     (
         (0, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0])),
         (101, ([0, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0])),
@@ -51,11 +57,11 @@ def test_notas_0():
         (1.00, ([0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0])),
         (1, ([0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0])),
         (1.50, ([0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0])),
-        (.5, ([0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0])),
-        (.25, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0])),
-        (.1, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0])),
-        (.05, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0])),
-        (.01, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1])),
+        (0.5, ([0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0])),
+        (0.25, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0])),
+        (0.1, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0])),
+        (0.05, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0])),
+        (0.01, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1])),
         (2.00, ([0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0])),
         (5.00, ([0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0])),
         (10.00, ([0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0])),
@@ -75,9 +81,9 @@ def test_notas_0():
         (311.11, ([1, 1, 0, 0, 1, 0, 0], [1, 0, 0, 1, 0, 1])),
         (262.61, ([1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1])),
         (126.30, ([0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0])),
-    )
+    ),
 )
 def test_trocar_dinheiro(entrance, expected):
     """Teste do calculo para o menor número de notas e moedas
-     possíveis no qual o valor pode ser decomposto."""
+    possíveis no qual o valor pode ser decomposto."""
     assert trocar_dinheiro(entrance) == expected

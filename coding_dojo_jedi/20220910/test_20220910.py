@@ -1,5 +1,5 @@
 import pytest
-from dojo import weekday
+from dojo20220910 import weekday
 
 
 @pytest.mark.parametrize(

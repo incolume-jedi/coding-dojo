@@ -3,6 +3,7 @@ name = "coding-dojo-jedi"
 version = "1.32.0a0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
+packages = [{include = "coding_dojo_jedi"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -23,6 +24,57 @@ pytest-cov = "^4.1.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+log_format = '%(asctime)s; %(levelname)-8s; %(name)s; %(module)s; %(funcName)s; %(message)s'
+log_date_format ='%FT%T%N%z'
+#addopts = "--doctest-modules --cov=coding_dojo_jedi -sx --cov-report term-missing --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml"
+testpaths = [
+  "tests",
+  "coding_dojo_jedi",
+]
+
+markers = [
+  "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+  "webtest: marks tests as webtest (deselect with '-m \"not webtest\"')",
+  "fast: marks tests as fast (deselect with '-m \"not fast\"')",
+]
+
+
+[tool.coverage.html]
+directory = "coverage_report/html"
+
+
+[tool.coverage.xml]
+
+
+[tool.coverage.run]
+omit = [
+  # omit anything in a .local directory anywhere
+  "*/.local/*",
+  # omit everything in /usr
+  "/usr/*",
+  # omit this single file
+  "configure/truncus.py",
+]
+
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "if __name__ == .__main__.:",
+  "logger.debug",
+  "logger.info",
+  "logger.warning",
+  "logger.error",
+  "ImportError",
+  "ModuleNotFoundError",
+  "__package__ =",
+  "def run",
+  "def terminal.",
+  "__author__",
+  "class IElements"
+]
 
 [tool.taskipy.tasks]
 #bandit={help='', cmd='poetry run bandit -c pyproject.toml -r {path}', use_vars=true}

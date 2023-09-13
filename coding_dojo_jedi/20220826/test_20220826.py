@@ -1,5 +1,19 @@
-from dojo import tabuada
 import pytest
+from dojo20220826 import no_exclamation, no_exclamation0, no_exclamation1, tabuada, imc
+
+
+@pytest.mark.parametrize(
+    ["entrance", "expected"],
+    (
+        ("Hello World!", "Hello World"),
+        ("Hello World!!!", "Hello World"),
+        ("Hi! Hello!", "Hi Hello"),
+        ("", ""),
+        ("Oh, no!!!", "Oh, no"),
+    ),
+)
+def test_noexclamation(entrance, expected):
+    assert no_exclamation(entrance) == expected
 
 
 @pytest.mark.parametrize(
@@ -59,7 +73,7 @@ import pytest
             ],
         ),
         (
-            {'tabuada': 10, 'inicial': 10, 'final': 7},
+            {"tabuada": 10, "inicial": 10, "final": 7},
             [
                 "10 X 7 = 70",
                 "10 X 8 = 80",
@@ -68,7 +82,7 @@ import pytest
             ],
         ),
         (
-            {'tabuada': 10, 'inicial': 7, 'final': 10},
+            {"tabuada": 10, "inicial": 7, "final": 10},
             [
                 "10 X 7 = 70",
                 "10 X 8 = 80",
@@ -83,3 +97,20 @@ def test_tabuada(entrance, expected):
         assert tabuada(**entrance) == expected
     if isinstance(entrance, tuple):
         assert tabuada(*entrance) == expected
+
+
+@pytest.mark.parametrize(
+    "entrance expected".split(),
+    (
+        ((1.74, 75), "peso normal"),
+        ((1.54, 125), "Obesidade III"),
+        ((1.72, 80), "Sobrepeso"),
+        ((1.84, 55), "abaixo do peso"),
+        ((1.64, 75), "Sobrepeso"),
+        ((1.84, 135), "Obesidade II"),
+        ((1.78, 95), "Obesidade I"),
+        ((1.78, 98), "Obesidade I"),
+    ),
+)
+def test_imc(entrance, expected):
+    assert imc(*entrance) == expected

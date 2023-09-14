@@ -1,3 +1,5 @@
+from sys import version_info
+
 import pytest
 from dojo20220902 import trocar_dinheiro
 
@@ -44,6 +46,7 @@ def test_notas_0():
     assert moedas == [0, 0, 0, 0, 0, 0]
 
 
+@pytest.mark.skipif(version_info >= (3, 8, 0), reason="This run only Python 3.8+")
 @pytest.mark.parametrize(
     ("entrance", "expected"),
     (

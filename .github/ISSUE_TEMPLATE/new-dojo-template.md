@@ -1,6 +1,6 @@
 ---
 name: New dojo template
-about: " Problem Title"
+about: "Problem Title"
 title: "[new-dojo]"
 labels: enhancement
 assignees: ''

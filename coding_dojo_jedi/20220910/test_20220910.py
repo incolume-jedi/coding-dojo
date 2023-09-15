@@ -3,7 +3,7 @@ from dojo20220910 import weekday
 from sys import version_info
 
 
-@pytest.mark.skipif(version_info >= (3, 10, 0), reason="This run only Python 3.10+")
+@pytest.mark.skipif(version_info < (3, 10, 0), reason="This run only Python 3.10+")
 @pytest.mark.parametrize(
     "entrance expected".split(),
     (

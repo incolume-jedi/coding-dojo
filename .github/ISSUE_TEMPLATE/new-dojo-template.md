@@ -11,6 +11,8 @@ assignees: ''
 
 **Guilda JEDI Incolume - Grupo Python Incolume**
 
+- _[Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)_
+
 ---
 
 ## Problema

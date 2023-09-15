@@ -4,7 +4,7 @@
 
 ---
 
-Nesse Dojo resolvemos 3 problemas:
+Nesse Dojo resolvemos 2 problemas:
 
-- [Tabela de caixa I](./problema1/README.md)
-- [Tabela de caixa II](./problema2/README.md)
+- [Tabela de caixa I](./problema1.md)
+- [Tabela de caixa II](./problema2.md)

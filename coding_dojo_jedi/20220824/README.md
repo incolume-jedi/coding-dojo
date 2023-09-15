@@ -6,5 +6,5 @@
 
 Nesse Dojo resolvemos 2 problemas:
 
-- [Complementary DNA](./problema1/README.md)
-- [Begginer Series clock](./problema2/README.md)
+- [Complementary DNA](./problema1.md)
+- [Begginer Series clock](./problema2.md)

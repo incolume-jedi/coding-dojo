@@ -6,5 +6,5 @@
 
 Nesse Dojo resolvemos 2 problemas:
 
-- [Highest and Lowest](./problema1/README.md)
-- [Ordenação de 3](./problema2/README.md)
+- [Highest and Lowest](./problema1.md)
+- [Ordenação de 3](./problema2.md)

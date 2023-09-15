@@ -1,12 +1,7 @@
-import logging
-from sys import version_info
-
-if version_info > (3, 7, 15):
-    logging.warning("This code running only Python 3.8+")
-    exit(0)
+from typing import Union
 
 
-def calculadora(op: str, x: (int | float), y: (int | float)) -> float:
+def calculadora(op: str, x: Union[int, float], y: Union[int, float]) -> float:
     result = 0
     operadores = "+ - * ** / // %".split()
     if op not in operadores:

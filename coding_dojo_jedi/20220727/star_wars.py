@@ -20,7 +20,7 @@ def research(name: str = "", url: str = "", pagina=0) -> list[dict|str]:
     pagina = pagina or 1
     url = url or "https://swapi.dev/api/people/?page={}"
     # cache_file = Path(__file__).parent.joinpath('personagens.json').resolve()
-    cache_file = Path(gettempdir()).joinpath('personagens.json')
+    cache_file = Path(gettempdir()).joinpath('20220727_personagens.json')
     logging.info(f'{cache_file=}')
     logging.info(f'{cache_file.is_file()=}')
     if not cache_file.is_file():

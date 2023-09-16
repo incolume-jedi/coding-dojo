@@ -2,7 +2,6 @@ from star_wars import research
 import click
 
 
-
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 # Example from https://stackoverflow.com/a/50442496/5132101
@@ -18,6 +17,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 # if __name__ == '__main__':
 #     duh()
+
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option('-n', '--name', type=str, default=None, help='Name for search on api')
@@ -38,7 +38,6 @@ def cli(name):
             click.echo(msg)
     else:
         click.secho(f'Personagem "{name}" não encontrado', fg='red')
-
 
 
 if __name__ == '__main__':

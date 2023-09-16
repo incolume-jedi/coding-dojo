@@ -85,7 +85,7 @@ exclude_lines = [
 #pre_check-all = {cmd='echo Starting Check all ..', help=''}
 #check-all = {cmd='poetry run task clean-all; poetry run task lint; poetry run task sec',  help = "Checking all" }
 #post_check-all = {cmd='echo Checking finished!', help=''}
-clean = {cmd = "echo -n 'Starting cleanning environment..'; find ./ \\( -name '*.pyc' -o -name '*~' -o -name '*.log' -o -name '*.log.*' -o -name '.cache' -o -name '.coverage' \\) -delete ; echo ' ok' ",  help = "Shallow clean into environment (.pyc, .cache, .egg, .log, et all)" }
+clean = {cmd = "echo -n 'Starting cleanning environment..'; find ./ \\( -wholename '*report_coverage' -o -name '*.pyc' -o -name '*~' -o -name '*.log' -o -name '*.log.*' -o -name '.cache' -o -name '.coverage' \\) -delete ; echo ' ok' ",  help = "Shallow clean into environment (.pyc, .cache, .egg, .log, et all)" }
 pre_clean-all = {cmd='poetry run task clean', help=''}
 clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_cache' -o -name '*cache__' -o -name dist -o -name build -o -name .tox -o -name site -o -name coverage_report \\) -exec rm -rf {} 2> /dev/null \\; ; echo ' Deep cleaning finished!' ",  help = "Deep cleanning into environment (dist, build, htmlcov, .tox, *_cache, et all)" }
 #pre_docs-build={help='Pre docs-build', cmd="poetry run task changelog"}

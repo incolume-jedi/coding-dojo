@@ -7,7 +7,7 @@ import re
 from sys import version_info
 
 
-@pytest.mark.skipif(version_info >= (3, 10, 0), reason="This run only Python 3.10+")
+@pytest.mark.skipif(version_info <= (3, 10, 0), reason="This run only Python 3.10+")
 @pytest.mark.parametrize(
     ["entrance", "expected"],
     (
@@ -30,7 +30,7 @@ def test_calculadora(entrance, expected):
     assert calculadora(*entrance) == expected
 
 
-@pytest.mark.skipif(version_info > (3, 7, 18), reason="This run only Python 3.8+")
+@pytest.mark.skipif(version_info <= (3, 10, 0), reason="This run only Python 3.8+")
 @pytest.mark.parametrize(
     ["entrance", "expected"],
     (

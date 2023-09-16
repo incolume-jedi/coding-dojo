@@ -31,7 +31,7 @@ log_date_format ='%FT%T%N%z'
 #addopts = "--doctest-modules --cov=coding_dojo_jedi -sx --cov-report term-missing --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml"
 testpaths = [
   "tests",
-  "coding_dojo_jedi",
+  "incolume/py/coding_dojo_jedi",
 ]
 python_files = [
   "test_*.py",

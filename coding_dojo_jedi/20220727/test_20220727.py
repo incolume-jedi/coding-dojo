@@ -1,7 +1,7 @@
 from sys import version_info
 
 import pytest
-from star_wars import research
+from star_wars2 import research
 
 
 @pytest.mark.skipif(

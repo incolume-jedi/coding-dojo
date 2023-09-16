@@ -1,4 +1,4 @@
-from star_wars import research
+from star_wars2 import research
 import click
 
 

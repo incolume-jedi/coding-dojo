@@ -22,12 +22,7 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
     cache_file = Path(gettempdir()).joinpath('personagens.json')
     logging.info(f'{cache_file=}')
     logging.info(f'{cache_file.is_file()=}')
-
-    if cache_file.is_file():
-        with cache_file.open() as f:
-            personagens = json.load(f)
-
-    elif not cache_file.is_file():
+    if not cache_file.is_file():
         while True:
             try:
                 r = requests.get(url.format(pagina))
@@ -37,7 +32,7 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
                 pagina += 1
             except KeyError:
                 break
-        personagens = {p.get("name").casefold(): p for p in resposta}
+        personagens = {p.get("name"): p for p in resposta}
         with cache_file.open('w') as f:
             json.dump(personagens, f, indent=4)
 
@@ -45,7 +40,7 @@ def research(name: str = "", url: str = "", pagina=0) -> None:
     # for person in resposta:
     #     logging.info(person.get('name'))
 
-    elif not personagens:
+    if not personagens:
         with cache_file.open() as f:
             personagens = json.load(f)
 

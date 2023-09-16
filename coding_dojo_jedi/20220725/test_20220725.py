@@ -9,7 +9,7 @@ from star_wars import research
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     (
-        pytest.param(
+        (
             'Obi-Wan Kenobi',
             [{
                 'birth_year': '57BBY',
@@ -41,10 +41,9 @@ from star_wars import research
                     ],
                 'url': 'https://swapi.dev/api/people/10/',
                 'vehicles': ['https://swapi.dev/api/vehicles/38/'],
-            }],
-            # marks=pytest.mark.skip,
+            }]
         ),
-        pytest.param(
+        (
             "Luke Skywalker",
             [{
                 'birth_year': '19BBY',
@@ -71,10 +70,9 @@ from star_wars import research
                     ],
                 'url': 'https://swapi.dev/api/people/1/',
                 'vehicles': ['https://swapi.dev/api/vehicles/14/', 'https://swapi.dev/api/vehicles/30/']
-            }],
-            # marks=pytest.mark.skip,
+            }]
         ),
-        pytest.param(
+        (
             'Tion Medon',
             [{
                 'birth_year': 'unknown',
@@ -93,10 +91,9 @@ from star_wars import research
                 'starships': [],
                 'url': 'https://swapi.dev/api/people/83/',
                 'vehicles': []
-            }],
-            # marks=pytest.mark.skip,
+            }]
         ),
-        pytest.param(
+        (
             'luke skywalker',
             [{
                 'birth_year': '19BBY',
@@ -123,15 +120,13 @@ from star_wars import research
                     ],
                 'url': 'https://swapi.dev/api/people/1/',
                 'vehicles': ['https://swapi.dev/api/vehicles/14/', 'https://swapi.dev/api/vehicles/30/']
-            }],
-            # marks=pytest.mark.skip,
+            }]
         ),
-        pytest.param(
+        (
             'xpto',
-            [],
-            # marks=pytest.mark.skip,
-        ),
-    ),
+            []
+        )
+    )
 )
 def test_research(entrance, expected):
     assert research(entrance) == expected

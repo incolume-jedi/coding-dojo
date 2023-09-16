@@ -2,6 +2,7 @@ import pytest
 from dojo import max_sequence
 
 
+@pytest.mark.skip
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     (

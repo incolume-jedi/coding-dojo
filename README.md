@@ -9,7 +9,7 @@ Os códigos são em python 3.7+ e tem como dependência principal o pytest. Mas 
 
 Finalmente, para rodar os testes nos códigos, mude para o diretório do Dojo, por exemplo 20220701, e digite `pytest .` ou no diretório principal digite `pytest incolume/py/20220701`.
 
-[Mais detalhes sobre os coding-dojo](/docs/)
+[Mais detalhes sobre os coding-dojo](/docs/README.md)
 
 ## O que é?
 

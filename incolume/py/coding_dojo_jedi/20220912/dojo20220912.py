@@ -6,7 +6,7 @@ def weekday(dia: str, qtd: int) -> str:
         'quarta-feira',
         'quinta-feira',
         'sexta-feira',
-        'sábado'
+        'sábado',
     ]
 
     for i in range(len(dias)):

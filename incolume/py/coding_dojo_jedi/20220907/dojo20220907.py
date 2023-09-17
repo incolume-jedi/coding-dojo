@@ -21,7 +21,7 @@ def fizzbuzz(num: int) -> str:
 
 def fizzbuzz2(num: int) -> str:
     """FAIL.
-     Fizz e Buzz ficam na mesma posição."""
+    Fizz e Buzz ficam na mesma posição."""
     result = [str(num), 'Fizz', 'Buzz', 'FizzBuzz']
     return result[
         (num % 3 == 0) + (num % 5 == 0) + (num % 3 == 0 and num % 5 == 0)
@@ -34,4 +34,3 @@ if __name__ == '__main__':    # pragma: no cover
     print(dis(fizzbuzz0))
     # print(dis(fizzbuzz1))
     print(dis(fizzbuzz))
-

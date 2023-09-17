@@ -1,2 +1,2 @@
-def get_code(char:str):
+def get_code(char: str):
     return ord(char)

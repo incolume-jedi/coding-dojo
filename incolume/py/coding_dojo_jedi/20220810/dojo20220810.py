@@ -15,5 +15,5 @@ def is_vogal1(letra: str) -> bool:
 
 
 def is_vogal(letra: str) -> bool:
-    vogais = {'a':True, 'e':True, 'i':True, 'o':True, 'u':True}
+    vogais = {'a': True, 'e': True, 'i': True, 'o': True, 'u': True}
     return vogais.get(letra, False)

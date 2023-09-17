@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from typing import Container, List, Set, Tuple
 
-__author__ = "@britodfbr"  # pragma: no cover
+__author__ = '@britodfbr'  # pragma: no cover
 
 
 def max_sequence(container: (List | Set | Tuple | Container)):

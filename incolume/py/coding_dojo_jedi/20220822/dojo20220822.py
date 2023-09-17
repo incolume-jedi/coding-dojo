@@ -18,4 +18,4 @@ def table_p2():
 
 def show():
     for i, j in table_p2().items():
-        print(f"{i:4} = R$ {j:6.2f}")
+        print(f'{i:4} = R$ {j:6.2f}')

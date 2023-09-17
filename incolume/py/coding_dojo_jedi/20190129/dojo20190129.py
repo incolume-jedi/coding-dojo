@@ -4,6 +4,7 @@
 MOEDAS = [1, 0.5, 0.25, 0.1, 0.05, 0.01]
 NOTAS = [100, 50, 20, 10, 5, 2]
 
+
 def moedas(valor):
     notas = [0, 0, 0, 0, 0, 0]
     moedas = [0, 0, 0, 0, 0, 0]
@@ -12,6 +13,7 @@ def moedas(valor):
     valor = calcula(MOEDAS, moedas, valor)
 
     return (notas, moedas)
+
 
 def calcula(monetario, lista, valor):
     for i, moeda in enumerate(monetario):
@@ -26,11 +28,13 @@ def calcula(monetario, lista, valor):
 # comentamos no final do dojo e foi adicionada para fins
 # didáticos sobre python
 
+
 def moedas2(valor):
     (notas, valor) = calcula2(valor, NOTAS)
     (moedas, valor) = calcula2(valor, MOEDAS)
 
     return (notas, moedas)
+
 
 def calcula2(valor, cedulas):
     quantidades = [0] * len(cedulas)

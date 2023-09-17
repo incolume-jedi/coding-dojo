@@ -5,7 +5,7 @@ DIAS = [
     'quarta-feira',
     'quinta-feira',
     'sexta-feira',
-    'sábado'
+    'sábado',
 ]
 
 SEMANA = {x: y for x, y in enumerate(DIAS)}

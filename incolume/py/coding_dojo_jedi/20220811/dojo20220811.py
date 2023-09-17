@@ -17,7 +17,7 @@ def calculadora(op, x, y):
         '//': lambda: x // y,
         '%': lambda: x % y,
         '*': lambda: x * y,
-        '**': lambda: x ** y,
+        '**': lambda: x**y,
     }
     try:
         result = run.get(op)()

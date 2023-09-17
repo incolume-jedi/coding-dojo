@@ -35,9 +35,7 @@ def stream(st: str) -> float:
     logging.debug(f'{st=}')
     pack, combo = unidecode(st).casefold().split()
     logging.debug(f'{pack=} {combo=}')
-    return streams\
-        .get(pack, {'err': ''})\
-        .get(combo, 'Plano Indisponível')
+    return streams.get(pack, {'err': ''}).get(combo, 'Plano Indisponível')
 
 
 if __name__ == '__main__':    # pragma: no cover

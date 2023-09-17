@@ -19,8 +19,15 @@ def weekday0(num: int) -> str:
 
 
 def weekday1(num: int) -> str:
-    semana = {1: 'Domingo', 2: 'Segunda', 3: 'Terça', 4: 'Quarta', 5: 'Quinta',
-              6: 'Sexta', 7: 'Sábado'}
+    semana = {
+        1: 'Domingo',
+        2: 'Segunda',
+        3: 'Terça',
+        4: 'Quarta',
+        5: 'Quinta',
+        6: 'Sexta',
+        7: 'Sábado',
+    }
     return semana.get(num, 'Valor inválido')
 
 

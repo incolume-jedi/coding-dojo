@@ -88,6 +88,208 @@ exclude_lines = [
   "class IElements"
 ]
 
+[tool.ruff]
+# Decrease the maximum line length to 79 characters.
+line-length = 79
+src = ["incolume/", "tests/"]
+select = [
+  "A",    #flake8-builtins
+  "AIR",    #Airflow
+  "ANN",    #flake8-annotations
+  "ARG",    #flake8-unused-arguments
+  "ASYNC",    #flake8-async
+  "B",    #flake8-bugbear
+  "BLE",    #flake8-blind-except
+  "C4",    #flake8-comprehensions
+  "C90",    #mccabe
+  "COM",    #flake8-commas
+  "CPY",    #flake8-copyright
+  "D",   # pydocstyle
+  "DJ",    #flake8-django
+  "DTZ",    #flake8-datetimez
+  "E",   # pycodestyle
+  "W",    #pycodestyle
+  "EM",    #flake8-errmsg
+  "ERA",    #eradicate
+  "EXE",    #flake8-executable
+  "F",   # pyflakes
+  "FA",    #flake8-future-annotations
+  "FBT",    #flake8-boolean-trap
+  "FIX",    #flake8-fixme
+  "FLY",    #flynt
+  "FURB",    #refurb
+  "G",    #flake8-logging-format
+  "I",    #isort
+  "ICN",    #flake8-import-conventions
+  "INP",    #flake8-no-pep420
+  "INT",    #flake8-gettext
+  "ISC",    #flake8-implicit-str-concat
+  "N",    #pep8-naming
+  "NPY",    #NumPy-specific rules
+  "PD",    #pandas-vet
+  "PERF",    #Perflint
+  "PGH",    #pygrep-hooks
+  "PIE",    #flake8-pie
+  "PL",    #Pylint
+  "PT",    #flake8-pytest-style
+  "PTH",    #flake8-use-pathlib
+  "PYI",    #flake8-pyi
+  "Q",    #flake8-quotes
+  "RET",    #flake8-return
+  "RSE",    #flake8-raise
+  "RUF",    #Ruff-specific rules
+  "S",    #flake8-bandit
+  "SIM",    #flake8-simplify
+  "SLF",    #flake8-self
+  "SLOT",    #flake8-slots
+  "T10",    #flake8-debugger
+  "T20",    #flake8-print
+  "TCH",    #flake8-type-checking
+  "TD",    #flake8-todos
+  "TID",    #flake8-tidy-imports
+  "TRY",    #tryceratops
+  "UP",  # pyupgrade
+  "YTT",    #flake8-2020
+]
+
+# Never enforce `E501` (line length violations).
+#ignore = ["E501"]
+
+# Avoid trying to fix flake8-bugbear (`B`) violations.
+unfixable = ["B"]
+
+[tool.ruff.per-file-ignores]
+# Ignore `E402` (import violations) in all `__init__.py` files, and in `path/to/file.py`.
+#"__init__.py" = ["E402"]
+#"path/to/file.py" = ["E402"]
+#"**/{tests,docs,tools}/*" = ["E402"]
+
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"    # ""single"
+
+[tool.isort]
+profile = "black"
+known_first_party = "poetry"
+skip = [".gitignore", ".dockerignore"]
+skip_glob = ["example/*"]
+extend_skip = [".md", ".json"]
+extend_skip_glob = ["my_*_module.py"]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 79
+
+[tool.black]
+line-length = 79
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+ /(
+  ^/foo.py    # exclude a file named foo.py in the root of the project
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | \.pytest_cache
+  | _build
+  | buck-out
+  | build
+  | dist
+  | docs
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+ )/
+ '''
+
+[flake8]
+#max-line-length = 79
+
+[tool.pylint.format]
+# Maximum number of characters on a single line.
+max-line-length = 79
+
+[tool.pylint.basic]
+# Allow shorter and longer variable names than the default.
+argument-rgx = "[a-z_][a-z0-9_]*$"
+attr-rgx = "[a-z_][a-z0-9_]*$"
+variable-rgx = "[a-z_][a-z0-9_]*$"
+
+# Ensure that orjson is analysed as a C extension by pylint.
+extension-pkg-whitelist = "orjson"
+
+
+[tool.pylint.messages_control]
+disable = [
+    # Disable too many and too few checks.
+    "too-many-ancestors",
+    "too-many-arguments",
+    "too-many-boolean-expressions",
+    "too-many-branches",
+    "too-many-function-args",
+    "too-many-instance-attributes",
+    "too-many-lines",
+    "too-many-locals",
+    "too-many-nested-blocks",
+    "too-many-public-methods",
+    "too-many-return-statements",
+    "too-many-statements",
+    "too-few-public-methods",
+
+    # Similar lines in files (often the case in tests).
+    "duplicate-code",
+
+    # Many functions (e.g. callbacks) will naturally have unused arguments.
+    "unused-argument",
+
+    # # Disable checking that method could be a function in classes (often used for organisation).
+    # "no-self-use",
+
+    # Disable failure for TODO items in the codebase (code will always have TODOs).
+    "fixme",
+
+    # Disable docstrings checks as we don't require excessive documentation.
+    "missing-docstring",
+
+    "no-member",
+    "unspecified-encoding",
+]
+
+[tool.mypy]
+namespace_packages = true
+explicit_package_bases = true
+#ignore_missing_imports = true
+#ignore_errors = false
+#warn_return_any = true
+#warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = "pyautogui.*"
+disable_error_code = "attr-defined"
+disallow_untyped_defs = true
+
+
+
+[pycodestyle]
+max_line_length = 79
+ignore = ['E203']
+
+[tool.taskipy.variables]
+path = "incolume/ tests/"
+CHANGELOGFILE = "CHANGELOG.md"
+URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
+
+
 [tool.taskipy.tasks]
 #bandit={help='', cmd='poetry run bandit -c pyproject.toml -r {path}', use_vars=true}
 #pre_check-all = {cmd='echo Starting Check all ..', help=''}
@@ -99,16 +301,16 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 #pre_docs-build={help='Pre docs-build', cmd="poetry run task changelog"}
 #docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 #docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
-#pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_pylint && task lint_mypy"
-#lint={help='Checking all linters configurated', cmd=''}
-#lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
-#lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}
-#lint_flake8={help='Checking with flake8', cmd='echo --flake8--; poetry run flake8 --config pyproject.toml {path}', use_vars=true}
-#lint_isort={help='Checking with isort', cmd='echo --isort--; poetry run isort --profile black --check --atomic --py all -m 3 {path}', use_vars=true}
-#lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
-#lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poetry run pydocstyle {path}', use_vars=true}
-#lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
-#lint_ruff={help='', cmd='echo --ruff--; poetry run ruff check {path}', use_vars=true}
+pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_pylint && task lint_mypy"
+lint={help='Checking all linters configurated', cmd=''}
+lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
+lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}
+lint_flake8={help='Checking with flake8', cmd='echo --flake8--; poetry run flake8 --config pyproject.toml {path}', use_vars=true}
+lint_isort={help='Checking with isort', cmd='echo --isort--; poetry run isort --profile black --check --atomic --py all -m 3 {path}', use_vars=true}
+lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
+lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poetry run pydocstyle {path}', use_vars=true}
+lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
+lint_ruff={help='', cmd='echo --ruff--; poetry run ruff check {path}', use_vars=true}
 pre_patch={help='Run linters tools', cmd="poetry run task lint"}
 patch={cmd='v=$(poetry version patch) && poetry run pytest && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='Generate a patch Sematic Version'}
 post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}

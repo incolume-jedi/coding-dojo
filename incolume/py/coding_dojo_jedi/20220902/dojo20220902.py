@@ -1,7 +1,6 @@
-import logging
 import inspect
-
-from typing import Tuple, Final
+import logging
+from typing import Final, Tuple
 
 MOEDAS: Final = [1.00, 0.5, 0.25, 0.10, 0.05, 0.01]
 CEDULAS: Final = [200, 100, 50, 20, 10, 5, 2]

@@ -1,6 +1,6 @@
-import requests
 import json
 
+import requests
 
 # print(r.json())
 

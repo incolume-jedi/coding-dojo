@@ -1,6 +1,6 @@
-from unidecode import unidecode
 import logging
 
+from unidecode import unidecode
 
 logging.basicConfig(level=logging.DEBUG)
 

@@ -1,6 +1,7 @@
-from dojo20220808 import is_par
 from sys import version_info
+
 import pytest
+from dojo20220808 import is_par
 
 
 @pytest.mark.skipif(

@@ -1,7 +1,8 @@
 # tests.py
-import unittest
 import re
 import sys
+import unittest
+
 import requests
 from dojo20220811 import calculadora
 

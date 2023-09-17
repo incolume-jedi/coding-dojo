@@ -1,10 +1,10 @@
 import pytest
 from dojo20220826 import (
+    imc,
     no_exclamation,
     no_exclamation0,
     no_exclamation1,
     tabuada,
-    imc,
 )
 
 

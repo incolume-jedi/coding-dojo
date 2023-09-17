@@ -1,5 +1,5 @@
-from dojo20220815 import index, index0, index1, adedonha
 import pytest
+from dojo20220815 import adedonha, index, index0, index1
 
 
 @pytest.mark.parametrize(

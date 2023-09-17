@@ -1,7 +1,7 @@
 from sys import version_info
 
-from dojo20220905 import stream
 import pytest
+from dojo20220905 import stream
 
 
 @pytest.mark.skipif(

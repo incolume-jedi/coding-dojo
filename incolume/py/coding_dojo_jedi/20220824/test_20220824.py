@@ -1,6 +1,7 @@
+from re import escape
+
 import pytest
 from dojo20220824 import dna_complementary, dna_complementary0, millisseconds
-from re import escape
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,5 @@
-from star_wars2 import research
 import click
-
+from star_wars2 import research
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 

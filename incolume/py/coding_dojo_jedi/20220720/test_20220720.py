@@ -1,10 +1,11 @@
 # tests.py
 # -*- encode: utf-8 -*-
 
-import pytest
-from dojo20220720 import calculadora
 import re
 from sys import version_info
+
+import pytest
+from dojo20220720 import calculadora
 
 
 @pytest.mark.skipif(

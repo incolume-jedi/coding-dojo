@@ -1,6 +1,5 @@
-from dojo20220822 import table, table_p2, calc, show
-
 import pytest
+from dojo20220822 import calc, show, table, table_p2
 
 
 @pytest.mark.parametrize(

@@ -1,5 +1,5 @@
-import pytest
 import dojo20220717
+import pytest
 
 
 def test_dojo202207171():

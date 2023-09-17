@@ -1,5 +1,5 @@
-from dojo20220907 import fizzbuzz
 import pytest
+from dojo20220907 import fizzbuzz
 
 
 @pytest.mark.parametrize(

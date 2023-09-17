@@ -1,13 +1,13 @@
-import requests
-from pprint import pprint
-import logging
 import json
-import dotenv
+import logging
 import os
 from pathlib import Path
+from pprint import pprint
 from tempfile import gettempdir
-from fuzzywuzzy import fuzz
 
+import dotenv
+import requests
+from fuzzywuzzy import fuzz
 
 dotenv.load_dotenv()
 logging.basicConfig(

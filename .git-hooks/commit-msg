@@ -1,0 +1,35 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+"""this run Python 2.7."""
+import sys
+import random
+
+
+def check():
+    print("Number of arguments: %d" % len(sys.argv))
+    print("Arguments List: %s" % str(sys.argv))
+
+
+def get_msg(idx=0, fixed=False):
+    """"""
+    msg = [
+        'Boa! Continue o bom trabalho com a força, Jedi!',
+        'Boa! Continue trabalhando campeão!',
+        'Executado com sucesso.',
+    ]
+    base = '\n\033[92m{}\033[0m\n'
+    if fixed:
+        print(base.format(msg[idx]))
+    else:
+        print(base.format(msg[random.randint(0, len(msg)-1)]))
+
+
+def run():
+    """run it."""
+    # check()
+    # get_msg()
+    get_msg(0, True)
+
+
+if __name__ == '__main__':  # pragma: no cover
+    run()

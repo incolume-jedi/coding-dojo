@@ -153,7 +153,7 @@ select = [
 ]
 
 # Never enforce `E501` (line length violations).
-#ignore = ["E501"]
+ignore = ["INP001", "CPY001"]
 
 # Avoid trying to fix flake8-bugbear (`B`) violations.
 unfixable = ["B"]
@@ -171,6 +171,9 @@ convention = "google"
 
 [tool.ruff.flake8-quotes]
 docstring-quotes = "double"    # ""single"
+inline-quotes = "single"
+multiline-quotes = "double"
+
 
 [tool.isort]
 profile = "black"

@@ -5,9 +5,10 @@ from star_wars import research
 
 
 @pytest.mark.skipif(
-    version_info < (3, 8, 0), reason="This run only Python 3.8+")
+    version_info < (3, 8, 0), reason='This run only Python 3.8+',
+)
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (
             'Obi-Wan Kenobi',
@@ -22,8 +23,8 @@ from star_wars import research
                     'https://swapi.dev/api/films/3/',
                     'https://swapi.dev/api/films/4/',
                     'https://swapi.dev/api/films/5/',
-                    'https://swapi.dev/api/films/6/'
-                    ],
+                    'https://swapi.dev/api/films/6/',
+                ],
                 'gender': 'male',
                 'hair_color': 'auburn, white',
                 'height': '182',
@@ -37,14 +38,14 @@ from star_wars import research
                     'https://swapi.dev/api/starships/59/',
                     'https://swapi.dev/api/starships/64/',
                     'https://swapi.dev/api/starships/65/',
-                    'https://swapi.dev/api/starships/74/'
-                    ],
+                    'https://swapi.dev/api/starships/74/',
+                ],
                 'url': 'https://swapi.dev/api/people/10/',
                 'vehicles': ['https://swapi.dev/api/vehicles/38/'],
-            }
+            },
         ),
         (
-            "Luke Skywalker",
+            'Luke Skywalker',
             {
                 'birth_year': '19BBY',
                 'created': '2014-12-09T13:50:51.644000Z',
@@ -54,7 +55,7 @@ from star_wars import research
                     'https://swapi.dev/api/films/1/',
                     'https://swapi.dev/api/films/2/',
                     'https://swapi.dev/api/films/3/',
-                    'https://swapi.dev/api/films/6/'
+                    'https://swapi.dev/api/films/6/',
                 ],
                 'gender': 'male',
                 'hair_color': 'blond',
@@ -66,11 +67,14 @@ from star_wars import research
                 'species': [],
                 'starships': [
                     'https://swapi.dev/api/starships/12/',
-                    'https://swapi.dev/api/starships/22/'
-                    ],
+                    'https://swapi.dev/api/starships/22/',
+                ],
                 'url': 'https://swapi.dev/api/people/1/',
-                'vehicles': ['https://swapi.dev/api/vehicles/14/', 'https://swapi.dev/api/vehicles/30/']
-            }
+                'vehicles': [
+                    'https://swapi.dev/api/vehicles/14/',
+                    'https://swapi.dev/api/vehicles/30/',
+                ],
+            },
         ),
         (
             'Tion Medon',
@@ -90,10 +94,10 @@ from star_wars import research
                 'species': ['https://swapi.dev/api/species/37/'],
                 'starships': [],
                 'url': 'https://swapi.dev/api/people/83/',
-                'vehicles': []
-            }
-        )
-    )
+                'vehicles': [],
+            },
+        ),
+    ),
 )
 def test_research(entrance, expected):
     assert research(entrance) == expected

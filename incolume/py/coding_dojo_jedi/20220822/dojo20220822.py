@@ -1,7 +1,6 @@
 def table(quantia: int, preco: float = 1.99) -> float:
     """Problema1."""
-    result = quantia * preco
-    return result
+    return quantia * preco
 
 
 # Problema 2
@@ -18,4 +17,4 @@ def table_p2():
 
 def show():
     for i, j in table_p2().items():
-        print(f"{i:4} = R$ {j:6.2f}")
+        print(f'{i:4} = R$ {j:6.2f}')

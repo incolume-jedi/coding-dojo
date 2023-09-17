@@ -3,7 +3,7 @@ from dojo20220831 import conceito
 
 
 @pytest.mark.parametrize(
-    "entrance expected".split(),
+    'entrance expected'.split(),
     (
         ((10, 10), 'Média 10.0, "A", APROVADO'),
         ((1, 1), 'Média 1.0, "E", REPROVADO'),

@@ -153,7 +153,7 @@ select = [
 ]
 
 # Never enforce `E501` (line length violations).
-#ignore = ["E501"]
+ignore = ["INP001", "CPY001"]
 
 # Avoid trying to fix flake8-bugbear (`B`) violations.
 unfixable = ["B"]
@@ -163,6 +163,7 @@ unfixable = ["B"]
 #"__init__.py" = ["E402"]
 #"path/to/file.py" = ["E402"]
 #"**/{tests,docs,tools}/*" = ["E402"]
+"**/test_*.py" = ["S101"]
 
 
 [tool.ruff.pydocstyle]
@@ -170,6 +171,9 @@ convention = "google"
 
 [tool.ruff.flake8-quotes]
 docstring-quotes = "double"    # ""single"
+inline-quotes = "single"
+multiline-quotes = "double"
+
 
 [tool.isort]
 profile = "black"
@@ -310,7 +314,7 @@ lint_isort={help='Checking with isort', cmd='echo --isort--; poetry run isort --
 lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
 lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poetry run pydocstyle {path}', use_vars=true}
 lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
-lint_ruff={help='', cmd='echo --ruff--; poetry run ruff check {path}', use_vars=true}
+lint_ruff={help='', cmd='echo --ruff--; poetry run ruff check --preview {path}', use_vars=true}
 pre_patch={help='Run linters tools', cmd="poetry run task lint"}
 patch={cmd='v=$(poetry version patch) && poetry run pytest && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='Generate a patch Sematic Version'}
 post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}

@@ -1,13 +1,13 @@
-
 def get_char(num: int):
     """Retorna um Unicode do parametro em num;"""
-
     # Tratamento exceção
     try:
         num = int(num)
-        if not (0 <= num <= 0x10ffff):
-            raise ValueError('0 <= num <= 0x10ffff.')
+        if not (0 <= num <= 0x10FFFF):
+            msg = '0 <= num <= 0x10ffff.'
+            raise ValueError(msg)
     except ValueError:
-        raise ValueError('num deve ser um número entre 0 e 0x10ffff.')
+        msg = 'num deve ser um número entre 0 e 0x10ffff.'
+        raise ValueError(msg)
 
     return chr(num)

@@ -1,9 +1,8 @@
-import logging
 import inspect
+import logging
+from typing import Final, Tuple
 
-from typing import Tuple, Final
-
-MOEDAS: Final = [1.00, .5, .25, .10, .05, .01]
+MOEDAS: Final = [1.00, 0.5, 0.25, 0.10, 0.05, 0.01]
 CEDULAS: Final = [200, 100, 50, 20, 10, 5, 2]
 
 logging.basicConfig(level=logging.DEBUG)
@@ -27,8 +26,10 @@ def trocar_dinheiro(valor: float) -> Tuple[list, list]:
     valor, cedulas = calcular(valor, CEDULAS)
     valor, moedas = calcular(valor, MOEDAS)
     # if valor:
-    #     raise ValueError(f'{valor}')
-    return cedulas, moedas,
+    return (
+        cedulas,
+        moedas,
+    )
 
 
 if __name__ == '__main__':    # pragma: no cover

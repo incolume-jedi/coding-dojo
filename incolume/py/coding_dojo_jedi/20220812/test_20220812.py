@@ -3,7 +3,7 @@ from dojo20220812 import tower
 
 
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (1, ['*']),
         (2, [' * ', '***']),

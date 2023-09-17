@@ -2,14 +2,12 @@ import pytest
 from dojo20220826 import (
     imc,
     no_exclamation,
-    no_exclamation0,
-    no_exclamation1,
     tabuada,
 )
 
 
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         ('Hello World!', 'Hello World'),
         ('Hello World!!!', 'Hello World'),

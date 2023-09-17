@@ -5,10 +5,10 @@ from star_wars import research
 
 
 @pytest.mark.skipif(
-    version_info < (3, 8, 0), reason='This run only Python 3.8+'
+    version_info < (3, 8, 0), reason='This run only Python 3.8+',
 )
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (
             'Obi-Wan Kenobi',

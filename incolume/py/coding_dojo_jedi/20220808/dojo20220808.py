@@ -10,12 +10,14 @@ def is_par0(num: int) -> str:
 
 def is_par(num: int) -> str:
     if isinstance(num, NoneType):
-        raise ValueError('Valor inválido.')
+        msg = 'Valor inválido.'
+        raise ValueError(msg)
     if not isinstance(num, int):
-        raise TypeError('Somente números inteiros.')
+        msg = 'Somente números inteiros.'
+        raise TypeError(msg)
 
     return ['Par', 'Ímpar'][num % 2]
 
 
 if __name__ == '__main__':
-    is_par((3 + 0j))
+    is_par(3 + 0j)

@@ -3,7 +3,7 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         ('Python', 'nohtyP'),
         ('Brasil', 'lisarB'),

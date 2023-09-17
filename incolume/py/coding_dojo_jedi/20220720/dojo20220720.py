@@ -5,13 +5,15 @@ def calculadora(op: str, x: Union[int, float], y: Union[int, float]) -> float:
     result = 0
     operadores = '+ - * ** / // %'.split()
     if op not in operadores:
-        raise ValueError(f'Operador inválido. Use: {" ".join(operadores)}')
+        msg = f'Operador inválido. Use: {" ".join(operadores)}'
+        raise ValueError(msg)
 
     try:
         x = float(x)
         y = float(y)
     except:
-        raise ValueError('x e y devem ser valores numéricos reais.')
+        msg = 'x e y devem ser valores numéricos reais.'
+        raise ValueError(msg)
 
     try:
         if op == '+':
@@ -29,6 +31,7 @@ def calculadora(op: str, x: Union[int, float], y: Union[int, float]) -> float:
         if op == '**':
             result = x**y
     except ZeroDivisionError:
-        raise ValueError('y deve ser diferente 0.')
+        msg = 'y deve ser diferente 0.'
+        raise ValueError(msg)
 
     return result

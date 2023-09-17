@@ -3,7 +3,7 @@ from dojo20220921 import to_roman
 
 
 @pytest.mark.parametrize(
-    ['entrada', 'experado'],
+    ('entrada', 'experado'),
     (
         (1, 'I'),
         (2, 'II'),

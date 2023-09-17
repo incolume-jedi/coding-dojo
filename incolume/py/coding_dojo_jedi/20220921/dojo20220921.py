@@ -14,7 +14,6 @@ def to_roman0(num: int) -> str:
         4: 'IV',
         1: 'I',
     }
-    # return nums[num]
     result = ''
     for i in nums:
         while num >= i:
@@ -39,7 +38,6 @@ def to_roman(num: int) -> str:
         4: 'IV',
         1: 'I',
     }
-    # return nums[num]
     result = ''
     for i in nums:
         while num >= i:

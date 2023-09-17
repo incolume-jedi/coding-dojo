@@ -13,7 +13,7 @@ def classify1(quantia: int, lista: list) -> tuple:
     if quantia == 1:
         return max(lista), min(lista)
     return tuple(heapq.nlargest(quantia, lista)), tuple(
-        heapq.nsmallest(quantia, lista)
+        heapq.nsmallest(quantia, lista),
     )
 
 

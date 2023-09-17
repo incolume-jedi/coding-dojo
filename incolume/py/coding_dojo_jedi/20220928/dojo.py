@@ -1,5 +1,4 @@
 # !/usr/bin/env python
-# -*- coding: utf-8 -*-
 from typing import Container, List, Set, Tuple
 
 __author__ = '@britodfbr'  # pragma: no cover

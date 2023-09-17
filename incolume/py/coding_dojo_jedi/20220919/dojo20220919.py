@@ -8,6 +8,7 @@ def weekday(number_day: int) -> str:
         6: 'Sexta',
         7: 'Sábado',
     }
-    if number_day not in dias_semana.keys():
-        raise ValueError('Valor Inválido')
+    if number_day not in dias_semana:
+        msg = 'Valor Inválido'
+        raise ValueError(msg)
     return dias_semana.get(number_day)

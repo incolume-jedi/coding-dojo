@@ -1,7 +1,6 @@
 def table(quantia: int, preco: float = 1.99) -> float:
     """Problema1."""
-    result = quantia * preco
-    return result
+    return quantia * preco
 
 
 # Problema 2

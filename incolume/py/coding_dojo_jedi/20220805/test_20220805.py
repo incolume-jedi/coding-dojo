@@ -3,7 +3,7 @@ from dojo20220805 import bmi
 
 
 @pytest.mark.parametrize(
-    ['peso', 'altura', 'esperado'],
+    ('peso', 'altura', 'esperado'),
     [
         (50, 1.80, 'Underweight'),
         (80, 1.80, 'Normal'),

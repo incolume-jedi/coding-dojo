@@ -9,10 +9,10 @@ from dojo20220720 import calculadora
 
 
 @pytest.mark.skipif(
-    version_info <= (3, 10, 0), reason='This run only Python 3.10+'
+    version_info <= (3, 10, 0), reason='This run only Python 3.10+',
 )
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (('+', 3, '4'), 7),
         (('+', 3, 4), 7),
@@ -34,10 +34,10 @@ def test_calculadora(entrance, expected):
 
 
 @pytest.mark.skipif(
-    version_info <= (3, 10, 0), reason='This run only Python 3.8+'
+    version_info <= (3, 10, 0), reason='This run only Python 3.8+',
 )
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (
             ('^', 3, 5),

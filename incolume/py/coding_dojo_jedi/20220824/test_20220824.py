@@ -1,11 +1,11 @@
 from re import escape
 
 import pytest
-from dojo20220824 import dna_complementary, dna_complementary0, millisseconds
+from dojo20220824 import dna_complementary, millisseconds
 
 
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         ('ATTGC', 'TAACG'),
         ('GTAT', 'CATA'),
@@ -92,7 +92,7 @@ def test_millissenconds(entrance, expected):
             {
                 'expected_exception': TypeError,
                 'match': escape(
-                    'millisseconds() takes 0 positional arguments but 3 were given'
+                    'millisseconds() takes 0 positional arguments but 3 were given',
                 ),
             },
         ),

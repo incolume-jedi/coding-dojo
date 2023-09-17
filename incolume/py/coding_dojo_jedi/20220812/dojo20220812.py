@@ -6,7 +6,6 @@ def tower0(n_floors, char=None):
     result = []
     line = ''
     for i in range(1, n_floors + 1):
-        # print(i)
         if i < 3:
             line += char * i
         else:

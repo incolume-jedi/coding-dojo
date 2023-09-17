@@ -3,7 +3,7 @@ from dojo20220810 import is_vogal
 
 
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         ('a', True),
         ('c', False),

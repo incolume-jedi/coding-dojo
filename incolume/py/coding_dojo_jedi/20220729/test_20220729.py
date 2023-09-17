@@ -1,4 +1,3 @@
-import pytest
 from dojo20220729 import dna2rna
 
 

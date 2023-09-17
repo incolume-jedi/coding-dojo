@@ -10,10 +10,9 @@ def weekday(dia: str, qtd: int) -> str:
     ]
 
     for i in range(len(dias)):
-        # print(i, dias[i])
         if dia == dias[i]:
             return dias[(dias.index(dia) + qtd % 7) % 7]
-        # return dias.index(dia)
+    return None
 
 
 if __name__ == '__main__':

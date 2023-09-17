@@ -1,4 +1,3 @@
-from unittest import result
 
 
 def high_and_low0(seq: str) -> str:

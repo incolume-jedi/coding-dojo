@@ -5,10 +5,10 @@ from star_wars2 import research
 
 
 @pytest.mark.skipif(
-    version_info < (3, 8, 0), reason='This run only Python 3.8+'
+    version_info < (3, 8, 0), reason='This run only Python 3.8+',
 )
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (
             'Obi-Wan Kenobi',
@@ -43,7 +43,7 @@ from star_wars2 import research
                     ],
                     'url': 'https://swapi.dev/api/people/10/',
                     'vehicles': ['https://swapi.dev/api/vehicles/38/'],
-                }
+                },
             ],
         ),
         (
@@ -77,7 +77,7 @@ from star_wars2 import research
                         'https://swapi.dev/api/vehicles/14/',
                         'https://swapi.dev/api/vehicles/30/',
                     ],
-                }
+                },
             ],
         ),
         (
@@ -100,7 +100,7 @@ from star_wars2 import research
                     'starships': [],
                     'url': 'https://swapi.dev/api/people/83/',
                     'vehicles': [],
-                }
+                },
             ],
         ),
         (
@@ -134,7 +134,7 @@ from star_wars2 import research
                         'https://swapi.dev/api/vehicles/14/',
                         'https://swapi.dev/api/vehicles/30/',
                     ],
-                }
+                },
             ],
         ),
         ('xpto', []),

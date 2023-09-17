@@ -16,11 +16,13 @@ def validate(fizz, buzz, fizzbuzz):
         return [razao(fizz), razao(fizzbuzz)]
     if buzz and fizzbuzz:
         return [razao(buzz), razao(fizzbuzz)]
+    return None
 
 
 def fizz_buzz_backwards(seq: List):
     if len(seq) > 100:
-        raise OverflowError('Comprimento máximo de 100 elementos.')
+        msg = 'Comprimento máximo de 100 elementos.'
+        raise OverflowError(msg)
     fizz, buzz, fizzbuzz = [], [], []
     for i, x in enumerate(seq, 1):
         if str(x).casefold() == 'fizz':

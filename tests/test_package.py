@@ -2,7 +2,6 @@
 
 
 import pytest
-
 from incolume.py.coding_dojo_jedi import (
     __version__,
     configfile,

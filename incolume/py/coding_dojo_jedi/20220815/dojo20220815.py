@@ -14,7 +14,7 @@ def index1(pos: int) -> str:
 
 
 def index(palavra: str, pos: int) -> str:
-    """problema 2."""
+    """Problema 2."""
     return palavra[pos % len(palavra)]
 
 

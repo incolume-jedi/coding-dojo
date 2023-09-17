@@ -1,8 +1,5 @@
-import json
 
 import requests
-
-# print(r.json())
 
 
 def saudacao():

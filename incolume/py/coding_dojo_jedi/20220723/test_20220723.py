@@ -1,4 +1,3 @@
-import pytest
 from dojo20220723 import get_code
 
 

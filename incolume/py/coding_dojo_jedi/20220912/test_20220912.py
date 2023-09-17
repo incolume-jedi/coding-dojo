@@ -3,7 +3,7 @@ from dojo20220912 import weekday
 
 
 @pytest.mark.parametrize(
-    ['entrance', 'expected'],
+    ('entrance', 'expected'),
     (
         (('sábado', 1), 'domingo'),
         (('quinta-feira', 3), 'domingo'),

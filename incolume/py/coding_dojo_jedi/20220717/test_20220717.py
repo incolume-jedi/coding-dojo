@@ -3,15 +3,15 @@ import pytest
 
 
 def test_dojo202207171():
-    assert dojo20220717.palindrome('Python') == False
+    assert dojo20220717.palindrome('Python') is False
 
 
 def test_dojo202207172():
-    assert dojo20220717.palindrome('anna') == True
+    assert dojo20220717.palindrome('anna') is True
 
 
 @pytest.mark.parametrize(
-    ['entrada', 'esperado'],
+    ('entrada', 'esperado'),
     (
         ('walter', False),
         (12321, True),

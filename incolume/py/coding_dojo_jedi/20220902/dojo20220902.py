@@ -26,7 +26,6 @@ def trocar_dinheiro(valor: float) -> Tuple[list, list]:
     valor, cedulas = calcular(valor, CEDULAS)
     valor, moedas = calcular(valor, MOEDAS)
     # if valor:
-    #     raise ValueError(f'{valor}')
     return (
         cedulas,
         moedas,

@@ -1,15 +1,17 @@
 ---
-name: New Dojo template
-about: Problem Title
-title: ''
+name: New dojo template
+about: "Problem Title"
+title: "[new-dojo]"
 labels: enhancement
-assignees: britodfbr
+assignees: ''
 
 ---
 
 # Coding Dojo
 
 **Guilda JEDI Incolume - Grupo Python Incolume**
+
+- _[Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)_
 
 ---
 
@@ -25,4 +27,4 @@ Exemplos de solução e resposta do problema. Geralmente utilizado para validar 
 
 ## Referências
 
-Referências para o dojo, o problema ou para elucidações extras.
+Referências para o dojo, o problema ou para elicidações extras.

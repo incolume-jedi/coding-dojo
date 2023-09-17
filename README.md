@@ -5,7 +5,7 @@ Aqui é mantido um repositório com as soluções que trabalhamos no [dojo de co
 
 Os códigos estão organizados em diretórios, sendo que cada diretório representa um dia do dojo, formado por `incolume/py/YYYYMMDD`, de forma que o primeiro dojo estará no topo, e o ultimo na base.
 
-Os códigos são em python 3.7+ e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido para controle de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo pyproject.toml`
+Os códigos são em python 3.8+ e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido para controle de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo pyproject.toml`
 
 Finalmente, para rodar os testes nos códigos, mude para o diretório do Dojo, por exemplo 20220701, e digite `pytest .` ou no diretório principal digite `pytest incolume/py/20220701`.
 

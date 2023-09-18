@@ -326,5 +326,6 @@ pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run
 sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
+gcl = {help='Update changelog file', cmd='poetry run task changelog'}
 #xpto = { cmd = "echo {path} {CHANGELOGFILE} {URLCOMPARE}", use_vars = true }
 setup = { help = 'Configure environment develop', cmd='git config core.hooksPath .git-hooks/'}

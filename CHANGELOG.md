@@ -10,10 +10,11 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-09-16:
+## [Unreleased]	 &#8212; 	2023-09-17:
 ### Added
   - Ferramentas Quality Assurance (QA);
-  - Ferramentas Linters;
+  - Ferramentas Linters consolidados para projetos JEDI;
+  - Adicionado prototipo do lint ruff;
 ### Removed
   - Removido suporte a Python 3.7;
 ### Changed

@@ -108,11 +108,16 @@ class MyTestCase(unittest.TestCase):
             calculadora('//', 3, '0')
 
     def test_operador(self):
-        with pytest.raises(ValueError, match=re.escape('Operador inválido. Use: +, -, *, **, //, /, %')):
+        with pytest.raises(
+            ValueError,
+            match=re.escape('Operador inválido. Use: +, -, *, **, //, /, %'),
+        ):
             calculadora('^', 3, 5)
 
     def test_numeric_values(self):
-        with pytest.raises(ValueError, match='x e y devem ser valores numéricos reais.'):
+        with pytest.raises(
+            ValueError, match='x e y devem ser valores numéricos reais.'
+        ):
             calculadora('+', 'a', 'b')
             calculadora('+', '0', 'b')
             calculadora('+', 'a', '0')

@@ -16,7 +16,11 @@ CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option(
-    '-n', '--name', type=str, default=None, help='Name for search on api',
+    '-n',
+    '--name',
+    type=str,
+    default=None,
+    help='Name for search on api',
 )
 def cli(name):
     msg = ''

@@ -1,9 +1,5 @@
 import pytest
-from dojo20220826 import (
-    imc,
-    no_exclamation,
-    tabuada,
-)
+from dojo20220826 import imc, no_exclamation, tabuada
 
 
 @pytest.mark.parametrize(

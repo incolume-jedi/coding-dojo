@@ -5,7 +5,8 @@ from dojo20220808 import is_par
 
 
 @pytest.mark.skipif(
-    version_info < (3, 10, 0), reason='This run only Python 3.10+',
+    version_info < (3, 10, 0),
+    reason='This run only Python 3.10+',
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
@@ -26,7 +27,8 @@ def test_is_par(entrance, expected):
 
 
 @pytest.mark.skipif(
-    version_info < (3, 10, 0), reason='This run only Python 3.10+',
+    version_info < (3, 10, 0),
+    reason='This run only Python 3.10+',
 )
 @pytest.mark.parametrize(
     ('entrance', 'exception', 'msg'),

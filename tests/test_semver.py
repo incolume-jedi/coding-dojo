@@ -3,6 +3,7 @@
 import re
 
 import pytest
+
 from incolume.py.coding_dojo_jedi import __version__
 
 

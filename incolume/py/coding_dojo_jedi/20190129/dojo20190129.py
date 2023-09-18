@@ -42,8 +42,9 @@ def moedas2(valor: float) -> Tuple[List[float], List[float]]:
     return notas, moedas
 
 
-def calcula2(valor: float, cedulas: list) -> Tuple[
-    List[int], Union[float, Any]]:
+def calcula2(
+    valor: float, cedulas: list
+) -> Tuple[List[int], Union[float, Any]]:
     """Fatora o valor de acordo com a base monetária fornecida."""
     quantidades = [0] * len(cedulas)
     for (i, cedula) in enumerate(cedulas):

@@ -1,0 +1,31 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+"""this run Python 2.7."""
+import sys
+import subprocess
+import re
+import logging
+import platform
+
+BRANCH = subprocess.check_output(
+    ["/usr/bin/git", "rev-parse", "--abbrev-ref", "HEAD"]).strip()
+REGEX = r"^((enhancement|feature|feat|bug|bugfix|fix|refactor)/(epoch|issue)#([0-9]+)|dev)$"
+
+
+def run():
+    logging.debug(platform.python_version_tuple())
+    if not re.match(REGEX, BRANCH):
+        print
+        print "\033[91mYour commit was rejected due to branching name incompatible with rules.\033[0m"
+        print "\033[91mPlease rename your branch with '<(enhancement|feature|feat|bug|bugfix|fix)>/epoch#<timestamp>' syntax\033[0m"
+        print
+        sys.exit(1)
+    else:
+        print
+        print "\033[92mbranching name rules. [OK]\033[0m"
+        print
+        sys.exit(0)
+
+
+if __name__ == '__main__':  # pragma: no cover
+    run()

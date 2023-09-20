@@ -1,3 +1,5 @@
+"""Dojo."""
+
 import click
 from star_wars1 import research
 
@@ -23,6 +25,7 @@ CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
     help='Name for search on api',
 )
 def cli(name):
+    """Command Line Interface."""
     msg = ''
     if not name:
         with click.Context(cli) as ctx:

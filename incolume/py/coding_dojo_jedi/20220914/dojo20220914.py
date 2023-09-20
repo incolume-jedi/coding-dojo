@@ -1,3 +1,5 @@
+"""Dojo."""
+
 DIAS = [
     'domingo',
     'segunda-feira',
@@ -12,6 +14,7 @@ SEMANA = dict(enumerate(DIAS))
 
 
 def weekday0(dia: str, qtd: int) -> str:
+    """Exibe dias da semana."""
     for i in range(len(DIAS)):
         if dia == DIAS[i]:
             return DIAS[(DIAS.index(dia) + qtd) % 7]
@@ -19,6 +22,7 @@ def weekday0(dia: str, qtd: int) -> str:
 
 
 def weekday(dia: str, qtd: int) -> str:
+    """Exibe dias da semana."""
     for i, dia_semana in enumerate(DIAS):
         print(i, dia_semana)
         if dia == dia_semana:

@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def weekday(number_day: int) -> str:
+    """Retorna o dia da semana a partir do número."""
     dias_semana = {
         1: 'Domingo',
         2: 'Segunda',

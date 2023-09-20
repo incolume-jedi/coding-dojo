@@ -1,3 +1,4 @@
+"""Dojo."""
 import pytest
 from dojo import max_sequence
 
@@ -16,4 +17,5 @@ from dojo import max_sequence
     ),
 )
 def test_max_sequence(entrance, expected):
+    """Max sequence."""
     assert max_sequence(entrance) == expected

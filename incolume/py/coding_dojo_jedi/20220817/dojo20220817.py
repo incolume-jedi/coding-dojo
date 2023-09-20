@@ -1,3 +1,6 @@
+"""Dojo 2022-08-17."""
+
+
 def high_and_low0(seq: str) -> str:
     """Problema 1."""
     max, min = -1e1000, +1e1000

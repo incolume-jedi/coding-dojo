@@ -1,13 +1,18 @@
+"""Dojo."""
+
+
 from typing import List
 
 
 def razao(seq: List):
+    """Calcula a razão."""
     if len(seq) == 1:
         return seq[-1]
     return seq[-1] - seq[-2]
 
 
 def validate(fizz, buzz, fizzbuzz):
+    """Valida resultado fizzbuzz."""
     if fizz and buzz:
         return [razao(fizz), razao(buzz)]
     if not fizz and not buzz:
@@ -20,6 +25,7 @@ def validate(fizz, buzz, fizzbuzz):
 
 
 def fizz_buzz_backwards(seq: List):
+    """Aplica validação fizzbuzz a lista."""
     if len(seq) > 100:
         msg = 'Comprimento máximo de 100 elementos.'
         raise OverflowError(msg)

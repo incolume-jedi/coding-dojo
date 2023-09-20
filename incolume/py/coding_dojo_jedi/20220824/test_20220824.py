@@ -84,7 +84,8 @@ def test_millissenconds(entrance, expected):
             (0, 0, 0),
             {
                 'expected_exception': TypeError,
-                'match': r'millisseconds\(\) takes 0 positional arguments but 3 were given',
+                'match': r'millisseconds\(\) takes 0 positional'
+                r' arguments but 3 were given',
             },
         ),
         (
@@ -92,7 +93,8 @@ def test_millissenconds(entrance, expected):
             {
                 'expected_exception': TypeError,
                 'match': escape(
-                    'millisseconds() takes 0 positional arguments but 3 were given',
+                    'millisseconds() takes 0 positional '
+                    'arguments but 3 were given',
                 ),
             },
         ),

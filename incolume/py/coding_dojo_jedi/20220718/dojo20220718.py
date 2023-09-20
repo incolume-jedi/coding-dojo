@@ -1,5 +1,8 @@
+"""Dojo."""
+
+
 def get_char(num: int):
-    """Retorna um Unicode do parametro em num;"""
+    """Retorna um Unicode do parametro em num."""
     # Tratamento exceção
     try:
         num = int(num)

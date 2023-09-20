@@ -1,3 +1,5 @@
+"""Dojo."""
+
 import inspect
 import logging
 from typing import Final, Tuple
@@ -9,6 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 def calcular(valor, base_monetaria):
+    """Calculadora de notas."""
     logging.debug(f'{inspect.stack()[0][3]}({valor}, {base_monetaria})')
     result = [0] * len(base_monetaria)
     for i, base in enumerate(base_monetaria):
@@ -20,9 +23,7 @@ def calcular(valor, base_monetaria):
 
 
 def trocar_dinheiro(valor: float) -> Tuple[list, list]:
-    """Calcula o menor número de notas e moedas possíveis
-    no qual o valor pode ser decomposto.
-    """
+    """Calcula o menor número de notas e moedas possíveis."""
     valor, cedulas = calcular(valor, CEDULAS)
     valor, moedas = calcular(valor, MOEDAS)
     # if valor:

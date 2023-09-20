@@ -10,13 +10,18 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-09-17:
+## [Unreleased]	 &#8212; 	2023-09-19:
+### Added
+  - -;
+
+## [1.33.0]	 &#8212; 	2023-09-19:
 ### Added
   - Ferramentas Quality Assurance (QA);
   - Ferramentas Linters consolidados para projetos JEDI;
   - Adicionado prototipo do lint ruff;
 ### Removed
   - Removido suporte a Python 3.7;
+  - Removido das dependências lint o pacote black;
 ### Changed
   - Melhoria e ampliação na validação de testes;
   - Acrescentado CHANGELOG.md ao projeto;
@@ -180,4 +185,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.30.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.29.0...1.30.0
 [1.31.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.30.0...1.31.0
 [1.32.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.31.0...1.32.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.32.0...Unreleased
+[1.33.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.32.0...1.33.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.33.0...Unreleased

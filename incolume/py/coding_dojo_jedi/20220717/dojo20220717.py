@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def palindrome(word):
+    """Return if is palindrome."""
     ispalindrome = False
     word = str(word)
     rword = ''.join(reversed(word))

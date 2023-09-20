@@ -1,3 +1,6 @@
+"""Dojo."""
+
+
 def table(quantia: int, preco: float = 1.99) -> float:
     """Problema1."""
     return quantia * preco
@@ -5,6 +8,7 @@ def table(quantia: int, preco: float = 1.99) -> float:
 
 # Problema 2
 def calc(quantia: int, preco: float = 2_18) -> float:
+    """Calcula valor."""
     return quantia * preco / 100
 
 
@@ -16,5 +20,6 @@ def table_p2():
 
 
 def show():
+    """Exibe a tabela."""
     for i, j in table_p2().items():
         print(f'{i:4} = R$ {j:6.2f}')

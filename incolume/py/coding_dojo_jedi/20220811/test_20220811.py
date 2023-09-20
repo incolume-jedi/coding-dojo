@@ -116,7 +116,8 @@ class MyTestCase(unittest.TestCase):
 
     def test_numeric_values(self):
         with pytest.raises(
-            ValueError, match='x e y devem ser valores numéricos reais.'
+            ValueError,
+            match='x e y devem ser valores numéricos reais.',
         ):
             calculadora('+', 'a', 'b')
             calculadora('+', '0', 'b')

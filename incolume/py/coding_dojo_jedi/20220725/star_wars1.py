@@ -1,8 +1,10 @@
+"""Dojo."""
 import json
 import logging
 import os
 from pathlib import Path
 from tempfile import gettempdir
+from typing import Dict, List
 
 import dotenv
 import requests
@@ -13,7 +15,8 @@ logging.basicConfig(
 )
 
 
-def research(name: str = '', url: str = '', pagina=0) -> list[dict]:
+def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
+    """Pesquisa na API."""
     resposta = []
     personagens = {}
     name = name or 'Luke Skywalker'

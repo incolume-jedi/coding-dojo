@@ -1,3 +1,5 @@
+"""Dojo."""
+
 import logging
 
 from unidecode import unidecode
@@ -6,6 +8,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 def stream(st: str) -> float:
+    """Valores de streams."""
     streams = {
         'deezer': {
             'family': 34.9,

@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def fizzbuzz0(num: int) -> str:
+    """Calcula fizzbuzz."""
     if num % 3 == 0 and num % 5 == 0:
         return 'FizzBuzz'
     elif num % 3 == 0:
@@ -9,6 +13,7 @@ def fizzbuzz0(num: int) -> str:
 
 
 def fizzbuzz(num: int) -> str:
+    """Calcula fizzbuzz."""
     result = str(num)
     if num % 3 == 0 and num % 5 == 0:
         result = 'FizzBuzz'
@@ -21,6 +26,7 @@ def fizzbuzz(num: int) -> str:
 
 def fizzbuzz2(num: int) -> str:
     """FAIL.
+
     Fizz e Buzz ficam na mesma posição.
     """
     result = [str(num), 'Fizz', 'Buzz', 'FizzBuzz']

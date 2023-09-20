@@ -1,3 +1,5 @@
+"""Dojo."""
+
 import click
 from star_wars2 import research
 
@@ -23,6 +25,7 @@ CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
     help='Name for search on api',
 )
 def cli(name):
+    """Command Line Interface."""
     msg = ''
     if not name:
         with click.Context(cli) as ctx:
@@ -39,10 +42,11 @@ def cli(name):
                     f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
                 )
                 click.echo(msg)
-        except:
+        except ValueError:
             encontrados = ', '.join([f'"{f}"' for f in personagens])
             click.secho(
-                f'Nenhum personagem "{name}" encontrado, mas encontrei: {encontrados}',
+                f'Nenhum personagem "{name}" '
+                f'encontrado, mas encontrei: {encontrados}',
                 fg='yellow',
             )
     else:

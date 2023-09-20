@@ -1,3 +1,5 @@
+"""Dojo."""
+
 import json
 import logging
 import os
@@ -14,6 +16,7 @@ logging.basicConfig(
 
 
 def research(name: str = '', url: str = '', pagina=0) -> None:
+    """Research API."""
     resposta = []
     personagens = {}
     name = name or 'Luke Skywalker'

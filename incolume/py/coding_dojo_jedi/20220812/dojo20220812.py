@@ -1,7 +1,11 @@
+"""Dojo."""
+
+
 from pprint import pprint
 
 
 def tower0(n_floors, char=None):
+    """Construção de piramide ascii."""
     char = char or '*'
     result = []
     line = ''
@@ -17,6 +21,7 @@ def tower0(n_floors, char=None):
 
 
 def tower1(n_floors, char=None):
+    """Construção de piramide ascii."""
     char = char or '*'
     result = []
     for i in range(1, n_floors + 1):
@@ -26,6 +31,7 @@ def tower1(n_floors, char=None):
 
 
 def tower(n_floors, char=None):
+    """Construção de piramide ascii."""
     char = char or '*'
     return [
         (char * (i * 2 - 1)).center(n_floors * 2 - 1)

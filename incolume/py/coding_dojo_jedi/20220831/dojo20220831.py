@@ -1,8 +1,11 @@
+"""Dojo 2022-08-31."""
+
 # def conceito(*args, **kwargs):
 #         if args else (kwargs.get('nota1') + kwargs.get('nota2'))/2
 
 
 def conceito0(nota1, nota2):
+    """Calcula a menção."""
     media = (nota1 + nota2) / 2
 
     if media >= 9.0 and media <= 10:
@@ -33,6 +36,7 @@ def conceito1(nota1, nota2):
 
 
 def conceito(nota1, nota2):
+    """Calcula a menção."""
     media = (nota1 + nota2) / 2
     mencao = {
         'A': 'APROVADO',

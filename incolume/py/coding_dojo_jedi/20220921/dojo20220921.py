@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def to_roman0(num: int) -> str:
+    """Convert arabics to romans."""
     nums = {
         1000: 'M',
         900: 'CM',
@@ -23,6 +27,7 @@ def to_roman0(num: int) -> str:
 
 
 def to_roman(num: int) -> str:
+    """Convert arabics to romans."""
     nums = {
         1000: 'M',
         900: 'CM',

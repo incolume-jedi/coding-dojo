@@ -1,3 +1,5 @@
+
+
 def weekday0(num: int) -> str:
     if num == 1:
         resposta = 'Domingo'
@@ -31,24 +33,28 @@ def weekday1(num: int) -> str:
     return semana.get(num, 'Valor inválido')
 
 
-def weekday(num: int) -> str:
-    match num:
-        case 1:
-            return 'Domingo'
-        case 2:
-            return 'Segunda'
-        case 3:
-            return 'Terça'
-        case 4:
-            return 'Quarta'
-        case 5:
-            return 'Quinta'
-        case 6:
-            return 'Sexta'
-        case 7:
-            return 'Sábado'
-        case _:
-            return 'Valor inválido'
+try:
+    def weekday(num: int) -> str:
+        match num:
+            case 1:
+                return 'Domingo'
+            case 2:
+                return 'Segunda'
+            case 3:
+                return 'Terça'
+            case 4:
+                return 'Quarta'
+            case 5:
+                return 'Quinta'
+            case 6:
+                return 'Sexta'
+            case 7:
+                return 'Sábado'
+            case _:
+                return 'Valor inválido'
+except SyntaxError:
+    msg = 'This run only Python 3.10+'
+    raise OSError(msg)
 
 
 if __name__ == '__main__':    # pragma: no cover

@@ -1,3 +1,6 @@
+"""Dojo."""
+
+
 def index0(pos: int) -> str:
     """Problema 1."""
     s = 'Python'
@@ -19,6 +22,7 @@ def index(palavra: str, pos: int) -> str:
 
 
 def adedonha(num: int) -> str:
+    """Contagem de letras com regras de adedonha."""
     alfabeto = 'abcdefghijklmnopqrstuvxwyz'
     return alfabeto[num % len(alfabeto) - 1]
 

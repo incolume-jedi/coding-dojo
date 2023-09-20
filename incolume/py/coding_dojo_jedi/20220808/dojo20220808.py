@@ -1,7 +1,8 @@
-from types import NoneType
+"""Dojo."""
 
 
 def is_par0(num: int) -> str:
+    """Verifica se é Par."""
     if num % 2 == 0:
         return 'Par'
     else:
@@ -9,7 +10,8 @@ def is_par0(num: int) -> str:
 
 
 def is_par(num: int) -> str:
-    if isinstance(num, NoneType):
+    """Verifica se é Par."""
+    if not num:
         msg = 'Valor inválido.'
         raise ValueError(msg)
     if not isinstance(num, int):

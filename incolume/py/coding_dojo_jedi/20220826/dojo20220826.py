@@ -1,3 +1,6 @@
+"""Dojo."""
+
+
 def no_exclamation0(frase: str) -> str:
     """Problema 1."""
     result = ''

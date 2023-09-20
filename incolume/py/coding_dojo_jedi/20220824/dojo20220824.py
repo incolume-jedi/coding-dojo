@@ -1,9 +1,11 @@
-"""Validação de custo computacional:
+"""Validação de custo computacional.
 
-from dis import dis
+Exemplo:
 
-dis(dna_complementary0)
-dis(dna_complementary)
+    from dis import dis
+
+    dis(dna_complementary0)
+    dis(dna_complementary)
 """
 
 

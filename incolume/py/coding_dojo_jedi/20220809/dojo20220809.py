@@ -1,3 +1,6 @@
+"""Dojo."""
+
+
 def calculadora(op, x, y):
     """Realiza uma operação matemática.
 

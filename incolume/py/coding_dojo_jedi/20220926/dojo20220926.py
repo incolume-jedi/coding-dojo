@@ -1,3 +1,6 @@
+"""Dojo."""
+
+
 def protein0(chain: str) -> str:
     """Primeira solução.
 
@@ -73,6 +76,7 @@ def protein0(chain: str) -> str:
     }
 
     def aminoacid(string: str):
+        """Transforma cadeia de códon em aminoacido."""
         if len(string) <= 3:
             return codons.get(string)
         return f'{codons.get(string[:3])}{aminoacid(string[3:])}'
@@ -81,6 +85,7 @@ def protein0(chain: str) -> str:
 
 
 def aminoacid1(string: str, codons: dict) -> str:
+    """Transforma cadeia de códon em aminoacido."""
     if len(string) <= 3:
         return codons.get(string)
     return f'{codons.get(string[:3])}{aminoacid1(string[3:], codons)}'
@@ -88,6 +93,7 @@ def aminoacid1(string: str, codons: dict) -> str:
 
 def protein1(chain: str) -> str:
     """Exemplo aplicado com correção de função aninha.
+
     função aninha extraída.
     """
     codons = {

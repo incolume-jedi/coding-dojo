@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def calculadora(op, x, y):
+    """Calculadora."""
     operadores = '+ - * ** // / %'.split()
 
     if op not in operadores:

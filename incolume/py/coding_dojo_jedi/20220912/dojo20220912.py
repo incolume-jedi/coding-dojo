@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def weekday(dia: str, qtd: int) -> str:
+    """Return week day."""
     dias = [
         'domingo',
         'segunda-feira',

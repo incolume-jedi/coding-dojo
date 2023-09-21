@@ -10,9 +10,21 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-09-19:
+## [Unreleased]	 &#8212; 	2023-09-21:
+### Removed
+  - Removido suporte a Python 3.8;
+  - Removido suporte a Python 3.9;
 ### Added
-  - -;
+  - Adicionado classifiers a descrição do projeto;
+
+## [1.34.0]	 &#8212; 	2023-09-21:
+### Deprecated
+  - Remover suporte a Python 3.10 - obsoleto a partir de out/2026;
+### Removed
+  - Removido suporte a Python 3.8 - obsoleto a partir de out/2024;
+  - Removido suporte a Python 3.9 - obsoleto a partir de out/2025;
+### Added
+  - Adicionado classifiers à descrição do projeto;
 
 ## [1.33.0]	 &#8212; 	2023-09-19:
 ### Added
@@ -26,6 +38,9 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
   - Melhoria e ampliação na validação de testes;
   - Acrescentado CHANGELOG.md ao projeto;
   - Editado os registros do `git tag -n` para aderência ao padrão keep-a-changelog;
+### Deprecated
+  - Remover Suporte a Python 3.8;
+  - Remover Suporte a Python 3.9;
 
 ## [1.32.0]	 &#8212; 	2023-09-16:
 ### Deprecated
@@ -186,4 +201,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.31.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.30.0...1.31.0
 [1.32.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.31.0...1.32.0
 [1.33.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.32.0...1.33.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.33.0...Unreleased
+[1.34.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.33.0...1.34.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.34.0...Unreleased

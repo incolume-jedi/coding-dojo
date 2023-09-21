@@ -15,9 +15,9 @@ def calculadora(op: str, x: Union[int, float], y: Union[int, float]) -> float:
     try:
         x = float(x)
         y = float(y)
-    except ValueError:
+    except (ValueError, TypeError) as err:
         msg = 'x e y devem ser valores numéricos reais.'
-        raise ValueError(msg)
+        raise TypeError(msg)
 
     try:
         if op == '+':

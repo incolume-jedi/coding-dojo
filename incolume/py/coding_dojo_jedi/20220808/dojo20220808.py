@@ -11,7 +11,7 @@ def is_par0(num: int) -> str:
 
 def is_par(num: int) -> str:
     """Verifica se é Par."""
-    if not num:
+    if not num and num != 0:
         msg = 'Valor inválido.'
         raise ValueError(msg)
     if not isinstance(num, int):

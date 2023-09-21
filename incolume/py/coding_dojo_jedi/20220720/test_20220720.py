@@ -107,28 +107,28 @@ def test_calculadora(entrance, expected):
         (
             ('+', 'a', 'b'),
             {
-                'expected_exception': ValueError,
+                'expected_exception': TypeError,
                 'match': r'.*x e y devem ser valores numéricos reais.*',
             },
         ),
         (
             ('+', '0', 'b'),
             {
-                'expected_exception': ValueError,
+                'expected_exception': TypeError,
                 'match': r'.*x e y devem ser valores numéricos reais.*',
             },
         ),
         (
             ('+', 'a', '0'),
             {
-                'expected_exception': ValueError,
+                'expected_exception': TypeError,
                 'match': r'.*x e y devem ser valores numéricos reais.*',
             },
         ),
         (
             ('+', (3 + 0j), (2 + 0j)),
             {
-                'expected_exception': ValueError,
+                'expected_exception': TypeError,
                 'match': r'.*x e y devem ser valores numéricos reais.*',
             },
         ),

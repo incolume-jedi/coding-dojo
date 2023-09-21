@@ -35,9 +35,9 @@ def stream(st: str) -> float:
             'starzplay': 55.90,
         },
     }
-    logging.debug(f'{st=}')
+    logging.debug('st=%s', st)
     pack, combo = unidecode(st).casefold().split()
-    logging.debug(f'{pack=} {combo=}')
+    logging.debug('pack=%s combo=%s')
     return streams.get(pack, {'err': ''}).get(combo, 'Plano Indisponível')
 
 

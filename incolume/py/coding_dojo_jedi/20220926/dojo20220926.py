@@ -233,6 +233,7 @@ def protein(chain: str) -> str:
         'UGA': '',
         'UAG': '',
     }
+    chain = chain.upper()
     if len(chain) <= 3:
         return codons.get(chain)
     return f'{codons.get(chain[:3])}{protein(chain[3:])}'

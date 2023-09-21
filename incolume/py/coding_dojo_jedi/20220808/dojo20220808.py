@@ -22,4 +22,4 @@ def is_par(num: int) -> str:
 
 
 if __name__ == '__main__':
-    is_par(3 + 0j)
+    is_par(3)

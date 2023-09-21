@@ -5,6 +5,7 @@ import logging
 import os
 from pathlib import Path
 from tempfile import gettempdir
+from typing import Any
 
 import dotenv
 import requests
@@ -15,7 +16,7 @@ logging.basicConfig(
 )
 
 
-def research(name: str = '', url: str = '', pagina=0) -> None:
+def research(name: str = '', url: str = '', pagina=0) -> dict[Any]:
     """Research API."""
     resposta = []
     personagens = {}

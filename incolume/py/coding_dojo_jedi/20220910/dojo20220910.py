@@ -1,6 +1,11 @@
+"""Dojo."""
 
 
 def weekday0(num: int) -> str:
+    """Retorna o dia da semana.
+
+    implementação if elif
+    """
     if num == 1:
         resposta = 'Domingo'
     elif num == 2:
@@ -21,6 +26,10 @@ def weekday0(num: int) -> str:
 
 
 def weekday1(num: int) -> str:
+    """Retorna o dia da semana.
+
+    implementação dict
+    """
     semana = {
         1: 'Domingo',
         2: 'Segunda',
@@ -34,7 +43,12 @@ def weekday1(num: int) -> str:
 
 
 try:
+
     def weekday(num: int) -> str:
+        """Retorna o dia da semana.
+
+        implementação match case.
+        """
         match num:
             case 1:
                 return 'Domingo'
@@ -52,14 +66,15 @@ try:
                 return 'Sábado'
             case _:
                 return 'Valor inválido'
-except SyntaxError:
+
+except SyntaxError as err:
     msg = 'This run only Python 3.10+'
-    raise OSError(msg)
+    raise OSError(msg) from err
 
 
 if __name__ == '__main__':    # pragma: no cover
     from dis import dis
 
-    print(dis(weekday0))
-    print(dis(weekday1))
-    print(dis(weekday))
+    dis(weekday0)
+    dis(weekday1)
+    dis(weekday)

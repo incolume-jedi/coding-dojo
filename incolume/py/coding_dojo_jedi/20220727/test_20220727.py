@@ -139,7 +139,7 @@ from star_wars2 import research
             ],
         ),
         ('xpto', []),
-        ('sky', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
+        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
         (
             'jinn',
             [

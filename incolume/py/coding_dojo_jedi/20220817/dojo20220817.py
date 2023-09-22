@@ -3,15 +3,15 @@
 
 def high_and_low0(seq: str) -> str:
     """Problema 1."""
-    max, min = -1e1000, +1e1000
+    maximo, minimo = -1e1000, +1e1000
 
     seq = [int(x) for x in seq.split()]
     for i in seq:
-        if i > max:
-            max = i
-        if i < min:
-            min = i
-    return f'{max} {min}'
+        if i > maximo:
+            maximo = i
+        if i < minimo:
+            minimo = i
+    return f'{maximo} {minimo}'
 
 
 def high_and_low(seq: str) -> str:

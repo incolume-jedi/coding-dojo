@@ -42,6 +42,7 @@ def cli(name):
             f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
         )
     click.echo(msg)
+    return personagem
 
 
 if __name__ == '__main__':

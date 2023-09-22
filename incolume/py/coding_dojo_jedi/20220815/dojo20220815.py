@@ -5,7 +5,7 @@ def index0(pos: int) -> str:
     """Problema 1."""
     s = 'Python'
     ss = ''
-    for i in range(pos + 1):
+    for _ in range(pos + 1):
         ss += s
     return ss[pos]
 

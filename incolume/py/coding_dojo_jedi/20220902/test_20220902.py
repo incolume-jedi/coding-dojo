@@ -4,42 +4,42 @@ import pytest
 from dojo20220902 import trocar_dinheiro
 
 
-@pytest.mark.skip(reason="replaced for pytest.mark.parametrize")
+@pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
 def test_moedas_150():
     (notas, moedas) = trocar_dinheiro(1.5)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 0, 0, 0, 0]
 
 
-@pytest.mark.skip(reason="replaced for pytest.mark.parametrize")
+@pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
 def test_moedas_191():
     (notas, moedas) = trocar_dinheiro(1.91)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 1]
 
 
-@pytest.mark.skip(reason="replaced for pytest.mark.parametrize")
+@pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
 def test_moedas_192():
     (notas, moedas) = trocar_dinheiro(1.92)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 2]
 
 
-@pytest.mark.skip(reason="replaced for pytest.mark.parametrize")
+@pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
 def test_notas_101():
     (notas, moedas) = trocar_dinheiro(101)
     assert notas == [0, 1, 0, 0, 0, 0, 0]
     assert moedas == [1, 0, 0, 0, 0, 0]
 
 
-@pytest.mark.skip(reason="replaced for pytest.mark.parametrize")
+@pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
 def test_notas_101_92():
     (notas, moedas) = trocar_dinheiro(101.92)
     assert notas == [0, 1, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 2]
 
 
-@pytest.mark.skip(reason="replaced for pytest.mark.parametrize")
+@pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
 def test_notas_0():
     (notas, moedas) = trocar_dinheiro(0.0)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
@@ -47,9 +47,11 @@ def test_notas_0():
 
 
 @pytest.mark.skipif(
-    version_info < (3, 8, 0), reason="This run only Python 3.8+")
+    version_info < (3, 8, 0),
+    reason='This run only Python 3.8+',
+)
 @pytest.mark.parametrize(
-    ("entrance", "expected"),
+    ('entrance', 'expected'),
     (
         (0, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0])),
         (101, ([0, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0])),
@@ -89,5 +91,6 @@ def test_notas_0():
 )
 def test_trocar_dinheiro(entrance, expected):
     """Teste do calculo para o menor número de notas e moedas
-    possíveis no qual o valor pode ser decomposto."""
+    possíveis no qual o valor pode ser decomposto.
+    """
     assert trocar_dinheiro(entrance) == expected

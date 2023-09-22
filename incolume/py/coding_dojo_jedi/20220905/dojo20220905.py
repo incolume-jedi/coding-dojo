@@ -1,11 +1,14 @@
-from unidecode import unidecode
+"""Dojo."""
+
 import logging
 
+from unidecode import unidecode
 
 logging.basicConfig(level=logging.DEBUG)
 
 
 def stream(st: str) -> float:
+    """Valores de streams."""
     streams = {
         'deezer': {
             'family': 34.9,
@@ -32,12 +35,10 @@ def stream(st: str) -> float:
             'starzplay': 55.90,
         },
     }
-    logging.debug(f'{st=}')
+    logging.debug('st=%s', st)
     pack, combo = unidecode(st).casefold().split()
-    logging.debug(f'{pack=} {combo=}')
-    return streams\
-        .get(pack, {'err': ''})\
-        .get(combo, 'Plano Indisponível')
+    logging.debug('pack=%s combo=%s')
+    return streams.get(pack, {'err': ''}).get(combo, 'Plano Indisponível')
 
 
 if __name__ == '__main__':    # pragma: no cover

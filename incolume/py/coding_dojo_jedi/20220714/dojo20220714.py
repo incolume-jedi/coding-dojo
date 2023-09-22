@@ -1,4 +1,6 @@
+"""Dojo 2022-07-14."""
+
+
 def rev(s: str) -> str:
-    return ''.join([a for a in s[::-1]])
-
-
+    """Return reverse."""
+    return ''.join(list(s[::-1]))

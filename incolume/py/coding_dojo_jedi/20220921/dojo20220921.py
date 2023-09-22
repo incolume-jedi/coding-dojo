@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def to_roman0(num: int) -> str:
+    """Convert arabics to romans."""
     nums = {
         1000: 'M',
         900: 'CM',
@@ -12,9 +16,8 @@ def to_roman0(num: int) -> str:
         9: 'IX',
         5: 'V',
         4: 'IV',
-        1: 'I'
+        1: 'I',
     }
-    # return nums[num]
     result = ''
     for i in nums:
         while num >= i:
@@ -24,6 +27,7 @@ def to_roman0(num: int) -> str:
 
 
 def to_roman(num: int) -> str:
+    """Convert arabics to romans."""
     nums = {
         1000: 'M',
         900: 'CM',
@@ -37,9 +41,8 @@ def to_roman(num: int) -> str:
         9: 'IX',
         5: 'V',
         4: 'IV',
-        1: 'I'
+        1: 'I',
     }
-    # return nums[num]
     result = ''
     for i in nums:
         while num >= i:

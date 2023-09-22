@@ -1,10 +1,9 @@
-from dojo20220822 import table, table_p2, calc, show
-
 import pytest
+from dojo20220822 import calc, show, table, table_p2
 
 
 @pytest.mark.parametrize(
-    "entrance expected".split(),
+    'entrance expected'.split(),
     (
         (1, 1.99),
         (2, 3.98),
@@ -16,16 +15,18 @@ def test_table0(entrance, expected):
 
 
 def test_tabela():
-    assert {x: table(x) for x in range(1, 51)} == {x: x * 1.99 for x in range(1, 51)}
+    assert {x: table(x) for x in range(1, 51)} == {
+        x: x * 1.99 for x in range(1, 51)
+    }
 
 
-@pytest.mark.parametrize("entrance expected".split(), ((1, 2.18),))
+@pytest.mark.parametrize('entrance expected'.split(), ((1, 2.18),))
 def test_calc(entrance, expected):
     assert calc(entrance) == expected
 
 
 @pytest.mark.parametrize(
-    "expected",
+    'expected',
     (
         2.18,
         218,
@@ -38,15 +39,15 @@ def test_table(expected):
 
 
 @pytest.mark.parametrize(
-    "expected",
+    'expected',
     (
-        "   1 = R$   2.18",
-        "R$ 109.00",
-        "70 = R$ 152.60",
+        '   1 = R$   2.18',
+        'R$ 109.00',
+        '70 = R$ 152.60',
     ),
 )
 def test_show(capsys, expected):
     show()
     captured = capsys.readouterr()
-    assert captured.err == ""
+    assert captured.err == ''
     assert expected in captured.out

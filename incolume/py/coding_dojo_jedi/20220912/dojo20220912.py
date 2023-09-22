@@ -1,4 +1,8 @@
+"""Dojo."""
+
+
 def weekday(dia: str, qtd: int) -> str:
+    """Return week day."""
     dias = [
         'domingo',
         'segunda-feira',
@@ -6,14 +10,13 @@ def weekday(dia: str, qtd: int) -> str:
         'quarta-feira',
         'quinta-feira',
         'sexta-feira',
-        'sábado'
+        'sábado',
     ]
 
     for i in range(len(dias)):
-        # print(i, dias[i])
         if dia == dias[i]:
             return dias[(dias.index(dia) + qtd % 7) % 7]
-        # return dias.index(dia)
+    return None
 
 
 if __name__ == '__main__':

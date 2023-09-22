@@ -3,7 +3,7 @@ from dojo20220801 import square
 
 
 @pytest.mark.parametrize(
-    ("entrada", "esperado"),
+    ('entrada', 'esperado'),
     [
         (-1, False),
         (0, True),

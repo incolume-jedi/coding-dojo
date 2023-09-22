@@ -1,14 +1,20 @@
+"""Dojo."""
+
+
 def calculadora(op, x, y):
+    """Calculadora."""
     operadores = '+ - * ** // / %'.split()
 
     if op not in operadores:
-        raise ValueError(f'Operador inválido. Use: {", ".join(operadores)}')
+        msg = f'Operador inválido. Use: {", ".join(operadores)}'
+        raise ValueError(msg)
 
     try:
         x = float(x)
         y = float(y)
     except ValueError:
-        raise ValueError('x e y devem ser valores numéricos reais.')
+        msg = 'x e y devem ser valores numéricos reais.'
+        raise ValueError(msg)
 
     run = {
         '+': lambda: x + y,
@@ -17,11 +23,12 @@ def calculadora(op, x, y):
         '//': lambda: x // y,
         '%': lambda: x % y,
         '*': lambda: x * y,
-        '**': lambda: x ** y,
+        '**': lambda: x**y,
     }
     try:
         result = run.get(op)()
     except ZeroDivisionError:
-        raise ValueError('y deve ser diferente de 0')
+        msg = 'y deve ser diferente de 0'
+        raise ValueError(msg)
 
     return result

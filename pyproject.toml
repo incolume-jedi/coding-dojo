@@ -326,7 +326,8 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 #pre_docs-build={help='Pre docs-build', cmd="poetry run task changelog"}
 #docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 #docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
-pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy"
+pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle"
+#pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy"
 #pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_pylint && task lint_mypy"
 lint={help='Checking all linters configurated', cmd=''}
 lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}

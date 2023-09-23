@@ -2,7 +2,7 @@ name: GWA Flow    # Success run
 
 on:
   pull_request:
-    branches: [main, dev]
+    branches: ["main", "dev"]
   push:
     tags:
       - "*.*.*"

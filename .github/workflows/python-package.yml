@@ -39,6 +39,10 @@ jobs:
     - name: Test with pytest
       run: |
         poetry run pytest
+    - name: Lint with Ruff
+      run: |
+        poetry run ruff --format=github 
+      continue-on-error: true
     - name: Generate package
       run: |
         poetry build

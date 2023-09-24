@@ -29,12 +29,8 @@ jobs:
           python -m pip install -U poetry
           poetry install
 
-#      - name: Test with pytest
-#        run: poetry run pytest
-
       - name: Test with pytest
-        run: |
-          poetry run pytest
+        run: poetry run pytest
 
   linters:
     needs: [test]
@@ -71,39 +67,3 @@ jobs:
         run: |
           poetry run ruff --format=github
         continue-on-error: true
-
-  build:
-    needs: [linters]
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.x
-
-    - name: Install dependencies
-      run: |
-        python -m pip install -U pip poetry
-        poetry install
-
-    - name: Generate package
-      run: |
-        poetry build
-
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
-      if: success()   # failure():: => contexts#job-status-check-functions
-      with:
-        name: build-package
-        path: dist/
-        if-no-files-found: error   # 'error', 'warn' or 'ignore' are also available, defaults to `warn`
-
-    - name: Create a Release
-      uses: elgohr/Github-Release-Action@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      with:
-        args: ${{ steps.Changelog.outputs.changelog }}

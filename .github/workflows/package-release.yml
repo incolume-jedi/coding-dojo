@@ -55,7 +55,11 @@ jobs:
           python -m pip install -U pip poetry
           poetry install
 
-      - name: Check flake8
+      - name: Check lint by task configuration
+        run: |
+          poetry run task lint
+
+      - name: Check lint with flake8
         run: |
            # stop the build if there are Python syntax errors or undefined names
            flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -63,11 +67,7 @@ jobs:
            flake8 . --count --exit-zero --max-complexity=5 --max-line-length=79 --statistics
         continue-on-error: true
 
-      - name: Check lint by task configuration
-        run: |
-          poetry run task lint
-
-      - name: Lint with Ruff
+      - name: Check lint with Ruff
         run: |
           poetry run ruff --format=github
         continue-on-error: true
@@ -93,7 +93,7 @@ jobs:
         poetry build
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success()   # failure():: => contexts#job-status-check-functions
       with:
         name: build-package

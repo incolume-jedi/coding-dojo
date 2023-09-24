@@ -100,3 +100,10 @@ jobs:
         name: build-package
         path: dist/
         if-no-files-found: error   # 'error', 'warn' or 'ignore' are also available, defaults to `warn`
+
+    - name: Create a Release
+      uses: elgohr/Github-Release-Action@v4
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        args: ${{ steps.Changelog.outputs.changelog }}

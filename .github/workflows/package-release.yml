@@ -99,15 +99,3 @@ jobs:
         name: build-package
         path: dist/
         if-no-files-found: error   # 'error', 'warn' or 'ignore' are also available, defaults to `warn`
-
-  tagged-release:
-    name: "Tagged Release"
-    runs-on: "ubuntu-latest"
-    needs: [build]
-    steps:
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            dist/*

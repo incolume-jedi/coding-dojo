@@ -10,14 +10,13 @@ def conceito0(nota1, nota2):
 
     if media >= 9.0:
         return f'Média {media}, "A", APROVADO'
-    elif 7.5 <= media < 9.0:
+    if 7.5 <= media < 9.0:
         return f'Média {media}, "B", APROVADO'
-    elif 6.0 <= media < 7.5:
+    if 6.0 <= media < 7.5:
         return f'Média {media}, "C", APROVADO'
-    elif 4.0 <= media < 6.0:
+    if 4.0 <= media < 6.0:
         return f'Média {media}, "D", REPROVADO'
-    else:
-        return f'Média {media}, "E", REPROVADO'
+    return f'Média {media}, "E", REPROVADO'
 
 
 def conceito1(nota1, nota2):
@@ -25,14 +24,13 @@ def conceito1(nota1, nota2):
     media = (nota1 + nota2) / 2
     if media < 4:
         return f'Média {media}, "E", REPROVADO'
-    elif 4.0 >= media < 6.0:
+    if 4.0 >= media < 6.0:
         return f'Média {media}, "D", REPROVADO'
-    elif 6.0 >= media < 7.5:
+    if 6.0 >= media < 7.5:
         return f'Média {media}, "C", APROVADO'
-    elif 7.5 >= media < 9.0:
+    if 7.5 >= media < 9.0:
         return f'Média {media}, "B", APROVADO'
-    else:
-        return f'Média {media}, "A", APROVADO'
+    return f'Média {media}, "A", APROVADO'
 
 
 def conceito(nota1, nota2):

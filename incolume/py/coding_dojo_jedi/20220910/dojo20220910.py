@@ -68,8 +68,8 @@ try:
                 return 'Valor inválido'
 
 except SyntaxError as err:
-    msg = 'This run only Python 3.10+'
-    raise OSError(msg) from err
+    MSG = 'This run only Python 3.10+'
+    raise OSError(MSG) from err
 
 
 if __name__ == '__main__':    # pragma: no cover

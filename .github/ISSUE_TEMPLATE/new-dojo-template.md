@@ -1,17 +1,6 @@
----
-name: New dojo template
-about: "Problem Title"
-title: "[new-dojo]"
-labels: enhancement
-assignees: ''
-
----
-
 # Coding Dojo
 
 **Guilda JEDI Incolume - Grupo Python Incolume**
-
-- _[Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)_
 
 ---
 

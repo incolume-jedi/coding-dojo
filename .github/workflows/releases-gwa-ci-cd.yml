@@ -1,4 +1,4 @@
-name: GWA Releases    # Success run
+name: Releases GWA CI/CD    # Success run
 
 on:
   pull_request:

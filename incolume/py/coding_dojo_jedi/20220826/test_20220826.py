@@ -73,7 +73,7 @@ def test_noexclamation(entrance, expected):
             ],
         ),
         (
-            {'tabuada': 10, 'inicial': 10, 'final': 7},
+            {'tab_ref': 10, 'inicial': 10, 'final': 7},
             [
                 '10 X 7 = 70',
                 '10 X 8 = 80',
@@ -82,7 +82,7 @@ def test_noexclamation(entrance, expected):
             ],
         ),
         (
-            {'tabuada': 10, 'inicial': 7, 'final': 10},
+            {'tab_ref': 10, 'inicial': 7, 'final': 10},
             [
                 '10 X 7 = 70',
                 '10 X 8 = 80',

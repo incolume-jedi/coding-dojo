@@ -256,38 +256,41 @@ extension-pkg-whitelist = "orjson"
 
 [tool.pylint.messages_control]
 disable = [
-    # Disable too many and too few checks.
-    "too-many-ancestors",
-    "too-many-arguments",
-    "too-many-boolean-expressions",
-    "too-many-branches",
-    "too-many-function-args",
-    "too-many-instance-attributes",
-    "too-many-lines",
-    "too-many-locals",
-    "too-many-nested-blocks",
-    "too-many-public-methods",
-    "too-many-return-statements",
-    "too-many-statements",
-    "too-few-public-methods",
+  # Disable too many and too few checks.
+  "too-many-ancestors",
+  "too-many-arguments",
+  "too-many-boolean-expressions",
+  "too-many-branches",
+  "too-many-function-args",
+  "too-many-instance-attributes",
+  "too-many-lines",
+  "too-many-locals",
+  "too-many-nested-blocks",
+  "too-many-public-methods",
+  "too-many-return-statements",
+  "too-many-statements",
+  "too-few-public-methods",
 
-    # Similar lines in files (often the case in tests).
-    "duplicate-code",
+  # Similar lines in files (often the case in tests).
+  "duplicate-code",
 
-    # Many functions (e.g. callbacks) will naturally have unused arguments.
-    "unused-argument",
+  # Many functions (e.g. callbacks) will naturally have unused arguments.
+  "unused-argument",
 
-    # # Disable checking that method could be a function in classes (often used for organisation).
-    # "no-self-use",
+  # # Disable checking that method could be a function in classes (often used for organisation).
+  # "no-self-use",
 
-    # Disable failure for TODO items in the codebase (code will always have TODOs).
-    "fixme",
+  # Disable failure for TODO items in the codebase (code will always have TODOs).
+  "fixme",
 
-    # Disable docstrings checks as we don't require excessive documentation.
-    "missing-docstring",
+  # Disable docstrings checks as we don't require excessive documentation.
+  "missing-docstring",
 
-    "no-member",
-    "unspecified-encoding",
+  "no-member",
+  "unspecified-encoding",
+
+  #
+  "import-error",
 ]
 
 [tool.mypy]

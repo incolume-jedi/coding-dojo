@@ -65,4 +65,4 @@
   </tr>
 </table>
 
-[Todos os contribuidores](https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/activity)
+[Todos os contribuidores](https://github.com/incolume-jedi/coding-dojo/activity)

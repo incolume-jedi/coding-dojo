@@ -31,8 +31,8 @@ def calculadora(op: str, x: int | float, y: int | float) -> float:
             result = x // y
         if op == '**':
             result = x**y
-    except ZeroDivisionError:
+    except ZeroDivisionError as err:
         msg = 'y deve ser diferente 0.'
-        raise ValueError(msg)
+        raise ValueError(msg) from err
 
     return result

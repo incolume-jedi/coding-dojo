@@ -20,19 +20,19 @@ def no_exclamation(frase: str) -> str:
     return frase.replace('!', '')
 
 
-def tabuada(tabuada: int, inicial: int = 1, final: int = 10):
+def tabuada(tab_ref: int, inicial: int = 1, final: int = 10):
     """Problema 2."""
     result = []
     inicial, final = min(inicial, final), max(inicial, final)
     for x in range(inicial, final + 1):
-        s = f'{tabuada} X {x} = {tabuada * x}'
+        s = f'{tab_ref} X {x} = {tab_ref * x}'
         result.append(s)
     return result
 
 
 def imc(altura: float, peso: float) -> str:
     """Problema 3."""
-    imc = peso / altura**2
+    imc_value = peso / altura**2
     return [
         'Obesidade III',
         'Obesidade II',
@@ -40,4 +40,10 @@ def imc(altura: float, peso: float) -> str:
         'Sobrepeso',
         'peso normal',
         'abaixo do peso',
-    ][(imc < 39.9) + (imc < 34.9) + (imc < 29.9) + (imc < 24.9) + (imc < 18.5)]
+    ][
+        (imc_value < 39.9)
+        + (imc_value < 34.9)
+        + (imc_value < 29.9)
+        + (imc_value < 24.9)
+        + (imc_value < 18.5)
+    ]

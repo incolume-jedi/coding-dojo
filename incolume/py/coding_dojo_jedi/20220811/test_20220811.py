@@ -59,7 +59,6 @@ class MyTestCase(unittest.TestCase):
         """Test code that depends on the external resource."""
         if not check_connectivity():
             self.skipTest('external resource not available')
-        pass
 
     @unittest.skip('it never will run.')
     def test_something(self):

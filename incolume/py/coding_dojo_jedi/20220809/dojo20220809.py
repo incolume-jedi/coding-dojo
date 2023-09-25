@@ -32,9 +32,9 @@ def calculadora(op, x, y):
     }
     try:
         result = run.get(op)()
-    except ZeroDivisionError:
+    except ZeroDivisionError as err:
         msg = 'y deve ser diferente de 0'
-        raise ValueError(msg)
+        raise ValueError(msg) from err
     return result
 
 

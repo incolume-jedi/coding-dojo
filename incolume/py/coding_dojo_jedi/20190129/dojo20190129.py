@@ -10,13 +10,13 @@ NOTAS = [100, 50, 20, 10, 5, 2]
 
 def moedas(valor: float) -> Tuple[List[float], List[float]]:
     """Contabiliza a quantidade de notas e moedas."""
-    notas: List[float] = [0, 0, 0, 0, 0, 0]
-    moedas: List[float] = [0, 0, 0, 0, 0, 0]
+    vnotas: List[float] = [0, 0, 0, 0, 0, 0]
+    vmoedas: List[float] = [0, 0, 0, 0, 0, 0]
 
-    valor = calcula(NOTAS, notas, valor)
-    valor = calcula(MOEDAS, moedas, valor)
+    valor = calcula(NOTAS, vnotas, valor)
+    valor = calcula(MOEDAS, vmoedas, valor)
 
-    return notas, moedas
+    return vnotas, vmoedas
 
 
 def calcula(monetario: float, lista: list, valor: float) -> List[float]:
@@ -36,10 +36,10 @@ def calcula(monetario: float, lista: list, valor: float) -> List[float]:
 
 def moedas2(valor: float) -> Tuple[List[float], List[float]]:
     """Contabiliza a quantidade de notas e moedas."""
-    (notas, valor) = calcula2(valor, NOTAS)
-    (moedas, valor) = calcula2(valor, MOEDAS)
+    (vnotas, valor) = calcula2(valor, NOTAS)
+    (vmoedas, valor) = calcula2(valor, MOEDAS)
 
-    return notas, moedas
+    return vnotas, vmoedas
 
 
 def calcula2(

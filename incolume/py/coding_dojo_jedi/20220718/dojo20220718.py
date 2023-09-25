@@ -6,11 +6,11 @@ def get_char(num: int):
     # Tratamento exceção
     try:
         num = int(num)
-        if not (0 <= num <= 0x10FFFF):
+        if not 0 <= num <= 0x10FFFF:
             msg = '0 <= num <= 0x10ffff.'
             raise ValueError(msg)
-    except ValueError:
+    except ValueError as err:
         msg = 'num deve ser um número entre 0 e 0x10ffff.'
-        raise ValueError(msg)
+        raise ValueError(msg) from err
 
     return chr(num)

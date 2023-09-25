@@ -12,13 +12,13 @@ logging.basicConfig(level=logging.DEBUG)
 
 def calcular(valor, base_monetaria):
     """Calculadora de notas."""
-    logging.debug(f'{inspect.stack()[0][3]}({valor}, {base_monetaria})')
+    logging.debug('%s(%s, %s)', inspect.stack()[0][3], valor, base_monetaria)
     result = [0] * len(base_monetaria)
     for i, base in enumerate(base_monetaria):
         result[i] = int(valor / base)
         valor = round(valor % base, 2)
-        logging.debug(f'{valor}; {result[i]}: {base}')
-    logging.debug(f'{valor}, {result}')
+        logging.debug('%s %s %s', valor, result[i], base)
+    logging.debug('%s, %s',valor, result)
     return valor, result
 
 

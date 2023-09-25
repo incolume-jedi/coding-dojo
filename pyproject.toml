@@ -5,6 +5,13 @@ description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
 
+[tool.poetry.urls]
+"Documentation" = "https://incolume-jedi.github.io/coding-dojo/"
+"Source" = "https://github.com/incolume-jedi/coding-dojo/"
+"Git" = "https://github.com/incolume-jedi/coding-dojo.git"
+"Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
+"Bug Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
+
 classifiers = [
   # https://pypi.org/classifiers/
   'Development Status :: 5 - Production/Stable',

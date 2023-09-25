@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """this run Python 2.7."""
-import sys
 import random
+import sys
 
 
 def check():

@@ -10,12 +10,33 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-09-21:
+## [Unreleased]	 &#8212; 	2023-09-25:
+### Added
+  - MKDocs para gerenciar documentação;
+  - Acrescentado estrutura de documentação;
+  - Instalado piloto com ruff;
+### Changed
+  - Ampliado aplicação de estilo com blue;
+  - Ampliado amplicação de estilo com isort;
+  - Aplicado ampliação de estilo com ruff;
+
+## [1.36.0]	 &#8212; 	2023-09-25:
+### Added
+  - MKDocs para gerenciar documentação;
+  - Acrescentado estrutura de documentação;
+  - Instalado piloto com ruff;
+### Changed
+  - Ampliado aplicação de estilo com blue;
+  - Ampliado amplicação de estilo com isort;
+  - Aplicado ampliação de estilo com ruff;
 ### Removed
   - Removido suporte a Python 3.8;
   - Removido suporte a Python 3.9;
+
+## [1.35.0]	 &#8212; 	2023-09-24:
 ### Added
   - Adicionado classifiers a descrição do projeto;
+  - Acrescentado github workflows actions para gerar pacotes de releases e monitorar testes;
 
 ## [1.34.0]	 &#8212; 	2023-09-21:
 ### Deprecated
@@ -202,4 +223,6 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.32.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.31.0...1.32.0
 [1.33.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.32.0...1.33.0
 [1.34.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.33.0...1.34.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.34.0...Unreleased
+[1.35.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.34.0...1.35.0
+[1.36.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.35.0...1.36.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.36.0...Unreleased

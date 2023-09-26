@@ -11,3 +11,9 @@ Isto com distribuição de taferas coordenadas, e com auxílio supervisionado de
  para exercitar a programação, inclusive em diversas linguagens além de Python.
 
 Foi separado alguns [sites populares com desafios de programação](/docs/coding_challenge), e muitos destes desafios serão resolvidos em grupo nos encontros da guilda jedi incolume.
+
+- ## Não sei nada quem vai me ensinar?
+
+Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.
+
+Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos, técnicas, e particularidades da linguagem.

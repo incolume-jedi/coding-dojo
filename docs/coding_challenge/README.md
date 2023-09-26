@@ -1,4 +1,6 @@
-# Os sites da web mais populares com desafios de programação
+# Coding Challenge
+
+**Os sites da web mais populares com desafios de programação**
 
 
 ## [Beecrowd](https://www.beecrowd.com.br/judge/pt/)

@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>My Docs</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Perguntas Frequentes (FAQ) - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
@@ -20,7 +20,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/.">My Docs</a>
+                <a class="navbar-brand" href="..">My Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -31,21 +31,21 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="/." class="nav-link">coding-dojo</a>
+                                <a href=".." class="nav-link">coding-dojo</a>
                             </li>
-                            <li class="navitem">
-                                <a href="/FAQ/" class="nav-link">Perguntas Frequentes (FAQ)</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Perguntas Frequentes (FAQ)</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
+    <a href="../about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
 </li>
                                     
 <li>
-    <a href="/about/LICENSE/" class="dropdown-item">LICENSE</a>
+    <a href="../about/LICENSE/" class="dropdown-item">LICENSE</a>
 </li>
                                 </ul>
                             </li>
@@ -54,7 +54,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/coding_challenge/" class="dropdown-item">Coding Challenge</a>
+    <a href="../coding_challenge/" class="dropdown-item">Coding Challenge</a>
 </li>
                                 </ul>
                             </li>
@@ -63,31 +63,31 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/user_guide/COVENTIONAL_COMMITS/" class="dropdown-item">Git commits messages</a>
+    <a href="../user_guide/COVENTIONAL_COMMITS/" class="dropdown-item">Git commits messages</a>
 </li>
                                     
 <li>
-    <a href="/user_guide/INSTALLATION/" class="dropdown-item">Guia de Uso</a>
+    <a href="../user_guide/INSTALLATION/" class="dropdown-item">Guia de Uso</a>
 </li>
                                     
 <li>
-    <a href="/user_guide/code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
+    <a href="../user_guide/code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
 </li>
                                     
 <li>
-    <a href="/user_guide/development/" class="dropdown-item">Guia de contribuíção (Desenvolvimento)</a>
+    <a href="../user_guide/development/" class="dropdown-item">Guia de contribuíção (Desenvolvimento)</a>
 </li>
                                     
 <li>
-    <a href="/user_guide/usage/" class="dropdown-item">Usage</a>
+    <a href="../user_guide/usage/" class="dropdown-item">Usage</a>
 </li>
                                     
 <li>
-    <a href="/user_guide/writing-your-docs/" class="dropdown-item">Writing your docs</a>
+    <a href="../user_guide/writing-your-docs/" class="dropdown-item">Writing your docs</a>
 </li>
                                     
 <li>
-    <a href="/user_guide/zenpy/" class="dropdown-item">PEP 20</a>
+    <a href="../user_guide/zenpy/" class="dropdown-item">PEP 20</a>
 </li>
                                 </ul>
                             </li>
@@ -99,6 +99,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../about/CONTRIBUTORS/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -106,15 +116,61 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#perguntas-frequentes-faq" class="nav-link">Perguntas Frequentes (FAQ)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#como-o-dojo-pode-me-ajudar-a-crescer-com-a-programacao" class="nav-link">Como o dojo pode me ajudar a crescer com a programação?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#como-exercitar-a-habilidade-em-programar" class="nav-link">Como exercitar a habilidade em programar?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nao-sei-nada-quem-vai-me-ensinar" class="nav-link">Não sei nada quem vai me ensinar?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h1 id="perguntas-frequentes-faq">Perguntas Frequentes (FAQ)</h1>
+<ul>
+<li>
+<h2 id="como-o-dojo-pode-me-ajudar-a-crescer-com-a-programacao">Como o dojo pode me ajudar a crescer com a programação?</h2>
+</li>
+</ul>
+<p>O coding dojo, tem o propósito de auxiliar o desenvolvimento da capacidade em programar.
+Isto com distribuição de taferas coordenadas, e com auxílio supervisionado de multuo aprefeiçoamento, ou de desenvolvedores mais experientes.</p>
+<ul>
+<li>
+<h2 id="como-exercitar-a-habilidade-em-programar">Como exercitar a habilidade em programar?</h2>
+</li>
+</ul>
+<p>É como na matemática, só aprende fazendo! E existem alguns sites de coding challenge (desafios de código),
+ para exercitar a programação, inclusive em diversas linguagens além de Python.</p>
+<p>Foi separado alguns <a href="/docs/coding_challenge">sites populares com desafios de programação</a>, e muitos destes desafios serão resolvidos em grupo nos encontros da guilda jedi incolume.</p>
+<ul>
+<li>
+<h2 id="nao-sei-nada-quem-vai-me-ensinar">Não sei nada quem vai me ensinar?</h2>
+</li>
+</ul>
+<p>Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.</p>
+<p>Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos, técnicas, e particularidades da linguagem.</p></div>
             </div>
         </div>
 
@@ -122,14 +178,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="/js/jquery-3.6.0.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <script>
-            var base_url = "/",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js"></script>
-        <script src="/search/main.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

@@ -10,7 +10,7 @@ Isto com distribuição de taferas coordenadas, e com auxílio supervisionado de
 É como na matemática, só aprende fazendo! E existem alguns sites de coding challenge (desafios de código),
  para exercitar a programação, inclusive em diversas linguagens além de Python.
 
-Foi separado alguns [sites populares com desafios de programação](/docs/coding_challenge), e muitos destes desafios serão resolvidos em grupo nos encontros da guilda jedi incolume.
+Foi separado alguns [sites populares com desafios de programação](coding_challenge/README.md), e muitos destes desafios serão resolvidos em grupo nos encontros da guilda jedi incolume.
 
 - ## Não sei nada quem vai me ensinar?
 

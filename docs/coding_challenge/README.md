@@ -164,6 +164,11 @@ SoloLearn também oferece certificados de conclusão de curso que podem ser comp
 O Sphere Online Judge (SPOJ) é um juiz on-line que fornece mais de 20 mil desafios de programação. Você pode enviar seu código por meio de um editor on-line. O SPOJ também hospeda suas próprias competições e tem uma área para os usuários discutirem os desafios de programação. No entanto, eles não fornecem soluções ou editoriais oficiais como outros sites similares.
 
 
+## [The Algorithms](https://the-algorithms.com/pt)
+
+A maior biblioteca de algoritmos de código aberto do GitHub.
+
+
 ## [TopCoder](https://www.topcoder.com/challenges/?pageIndex=1)
 
 O TopCoder é uma das plataformas on-line originais de programação competitiva. Lá, você encontra uma lista de [desafios com algoritmos](https://www.topcoder.com/community/how-it-works/) do passado que você pode resolver por conta própria, on-line e diretamente, usando seu editor de código. As Single Round Matches do site são populares e oferecidas algumas vezes ao mês em horas específicas. Nelas, você pode competir contra os outros resolvendo desafios o mais rápido possível para ter as melhores pontuações.

@@ -30,7 +30,6 @@ def high_and_low(seq: str) -> str:
 # dis(mysort)
 
 
-
 def mysort0(a, b, c):
     """Problema 2.
 

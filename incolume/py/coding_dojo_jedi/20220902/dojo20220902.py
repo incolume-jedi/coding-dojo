@@ -18,7 +18,7 @@ def calcular(valor, base_monetaria):
         result[i] = int(valor / base)
         valor = round(valor % base, 2)
         logging.debug('%s %s %s', valor, result[i], base)
-    logging.debug('%s, %s',valor, result)
+    logging.debug('%s, %s', valor, result)
     return valor, result
 
 

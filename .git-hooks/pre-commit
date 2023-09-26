@@ -1,11 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """this run Python 2.7."""
-import sys
-import subprocess
-import re
 import logging
 import platform
+import re
+import subprocess
+import sys
 
 BRANCH = subprocess.check_output(
     ["/usr/bin/git", "rev-parse", "--abbrev-ref", "HEAD"]).strip()

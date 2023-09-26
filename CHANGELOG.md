@@ -20,6 +20,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
   - Ampliado amplicação de estilo com isort;
   - Aplicado ampliação de estilo com ruff;
 
+## [1.37.0]	 &#8212; 	2023-09-25:
+### Fixed
+  - Tratativa em corrigir a falha no branch atual.;
+
 ## [1.36.0]	 &#8212; 	2023-09-25:
 ### Added
   - MKDocs para gerenciar documentação;
@@ -225,4 +229,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.34.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.33.0...1.34.0
 [1.35.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.34.0...1.35.0
 [1.36.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.35.0...1.36.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.36.0...Unreleased
+[1.37.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.36.0...1.37.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.37.0...Unreleased

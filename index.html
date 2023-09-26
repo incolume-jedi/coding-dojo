@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>My Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">coding-dojo</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="about/LICENSE/" class="dropdown-item">This is free and unencumbered software released into the public domain.</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Coding challenge <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="coding_challenge/" class="dropdown-item">Os sites da web mais populares com desafios de programação</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="user_guide/COVENTIONAL_COMMITS/" class="dropdown-item">Git commits messages</a>
+</li>
+                                    
+<li>
+    <a href="user_guide/INSTALLATION/" class="dropdown-item">Guia de Uso</a>
+</li>
+                                    
+<li>
+    <a href="user_guide/code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
+</li>
+                                    
+<li>
+    <a href="user_guide/development/" class="dropdown-item">Guia de contribuíção (Desenvolvimento)</a>
+</li>
+                                    
+<li>
+    <a href="user_guide/usage/" class="dropdown-item">Usage</a>
+</li>
+                                    
+<li>
+    <a href="user_guide/writing-your-docs/" class="dropdown-item">Writing your docs</a>
+</li>
+                                    
+<li>
+    <a href="user_guide/zenpy/" class="dropdown-item">PEP 20</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="about/CONTRIBUTORS/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#coding-dojo" class="nav-link">coding-dojo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#o-que-e" class="nav-link">O que é?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#alguns-detalhes" class="nav-link">Alguns detalhes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#quem-pode-participar" class="nav-link">Quem pode participar?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#como-conduzir" class="nav-link">Como conduzir?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="coding-dojo">coding-dojo</h1>
+<p>Aqui é mantido um repositório com as soluções que trabalhamos no <a href="https://discord.gg/qA8CBQHSbK">dojo de codificação da Guilda Jedi no discord</a></p>
+<p>Os códigos estão organizados em diretórios, sendo que cada diretório representa um dia do dojo, formado por <code>incolume/py/YYYYMMDD</code>, de forma que o primeiro dojo estará no topo, e o ultimo na base.</p>
+<p>Os códigos são em python 3.10+ e tem como dependência principal o pytest. Mas para facilitar a instalação o <code>poetry</code> foi escolhido para controle de dependências, apenas execute <code>pip install poetry &amp;&amp; poetry install</code> na raiz do diretório, no mesmo nível do arquivo pyproject.toml`</p>
+<p>Finalmente, para rodar os testes nos códigos, mude para o diretório do Dojo, por exemplo 20220701, e digite <code>pytest .</code> ou no diretório principal digite <code>pytest incolume/py/20220701</code>.</p>
+<p><a href="/docs/README.md">Mais detalhes sobre os coding-dojo</a></p>
+<h2 id="o-que-e">O que é?</h2>
+<p>A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação através de exercícios práticos.</p>
+<p>Para mais informações sobre os nossos coding dojos anteriores acesse os respectivos diretórios dos dojos e leia o REAME.md.</p>
+<h2 id="alguns-detalhes">Alguns detalhes</h2>
+<p>Não é competivivo, mas sim colaborativo. Vamos nos juntar para resolver o problema.</p>
+<p>Todos os níveis são bem-vindos.</p>
+<p>Somos encorajados a tentar novas ideias, sair da caixa. A ideia é treinar</p>
+<h2 id="quem-pode-participar">Quem pode participar?</h2>
+<p>Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.</p>
+<p>Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.</p>
+<h2 id="como-conduzir">Como conduzir?</h2>
+<h3 id="gerenciamento-do-tempo">Gerenciamento do tempo</h3>
+<ul>
+<li>Não exceder o tempo máximo de 120' (2h);</li>
+<li>Finalizar o dojo entre 100' e 120';</li>
+<li>Com o problema finalizado o dojo pode ser encerrado a qualquer momento;</li>
+<li>Se o tempo for insuficiente para solução do problema proposto, fracione-o em etapas,
+finalize a primeira etapa, encerre o dojo, e continue a etapa seguinte no proximo dojo;</li>
+</ul>
+<h3 id="uma-descricao-de-como-conduzir-o-dojo-no-maximo-2h">Uma descrição de como conduzir o dojo (no maximo 2h):</h3>
+<ul>
+<li>10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (3 problemas é suficiente);</li>
+<li>5 minutos para decidir sobre qual problema vamos resolver;</li>
+<li>10 minutos para uma revisão de python (opcional);</li>
+<li>40 minutos de programação;</li>
+<li>5 minutos intervalo para ver o andamento da solução;</li>
+<li>40 minutos de programação;</li>
+<li>10 minutos de revisão sobre o que aprendemos e o que podemos melhorar no próximo dojo;</li>
+</ul>
+<h3 id="sobre-o-periodo-de-programacao">Sobre o período de programação</h3>
+<ul>
+<li>Um programador pilota;</li>
+<li>Um programador co-pilota;</li>
+<li>A platéia assite e dá dicas (importante: a platéia só pode se manifestar se os testes estiverem ok, caso contrário, apenas piloto e co-piloto);</li>
+<li>Após cinco minutos trocam as posições: piloto -&gt; co-piloto, co-piloto -&gt; platéia, platéia -&gt; piloto;</li>
+<li>A ideia é que todos tenham uma chance de programar ao menos uma vez;</li>
+<li>Toda a comunicação entre o piloto e copiloto deve ser em voz alta para que todos escutem;</li>
+</ul>
+<h3 id="salvaguarda-do-aprendizado">Salvaguarda do aprendizado</h3>
+<ul>
+<li>Sempre salve as soluções no fork do dojo;</li>
+<li>Solicite um pull request para consolidação;</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2023-09-26 03:01:41.508590+00:00
+-->

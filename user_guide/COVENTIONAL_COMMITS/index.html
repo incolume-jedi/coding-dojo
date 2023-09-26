@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Git commits messages - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">coding-dojo</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="../../about/LICENSE/" class="dropdown-item">This is free and unencumbered software released into the public domain.</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Coding challenge <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../coding_challenge/" class="dropdown-item">Os sites da web mais populares com desafios de programação</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Git commits messages</a>
+</li>
+                                    
+<li>
+    <a href="../INSTALLATION/" class="dropdown-item">Guia de Uso</a>
+</li>
+                                    
+<li>
+    <a href="../code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
+</li>
+                                    
+<li>
+    <a href="../development/" class="dropdown-item">Guia de contribuíção (Desenvolvimento)</a>
+</li>
+                                    
+<li>
+    <a href="../usage/" class="dropdown-item">Usage</a>
+</li>
+                                    
+<li>
+    <a href="../writing-your-docs/" class="dropdown-item">Writing your docs</a>
+</li>
+                                    
+<li>
+    <a href="../zenpy/" class="dropdown-item">PEP 20</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../coding_challenge/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../INSTALLATION/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#git-commits-messages" class="nav-link">Git commits messages</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#examples" class="nav-link">Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-message-with-to-draw-attention-to-breaking-change" class="nav-link">Commit message with ! to draw attention to breaking change</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change" class="nav-link">Commit message with scope and ! to draw attention to breaking change</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-message-with-both-and-breaking-change-footer" class="nav-link">Commit message with both ! and BREAKING CHANGE footer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-message-with-no-body" class="nav-link">Commit message with no body</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-message-with-scope" class="nav-link">Commit message with scope</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-message-with-multi-paragraph-body-and-multiple-footers" class="nav-link">Commit message with multi-paragraph body and multiple footers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="git-commits-messages">Git commits messages</h1>
+<hr />
+<p>This project follow Conventional Commits, A specification for adding human and
+machine readable meaning to commit messages.</p>
+<pre><code class="language-bash">&lt;type&gt;[optional scope]: &lt;description&gt;
+
+[optional body]
+
+[optional footer(s)]
+</code></pre>
+<p>The commit contains the following structural elements, to communicate intent to the consumers of your library:
++ type: the type of commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)
+    + feat: A commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
+    + fix: A commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
+    + chore: Changes that do not relate to a fix or feature and don´t modify src or test files (for example updating dependencies);
+    + refactor: refactored code that neither fixes a bug nor adds a feature;
+    + docs: updates to documentation such as a the README or other markdown or rst files;
+    + style: Changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, black style applied, and so on;
+    + test: Including new or correcting previous tests;
+    + perf: preformance impovements;
+    + ci: Continuos integration related;
+    + build: changes that affect the build system or external dependencies;
+    + revert:reverts a previous commit;
++ scope: This is optional, but indicate a specific scope ;
++ description: show what was done in the commit;
++ body: Full description, if descript not enough;
++ footer: This is optional, but agregate additional information about commit, lake revisor, references, millistone and others (for example "close #issue-id").</p>
+<h2 id="examples">Examples</h2>
+<h3 id="commit-message-with-description-and-breaking-change-footer">Commit message with description and breaking change footer</h3>
+<pre><code class="language-bash">feat: allow provided config object to extend other configs
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+</code></pre>
+<h2 id="commit-message-with-to-draw-attention-to-breaking-change">Commit message with ! to draw attention to breaking change</h2>
+<pre><code class="language-shell">feat!: send an email to the customer when a product is shipped
+</code></pre>
+<h2 id="commit-message-with-scope-and-to-draw-attention-to-breaking-change">Commit message with scope and ! to draw attention to breaking change</h2>
+<pre><code class="language-shell">feat(api)!: send an email to the customer when a product is shipped
+</code></pre>
+<h2 id="commit-message-with-both-and-breaking-change-footer">Commit message with both ! and BREAKING CHANGE footer</h2>
+<pre><code class="language-shell">chore!: drop support for Python 2.6
+
+BREAKING CHANGE: Some features not available in Python 2.7-.
+</code></pre>
+<h2 id="commit-message-with-no-body">Commit message with no body</h2>
+<pre><code class="language-shell">docs: correct spelling of CHANGELOG
+</code></pre>
+<h2 id="commit-message-with-scope">Commit message with scope</h2>
+<pre><code class="language-shell">feat(lang): add polish language
+</code></pre>
+<h2 id="commit-message-with-multi-paragraph-body-and-multiple-footers">Commit message with multi-paragraph body and multiple footers</h2>
+<pre><code class="language-shell">fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: @britodfbr
+Refs: #123
+</code></pre>
+<p>The full specification maybe access on <a href="https://www.conventionalcommits.org/en/v1.0.0/#specification">english lang</a> or others languages about <a href="https://www.conventionalcommits.org/pt-br/v1.0.0/#specification">Brazilian Portuguese</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

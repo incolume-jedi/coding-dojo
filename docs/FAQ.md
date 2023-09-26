@@ -1,6 +1,6 @@
 # Perguntas Frequentes (FAQ)
 
-- ## Como o dojo pode me ajudar a crescer com a programação?
+- ## Porque irei participar do coding dojo? Como o dojo pode me ajudar a crescer com a programação?
 
 O coding dojo, tem o propósito de auxiliar o desenvolvimento da capacidade em programar.
 Isto com distribuição de taferas coordenadas, e com auxílio supervisionado de multuo aprefeiçoamento, ou de desenvolvedores mais experientes.

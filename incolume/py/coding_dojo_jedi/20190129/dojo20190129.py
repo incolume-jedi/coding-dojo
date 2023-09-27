@@ -2,7 +2,7 @@
 
 # https://www.urionlinejudge.com.br/judge/pt/problems/view/1021
 """
-from typing import Any, List, Tuple, Union, Final
+from typing import Any, Final, List, Tuple, Union
 
 MOEDAS: Final = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
 NOTAS: Final = [100.0, 50.0, 20.0, 10.0, 5.0, 2.0]

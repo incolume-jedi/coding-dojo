@@ -1,4 +1,4 @@
-[![Tests CI/CD](https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/tests_ci_cd.yaml/badge.svg)](https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/tests_ci_cd.yaml)
+[![Tests CI/CD](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests_ci_cd.yaml/badge.svg)](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests_ci_cd.yaml)
 
 [//]: # ([![publish automatically]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/publish-automatically.yml/badge.svg&#41;]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/publish-automatically.yml&#41;)
 [//]: # ([![poetry-mine-publish-automatically]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/poetry-mine-publish-automatically.yml/badge.svg&#41;]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/poetry-mine-publish-automatically.yml&#41;)
@@ -9,7 +9,7 @@
 [//]: # ([![Tests/Release]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/tests_new.yml/badge.svg&#41;]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/tests_new.yml&#41;)
 [//]: # ([![GWA Flow]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/gwa-flow.yml/badge.svg&#41;]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/gwa-flow.yml&#41;)
 
-# incolume.py.model-2023-07-05
+# Coding Dojo
 
 
 Details for [scope](../prefacio.md#escopo) and [tool](../prefacio.md#ferramentas-aplicadas).

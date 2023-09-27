@@ -5,8 +5,8 @@ def high_and_low0(seq: str) -> str:
     """Problema 1."""
     maximo, minimo = -1e1000, +1e1000
 
-    seq = [int(x) for x in seq.split()]
-    for i in seq:
+    new_seq: list[int] = [int(x) for x in seq.split()]
+    for i in new_seq:
         if i > maximo:
             maximo = i
         if i < minimo:
@@ -16,8 +16,8 @@ def high_and_low0(seq: str) -> str:
 
 def high_and_low(seq: str) -> str:
     """Problema 1."""
-    seq = [int(x) for x in seq.split()]
-    return f'{max(seq)} {min(seq)}'
+    nseq = [int(x) for x in seq.split()]
+    return f'{max(nseq)} {min(nseq)}'
 
 
 # Custo computacional

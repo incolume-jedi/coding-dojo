@@ -12,7 +12,7 @@ Exemplo:
 def dna_complementary0(dna_string: str) -> str:
     """Problema 1."""
     complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
-    return ''.join(complement.get(x) for x in dna_string)
+    return ''.join(complement.get(x, '') for x in dna_string)
 
 
 def dna_complementary(dna_string: str) -> str:

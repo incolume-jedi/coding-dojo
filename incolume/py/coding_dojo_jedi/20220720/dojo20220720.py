@@ -1,9 +1,9 @@
 """Dojo 2022-07-20."""
 
 
-def calculadora(op: str, x: int | float, y: int | float) -> float:
+def calculadora(op: str, x: float, y: float) -> float:
     """Calculadora básica."""
-    result = 0
+    result: float = 0
     operadores = '+ - * ** / // %'.split()
     if op not in operadores:
         msg = f'Operador inválido. Use: {" ".join(operadores)}'

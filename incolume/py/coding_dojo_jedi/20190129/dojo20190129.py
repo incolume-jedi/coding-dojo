@@ -2,10 +2,10 @@
 
 # https://www.urionlinejudge.com.br/judge/pt/problems/view/1021
 """
-from typing import Any, List, Tuple, Union
+from typing import Any, List, Tuple, Union, Final
 
-MOEDAS = [1, 0.5, 0.25, 0.1, 0.05, 0.01]
-NOTAS = [100, 50, 20, 10, 5, 2]
+MOEDAS: Final = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
+NOTAS: Final = [100.0, 50.0, 20.0, 10.0, 5.0, 2.0]
 
 
 def moedas(valor: float) -> Tuple[List[float], List[float]]:
@@ -13,17 +13,17 @@ def moedas(valor: float) -> Tuple[List[float], List[float]]:
     vnotas: List[float] = [0, 0, 0, 0, 0, 0]
     vmoedas: List[float] = [0, 0, 0, 0, 0, 0]
 
-    valor = calcula(NOTAS, vnotas, valor)
-    valor = calcula(MOEDAS, vmoedas, valor)
+    valor = calcular(NOTAS, vnotas, valor)
+    valor = calcular(MOEDAS, vmoedas, valor)
 
     return vnotas, vmoedas
 
 
-def calcula(monetario: float, lista: list, valor: float) -> List[float]:
+def calcular(monetario: float, lista_resutado: list, valor: float) -> float:
     """Fatora o valor de acordo com a base monetária fornecida."""
     for i, moeda in enumerate(monetario):
         while valor >= moeda:
-            lista[i] += 1
+            lista_resutado[i] += 1
             valor -= moeda
             valor = round(valor, 2)
     return valor
@@ -52,4 +52,4 @@ def calcula2(
         # poderíamos usar divmod() também
         quantidades[i] = int(valor / cedula)
         valor = round(valor % cedula, 2)
-    return (quantidades, valor)
+    return quantidades, valor

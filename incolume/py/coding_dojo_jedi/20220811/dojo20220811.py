@@ -26,7 +26,7 @@ def calculadora(op, x, y):
         '**': lambda: x**y,
     }
     try:
-        result = run.get(op)()
+        result = run.get(op, lambda: x + y)()
     except ZeroDivisionError as err:
         msg = 'y deve ser diferente de 0'
         raise ValueError(msg) from err

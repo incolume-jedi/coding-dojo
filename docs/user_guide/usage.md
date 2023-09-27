@@ -1,4 +1,4 @@
-[![Tests CI/CD](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests_ci_cd.yaml/badge.svg)](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests_ci_cd.yaml)
+[![Tests CI/CD](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml/badge.svg)](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml)
 
 [//]: # ([![publish automatically]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/publish-automatically.yml/badge.svg&#41;]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/publish-automatically.yml&#41;)
 [//]: # ([![poetry-mine-publish-automatically]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/poetry-mine-publish-automatically.yml/badge.svg&#41;]&#40;https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05/actions/workflows/poetry-mine-publish-automatically.yml&#41;)

@@ -1,5 +1,7 @@
 # coding-dojo
 
+[![Tests CI/CD](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml/badge.svg)](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml)
+
 Aqui é mantido um repositório com as soluções que trabalhamos no [dojo de codificação da Guilda Jedi no discord](https://discord.gg/qA8CBQHSbK)
 
 

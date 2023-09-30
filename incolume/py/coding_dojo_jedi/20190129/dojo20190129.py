@@ -2,7 +2,7 @@
 
 # https://www.urionlinejudge.com.br/judge/pt/problems/view/1021
 """
-from typing import Any, Final, List, Tuple, Union
+from typing import Any, Final, List, Tuple
 
 MOEDAS: Final = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
 NOTAS: Final = [100.0, 50.0, 20.0, 10.0, 5.0, 2.0]
@@ -19,7 +19,9 @@ def moedas(valor: float) -> Tuple[List[float], List[float]]:
     return vnotas, vmoedas
 
 
-def calcular(monetario: float, lista_resutado: list, valor: float) -> float:
+def calcular(
+    monetario: list[float], lista_resutado: list, valor: float
+) -> float:
     """Fatora o valor de acordo com a base monetária fornecida."""
     for i, moeda in enumerate(monetario):
         while valor >= moeda:
@@ -45,7 +47,7 @@ def moedas2(valor: float) -> Tuple[List[float], List[float]]:
 def calcula2(
     valor: float,
     cedulas: list,
-) -> Tuple[List[int], Union[float, Any]]:
+) -> Tuple[Any, Any]:
     """Fatora o valor de acordo com a base monetária fornecida."""
     quantidades = [0] * len(cedulas)
     for (i, cedula) in enumerate(cedulas):

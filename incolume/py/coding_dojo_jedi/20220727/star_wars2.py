@@ -9,7 +9,7 @@ from typing import Dict, List
 
 import dotenv
 import requests
-from fuzzywuzzy import fuzz
+from fuzzywuzzy import fuzz  # type: ignore
 
 dotenv.load_dotenv()
 logging.basicConfig(

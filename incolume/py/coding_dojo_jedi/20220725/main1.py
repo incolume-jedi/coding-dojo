@@ -37,8 +37,8 @@ def cli(name):
             msg = (
                 f'* Nome: {personagem.get("name")}\n'
                 f'* Altura: {personagem.get("height")}cm\n'
-                f'* Ano de nascimento: {personagem.get("birth_year")}\n'
-                f'* Quantidade de filmes: {len(personagem.get("films"))}\n'
+                f'* Ano de nascimento: {personagem["birth_year"]}\n'
+                f'* Quantidade de filmes: {len(personagem["films"])}\n'
             )
             click.echo(msg)
     else:

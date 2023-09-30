@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 
 
-def research(name: str = '', url: str = '', pagina=0) -> dict[Any]:
+def research(name: str = '', url: str = '', pagina=0) -> dict[Any, Any]:
     """Research API."""
     resposta = []
     personagens = {}
@@ -50,7 +50,7 @@ def research(name: str = '', url: str = '', pagina=0) -> dict[Any]:
     logging.info(personagens)
     logging.info(personagens.get(name))
 
-    return personagens.get(name)
+    return personagens[name]
 
 
 if __name__ == '__main__':

@@ -345,6 +345,7 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 #pre_docs-build={help='Pre docs-build', cmd="poetry run task changelog"}
 #docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 #docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
+lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 #pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_pylint && task lint_mypy"
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle"
 lint={help='Checking all linters configurated', cmd=''}

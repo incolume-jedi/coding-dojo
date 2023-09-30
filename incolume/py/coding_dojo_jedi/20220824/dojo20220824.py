@@ -17,8 +17,7 @@ def dna_complementary0(dna_string: str) -> str:
 
 def dna_complementary(dna_string: str) -> str:
     """Problema 1."""
-    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
-    return dna_string.translate(dna_string.maketrans(complement))
+    return dna_string.translate(str.maketrans('ACGT', 'TGCA'))
 
 
 def millisseconds(*, h: int = 0, m: int = 0, s: int = 0) -> int:

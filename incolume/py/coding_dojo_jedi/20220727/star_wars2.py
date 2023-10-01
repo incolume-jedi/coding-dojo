@@ -30,8 +30,8 @@ def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
     if not cache_file.is_file():
         while True:
             try:
-                r = requests.get(url.format(pagina))
-                logging.info(f'{pagina}, {r}')
+                r = requests.get(url.format(pagina), timeout=1)
+                logging.info('%s, %s', pagina, r)
                 x = r.json()
                 resposta += x['results']
                 pagina += 1

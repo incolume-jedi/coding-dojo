@@ -28,7 +28,7 @@ def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
     if not cache_file.is_file():
         while True:
             try:
-                r = requests.get(url.format(pagina))
+                r = requests.get(url.format(pagina), timeout=1)
                 logging.info('%s %s', pagina, r)
                 x = r.json()
                 resposta += x['results']
@@ -53,12 +53,12 @@ def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
     result = personagens.get(name.casefold())
     if result:
         return [result]
-    else:
-        return [
-            personagem
-            for key, personagem in personagens.items()
-            if name.casefold() in key.split()
-        ]
+
+    return [
+        personagem
+        for key, personagem in personagens.items()
+        if name.casefold() in key.split()
+    ]
 
 
 if __name__ == '__main__':

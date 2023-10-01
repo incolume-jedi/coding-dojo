@@ -14,6 +14,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Ampliado verificação lint com ferramenta ruff;
 
+## [1.38.4]	 &#8212; 	2023-10-01:
+### Fixed
+  - Desativado webtest para releases-gwa, devido a problemas de execução em GWA;
+
 ## [1.38.3]	 &#8212; 	2023-10-01:
 ### Fixed
   - Corrigido estrutura do dojo 20220721, devido a problemas de execução em GWA;
@@ -257,4 +261,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.38.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.0...1.38.1
 [1.38.2]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.1...1.38.2
 [1.38.3]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.2...1.38.3
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.3...Unreleased
+[1.38.4]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.3...1.38.4
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.4...Unreleased

@@ -1,13 +1,11 @@
 # coding-dojo
 
-[![Tests CI/CD](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml/badge.svg)](https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml)
-
 Aqui é mantido um repositório com as soluções que trabalhamos no [dojo de codificação da Guilda Jedi no discord](https://discord.gg/qA8CBQHSbK)
 
 
 Os códigos estão organizados em diretórios, sendo que cada diretório representa um dia do dojo, formado por `incolume/py/YYYYMMDD`, de forma que o primeiro dojo estará no topo, e o ultimo na base.
 
-Os códigos são em python, desde 3.8 ao 3.10 e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido para gerenciador de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo `pyproject.toml`
+Os códigos são em escritos na liguagem python, desde a versão 3.8 passando por suas atualizações mais recentes, e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido como gerenciador de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo `pyproject.toml`
 
 Finalmente, para rodar os testes nos códigos, carrege o shell `poetry shell`, mude para o diretório do Dojo, por exemplo 20220701, `cd incolume/py/20220701`, e digite `pytest`. Ou simplesmente no diretório principal digite `poetry run pytest incolume/py/20220701`.
 
@@ -15,7 +13,7 @@ Finalmente, para rodar os testes nos códigos, carrege o shell `poetry shell`, m
 
 ## O que é?
 
-A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação por meio da realização de exercícios práticos.
+A ideia de um Coding Dojo é treinar a resolução de problemas, desenvolvimento orientado a testes (TDD), programação em par, comunicação com outras pessoas e uma linguagem de programação através de exercícios práticos.
 
 Para mais informações sobre os nossos coding dojos anteriores acesse os respectivos diretórios dos dojos e leia o REAME.md.
 
@@ -31,7 +29,7 @@ Somos encorajados a tentar novas ideias, sair da caixa. A ideia é treinar
 
 Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.
 
-Se você não se sentir confortável em participar programando, está convidado a participar como um membro da plateia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
+Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos da linguagem.
 
 ## Como conduzir?
 

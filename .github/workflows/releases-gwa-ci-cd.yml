@@ -1,4 +1,4 @@
-name: GWA Flow    # Success run
+name: Releases GWA CI/CD    # Success run
 
 on:
   pull_request:

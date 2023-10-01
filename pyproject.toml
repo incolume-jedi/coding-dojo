@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.35.0"
+version = "1.38.0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
 
 classifiers = [
   # https://pypi.org/classifiers/
-  'Development Status :: 5 - Production/Stable',
-  'Operating System :: OS Independent',
+  "Development Status :: 5 - Production/Stable",
+  "Operating System :: OS Independent",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3",
@@ -19,14 +19,23 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
-  'Natural Language :: Portuguese (Brazilian)',
+  "Natural Language :: Portuguese (Brazilian)",
   "Intended Audience :: Education",
-  'Topic :: Education',
-  'License :: Free For Educational Use',
+  "Topic :: Education",
+  "License :: Free For Educational Use",
 ]
+
+[tool.poetry.urls]
+"Documentation" = "https://incolume-jedi.github.io/coding-dojo/"
+"Source" = "https://github.com/incolume-jedi/coding-dojo/"
+"Git" = "https://github.com/incolume-jedi/coding-dojo.git"
+"Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
+"Bug Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
+python-dotenv = "^0.20.0"
 Unidecode = "^1.3.4"
 requests = "^2.28.1"
 fuzzywuzzy = "^0.18.0"
@@ -40,7 +49,6 @@ incolumepy-utils = {path = "extra-src/incolumepy_utils-2.10.0-py3-none-any.whl"}
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"
 pytest-cov = "^4.1.0"
-python-dotenv = "^0.20.0"
 taskipy = "^1.12.0"
 blue = "^0.9.1"
 isort = "^5.12.0"
@@ -49,6 +57,14 @@ pylint = "^2.17.5"
 mypy = "^1.5.1"
 mypy-extensions = "^1.0.0"
 ruff = "^0.0.290"
+types-requests = "^2.31.0.5"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkdocstrings = "^0.23.0"
+mkdocstrings-python = "^1.7.0"
+mkdocs-material = "^9.4.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -256,38 +272,41 @@ extension-pkg-whitelist = "orjson"
 
 [tool.pylint.messages_control]
 disable = [
-    # Disable too many and too few checks.
-    "too-many-ancestors",
-    "too-many-arguments",
-    "too-many-boolean-expressions",
-    "too-many-branches",
-    "too-many-function-args",
-    "too-many-instance-attributes",
-    "too-many-lines",
-    "too-many-locals",
-    "too-many-nested-blocks",
-    "too-many-public-methods",
-    "too-many-return-statements",
-    "too-many-statements",
-    "too-few-public-methods",
+  # Disable too many and too few checks.
+  "too-many-ancestors",
+  "too-many-arguments",
+  "too-many-boolean-expressions",
+  "too-many-branches",
+  "too-many-function-args",
+  "too-many-instance-attributes",
+  "too-many-lines",
+  "too-many-locals",
+  "too-many-nested-blocks",
+  "too-many-public-methods",
+  "too-many-return-statements",
+  "too-many-statements",
+  "too-few-public-methods",
 
-    # Similar lines in files (often the case in tests).
-    "duplicate-code",
+  # Similar lines in files (often the case in tests).
+  "duplicate-code",
 
-    # Many functions (e.g. callbacks) will naturally have unused arguments.
-    "unused-argument",
+  # Many functions (e.g. callbacks) will naturally have unused arguments.
+  "unused-argument",
 
-    # # Disable checking that method could be a function in classes (often used for organisation).
-    # "no-self-use",
+  # # Disable checking that method could be a function in classes (often used for organisation).
+  # "no-self-use",
 
-    # Disable failure for TODO items in the codebase (code will always have TODOs).
-    "fixme",
+  # Disable failure for TODO items in the codebase (code will always have TODOs).
+  "fixme",
 
-    # Disable docstrings checks as we don't require excessive documentation.
-    "missing-docstring",
+  # Disable docstrings checks as we don't require excessive documentation.
+  "missing-docstring",
 
-    "no-member",
-    "unspecified-encoding",
+  "no-member",
+  "unspecified-encoding",
+
+  #
+  "import-error",
 ]
 
 [tool.mypy]
@@ -326,9 +345,8 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 #pre_docs-build={help='Pre docs-build', cmd="poetry run task changelog"}
 #docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 #docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
-pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle"
-#pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy"
-#pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_pylint && task lint_mypy"
+lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
+pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}
 lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
 lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}

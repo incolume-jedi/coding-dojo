@@ -1,9 +1,9 @@
 """Dojo 2022-07-20."""
 
 
-def calculadora(op: str, x: int | float, y: int | float) -> float:
+def calculadora(op: str, x: float, y: float) -> float:
     """Calculadora básica."""
-    result = 0
+    result: float = 0
     operadores = '+ - * ** / // %'.split()
     if op not in operadores:
         msg = f'Operador inválido. Use: {" ".join(operadores)}'
@@ -31,8 +31,8 @@ def calculadora(op: str, x: int | float, y: int | float) -> float:
             result = x // y
         if op == '**':
             result = x**y
-    except ZeroDivisionError:
+    except ZeroDivisionError as err:
         msg = 'y deve ser diferente 0.'
-        raise ValueError(msg)
+        raise ValueError(msg) from err
 
     return result

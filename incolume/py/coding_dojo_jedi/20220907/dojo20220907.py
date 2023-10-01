@@ -5,9 +5,9 @@ def fizzbuzz0(num: int) -> str:
     """Calcula fizzbuzz."""
     if num % 3 == 0 and num % 5 == 0:
         return 'FizzBuzz'
-    elif num % 3 == 0:
+    if num % 3 == 0:
         return 'Fizz'
-    elif num % 5 == 0:
+    if num % 5 == 0:
         return 'Buzz'
     return str(num)
 
@@ -38,5 +38,5 @@ def fizzbuzz2(num: int) -> str:
 if __name__ == '__main__':    # pragma: no cover
     from dis import dis
 
-    print(dis(fizzbuzz0))
-    print(dis(fizzbuzz))
+    dis(fizzbuzz0)
+    dis(fizzbuzz)

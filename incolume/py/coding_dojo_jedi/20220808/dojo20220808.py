@@ -5,8 +5,7 @@ def is_par0(num: int) -> str:
     """Verifica se é Par."""
     if num % 2 == 0:
         return 'Par'
-    else:
-        return 'Ímpar'
+    return 'Ímpar'
 
 
 def is_par(num: int) -> str:

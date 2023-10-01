@@ -15,4 +15,4 @@ def weekday(number_day: int) -> str:
     if number_day not in dias_semana:
         msg = 'Valor Inválido'
         raise ValueError(msg)
-    return dias_semana.get(number_day)
+    return dias_semana.get(number_day, '')

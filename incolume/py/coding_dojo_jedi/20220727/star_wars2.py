@@ -9,7 +9,7 @@ from typing import Dict, List
 
 import dotenv
 import requests
-from fuzzywuzzy import fuzz
+from fuzzywuzzy import fuzz  # type: ignore
 
 dotenv.load_dotenv()
 logging.basicConfig(
@@ -25,32 +25,32 @@ def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
     pagina = pagina or 1
     url = url or 'https://swapi.dev/api/people/?page={}'
     cache_file = Path(gettempdir()).joinpath('20220727_personagens.json')
-    logging.info(f'{cache_file=}')
-    logging.info(f'{cache_file.is_file()=}')
+    logging.info('%s', cache_file)
+    logging.info('cache_file.is_file()=%s', cache_file.is_file())
     if not cache_file.is_file():
         while True:
             try:
-                r = requests.get(url.format(pagina))
-                logging.info(f'{pagina}, {r}')
+                r = requests.get(url.format(pagina), timeout=1)
+                logging.info('%s, %s', pagina, r)
                 x = r.json()
                 resposta += x['results']
                 pagina += 1
             except KeyError:
                 break
         personagens = {p.get('name').casefold(): p for p in resposta}
-        logging.info(f'{personagens=}')
+        logging.info('personagens=%s', personagens)
         with cache_file.open('w') as f:
             json.dump(personagens, f, indent=4)
 
-        logging.info(f'{len(resposta)} registros')
+        logging.info('%s registros', len(resposta))
     # for person in resposta:
 
     if not personagens:
         with cache_file.open() as f:
             personagens = json.load(f)
 
-    logging.info(f'>>> {personagens=}')
-    logging.info(f'>>> {personagens.get(name)=}')
+    logging.info('>>> personagens=%s', personagens)
+    logging.info('>>> personagens.get(name)=%s', personagens.get(name))
 
     result = personagens.get(name.casefold())
     if result:
@@ -72,7 +72,6 @@ def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
 
 
 if __name__ == '__main__':
-    pass
     print(research('Tion Medon'), end='\n\n')
     print(research('Luke Skywalker'), end='\n\n')
     print(research('Obi-Wan Kenobi'), end='\n\n')

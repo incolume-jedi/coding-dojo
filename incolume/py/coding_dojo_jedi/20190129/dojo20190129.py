@@ -20,7 +20,9 @@ def moedas(valor: float) -> Tuple[List[float], List[float]]:
 
 
 def calcular(
-    monetario: list[float], lista_resutado: list, valor: float
+    monetario: list[float],
+    lista_resutado: list,
+    valor: float,
 ) -> float:
     """Fatora o valor de acordo com a base monetária fornecida."""
     for i, moeda in enumerate(monetario):

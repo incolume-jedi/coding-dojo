@@ -1,5 +1,7 @@
 """Dojo."""
 
+import sys
+
 import click
 from star_wars import research
 
@@ -24,12 +26,13 @@ CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
     default=None,
     help='Name for search on api',
 )
-def cli(name):
+def cli(name: str = '') -> dict:
     """Command Line Interface."""
     msg = ''
     if not name:
         with click.Context(cli) as ctx:
             click.echo(ctx.get_help())
+        sys.exit(0)
 
     personagem = research(name)
     if not personagem:

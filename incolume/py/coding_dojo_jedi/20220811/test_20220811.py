@@ -10,7 +10,7 @@ from dojo20220811 import calculadora
 
 def check_connectivity(url: str = 'https://google.com'):
     try:
-        req = requests.get(url)
+        req = requests.get(url, timeout=0.8)
         if req.status_code != 200:
             msg = 'Not connected'
             raise ConnectionError(msg)
@@ -66,6 +66,7 @@ class MyTestCase(unittest.TestCase):
 
         Defina um skip com a mensagem 'Dont ran'.
         """
+        # pylint: disable=comparison-of-constants
         assert True is False
 
     def test_soma(self):

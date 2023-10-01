@@ -15,6 +15,7 @@ SEMANA = dict(enumerate(DIAS))
 
 def weekday0(dia: str, qtd: int) -> str:
     """Exibe dias da semana."""
+    # pylint: disable=# pylint: disable=consider-using-enumerate
     for i in range(len(DIAS)):
         if dia == DIAS[i]:
             return DIAS[(DIAS.index(dia) + qtd) % 7]

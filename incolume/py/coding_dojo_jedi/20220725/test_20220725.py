@@ -8,6 +8,7 @@ from star_wars1 import research
     version_info < (3, 9, 0),
     reason='This run only Python 3.9+',
 )
+@pytest.mark.webtest
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
     (

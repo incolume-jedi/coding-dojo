@@ -1,12 +1,13 @@
-import requests
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+from os import environ
+
+from dojo20220721 import saudacao
 
 
-def saudacao():
-
-    r = requests.get('https://swapi.dev/api/people/1/', timeout=1.5)
-
-    name = r.json()['name']
-    print('Hello,', name + '!')
-
-
-saudacao()
+def test_saudacao(capsys):
+    timeout = float(environ.get('TIMEOUT', 9))
+    saudacao(timeout)
+    output = capsys.readouterr()
+    assert output.out.strip() == 'Hello, Luke Skywalker!'
+    # assert output.err.strip() == ''

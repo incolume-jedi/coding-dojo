@@ -30,7 +30,7 @@ jobs:
           poetry install
 
       - name: Test with pytest
-        run: poetry run pytest
+        run: poetry run pytest -m "not webtest"
 
   linters:
     needs: [test]

@@ -4,7 +4,7 @@ from dojo20220921 import to_roman
 
 @pytest.mark.parametrize(
     ('entrada', 'experado'),
-    (
+    (  # noqa: PT007
         (1, 'I'),
         (2, 'II'),
         (3, 'III'),

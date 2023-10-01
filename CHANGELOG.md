@@ -14,6 +14,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Ampliado verificação lint com ferramenta ruff;
 
+## [1.38.2]	 &#8212; 	2023-10-01:
+### Fixed
+  - Desativado testes web para GWA.;
+
 ## [1.38.1]	 &#8212; 	2023-10-01:
 ### Fixed
   - Redefinido timeout em GWA;
@@ -247,4 +251,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.37.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.36.0...1.37.0
 [1.38.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.37.0...1.38.0
 [1.38.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.0...1.38.1
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.1...Unreleased
+[1.38.2]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.1...1.38.2
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.2...Unreleased

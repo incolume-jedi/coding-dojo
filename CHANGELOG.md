@@ -10,19 +10,34 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-09-25:
+## [Unreleased]	 &#8212; 	2023-10-01:
+### Changed
+  - Ampliado verificação lint com ferramenta ruff;
+
+## [1.38.1]	 &#8212; 	2023-10-01:
+### Fixed
+  - Redefinido timeout em GWA;
+
+## [1.38.0]	 &#8212; 	2023-10-01:
 ### Added
-  - MKDocs para gerenciar documentação;
+  - Suite MKDocs para gerenciar documentação;
   - Acrescentado estrutura de documentação;
-  - Instalado piloto com ruff;
+  - Instalado piloto para lint ruff;
+  - Disponibilizado documentação em GitHub Pages;
+  - Criados processo de automação via GWA;
+  - Acrescentados geração de artefatos automaticamente;
+### Changed
+  - Aplicado cobertura total para lint mypy;
+  - Aplicado cobertura total para lint pylint;
+  - Restruturação de script RPA em taskipy;
+
+## [1.37.0]	 &#8212; 	2023-09-25:
 ### Changed
   - Ampliado aplicação de estilo com blue;
   - Ampliado amplicação de estilo com isort;
   - Aplicado ampliação de estilo com ruff;
-
-## [1.37.0]	 &#8212; 	2023-09-25:
 ### Fixed
-  - Tratativa em corrigir a falha no branch atual.;
+  - Tratativa em corrigir a falha de validação;
 
 ## [1.36.0]	 &#8212; 	2023-09-25:
 ### Added
@@ -230,4 +245,6 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.35.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.34.0...1.35.0
 [1.36.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.35.0...1.36.0
 [1.37.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.36.0...1.37.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.37.0...Unreleased
+[1.38.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.37.0...1.38.0
+[1.38.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.0...1.38.1
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.1...Unreleased

@@ -1,3 +1,4 @@
+from os import environ
 from sys import version_info
 
 import pytest
@@ -8,6 +9,7 @@ from star_wars2 import research
     version_info < (3, 9, 0),
     reason='This run only Python 3.9+',
 )
+@pytest.mark.webtest
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
     (
@@ -166,4 +168,5 @@ from star_wars2 import research
     ),
 )
 def test_research(entrance, expected):
-    assert research(entrance) == expected
+    timeout = float(environ.get('TIMEOUT', 0.8))
+    assert research(entrance, timeout=timeout) == expected

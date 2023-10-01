@@ -15,7 +15,9 @@ logging.basicConfig(
 )
 
 
-def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
+def research(
+    name: str = '', url: str = '', pagina=0, timeout: float = 9
+) -> List[Dict]:
     """Pesquisa na API."""
     resposta = []
     personagens = {}
@@ -28,7 +30,7 @@ def research(name: str = '', url: str = '', pagina=0) -> List[Dict]:
     if not cache_file.is_file():
         while True:
             try:
-                r = requests.get(url.format(pagina), timeout=1)
+                r = requests.get(url.format(pagina), timeout=timeout)
                 logging.info('%s %s', pagina, r)
                 x = r.json()
                 resposta += x['results']

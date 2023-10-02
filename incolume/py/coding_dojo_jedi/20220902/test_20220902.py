@@ -90,7 +90,9 @@ def test_notas_0():
     ),
 )
 def test_trocar_dinheiro(entrance, expected):
-    """Teste do calculo para o menor número de notas e moedas
+    """Teste para troca de notas.
+
+    calculo para o menor número de notas e moedas
     possíveis no qual o valor pode ser decomposto.
     """
     assert trocar_dinheiro(entrance) == expected

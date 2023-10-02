@@ -1,12 +1,13 @@
 """Dojo."""
 
 
-def get_char(num: int):
+def get_char(num: int) -> str:
     """Retorna um Unicode do parametro em num."""
     # Tratamento exceção
+    endchar: int = 0x10FFFF
     try:
         num = int(num)
-        if not 0 <= num <= 0x10FFFF:
+        if not 0 <= num <= endchar:
             msg = '0 <= num <= 0x10ffff.'
             raise ValueError(msg)
     except ValueError as err:

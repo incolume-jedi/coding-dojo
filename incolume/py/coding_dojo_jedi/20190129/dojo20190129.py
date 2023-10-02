@@ -2,16 +2,16 @@
 
 # https://www.urionlinejudge.com.br/judge/pt/problems/view/1021
 """
-from typing import Any, Final, List, Tuple
+from typing import Any, Final
 
 MOEDAS: Final = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
 NOTAS: Final = [100.0, 50.0, 20.0, 10.0, 5.0, 2.0]
 
 
-def moedas(valor: float) -> Tuple[List[float], List[float]]:
+def moedas(valor: float) -> tuple[list[float], list[float]]:
     """Contabiliza a quantidade de notas e moedas."""
-    vnotas: List[float] = [0, 0, 0, 0, 0, 0]
-    vmoedas: List[float] = [0, 0, 0, 0, 0, 0]
+    vnotas: list[float] = [0, 0, 0, 0, 0, 0]
+    vmoedas: list[float] = [0, 0, 0, 0, 0, 0]
 
     valor = calcular(NOTAS, vnotas, valor)
     valor = calcular(MOEDAS, vmoedas, valor)
@@ -38,7 +38,7 @@ def calcular(
 # didáticos sobre python
 
 
-def moedas2(valor: float) -> Tuple[List[float], List[float]]:
+def moedas2(valor: float) -> tuple[list[float], list[float]]:
     """Contabiliza a quantidade de notas e moedas."""
     (vnotas, valor) = calcula2(valor, NOTAS)
     (vmoedas, valor) = calcula2(valor, MOEDAS)
@@ -49,7 +49,7 @@ def moedas2(valor: float) -> Tuple[List[float], List[float]]:
 def calcula2(
     valor: float,
     cedulas: list,
-) -> Tuple[Any, Any]:
+) -> tuple[Any, Any]:
     """Fatora o valor de acordo com a base monetária fornecida."""
     quantidades = [0] * len(cedulas)
     for (i, cedula) in enumerate(cedulas):

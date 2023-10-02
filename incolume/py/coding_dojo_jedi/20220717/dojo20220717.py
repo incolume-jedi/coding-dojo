@@ -1,7 +1,7 @@
 """Dojo."""
 
 
-def palindrome(word):
+def palindrome(word: str) -> bool:
     """Return if is palindrome."""
     ispalindrome = False
     word = str(word)

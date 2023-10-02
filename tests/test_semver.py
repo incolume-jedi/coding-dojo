@@ -49,7 +49,8 @@ class TestSemVer:
             ('1.1.1rc1111', True),
         ),
     )
-    def test_semantic_version(self, entrance, expected, semver_regex) -> None:
+    def test_semantic_version(self, entrance: str,
+                              expected: bool, semver_regex: str) -> None:
         """Test semantic version asserts."""
         assert (
             bool(

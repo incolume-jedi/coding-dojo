@@ -126,9 +126,13 @@ exclude_lines = [
 ]
 
 [tool.ruff]
+# Always generate Python compatible code.
+target-version = "py39"
 # Decrease the maximum line length to 79 characters.
 line-length = 79
+tab-size = 4
 src = ["incolume/", "tests/"]
+respect-gitignore = true
 select = [
   "A",    #flake8-builtins
   "AIR",    #Airflow

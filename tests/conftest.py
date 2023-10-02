@@ -21,7 +21,7 @@ if version_info < (3, 8, 0):
             'incolume/py/20220722',
             'incolume/py/20220902',
             'incolume/py/20220905',
-        )
+        ),
     )
 
 
@@ -35,5 +35,5 @@ if version_info < (3, 10, 0):
             'incolume/py/20220720',
             'incolume/py/20220808',
             'incolume/py/20220910',
-        )
+        ),
     )

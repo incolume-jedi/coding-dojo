@@ -1,10 +1,7 @@
 """Dojo."""
 
 
-from typing import List
-
-
-def razao(seq: List):
+def razao(seq: list):
     """Calcula a razão."""
     if len(seq) == 1:
         return seq[-1]
@@ -24,7 +21,7 @@ def validate(fizz, buzz, fizzbuzz):
     return None
 
 
-def fizz_buzz_backwards(seq: List):
+def fizz_buzz_backwards(seq: list):
     """Aplica validação fizzbuzz a lista."""
     if len(seq) > 100:
         msg = 'Comprimento máximo de 100 elementos.'

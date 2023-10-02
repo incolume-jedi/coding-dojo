@@ -11,13 +11,13 @@ from incolume.py.coding_dojo_jedi import __version__
 class TestSemVer:
     """Test case class for Sematic Versions."""
 
-    def test_version(self, semver_regex):
+    def test_version(self, semver_regex: str) -> None:
         """Validação de versionamento semântico para versão do pacote."""
         assert re.fullmatch(semver_regex, __version__, re.I)
 
     @pytest.mark.parametrize(
         ('entrance', 'expected'),
-        (
+        (  # noqa: PT007
             (__version__, True),
             ('1', False),
             ('1.0', False),
@@ -49,8 +49,9 @@ class TestSemVer:
             ('1.1.1rc1111', True),
         ),
     )
-    def test_semantic_version(self, entrance: str,
-                              expected: bool, semver_regex: str) -> None:
+    def test_semantic_version(
+        self, entrance: str, expected: bool, semver_regex: str
+    ) -> None:
         """Test semantic version asserts."""
         assert (
             bool(

@@ -19,5 +19,5 @@ def test_dojo202207172() -> None:
         ('ada', True),
     ],
 )
-def test_dojo20220717(entrada: str | int, esperado: bool) -> None:
+def test_dojo20220717(entrada: str, esperado: bool) -> None:
     assert dojo20220717.palindrome(entrada) == esperado

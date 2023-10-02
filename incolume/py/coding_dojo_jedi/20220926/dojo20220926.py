@@ -240,7 +240,7 @@ def protein(chain: str) -> str:
 
 
 if __name__ == '__main__':    # pragma: no cover
-    print(
+    print(  # noqa: T201
         protein('CAU'),
         protein('CAUAAAGAA'),
         protein('CAUAAAUAGGAA'),

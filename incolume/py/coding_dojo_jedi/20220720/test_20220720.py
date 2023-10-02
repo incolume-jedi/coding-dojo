@@ -14,7 +14,7 @@ from dojo20220720 import calculadora
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    (  # noqa: PT007
         (('+', 3, '4'), 7),
         (('+', 3, 4), 7),
         (('-', 3.0, 4), -1.0),

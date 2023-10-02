@@ -204,8 +204,19 @@ unfixable = ["B"]
 #"__init__.py" = ["E402"]
 #"path/to/file.py" = ["E402"]
 #"**/{tests,docs,tools}/*" = ["E402"]
-# TODO remover D100 e D103 após estabilizar teste piloto
-"**/test_*.py" = ["ANN101", "S101", "D100", "D103", "PLR6301"]
+# TODO remover ANN001 ANN201 ANN202 D100 D103 D202 PT007 após estabilizar teste piloto
+"**/test_*.py" = [
+  "ANN001",
+  "ANN101",
+  "ANN201",
+  "ANN202",
+  "D100",
+  "D103",
+  "D202",
+  "PLR6301",
+  "PT007",
+  "S101",
+]
 
 
 [tool.ruff.pydocstyle]

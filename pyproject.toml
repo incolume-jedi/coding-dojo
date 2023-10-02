@@ -204,6 +204,7 @@ unfixable = ["B"]
 #"__init__.py" = ["E402"]
 #"path/to/file.py" = ["E402"]
 #"**/{tests,docs,tools}/*" = ["E402"]
+# TODO remover D100 e D103 após estabilizar teste piloto
 "**/test_*.py" = ["ANN101", "S101", "D100", "D103", "PLR6301"]
 
 

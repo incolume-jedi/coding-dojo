@@ -1,6 +1,8 @@
 """Module test for principal package."""
 
 
+from pathlib import Path
+
 import pytest
 
 from incolume.py.coding_dojo_jedi import (
@@ -19,34 +21,34 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (
+        (  # noqa: PT007
             configfile,
             versionfile,
         ),
     )
-    def test_exists(self, entrance):
+    def test_exists(self, entrance: Path) -> None:
         """Test if exists files."""
         assert entrance.exists(), f'{entrance=}'
 
     @pytest.mark.parametrize(
         'entrance',
-        (
+        (  # noqa: PT007
             configfile,
             versionfile,
         ),
     )
-    def test_is_file(self, entrance):
+    def test_is_file(self, entrance: Path) -> None:
         """Test if are files."""
         assert entrance.is_file(), f'{entrance=}'
 
     @pytest.mark.parametrize(
         'entrance',
-        (
+        (  # noqa: PT007
             configfile,
             versionfile,
         ),
     )
-    def test_same_version(self, entrance):
+    def test_same_version(self, entrance: Path) -> None:
         """Test same version."""
         try:
             with entrance.open('rb') as stream:

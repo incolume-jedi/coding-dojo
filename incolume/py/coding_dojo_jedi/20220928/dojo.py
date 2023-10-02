@@ -1,11 +1,11 @@
 """Dojo."""
 # !/usr/bin/env python
-from typing import Iterable
+from collections.abc import Iterable
 
 __author__ = '@britodfbr'  # pragma: no cover
 
 
-def max_sequence(container: Iterable):
+def max_sequence(container: Iterable) -> int:
     """Localiza a maxima sequência."""
     result = 0
     if not container or all(x < 0 for x in container):

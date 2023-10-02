@@ -1,4 +1,5 @@
 """Dojo."""
+import logging
 
 DIAS = [
     'domingo',
@@ -25,7 +26,7 @@ def weekday0(dia: str, qtd: int) -> str:
 def weekday(dia: str, qtd: int) -> str:
     """Exibe dias da semana."""
     for i, dia_semana in enumerate(DIAS):
-        print(i, dia_semana)
+        logging.debug(i, dia_semana)
         if dia == dia_semana:
             return DIAS[(DIAS.index(dia) + qtd) % 7]
     return ''

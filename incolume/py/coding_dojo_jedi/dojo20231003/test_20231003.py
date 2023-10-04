@@ -1,13 +1,14 @@
 import pytest
-from incolume.py.coding_dojo_jedi.dojo20231003 import max_sequence
+# from incolume.py.coding_dojo_jedi.dojo20231003 import max_sequence
+from . import max_sequence
 
 
 
 def test_max_sequence():
     """Test de max_sequence."""
     assert max_sequence([]) == 0
-    
-    
+
+
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [

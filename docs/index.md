@@ -3,11 +3,11 @@
 Aqui é mantido um repositório com as soluções que trabalhamos no [dojo de codificação da Guilda Jedi no discord](https://discord.gg/qA8CBQHSbK)
 
 
-Os códigos estão organizados em diretórios, sendo que cada diretório representa um dia do dojo, formado por `incolume/py/YYYYMMDD`, de forma que o primeiro dojo estará no topo, e o ultimo na base.
+Os códigos estão organizados em diretórios, sendo que cada diretório representa um dia do dojo, formado por `incolume/py/dojoYYYYMMDD`, de forma que o primeiro dojo estará no topo, e o ultimo na base.
 
-Os códigos são em escritos na liguagem python, desde a versão 3.8 passando por suas atualizações mais recentes, e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido como gerenciador de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo `pyproject.toml`
+Os códigos estão em python, desde a versão 3.8 ao 3.12+ e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido para gerenciador de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo `pyproject.toml`
 
-Finalmente, para rodar os testes nos códigos, carrege o shell `poetry shell`, mude para o diretório do Dojo, por exemplo 20220701, `cd incolume/py/20220701`, e digite `pytest`. Ou simplesmente no diretório principal digite `poetry run pytest incolume/py/20220701`.
+Finalmente, para rodar os testes nos códigos, carrege o shell `poetry shell`, mude para o diretório do Dojo, por exemplo 20220701, `cd incolume/py/dojo20220701`, e digite `pytest`. Ou simplesmente no diretório principal digite `poetry run pytest incolume/py/20220701`.
 
 [Mais detalhes sobre os coding-dojo](FAQ.md)
 

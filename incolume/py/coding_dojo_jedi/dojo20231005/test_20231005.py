@@ -8,7 +8,12 @@ import pytest
 class TestCase:
     """Caso de teste para este dojo."""
 
-    directories: ClassVar = list(Path().absolute().parent.iterdir())
+    directories: ClassVar = list(Path(__file__).parents[1].iterdir())
+
+    def test_path(self):
+        """test path."""
+        assert self.directories == ''
+
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

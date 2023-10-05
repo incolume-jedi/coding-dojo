@@ -1,5 +1,11 @@
 import pytest
-from dojo20220815 import adedonha, index, index0, index1
+
+from incolume.py.coding_dojo_jedi.dojo20220815.dojo20220815 import (
+    adedonha,
+    index,
+    index0,
+    index1,
+)
 
 
 @pytest.mark.parametrize(

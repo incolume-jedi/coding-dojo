@@ -1,5 +1,6 @@
 import pytest
-from dojo20220831 import conceito
+
+from incolume.py.coding_dojo_jedi.dojo20220831.dojo20220831 import conceito
 
 
 @pytest.mark.parametrize(

@@ -1,7 +1,8 @@
 from sys import version_info
 
 import pytest
-from dojo20220905 import stream
+
+from incolume.py.coding_dojo_jedi.dojo20220905.dojo20220905 import stream
 
 
 @pytest.mark.skipif(

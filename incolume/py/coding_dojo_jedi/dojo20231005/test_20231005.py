@@ -14,7 +14,6 @@ class TestCase:
         """Test path."""
         assert all(d.parts[-2] == 'coding_dojo_jedi' for d in self.directories)
 
-
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [

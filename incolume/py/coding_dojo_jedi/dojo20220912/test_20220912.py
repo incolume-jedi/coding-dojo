@@ -1,10 +1,14 @@
 import pytest
-from dojo20220912 import weekday, weekday0
+
+from incolume.py.coding_dojo_jedi.dojo20220912.dojo20220912 import (
+    weekday,
+    weekday0,
+)
 
 
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (  # noqa: PT007
+    (
         (('sábado', 1), 'domingo'),
         (('quinta-feira', 3), 'domingo'),
         (('segunda-feira', 1), 'terça-feira'),

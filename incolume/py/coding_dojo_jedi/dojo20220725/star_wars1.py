@@ -4,7 +4,6 @@ import logging
 import os
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Dict, List
 
 import dotenv
 import requests
@@ -20,7 +19,7 @@ def research(
     url: str = '',
     pagina=0,
     timeout: float = 9,
-) -> List[Dict]:
+) -> list[dict]:
     """Pesquisa na API."""
     resposta = []
     personagens = {}

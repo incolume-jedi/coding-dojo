@@ -2,7 +2,8 @@
 from collections.abc import Iterable
 
 import pytest
-from dojo import max_sequence
+
+from incolume.py.coding_dojo_jedi.dojo20220928.dojo import max_sequence
 
 
 class TestCase:
@@ -13,7 +14,7 @@ class TestCase:
     @pytest.mark.skip()
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-        (  # noqa: PT007
+        (
             ([], 0),
             ([-1, -2, -3, -4], 0),
             ([-10, -2, -3, -1], 0),

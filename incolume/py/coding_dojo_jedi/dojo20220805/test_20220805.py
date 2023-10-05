@@ -1,5 +1,6 @@
 import pytest
-from dojo20220805 import bmi
+
+from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi
 
 
 @pytest.mark.parametrize(

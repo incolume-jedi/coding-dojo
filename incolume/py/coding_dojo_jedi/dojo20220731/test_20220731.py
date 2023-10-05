@@ -1,5 +1,8 @@
 import pytest
-from dojo20220731 import show_table_ascii
+
+from incolume.py.coding_dojo_jedi.dojo20220731.dojo20220731 import (
+    show_table_ascii,
+)
 
 
 def test_show_table_ascii():

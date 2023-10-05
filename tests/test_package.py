@@ -21,7 +21,7 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (  # noqa: PT007
+        (
             configfile,
             versionfile,
         ),
@@ -32,7 +32,7 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (  # noqa: PT007
+        (
             configfile,
             versionfile,
         ),
@@ -43,7 +43,7 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (  # noqa: PT007
+        (
             configfile,
             versionfile,
         ),

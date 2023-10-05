@@ -5,7 +5,8 @@ import unittest
 
 import pytest
 import requests
-from dojo20220811 import calculadora
+
+from incolume.py.coding_dojo_jedi.dojo20220811.dojo20220811 import calculadora
 
 
 def check_connectivity(url: str = 'https://google.com'):

@@ -1,5 +1,6 @@
 import pytest
-from dojo20220810 import is_vogal
+
+from incolume.py.coding_dojo_jedi.dojo20220810.dojo20220810 import is_vogal
 
 
 @pytest.mark.parametrize(

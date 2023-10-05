@@ -2,7 +2,8 @@ from os import environ
 from sys import version_info
 
 import pytest
-from star_wars1 import research
+
+from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 
 
 @pytest.mark.skipif(

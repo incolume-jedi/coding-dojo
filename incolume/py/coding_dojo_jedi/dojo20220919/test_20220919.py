@@ -1,5 +1,6 @@
 import pytest
-from dojo20220919 import weekday
+
+from incolume.py.coding_dojo_jedi.dojo20220919.dojo20220919 import weekday
 
 
 @pytest.mark.parametrize(

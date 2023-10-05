@@ -1,5 +1,6 @@
-import dojo20220717
 import pytest
+
+from incolume.py.coding_dojo_jedi.dojo20220717 import dojo20220717
 
 
 def test_dojo202207171() -> None:

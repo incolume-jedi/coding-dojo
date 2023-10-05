@@ -25,9 +25,6 @@ def high_and_low(seq: str) -> str:
 # ipython -i dojo
 # >>> from dis import dis
 #
-# dis(mysort0)
-# dis(mysort1)
-# dis(mysort)
 
 
 def mysort0(a, b, c):

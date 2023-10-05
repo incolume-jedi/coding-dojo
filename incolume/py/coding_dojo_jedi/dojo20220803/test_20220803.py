@@ -1,5 +1,6 @@
 import pytest
-from dojo20220803 import cavaleiro
+
+from incolume.py.coding_dojo_jedi.dojo20220803.dojo20220803 import cavaleiro
 
 
 @pytest.mark.parametrize(

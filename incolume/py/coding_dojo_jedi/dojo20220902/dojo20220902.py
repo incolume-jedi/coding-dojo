@@ -2,7 +2,7 @@
 
 import inspect
 import logging
-from typing import Final, Tuple
+from typing import Final
 
 MOEDAS: Final = [1.00, 0.5, 0.25, 0.10, 0.05, 0.01]
 CEDULAS: Final = [200, 100, 50, 20, 10, 5, 2]
@@ -22,7 +22,7 @@ def calcular(valor, base_monetaria):
     return valor, result
 
 
-def trocar_dinheiro(valor: float) -> Tuple[list, list]:
+def trocar_dinheiro(valor: float) -> tuple[list, list]:
     """Calcula o menor número de notas e moedas possíveis."""
     valor, cedulas = calcular(valor, CEDULAS)
     valor, moedas = calcular(valor, MOEDAS)

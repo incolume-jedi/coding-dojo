@@ -1,5 +1,5 @@
 import pytest
-from dojo20220801 import square
+from incolume.py.coding_dojo_jedi.dojo20220801.dojo20220801 import square
 
 
 @pytest.mark.parametrize(

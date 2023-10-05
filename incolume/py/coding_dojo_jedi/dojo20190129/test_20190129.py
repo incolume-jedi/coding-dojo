@@ -1,5 +1,5 @@
 """Test Module."""
-from incolume.py.coding_dojo_jedi.dojo20190129.dojo20190129 import dojo20190129
+from incolume.py.coding_dojo_jedi.dojo20190129 import dojo20190129
 
 
 def test_moedas_1() -> None:

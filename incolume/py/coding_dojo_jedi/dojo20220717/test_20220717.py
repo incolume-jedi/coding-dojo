@@ -1,4 +1,4 @@
-import dojo20220717
+from incolume.py.coding_dojo_jedi.dojo20220717 import dojo20220717
 import pytest
 
 

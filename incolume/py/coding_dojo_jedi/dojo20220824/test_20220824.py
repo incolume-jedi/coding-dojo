@@ -1,7 +1,11 @@
 from re import escape
 
 import pytest
-from dojo20220824 import dna_complementary, millisseconds
+
+from incolume.py.coding_dojo_jedi.dojo20220824.dojo20220824 import (
+    dna_complementary,
+    millisseconds,
+)
 
 
 @pytest.mark.parametrize(

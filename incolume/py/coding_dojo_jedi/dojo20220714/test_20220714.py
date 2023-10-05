@@ -1,5 +1,6 @@
-from incolume.py.coding_dojo_jedi.dojo20220714 import dojo20220714
 import pytest
+
+from incolume.py.coding_dojo_jedi.dojo20220714 import dojo20220714
 
 
 @pytest.mark.parametrize(

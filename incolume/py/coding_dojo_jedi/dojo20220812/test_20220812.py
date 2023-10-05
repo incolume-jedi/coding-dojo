@@ -1,4 +1,5 @@
 import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20220812.dojo20220812 import tower
 
 

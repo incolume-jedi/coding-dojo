@@ -5,6 +5,7 @@ import re
 from sys import version_info
 
 import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
 
 
@@ -14,7 +15,7 @@ from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (  # noqa: PT007
+    (
         (('+', 3, '4'), 7),
         (('+', 3, 4), 7),
         (('-', 3.0, 4), -1.0),

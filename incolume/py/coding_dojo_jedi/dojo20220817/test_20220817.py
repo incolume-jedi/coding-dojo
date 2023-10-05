@@ -1,5 +1,11 @@
 import pytest
-from dojo20220817 import high_and_low, mysort, mysort0, mysort1
+
+from incolume.py.coding_dojo_jedi.dojo20220817.dojo20220817 import (
+    high_and_low,
+    mysort,
+    mysort0,
+    mysort1,
+)
 
 
 @pytest.mark.parametrize(

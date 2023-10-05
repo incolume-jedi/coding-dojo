@@ -1,7 +1,8 @@
 from math import pi
 
-from incolume.py.coding_dojo_jedi.dojo20220718 import dojo20220718
 import pytest
+
+from incolume.py.coding_dojo_jedi.dojo20220718 import dojo20220718
 
 
 def test_ascii() -> None:

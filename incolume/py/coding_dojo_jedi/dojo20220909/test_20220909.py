@@ -1,5 +1,8 @@
 import pytest
-from dojo20220909 import fizz_buzz_backwards
+
+from incolume.py.coding_dojo_jedi.dojo20220909.dojo20220909 import (
+    fizz_buzz_backwards,
+)
 
 
 @pytest.mark.parametrize(

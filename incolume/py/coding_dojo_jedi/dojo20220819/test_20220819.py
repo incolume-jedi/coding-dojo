@@ -1,5 +1,6 @@
 import pytest
-from dojo20220819 import classify
+
+from incolume.py.coding_dojo_jedi.dojo20220819.dojo20220819 import classify
 
 
 @pytest.mark.parametrize(

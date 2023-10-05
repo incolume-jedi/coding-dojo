@@ -2,6 +2,7 @@ from os import environ
 from sys import version_info
 
 import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 
 

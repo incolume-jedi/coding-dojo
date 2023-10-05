@@ -15,19 +15,6 @@ def semver_regex() -> str:
 
 collect_ignore = ['incolume/py/20220928']
 
-if version_info < (3, 8, 0):
-    collect_ignore.extend(
-        (
-            'incolume/py/20220722',
-            'incolume/py/20220902',
-            'incolume/py/20220905',
-        ),
-    )
-
-
-if version_info < (3, 9, 0):
-    collect_ignore.extend(('incolume/py/20220725', 'incolume/py/20220727'))
-
 
 if version_info < (3, 10, 0):
     collect_ignore.extend(

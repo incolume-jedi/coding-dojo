@@ -17,7 +17,7 @@ class TestSemVer:
 
     @pytest.mark.parametrize(
         ('entrance', 'expected'),
-        (  # noqa: PT007
+        (
             (__version__, True),
             ('1', False),
             ('1.0', False),
@@ -50,7 +50,10 @@ class TestSemVer:
         ),
     )
     def test_semantic_version(
-        self, entrance: str, expected: bool, semver_regex: str
+        self,
+        entrance: str,
+        expected: bool,
+        semver_regex: str,
     ) -> None:
         """Test semantic version asserts."""
         assert (

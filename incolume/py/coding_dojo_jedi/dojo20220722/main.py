@@ -3,7 +3,8 @@
 import sys
 
 import click
-from star_wars import research
+
+from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
 
 CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 

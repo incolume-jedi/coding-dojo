@@ -1,5 +1,10 @@
 import pytest
-from dojo20220826 import imc, no_exclamation, tabuada
+
+from incolume.py.coding_dojo_jedi.dojo20220826.dojo20220826 import (
+    imc,
+    no_exclamation,
+    tabuada,
+)
 
 
 @pytest.mark.parametrize(

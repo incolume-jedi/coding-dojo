@@ -1,5 +1,6 @@
 import pytest
-from dojo20220926 import protein
+
+from incolume.py.coding_dojo_jedi.dojo20220926.dojo20220926 import protein
 
 
 @pytest.mark.parametrize(

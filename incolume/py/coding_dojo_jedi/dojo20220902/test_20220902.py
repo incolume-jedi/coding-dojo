@@ -1,7 +1,10 @@
 from sys import version_info
 
 import pytest
-from dojo20220902 import trocar_dinheiro
+
+from incolume.py.coding_dojo_jedi.dojo20220902.dojo20220902 import (
+    trocar_dinheiro,
+)
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')

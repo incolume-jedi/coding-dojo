@@ -13,18 +13,20 @@ def tratativa0() -> None:
         print(pasta.name)    # noqa: T201
 
 
-def tratativa1():
+def tratativa1() -> None:
     """Remomear diretório de dojo que começam com numeros."""
     escopo = sorted(Path(__file__).parents[1].rglob('20*'))
     for i in escopo:
         original, novo = i, i.with_name(f'dojo{i.stem}')
-        print(original, novo)
-        subprocess.run(['git', 'mv', original, novo])
+        print(original, novo)  # noqa: T201
+        subprocess.run(
+            ['git', 'mv', original, novo],
+            check=False,
+        )
 
 
 def run() -> None:
     """Run this."""
-    # tratativa0()
     tratativa1()
 
 

@@ -1,4 +1,4 @@
-from dojo20220729 import dna2rna
+from incolume.py.coding_dojo_jedi.dojo20220729.dojo20220729 import dna2rna
 
 
 def test_dna2rna_0():

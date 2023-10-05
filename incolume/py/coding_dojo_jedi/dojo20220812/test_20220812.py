@@ -1,5 +1,5 @@
 import pytest
-from dojo20220812 import tower
+from incolume.py.coding_dojo_jedi.dojo20220812.dojo20220812 import tower
 
 
 @pytest.mark.parametrize(

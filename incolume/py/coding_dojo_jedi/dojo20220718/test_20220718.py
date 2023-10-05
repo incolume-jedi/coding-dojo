@@ -1,6 +1,6 @@
 from math import pi
 
-import dojo20220718
+from incolume.py.coding_dojo_jedi.dojo20220718 import dojo20220718
 import pytest
 
 

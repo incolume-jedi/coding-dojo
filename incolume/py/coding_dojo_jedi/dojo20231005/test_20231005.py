@@ -11,13 +11,14 @@ class TestCase:
     directories: ClassVar = list(Path(__file__).parents[1].iterdir())
 
     def test_path(self):
-        """test path."""
-        assert self.directories == ''
+        """Test path."""
+        assert all(d.parts[-2] == 'coding_dojo_jedi' for d in self.directories)
 
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
+            ('20190129', True),
             ('20220714', True),
             ('20220717', True),
             ('20220718', True),
@@ -71,6 +72,7 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
+            ('20190129', True),
             ('20220714', True),
             ('20220717', True),
             ('20220718', True),

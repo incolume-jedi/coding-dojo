@@ -1,3 +1,5 @@
+coverage_report/
+
 # Arquivos diversos
 geckodriver
 *.[Cc][Ss][Vv]

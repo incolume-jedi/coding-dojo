@@ -1,8 +1,6 @@
 # Coding Dojo
 **Guilda JEDI Incolume - Grupo Python Incolume**
 
-   Este dojo foi resolvido no dojo20231007
-
 ## Problema
 **Subarray de soma máxima**
 

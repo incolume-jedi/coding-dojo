@@ -7,7 +7,7 @@ Os códigos estão organizados em diretórios, sendo que cada diretório represe
 
 Os códigos estão em python, desde a versão 3.8 ao 3.12+ e tem como dependência principal o pytest. Mas para facilitar a instalação o `poetry` foi escolhido para gerenciador de dependências, apenas execute `pip install poetry && poetry install` na raiz do diretório, no mesmo nível do arquivo `pyproject.toml`
 
-Finalmente, para rodar os testes nos códigos, carrege o shell `poetry shell`, mude para o diretório do Dojo, por exemplo 20220701, `cd incolume/py/dojo20220701`, e digite `pytest`. Ou simplesmente no diretório principal digite `poetry run pytest incolume/py/20220701`.
+Finalmente, para rodar os testes nos códigos, carregue o shell `poetry shell`, mude para o diretório do Dojo, por exemplo 20220701, `cd incolume/py/dojo20220701`, e digite `pytest`. Ou simplesmente no diretório principal digite `poetry run pytest incolume/py/20220701`.
 
 [Mais detalhes sobre os coding-dojo](FAQ.md)
 
@@ -43,7 +43,7 @@ finalize a primeira etapa, encerre o dojo, e continue a etapa seguinte no proxim
 
 ### Uma descrição de como conduzir o dojo (no maximo 2h):
 
-- 10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (3 problemas é suficiente);
+- 10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (até 3 problemas são suficientes);
 - 5 minutos para decidir sobre qual problema vamos resolver;
 - 10 minutos para uma revisão de python (opcional);
 - 40 minutos de programação;
@@ -63,4 +63,4 @@ finalize a primeira etapa, encerre o dojo, e continue a etapa seguinte no proxim
 ### Salvaguarda do aprendizado
 
 - Sempre salve as soluções no fork do dojo;
-- Solicite um _pull request (PR)_ para consolidação;
+- Solicite um _pull request (PR)_ para consolidar a solução;

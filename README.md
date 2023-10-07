@@ -45,7 +45,7 @@ finalize a primeira etapa, encerre o dojo, e continue a etapa seguinte no proxim
 
 ### Uma descrição de como conduzir o dojo (no maximo 2h):
 
-- 10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (3 problemas é suficiente);
+- 10 minutos para montar a estrutura e apresentar/discutir alguns problemas que podemos resolver (até 3 problemas são suficientes);
 - 5 minutos para decidir sobre qual problema vamos resolver;
 - 10 minutos para uma revisão de python (opcional);
 - 40 minutos de programação;
@@ -65,4 +65,4 @@ finalize a primeira etapa, encerre o dojo, e continue a etapa seguinte no proxim
 ### Salvaguarda do aprendizado
 
 - Sempre salve as soluções no fork do dojo;
-- Solicite um _pull request (PR)_ para consolidação;
+- Solicite um _pull request (PR)_ para consolidar a solução;

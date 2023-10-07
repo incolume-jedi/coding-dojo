@@ -119,5 +119,3 @@ class TestCase:
             if value := re.search(f'dojo{entrance}', directory.as_posix()):
                 break
         assert bool(value) == expected
-
-        # assert entrance in self.directories

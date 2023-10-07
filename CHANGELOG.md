@@ -10,14 +10,16 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-10-05:
+## [Unreleased]	 &#8212; 	2023-10-07:
 ### Added
   - Adicionado scripts RPA para MKDocs;
 ### Changed
+  - Ampliado repertório de sites coding dojo;
   - Ampliado verificação lint com ferramenta ruff;
   - Configurado MKDocs;
 ### Fixed
   - Correção dos diretórios do coding-dojo que apresentavam erro durante o teste automatizado;
+  - Correções ortográficas na documentação;
 
 ## [1.38.4]	 &#8212; 	2023-10-01:
 ### Fixed

@@ -1,7 +1,7 @@
 # Coding Dojo
 **Guilda JEDI Incolume - Grupo Python Incolume**
 
-   Este dojo foi resolvido no dojo20231007
+   <span style="color:red">**Este dojo tem continuação em dojo20231007** </span>
 
 ## Problema
 **Subarray de soma máxima**

@@ -1,13 +1,24 @@
 import sys
+import unittest
 
 import pytest
+import requests
 
 __author__ = '@britodfbr'  # pragma: no cover
 
 
+def check_connectivity(url: str = 'https://google.com', timeout: float = 1.8):
+    req = requests.get(url, timeout=timeout)
+    if req.status_code == 200:
+        return True
+    return False
+
+
 class TestCaseExamplesDontRun:
     """This dont run."""
+
     __test__ = False
+
     def test_0(self):
         """Test it."""
         assert True
@@ -62,71 +73,141 @@ class TestCaseExamples:
             ('', ''),
             pytest.param('a', 'a'),
             pytest.param(
-                'a', '',
+                'a',
+                '',
                 marks=pytest.mark.xfail(
                     reason='proposital fail: expected XFAIL'
                 ),
             ),
             pytest.param(
-                'a', 'a',
+                'a',
+                'a',
                 marks=pytest.mark.xfail(
                     reason='proposital fail: expected XPASS'
                 ),
             ),
             pytest.param('', '', marks=pytest.mark.skip(reason='skip')),
             pytest.param(
-                '', '',
+                '',
+                '',
                 marks=pytest.mark.skipif(
                     not sys.platform.casefold().startswith('mac'),
-                    reason='requires MacOS'
-                )
+                    reason='requires MacOS',
+                ),
             ),
             pytest.param(
-                '', '',
+                '',
+                '',
                 marks=pytest.mark.skipif(
                     not sys.platform.casefold().startswith('win'),
-                    reason='requires Windows'
-                )
+                    reason='requires Windows',
+                ),
             ),
             pytest.param(
-                '', '',
+                '',
+                '',
                 marks=pytest.mark.skipif(
                     not sys.platform.casefold().startswith('lin'),
-                    reason='requires Linux'
-                )
+                    reason='requires Linux',
+                ),
             ),
             pytest.param(
-                '', '',
+                '',
+                '',
                 marks=[
                     pytest.mark.skipif(
                         not sys.platform.casefold().startswith('mac'),
-                        reason='requires MacOS'
+                        reason='requires MacOS',
                     ),
                     pytest.mark.xfail(reason='XPASS'),
-                ]
+                ],
             ),
             pytest.param(
-                '', '',
+                '',
+                '',
                 marks=[
                     pytest.mark.skipif(
                         not sys.platform.casefold().startswith('win'),
-                        reason='requires Windows'
+                        reason='requires Windows',
                     ),
                     pytest.mark.xfail(reason='XPASS'),
-                ]
+                ],
             ),
             pytest.param(
-                '', '',
+                '',
+                '',
                 marks=[
                     pytest.mark.skipif(
                         not sys.platform.casefold().startswith('lin'),
-                        reason='requires Linux'
+                        reason='requires Linux',
                     ),
                     pytest.mark.xfail(reason='XPASS'),
-                ]
+                ],
+            ),
+            pytest.param(
+                '',
+                '',
+                marks=pytest.mark.skipif(
+                    not check_connectivity(),
+                    reason='external resource not available',
+                ),
             ),
         ],
     )
     def test_something(self, entrance, expected):
         """Exemplo para multiplos testes."""
         assert entrance == expected
+
+
+class MyTestCase(unittest.TestCase):
+    """Exemplos com Unittest."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        # Pré-configuração da classe
+        ...
+
+    def setUp(self) -> None:
+        # Preconfiguração para métodos
+        pass
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        # Método chamado imediatamente após concluir o método de teste
+        pass
+
+    def tearDown(self) -> None:
+        # Método chamado imediatamente após concluir a classe de teste
+        pass
+
+    @unittest.skip('Futuring work')
+    class MySkippedTestCase(unittest.TestCase):
+        def test_not_run(self):
+            pass
+
+    @unittest.skipUnless(sys.platform.startswith('win'), 'requires Windows')
+    def test_windows_support(self):
+        """Windows specific testing code."""
+
+    @unittest.skipUnless(sys.platform.startswith('mac'), 'requires MacOS')
+    def test_mac_support(self):
+        """MacOS specific testing code."""
+
+    @unittest.skipUnless(sys.platform.startswith('lin'), 'requires Linux')
+    def test_linux_support(self):
+        """Linux specific testing code."""
+
+    @unittest.skipUnless(
+        check_connectivity(), reason='external resource not available'
+    )
+    def test_maybe_skipped(self):
+        """Test code that depends on the external resource."""
+
+    @unittest.skip('it never will run.')
+    def test_something(self):
+        """Este teste nunca irá passar.
+
+        Defina um skip com a mensagem 'Dont ran'.
+        """
+        # pylint: disable=comparison-of-constants
+        assert True is False

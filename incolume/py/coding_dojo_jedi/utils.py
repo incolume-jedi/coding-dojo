@@ -3,6 +3,8 @@
 # -*- coding: utf-8 -*-
 __author__ = '@britodfbr'  # pragma: no cover
 
+import logging
+
 import requests
 
 
@@ -13,6 +15,9 @@ def check_connectivity(
     """Check web connectivity."""
     req = requests.get(url, timeout=timeout)
     http_ok: int = 200
-    if req.status_code == http_ok:
-        return True
+    try:
+        if req.status_code == http_ok:
+            return True
+    except Exception as err:   # pylint: disable=W0718
+        logging.error(err)
     return False

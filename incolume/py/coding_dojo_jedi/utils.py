@@ -18,6 +18,6 @@ def check_connectivity(
     try:
         if req.status_code == http_ok:
             return True
-    except Exception as err:   # pylint: disable=W0718
-        logging.error(err)
+    except Exception as err:   # noqa: BLE001 pylint: disable=W0718
+        logging.error(err)   # noqa: TRY400
     return False

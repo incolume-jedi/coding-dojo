@@ -203,7 +203,7 @@ unfixable = ["B"]
 # Ignore `E402` (import violations) in all `__init__.py` files, and in `path/to/file.py`.
 #"__init__.py" = ["E402"]
 #"path/to/file.py" = ["E402"]
-#"**/{tests,docs,tools}/*" = ["E402"]
+"**/{tests,docs,tools,utils}/*" = ["EXE002"]
 "**/test_*.py" = [
   "I001",
   "EXE002",

@@ -1,6 +1,5 @@
 """Module test for principal package."""
 
-
 from pathlib import Path
 
 import pytest
@@ -21,10 +20,10 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (
+        [
             configfile,
             versionfile,
-        ),
+        ],
     )
     def test_exists(self, entrance: Path) -> None:
         """Test if exists files."""
@@ -32,10 +31,10 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (
+        [
             configfile,
             versionfile,
-        ),
+        ],
     )
     def test_is_file(self, entrance: Path) -> None:
         """Test if are files."""
@@ -43,10 +42,10 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance',
-        (
+        [
             configfile,
             versionfile,
-        ),
+        ],
     )
     def test_same_version(self, entrance: Path) -> None:
         """Test same version."""

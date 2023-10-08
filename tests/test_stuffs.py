@@ -1,17 +1,12 @@
+"""Tests examples."""
 import sys
 import unittest
 
 import pytest
-import requests
+
+from incolume.py.coding_dojo_jedi.utils import check_connectivity
 
 __author__ = '@britodfbr'  # pragma: no cover
-
-
-def check_connectivity(url: str = 'https://google.com', timeout: float = 1.8):
-    req = requests.get(url, timeout=timeout)
-    if req.status_code == 200:
-        return True
-    return False
 
 
 class TestCaseExamplesDontRun:

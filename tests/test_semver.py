@@ -51,6 +51,7 @@ class TestSemVer:
     )
     def test_semantic_version(
         self,
+        *,
         entrance: str,
         expected: bool,
         semver_regex: str,

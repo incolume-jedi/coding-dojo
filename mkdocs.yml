@@ -54,6 +54,6 @@ nav:
 #        - Installation: user_guide/INSTALLATION.md
 #        - Usage: user_guide/usage.md
     - About:
-      - Contributors: about/CONTRIBUTORS.md
+#      - Contributors: about/CONTRIBUTORS.md
       - License: about/LICENSE.md
       - 'Release Notes': about/CHANGELOG.md

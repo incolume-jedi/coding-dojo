@@ -17,7 +17,7 @@ class TestSemVer:
 
     @pytest.mark.parametrize(
         ('entrance', 'expected'),
-        (
+        [
             (__version__, True),
             ('1', False),
             ('1.0', False),
@@ -47,10 +47,11 @@ class TestSemVer:
             ('1.1.1a0', True),
             ('1.1.1rc0', True),
             ('1.1.1rc1111', True),
-        ),
+        ],
     )
     def test_semantic_version(
         self,
+        *,
         entrance: str,
         expected: bool,
         semver_regex: str,

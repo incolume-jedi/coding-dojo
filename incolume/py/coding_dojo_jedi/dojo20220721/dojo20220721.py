@@ -2,7 +2,7 @@
 import requests
 
 
-def saudacao(timeout: float = 1) -> None:
+def saudacao(timeout: float = 9) -> None:
     """Saudação com nome extraído da API swapi."""
     r = requests.get('https://swapi.dev/api/people/1/', timeout=timeout)
 

@@ -1,4 +1,6 @@
 """Configure switch test."""
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
 from sys import version_info
 
 import pytest

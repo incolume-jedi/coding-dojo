@@ -25,7 +25,7 @@ The commit contains the following structural elements, to communicate intent to 
     + perf: preformance impovements;
     + ci: Continuos integration related;
     + build: changes that affect the build system or external dependencies;
-    + revert:reverts a previous commit;
+    + revert: reverts a previous commit;
 + scope: This is optional, but indicate a specific scope ;
 + description: show what was done in the commit;
 + body: Full description, if descript not enough;

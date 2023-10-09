@@ -14,22 +14,23 @@ machine readable meaning to commit messages.
 ```
 
 The commit contains the following structural elements, to communicate intent to the consumers of your library:
-+ type: the type of commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)
-    + feat: A commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
-    + fix: A commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
-    + chore: Changes that do not relate to a fix or feature and don´t modify src or test files (for example updating dependencies);
-    + refactor: refactored code that neither fixes a bug nor adds a feature;
-    + docs: updates to documentation such as a the README or other markdown or rst files;
-    + style: Changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, black style applied, and so on;
-    + test: Including new or correcting previous tests;
-    + perf: preformance impovements;
-    + ci: Continuos integration related;
-    + build: changes that affect the build system or external dependencies;
-    + revert: reverts a previous commit;
-+ scope: This is optional, but indicate a specific scope ;
-+ description: show what was done in the commit;
-+ body: Full description, if descript not enough;
-+ footer: This is optional, but agregate additional information about commit, lake revisor, references, millistone and others (for example "close #issue-id").
+
++ **type**: the type of commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)
+    + **feat**: A commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
+    + **fix** or **bugfix**: A commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
+    + **chore**: Changes that do not relate to a fix or feature and don´t modify src or test files (for example updating dependencies);
+    + **refactor**: refactored code that neither fixes a bug nor adds a feature;
+    + **docs**: updates to documentation such as a the README or other markdown or rst files;
+    + **style**: Changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, black style applied, and so on;
+    + **test**: Including new or correcting previous tests;
+    + **perf**: preformance impovements;
+    + **ci**: Continuos integration related;
+    + **build**: changes that affect the build system or external dependencies;
+    + **revert**: reverts a previous commit;
++ **scope**: This is optional, but indicate a specific scope ;
++ **description**: show what was done in the commit;
++ **body**: Full description, if descript not enough;
++ **footer**: This is optional, but agregate additional information about commit, lake revisor, references, millistone and others (for example "close #issue-id").
 
 ## Examples
 ### Commit message with description and breaking change footer

@@ -352,7 +352,7 @@ ignore = ['E203']
 
 [tool.taskipy.variables]
 path = "incolume/ tests/"
-CHANGELOGFILE = "CHANGELOG.md"
+CHANGELOGFILE = "docs/about/CHANGELOG.md"
 URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
 
 

@@ -1,4 +1,59 @@
-site_name: Coding Dojo
+site_name: Coding Dojo Incolume
 repo_url: https://github.com/incolume-jedi/coding-dojo/
 repo_name: coding-dojo-incolume
 edit_uri: tree/dev/docs
+
+theme:
+  name: material
+  language: pt-BR
+  logo: asserts/img/jedi_logo.png
+  favicon: asserts/img/jedi_logo.png
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.tasklist
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      permalink: "#"
+
+extra_css:
+  - stylesheets/extra.css
+
+watch:
+  - incolume
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [incolume]
+
+extra:
+  commands:
+    run: incolume
+
+nav:
+    - Home: index.md
+    - Coding Challenge: coding_challenge/README.md
+    - 'User Guide':
+        - Código de Conduta: user_guide/code_of_conduct.md
+        - Medotologias:
+            - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
+            - mkdocs: user_guide/writing-your-docs.md
+            - Zen Python: user_guide/zenpy.md
+#        - Base: prefacio.md
+#        - Contributing: user_guide/development.md
+#        - Installation: user_guide/INSTALLATION.md
+#        - Usage: user_guide/usage.md
+    - About:
+#      - Contributors: about/CONTRIBUTORS.md
+      - License: about/LICENSE.md
+      - 'Release Notes': about/CHANGELOG.md

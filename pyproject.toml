@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.38.4"
+version = "1.39.0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
@@ -126,9 +126,13 @@ exclude_lines = [
 ]
 
 [tool.ruff]
+# Always generate Python compatible code.
+target-version = "py39"
 # Decrease the maximum line length to 79 characters.
 line-length = 79
+tab-size = 4
 src = ["incolume/", "tests/"]
+respect-gitignore = true
 select = [
   "A",    #flake8-builtins
   "AIR",    #Airflow
@@ -199,9 +203,27 @@ unfixable = ["B"]
 # Ignore `E402` (import violations) in all `__init__.py` files, and in `path/to/file.py`.
 #"__init__.py" = ["E402"]
 #"path/to/file.py" = ["E402"]
-#"**/{tests,docs,tools}/*" = ["E402"]
-"**/test_*.py" = ["S101", "D100", "D103"]
+"**/{tests,docs,tools,utils}/*" = ["EXE002"]
+"**/test_*.py" = [
+  "I001",
+  "EXE002",
+  "ANN001",
+  "ANN101",
+  "PLR6301",
+  "S101",
+#  TODO remover ANN001 ANN201 ANN202 D100 D103 D202 PT007 após estabilizar teste piloto
+#  TODO remover temporários no futuro
+#  "ANN201",
+#  "ANN202",
+#  "D100",
+#  "D103",
+#  "D202",
+#  "PT007",
+]
 
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 5
 
 [tool.ruff.pydocstyle]
 convention = "google"
@@ -342,9 +364,9 @@ URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
 clean = {cmd = "echo -n 'Starting cleanning environment..'; find ./ \\( -wholename '*report_coverage' -o -name '*.pyc' -o -name '*~' -o -name '*.log' -o -name '*.log.*' -o -name '.cache' -o -name '.coverage' \\) -delete ; echo ' ok' ",  help = "Shallow clean into environment (.pyc, .cache, .egg, .log, et all)" }
 pre_clean-all = {cmd='poetry run task clean', help=''}
 clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_cache' -o -name '*cache__' -o -name dist -o -name build -o -name .tox -o -name site -o -name coverage_report \\) -exec rm -rf {} 2> /dev/null \\; ; echo ' Deep cleaning finished!' ",  help = "Deep cleanning into environment (dist, build, htmlcov, .tox, *_cache, et all)" }
-#pre_docs-build={help='Pre docs-build', cmd="poetry run task changelog"}
-#docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
-#docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
+pre_docs-build={help='Pre docs-build', cmd="poetry run task gcl"}
+docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
+docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
 lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}
@@ -357,15 +379,16 @@ lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poet
 lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
 lint_ruff={help='', cmd='echo --ruff--; poetry run ruff check --preview {path}', use_vars=true}
 pre_patch={help='Run linters tools', cmd="poetry run task lint"}
-patch={cmd='v=$(poetry version patch) && poetry run pytest && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='Generate a patch Sematic Version'}
+patch={cmd='v=$(poetry version patch) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='Generate a patch Sematic Version'}
 post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}
-premajor={cmd='v=$(poetry version premajor) && poetry run pytest && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
-preminor={cmd='v=$(poetry version preminor) && poetry run pytest && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
-prerelease={cmd='v=$(poetry version prerelease) && poetry run pytest && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
+premajor={cmd='v=$(poetry version premajor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
+preminor={cmd='v=$(poetry version preminor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
+prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
 safety={help='Check safety of packages into project.', cmd='poetry run safety check'}
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
 sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
+tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}
 #xpto = { cmd = "echo {path} {CHANGELOGFILE} {URLCOMPARE}", use_vars = true }

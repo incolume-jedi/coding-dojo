@@ -23,8 +23,12 @@ Descrição/apresentação do problema.
 
 ## Exemplos
 
-Exemplos de solução e resposta do problema. Geralmente utilizado para validar os testes do TDD.
+N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para validar os testes do TDD.
 
 ## Referências
 
-Referências para o dojo, o problema ou para elicidações extras.
+N/A - Referências para o dojo, o problema ou para elicidações extras.
+
+---
+
+&copy; Incolume.com.br

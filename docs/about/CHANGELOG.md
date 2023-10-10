@@ -11,22 +11,8 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 
 
 ## [Unreleased]	 &#8212; 	2023-10-08:
-### Added
-  - Adicionado scripts RPA para MKDocs;
 ### Changed
-  - Ampliado repertório de sites coding dojo;
-  - Ampliado verificação lint com ferramenta ruff;
-  - Configurado MKDocs;
-  - Cobertura completa ruff para tests/ e incolume.py.coding_dojo_jedi.utils;
-  - Cobertura completa pylint para tests/ e incolume.py.coding_dojo_jedi.utils;
-  - Cobertura completa blue para tests/ e incolume.py.coding_dojo_jedi.utils;
-  - Cobertura completa isort para tests/ e incolume.py.coding_dojo_jedi.utils;
-  - Cobertura completa pydocstyle para tests/ e incolume.py.coding_dojo_jedi.utils;
-  - Cobertura completa mypy para tests/ e incolume.py.coding_dojo_jedi.utils;
-  - Cobertura completa flake8 para tests/ e incolume.py.coding_dojo_jedi.utils;
-### Fixed
-  - Correção dos diretórios do coding-dojo que apresentavam erro durante o teste automatizado;
-  - Correções ortográficas na documentação;
+  - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
 
 ## [1.39.0]	 &#8212; 	2023-10-08:
 ### Added

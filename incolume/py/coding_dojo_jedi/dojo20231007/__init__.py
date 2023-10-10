@@ -30,34 +30,21 @@ def max_sequence(lista: list) -> int:
     return resultado
 
 
-def maxSubArraySum(a):
+
+def max_sub_array_sum(a: list) -> int:
     """Python program to print largest contiguous array sum.
 
     Function to find the maximum contiguous subarray
     and print its starting and end index
 
+    https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
     """
     size = len(a)
     max_so_far = -maxsize - 1
     max_ending_here = 0
-    start = 0
-    end = 0
-    s = 0
 
-    for i in range(0, size):
-
+    for i in range(size):
         max_ending_here += a[i]
-
-        if max_so_far < max_ending_here:
-            max_so_far = max_ending_here
-            start = s
-            end = i
-
-        if max_ending_here < 0:
-            max_ending_here = 0
-            s = i + 1
-
-    print("Maximum contiguous sum is %d" % (max_so_far))
-    print("Starting Index %d" % (start))
-    print("Ending Index %d" % (end))
+        max_so_far = max(max_so_far, max_ending_here)
+        max_ending_here = max(0, max_ending_here)
     return max_so_far

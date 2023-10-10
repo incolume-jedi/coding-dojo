@@ -4,8 +4,8 @@ import pytest
 from . import (
     max_sequence,
     max_sub_array_sum,
-    subarray_max_sum,
     max_subarray_sum,
+    subarray_max_sum,
 )
 
 

@@ -14,6 +14,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
 
+## [1.40.1]	 &#8212; 	2023-10-10:
+### Added
+  - Solução dojo 2023-10-07 Subarray de soma máxima.;
+
 ## [1.40.0]	 &#8212; 	2023-10-10:
 ### Changed
   - Documentação atualizada, nova configuração e aplicado template diferenciado;
@@ -286,4 +290,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.38.4]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.3...1.38.4
 [1.39.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.4...1.39.0
 [1.40.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.39.0...1.40.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.0...Unreleased
+[1.40.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.0...1.40.1
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.1...Unreleased

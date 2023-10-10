@@ -64,3 +64,13 @@ def max_sub_array_sum(a: list) -> int:
         max_so_far = max(max_so_far, max_ending_here)
         max_ending_here = max(0, max_ending_here)
     return max(0, max_so_far)
+
+def max_subarray_sum(array: list) -> int:
+    """refactory max_sub_array_sum."""
+    max_so_far, max_ending_here = -maxsize - 1, 0
+
+    for value in array:
+        max_ending_here += value
+        max_so_far = max(max_so_far, max_ending_here)
+        max_ending_here = max(0, max_ending_here)
+    return max(0, max_so_far)

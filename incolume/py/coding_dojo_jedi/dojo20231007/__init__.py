@@ -68,10 +68,10 @@ def max_sub_array_sum(a: list) -> int:
 
 def max_subarray_sum(array: list) -> int:
     """Refactory max_sub_array_sum."""
-    max_so_far, max_ending_here = -maxsize - 1, 0
+    result, soma = -maxsize - 1, 0
 
     for value in array:
-        max_ending_here += value
-        max_so_far = max(max_so_far, max_ending_here)
-        max_ending_here = max(0, max_ending_here)
-    return max(0, max_so_far)
+        soma += value
+        result = max(result, soma)
+        soma = max(0, soma)
+    return max(0, result)

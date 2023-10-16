@@ -1,7 +1,7 @@
 # Coding Dojo
 **Guilda JEDI Incolume - Grupo Python Incolume**
 
-<span style="color:red">**Este dojo tem continuação em dojo202310xx** </span>
+<span style="color:red">**Este dojo é continuação em [dojo20231003](../dojo20231003/README.md)** </span>
 
 
 ## Problema

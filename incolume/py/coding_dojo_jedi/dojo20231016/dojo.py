@@ -8,4 +8,5 @@ def from_roman(numero_romano: str) -> int:
 
     romanos = ["I","V","X","L","C","D","M"]
     arabicos = [1,5,10,50,100,500,1000]
-    return 0
+    result = arabicos[romanos.index(numero_romano)]
+    return result

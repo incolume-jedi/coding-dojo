@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pytest 
+import pytest
 from incolume.py.coding_dojo_jedi.dojo20231016.dojo import from_roman
 
 
@@ -9,11 +9,16 @@ __author__ = "@britodfbr"  # pragma: no cover
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
+        ("CD", 400),
+        ("XC", 90),
+        ("CM", 900),
         ("CMLXXXVII", 987),
         ("MCMLXXVIII",1978),
         ("I", 1),
         ("II", 2),
+        ("III", 3),
         ("IV", 4),
+        ("VIII", 8),
         ("IX", 9),
         ("C", 100),
         ("L", 50),

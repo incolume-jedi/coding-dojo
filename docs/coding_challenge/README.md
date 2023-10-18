@@ -37,6 +37,7 @@ no clube de programação ou em casa. Todo os seus currículos de lições e
 projetos são feitos sob medida para crianças, com atividades como gráficos
 interativos e criação de jogos. No `codeguppy`, os alunos adoram criar
 programas e compartilhá-los com seus amigos.
+[&uarr;](#coding-challenge)
 
 
 ### [CodeLity](https://app.codility.com/programmers/)
@@ -83,6 +84,8 @@ Uma das características únicas do CyberDojo é a capacidade de colaborar com o
 
 O CyberDojo é uma plataforma útil para desenvolvedores que desejam aprimorar suas habilidades de codificação e trabalhar em projetos em equipe. Com uma biblioteca abrangente de desafios e exercícios de codificação e um ambiente de programação interativo, o CyberDojo oferece uma oportunidade para que os desenvolvedores desenvolvam suas habilidades e se destaquem em um mercado de trabalho altamente competitivo.
 [&uarr;](#coding-challenge)
+
+
 ## D
 
 ### [Dojo Puzzles](https://dojopuzzles.com/)
@@ -101,6 +104,7 @@ o principal objetivo é formar uma boa fonte de problemas de programação
 adequadas para um Dojo.
 
 Repositório oficial: http://www.github.com/dojopuzzles/dojopuzzles/
+[&uarr;](#coding-challenge)
 
 
 ## E

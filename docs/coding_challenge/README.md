@@ -73,6 +73,25 @@ Uma das características únicas do CyberDojo é a capacidade de colaborar com o
 
 O CyberDojo é uma plataforma útil para desenvolvedores que desejam aprimorar suas habilidades de codificação e trabalhar em projetos em equipe. Com uma biblioteca abrangente de desafios e exercícios de codificação e um ambiente de programação interativo, o CyberDojo oferece uma oportunidade para que os desenvolvedores desenvolvam suas habilidades e se destaquem em um mercado de trabalho altamente competitivo.
 [&uarr;](#coding-challenge)
+## D
+
+### Dojo Puzzles
+O [Dojo Puzzles](https://dojopuzzles.com/) é um compêndio de problemas a serem resolvidos em coding dojo.
+
+A proposta deste projeto é criar um local onde problemas possam ser armazenados
+e consultados facilmente, além de ser possível saber quais problemas realmente
+são usados em Dojos. Os problemas armazenados em sua base de dados preferencialmente
+foram utilizados em Dojos (mas problemas inéditos também são bem-vindos) e os
+visitantes são convidados a contribuir com novos problemas.
+
+E também oferece a chance para que você contribua,
+o código está a disposição para quem quiser analisar, comentar, corrigir e
+contribuir. A intenção do projeto não é fazer muitas funcionalidades,
+o principal objetivo é formar uma boa fonte de problemas de programação
+adequadas para um Dojo.
+
+Repositório oficial: http://www.github.com/dojopuzzles/dojopuzzles/
+
 
 ## E
 ### [Edabit](https://edabit.com/)

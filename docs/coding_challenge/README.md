@@ -29,6 +29,16 @@ O Codédex ambienta o treinamento em uma atmosfera de jogo.
 
 [&uarr;](#coding-challenge)
 
+
+### [Code Guppy](https://codeguppy.com/index.html)
+Aprender a programar é fácil e divertido com a plataforma certa.
+Especialmente se for GRATUITA. Você pode usar esta plataforma na sala de aula,
+no clube de programação ou em casa. Todo os seus currículos de lições e
+projetos são feitos sob medida para crianças, com atividades como gráficos
+interativos e criação de jogos. No `codeguppy`, os alunos adoram criar
+programas e compartilhá-los com seus amigos.
+
+
 ### [CodeLity](https://app.codility.com/programmers/)
 Codility é uma plataforma de recrutamento técnico que ajuda as empresas a avaliar habilidades de programação e lógica de candidatos a emprego. A plataforma oferece uma ampla variedade de testes de programação, bem como avaliações de habilidades de codificação e programação para empresas de tecnologia em todo o mundo.
 

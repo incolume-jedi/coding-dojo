@@ -75,8 +75,8 @@ O CyberDojo é uma plataforma útil para desenvolvedores que desejam aprimorar s
 [&uarr;](#coding-challenge)
 ## D
 
-### Dojo Puzzles
-O [Dojo Puzzles](https://dojopuzzles.com/) é um compêndio de problemas a serem resolvidos em coding dojo.
+### [Dojo Puzzles](https://dojopuzzles.com/)
+O Dojo Puzzles é um compêndio de problemas a serem resolvidos em coding dojo.
 
 A proposta deste projeto é criar um local onde problemas possam ser armazenados
 e consultados facilmente, além de ser possível saber quais problemas realmente

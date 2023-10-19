@@ -34,5 +34,5 @@ def test_contador_nucleotideos(entrance, expected) -> None:
     ],
 )
 def test_complemento_fita_dna(entrance, expected) -> None:
-    '''Testar a função complemento_fita_dna.'''
+    """Testar a função complemento_fita_dna."""
     assert complemento_fita_dna(entrance) == expected

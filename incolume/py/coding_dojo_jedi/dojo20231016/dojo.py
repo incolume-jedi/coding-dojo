@@ -3,10 +3,34 @@
 __author__ = '@britodfbr'  # pragma: no cover
 
 romanos = [
-    'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I',
+    'M',
+    'CM',
+    'D',
+    'CD',
+    'C',
+    'XC',
+    'L',
+    'XL',
+    'X',
+    'IX',
+    'V',
+    'IV',
+    'I',
 ]
 arabicos = [
-    1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1,
+    1000,
+    900,
+    500,
+    400,
+    100,
+    90,
+    50,
+    40,
+    10,
+    9,
+    5,
+    4,
+    1,
 ]
 
 
@@ -26,11 +50,9 @@ def from_roman(numero_romano: str) -> int:
     result = 0
     qnt = len(numero_romano)
     for idx in range(qnt):
-        if (
-            idx + 1 < qnt and (
-                arabicos[romanos.index(numero_romano[idx])] <
-                arabicos[romanos.index(numero_romano[idx + 1])]
-            )
+        if idx + 1 < qnt and (
+            arabicos[romanos.index(numero_romano[idx])]
+            < arabicos[romanos.index(numero_romano[idx + 1])]
         ):
             result -= arabicos[romanos.index(numero_romano[idx])]
         else:

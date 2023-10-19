@@ -1,10 +1,11 @@
 """Testes dojo20231016."""
 # !/usr/bin/env python
 import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20231016.dojo import from_roman
 
-
 __author__ = '@britodfbr'  # pragma: no cover
+
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),
@@ -33,4 +34,3 @@ __author__ = '@britodfbr'  # pragma: no cover
 def test_from_roman(entrance, expected) -> None:
     """Testa os resultados entrados e esperando da função from_roman."""
     assert from_roman(entrance) == expected
-

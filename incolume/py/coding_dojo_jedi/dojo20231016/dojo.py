@@ -1,30 +1,39 @@
+"""dojo 20231016."""
 # !/usr/bin/env python
-# -*- coding: utf-8 -*-
-__author__ = "@britodfbr"  # pragma: no cover
+__author__ = '@britodfbr'  # pragma: no cover
+
+romanos = [
+    'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I',
+]
+arabicos = [
+    1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1,
+]
+
+
+def from_roman0(numero_romano: str) -> int:
+    """Transforma número romanos em arábicos."""
+    result = 0
+    if numero_romano in romanos:
+        return arabicos[romanos.index(numero_romano)]
+    for char in numero_romano:
+        result += arabicos[romanos.index(char)]
+    return result
 
 
 def from_roman(numero_romano: str) -> int:
     """Transforma número romanos em arábicos."""
-
-    romanos = [
-        'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'
-    ]
-    arabicos = [
-        1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
-    ]
-    result = 0
-    if numero_romano in romanos:
-        return arabicos[romanos.index(numero_romano)]
-
-    for char in numero_romano:
-        result += arabicos[romanos.index(char)]
     # MMIX
-    # for idx in range(len(numero_romano)):
-    #     print(idx, numero_romano[idx], arabicos[romanos.index(numero_romano[idx])])
-    #     if arabicos[romanos.index(numero_romano[idx])]) < arabicos[romanos.index(numero_romano[idx+1])]):
+    result = 0
+    qnt = len(numero_romano)
+    for idx in range(qnt):
+        if (
+            idx + 1 < qnt and (
+                arabicos[romanos.index(numero_romano[idx])] <
+                arabicos[romanos.index(numero_romano[idx + 1])]
+            )
+        ):
+            result -= arabicos[romanos.index(numero_romano[idx])]
+        else:
+            result += arabicos[romanos.index(numero_romano[idx])]
 
     return result
-
-
-if __name__ == '__main__':    # pragma: no cover
-    print(from_roman('MMIX'))

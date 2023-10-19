@@ -18,3 +18,8 @@ def contador_nucleotideos(nucleotideo: str) -> str:
     result = str(a) + ' ' + str(c) + ' ' + str(g) + ' ' + str(t)
 
     return result
+
+def complemento_fita_dna(fita: str) -> str:
+    '''Complementar fita.'''
+    
+    

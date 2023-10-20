@@ -1,3 +1,4 @@
+"""Test para dojo Reverter a posição dos carecteres de uma string."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220714 import dojo20220714
@@ -13,4 +14,5 @@ from incolume.py.coding_dojo_jedi.dojo20220714 import dojo20220714
     ],
 )
 def test_rev(entrance: str, expected: str) -> None:
+    """Teste para função rev."""
     assert dojo20220714.rev(entrance) == expected

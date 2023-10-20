@@ -1,6 +1,5 @@
 import pytest
 
-# from incolume.py.coding_dojo_jedi.dojo20231003 import max_sequence
 from . import max_sequence
 
 

@@ -1,311 +1,786 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Git commits messages - Coding Dojo</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">Coding Dojo</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../code_of_conduct/">
+      
+      
+        <link rel="next" href="../writing-your-docs/">
+      
+      
+      <link rel="icon" href="../../asserts/img/jedi_logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Conventional Commit - Coding Dojo Incolume</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">coding-dojo</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../FAQ/" class="nav-link">Perguntas Frequentes (FAQ)</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
-</li>
-                                    
-<li>
-    <a href="../../about/LICENSE/" class="dropdown-item">LICENSE</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Coding challenge <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../coding_challenge/" class="dropdown-item">Coding Challenge</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User guide <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Git commits messages</a>
-</li>
-                                    
-<li>
-    <a href="../INSTALLATION/" class="dropdown-item">Guia de Uso</a>
-</li>
-                                    
-<li>
-    <a href="../code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
-</li>
-                                    
-<li>
-    <a href="../development/" class="dropdown-item">Guia de contribuíção (Desenvolvimento)</a>
-</li>
-                                    
-<li>
-    <a href="../usage/" class="dropdown-item">Usage</a>
-</li>
-                                    
-<li>
-    <a href="../writing-your-docs/" class="dropdown-item">Writing your docs</a>
-</li>
-                                    
-<li>
-    <a href="../zenpy/" class="dropdown-item">ZEN do Python</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../../coding_challenge/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../INSTALLATION/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/incolume-jedi/coding-dojo/tree/dev/docs/user_guide/COVENTIONAL_COMMITS.md" class="nav-link">Edit on coding-dojo-incolume
-                                    </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#git-commits-messages" class="nav-link">Git commits messages</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#examples" class="nav-link">Examples</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#commit-message-with-to-draw-attention-to-breaking-change" class="nav-link">Commit message with ! to draw attention to breaking change</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change" class="nav-link">Commit message with scope and ! to draw attention to breaking change</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#commit-message-with-both-and-breaking-change-footer" class="nav-link">Commit message with both ! and BREAKING CHANGE footer</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#commit-message-with-no-body" class="nav-link">Commit message with no body</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#commit-message-with-scope" class="nav-link">Commit message with scope</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#commit-message-with-multi-paragraph-body-and-multiple-footers" class="nav-link">Commit message with multi-paragraph body and multiple footers</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-<h1 id="git-commits-messages">Git commits messages</h1>
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git-commits-messages" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Coding Dojo Incolume" class="md-header__button md-logo" aria-label="Coding Dojo Incolume" data-md-component="logo">
+      
+  <img src="../../asserts/img/jedi_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Dojo Incolume
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Conventional Commit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/incolume-jedi/coding-dojo/" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    coding-dojo-incolume
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coding Dojo Incolume" class="md-nav__button md-logo" aria-label="Coding Dojo Incolume" data-md-component="logo">
+      
+  <img src="../../asserts/img/jedi_logo.png" alt="logo">
+
+    </a>
+    Coding Dojo Incolume
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/incolume-jedi/coding-dojo/" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    coding-dojo-incolume
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding_challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_of_conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código de Conduta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Medotologias
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Medotologias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Conventional Commit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Conventional Commit
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit-message-with-description-and-breaking-change-footer" class="md-nav__link">
+    Commit message with description and breaking change footer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-to-draw-attention-to-breaking-change" class="md-nav__link">
+    Commit message with ! to draw attention to breaking change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change" class="md-nav__link">
+    Commit message with scope and ! to draw attention to breaking change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-both-and-breaking-change-footer" class="md-nav__link">
+    Commit message with both ! and BREAKING CHANGE footer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-no-body" class="md-nav__link">
+    Commit message with no body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-scope" class="md-nav__link">
+    Commit message with scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-multi-paragraph-body-and-multiple-footers" class="md-nav__link">
+    Commit message with multi-paragraph body and multiple footers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-your-docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zenpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zen Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/CHANGELOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit-message-with-description-and-breaking-change-footer" class="md-nav__link">
+    Commit message with description and breaking change footer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-to-draw-attention-to-breaking-change" class="md-nav__link">
+    Commit message with ! to draw attention to breaking change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change" class="md-nav__link">
+    Commit message with scope and ! to draw attention to breaking change
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-both-and-breaking-change-footer" class="md-nav__link">
+    Commit message with both ! and BREAKING CHANGE footer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-no-body" class="md-nav__link">
+    Commit message with no body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-scope" class="md-nav__link">
+    Commit message with scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-message-with-multi-paragraph-body-and-multiple-footers" class="md-nav__link">
+    Commit message with multi-paragraph body and multiple footers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="git-commits-messages">Git commits messages<a class="headerlink" href="#git-commits-messages" title="Permanent link">#</a></h1>
 <hr />
 <p>This project follow Conventional Commits, A specification for adding human and
 machine readable meaning to commit messages.</p>
-<pre><code class="language-bash">&lt;type&gt;[optional scope]: &lt;description&gt;
+<div class="highlight"><pre><span></span><code>&lt;type&gt;<span class="o">[</span>optional<span class="w"> </span>scope<span class="o">]</span>:<span class="w"> </span>&lt;description&gt;
 
-[optional body]
+<span class="o">[</span>optional<span class="w"> </span>body<span class="o">]</span>
 
-[optional footer(s)]
-</code></pre>
-<p>The commit contains the following structural elements, to communicate intent to the consumers of your library:
-+ type: the type of commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)
-    + feat: A commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
-    + fix: A commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
-    + chore: Changes that do not relate to a fix or feature and don´t modify src or test files (for example updating dependencies);
-    + refactor: refactored code that neither fixes a bug nor adds a feature;
-    + docs: updates to documentation such as a the README or other markdown or rst files;
-    + style: Changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, black style applied, and so on;
-    + test: Including new or correcting previous tests;
-    + perf: preformance impovements;
-    + ci: Continuos integration related;
-    + build: changes that affect the build system or external dependencies;
-    + revert: reverts a previous commit;
-+ scope: This is optional, but indicate a specific scope ;
-+ description: show what was done in the commit;
-+ body: Full description, if descript not enough;
-+ footer: This is optional, but agregate additional information about commit, lake revisor, references, millistone and others (for example "close #issue-id").</p>
-<h2 id="examples">Examples</h2>
-<h3 id="commit-message-with-description-and-breaking-change-footer">Commit message with description and breaking change footer</h3>
-<pre><code class="language-bash">feat: allow provided config object to extend other configs
-BREAKING CHANGE: `extends` key in config file is now used for extending other config files
-</code></pre>
-<h2 id="commit-message-with-to-draw-attention-to-breaking-change">Commit message with ! to draw attention to breaking change</h2>
-<pre><code class="language-shell">feat!: send an email to the customer when a product is shipped
-</code></pre>
-<h2 id="commit-message-with-scope-and-to-draw-attention-to-breaking-change">Commit message with scope and ! to draw attention to breaking change</h2>
-<pre><code class="language-shell">feat(api)!: send an email to the customer when a product is shipped
-</code></pre>
-<h2 id="commit-message-with-both-and-breaking-change-footer">Commit message with both ! and BREAKING CHANGE footer</h2>
-<pre><code class="language-shell">chore!: drop support for Python 2.6
+<span class="o">[</span>optional<span class="w"> </span>footer<span class="o">(</span>s<span class="o">)]</span>
+</code></pre></div>
+<p>The commit contains the following structural elements, to communicate intent to the consumers of your library:</p>
+<ul>
+<li><strong>type</strong>: the type of commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)<ul>
+<li><strong>feat</strong>: A commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).</li>
+<li><strong>fix</strong> or <strong>bugfix</strong>: A commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).</li>
+<li><strong>chore</strong>: Changes that do not relate to a fix or feature and don´t modify src or test files (for example updating dependencies);</li>
+<li><strong>refactor</strong>: refactored code that neither fixes a bug nor adds a feature;</li>
+<li><strong>docs</strong>: updates to documentation such as a the README or other markdown or rst files;</li>
+<li><strong>style</strong>: Changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, black style applied, and so on;</li>
+<li><strong>test</strong>: Including new or correcting previous tests;</li>
+<li><strong>perf</strong>: preformance impovements;</li>
+<li><strong>ci</strong>: Continuos integration related;</li>
+<li><strong>build</strong>: changes that affect the build system or external dependencies;</li>
+<li><strong>revert</strong>: reverts a previous commit;</li>
+</ul>
+</li>
+<li><strong>scope</strong>: This is optional, but indicate a specific scope ;</li>
+<li><strong>description</strong>: show what was done in the commit;</li>
+<li><strong>body</strong>: Full description, if descript not enough;</li>
+<li><strong>footer</strong>: This is optional, but agregate additional information about commit, lake revisor, references, millistone and others (for example "close #issue-id").</li>
+</ul>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h3 id="commit-message-with-description-and-breaking-change-footer">Commit message with description and breaking change footer<a class="headerlink" href="#commit-message-with-description-and-breaking-change-footer" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>feat:<span class="w"> </span>allow<span class="w"> </span>provided<span class="w"> </span>config<span class="w"> </span>object<span class="w"> </span>to<span class="w"> </span>extend<span class="w"> </span>other<span class="w"> </span>configs
+BREAKING<span class="w"> </span>CHANGE:<span class="w"> </span><span class="sb">`</span>extends<span class="sb">`</span><span class="w"> </span>key<span class="w"> </span><span class="k">in</span><span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>extending<span class="w"> </span>other<span class="w"> </span>config<span class="w"> </span>files
+</code></pre></div>
+<h2 id="commit-message-with-to-draw-attention-to-breaking-change">Commit message with ! to draw attention to breaking change<a class="headerlink" href="#commit-message-with-to-draw-attention-to-breaking-change" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>feat!:<span class="w"> </span>send<span class="w"> </span>an<span class="w"> </span>email<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>customer<span class="w"> </span>when<span class="w"> </span>a<span class="w"> </span>product<span class="w"> </span>is<span class="w"> </span>shipped
+</code></pre></div>
+<h2 id="commit-message-with-scope-and-to-draw-attention-to-breaking-change">Commit message with scope and ! to draw attention to breaking change<a class="headerlink" href="#commit-message-with-scope-and-to-draw-attention-to-breaking-change" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>feat<span class="o">(</span>api<span class="o">)</span>!:<span class="w"> </span>send<span class="w"> </span>an<span class="w"> </span>email<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>customer<span class="w"> </span>when<span class="w"> </span>a<span class="w"> </span>product<span class="w"> </span>is<span class="w"> </span>shipped
+</code></pre></div>
+<h2 id="commit-message-with-both-and-breaking-change-footer">Commit message with both ! and BREAKING CHANGE footer<a class="headerlink" href="#commit-message-with-both-and-breaking-change-footer" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>chore!:<span class="w"> </span>drop<span class="w"> </span>support<span class="w"> </span><span class="k">for</span><span class="w"> </span>Python<span class="w"> </span><span class="m">2</span>.6
 
-BREAKING CHANGE: Some features not available in Python 2.7-.
-</code></pre>
-<h2 id="commit-message-with-no-body">Commit message with no body</h2>
-<pre><code class="language-shell">docs: correct spelling of CHANGELOG
-</code></pre>
-<h2 id="commit-message-with-scope">Commit message with scope</h2>
-<pre><code class="language-shell">feat(lang): add polish language
-</code></pre>
-<h2 id="commit-message-with-multi-paragraph-body-and-multiple-footers">Commit message with multi-paragraph body and multiple footers</h2>
-<pre><code class="language-shell">fix: prevent racing of requests
+BREAKING<span class="w"> </span>CHANGE:<span class="w"> </span>Some<span class="w"> </span>features<span class="w"> </span>not<span class="w"> </span>available<span class="w"> </span><span class="k">in</span><span class="w"> </span>Python<span class="w"> </span><span class="m">2</span>.7-.
+</code></pre></div>
+<h2 id="commit-message-with-no-body">Commit message with no body<a class="headerlink" href="#commit-message-with-no-body" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>docs:<span class="w"> </span>correct<span class="w"> </span>spelling<span class="w"> </span>of<span class="w"> </span>CHANGELOG
+</code></pre></div>
+<h2 id="commit-message-with-scope">Commit message with scope<a class="headerlink" href="#commit-message-with-scope" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>feat<span class="o">(</span>lang<span class="o">)</span>:<span class="w"> </span>add<span class="w"> </span>polish<span class="w"> </span>language
+</code></pre></div>
+<h2 id="commit-message-with-multi-paragraph-body-and-multiple-footers">Commit message with multi-paragraph body and multiple footers<a class="headerlink" href="#commit-message-with-multi-paragraph-body-and-multiple-footers" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>fix:<span class="w"> </span>prevent<span class="w"> </span>racing<span class="w"> </span>of<span class="w"> </span>requests
 
-Introduce a request id and a reference to latest request. Dismiss
-incoming responses other than from latest request.
+Introduce<span class="w"> </span>a<span class="w"> </span>request<span class="w"> </span>id<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>reference<span class="w"> </span>to<span class="w"> </span>latest<span class="w"> </span>request.<span class="w"> </span>Dismiss
+incoming<span class="w"> </span>responses<span class="w"> </span>other<span class="w"> </span>than<span class="w"> </span>from<span class="w"> </span>latest<span class="w"> </span>request.
 
-Remove timeouts which were used to mitigate the racing issue but are
-obsolete now.
+Remove<span class="w"> </span>timeouts<span class="w"> </span>which<span class="w"> </span>were<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>mitigate<span class="w"> </span>the<span class="w"> </span>racing<span class="w"> </span>issue<span class="w"> </span>but<span class="w"> </span>are
+obsolete<span class="w"> </span>now.
 
-Reviewed-by: @britodfbr
-Refs: #123
-</code></pre>
-<p>The full specification maybe access on <a href="https://www.conventionalcommits.org/en/v1.0.0/#specification">english lang</a> or others languages about <a href="https://www.conventionalcommits.org/pt-br/v1.0.0/#specification">Brazilian Portuguese</a>.</p></div>
+Reviewed-by:<span class="w"> </span>@britodfbr
+Refs:<span class="w"> </span><span class="c1">#123</span>
+</code></pre></div>
+<p>The full specification maybe access on <a href="https://www.conventionalcommits.org/en/v1.0.0/#specification">english lang</a> or others languages about <a href="https://www.conventionalcommits.org/pt-br/v1.0.0/#specification">Brazilian Portuguese</a>.</p>
+
+
+
+
+
+                
+              </article>
             </div>
+          
+          
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../js/jquery-3.6.0.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
 </html>

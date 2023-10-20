@@ -1,187 +1,594 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Usage - Coding Dojo</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">Coding Dojo</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../asserts/img/jedi_logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Usage - Coding Dojo Incolume</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">coding-dojo</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../FAQ/" class="nav-link">Perguntas Frequentes (FAQ)</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
-</li>
-                                    
-<li>
-    <a href="../../about/LICENSE/" class="dropdown-item">LICENSE</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Coding challenge <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../coding_challenge/" class="dropdown-item">Coding Challenge</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User guide <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../COVENTIONAL_COMMITS/" class="dropdown-item">Git commits messages</a>
-</li>
-                                    
-<li>
-    <a href="../INSTALLATION/" class="dropdown-item">Guia de Uso</a>
-</li>
-                                    
-<li>
-    <a href="../code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
-</li>
-                                    
-<li>
-    <a href="../development/" class="dropdown-item">Guia de contribuíção (Desenvolvimento)</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Usage</a>
-</li>
-                                    
-<li>
-    <a href="../writing-your-docs/" class="dropdown-item">Writing your docs</a>
-</li>
-                                    
-<li>
-    <a href="../zenpy/" class="dropdown-item">ZEN do Python</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../development/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../writing-your-docs/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/incolume-jedi/coding-dojo/tree/dev/docs/user_guide/usage.md" class="nav-link">Edit on coding-dojo-incolume
-                                    </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#coding-dojo" class="nav-link">Coding Dojo</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#start-use-the-model" class="nav-link">Start Use the model</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#tests-linters-and-checkers" class="nav-link">Tests, Linters and Checkers</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#testting-lint-configurate" class="nav-link">Testting lint configurate</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#testting-tox-configurate" class="nav-link">Testting tox configurate</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#control-version-with-poetry" class="nav-link">Control version with poetry</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#facility-with-make" class="nav-link">Facility with make</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#github-workflows-actions-gwa" class="nav-link">Github Workflows Actions (GWA)</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#this-models" class="nav-link">This Models:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#git-hooks" class="nav-link">Git Hooks</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#coding-dojo" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Coding Dojo Incolume" class="md-header__button md-logo" aria-label="Coding Dojo Incolume" data-md-component="logo">
+      
+  <img src="../../asserts/img/jedi_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Dojo Incolume
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/incolume-jedi/coding-dojo/" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    coding-dojo-incolume
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coding Dojo Incolume" class="md-nav__button md-logo" aria-label="Coding Dojo Incolume" data-md-component="logo">
+      
+  <img src="../../asserts/img/jedi_logo.png" alt="logo">
+
+    </a>
+    Coding Dojo Incolume
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/incolume-jedi/coding-dojo/" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    coding-dojo-incolume
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding_challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_of_conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código de Conduta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Medotologias
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Medotologias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COVENTIONAL_COMMITS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conventional Commit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-your-docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zenpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zen Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/CHANGELOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-use-the-model" class="md-nav__link">
+    Start Use the model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests-linters-and-checkers" class="md-nav__link">
+    Tests, Linters and Checkers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testting-lint-configurate" class="md-nav__link">
+    Testting lint configurate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testting-tox-configurate" class="md-nav__link">
+    Testting tox configurate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-version-with-poetry" class="md-nav__link">
+    Control version with poetry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#facility-with-make" class="md-nav__link">
+    Facility with make
+  </a>
+  
+    <nav class="md-nav" aria-label="Facility with make">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#makefile-help" class="md-nav__link">
+    Makefile help
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-prerelease-with-makefile" class="md-nav__link">
+    New prerelease with Makefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-release-with-makefile" class="md-nav__link">
+    New release with Makefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-lint" class="md-nav__link">
+    Checking lint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-tox-over-make" class="md-nav__link">
+    Run tox over make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
 
 <p><a href="https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml"><img alt="Tests CI/CD" src="https://github.com/incolume-jedi/coding-dojo/actions/workflows/tests-gwa-ci-cd.yml/badge.svg" /></a></p>
-<h1 id="coding-dojo">Coding Dojo</h1>
+<h1 id="coding-dojo">Coding Dojo<a class="headerlink" href="#coding-dojo" title="Permanent link">#</a></h1>
 <p>Details for <a href="../prefacio.md#escopo">scope</a> and <a href="../prefacio.md#ferramentas-aplicadas">tool</a>.</p>
 <hr />
-<h2 id="start-use-the-model">Start Use the model</h2>
+<h2 id="start-use-the-model">Start Use the model<a class="headerlink" href="#start-use-the-model" title="Permanent link">#</a></h2>
 <ol>
 <li>Access https://github.com/incolume-treinamentos/incolume.py.model-2023-07-05.</li>
 <li>Click on green button <strong>Use this template</strong>;</li>
@@ -192,9 +599,9 @@
 </li>
 <li>
 <p>Create the control's branches:
-   <code>bash
-   $ git br main
-   $ git br tags</code></p>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>br<span class="w"> </span>main
+$<span class="w"> </span>git<span class="w"> </span>br<span class="w"> </span>tags
+</code></pre></div></p>
 </li>
 <li>
 <p>Configure environment:
@@ -208,420 +615,406 @@
 </li>
 <li>
 <p>Set a new project name and version:
-      ```bash
-      $ vim pyproject.toml</p>
-<p>[tool.poetry]
-  name = "incolume-py-model-2023-07-05"
-  version = 1.111.0
-  <code></code>shell
-  $ cat pyproject.toml</p>
-<p>[tool.poetry]
-  name = "incolume.py.abc"
-  version = 0.1.0</p>
-<p>```</p>
+      <div class="highlight"><pre><span></span><code>$<span class="w"> </span>vim<span class="w"> </span>pyproject.toml
+
+<span class="o">[</span>tool.poetry<span class="o">]</span>
+<span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;incolume-py-model-2023-07-05&quot;</span>
+<span class="nv">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>.111.0
+</code></pre></div>
+      <div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>pyproject.toml
+
+<span class="o">[</span>tool.poetry<span class="o">]</span>
+<span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;incolume.py.abc&quot;</span>
+<span class="nv">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1.0
+</code></pre></div></p>
 </li>
 <li>
 <p>rename path project:
-      <code>bash
-      git mv incolume/py/model_2023_07_05/ incolume/py/abc</code></p>
+      <div class="highlight"><pre><span></span><code>git<span class="w"> </span>mv<span class="w"> </span>incolume/py/model_2023_07_05/<span class="w"> </span>incolume/py/abc
+</code></pre></div></p>
 </li>
 <li>
 <p>Commit changes</p>
-<p><code>shell
+<p>```shell
    # the way wished
    $ git co -b enhancement/epoch#$(date +%s);
    $ git ci -m 'chore: #0 Atualização do projeto.'
    $ git co dev
    $ git merge --no-ff enhancement/epoch#0000000000000
    $ poetry run task preminor
-   $ poetry run task patch</code>
-   <code>shell
-   # easy way
-   git ci -m 'chore: #0 Atualização do projeto.'
-   poetry run task preminor
-   poetry run task patch</code></p>
+   $ poetry run task patch
+   <div class="highlight"><pre><span></span><code>```shell
+# easy way
+git ci -m &#39;chore: #0 Atualização do projeto.&#39;
+poetry run task preminor
+poetry run task patch
+</code></pre></div></p>
 </li>
 <li>
 <p>Commit changes</p>
 </li>
 </ol>
-<h2 id="tests-linters-and-checkers">Tests, Linters and Checkers</h2>
+<h2 id="tests-linters-and-checkers">Tests, Linters and Checkers<a class="headerlink" href="#tests-linters-and-checkers" title="Permanent link">#</a></h2>
 <ol>
 <li>
 <p>For run tests:
-    <code>shell
-    $ poetry run pytest  # run all</code>
-   <code>shell
-   $ poetry run pytest -vv tests/test_skell.py::TestSkellCase::test_kwargs  # run one
-   $ poetry run pytest -vv tests/test_skell.py::TestSkellCase  # run class
-   $ poetry run pytest -vv tests/test_skell.py  # run file</code></p>
+    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w">  </span><span class="c1"># run all</span>
+</code></pre></div>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>-vv<span class="w"> </span>tests/test_skell.py::TestSkellCase::test_kwargs<span class="w">  </span><span class="c1"># run one</span>
+$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>-vv<span class="w"> </span>tests/test_skell.py::TestSkellCase<span class="w">  </span><span class="c1"># run class</span>
+$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>-vv<span class="w"> </span>tests/test_skell.py<span class="w">  </span><span class="c1"># run file</span>
+</code></pre></div></p>
 </li>
 <li>
 <p>For run linters:
-    <code>shell
-    $ poetry run task linter</code></p>
+    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>linter
+</code></pre></div></p>
 </li>
 </ol>
 <p>===</p>
 <ol>
 <li>Configure pylint tool</li>
 <li>Edit <em>pyproject.toml</em>, add on end file.
-   ```bash
-   ...
-   [tool.pylint.format]
-   # Maximum number of characters on a single line.
-   max-line-length = 160</li>
+   <div class="highlight"><pre><span></span><code>...
+<span class="o">[</span>tool.pylint.format<span class="o">]</span>
+<span class="c1"># Maximum number of characters on a single line.</span>
+max-line-length<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">160</span>
+
+<span class="o">[</span>tool.pylint.basic<span class="o">]</span>
+<span class="c1"># Allow shorter and longer variable names than the default.</span>
+argument-rgx<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;[a-z_][a-z0-9_]*</span>$<span class="s2">&quot;</span>
+attr-rgx<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;[a-z_][a-z0-9_]*</span>$<span class="s2">&quot;</span>
+variable-rgx<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;[a-z_][a-z0-9_]*</span>$<span class="s2">&quot;</span>
+
+<span class="c1"># Ensure that orjson is analysed as a C extension by pylint.</span>
+extension-pkg-whitelist<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;orjson&quot;</span>
+
+<span class="o">[</span>tool.pylint.messages_control<span class="o">]</span>
+<span class="nv">disable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="c1"># Disable too many and too few checks.</span>
+<span class="w">    </span><span class="s2">&quot;too-many-ancestors&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-arguments&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-boolean-expressions&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-branches&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-function-args&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-instance-attributes&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-lines&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-locals&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-nested-blocks&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-public-methods&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-return-statements&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-many-statements&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;too-few-public-methods&quot;</span>,
+
+<span class="w">    </span><span class="c1"># Similar lines in files (often the case in tests).</span>
+<span class="w">    </span><span class="s2">&quot;duplicate-code&quot;</span>,
+
+<span class="w">    </span><span class="c1"># Many functions (e.g. callbacks) will naturally have unused arguments.</span>
+<span class="w">    </span><span class="s2">&quot;unused-argument&quot;</span>,
+
+<span class="w">    </span><span class="c1"># Disable checking that method could be a function in classes (often used for organisation).</span>
+<span class="w">    </span><span class="s2">&quot;no-self-use&quot;</span>,
+
+<span class="w">    </span><span class="c1"># Disable failure for TODO items in the codebase (code will always have TODOs).</span>
+<span class="w">    </span><span class="s2">&quot;fixme&quot;</span>,
+
+<span class="w">    </span><span class="c1"># Disable docstrings checks as we don&#39;t require excessive documentation.</span>
+<span class="w">    </span><span class="s2">&quot;missing-docstring&quot;</span>,
+
+<span class="w">    </span><span class="s2">&quot;no-member&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;unspecified-encoding&quot;</span>,
+<span class="o">]</span>
+</code></pre></div></li>
+<li>Commit
+      <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Configure pylint tool&quot;</span><span class="w"> </span>pyproject.toml
+</code></pre></div></li>
+<li>Configure mypy tool<ol>
+<li>Edit <em>pyproject.toml</em>, add on end file.
+<div class="highlight"><pre><span></span><code>...
+<span class="w">   </span><span class="o">[</span>tool.mypy<span class="o">]</span>
+<span class="w">   </span><span class="nv">mypy_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;incolumepy&quot;</span>
+<span class="w">   </span><span class="nv">check_untyped_defs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">disallow_any_generics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">ignore_missing_imports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">no_implicit_optional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">show_error_codes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">strict_equality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">warn_redundant_casts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">warn_return_any</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">warn_unreachable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">warn_unused_configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="nv">no_implicit_reexport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div></li>
 </ol>
-<p>[tool.pylint.basic]
-   # Allow shorter and longer variable names than the default.
-   argument-rgx = "[a-z_][a-z0-9_]<em>$"
-   attr-rgx = "[a-z_][a-z0-9_]</em>$"
-   variable-rgx = "[a-z_][a-z0-9_]*$"</p>
-<p># Ensure that orjson is analysed as a C extension by pylint.
-   extension-pkg-whitelist = "orjson"</p>
-<p>[tool.pylint.messages_control]
-   disable = [
-       # Disable too many and too few checks.
-       "too-many-ancestors",
-       "too-many-arguments",
-       "too-many-boolean-expressions",
-       "too-many-branches",
-       "too-many-function-args",
-       "too-many-instance-attributes",
-       "too-many-lines",
-       "too-many-locals",
-       "too-many-nested-blocks",
-       "too-many-public-methods",
-       "too-many-return-statements",
-       "too-many-statements",
-       "too-few-public-methods",</p>
-<pre><code>   # Similar lines in files (often the case in tests).
-   "duplicate-code",
+</li>
+<li>Commit
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Configure mypy tool&quot;</span><span class="w"> </span>pyproject.toml
+</code></pre></div></li>
+<li>Configure isort tool<ol>
+<li>Edit <em>pyproject.toml</em>, add on end file.
+<div class="highlight"><pre><span></span><code>...
+<span class="o">[</span>tool.isort<span class="o">]</span>
+<span class="nv">multi_line_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+<span class="nv">line_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">160</span>
+<span class="nv">include_trailing_comma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div></li>
+<li>Commit
+  <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Configure isort tool&quot;</span><span class="w"> </span>pyproject.toml
+</code></pre></div></li>
+</ol>
+</li>
+<li>Configure flake8 tool<ol>
+<li>Edit <em>pyproject.toml</em>, add on end file.
+<div class="highlight"><pre><span></span><code>...
+<span class="o">[</span>flake8<span class="o">]</span>
+max-line-length<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">160</span>
+</code></pre></div></li>
+<li>Commit
+  <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Configure flake8 tool&quot;</span><span class="w"> </span>pyproject.toml
+</code></pre></div></li>
+</ol>
+</li>
+<li>Configure black tool:<ol>
+<li>Edit <em>pyproject.toml</em>, add on end file.
+<div class="highlight"><pre><span></span><code>...
+<span class="o">[</span>tool.black<span class="o">]</span>
+<span class="nv">line_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">160</span>
+</code></pre></div></li>
+<li>Commit
+  <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Configure black tool&quot;</span><span class="w"> </span>pyproject.toml
+</code></pre></div></li>
+</ol>
+</li>
+<li>Configure tox tool:<ol>
+<li>Edit <em>pyproject.toml</em>, add on end file.
+<div class="highlight"><pre><span></span><code><span class="o">[</span>tool.tox<span class="o">]</span>
+<span class="nv">legacy_tox_ini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">[tox]</span>
+<span class="s2">minversion = 3.3.0</span>
+<span class="s2">isolated_build = True</span>
+<span class="s2">envlist =</span>
+<span class="s2">black</span>
+<span class="s2">flake8</span>
+<span class="s2">isort</span>
+<span class="s2">mypy</span>
+<span class="s2">pydocstyle</span>
+<span class="s2">pylint</span>
+<span class="s2">py{36,37,38,39,310}</span>
 
-   # Many functions (e.g. callbacks) will naturally have unused arguments.
-   "unused-argument",
+<span class="s2">;[tox:.package]</span>
+<span class="s2">;basepython = python3</span>
 
-   # Disable checking that method could be a function in classes (often used for organisation).
-   "no-self-use",
+<span class="s2">[testenv]</span>
+<span class="s2">whitelist_externals = poetry</span>
+<span class="s2">skip_install = true</span>
+<span class="s2">commands =</span>
+<span class="s2">poetry env use {envpython}</span>
+<span class="s2">poetry install -vv --no-root</span>
+<span class="s2">poetry run pytest {posargs} tests/</span>
 
-   # Disable failure for TODO items in the codebase (code will always have TODOs).
-   "fixme",
+<span class="s2">[testenv:flake8]</span>
+<span class="s2">deps = flake8</span>
+<span class="s2">commands = flake8 --config pyproject.toml incolumepy/ tests/</span>
 
-   # Disable docstrings checks as we don't require excessive documentation.
-   "missing-docstring",
+<span class="s2">[testenv:mypy]</span>
+<span class="s2">deps =</span>
+<span class="s2">mypy</span>
+<span class="s2">types-toml</span>
+<span class="s2">commands = mypy incolumepy/</span>
 
-   "no-member",
-   "unspecified-encoding",
-</code></pre>
-<p>]
-   <code>2. Commit</code>bash
-      $ git ci -m "Configure pylint tool" pyproject.toml
-      <code>4. Configure mypy tool
-    1. Edit _pyproject.toml_, add on end file.</code>bash
-    ...
-       [tool.mypy]
-       mypy_path = "incolumepy"
-       check_untyped_defs = true
-       disallow_any_generics = true
-       ignore_missing_imports = true
-       no_implicit_optional = true
-       show_error_codes = true
-       strict_equality = true
-       warn_redundant_casts = true
-       warn_return_any = true
-       warn_unreachable = true
-       warn_unused_configs = true
-       no_implicit_reexport = true
-    <code>2. Commit</code>bash
-   $ git ci -m "Configure mypy tool" pyproject.toml
-   <code>5. Configure isort tool
-    1. Edit _pyproject.toml_, add on end file.</code>bash
-    ...
-    [tool.isort]
-    multi_line_output = 3
-    line_length = 160
-    include_trailing_comma = true
-    <code>2. Commit</code>bash
-      $ git ci -m "Configure isort tool" pyproject.toml
-      <code>6. Configure flake8 tool
-    1. Edit _pyproject.toml_, add on end file.</code>bash
-    ...
-    [flake8]
-    max-line-length = 160
-    <code>2. Commit</code>bash
-      $ git ci -m "Configure flake8 tool" pyproject.toml
-      <code>7. Configure black tool:
-    1. Edit _pyproject.toml_, add on end file.</code>bash
-    ...
-    [tool.black]
-    line_length = 160
-    <code>2. Commit</code>bash
-      $ git ci -m "Configure black tool" pyproject.toml
-      <code>8. Configure tox tool:
-    1. Edit _pyproject.toml_, add on end file.</code>bash
-    [tool.tox]
-    legacy_tox_ini = """
-    [tox]
-    minversion = 3.3.0
-    isolated_build = True
-    envlist =
-    black
-    flake8
-    isort
-    mypy
-    pydocstyle
-    pylint
-    py{36,37,38,39,310}</p>
-<pre><code>;[tox:.package]
-;basepython = python3
+<span class="s2">[testenv:pydocstyle]</span>
+<span class="s2">commands = poetry run pydocstyle incolumepy/ tests/</span>
 
-[testenv]
-whitelist_externals = poetry
-skip_install = true
-commands =
-poetry env use {envpython}
-poetry install -vv --no-root
-poetry run pytest {posargs} tests/
+<span class="s2">[testenv:isort]</span>
+<span class="s2">commands = poetry run isort --check --atomic --py all incolumepy/ tests/</span>
 
-[testenv:flake8]
-deps = flake8
-commands = flake8 --config pyproject.toml incolumepy/ tests/
+<span class="s2">[testenv:pylint]</span>
+<span class="s2">commands = poetry run pylint incolumepy/ tests/</span>
 
-[testenv:mypy]
-deps =
-mypy
-types-toml
-commands = mypy incolumepy/
-
-[testenv:pydocstyle]
-commands = poetry run pydocstyle incolumepy/ tests/
-
-[testenv:isort]
-commands = poetry run isort --check --atomic --py all incolumepy/ tests/
-
-[testenv:pylint]
-commands = poetry run pylint incolumepy/ tests/
-
-[testenv:black]
-commands = poetry run black --check incolumepy/ tests/
-"""
-```
-2. Commit
-  ```bash
-  $ git ci -m "Configure tox tool" pyproject.toml
-  ```
-</code></pre>
-<h2 id="testting-lint-configurate">Testting lint configurate</h2>
+<span class="s2">[testenv:black]</span>
+<span class="s2">commands = poetry run black --check incolumepy/ tests/</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div></li>
+<li>Commit
+  <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Configure tox tool&quot;</span><span class="w"> </span>pyproject.toml
+</code></pre></div></li>
+</ol>
+</li>
+</ol>
+<h2 id="testting-lint-configurate">Testting lint configurate<a class="headerlink" href="#testting-lint-configurate" title="Permanent link">#</a></h2>
 <ol>
 <li>Test pydocstyle:
-   <code>bash
-   $ pydocstyle incolumepy/ tests/</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pydocstyle<span class="w"> </span>incolumepy/<span class="w"> </span>tests/
+</code></pre></div></li>
 <li>Test pylint
-   <code>bash
-   $ pylint incolumepy/ tests/</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pylint<span class="w"> </span>incolumepy/<span class="w"> </span>tests/
+</code></pre></div></li>
 <li>Test mypy
-   <code>bash
-   $ mypy incolumepy/ tests/</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>mypy<span class="w"> </span>incolumepy/<span class="w"> </span>tests/
+</code></pre></div></li>
 <li>Test isort
-   <code>bash
-   $ isort --check incolumepy/ tests/</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>isort<span class="w"> </span>--check<span class="w"> </span>incolumepy/<span class="w"> </span>tests/
+</code></pre></div></li>
 <li>Test flake8
-   <code>bash
-   $ flake8 --config pyproject.toml incolumepy/ tests/</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>flake8<span class="w"> </span>--config<span class="w"> </span>pyproject.toml<span class="w"> </span>incolumepy/<span class="w"> </span>tests/
+</code></pre></div></li>
 <li>Test black
-   <code>bash
-   $ black --check incolumepy/ tests/</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>black<span class="w"> </span>--check<span class="w"> </span>incolumepy/<span class="w"> </span>tests/
+</code></pre></div></li>
 </ol>
-<h2 id="testting-tox-configurate">Testting tox configurate</h2>
+<h2 id="testting-tox-configurate">Testting tox configurate<a class="headerlink" href="#testting-tox-configurate" title="Permanent link">#</a></h2>
 <ol>
 <li>Text tox
-   <code>bash
-   $ tox</code></li>
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>tox
+</code></pre></div></li>
 </ol>
-<h2 id="control-version-with-poetry">Control version with poetry</h2>
+<h2 id="control-version-with-poetry">Control version with poetry<a class="headerlink" href="#control-version-with-poetry" title="Permanent link">#</a></h2>
 <p>Unlike bumpversion, poetry changes the version of the main file only.
 To work around this situation and update the version of pyproject.toml,
 <strong>init</strong>.py and version.txt, we will do the following procedure.</p>
-<pre><code class="language-bash">$ cat &gt; incolumepy/gwa/__init__.py &lt;&lt; eof
-import toml
-from pathlib import Path
-__root__ = Path(__file__).parents[0]
-version_file = __root__.joinpath('version.txt')
-version_file.write_text(f&quot;{toml.load(Path(__file__).parents[2].joinpath('pyproject.toml'))['tool']['poetry']['version']}\n&quot;)
-__version__ = version_file.read_text().strip()
-eof
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="w"> </span>incolumepy/gwa/__init__.py<span class="w"> </span><span class="s">&lt;&lt; eof</span>
+<span class="s">import toml</span>
+<span class="s">from pathlib import Path</span>
+<span class="s">__root__ = Path(__file__).parents[0]</span>
+<span class="s">version_file = __root__.joinpath(&#39;version.txt&#39;)</span>
+<span class="s">version_file.write_text(f&quot;{toml.load(Path(__file__).parents[2].joinpath(&#39;pyproject.toml&#39;))[&#39;tool&#39;][&#39;poetry&#39;][&#39;version&#39;]}\n&quot;)</span>
+<span class="s">__version__ = version_file.read_text().strip()</span>
+<span class="s">eof</span>
 
-$ v=`poetry version prerelease`; pytest tests/ &amp;&amp; git ci -m &quot;$v&quot; pyproject.toml $(find -name &quot;version.txt&quot;)  #sem tag
-$ s=`poetry version patch`; pytest tests/ &amp;&amp; git ci -m &quot;`echo $s`&quot; pyproject.toml `find -name &quot;version.txt&quot;`; git tag -f `poetry version -s` -m &quot;$(echo $s)&quot;  #com tag
-
-</code></pre>
-<h2 id="facility-with-make">Facility with make</h2>
-<p>Use make to easy various commands.</p>
-<pre><code class="language-bash">$ curl https://pastebin.com/raw/eTHpL70G -o Makefile    # or
-$ curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/Makefile -o Makefile    # last version
-</code></pre>
-<h3 id="makefile-help">Makefile help</h3>
-<pre><code class="language-bash">$ make help
-</code></pre>
-<h3 id="new-prerelease-with-makefile">New prerelease with Makefile</h3>
-<pre><code class="language-bash">$ git co dev
-$ git merge --no-ff [branch] --autostash
-$ make prerelease
-</code></pre>
-<h3 id="new-release-with-makefile">New release with Makefile</h3>
-<pre><code class="language-bash">$ git co dev
-$ make release
-</code></pre>
-<h3 id="checking-lint">Checking lint</h3>
-<pre><code class="language-bash">$ make lint
-</code></pre>
-<h3 id="run-tox-over-make">Run tox over make</h3>
-<pre><code class="language-bash">$ make tox
-</code></pre>
-<h1 id="github-workflows-actions-gwa">Github Workflows Actions (GWA)</h1>
-<p>First create the directory for GWA:</p>
-<pre><code class="language-bash">mkdir -pv .github/workflows
-</code></pre>
-<h2 id="this-models">This Models:</h2>
+$<span class="w"> </span><span class="nv">v</span><span class="o">=</span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>prerelease<span class="sb">`</span><span class="p">;</span><span class="w"> </span>pytest<span class="w"> </span>tests/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$v</span><span class="s2">&quot;</span><span class="w"> </span>pyproject.toml<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;version.txt&quot;</span><span class="k">)</span><span class="w">  </span><span class="c1">#sem tag</span>
+$<span class="w"> </span><span class="nv">s</span><span class="o">=</span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>patch<span class="sb">`</span><span class="p">;</span><span class="w"> </span>pytest<span class="w"> </span>tests/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>ci<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;`echo </span><span class="nv">$s</span><span class="s2">`&quot;</span><span class="w"> </span>pyproject.toml<span class="w"> </span><span class="sb">`</span>find<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;version.txt&quot;</span><span class="sb">`</span><span class="p">;</span><span class="w"> </span>git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>-s<span class="sb">`</span><span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$s</span><span class="k">)</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1">#com tag</span>
+</code></pre></div>
+<h2 id="facility-with-make">Facility with make<a class="headerlink" href="#facility-with-make" title="Permanent link">#</a></h2>
+<p>Use make to easy various commands.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>https://pastebin.com/raw/eTHpL70G<span class="w"> </span>-o<span class="w"> </span>Makefile<span class="w">    </span><span class="c1"># or</span>
+$<span class="w"> </span>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/Makefile<span class="w"> </span>-o<span class="w"> </span>Makefile<span class="w">    </span><span class="c1"># last version</span>
+</code></pre></div></p>
+<h3 id="makefile-help">Makefile help<a class="headerlink" href="#makefile-help" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span><span class="nb">help</span>
+</code></pre></div>
+<h3 id="new-prerelease-with-makefile">New prerelease with Makefile<a class="headerlink" href="#new-prerelease-with-makefile" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>co<span class="w"> </span>dev
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>--no-ff<span class="w"> </span><span class="o">[</span>branch<span class="o">]</span><span class="w"> </span>--autostash
+$<span class="w"> </span>make<span class="w"> </span>prerelease
+</code></pre></div>
+<h3 id="new-release-with-makefile">New release with Makefile<a class="headerlink" href="#new-release-with-makefile" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>co<span class="w"> </span>dev
+$<span class="w"> </span>make<span class="w"> </span>release
+</code></pre></div>
+<h3 id="checking-lint">Checking lint<a class="headerlink" href="#checking-lint" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>lint
+</code></pre></div>
+<h3 id="run-tox-over-make">Run tox over make<a class="headerlink" href="#run-tox-over-make" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>tox
+</code></pre></div>
+<h1 id="github-workflows-actions-gwa">Github Workflows Actions (GWA)<a class="headerlink" href="#github-workflows-actions-gwa" title="Permanent link">#</a></h1>
+<p>First create the directory for GWA:
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-pv<span class="w"> </span>.github/workflows
+</code></pre></div></p>
+<h2 id="this-models">This Models:<a class="headerlink" href="#this-models" title="Permanent link">#</a></h2>
 <ul>
-<li>GitHub WorkFlow with tags Running tox; Build pack; Create release; publish TestPyPI and PyPI</li>
+<li>
+<p>GitHub WorkFlow with tags Running tox; Build pack; Create release; publish TestPyPI and PyPI
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/gwa-flow.yml<span class="w"> </span>-o<span class="w"> </span>.github/workflows/gwa-flow.yml
+</code></pre></div></p>
+</li>
+<li>
+<p>Run tox and  generate coverage report:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubuserconcurl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/tests_ci_cd.yaml<span class="w"> </span>-o<span class="w"> </span>.github/workflows/tests_ci_cd.yml
+</code></pre></div></p>
+</li>
+<li>
+<p>Publish manualy releases/prereleases into test.pypi.org with poetry:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-testpypi-manual-publish.yml<span class="w"> </span>-o<span class="w"> </span>.github/workflows/poetry-testpypi-manual-publish.yml
+</code></pre></div></p>
+</li>
+<li>
+<p>Publish automatically releases into pypi.org and test.pypi.org with poetry, after pass on tests from tests_ci_cd:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-mine-publish-automatically.yml<span class="w"> </span>-o<span class="w"> </span>.github/workflows/poetry-mine-publish-automatically.yml
+</code></pre></div></p>
+</li>
+<li>
+<p>Publish automatically releases into pypi.org only, after pass on tests from tests_ci_cd:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-mine-pypi-autopublish.yml<span class="w"> </span>-o<span class="w">  </span>.github/workflows/poetry-mine-pypi-autopublish.yml
+</code></pre></div></p>
+</li>
+<li>
+<p>Publish automatically releases into pypi.org and test.pypi.org without poetry, after pass on tests from tests_ci_cd:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/publish-automatically.yml<span class="w"> </span>-o<span class="w"> </span>.github/workflows/publish-automatically.yml
+</code></pre></div></p>
+</li>
+<li>
+<p>Publish automatically releases into pypi.org and test.pypi.org with multiprocess poetry, after pass on tests from tests_ci_cd:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-multiprocess.yml<span class="w"> </span>-o<span class="w"> </span>.github/workflows/poetry-multiprocess.yml
+</code></pre></div></p>
+</li>
 </ul>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/gwa-flow.yml -o .github/workflows/gwa-flow.yml
-</code></pre>
+<h2 id="git-hooks">Git Hooks<a class="headerlink" href="#git-hooks" title="Permanent link">#</a></h2>
 <ul>
-<li>Run tox and  generate coverage report:</li>
-</ul>
-<pre><code class="language-bash">curl https://raw.githubuserconcurl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/tests_ci_cd.yaml -o .github/workflows/tests_ci_cd.yml
-</code></pre>
-<ul>
-<li>Publish manualy releases/prereleases into test.pypi.org with poetry:</li>
-</ul>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-testpypi-manual-publish.yml -o .github/workflows/poetry-testpypi-manual-publish.yml
-</code></pre>
-<ul>
-<li>Publish automatically releases into pypi.org and test.pypi.org with poetry, after pass on tests from tests_ci_cd:</li>
-</ul>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-mine-publish-automatically.yml -o .github/workflows/poetry-mine-publish-automatically.yml
-</code></pre>
-<ul>
-<li>Publish automatically releases into pypi.org only, after pass on tests from tests_ci_cd:</li>
-</ul>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-mine-pypi-autopublish.yml -o  .github/workflows/poetry-mine-pypi-autopublish.yml
-</code></pre>
-<ul>
-<li>Publish automatically releases into pypi.org and test.pypi.org without poetry, after pass on tests from tests_ci_cd:</li>
-</ul>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/publish-automatically.yml -o .github/workflows/publish-automatically.yml
-</code></pre>
-<ul>
-<li>Publish automatically releases into pypi.org and test.pypi.org with multiprocess poetry, after pass on tests from tests_ci_cd:</li>
-</ul>
-<pre><code class="language-bash">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.github/workflows/poetry-multiprocess.yml -o .github/workflows/poetry-multiprocess.yml
-</code></pre>
-<h2 id="git-hooks">Git Hooks</h2>
-<ul>
-<li>create .git-hooks folder into your project root directory, at the same level you already have .git folder;</li>
-</ul>
-<pre><code class="language-shell">mkdir .git-hooks
-</code></pre>
-<ul>
+<li>create .git-hooks folder into your project root directory, at the same level you already have .git folder;
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>.git-hooks
+</code></pre></div></li>
 <li>create hook files into this folder: pre-commit, prepare-commit-msg and all hooks (these files don't have an extension);</li>
-<li>put the correct code into each file (I will add them below these steps);</li>
+<li>put the correct code into each file (I will add them below these steps);
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/pre-commit<span class="w"> </span>-o<span class="w"> </span>.git-hooks/pre-commit
+curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/prepare-commit-msg<span class="w"> </span>-o<span class="w"> </span>.git-hooks/prepare-commit-msg
+curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/commit-msg<span class="w"> </span>-o<span class="w"> </span>.git-hooks/commit-msg
+curl<span class="w"> </span>https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/pre-push<span class="w"> </span>-o<span class="w"> </span>.git-hooks/pre-push
+</code></pre></div></li>
+<li>change to execute mode;
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>.git-hooks/*
+</code></pre></div></li>
+<li>
+<p>run this command in your command line, into your main folder of your project (one level up from .git-hooks):
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span class="w"> </span>.git-hooks<span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>READY;</p>
+</li>
 </ul>
-<pre><code class="language-shell">curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/pre-commit -o .git-hooks/pre-commit
-curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/prepare-commit-msg -o .git-hooks/prepare-commit-msg
-curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/commit-msg -o .git-hooks/commit-msg
-curl https://raw.githubusercontent.com/incolumepy-prospections/incolumepy.gwa/main/.git-hooks/pre-push -o .git-hooks/pre-push
-</code></pre>
-<ul>
-<li>change to execute mode;</li>
-</ul>
-<pre><code class="language-shell">chmod +x .git-hooks/*
-</code></pre>
-<ul>
-<li>run this command in your command line, into your main folder of your project (one level up from .git-hooks):</li>
-</ul>
-<pre><code class="language-shell">git config core.hooksPath .git-hooks;
-</code></pre>
-<ul>
-<li>READY;</li>
-</ul></div>
-            </div>
-        </div>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../js/jquery-3.6.0.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+
+
+                
+              </article>
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+          
+          
         </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
 </html>

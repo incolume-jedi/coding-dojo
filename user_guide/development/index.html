@@ -1,183 +1,764 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Guia de contribuíção (Desenvolvimento) - Coding Dojo</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">Coding Dojo</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../asserts/img/jedi_logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Guia de contribuíção (Desenvolvimento) - Coding Dojo Incolume</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">coding-dojo</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../FAQ/" class="nav-link">Perguntas Frequentes (FAQ)</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../about/CONTRIBUTORS/" class="dropdown-item">Maintainers</a>
-</li>
-                                    
-<li>
-    <a href="../../about/LICENSE/" class="dropdown-item">LICENSE</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Coding challenge <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../coding_challenge/" class="dropdown-item">Coding Challenge</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User guide <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../COVENTIONAL_COMMITS/" class="dropdown-item">Git commits messages</a>
-</li>
-                                    
-<li>
-    <a href="../INSTALLATION/" class="dropdown-item">Guia de Uso</a>
-</li>
-                                    
-<li>
-    <a href="../code_of_conduct/" class="dropdown-item">Código de Conduta do Contribuinte</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Guia de contribuíção (Desenvolvimento)</a>
-</li>
-                                    
-<li>
-    <a href="../usage/" class="dropdown-item">Usage</a>
-</li>
-                                    
-<li>
-    <a href="../writing-your-docs/" class="dropdown-item">Writing your docs</a>
-</li>
-                                    
-<li>
-    <a href="../zenpy/" class="dropdown-item">ZEN do Python</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../code_of_conduct/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../usage/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/incolume-jedi/coding-dojo/tree/dev/docs/user_guide/development.md" class="nav-link">Edit on coding-dojo-incolume
-                                    </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#guia-de-contribuicao-desenvolvimento" class="nav-link">Guia de contribuíção (Desenvolvimento)</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#codigo-de-conduta" class="nav-link">Código de conduta</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#padroes-aplicados" class="nav-link">Padrões aplicados</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#prerequisitos" class="nav-link">Prerequisitos</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#iniciando-ambiente-de-desenvolvimento" class="nav-link">Iniciando ambiente de desenvolvimento</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#qualidade-de-codigo" class="nav-link">Qualidade de Código</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#seguranca" class="nav-link">Segurança</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#ferramentas-de-automacao" class="nav-link">Ferramentas de Automação</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-<h1 id="guia-de-contribuicao-desenvolvimento">Guia de contribuíção (Desenvolvimento)</h1>
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-de-contribuicao-desenvolvimento" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Coding Dojo Incolume" class="md-header__button md-logo" aria-label="Coding Dojo Incolume" data-md-component="logo">
+      
+  <img src="../../asserts/img/jedi_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Dojo Incolume
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guia de contribuíção (Desenvolvimento)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/incolume-jedi/coding-dojo/" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    coding-dojo-incolume
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coding Dojo Incolume" class="md-nav__button md-logo" aria-label="Coding Dojo Incolume" data-md-component="logo">
+      
+  <img src="../../asserts/img/jedi_logo.png" alt="logo">
+
+    </a>
+    Coding Dojo Incolume
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/incolume-jedi/coding-dojo/" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    coding-dojo-incolume
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding_challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_of_conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código de Conduta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Medotologias
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Medotologias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COVENTIONAL_COMMITS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conventional Commit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-your-docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zenpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zen Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/CHANGELOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-de-conduta" class="md-nav__link">
+    Código de conduta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padroes-aplicados" class="md-nav__link">
+    Padrões aplicados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisitos" class="md-nav__link">
+    Prerequisitos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciando-ambiente-de-desenvolvimento" class="md-nav__link">
+    Iniciando ambiente de desenvolvimento
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-de-codigo" class="md-nav__link">
+    Qualidade de Código
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    Segurança
+  </a>
+  
+    <nav class="md-nav" aria-label="Segurança">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bandit" class="md-nav__link">
+    bandit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#black" class="md-nav__link">
+    black
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blue" class="md-nav__link">
+    blue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flake8" class="md-nav__link">
+    flake8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pylama" class="md-nav__link">
+    pylama
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isort" class="md-nav__link">
+    isort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mypy" class="md-nav__link">
+    mypy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pydocstyle" class="md-nav__link">
+    pydocstyle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pylint" class="md-nav__link">
+    pylint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    safety
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramentas-de-automacao" class="md-nav__link">
+    Ferramentas de Automação
+  </a>
+  
+    <nav class="md-nav" aria-label="Ferramentas de Automação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tox" class="md-nav__link">
+    Tox
+  </a>
+  
+    <nav class="md-nav" aria-label="Tox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-basica" class="md-nav__link">
+    Verificação básica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-dos-testes-com-as-versoes-python-disponiveis" class="md-nav__link">
+    Verificação dos testes com as versões python disponíveis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-de-tres-linters-apenas-no-em-um-modulo" class="md-nav__link">
+    Verificação de três linters apenas no em um módulo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-de-todos-os-linters-configurados" class="md-nav__link">
+    Verificação de todos os linters configurados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-e-relatorio-de-cobertura" class="md-nav__link">
+    Verificação e relatório de cobertura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-resumida-de-seguranca" class="md-nav__link">
+    Verificação resumida de segurança
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao-completa" class="md-nav__link">
+    Execução completa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makefile" class="md-nav__link">
+    Makefile
+  </a>
+  
+    <nav class="md-nav" aria-label="Makefile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-ambiente-dev" class="md-nav__link">
+    Iniciar ambiente dev
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpeza-basica-do-ambiente" class="md-nav__link">
+    Limpeza básica do ambiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpeza-profunda-do-ambiente" class="md-nav__link">
+    Limpeza profunda do ambiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-a-documentacao-atualizada" class="md-nav__link">
+    Gerar a documentação atualizada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-de-seguranca-e-exposicao-de-motivos" class="md-nav__link">
+    Verificação de segurança e exposição de motivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taskipy" class="md-nav__link">
+    Taskipy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="guia-de-contribuicao-desenvolvimento">Guia de contribuíção (Desenvolvimento)<a class="headerlink" href="#guia-de-contribuicao-desenvolvimento" title="Permanent link">#</a></h1>
 <p>O desenvolvimento deste projeto segue algumas regras e convenções
 básicas. Como <em>estilo de formatação de código</em>,</p>
-<h2 id="codigo-de-conduta">Código de conduta</h2>
+<h2 id="codigo-de-conduta">Código de conduta<a class="headerlink" href="#codigo-de-conduta" title="Permanent link">#</a></h2>
 <p>Detalhes em <a href="../code_of_conduct/">docs/user_guide/code_of_conduct.md</a>.</p>
-<h2 id="padroes-aplicados">Padrões aplicados</h2>
+<h2 id="padroes-aplicados">Padrões aplicados<a class="headerlink" href="#padroes-aplicados" title="Permanent link">#</a></h2>
 <p>Este projeto segue as recomendações descritas em
 <a href="../prefacio.md#tecnologias-adotadas">Tecnologias</a> e
 <a href="../prefacio.md#convenções-adotadas">Convenções</a> Adotadas.</p>
-<h2 id="prerequisitos">Prerequisitos</h2>
+<h2 id="prerequisitos">Prerequisitos<a class="headerlink" href="#prerequisitos" title="Permanent link">#</a></h2>
 <ul>
 <li>Sistema Operacional Linux Like (preferencialmente) ou WSL</li>
 <li>git client</li>
@@ -185,7 +766,7 @@ básicas. Como <em>estilo de formatação de código</em>,</p>
 <li>pyenv</li>
 <li>poetry 1.2.0+ (preferencialmente) ou pip</li>
 </ul>
-<h2 id="iniciando-ambiente-de-desenvolvimento">Iniciando ambiente de desenvolvimento</h2>
+<h2 id="iniciando-ambiente-de-desenvolvimento">Iniciando ambiente de desenvolvimento<a class="headerlink" href="#iniciando-ambiente-de-desenvolvimento" title="Permanent link">#</a></h2>
 <p>Para definir a versão do Python para o ambiente, considerando o uso do poetry,
 e instalar as dependências execute os comandos abaixo:</p>
 <pre><code>$ poetry env use 3.10
@@ -198,7 +779,7 @@ restrições especificadas em <code>poetry.lock</code>.</p>
 <pre><code>$ poetry run task setup
 </code></pre>
 <p>Este comando garantirá que os hooks do projeto sejam ativados, e executados nos eventos apropriados.</p>
-<h2 id="qualidade-de-codigo">Qualidade de Código</h2>
+<h2 id="qualidade-de-codigo">Qualidade de Código<a class="headerlink" href="#qualidade-de-codigo" title="Permanent link">#</a></h2>
 <p>É utilizado de ferramentas validadoras de qualidade de código estático,
 também denominadas linters.</p>
 <p>Há uso das seguintes:</p>
@@ -209,54 +790,54 @@ também denominadas linters.</p>
 <li>pydocstyle</li>
 <li>pylint</li>
 </ul>
-<h2 id="seguranca">Segurança</h2>
+<h2 id="seguranca">Segurança<a class="headerlink" href="#seguranca" title="Permanent link">#</a></h2>
 <p>Também há preocupação com a segurança do código implementado, os pacotes
 <code>bandit</code> e <code>safety</code> são utilizados para monitoramento de segurança das dependências.</p>
-<h3 id="bandit">bandit</h3>
+<h3 id="bandit">bandit<a class="headerlink" href="#bandit" title="Permanent link">#</a></h3>
 <p>Bandit é uma ferramenta projetada para encontrar problemas de segurança comuns no código Python. Para fazer isso, o Bandit processa cada arquivo, cria um AST a partir dele e executa os plug-ins apropriados nos nodos do AST.
-Depois que o Bandit terminar de escanear todos os arquivos, ele gerará um relatório.</p>
-<pre><code class="language-shell">bandit -c pyproject.toml -r incolume/ test/
-</code></pre>
-<h3 id="black">black</h3>
+Depois que o Bandit terminar de escanear todos os arquivos, ele gerará um relatório.
+<div class="highlight"><pre><span></span><code>bandit<span class="w"> </span>-c<span class="w"> </span>pyproject.toml<span class="w"> </span>-r<span class="w"> </span>incolume/<span class="w"> </span>test/
+</code></pre></div></p>
+<h3 id="black">black<a class="headerlink" href="#black" title="Permanent link">#</a></h3>
 <p>O <code>black</code> é classificado como Autoformator, são programas que
-refatoram seu código para se adequar ao PEP 8 automaticamente.</p>
-<pre><code class="language-shell">black --check incolume/ tests/
-</code></pre>
-<h3 id="blue">blue</h3>
+refatoram seu código para se adequar ao PEP 8 automaticamente.
+<div class="highlight"><pre><span></span><code>black<span class="w"> </span>--check<span class="w"> </span>incolume/<span class="w"> </span>tests/
+</code></pre></div></p>
+<h3 id="blue">blue<a class="headerlink" href="#blue" title="Permanent link">#</a></h3>
 <p>o blue é um autoformatador de código um pouco menos intransigente do
 que o black, e segue a ideia de formatar automaticamente o código
 Python, totalmente inspirada pelo black.</p>
-<pre><code class="language-shell">blue --check incolume/ tests/
-</code></pre>
-<h3 id="flake8">flake8</h3>
+<div class="highlight"><pre><span></span><code>blue<span class="w"> </span>--check<span class="w"> </span>incolume/<span class="w"> </span>tests/
+</code></pre></div>
+<h3 id="flake8">flake8<a class="headerlink" href="#flake8" title="Permanent link">#</a></h3>
 <p>Flake8 é um envolucro em torno das ferramentas: PyFlakes, pycodestyle e Roteiro McCabe de Ned Batchelder</p>
-<pre><code class="language-shell">flake8 --config pyproject.toml incolume/ tests/
-</code></pre>
-<h3 id="pylama">pylama</h3>
-<p>O <code>pylama</code> é um envolucro que contém: PyFlakes, pycodestyle, McCabe.</p>
-<pre><code class="language-shell">pylama incolumepy tests
-</code></pre>
-<h3 id="isort">isort</h3>
+<div class="highlight"><pre><span></span><code>flake8<span class="w"> </span>--config<span class="w"> </span>pyproject.toml<span class="w"> </span>incolume/<span class="w"> </span>tests/
+</code></pre></div>
+<h3 id="pylama">pylama<a class="headerlink" href="#pylama" title="Permanent link">#</a></h3>
+<p>O <code>pylama</code> é um envolucro que contém: PyFlakes, pycodestyle, McCabe.
+<div class="highlight"><pre><span></span><code>pylama<span class="w"> </span>incolumepy<span class="w"> </span>tests
+</code></pre></div></p>
+<h3 id="isort">isort<a class="headerlink" href="#isort" title="Permanent link">#</a></h3>
 <p>O <code>isort</code> é um utilitário para classificar as importações
-em ordem alfabética e separadas automaticamente em seções e por tipo.</p>
-<pre><code class="language-shell">isort incolumepy tests
-</code></pre>
-<h3 id="mypy">mypy</h3>
+em ordem alfabética e separadas automaticamente em seções e por tipo.
+<div class="highlight"><pre><span></span><code>isort<span class="w"> </span>incolumepy<span class="w"> </span>tests
+</code></pre></div></p>
+<h3 id="mypy">mypy<a class="headerlink" href="#mypy" title="Permanent link">#</a></h3>
 <p>O <code>Mypy</code> é essencialmente um analizador de código estático melhorado e com
 verificador de tipos, que pode detectar muitos erros de programação
 analisando o código, sem precisar executá-lo.
 Ele possui um poderoso sistema de tipos com recursos como
-inferência de tipos, digitação gradual, genéricos e tipos de união.</p>
-<pre><code class="language-shell">mypy incolumepy
-</code></pre>
-<h3 id="pydocstyle">pydocstyle</h3>
+inferência de tipos, digitação gradual, genéricos e tipos de união.
+<div class="highlight"><pre><span></span><code>mypy<span class="w"> </span>incolumepy
+</code></pre></div></p>
+<h3 id="pydocstyle">pydocstyle<a class="headerlink" href="#pydocstyle" title="Permanent link">#</a></h3>
 <p>O <code>pydocstyle</code> é uma ferramenta de análise estática para verificar a
 conformidade com as convenções docstring do Python. Ele suporta a maior
 parte do PEP 257, entretanto não deve ser considerado uma
-implementação de referência.</p>
-<pre><code class="language-shell">pydocstyle incolumepy tests
-</code></pre>
-<h3 id="pylint">pylint</h3>
+implementação de referência.
+<div class="highlight"><pre><span></span><code>pydocstyle<span class="w"> </span>incolumepy<span class="w"> </span>tests
+</code></pre></div></p>
+<h3 id="pylint">pylint<a class="headerlink" href="#pylint" title="Permanent link">#</a></h3>
 <p>O <code>Pylint</code> é uma ferramenta de análise de código estático do Python
 que procura erros de programação, ajuda a impor um padrão de codificação,
 detecta cheiros de código e oferece sugestões simples de refatoração.
@@ -264,21 +845,21 @@ detecta cheiros de código e oferece sugestões simples de refatoração.
 seus erros e avisos de dentro do seu código, bem como de um extenso
 arquivo de configuração. Também é possível escrever seus próprios plugins
 para adicionar suas próprias verificações ou para estender o <code>pylint</code>
-de uma forma ou de outra.</p>
-<pre><code class="language-shell">pylint incolumepy tests
-</code></pre>
-<h3 id="safety">safety</h3>
+de uma forma ou de outra.
+<div class="highlight"><pre><span></span><code>pylint<span class="w"> </span>incolumepy<span class="w"> </span>tests
+</code></pre></div></p>
+<h3 id="safety">safety<a class="headerlink" href="#safety" title="Permanent link">#</a></h3>
 <p>O <code>safety</code> verifica as dependências instaladas quanto a vulnerabilidades
 de segurança conhecidas.
 Por padrão, ele usa o banco de dados de vulnerabilidades Python aberto
-<a href="https://github.com/pyupio/safety-db">Safety DB</a>.</p>
-<pre><code class="language-shell">safety check
-</code></pre>
-<h2 id="ferramentas-de-automacao">Ferramentas de Automação</h2>
+<a href="https://github.com/pyupio/safety-db">Safety DB</a>.
+<div class="highlight"><pre><span></span><code>safety<span class="w"> </span>check
+</code></pre></div></p>
+<h2 id="ferramentas-de-automacao">Ferramentas de Automação<a class="headerlink" href="#ferramentas-de-automacao" title="Permanent link">#</a></h2>
 <p>Para facilitar o trabalho, várias das tarefas estão
 automatizadas pelo githooks, e/ou Makefile, e/ou tox e/ou taskipy.</p>
-<h3 id="tox">Tox</h3>
-<h4 id="verificacao-basica">Verificação básica</h4>
+<h3 id="tox">Tox<a class="headerlink" href="#tox" title="Permanent link">#</a></h3>
+<h4 id="verificacao-basica">Verificação básica<a class="headerlink" href="#verificacao-basica" title="Permanent link">#</a></h4>
 <p>Na Verificação básica engloba:
 - black
 - blue
@@ -288,157 +869,123 @@ automatizadas pelo githooks, e/ou Makefile, e/ou tox e/ou taskipy.</p>
 - pylint
 - py310
 - py311</p>
-<pre><code class="language-shell">tox
-</code></pre>
-<h4 id="verificacao-dos-testes-com-as-versoes-python-disponiveis">Verificação dos testes com as versões python disponíveis</h4>
-<pre><code class="language-shell">tox -e py310,py311
-</code></pre>
-<h4 id="verificacao-de-tres-linters-apenas-no-em-um-modulo">Verificação de três linters apenas no em um módulo</h4>
-<pre><code class="language-shell">tox -e pydocstyle,black,isort -- -k incolume/py/pack/module.py
-</code></pre>
-<h4 id="verificacao-de-todos-os-linters-configurados">Verificação de todos os linters configurados</h4>
-<pre><code class="language-shell">tox -e linters
-</code></pre>
-<h4 id="verificacao-e-relatorio-de-cobertura">Verificação e relatório de cobertura</h4>
-<pre><code class="language-shell">tox -e stats
-</code></pre>
-<h4 id="verificacao-resumida-de-seguranca">Verificação resumida de segurança</h4>
-<pre><code class="language-shell">tox -e safety
-</code></pre>
-<h4 id="execucao-completa">Execução completa</h4>
-<p>Executa todas as verificações diponíveis contidas no <code>tox</code>.</p>
-<pre><code class="language-shell">tox -e ALL
-</code></pre>
-<h3 id="makefile">Makefile</h3>
+<div class="highlight"><pre><span></span><code>tox
+</code></pre></div>
+<h4 id="verificacao-dos-testes-com-as-versoes-python-disponiveis">Verificação dos testes com as versões python disponíveis<a class="headerlink" href="#verificacao-dos-testes-com-as-versoes-python-disponiveis" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>tox<span class="w"> </span>-e<span class="w"> </span>py310,py311
+</code></pre></div>
+<h4 id="verificacao-de-tres-linters-apenas-no-em-um-modulo">Verificação de três linters apenas no em um módulo<a class="headerlink" href="#verificacao-de-tres-linters-apenas-no-em-um-modulo" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>tox<span class="w"> </span>-e<span class="w"> </span>pydocstyle,black,isort<span class="w"> </span>--<span class="w"> </span>-k<span class="w"> </span>incolume/py/pack/module.py
+</code></pre></div>
+<h4 id="verificacao-de-todos-os-linters-configurados">Verificação de todos os linters configurados<a class="headerlink" href="#verificacao-de-todos-os-linters-configurados" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>tox<span class="w"> </span>-e<span class="w"> </span>linters
+</code></pre></div>
+<h4 id="verificacao-e-relatorio-de-cobertura">Verificação e relatório de cobertura<a class="headerlink" href="#verificacao-e-relatorio-de-cobertura" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>tox<span class="w"> </span>-e<span class="w"> </span>stats
+</code></pre></div>
+<h4 id="verificacao-resumida-de-seguranca">Verificação resumida de segurança<a class="headerlink" href="#verificacao-resumida-de-seguranca" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>tox<span class="w"> </span>-e<span class="w"> </span>safety
+</code></pre></div>
+<h4 id="execucao-completa">Execução completa<a class="headerlink" href="#execucao-completa" title="Permanent link">#</a></h4>
+<p>Executa todas as verificações diponíveis contidas no <code>tox</code>.
+<div class="highlight"><pre><span></span><code>tox<span class="w"> </span>-e<span class="w"> </span>ALL
+</code></pre></div></p>
+<h3 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permanent link">#</a></h3>
 <p>O <code>Makefile</code> foi personalizado para rodar com as opções necessárias.
-Com o help você verá todas as opções. Este comando é exclusivo para linux like.</p>
-<pre><code class="language-shell">make help
-</code></pre>
-<h4 id="iniciar-ambiente-dev">Iniciar ambiente dev</h4>
+Com o help você verá todas as opções. Este comando é exclusivo para linux like.
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nb">help</span>
+</code></pre></div></p>
+<h4 id="iniciar-ambiente-dev">Iniciar ambiente dev<a class="headerlink" href="#iniciar-ambiente-dev" title="Permanent link">#</a></h4>
 <p>Através do <code>Makefile</code>, pode-se criar um ambiente virtual para o projeto,
 conforme a versão python predefinida, instalando todas as dependências
 necessárias, além de ativar as configurações em passos simples.</p>
-<pre><code class="language-shell">make setup
-</code></pre>
-<h4 id="limpeza-basica-do-ambiente">Limpeza básica do ambiente</h4>
-<p>Limpeza de arquivos temporários, logs, compilados e afins.</p>
-<pre><code class="language-shell">make clean
-</code></pre>
-<h4 id="limpeza-profunda-do-ambiente">Limpeza profunda do ambiente</h4>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>setup
+</code></pre></div>
+<h4 id="limpeza-basica-do-ambiente">Limpeza básica do ambiente<a class="headerlink" href="#limpeza-basica-do-ambiente" title="Permanent link">#</a></h4>
+<p>Limpeza de arquivos temporários, logs, compilados e afins.
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean
+</code></pre></div></p>
+<h4 id="limpeza-profunda-do-ambiente">Limpeza profunda do ambiente<a class="headerlink" href="#limpeza-profunda-do-ambiente" title="Permanent link">#</a></h4>
 <p>Além da limpeza básica, são removidos dist, build, htmlcov, .tox, *_cache,
-e outros conteúdos gerados pelas ferramentas de desenvolvimento.</p>
-<pre><code class="language-shell">make clean-all
-</code></pre>
-<h4 id="gerar-a-documentacao-atualizada">Gerar a documentação atualizada</h4>
-<pre><code class="language-shell">make docsgen
-</code></pre>
-<h4 id="verificacao-de-seguranca-e-exposicao-de-motivos">Verificação de segurança e exposição de motivos</h4>
-<pre><code class="language-shell">make safety
-</code></pre>
-<h3 id="taskipy">Taskipy</h3>
+e outros conteúdos gerados pelas ferramentas de desenvolvimento.
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>clean-all
+</code></pre></div></p>
+<h4 id="gerar-a-documentacao-atualizada">Gerar a documentação atualizada<a class="headerlink" href="#gerar-a-documentacao-atualizada" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>docsgen
+</code></pre></div>
+<h4 id="verificacao-de-seguranca-e-exposicao-de-motivos">Verificação de segurança e exposição de motivos<a class="headerlink" href="#verificacao-de-seguranca-e-exposicao-de-motivos" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>safety
+</code></pre></div>
+<h3 id="taskipy">Taskipy<a class="headerlink" href="#taskipy" title="Permanent link">#</a></h3>
 <p>Com <code>taskipy</code> as tarefas são definidas puramente com Python em um arquivo
 e pode-se executar rotinas complexas com comandos simples.</p>
-<pre><code class="language-shell">$ poetry run task -l
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>-l
 
-bandit          poetry run bandit -c pyproject.toml -r incolume/ test/
-check-all       Checking all
-clean           Shallow clean into environment (.pyc, .cache, .egg, .log, et all)
-clean-all       Deep cleanning into environment (dist, build, htmlcov, .tox, *_cache, et all)
-docs-build      Generate documentation
-docs-serve      Run server documentation
-lint            Checking all linters configurated
-lint_black      Checking with black
-lint_blue       Checking with blue
-lint_flake8     Checking with flake8
-lint_isort      Checking with isort
-lint_mypy       Checking with mypy
-lint_pydocstyle Checking with pydocstyle
-lint_pylint     Checking with pylint
-patch           Generate a patch Sematic Version
-premajor        poetry version premajor
-preminor        poetry version preminor
-prerelease      poetry version prerelease
-safety          Check safety of packages into project.
-sec             Checking environment's safety
-changelog       Update changelog file
-setup           Configure environment develop
+bandit<span class="w">          </span>poetry<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-c<span class="w"> </span>pyproject.toml<span class="w"> </span>-r<span class="w"> </span>incolume/<span class="w"> </span>test/
+check-all<span class="w">       </span>Checking<span class="w"> </span>all
+clean<span class="w">           </span>Shallow<span class="w"> </span>clean<span class="w"> </span>into<span class="w"> </span>environment<span class="w"> </span><span class="o">(</span>.pyc,<span class="w"> </span>.cache,<span class="w"> </span>.egg,<span class="w"> </span>.log,<span class="w"> </span>et<span class="w"> </span>all<span class="o">)</span>
+clean-all<span class="w">       </span>Deep<span class="w"> </span>cleanning<span class="w"> </span>into<span class="w"> </span>environment<span class="w"> </span><span class="o">(</span>dist,<span class="w"> </span>build,<span class="w"> </span>htmlcov,<span class="w"> </span>.tox,<span class="w"> </span>*_cache,<span class="w"> </span>et<span class="w"> </span>all<span class="o">)</span>
+docs-build<span class="w">      </span>Generate<span class="w"> </span>documentation
+docs-serve<span class="w">      </span>Run<span class="w"> </span>server<span class="w"> </span>documentation
+lint<span class="w">            </span>Checking<span class="w"> </span>all<span class="w"> </span>linters<span class="w"> </span>configurated
+lint_black<span class="w">      </span>Checking<span class="w"> </span>with<span class="w"> </span>black
+lint_blue<span class="w">       </span>Checking<span class="w"> </span>with<span class="w"> </span>blue
+lint_flake8<span class="w">     </span>Checking<span class="w"> </span>with<span class="w"> </span>flake8
+lint_isort<span class="w">      </span>Checking<span class="w"> </span>with<span class="w"> </span>isort
+lint_mypy<span class="w">       </span>Checking<span class="w"> </span>with<span class="w"> </span>mypy
+lint_pydocstyle<span class="w"> </span>Checking<span class="w"> </span>with<span class="w"> </span>pydocstyle
+lint_pylint<span class="w">     </span>Checking<span class="w"> </span>with<span class="w"> </span>pylint
+patch<span class="w">           </span>Generate<span class="w"> </span>a<span class="w"> </span>patch<span class="w"> </span>Sematic<span class="w"> </span>Version
+premajor<span class="w">        </span>poetry<span class="w"> </span>version<span class="w"> </span>premajor
+preminor<span class="w">        </span>poetry<span class="w"> </span>version<span class="w"> </span>preminor
+prerelease<span class="w">      </span>poetry<span class="w"> </span>version<span class="w"> </span>prerelease
+safety<span class="w">          </span>Check<span class="w"> </span>safety<span class="w"> </span>of<span class="w"> </span>packages<span class="w"> </span>into<span class="w"> </span>project.
+sec<span class="w">             </span>Checking<span class="w"> </span>environment<span class="err">&#39;</span>s<span class="w"> </span>safety
+changelog<span class="w">       </span>Update<span class="w"> </span>changelog<span class="w"> </span>file
+setup<span class="w">           </span>Configure<span class="w"> </span>environment<span class="w"> </span>develop
 </code></pre></div>
-            </div>
-        </div>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../js/jquery-3.6.0.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+
+
+                
+              </article>
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+          
+          
         </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
 </html>

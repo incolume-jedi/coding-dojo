@@ -21,4 +21,17 @@ def contador_nucleotideos(nucleotideo: str) -> str:
 
 def complemento_fita_dna(fita: str) -> str:
     """Complementar fita."""
+    sc = ''
+    for s in fita.upper()[::-1]:
+        if s == 'A':
+            sc += 'T'
+        if s == 'T':
+            sc += 'A'
+        if s == 'G':
+            sc += 'C'
+        if s == 'C':
+            sc += 'G'
+    return sc
+
+
     

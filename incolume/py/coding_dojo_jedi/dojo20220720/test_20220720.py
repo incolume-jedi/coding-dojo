@@ -1,3 +1,5 @@
+"""Test for dojo TDD Pytest."""
+
 # tests.py
 # -*- encode: utf-8 -*-
 
@@ -15,7 +17,7 @@ from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (('+', 3, '4'), 7),
         (('+', 3, 4), 7),
         (('-', 3.0, 4), -1.0),
@@ -29,9 +31,10 @@ from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
         (('%', 12, 7), 5),
         (('**', 3, 4), 81),
         (('**', 81, (1 / 4)), 3),
-    ),
+    ],
 )
-def test_calculadora(entrance, expected):
+def test_calculadora(entrance, expected) -> None:
+    """Testes para resultado das operações."""
     assert calculadora(*entrance) == expected
 
 
@@ -41,7 +44,7 @@ def test_calculadora(entrance, expected):
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (
             ('^', 3, 5),
             {
@@ -133,8 +136,9 @@ def test_calculadora(entrance, expected):
                 'match': r'.*x e y devem ser valores numéricos reais.*',
             },
         ),
-    ),
+    ],
 )
-def test_calculadora_except(entrance, expected):
+def test_calculadora_except(entrance, expected) -> None:
+    """Test for exceptions."""
     with pytest.raises(**expected):
         calculadora(*entrance)

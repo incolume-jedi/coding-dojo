@@ -29,6 +29,17 @@ O Codédex ambienta o treinamento em uma atmosfera de jogo.
 
 [&uarr;](#coding-challenge)
 
+
+### [Code Guppy](https://codeguppy.com/index.html)
+Aprender a programar é fácil e divertido com a plataforma certa.
+Especialmente se for GRATUITA. Você pode usar esta plataforma na sala de aula,
+no clube de programação ou em casa. Todo os seus currículos de lições e
+projetos são feitos sob medida para crianças, com atividades como gráficos
+interativos e criação de jogos. No `codeguppy`, os alunos adoram criar
+programas e compartilhá-los com seus amigos.
+[&uarr;](#coding-challenge)
+
+
 ### [CodeLity](https://app.codility.com/programmers/)
 Codility é uma plataforma de recrutamento técnico que ajuda as empresas a avaliar habilidades de programação e lógica de candidatos a emprego. A plataforma oferece uma ampla variedade de testes de programação, bem como avaliações de habilidades de codificação e programação para empresas de tecnologia em todo o mundo.
 
@@ -73,6 +84,28 @@ Uma das características únicas do CyberDojo é a capacidade de colaborar com o
 
 O CyberDojo é uma plataforma útil para desenvolvedores que desejam aprimorar suas habilidades de codificação e trabalhar em projetos em equipe. Com uma biblioteca abrangente de desafios e exercícios de codificação e um ambiente de programação interativo, o CyberDojo oferece uma oportunidade para que os desenvolvedores desenvolvam suas habilidades e se destaquem em um mercado de trabalho altamente competitivo.
 [&uarr;](#coding-challenge)
+
+
+## D
+
+### [Dojo Puzzles](https://dojopuzzles.com/)
+O Dojo Puzzles é um compêndio de problemas a serem resolvidos em coding dojo.
+
+A proposta deste projeto é criar um local onde problemas possam ser armazenados
+e consultados facilmente, além de ser possível saber quais problemas realmente
+são usados em Dojos. Os problemas armazenados em sua base de dados preferencialmente
+foram utilizados em Dojos (mas problemas inéditos também são bem-vindos) e os
+visitantes são convidados a contribuir com novos problemas.
+
+E também oferece a chance para que você contribua,
+o código está a disposição para quem quiser analisar, comentar, corrigir e
+contribuir. A intenção do projeto não é fazer muitas funcionalidades,
+o principal objetivo é formar uma boa fonte de problemas de programação
+adequadas para um Dojo.
+
+Repositório oficial: http://www.github.com/dojopuzzles/dojopuzzles/
+[&uarr;](#coding-challenge)
+
 
 ## E
 ### [Edabit](https://edabit.com/)

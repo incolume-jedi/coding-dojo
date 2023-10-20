@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.39.0"
+version = "1.43.0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
@@ -352,7 +352,7 @@ ignore = ['E203']
 
 [tool.taskipy.variables]
 path = "incolume/ tests/"
-CHANGELOGFILE = "CHANGELOG.md"
+CHANGELOGFILE = "docs/about/CHANGELOG.md"
 URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
 
 

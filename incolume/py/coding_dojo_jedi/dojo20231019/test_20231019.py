@@ -1,9 +1,10 @@
 """Teste dojo contagem de nucleotídeos."""
 
 import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
-    contador_nucleotideos,
     complemento_fita_dna,
+    contador_nucleotideos,
 )
 
 

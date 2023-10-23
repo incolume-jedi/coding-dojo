@@ -3,6 +3,7 @@
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
+    complemento_fita_dna,
     contador_nucleotideos,
 )
 
@@ -24,3 +25,14 @@ from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
 def test_contador_nucleotideos(entrance, expected) -> None:
     """Testar a função contador_nucleotideos."""
     assert contador_nucleotideos(entrance) == expected
+
+
+@pytest.mark.parametrize(
+    ('entrance', 'expected'),
+    [
+        ('AAAACCCGGT', 'ACCGGGTTTT'),
+    ],
+)
+def test_complemento_fita_dna(entrance, expected) -> None:
+    """Testar a função complemento_fita_dna."""
+    assert complemento_fita_dna(entrance) == expected

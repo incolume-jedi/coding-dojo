@@ -1,12 +1,15 @@
+"""Testing dojo."""
 import pytest
 
 from . import max_sequence
 
 
 class TestCase:
+    """Class Test Case."""
+
     __test__ = False
 
-    def test_max_sequence(self):
+    def test_max_sequence(self) -> None:
         """Test de max_sequence."""
         assert max_sequence([]) == 0
 
@@ -21,6 +24,6 @@ class TestCase:
             ([10, -11, 2, 3, 4, 5, -5, 6, 7, -50, 8, -7, 9], 14),
         ],
     )
-    def test_max_sequence1(self, entrance, expected):
+    def test_max_sequence1(self, entrance, expected) -> None:
         """Test de max."""
         assert max_sequence(entrance) == expected

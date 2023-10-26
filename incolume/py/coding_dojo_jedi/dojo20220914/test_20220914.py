@@ -1,3 +1,4 @@
+"""Testing dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220914.dojo20220914 import weekday
@@ -5,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220914.dojo20220914 import weekday
 
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (('sábado', 1), 'domingo'),
         (('sábado', 2), 'segunda-feira'),
         (('sábado', 3), 'terça-feira'),
@@ -25,7 +26,8 @@ from incolume.py.coding_dojo_jedi.dojo20220914.dojo20220914 import weekday
         (('terça-feira', 6), 'segunda-feira'),
         (('terça-feira', 7), 'terça-feira'),
         (('terça-feira', 180), 'domingo'),
-    ),
+    ],
 )
-def test_weekday(entrance, expected):
+def test_weekday(entrance, expected) -> None:
+    """Unit test for weekday."""
     assert weekday(*entrance) == expected

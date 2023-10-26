@@ -75,7 +75,7 @@ def protein0(chain: str) -> str:
         'UAG': '',
     }
 
-    def aminoacid(string: str):
+    def aminoacid(string: str) -> str:
         """Transforma cadeia de códon em aminoacido."""
         if len(string) <= 3:
             return codons.get(string)

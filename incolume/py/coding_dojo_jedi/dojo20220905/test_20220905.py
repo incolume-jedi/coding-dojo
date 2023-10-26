@@ -1,3 +1,4 @@
+"""Testing dojo."""
 from sys import version_info
 
 import pytest
@@ -11,7 +12,7 @@ from incolume.py.coding_dojo_jedi.dojo20220905.dojo20220905 import stream
 )
 @pytest.mark.parametrize(
     'entrance expected'.split(),
-    (
+    [
         ('deezer family', 34.9),
         ('Deezer Family', 34.9),
         ('Netflix padrão', 39.9),
@@ -35,7 +36,8 @@ from incolume.py.coding_dojo_jedi.dojo20220905.dojo20220905 import stream
         ('disney free', 'Plano Indisponível'),
         ('foo free', 'Plano Indisponível'),
         ('netflix free', 'Plano Indisponível'),
-    ),
+    ],
 )
-def test_stream(entrance, expected):
+def test_stream(entrance, expected) -> None:
+    """Unittest for this function."""
     assert stream(entrance) == expected

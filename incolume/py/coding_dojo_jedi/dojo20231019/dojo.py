@@ -10,6 +10,7 @@ def contador_nucleotideos(nucleotideo: str) -> str:
 
     return f'{a} {c} {g} {t}'
 
+
 def complemento_fita_dna(fita: str) -> str:
     """Complementar fita."""
     sc = ''

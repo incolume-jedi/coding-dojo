@@ -78,7 +78,7 @@ def protein0(chain: str) -> str:
     def aminoacid(string: str) -> str:
         """Transforma cadeia de códon em aminoacido."""
         if len(string) <= 3:
-            return codons.get(string)
+            return codons[string]
         return f'{codons.get(string[:3])}{aminoacid(string[3:])}'
 
     return aminoacid(chain.upper())

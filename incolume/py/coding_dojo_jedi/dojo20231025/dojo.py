@@ -21,10 +21,10 @@ def generator_sumary(fout: Path = None) -> Path:
         for filemd in sorted(list(Path(__file__).parents[1].rglob('**/README.md'))):
             try:
                 result = re.search(regex, filemd.read_text(), flags=re.I)
-                sout = f'1. [{filemd.parts[-2]} &#8212; {result.group(1)}]({Path("..").joinpath(*filemd.parts[-2:])})\n'
-                print(sout)
+                sout = f'1. [{filemd.parts[-2].capitalize()} &#8212; {result.group(1)}]({Path("..").joinpath(*filemd.parts[-2:])})\n'
+                # print(sout)
                 fmd.write(sout)
             except AttributeError:
                 pass
-        fmd.writelines(['\n---\n\n', '&copy; Incolume.com.br\n'])
+        fmd.writelines(['\n---\n\n', '&copy; Incolume.com.br\n\n'])
     return file

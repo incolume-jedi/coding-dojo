@@ -5,17 +5,26 @@ import re
 def generator_sumary(fout: Path = None) -> Path:
     """Gerador de sumário."""
 
-    files = sorted(list(Path(__file__).parents[1].rglob('**/README.md')))
-    print(len(files))
-    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
-    fmd = files[2]
-    result = re.search(regex, fmd.read_text(), flags=re.I)
-    sout = f'1. [{fmd.parts[-2]} &#8212; {result.group(1)}]({Path("..").joinpath(*fmd.parts[-2:])})'
-    print(sout)
-
-
-
-    # return Path(__file__).absolute().parent.parent
     file = fout or Path(__file__).parent.joinpath('sumario.md')
-    # file.write_text('')
+    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
+
+     
+    with file.open('w') as fmd:
+        fmd.writelines(
+            [
+                '# Coding Dojo\n', 
+                '**Guilda JEDI Incolume - Grupo Python Incolume**\n', 
+                '- [Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)\n', 
+                '## Sumário dos dojos\n\n---\n'
+            ]
+        )
+        for filemd in sorted(list(Path(__file__).parents[1].rglob('**/README.md'))):
+            try:
+                result = re.search(regex, filemd.read_text(), flags=re.I)
+                sout = f'1. [{filemd.parts[-2]} &#8212; {result.group(1)}]({Path("..").joinpath(*filemd.parts[-2:])})\n'
+                print(sout)
+                fmd.write(sout)
+            except AttributeError:
+                pass
+        fmd.writelines(['\n---\n\n', '&copy; Incolume.com.br\n'])
     return file

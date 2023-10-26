@@ -4,5 +4,9 @@ def generator_sumary(fout: Path = None) -> bool:
     """Gerador de sumário."""
     # return Path(__file__).absolute().parent.parent
     file = fout or Path(__file__).parent.joinpath('sumario.md')
-    file.write_text('')
+    # file.write_text('')
+    with file.open() as f:
+        for line in f:
+            if line.startswith('1'):
+                print(line)
     return file

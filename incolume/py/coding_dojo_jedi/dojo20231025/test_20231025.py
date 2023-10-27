@@ -45,12 +45,12 @@ def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
 @pytest.mark.parametrize(
     'entrance',
     [
-        '# Coding Dojo',
-        '**Guilda JEDI Incolume - Grupo Python Incolume**',
-        '- [Seja membro da Guilda JEDI Incolume]'
-        '(https://discord.gg/eBNamXVtBW)',
-        '## Sumário dos dojos',
-        '&copy; **Incolume.com.br**',
+        r'# Coding Dojo',
+        r'**Guilda JEDI Incolume - Grupo Python Incolume**',
+        r'- [Seja membro da Guilda JEDI Incolume]'
+        r'(https://discord.gg/eBNamXVtBW)',
+        r'## Sumário dos dojos',
+        r'&copy; **Incolume.com.br**',
     ],
 )
 def test_content_sumary(

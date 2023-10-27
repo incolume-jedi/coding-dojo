@@ -10,4 +10,4 @@ assignees: ''
 
 ---
 
-&copy; incolume.com.br size 2010
+Copyright &copy; incolume.com.br since 2010

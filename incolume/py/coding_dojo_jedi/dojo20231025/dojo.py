@@ -11,11 +11,11 @@ def generator_sumary(fout: Path | None = None) -> Path:
     with file.open('w') as fmd:
         fmd.writelines(
             [
-                '# Coding Dojo\n',
-                '**Guilda JEDI Incolume - Grupo Python Incolume**\n',
-                '- [Seja membro da Guilda JEDI Incolume]'
-                '(https://discord.gg/eBNamXVtBW)\n',
-                '## Sumário dos dojos\n\n---\n',
+                r'# Coding Dojo\n',
+                r'**Guilda JEDI Incolume - Grupo Python Incolume**\n',
+                r'- [Seja membro da Guilda JEDI Incolume]'
+                r'(https://discord.gg/eBNamXVtBW)\n',
+                r'## Sumário dos dojos\n\n---\n',
             ],
         )
         for filemd in sorted(
@@ -32,8 +32,8 @@ def generator_sumary(fout: Path | None = None) -> Path:
                 pass
         fmd.writelines(
             [
-                '\n---\n\n',
-                'Copyrigth &copy; **Incolume.com.br** since 2010\n\n',
+                r'\n---\n\n',
+                r'Copyrigth &copy; **Incolume.com.br** since 2010\n\n',
             ],
         )
     return file

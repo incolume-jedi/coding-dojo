@@ -6,7 +6,7 @@
 
 ## Problema
 
-**Sequência de caracteres**
+**Sequência de caracteres II**
 
 Há uma sucessão de strings, formada pela palavra indicada, exemplo: 'Python'. ('PythonPythonPythonPythonPython..')
 

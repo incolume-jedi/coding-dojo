@@ -19,7 +19,7 @@ def generator_sumary(fout: Path | None = None) -> Path:
             ],
         )
         for filemd in sorted(
-            Path(__file__).parents[1].rglob('**/README.md'),
+            Path(__file__).parents[1].rglob('**/*.md'),
         ):
             try:
                 result = re.search(regex, filemd.read_text(), flags=re.I)
@@ -30,5 +30,14 @@ def generator_sumary(fout: Path | None = None) -> Path:
                 fmd.write(sout)
             except AttributeError:  # noqa: PERF203
                 pass
-        fmd.writelines(['\n---\n\n', '&copy; Incolume.com.br\n\n'])
+        fmd.writelines(
+            [
+                '\n---\n\n',
+                'Copyrigth &copy; **Incolume.com.br** since 2010\n\n',
+            ],
+        )
     return file
+
+
+if __name__ == '__main__':    # pragma: no cover
+    generator_sumary()

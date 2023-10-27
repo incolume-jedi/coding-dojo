@@ -43,4 +43,4 @@ N/A - Referências para o dojo, o problema ou para elicidações extras.
 
 ---
 
-&copy; Incolume.com.br
+Copyright &copy; **incolume.com.br** since 2010

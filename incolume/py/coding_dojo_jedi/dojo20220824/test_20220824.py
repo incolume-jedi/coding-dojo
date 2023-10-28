@@ -1,3 +1,4 @@
+"""Test unittest for dojo."""
 from re import escape
 
 import pytest
@@ -10,7 +11,7 @@ from incolume.py.coding_dojo_jedi.dojo20220824.dojo20220824 import (
 
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         ('ATTGC', 'TAACG'),
         ('GTAT', 'CATA'),
         (
@@ -57,15 +58,16 @@ from incolume.py.coding_dojo_jedi.dojo20220824.dojo20220824 import (
             'TAACCCTTGGTCGGAGCAAGCTCTGAGTCACAACATGGCATTACCTTGCG',
             'ATTGGGAACCAGCCTCGTTCGAGACTCAGTGTTGTACCGTAATGGAACGC',
         ),
-    ),
+    ],
 )
-def test_dna_complementary(entrance, expected):
+def test_dna_complementary(entrance, expected) -> None:
+    """Test for dna complementary."""
     assert dna_complementary(entrance) == expected
 
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),
-    (
+    [
         ({}, 0),
         ({'s': 1}, 1_000),
         ({'m': 1}, 60_000),
@@ -75,15 +77,16 @@ def test_dna_complementary(entrance, expected):
         ({'h': 1, 'm': 1}, 3_660_000),
         ({'h': 0, 'm': 0, 's': 0}, 0),
         ({'h': 23, 'm': 59, 's': 59}, 86_399_000),
-    ),
+    ],
 )
-def test_millissenconds(entrance, expected):
+def test_millissenconds(entrance, expected) -> None:
+    """Test for millisseconds."""
     assert millisseconds(**entrance) == expected
 
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),
-    (
+    [
         (
             (0, 0, 0),
             {
@@ -126,9 +129,10 @@ def test_millissenconds(entrance, expected):
             {'h': 0, 'm': 0, 's': 60},
             {'expected_exception': ValueError, 'match': '0 <= s <= 59'},
         ),
-    ),
+    ],
 )
-def test_millissenconds_exception(entrance, expected):
+def test_millissenconds_exception(entrance, expected) -> None:
+    """Test for millisseconds exceptions."""
     with pytest.raises(**expected):
         if isinstance(entrance, dict):
             millisseconds(**entrance)

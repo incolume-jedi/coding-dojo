@@ -12,7 +12,7 @@
 1. [Dojo20220723 &#8212; Pegar código do caracter ASCII](../dojo20220723/README.md)
 1. [Dojo20220729 &#8212; Conversão de DNA para RNA](../dojo20220729/README.md)
 1. [Dojo20220731 &#8212; Imprimir tabela ASCII código e caracteres](../dojo20220731/README.md)
-1. [Dojo20220801 &#8212; A square of squares](../dojo20220801/README.md)
+1. [Dojo20220801 &#8212; A is_square of squares](../dojo20220801/README.md)
 1. [Dojo20220805 &#8212; Calcular Massa Corporal](../dojo20220805/README.md)
 1. [Dojo20220808 &#8212; Par ou Impar](../dojo20220808/README.md)
 1. [Dojo20220809 &#8212; TDD Doctest](../dojo20220809/README.md)

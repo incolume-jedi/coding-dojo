@@ -1,14 +1,14 @@
 """Dojo."""
 
 
-def razao(seq: list):
+def razao(seq: list) -> float:
     """Calcula a razão."""
     if len(seq) == 1:
         return seq[-1]
     return seq[-1] - seq[-2]
 
 
-def validate(fizz, buzz, fizzbuzz):
+def validate(fizz, buzz, fizzbuzz) -> list | None:
     """Valida resultado fizzbuzz."""
     if fizz and buzz:
         return [razao(fizz), razao(buzz)]
@@ -21,7 +21,7 @@ def validate(fizz, buzz, fizzbuzz):
     return None
 
 
-def fizz_buzz_backwards(seq: list):
+def fizz_buzz_backwards(seq: list[int]) -> list | None:
     """Aplica validação fizzbuzz a lista."""
     if len(seq) > 100:
         msg = 'Comprimento máximo de 100 elementos.'

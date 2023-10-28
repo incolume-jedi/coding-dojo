@@ -6,7 +6,7 @@
 
 ## Problema
 
-**A square of squares**
+**A is_square of squares**
 
 Suponha que você gosta de blocos de construção. Você gosta especialmente de blocos de construção que são quadrados. E o que você gosta ainda mais é organizá-los em um quadrado de blocos de construção quadrados!
 

@@ -1,3 +1,4 @@
+"""Unittest for dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220831.dojo20220831 import conceito
@@ -13,5 +14,6 @@ from incolume.py.coding_dojo_jedi.dojo20220831.dojo20220831 import conceito
         ((6, 4), 'Média 5.0, "D", REPROVADO'),
     ),
 )
-def test_conceito(entrance, expected):
+def test_conceito(entrance, expected) -> None:
+    """Teste conceito."""
     assert conceito(*entrance) == expected

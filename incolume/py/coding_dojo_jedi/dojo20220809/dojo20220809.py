@@ -17,7 +17,7 @@ def calculadora(op, x, y):
             msg,
         )
 
-    if not (isinstance(x, (int, float)) or isinstance(y, (int, float))):
+    if not (isinstance(x, int | float) or isinstance(y, int | float)):
         msg = 'x e y devem ser valores numéricos reais.'
         raise ValueError(msg)
 

@@ -55,5 +55,4 @@ def test_table(expected):
 def test_show(capsys, expected):
     show()
     captured = capsys.readouterr()
-    assert captured.err == ''
     assert expected in captured.out

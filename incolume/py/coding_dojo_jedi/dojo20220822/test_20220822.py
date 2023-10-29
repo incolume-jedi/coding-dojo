@@ -29,7 +29,12 @@ def test_tabela() -> None:
     }
 
 
-@pytest.mark.parametrize('entrance expected'.split(), [(1, 2.18),])
+@pytest.mark.parametrize(
+    'entrance expected'.split(),
+    [
+        (1, 2.18),
+    ],
+)
 def test_calc(entrance, expected) -> None:
     """Test calc."""
     assert calc(entrance) == expected

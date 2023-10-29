@@ -8,7 +8,7 @@ def razao(seq: list) -> float:
     return seq[-1] - seq[-2]
 
 
-def validate(fizz, buzz, fizzbuzz) -> list | None:
+def validate(fizz: list, buzz: list, fizzbuzz: list) -> list | None:
     """Valida resultado fizzbuzz."""
     if fizz and buzz:
         return [razao(fizz), razao(buzz)]

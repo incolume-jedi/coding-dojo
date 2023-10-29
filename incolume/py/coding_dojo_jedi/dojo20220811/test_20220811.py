@@ -125,7 +125,9 @@ class TestCalculadora(unittest.TestCase):
         """Test dividir except."""
         with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('/', 3, 0)
+        with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('//', 3, 0)
+        with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('//', 3, '0')
 
     def test_operador(self) -> None:

@@ -4,7 +4,7 @@
 from pprint import pprint
 
 
-def tower0(n_floors, char=None):
+def tower0(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
     char = char or '*'
     result = []
@@ -20,7 +20,7 @@ def tower0(n_floors, char=None):
     return [x.center(length) for x in result]
 
 
-def tower1(n_floors, char=None):
+def tower1(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
     char = char or '*'
     result = []
@@ -30,7 +30,7 @@ def tower1(n_floors, char=None):
     return result
 
 
-def tower(n_floors, char=None):
+def tower(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
     char = char or '*'
     return [

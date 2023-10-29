@@ -46,7 +46,9 @@ class MyTestCase(unittest.TestCase):
         """Método chamado imediatamente após concluir a classe de teste."""
 
     @unittest.skipUnless(
-        sys.platform.startswith('win'),'requires Windows')
+        sys.platform.startswith('win'),
+        'requires Windows',
+    )
     def test_windows_support(self) -> None:
         """Windows specific testing code."""
 

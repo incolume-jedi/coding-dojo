@@ -1,7 +1,6 @@
 """Dojo."""
 
-
-def calculadora(op, x, y):
+def calculadora(op: str, x: str | float, y: str | float) -> float:
     """Calculadora."""
     operadores = '+ - * ** // / %'.split()
 

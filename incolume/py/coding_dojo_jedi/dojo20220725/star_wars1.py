@@ -17,7 +17,7 @@ logging.basicConfig(
 def research(
     name: str = '',
     url: str = '',
-    pagina=0,
+    pagina: int = 0,
     timeout: float = 9,
 ) -> list[dict]:
     """Pesquisa na API."""

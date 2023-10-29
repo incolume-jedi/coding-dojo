@@ -20,7 +20,7 @@ def no_exclamation(frase: str) -> str:
     return frase.replace('!', '')
 
 
-def tabuada(tab_ref: int, inicial: int = 1, final: int = 10):
+def tabuada(tab_ref: int, inicial: int = 1, final: int = 10) -> list:
     """Problema 2."""
     result = []
     inicial, final = min(inicial, final), max(inicial, final)

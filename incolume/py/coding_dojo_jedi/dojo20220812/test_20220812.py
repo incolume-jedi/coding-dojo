@@ -1,3 +1,4 @@
+"""Test for dojo20220812."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220812.dojo20220812 import tower
@@ -5,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220812.dojo20220812 import tower
 
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (1, ['*']),
         (2, [' * ', '***']),
         (3, ['  *  ', ' *** ', '*****']),
@@ -61,7 +62,8 @@ from incolume.py.coding_dojo_jedi.dojo20220812.dojo20220812 import tower
                 '***************************************',
             ],
         ),
-    ),
+    ],
 )
-def test_tower(entrance, expected):
+def test_tower(entrance, expected) -> None:
+    """Test tower."""
     assert tower(entrance) == expected

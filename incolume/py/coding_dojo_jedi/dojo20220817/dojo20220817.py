@@ -27,7 +27,7 @@ def high_and_low(seq: str) -> str:
 #
 
 
-def mysort0(a, b, c):
+def mysort0(a: float, b: float, c: float) -> tuple:
     """Problema 2.
 
     # a < b < c
@@ -38,16 +38,16 @@ def mysort0(a, b, c):
         c, b = b, c
     if b < a:
         b, a = a, b
-    return (c, b, a)
+    return c, b, a
 
 
-def mysort1(a, b, c):
+def mysort1(a: float, b: float, c: float) -> tuple:
     """Problema 2."""
     result = [a, b, c]
     result.sort(reverse=True)
     return tuple(result)
 
 
-def mysort(a, b, c):
+def mysort(a: float, b: float, c: float) -> tuple:
     """Problema 2."""
     return tuple(sorted((a, b, c), reverse=True))

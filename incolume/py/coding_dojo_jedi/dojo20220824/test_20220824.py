@@ -134,7 +134,7 @@ def test_millissenconds(entrance, expected) -> None:
 def test_millissenconds_exception(entrance, expected) -> None:
     """Test for millisseconds exceptions."""
     with pytest.raises(**expected):
-        if isinstance(entrance, dict):
+        try:
             millisseconds(**entrance)
-        else:
+        except TypeError:
             millisseconds(*entrance)

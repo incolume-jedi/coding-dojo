@@ -1,25 +1,29 @@
-"""Clean Code in Python - Chapter 01: Introcution, Tools, and Formatting
+"""Clean Code in Python - Chapter 01.
 
+Introcution, Tools, and Formatting
 Tests for annotations examples
-
 """
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231030.dojo  import NewPoint, Point, locate
+from incolume.py.coding_dojo_jedi.dojo20231030.dojo import (
+    NewPoint,
+    Point,
+    locate,
+)
 
 
 @pytest.mark.parametrize(
-    "element,expected",
-    (
+    'element expected'.split(),
+    [
         pytest.param(
-            Point, 
-            {}, 
-            # marks=pytest.mark.skip(reason='fail.')
+            Point,
+            {},
         ),
-        (locate, {"latitude": float, "longitude": float, "return": Point}),
-        (NewPoint, {"lat": float, "long": float}),
-    ),
+        (locate, {'latitude': float, 'longitude': float, 'return': Point}),
+        (NewPoint, {'lat': float, 'long': float}),
+    ],
 )
-def test_annotations(element, expected):
-    """test the class/functions againts its expected annotations"""
-    assert getattr(element, "__annotations__") == expected
+def test_annotations(element, expected) -> None:
+    """Test the class/functions againts its expected annotations."""
+    method = '__annotations__'
+    assert getattr(element, method) == expected

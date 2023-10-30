@@ -1,22 +1,25 @@
 """Dojo20231030."""
-
+import logging
 from typing import Self
 
 
 class NewPoint:
     """Classe NewPoint."""
+
     lat: float
     long: float
-    def __init__(self, lat: float, long: float) -> None:
+
+    def __init__(self: Self, lat: float, long: float) -> None:
+        """Init da classe NewPoint."""
         self.lat = lat
         self.long = long
 
 
 class Point:
     """Classe Point."""
-    def __init__(self, latitude: float, longitude: float) -> Self:
-        # self.__annotations__['latitude'] = float
-        # self.__annotations__['longitude'] = float
+
+    def __init__(self: Self, latitude: float, longitude: float) -> None:
+        """Init da class."""
         self.latitude = latitude
         self.longitude = longitude
 
@@ -27,4 +30,4 @@ def locate(latitude: float, longitude: float) -> Point:
 
 
 if __name__ == '__main__':
-    print(Point.__annotations__)
+    logging.debug(Point.__annotations__)

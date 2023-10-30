@@ -14,8 +14,11 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
 
-## [1.44.0]	 &#8212; 	2023-10-29:
+## [1.44.0]	 &#8212; 	2023-10-30:
 ### Added
+  - Pacote markdown;
+  - Redefinição do template para dojos;
+  - Redefinição de template para issues;
   - Solução do Dojo20231016 — Números Romanos para Arábicos;
   - Solução do Dojo20231019 — Contando nucleotídeos de DNA;
   - Solução do Dojo20231019 — Complementando uma fita de DNA;
@@ -23,6 +26,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
   - Ampliação de cobertura para ruff;
+  - Atualização da documentação;
+### Fixed
+  - Ruff:FA102 Missing from __future__ import annotations, but uses PEP 604 union;
+  - Skip testes para windows devido ao não reconhecimento de encode do OS.;
 
 ## [1.40.1]	 &#8212; 	2023-10-10:
 ### Added

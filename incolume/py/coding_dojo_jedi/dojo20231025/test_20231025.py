@@ -1,5 +1,6 @@
 """Test module for dojo."""
 import re
+import sys
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
@@ -24,6 +25,9 @@ def count_links(arq_entrada: Path) -> int:
     return contagem
 
 
+@pytest.mark.skipif(
+    sys.platform.startswith('win'), reason='Not available on windows.'
+)
 def count_dojos(path_dojos: Path) -> int:
     """Contar os dojos no Sistema de Arquivos."""
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
@@ -45,12 +49,42 @@ def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
 @pytest.mark.parametrize(
     'entrance',
     [
-        r'# Coding Dojo',
-        r'**Guilda JEDI Incolume - Grupo Python Incolume**',
-        r'- [Seja membro da Guilda JEDI Incolume]'
-        r'(https://discord.gg/eBNamXVtBW)',
-        r'## Sumário dos dojos',
-        r'&copy; **Incolume.com.br**',
+        pytest.param(
+            r'# Coding Dojo',
+            marks=pytest.mark.skipif(
+                sys.platform.startswith('win'),
+                reason='Does not run on windows.',
+            ),
+        ),
+        pytest.param(
+            '**Guilda JEDI Incolume - Grupo Python Incolume**',
+            marks=pytest.mark.skipif(
+                sys.platform.startswith('win'),
+                reason='Does not run on windows.',
+            ),
+        ),
+        pytest.param(
+            '- [Seja membro da Guilda JEDI Incolume]'
+            '(https://discord.gg/eBNamXVtBW)',
+            marks=pytest.mark.skipif(
+                sys.platform.startswith('win'),
+                reason='Does not run on windows.',
+            ),
+        ),
+        pytest.param(
+            '## Sumário dos dojos',
+            marks=pytest.mark.skipif(
+                sys.platform.startswith('win'),
+                reason='Does not run on windows.',
+            ),
+        ),
+        pytest.param(
+            '&copy; **Incolume.com.br**',
+            marks=pytest.mark.skipif(
+                sys.platform.startswith('win'),
+                reason='Does not run on windows.',
+            ),
+        ),
     ],
 )
 def test_content_sumary(

@@ -7,7 +7,8 @@ from . import max_sequence
 
 
 @pytest.mark.skipif(
-    sys.version_info < (3, 10), reason="requires python3.10 or higher")
+    sys.version_info < (3, 10), reason='requires python3.10 or higher'
+)
 class TestCase:
     """Class Test Case."""
 

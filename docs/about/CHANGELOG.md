@@ -14,6 +14,16 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
 
+## [1.44.0]	 &#8212; 	2023-10-29:
+### Added
+  - Solução do Dojo20231016 — Números Romanos para Arábicos;
+  - Solução do Dojo20231019 — Contando nucleotídeos de DNA;
+  - Solução do Dojo20231019 — Complementando uma fita de DNA;
+  - Solução do Dojo20231025 — Índice de dojos resolvidos;
+### Changed
+  - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
+  - Ampliação de cobertura para ruff;
+
 ## [1.40.1]	 &#8212; 	2023-10-10:
 ### Added
   - Solução dojo 2023-10-07 Subarray de soma máxima.;
@@ -291,4 +301,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.39.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.38.4...1.39.0
 [1.40.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.39.0...1.40.0
 [1.40.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.0...1.40.1
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.1...Unreleased
+[1.44.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.1...1.44.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.44.0...Unreleased

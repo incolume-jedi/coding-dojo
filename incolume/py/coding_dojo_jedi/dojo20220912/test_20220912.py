@@ -1,3 +1,4 @@
+"""Testing dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220912.dojo20220912 import (
@@ -8,7 +9,7 @@ from incolume.py.coding_dojo_jedi.dojo20220912.dojo20220912 import (
 
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (('sábado', 1), 'domingo'),
         (('quinta-feira', 3), 'domingo'),
         (('segunda-feira', 1), 'terça-feira'),
@@ -21,9 +22,10 @@ from incolume.py.coding_dojo_jedi.dojo20220912.dojo20220912 import (
         (('terça-feira', 6), 'segunda-feira'),
         (('terça-feira', 7), 'terça-feira'),
         (('terça-feira', 180), 'domingo'),
-    ),
+    ],
 )
 def test_weekday0(entrance, expected) -> None:
+    """Unittest for weekday0."""
     assert weekday0(*entrance) == expected
 
 
@@ -45,4 +47,5 @@ def test_weekday0(entrance, expected) -> None:
     ],
 )
 def test_weekday(entrance, expected) -> None:
+    """Unittest for weekday."""
     assert weekday(*entrance) == expected

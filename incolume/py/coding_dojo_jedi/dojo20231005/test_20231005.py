@@ -1,3 +1,4 @@
+"""Test dojo."""
 import re
 from pathlib import Path
 from typing import ClassVar
@@ -10,7 +11,7 @@ class TestCase:
 
     directories: ClassVar = list(Path(__file__).parents[1].iterdir())
 
-    def test_path(self):
+    def test_path(self) -> None:
         """Test path."""
         assert all(d.parts[-2] == 'coding_dojo_jedi' for d in self.directories)
 
@@ -113,7 +114,7 @@ class TestCase:
             ('20231005', True),
         ],
     )
-    def test_formato_novo(self, entrance, expected):
+    def test_formato_novo(self, entrance, expected) -> None:
         """Test para nova formação da estrutura de pastas."""
         for directory in self.directories:
             if value := re.search(f'dojo{entrance}', directory.as_posix()):

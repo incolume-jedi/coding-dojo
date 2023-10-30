@@ -1,3 +1,4 @@
+"""Testing dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220921.dojo20220921 import (
@@ -9,7 +10,7 @@ from incolume.py.coding_dojo_jedi.dojo20220921.dojo20220921 import (
 
 @pytest.mark.parametrize(
     ('entrada', 'experado'),
-    (
+    [
         (1, 'I'),
         (2, 'II'),
         (3, 'III'),
@@ -32,9 +33,10 @@ from incolume.py.coding_dojo_jedi.dojo20220921.dojo20220921 import (
         (2011, 'MMXI'),
         (1978, 'MCMLXXVIII'),
         (1500, 'MD'),
-    ),
+    ],
 )
 def test_to_roman0(entrada, experado) -> None:
+    """Unittest for toroman0."""
     assert to_roman0(entrada) == experado
 
 
@@ -66,6 +68,7 @@ def test_to_roman0(entrada, experado) -> None:
     ],
 )
 def test_to_roman1(entrada, experado) -> None:
+    """Unittest for to_roman1."""
     assert to_roman1(entrada) == experado
 
 
@@ -97,4 +100,5 @@ def test_to_roman1(entrada, experado) -> None:
     ],
 )
 def test_to_roman(entrada, experado) -> None:
+    """Unittest for to_roman."""
     assert to_roman(entrada) == experado

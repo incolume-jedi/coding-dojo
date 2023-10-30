@@ -1,3 +1,4 @@
+"""Testing dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220909.dojo20220909 import (
@@ -7,7 +8,7 @@ from incolume.py.coding_dojo_jedi.dojo20220909.dojo20220909 import (
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),
-    (
+    [
         ([1, 2, 'Fizz', 4, 'Buzz', 6], [3, 5]),
         ([1, 'Fizz', 'Buzz', 'Fizz', 5, 'FizzBuzz'], [2, 3]),
         ([1, 'FizzBuzz', 3, 'FizzBuzz', 5, 'FizzBuzz'], [2, 2]),
@@ -96,7 +97,8 @@ from incolume.py.coding_dojo_jedi.dojo20220909.dojo20220909 import (
             ],
             [7, 11],
         ),
-    ),
+    ],
 )
-def test_fizz_buzz_backwards(entrance, expected):
+def test_fizz_buzz_backwards(entrance, expected) -> None:
+    """Unittest for this function."""
     assert fizz_buzz_backwards(entrance) == expected

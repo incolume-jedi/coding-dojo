@@ -1,3 +1,4 @@
+"""Testing dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220926.dojo20220926 import protein
@@ -5,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220926.dojo20220926 import protein
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),
-    (
+    [
         ('UGCGAUGAAUGGGCUCGCUCC', 'CDEWARS'),
         ('AUG', 'M'),
         ('AUGUGA', 'M'),
@@ -38,7 +39,8 @@ from incolume.py.coding_dojo_jedi.dojo20220926.dojo20220926 import protein
             'MEKLNISDDWKTVEQHESVVASYSQVPSKLGHN',
         ),  # This gene encodes for a
         # protein that fluoresces green in the Snakelocks anemone!
-    ),
+    ],
 )
-def test_protein(entrance, expected):
+def test_protein(entrance, expected) -> None:
+    """Teste unitário para protein."""
     assert protein(entrance) == expected

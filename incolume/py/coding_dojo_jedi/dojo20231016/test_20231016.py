@@ -10,7 +10,8 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 
 @pytest.mark.skipif(
-    sys.version_info < (3, 10), reason='requires python3.10 or higher'
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
     'entrance expected'.split(),

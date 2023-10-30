@@ -1,7 +1,7 @@
 """Dojo."""
 
 
-def calculadora(op: str, x: str | float, y: str | float) -> float:
+def calculadora(op: str, x: float, y: float) -> float:
     """Realiza uma operação matemática.
 
     :param op: operador (str),

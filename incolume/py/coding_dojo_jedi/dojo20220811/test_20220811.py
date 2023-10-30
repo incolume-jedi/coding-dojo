@@ -25,12 +25,14 @@ def check_connectivity(url: str = 'https://google.com') -> bool:
 @unittest.skip('Futuring work')
 class MySkippedTestCase(unittest.TestCase):
     """Class MySkippedTestCase."""
+
     def test_not_run(self) -> None:
         """Test not run."""
 
 
 class MyTestCase(unittest.TestCase):
     """Class MyTestCase."""
+
     @classmethod
     def setUpClass(cls) -> None:
         """Pré-configuração da classe."""
@@ -52,13 +54,11 @@ class MyTestCase(unittest.TestCase):
     def test_windows_support(self) -> None:
         """Windows specific testing code."""
 
-    @unittest.skipUnless(
-        sys.platform.startswith('mac'), 'requires MacOS')
+    @unittest.skipUnless(sys.platform.startswith('mac'), 'requires MacOS')
     def test_mac_support(self) -> None:
         """MacOS specific testing code."""
 
-    @unittest.skipUnless(
-        sys.platform.startswith('lin'), 'requires Linux')
+    @unittest.skipUnless(sys.platform.startswith('lin'), 'requires Linux')
     def test_linux_support(self) -> None:
         """Linux specific testing code."""
 
@@ -75,6 +75,7 @@ class MyTestCase(unittest.TestCase):
         """
         # pylint: disable=comparison-of-constants
         assert True is False
+
 
 class TestCalculadora(unittest.TestCase):
     """Test case calculadora."""

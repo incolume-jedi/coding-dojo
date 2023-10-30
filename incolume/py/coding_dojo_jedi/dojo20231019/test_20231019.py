@@ -10,7 +10,8 @@ from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
 
 
 @pytest.mark.skipif(
-    sys.version_info < (3, 10), reason='requires python3.10 or higher'
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
@@ -32,7 +33,8 @@ def test_contador_nucleotideos(entrance, expected) -> None:
 
 
 @pytest.mark.skipif(
-    sys.version_info < (3, 10), reason='requires python3.10 or higher'
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),

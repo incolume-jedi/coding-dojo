@@ -19,7 +19,7 @@ from incolume.py.coding_dojo_jedi.dojo20220723.dojo20220723 import get_code
 #     assert get_code('x') == 120
 #
 @pytest.mark.parametrize(
-    'char,expected',
+    'char expected'.split(),
     [
         ('(', 40),
         ('A', 65),

@@ -10,7 +10,7 @@ def tower0(n_floors: int, char: str | None = None) -> list:
     result = []
     line = ''
     for i in range(1, n_floors + 1):
-        if i < 3:
+        if i < 3:  # noqa: PLR2004
             line += char * i
         else:
             line = char * (len(line) + 2)

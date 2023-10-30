@@ -3,6 +3,7 @@ import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220826.dojo20220826 import (
     imc,
+    imc0,
     no_exclamation,
     tabuada,
 )
@@ -105,6 +106,24 @@ def test_tabuada(entrance, expected) -> None:
         assert tabuada(**entrance) == expected
     if isinstance(entrance, tuple):
         assert tabuada(*entrance) == expected
+
+
+@pytest.mark.parametrize(
+    'entrance expected'.split(),
+    [
+        ((1.74, 75), 'peso normal'),
+        ((1.54, 125), 'Obesidade III'),
+        ((1.72, 80), 'Sobrepeso'),
+        ((1.84, 55), 'abaixo do peso'),
+        ((1.64, 75), 'Sobrepeso'),
+        ((1.84, 135), 'Obesidade II'),
+        ((1.78, 95), 'Obesidade I'),
+        ((1.78, 98), 'Obesidade I'),
+    ],
+)
+def test_imc0(entrance, expected) -> None:
+    """Test imc."""
+    assert imc0(*entrance) == expected
 
 
 @pytest.mark.parametrize(

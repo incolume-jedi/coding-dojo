@@ -17,9 +17,9 @@ def check_connectivity(url: str = 'https://google.com') -> bool:
         if req.status_code != 200:
             msg = 'Not connected'
             raise ConnectionError(msg)
-        return True
     except ConnectionError:
         return False
+    return True
 
 
 @unittest.skip('Futuring work')
@@ -74,7 +74,7 @@ class MyTestCase(unittest.TestCase):
         Defina um skip com a mensagem 'Dont ran'.
         """
         # pylint: disable=comparison-of-constants
-        assert True is False
+        assert True is False  # noqa: PLR0133
 
 
 class TestCalculadora(unittest.TestCase):
@@ -82,11 +82,11 @@ class TestCalculadora(unittest.TestCase):
 
     def test_soma(self) -> None:
         """Test soma."""
-        assert calculadora('+', 3, '4') == 7
+        assert calculadora('+', 3, '4') == 7  # noqa: PLR2004
 
     def test_soma_float(self) -> None:
         """Test soma float."""
-        assert calculadora('+', 3, 4) == 7.0
+        assert calculadora('+', 3, 4) == 7.0  # noqa: PLR2004
 
     def test_menos(self) -> None:
         """Test menos."""
@@ -94,40 +94,49 @@ class TestCalculadora(unittest.TestCase):
 
     def test_menos_float(self) -> None:
         """Test menos float."""
-        assert calculadora('-', 3.0, 4) == -1.0
+        assert calculadora('-', 3.0, 4) == -1.0  # noqa: PLR2004
 
     def test_mult(self) -> None:
         """Test mult."""
-        assert calculadora('*', 3, '4') == 12
+        assert calculadora('*', 3, '4') == 12  # noqa: PLR2004
 
     def test_mult_float(self) -> None:
         """Test mult float."""
-        assert calculadora('*', 3, '4.0') == 12.0
+        assert calculadora('*', 3, '4.0') == 12.0  # noqa: PLR2004
 
     def test_dividir(self) -> None:
         """Test dividir inteiro."""
-        assert calculadora('/', 3, '4') == 0.75
+        assert calculadora('/', 3, '4') == 0.75  # noqa: PLR2004
 
     def test_dividir_float(self) -> None:
         """Test dividir float."""
-        assert calculadora('/', 4, 4.0) == 1.0
-        assert calculadora('/', 4, 3) == 1.3333333333333333
+        assert calculadora('/', 4, 4.0) == 1.0  # noqa: PLR2004
+        assert calculadora('/', 4, 3) == 1.3333333333333333  # noqa: PLR2004
 
     def test_mod(self) -> None:
         """Test mod."""
         assert calculadora('%', 4, 3) == 1
-        assert calculadora('%', 12, 7) == 5
+
+    def test_mod1(self) -> None:
+        """Test mod."""
+        assert calculadora('%', 12, 7) == 5  # noqa: PLR2004
 
     def test_pow(self) -> None:
         """Test pow."""
-        assert calculadora('**', 3, 4) == 81
+        assert calculadora('**', 3, 4) == 81  # noqa: PLR2004
 
     def test_dividir_except(self) -> None:
         """Test dividir except."""
         with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('/', 3, 0)
+
+    def test_dividir_except0(self) -> None:
+        """Test dividir except."""
         with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('//', 3, 0)
+
+    def test_dividir_except1(self) -> None:
+        """Test dividir except."""
         with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('//', 3, '0')
 

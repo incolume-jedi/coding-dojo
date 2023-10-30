@@ -14,7 +14,7 @@ def check_connectivity(url: str = 'https://google.com') -> bool:
     """Check web connectivity."""
     try:
         req = requests.get(url, timeout=0.8)
-        if req.status_code != 200:
+        if req.status_code != 200:  # noqa: PLR2004
             msg = 'Not connected'
             raise ConnectionError(msg)
     except ConnectionError:

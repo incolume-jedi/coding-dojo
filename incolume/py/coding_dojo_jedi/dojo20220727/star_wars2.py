@@ -71,7 +71,7 @@ def research(
     return [
         personagem.get('name')
         for key, personagem in personagens.items()
-        if fuzz.partial_ratio(name.casefold(), key) > 75
+        if fuzz.partial_ratio(name.casefold(), key) > 75  # noqa: PLR2004
     ]
 
 

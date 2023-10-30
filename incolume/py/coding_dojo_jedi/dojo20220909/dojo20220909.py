@@ -23,7 +23,7 @@ def validate(fizz: list, buzz: list, fizzbuzz: list) -> list | None:
 
 def fizz_buzz_backwards(seq: list[int]) -> list | None:
     """Aplica validação fizzbuzz a lista."""
-    if len(seq) > 100:
+    if len(seq) > 100:  # noqa: PLR2004
         msg = 'Comprimento máximo de 100 elementos.'
         raise OverflowError(msg)
     fizz, buzz, fizzbuzz = [], [], []

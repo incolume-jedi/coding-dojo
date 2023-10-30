@@ -22,15 +22,17 @@ def dna_complementary(dna_string: str) -> str:
 
 def millisseconds(*, h: int = 0, m: int = 0, s: int = 0) -> int:
     """Problema 2."""
-    if not 0 <= h <= 23:
+    hora = 0, 23
+    min_sec = 0, 59
+    if not hora[0] <= h <= hora[1]:
         msg = '0 <= h <= 23'
         raise ValueError(msg)
 
-    if not 0 <= m < 60:
+    if not min_sec[0] <= m <= min_sec[1]:
         msg = '0 <= m <= 59'
         raise ValueError(msg)
 
-    if not 0 <= s < 60:
+    if not min_sec[0] <= s <= min_sec[1]:
         msg = '0 <= s <= 59'
         raise ValueError(msg)
 

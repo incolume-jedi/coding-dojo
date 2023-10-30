@@ -1,4 +1,6 @@
 """Test para dojo 2023-10-07."""
+import sys
+
 import pytest
 
 from . import (
@@ -9,11 +11,15 @@ from . import (
 )
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10), reason="requires python3.10 or higher")
 def test_max_sequence() -> None:
     """Test de max_sequence."""
     assert max_sequence([]) == 0
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10), reason="requires python3.10 or higher")
 @pytest.mark.skip(reason='Implementação não concluída.')
 @pytest.mark.parametrize(
     'entrance expected'.split(),
@@ -32,6 +38,8 @@ def test_max_sequence1(entrance, expected) -> None:
     assert max_sequence(entrance) == expected
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10), reason="requires python3.10 or higher")
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
@@ -49,6 +57,8 @@ def test_subarray_max_sum(entrance, expected) -> None:
     assert subarray_max_sum(entrance) == expected
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10), reason="requires python3.10 or higher")
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
@@ -66,6 +76,8 @@ def test_maxsubarraysum(entrance, expected) -> None:
     assert max_sub_array_sum(entrance) == expected
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10), reason="requires python3.10 or higher")
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [

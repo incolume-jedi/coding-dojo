@@ -39,6 +39,9 @@ def count_dojos(path_dojos: Path) -> int:
     return total
 
 
+@pytest.mark.skipif(
+    sys.platform.startswith('win'), reason='Not available on windows.'
+)
 def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     """Testar se a quantidade de links e dojos são iguais."""
     c_links = count_links(generator_sumary(filemd))

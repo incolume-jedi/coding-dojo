@@ -34,14 +34,14 @@ class MyTestCase(unittest.TestCase):
     """Class MyTestCase."""
 
     @classmethod
-    def setUpClass(cls) -> None:
+    def setUpClass(cls) -> None:  # noqa: ANN102
         """Pré-configuração da classe."""
 
     def setUp(self) -> None:
         """Preconfiguração para métodos."""
 
     @classmethod
-    def tearDownClass(cls) -> None:
+    def tearDownClass(cls) -> None:  # noqa: ANN102
         """Método chamado imediatamente após concluir o método de teste."""
 
     def tearDown(self) -> None:

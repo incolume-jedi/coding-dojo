@@ -2,7 +2,7 @@
 from typing import Any
 
 
-def calculadora(op: str, x: Any, y: Any) -> float:
+def calculadora(op: str, x: Any, y: Any) -> float:  # noqa: ANN401
     """Calculadora."""
     operadores = '+ - * ** // / %'.split()
 

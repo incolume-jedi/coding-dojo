@@ -40,4 +40,4 @@ def tower(n_floors: int, char: str | None = None) -> list:
 
 
 if __name__ == '__main__':
-    pprint(tower(26))
+    pprint(tower(26))  # noqa: T203

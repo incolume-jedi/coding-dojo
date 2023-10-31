@@ -348,6 +348,7 @@ max_line_length = 79
 ignore = ['E203']
 
 [tool.taskipy.variables]
+sumary_file = "incolume/py/coding_dojo_jedi/README.md"
 path = "incolume/ tests/"
 CHANGELOGFILE = "docs/about/CHANGELOG.md"
 URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
@@ -364,6 +365,7 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 pre_docs-build={help='Pre docs-build', cmd="poetry run task gcl"}
 docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
+gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file}", use_vars=true}
 lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}

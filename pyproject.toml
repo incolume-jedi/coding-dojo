@@ -43,6 +43,7 @@ fuzzywuzzy = "^0.18.0"
 # incolumepy-utils = {git = "https://gitlab.com/development-incolume/incolumepy.utils.git", rev = "master"}
 levenshtein = "^0.21.1"
 incolumepy-utils = {path = "extra-src/incolumepy_utils-2.10.0-py3-none-any.whl"}
+click = "^8.1.7"
 
 [tool.poetry.dev-dependencies]
 

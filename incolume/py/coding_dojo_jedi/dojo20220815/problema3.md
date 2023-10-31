@@ -26,3 +26,8 @@ adedonha(19) == ?
 adedonha(36) == ?
 adedonha(1000) == ?
 ```
+
+## Artefatos
+
+- [dojo](./dojo20220815.py)
+- [test](./test_20220815.py)

@@ -5,8 +5,9 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 import logging
 import re
-import requests
 from pathlib import Path
+
+import requests
 
 
 def check_connectivity(

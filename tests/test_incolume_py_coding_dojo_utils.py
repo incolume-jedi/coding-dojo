@@ -55,7 +55,9 @@ def count_dojos(path_dojos: Path) -> int:
 def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     """Testar se a quantidade de links e dojos são iguais."""
     c_links = count_links(generator_sumary(filemd))
-    c_dirs = count_dojos(next(Path(__file__).absolute().parents[1].rglob('coding_dojo_jedi')))
+    c_dirs = count_dojos(
+        next(Path(__file__).absolute().parents[1].rglob('coding_dojo_jedi'))
+    )
     assert c_links == c_dirs
 
 

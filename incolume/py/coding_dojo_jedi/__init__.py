@@ -1,8 +1,8 @@
 """Principal Module."""
 import logging
 from pathlib import Path
-from toml import load
 
+from toml import load
 
 __author__ = '@britodfbr'
 

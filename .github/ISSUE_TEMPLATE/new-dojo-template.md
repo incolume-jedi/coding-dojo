@@ -37,6 +37,12 @@ Descrição/apresentação do problema.
 
 N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para validar os testes do TDD.
 
+## Artefatos
+
+- [dojo](dojo.py)
+- [tests](test_YYYYMMDD.py)
+
+
 ## Referências
 
 N/A - Referências para o dojo, o problema ou para elicidações extras.

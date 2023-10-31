@@ -18,6 +18,11 @@ O arquivo após criado, deverá ser sediado em coding_dojo_jedi/
 
 N/A.
 
+## Arfetatos
+
+- [dojo](./dojo.py)
+- [test](./test_20231025.py)
+
 ## Referências
 
 N/A.

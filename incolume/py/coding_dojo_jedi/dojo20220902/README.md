@@ -74,6 +74,11 @@ MOEDAS:
 0 moeda(s) de R$ 0.05;
 1 moeda(s) de R$ 0.01;
 
+## Artefatos
+
+- [dojo](./dojo20220902.py)
+- [test](./test_20220902.py)
+
 ## Referências
 
 Baseado no exemplo dispoível em https://github.com/incolume-jedi/coding-dojo/tree/main/coding_dojo_jedi/20190129

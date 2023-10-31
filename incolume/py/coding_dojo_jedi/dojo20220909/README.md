@@ -28,6 +28,11 @@ Os números Fizz e Buzz sempre serão inteiros entre 1 e 50, e a sequência ter�
 - Fizz = 1, Buzz = 6:
 ["Fizz", "Fizz", "Fizz", "Fizz", "Fizz", "FizzBuzz"]  ==>  [1, 6]
 
+## Artefatos
+
+- [dojo](./dojo20220909.py)
+- [test](./test_20220909.py)
+
 
 ## Referências
 

@@ -22,5 +22,11 @@ AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
 Saída de Amostra
 20 12 17 21
 ```
+
+## Artefatos
+
+- [dojo](./dojo.py)
+- [test](./test_20231019.py)
+
 ## Referências
 - https://rosalind.info/problems/dna/

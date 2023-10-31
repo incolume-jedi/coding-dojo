@@ -27,6 +27,10 @@ bmi(90, 1.80), "Overweight"
 bmi(110, 1.80), "Obese"
 bmi(50, 1.50), "Normal"
 
+## Artefatos
+- [dojo](./dojo20220805.py)
+- [test](./test_20220805.py)
+
 
 ## Referências
 

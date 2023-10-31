@@ -26,6 +26,11 @@ weekday(8) == 'Valor inválido'
 weekday(9) == 'Valor inválido'
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220910.py)
+- [test](./test_20220910.py)
+
 ## Referências
 
 Estruturas de decisão nº 13

@@ -31,6 +31,11 @@ Os testes sempre usarão algum número inteiro, então não se preocupe com isso
 26  =>  false
 ```
 
+## Artefatos
+- [dojo](./dojo20220801.py)
+- [test](./test_20220801.py)
+
+
 ## Referências
 
 https://www.codewars.com/kata/54c27a33fb7da0db0100040e/python

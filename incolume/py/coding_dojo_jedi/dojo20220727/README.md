@@ -44,6 +44,12 @@ Nenhum personagem "Skywaler" encontrado, mas encontrei: "Luke Skywalker", "Anaki
 
 [... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
+## Artefatos
+- [main2](./main2.py)
+- [star wars2](./star_wars2.py)
+- [test](./test_20220717.py)
+
+
 ## Referências
 
 - https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md

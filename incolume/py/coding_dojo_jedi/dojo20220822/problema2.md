@@ -26,6 +26,11 @@ Panificadora Pão de Ontem - Tabela de preços
 100 - R$ 218.00
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220822.py)
+- [test](./test_20220822.py)
+
 ## Referências
 
 https://docs.google.com/document/d/1HtA5G9Bi36gSgv7sJ2xg6lxrKBI0KAl6Pnz9khbbxsk/edit#

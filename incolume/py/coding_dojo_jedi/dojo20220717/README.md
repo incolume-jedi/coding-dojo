@@ -19,6 +19,11 @@ Implemente uma função que verifique se algo é um palíndromo. Se a entrada fo
 |123456   => false|
 |ada => true|
 
+## Artefatos
+- [dojo](./dojo20220717.py)
+- [test](./test_20220717.py)
+
+
 # Referência
 
 [Palindrome Strings](https://www.codewars.com/kata/57a5015d72292ddeb8000b31)

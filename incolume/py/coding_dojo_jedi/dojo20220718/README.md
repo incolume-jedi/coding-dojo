@@ -12,3 +12,7 @@ get_char(65)
 return: 'A'
 
 Para referência da tabela ASCII:  http://www.asciitable.com/
+
+## Artefatos
+- [dojo](./dojo20220718.py)
+- [test](./test_20220718.py)

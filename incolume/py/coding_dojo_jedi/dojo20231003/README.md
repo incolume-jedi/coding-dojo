@@ -24,5 +24,11 @@ Observe que a lista ou matriz vazia também é uma sublista/subarray válida.
     max_sequence([10, 1, 2, 3, 4, 5, 6, 7, 8, 9]) == 55
     max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]) ==  6
     max_sequence([10, -11, 2, 3, 4, 5, -5,  6, 7, -50, 8,-7, 9]) == 14
+
+## Artefatos
+
+- [dojo](./__init__.py)
+- [test](./test_20231003.py)
+
 ## Referências
   - https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/train/python

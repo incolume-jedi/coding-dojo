@@ -101,6 +101,11 @@ Para executar os testes desenvolvidos para TDD em pydocs, rode o camando abaixo:
 python dojo.py
 ```
 
+## Artefatos
+- [dojo](./dojo20220809.py)
+- [test](./tests/calc.txt)
+
+
 ## Referências
 
 https://bitbucket.org/incolume-dev/calculadora_doctest

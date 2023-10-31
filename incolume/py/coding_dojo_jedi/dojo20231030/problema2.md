@@ -31,6 +31,11 @@ Constraints:
 
 -231 <= x <= 231 - 1
 
+## Artefatos
+
+- [dojo](dojo.py)
+- [tests](test_20231030.py)
+
 
 ## Referências
 

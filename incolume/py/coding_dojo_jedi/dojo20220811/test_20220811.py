@@ -1,3 +1,4 @@
+"""Test for dojo 20220811."""
 # tests.py
 import re
 import sys
@@ -9,120 +10,160 @@ import requests
 from incolume.py.coding_dojo_jedi.dojo20220811.dojo20220811 import calculadora
 
 
-def check_connectivity(url: str = 'https://google.com'):
+def check_connectivity(url: str = 'https://google.com') -> bool:
+    """Check web connectivity."""
     try:
         req = requests.get(url, timeout=0.8)
-        if req.status_code != 200:
+        if req.status_code != 200:  # noqa: PLR2004
             msg = 'Not connected'
             raise ConnectionError(msg)
-        return True
     except ConnectionError:
         return False
+    return True
+
+
+@unittest.skip('Futuring work')
+class MySkippedTestCase(unittest.TestCase):
+    """Class MySkippedTestCase."""
+
+    def test_not_run(self) -> None:
+        """Test not run."""
 
 
 class MyTestCase(unittest.TestCase):
+    """Class MyTestCase."""
+
     @classmethod
-    def setUpClass(cls) -> None:
-        # Pré-configuração da classe
-        ...
+    def setUpClass(cls) -> None:  # noqa: ANN102
+        """Pré-configuração da classe."""
 
     def setUp(self) -> None:
-        # Preconfiguração para métodos
-        pass
+        """Preconfiguração para métodos."""
 
     @classmethod
-    def tearDownClass(cls) -> None:
-        # Método chamado imediatamente após concluir o método de teste
-        pass
+    def tearDownClass(cls) -> None:  # noqa: ANN102
+        """Método chamado imediatamente após concluir o método de teste."""
 
     def tearDown(self) -> None:
-        # Método chamado imediatamente após concluir a classe de teste
-        pass
+        """Método chamado imediatamente após concluir a classe de teste."""
 
-    @unittest.skip('Futuring work')
-    class MySkippedTestCase(unittest.TestCase):
-        def test_not_run(self):
-            pass
-
-    @unittest.skipUnless(sys.platform.startswith('win'), 'requires Windows')
-    def test_windows_support(self):
+    @unittest.skipUnless(
+        sys.platform.startswith('win'),
+        'requires Windows',
+    )
+    def test_windows_support(self) -> None:
         """Windows specific testing code."""
 
     @unittest.skipUnless(sys.platform.startswith('mac'), 'requires MacOS')
-    def test_mac_support(self):
+    def test_mac_support(self) -> None:
         """MacOS specific testing code."""
 
     @unittest.skipUnless(sys.platform.startswith('lin'), 'requires Linux')
-    def test_linux_support(self):
+    def test_linux_support(self) -> None:
         """Linux specific testing code."""
 
-    def test_maybe_skipped(self):
+    def test_maybe_skipped(self) -> None:
         """Test code that depends on the external resource."""
         if not check_connectivity():
             self.skipTest('external resource not available')
 
     @unittest.skip('it never will run.')
-    def test_something(self):
+    def test_something(self) -> None:
         """Este teste nunca irá passar.
 
         Defina um skip com a mensagem 'Dont ran'.
         """
         # pylint: disable=comparison-of-constants
-        assert True is False
+        assert True is False  # noqa: PLR0133
 
-    def test_soma(self):
-        assert calculadora('+', 3, '4') == 7
 
-    def test_soma_float(self):
-        assert calculadora('+', 3, 4) == 7.0
+class TestCalculadora(unittest.TestCase):
+    """Test case calculadora."""
 
-    def test_menos(self):
+    def test_soma(self) -> None:
+        """Test soma."""
+        assert calculadora('+', 3, '4') == 7  # noqa: PLR2004
+
+    def test_soma_float(self) -> None:
+        """Test soma float."""
+        assert calculadora('+', 3, 4) == 7.0  # noqa: PLR2004
+
+    def test_menos(self) -> None:
+        """Test menos."""
         assert calculadora('-', '3', 4) == -1
 
-    def test_menos_float(self):
-        assert calculadora('-', 3.0, 4) == -1.0
+    def test_menos_float(self) -> None:
+        """Test menos float."""
+        assert calculadora('-', 3.0, 4) == -1.0  # noqa: PLR2004
 
-    def test_mult(self):
-        assert calculadora('*', 3, '4') == 12
+    def test_mult(self) -> None:
+        """Test mult."""
+        assert calculadora('*', 3, '4') == 12  # noqa: PLR2004
 
-    def test_mult_float(self):
-        assert calculadora('*', 3, '4.0') == 12.0
+    def test_mult_float(self) -> None:
+        """Test mult float."""
+        assert calculadora('*', 3, '4.0') == 12.0  # noqa: PLR2004
 
-    def test_dividir(self):
-        assert calculadora('/', 3, '4') == 0.75
+    def test_dividir(self) -> None:
+        """Test dividir inteiro."""
+        assert calculadora('/', 3, '4') == 0.75  # noqa: PLR2004
 
-    def test_dividir_float(self):
-        assert calculadora('/', 4, 4.0) == 1.0
-        assert calculadora('/', 4, 3) == 1.3333333333333333
+    def test_dividir_float(self) -> None:
+        """Test dividir float."""
+        assert calculadora('/', 4, 4.0) == 1.0  # noqa: PLR2004
+        assert calculadora('/', 4, 3) == 1.3333333333333333  # noqa: PLR2004
 
-    def test_mod(self):
+    def test_mod(self) -> None:
+        """Test mod."""
         assert calculadora('%', 4, 3) == 1
-        assert calculadora('%', 12, 7) == 5
 
-    def test_pow(self):
-        assert calculadora('**', 3, 4) == 81
+    def test_mod1(self) -> None:
+        """Test mod."""
+        assert calculadora('%', 12, 7) == 5  # noqa: PLR2004
 
-    def test_dividir_except(self):
+    def test_pow(self) -> None:
+        """Test pow."""
+        assert calculadora('**', 3, 4) == 81  # noqa: PLR2004
+
+    def test_dividir_except(self) -> None:
+        """Test dividir except."""
         with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('/', 3, 0)
+
+    def test_dividir_except0(self) -> None:
+        """Test dividir except."""
+        with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('//', 3, 0)
+
+    def test_dividir_except1(self) -> None:
+        """Test dividir except."""
+        with pytest.raises(ValueError, match=r'.*y deve ser diferente de 0.*'):
             calculadora('//', 3, '0')
 
-    def test_operador(self):
+    def test_operador(self) -> None:
+        """Test oprador."""
         with pytest.raises(
             ValueError,
             match=re.escape('Operador inválido. Use: +, -, *, **, //, /, %'),
         ):
             calculadora('^', 3, 5)
 
-    def test_numeric_values(self):
-        with pytest.raises(
-            ValueError,
-            match='x e y devem ser valores numéricos reais.',
-        ):
-            calculadora('+', 'a', 'b')
-            calculadora('+', '0', 'b')
-            calculadora('+', 'a', '0')
+
+@pytest.mark.parametrize(
+    'entrance',
+    [
+        ('+', 'a', 'b'),
+        ('+', '0', 'b'),
+        ('+', 'a', '0'),
+    ],
+)
+def test_numeric_values(entrance) -> None:
+    """Test numeric values."""
+    with pytest.raises(
+        ValueError,
+        match='x e y devem ser valores numéricos reais.',
+    ):
+        calculadora(*entrance)
 
 
 if __name__ == '__main__':

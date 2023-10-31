@@ -8,17 +8,17 @@ def weekday0(num: int) -> str:
     """
     if num == 1:
         resposta = 'Domingo'
-    elif num == 2:
+    elif num == 2:  # noqa: PLR2004
         resposta = 'Segunda'
-    elif num == 3:
+    elif num == 3:  # noqa: PLR2004
         resposta = 'Terça'
-    elif num == 4:
+    elif num == 4:  # noqa: PLR2004
         resposta = 'Quarta'
-    elif num == 5:
+    elif num == 5:  # noqa: PLR2004
         resposta = 'Quinta'
-    elif num == 6:
+    elif num == 6:  # noqa: PLR2004
         resposta = 'Sexta'
-    elif num == 7:
+    elif num == 7:  # noqa: PLR2004
         resposta = 'Sábado'
     else:
         resposta = 'Valor inválido'
@@ -49,23 +49,25 @@ try:
 
         implementação match case.
         """
+        result = ''
         match num:
             case 1:
-                return 'Domingo'
+                result = 'Domingo'
             case 2:
-                return 'Segunda'
+                result = 'Segunda'
             case 3:
-                return 'Terça'
+                result = 'Terça'
             case 4:
-                return 'Quarta'
+                result = 'Quarta'
             case 5:
-                return 'Quinta'
+                result = 'Quinta'
             case 6:
-                return 'Sexta'
+                result = 'Sexta'
             case 7:
-                return 'Sábado'
+                result = 'Sábado'
             case _:
-                return 'Valor inválido'
+                result = 'Valor inválido'
+        return result
 
 except SyntaxError as err:
     MSG = 'This run only Python 3.10+'

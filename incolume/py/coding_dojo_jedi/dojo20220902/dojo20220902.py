@@ -10,7 +10,7 @@ CEDULAS: Final = [200, 100, 50, 20, 10, 5, 2]
 logging.basicConfig(level=logging.DEBUG)
 
 
-def calcular(valor, base_monetaria):
+def calcular(valor: float, base_monetaria: list) -> tuple:
     """Calculadora de notas."""
     logging.debug('%s(%s, %s)', inspect.stack()[0][3], valor, base_monetaria)
     result = [0] * len(base_monetaria)

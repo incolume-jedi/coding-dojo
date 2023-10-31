@@ -1,3 +1,4 @@
+"""Test for dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220819.dojo20220819 import classify
@@ -5,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220819.dojo20220819 import classify
 
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         ((4, [33, 37, 87, 87, 23]), ((87, 87, 37, 33), (23, 33, 37, 87))),
         (
             (7, [33, 37, 87, 87, 23, 83, 29, 85, 18, 28, 82, 93, 23, 16, 9]),
@@ -191,7 +192,8 @@ from incolume.py.coding_dojo_jedi.dojo20220819.dojo20220819 import classify
                 (1, 3, 9, 10, 15, 16, 16, 17, 18),
             ),
         ),
-    ),
+    ],
 )
-def test_classify(entrance, expected):
+def test_classify(entrance, expected) -> None:
+    """Test classify."""
     assert classify(*entrance) == expected

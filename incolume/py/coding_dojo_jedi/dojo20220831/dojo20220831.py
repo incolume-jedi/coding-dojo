@@ -4,36 +4,36 @@
 #         if args else (kwargs.get('nota1') + kwargs.get('nota2'))/2
 
 
-def conceito0(nota1, nota2):
+def conceito0(nota1: float, nota2: float) -> str:
     """Calcula a menção."""
     media = (nota1 + nota2) / 2
 
-    if media >= 9.0:
+    if media >= 9.0:  # noqa: PLR2004
         return f'Média {media}, "A", APROVADO'
-    if 7.5 <= media < 9.0:
+    if 7.5 <= media < 9.0:  # noqa: PLR2004
         return f'Média {media}, "B", APROVADO'
-    if 6.0 <= media < 7.5:
+    if 6.0 <= media < 7.5:  # noqa: PLR2004
         return f'Média {media}, "C", APROVADO'
-    if 4.0 <= media < 6.0:
+    if 4.0 <= media < 6.0:  # noqa: PLR2004
         return f'Média {media}, "D", REPROVADO'
     return f'Média {media}, "E", REPROVADO'
 
 
-def conceito1(nota1, nota2):
+def conceito1(nota1: float, nota2: float) -> str:
     """FAIL..."""
     media = (nota1 + nota2) / 2
-    if media < 4:
+    if media < 4:  # noqa: PLR2004
         return f'Média {media}, "E", REPROVADO'
-    if 4.0 >= media < 6.0:
+    if 4.0 >= media < 6.0:  # noqa: PLR2004
         return f'Média {media}, "D", REPROVADO'
-    if 6.0 >= media < 7.5:
+    if 6.0 >= media < 7.5:  # noqa: PLR2004
         return f'Média {media}, "C", APROVADO'
-    if 7.5 >= media < 9.0:
+    if 7.5 >= media < 9.0:  # noqa: PLR2004
         return f'Média {media}, "B", APROVADO'
     return f'Média {media}, "A", APROVADO'
 
 
-def conceito(nota1, nota2):
+def conceito(nota1: float, nota2: float) -> str:
     """Calcula a menção."""
     media = (nota1 + nota2) / 2
     mencao = {
@@ -44,6 +44,9 @@ def conceito(nota1, nota2):
         'E': 'REPROVADO',
     }
     result = list(mencao.keys())[::-1][
-        (media >= 9) + (media >= 7.5) + (media >= 6) + (media >= 4)
+        (media >= 9)  # noqa: PLR2004
+        + (media >= 7.5)  # noqa: PLR2004
+        + (media >= 6)  # noqa: PLR2004
+        + (media >= 4)  # noqa: PLR2004
     ]
     return f'Média {media}, "{result}", {mencao.get(result)}'

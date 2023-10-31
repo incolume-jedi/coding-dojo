@@ -1,6 +1,7 @@
+"""Unittest for dojo."""
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220801.dojo20220801 import square
+from incolume.py.coding_dojo_jedi.dojo20220801.dojo20220801 import is_square
 
 
 @pytest.mark.parametrize(
@@ -14,5 +15,6 @@ from incolume.py.coding_dojo_jedi.dojo20220801.dojo20220801 import square
         (26, False),
     ],
 )
-def test_square(entrada, esperado):
-    assert square(entrada) == esperado
+def test_square(entrada, esperado) -> None:
+    """Test for is_square."""
+    assert is_square(entrada) == esperado

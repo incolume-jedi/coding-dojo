@@ -12,14 +12,14 @@ def calc(quantia: int, preco: float = 2_18) -> float:
     return quantia * preco / 100
 
 
-def table_p2():
+def table_p2() -> dict:
     """Problema2."""
     result = {x: calc(x) for x in range(1, 51)}
     result.update({x: calc(x) for x in range(60, 101, 10)})
     return result
 
 
-def show():
+def show() -> None:
     """Exibe a tabela."""
     for i, j in table_p2().items():
         print(f'{i:4} = R$ {j:6.2f}')    # noqa: T201

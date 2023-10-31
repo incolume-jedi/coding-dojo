@@ -4,11 +4,11 @@
 def bmi0(peso: float, alt: float) -> str:
     """Calcula o indice de massa corporal."""
     imc = peso / alt**2
-    if imc <= 18.5:
+    if imc <= 18.5:  # noqa: PLR2004
         return 'Underweight'
-    if imc <= 25.0:
+    if imc <= 25.0:  # noqa: PLR2004
         return 'Normal'
-    if imc <= 30.0:
+    if imc <= 30.0:  # noqa: PLR2004
         return 'Overweight'
     return 'Obese'
 
@@ -17,5 +17,5 @@ def bmi(peso: float, alt: float) -> str:
     """Calcula o indice de massa corporal."""
     imc = peso / alt**2
     return ['Obese', 'Overweight', 'Normal', 'Underweight'][
-        (imc <= 18.5) + (imc <= 25) + (imc <= 30)
+        (imc <= 18.5) + (imc <= 25) + (imc <= 30)  # noqa: PLR2004
     ]

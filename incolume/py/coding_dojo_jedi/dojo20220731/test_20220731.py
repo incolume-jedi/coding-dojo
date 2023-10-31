@@ -1,3 +1,4 @@
+"""Unittest for dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220731.dojo20220731 import (
@@ -5,7 +6,8 @@ from incolume.py.coding_dojo_jedi.dojo20220731.dojo20220731 import (
 )
 
 
-def test_show_table_ascii():
+def test_show_table_ascii() -> None:
+    """Test show table ascii."""
     assert (65, 'A') in show_table_ascii()
 
 
@@ -23,5 +25,6 @@ def test_show_table_ascii():
         (128, '\x80'),
     ],
 )
-def test_show_table_ascii_0(entrada):
+def test_show_table_ascii_0(entrada) -> None:
+    """Test show table ascii."""
     assert entrada in show_table_ascii()

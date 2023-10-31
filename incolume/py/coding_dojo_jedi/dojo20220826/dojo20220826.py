@@ -1,4 +1,5 @@
 """Dojo."""
+import logging
 
 
 def no_exclamation0(frase: str) -> str:
@@ -20,7 +21,7 @@ def no_exclamation(frase: str) -> str:
     return frase.replace('!', '')
 
 
-def tabuada(tab_ref: int, inicial: int = 1, final: int = 10):
+def tabuada(tab_ref: int, inicial: int = 1, final: int = 10) -> list:
     """Problema 2."""
     result = []
     inicial, final = min(inicial, final), max(inicial, final)
@@ -30,7 +31,7 @@ def tabuada(tab_ref: int, inicial: int = 1, final: int = 10):
     return result
 
 
-def imc(altura: float, peso: float) -> str:
+def imc0(altura: float, peso: float) -> str:
     """Problema 3."""
     imc_value = peso / altura**2
     return [
@@ -41,9 +42,30 @@ def imc(altura: float, peso: float) -> str:
         'peso normal',
         'abaixo do peso',
     ][
-        (imc_value < 39.9)
-        + (imc_value < 34.9)
-        + (imc_value < 29.9)
-        + (imc_value < 24.9)
-        + (imc_value < 18.5)
+        (imc_value < 39.9)  # noqa: PLR2004
+        + (imc_value < 34.9)  # noqa: PLR2004
+        + (imc_value < 29.9)  # noqa: PLR2004
+        + (imc_value < 24.9)  # noqa: PLR2004
+        + (imc_value < 18.5)  # noqa: PLR2004
+    ]
+
+
+def imc(altura: float, peso: float) -> str:
+    """Problema 3."""
+    imc_value = peso / altura**2
+    mark = {
+        'Obesidade III': 40.0,
+        'Obesidade II': 39.9,
+        'Obesidade I': 34.9,
+        'Sobrepeso': 29.9,
+        'peso normal': 24.9,
+        'abaixo do peso': 18.5,
+    }
+    logging.debug(m := list(mark.keys()))
+    return m[
+        (imc_value < mark['Obesidade II'])
+        + (imc_value < mark['Obesidade I'])
+        + (imc_value < mark['Sobrepeso'])
+        + (imc_value < mark['peso normal'])
+        + (imc_value < mark['abaixo do peso'])
     ]

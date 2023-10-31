@@ -4,13 +4,13 @@
 from pprint import pprint
 
 
-def tower0(n_floors, char=None):
+def tower0(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
     char = char or '*'
     result = []
     line = ''
     for i in range(1, n_floors + 1):
-        if i < 3:
+        if i < 3:  # noqa: PLR2004
             line += char * i
         else:
             line = char * (len(line) + 2)
@@ -20,7 +20,7 @@ def tower0(n_floors, char=None):
     return [x.center(length) for x in result]
 
 
-def tower1(n_floors, char=None):
+def tower1(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
     char = char or '*'
     result = []
@@ -30,7 +30,7 @@ def tower1(n_floors, char=None):
     return result
 
 
-def tower(n_floors, char=None):
+def tower(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
     char = char or '*'
     return [
@@ -40,4 +40,4 @@ def tower(n_floors, char=None):
 
 
 if __name__ == '__main__':
-    pprint(tower(26))
+    pprint(tower(26))  # noqa: T203

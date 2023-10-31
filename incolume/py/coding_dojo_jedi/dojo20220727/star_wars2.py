@@ -8,7 +8,7 @@ from tempfile import gettempdir
 
 import dotenv
 import requests
-from fuzzywuzzy import fuzz  # type: ignore
+from fuzzywuzzy import fuzz  # type: ignore[import-untyped]
 
 dotenv.load_dotenv()
 logging.basicConfig(
@@ -71,11 +71,11 @@ def research(
     return [
         personagem.get('name')
         for key, personagem in personagens.items()
-        if fuzz.partial_ratio(name.casefold(), key) > 75
+        if fuzz.partial_ratio(name.casefold(), key) > 75  # noqa: PLR2004
     ]
 
 
 if __name__ == '__main__':
-    print(research('Tion Medon'), end='\n\n')
-    print(research('Luke Skywalker'), end='\n\n')
-    print(research('Obi-Wan Kenobi'), end='\n\n')
+    print(research('Tion Medon'), end='\n\n')  # noqa: T201
+    print(research('Luke Skywalker'), end='\n\n')  # noqa: T201
+    print(research('Obi-Wan Kenobi'), end='\n\n')  # noqa: T201

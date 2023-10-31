@@ -211,14 +211,6 @@ unfixable = ["B"]
   "ANN101",
   "PLR6301",
   "S101",
-#  TODO remover ANN001 ANN201 ANN202 D100 D103 D202 PT007 após estabilizar teste piloto
-#  TODO remover temporários no futuro
-#  "ANN201",
-#  "ANN202",
-#  "D100",
-#  "D103",
-#  "D202",
-#  "PT007",
 ]
 
 [tool.ruff.mccabe]

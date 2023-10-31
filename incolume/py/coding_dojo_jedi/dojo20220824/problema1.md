@@ -36,6 +36,10 @@ Exemplo: (entrada --> saída)
 'GCCTTCACGGGTGAAGTATTGTTCCGGGCACGGATAATGACAGTGCTGAG' -> ?
 'TAACCCTTGGTCGGAGCAAGCTCTGAGTCACAACATGGCATTACCTTGCG' -> ?
 
+## Artefatos
+
+- [dojo](./dojo20220824.py)
+- [test](./problema1.md)
 
 ## Referências
 

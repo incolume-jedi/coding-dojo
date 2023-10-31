@@ -26,6 +26,11 @@ is_vogal('p') == False
 is_vogal('r') == False
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220810.py)
+- [test](./test_20220810.py)
+
 ## Referências
 
 Exercício estruturas de decisão, treinamento Python.

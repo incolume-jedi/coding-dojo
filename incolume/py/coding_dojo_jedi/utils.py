@@ -27,6 +27,7 @@ def check_connectivity(
 def generator_sumary(fout: Path | None = None) -> Path:
     """Gerador de sumário."""
     file = fout or Path().parent.joinpath('sumario.md')
+    file.parent.mkdir(parents=True, exist_ok=True)
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
 
     with file.open('w') as fmd:

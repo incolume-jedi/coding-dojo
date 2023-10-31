@@ -24,6 +24,11 @@ weekday('terça-feira', 7) == terça-feira
 weekday('terça-feira', 180) == domingo
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220914.py)
+- [test](./test_20220914.py)
+
 # Referências
 
 https://youtube.com/shorts/wDpJOSZ_lI0?feature=share

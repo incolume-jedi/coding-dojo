@@ -47,6 +47,11 @@ _dicas_:
 
 [... Continuação dos exercícios ...](/coding_dojo_jedi/20220723/README.md)
 
+## Artefatos
+- [dojo](./dojo20220722.py)
+- [test](./test_20220722.py)
+
+
 ## Referências
 
 - https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md

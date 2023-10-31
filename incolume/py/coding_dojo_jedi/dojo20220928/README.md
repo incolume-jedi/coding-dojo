@@ -34,6 +34,11 @@ max_sequence([10, -11, 2, 3, 4, 5, -5,  6, 7, -50, 8,-7, 9]) == 14
 
 ```
 
+## Artefatos
+
+- [dojo](./dojo.py)
+- [test](./test_20220928.py)
+
 ## Referências
 
 https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/train/python

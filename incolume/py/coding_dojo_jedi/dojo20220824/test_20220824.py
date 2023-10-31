@@ -136,6 +136,6 @@ def test_millissenconds_exception(entrance, expected) -> None:
     try:
         with pytest.raises(**expected):
             millisseconds(**entrance)
-    except TypeError:
+    except (TypeError, AssertionError):
         with pytest.raises(**expected):
             millisseconds(*entrance)

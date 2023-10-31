@@ -148,21 +148,22 @@ class TestCalculadora(unittest.TestCase):
         ):
             calculadora('^', 3, 5)
 
-    @pytest.mark.parametrize(
-        'entrance',
-        [
-            ('+', 'a', 'b'),
-            ('+', '0', 'b'),
-            ('+', 'a', '0'),
-        ],
-    )
-    def test_numeric_values(self, entrance) -> None:
-        """Test numeric values."""
-        with pytest.raises(
-            ValueError,
-            match='x e y devem ser valores numéricos reais.',
-        ):
-            calculadora(*entrance)
+
+@pytest.mark.parametrize(
+    'entrance',
+    [
+        ('+', 'a', 'b'),
+        ('+', '0', 'b'),
+        ('+', 'a', '0'),
+    ],
+)
+def test_numeric_values(entrance) -> None:
+    """Test numeric values."""
+    with pytest.raises(
+        ValueError,
+        match='x e y devem ser valores numéricos reais.',
+    ):
+        calculadora(*entrance)
 
 
 if __name__ == '__main__':

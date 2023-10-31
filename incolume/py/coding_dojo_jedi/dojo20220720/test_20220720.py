@@ -12,8 +12,8 @@ from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
 
 
 @pytest.mark.skipif(
-    version_info <= (3, 10, 0),
-    reason='This run only Python 3.10+',
+    version_info <= (3, 8, 0),
+    reason='This run only Python 3.8 or higher',
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
@@ -39,8 +39,8 @@ def test_calculadora(entrance, expected) -> None:
 
 
 @pytest.mark.skipif(
-    version_info <= (3, 10, 0),
-    reason='This run only Python 3.8+',
+    version_info <= (3, 8, 0),
+    reason='This run only Python 3.8 or higher',
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),

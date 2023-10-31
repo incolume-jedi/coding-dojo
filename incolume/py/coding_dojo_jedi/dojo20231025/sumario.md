@@ -1,9 +1,13 @@
 # Coding Dojo
+
 **Guilda JEDI Incolume - Grupo Python Incolume**
+
 - [Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)
+
 ## Sumário dos dojos
 
 ---
+
 1. [Dojo20190129 &#8212; Notas e Moedas](../dojo20190129/README.md)
 1. [Dojo20220714 &#8212; Reverter a posição dos carecteres de uma string](../dojo20220714/README.md)
 1. [Dojo20220717 &#8212; Palindrome strings](../dojo20220717/README.md)
@@ -47,6 +51,8 @@
 1. [Dojo20231019 &#8212; Contando nucleotídeos de DNA](../dojo20231019/Resolucao1.md)
 1. [Dojo20231019 &#8212; Complementando uma fita de DNA](../dojo20231019/resolucao2.md)
 1. [Dojo20231025 &#8212; Índice de dojos resolvidos](../dojo20231025/README.md)
+1. [Dojo20231030 &#8212; Exercitando TDD](../dojo20231030/problema1.md)
+1. [Dojo20231030 &#8212; Inteiro Reverso](../dojo20231030/problema2.md)
 
 ---
 

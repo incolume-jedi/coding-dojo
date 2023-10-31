@@ -133,8 +133,9 @@ def test_millissenconds(entrance, expected) -> None:
 )
 def test_millissenconds_exception(entrance, expected) -> None:
     """Test for millisseconds exceptions."""
-    with pytest.raises(**expected):
-        try:
+    try:
+        with pytest.raises(**expected):
             millisseconds(**entrance)
-        except TypeError:
+    except TypeError:
+        with pytest.raises(**expected):
             millisseconds(*entrance)

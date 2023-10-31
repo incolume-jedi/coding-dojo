@@ -49,23 +49,25 @@ try:
 
         implementação match case.
         """
+        result = ''
         match num:
             case 1:
-                return 'Domingo'
+                result = 'Domingo'
             case 2:
-                return 'Segunda'
+                result = 'Segunda'
             case 3:
-                return 'Terça'
+                result = 'Terça'
             case 4:
-                return 'Quarta'
+                result = 'Quarta'
             case 5:
-                return 'Quinta'
+                result = 'Quinta'
             case 6:
-                return 'Sexta'
+                result = 'Sexta'
             case 7:
-                return 'Sábado'
+                result = 'Sábado'
             case _:
-                return 'Valor inválido'
+                result = 'Valor inválido'
+        return result
 
 except SyntaxError as err:
     MSG = 'This run only Python 3.10+'

@@ -144,6 +144,11 @@ Para executar os testes desenvolvidos para TDD, rode o camando abaixo:
 python -m unittest tests.py
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220811.py)
+- [test](./test_20220811.py)
+
 ## Referências
 
 https://bitbucket.org/incolume-dev/calculadora_unittest

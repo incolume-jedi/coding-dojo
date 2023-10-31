@@ -18,5 +18,10 @@ mysort(7, 8, 9) = 9, 8, 7
 mysort(1000, 1, 10) = 1000, 10, 1
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220817.py)
+- [test](./test_20220817.py)
+
 ## Referências
 Estruturas de decisão nº 9

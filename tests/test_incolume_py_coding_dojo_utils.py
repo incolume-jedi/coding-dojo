@@ -1,4 +1,5 @@
 """Test module for utils."""
+import logging
 import re
 import sys
 from pathlib import Path
@@ -54,10 +55,10 @@ def count_dojos(path_dojos: Path) -> int:
 )
 def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     """Testar se a quantidade de links e dojos são iguais."""
+    arq = next(Path(__file__).absolute().parents[1].rglob('coding_dojo_jedi'))
     c_links = count_links(generator_sumary(filemd))
-    c_dirs = count_dojos(
-        next(Path(__file__).absolute().parents[1].rglob('coding_dojo_jedi'))
-    )
+    c_dirs = count_dojos(arq)
+    logging.debug(f"{arq=}, {c_dirs=}, {c_links=}")
     assert c_links == c_dirs
 
 

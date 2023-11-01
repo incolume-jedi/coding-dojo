@@ -49,7 +49,7 @@ def generator_sumary(fout: Path | None = None) -> Path:
                 result = re.search(regex, filemd.read_text(), flags=re.I)
                 title = filemd.parts[-2].capitalize()
                 desc = result.group(1)  # type: ignore[union-attr]
-                link = Path('..').joinpath(*filemd.parts[-2:])
+                link = Path('.').joinpath(*filemd.parts[-2:])
                 sout = f'1. [{title} &#8212; {desc}]({link})\n'
                 fmd.write(sout)
             except AttributeError:  # noqa: PERF203

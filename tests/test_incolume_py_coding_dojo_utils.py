@@ -58,7 +58,7 @@ def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     arq = next(Path(__file__).absolute().parents[1].rglob('coding_dojo_jedi'))
     c_links = count_links(generator_sumary(filemd))
     c_dirs = count_dojos(arq)
-    logging.debug(f"{arq=}, {c_dirs=}, {c_links=}")
+    logging.debug('%s %s %s', arq, c_dirs, c_links)
     assert c_links == c_dirs
 
 

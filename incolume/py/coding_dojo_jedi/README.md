@@ -53,6 +53,7 @@
 1. [Dojo20231025 &#8212; Índice de dojos resolvidos](dojo20231025/README.md)
 1. [Dojo20231030 &#8212; Exercitando TDD](dojo20231030/problema1.md)
 1. [Dojo20231030 &#8212; Inteiro Reverso](dojo20231030/problema2.md)
+1. [Dojo20231109 &#8212; Remove anchor from URL](dojo20231109/README.md)
 
 ---
 

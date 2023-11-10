@@ -1,5 +1,6 @@
 """Configure switch test."""
 from pathlib import Path
+
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 from sys import version_info
@@ -9,7 +10,6 @@ import pytest
 from dotenv import load_dotenv
 
 load_dotenv()
-
 
 
 collect_ignore = ['incolume/py/20220928']
@@ -23,6 +23,7 @@ if version_info < (3, 10, 0):
             'incolume/py/20220910',
         ),
     )
+
 
 @pytest.fixture(scope='session')
 def semver_regex() -> str:

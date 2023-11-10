@@ -389,7 +389,7 @@ sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
 pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
-pre_test-all={help='', cmd='task lint-all && task clean-all'}
+pre_test-all={help='', cmd='task lint && task clean-all'}
 test-all={help='Test all cases', cmd='task tests'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}

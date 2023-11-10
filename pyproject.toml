@@ -387,7 +387,10 @@ safety={help='Check safety of packages into project.', cmd='poetry run safety ch
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
 sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
+pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
+pre_test-all={help='', cmd='task lint-all && task clean-all'}
+test-all={help='Test all cases', cmd='task tests'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}
 #xpto = { cmd = "echo {path} {CHANGELOGFILE} {URLCOMPARE}", use_vars = true }

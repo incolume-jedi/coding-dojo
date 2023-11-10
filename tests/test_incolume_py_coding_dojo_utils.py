@@ -3,7 +3,6 @@ import logging
 import re
 import sys
 from pathlib import Path
-from tempfile import NamedTemporaryFile
 
 import pytest
 
@@ -11,9 +10,9 @@ from incolume.py.coding_dojo_jedi.utils import generator_sumary
 
 
 @pytest.fixture()
-def filemd() -> Path:
+def filemd(fakefile) -> Path:
     """Retornar arquivo MD."""
-    return Path(NamedTemporaryFile(suffix='.md', prefix='File-').name)
+    return fakefile.with_suffix('.md')
 
 
 def count_links(arq_entrada: Path) -> int:

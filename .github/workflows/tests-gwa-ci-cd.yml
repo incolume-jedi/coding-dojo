@@ -51,12 +51,6 @@ jobs:
           python -m pip install -U pip poetry
           poetry install
 
-      - name: Check mypy configuration
-        run: |
-          poetry run task lint_mypy
-          poetry run mypy --install-types
-        continue-on-error: true
-
       - name: Check lint by task configuration
         run: |
           poetry run task lint

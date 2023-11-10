@@ -12,15 +12,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-collect_ignore = ['incolume/py/20220928']
+collect_ignore = [
+    'incolume/py/dojo20220928',
+]
 
 
 if version_info < (3, 10, 0):
     collect_ignore.extend(
         (
-            'incolume/py/20220720',
-            'incolume/py/20220808',
-            'incolume/py/20220910',
+            'incolume/py/dojo20220720',
+            'incolume/py/dojo20220808',
+            'incolume/py/dojo20220910',
         ),
     )
 
@@ -33,5 +35,5 @@ def semver_regex() -> str:
 
 @pytest.fixture()
 def fakefile() -> Path:
-    """Retornar arquivo MD."""
+    """Return fiction file for tests."""
     return Path(NamedTemporaryFile(prefix='File-testing-').name)

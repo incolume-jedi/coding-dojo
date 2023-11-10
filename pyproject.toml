@@ -367,10 +367,8 @@ docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --
 docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
 gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file}", use_vars=true}
 lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
-post_lint-all='poetry run task clean-all'
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}
-post_lint='poetry run task clean-all'
 lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
 lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}
 lint_flake8={help='Checking with flake8', cmd='echo --flake8--; poetry run flake8 --config pyproject.toml {path}', use_vars=true}
@@ -389,9 +387,9 @@ safety={help='Check safety of packages into project.', cmd='poetry run safety ch
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
 sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
-#pre_tests={help='', cmd='task clean-all'}
+pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
-pre_test-all={help='', cmd='task lint-all'}
+pre_test-all={help='', cmd='task lint-all && task clean-all'}
 test-all={help='Test all cases', cmd='task tests'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}

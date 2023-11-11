@@ -31,6 +31,19 @@ def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
     file.parent.mkdir(parents=True, exist_ok=True)
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
 
+    sout: list[str] = []
+    for i, filemd in enumerate(sorted(
+        Path(__file__).parents[1].rglob('**/*.md'),
+    ),):
+        try:
+            result = re.search(regex, filemd.read_text(), flags=re.I)
+            title = filemd.parts[-2].capitalize()
+            desc = result.group(1)  # type: ignore[union-attr]
+            link = Path().joinpath(*filemd.parts[-2:])
+            sout.insert(0, f'{i}. [{title} &#8212; {desc}]({link})\n')
+        except AttributeError:  # noqa: PERF203
+            pass
+
     with file.open('w') as fmd:
         fmd.writelines(
             [
@@ -42,19 +55,7 @@ def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
                 '---\n\n',
             ],
         )
-        for filemd in sorted(
-            Path(__file__).parents[1].rglob('**/*.md'),
-            reverse=reverse,
-        ):
-            try:
-                result = re.search(regex, filemd.read_text(), flags=re.I)
-                title = filemd.parts[-2].capitalize()
-                desc = result.group(1)  # type: ignore[union-attr]
-                link = Path().joinpath(*filemd.parts[-2:])
-                sout = f'1. [{title} &#8212; {desc}]({link})\n'
-                fmd.write(sout)
-            except AttributeError:  # noqa: PERF203
-                pass
+        fmd.writelines(sout)
         fmd.writelines(
             [
                 '\n---\n\n',

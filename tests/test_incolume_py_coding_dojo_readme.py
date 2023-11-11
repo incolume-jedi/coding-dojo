@@ -1,3 +1,4 @@
+"""Test for dojo README.md."""
 import logging
 import re
 from pathlib import Path
@@ -26,7 +27,8 @@ def filesmd() -> list[Path]:
     'file',
     filesmd(),
 )
-def test_has_artefact(file):
+def test_has_artefact(file) -> None:
+    """Teste se há sessão Artefatos."""
     assert 'Artefatos' in file.read_text()
 
 
@@ -34,7 +36,8 @@ def test_has_artefact(file):
     'file',
     filesmd(),
 )
-def test_has_dojo_link(file):
+def test_has_dojo_link(file) -> None:
+    """Teste se há link dojo na sessão Artefatos."""
     assert re.search(r'- \[dojo\]\(.*\.py\)', file.read_text(), re.I)
 
 
@@ -42,6 +45,7 @@ def test_has_dojo_link(file):
     'file',
     filesmd(),
 )
-def test_has_test_dojo_link(file):
+def test_has_test_dojo_link(file) -> None:
+    """Teste se há link para testes do dojo na sessão Artefatos."""
     regex = r'- \[tests\]\((\.\/)?(test_.*\.py|tests\/.*\.txt)\)'
     assert re.search(regex, file.read_text(), re.I)

@@ -25,7 +25,7 @@ def check_connectivity(
     return False
 
 
-def generator_sumary(fout: Path | None = None) -> Path:
+def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
     """Gerador de sumário."""
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
@@ -44,6 +44,7 @@ def generator_sumary(fout: Path | None = None) -> Path:
         )
         for filemd in sorted(
             Path(__file__).parents[1].rglob('**/*.md'),
+            reverse=reverse,
         ):
             try:
                 result = re.search(regex, filemd.read_text(), flags=re.I)

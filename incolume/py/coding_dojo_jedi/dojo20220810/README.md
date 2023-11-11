@@ -29,7 +29,7 @@ is_vogal('r') == False
 ## Artefatos
 
 - [dojo](./dojo20220810.py)
-- [test](./test_20220810.py)
+- [tests](./test_20220810.py)
 
 ## Referências
 

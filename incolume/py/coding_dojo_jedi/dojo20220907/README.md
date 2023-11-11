@@ -29,7 +29,7 @@ fizzbuzz(15) = Buzz
 ## Artefatos
 
 - [dojo](./dojo20220907.py)
-- [test](./test_20220907.py)
+- [tests](./test_20220907.py)
 
 ## Referências
 

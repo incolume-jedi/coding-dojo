@@ -30,7 +30,7 @@ Obs:
 ## Artefatos
 
 - [dojo](.//dojo20220819.py)
-- [test](./test_20220819.py)
+- [tests](./test_20220819.py)
 
 ## Referências
 

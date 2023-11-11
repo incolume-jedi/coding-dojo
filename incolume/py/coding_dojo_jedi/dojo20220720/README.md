@@ -75,7 +75,7 @@ pytest tests.py
 
 ## Artefatos
 - [dojo](./dojo20220720.py)
-- [test](./test_20220720.py)
+- [tests](./test_20220720.py)
 
 
 ## Referências

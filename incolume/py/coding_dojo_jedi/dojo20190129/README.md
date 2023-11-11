@@ -79,7 +79,7 @@ MOEDAS:
 
 ## Artefatos
 - [dojo](./dojo20190129.py)
-- [test](./test_20190129.py)
+- [tests](./test_20190129.py)
 
 
 ## Referências

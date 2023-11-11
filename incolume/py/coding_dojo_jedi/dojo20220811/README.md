@@ -147,7 +147,7 @@ python -m unittest tests.py
 ## Artefatos
 
 - [dojo](./dojo20220811.py)
-- [test](./test_20220811.py)
+- [tests](./test_20220811.py)
 
 ## Referências
 

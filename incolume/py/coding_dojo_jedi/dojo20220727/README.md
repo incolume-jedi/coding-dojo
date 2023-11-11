@@ -47,7 +47,7 @@ Nenhum personagem "Skywaler" encontrado, mas encontrei: "Luke Skywalker", "Anaki
 ## Artefatos
 - [main2](./main2.py)
 - [star wars2](./star_wars2.py)
-- [test](./test_20220717.py)
+- [tests](./test_20220717.py)
 
 
 ## Referências

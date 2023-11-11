@@ -49,7 +49,7 @@ _dicas_:
 
 ## Artefatos
 - [dojo](./dojo20220722.py)
-- [test](./test_20220722.py)
+- [tests](./test_20220722.py)
 
 
 ## Referências

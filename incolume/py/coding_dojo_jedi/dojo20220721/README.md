@@ -46,7 +46,7 @@ usar o método `r.json()` disponível na requisição da biblioteca `requests`.
 
 ## Artefatos
 - [dojo](./dojo20220721.py)
-- [test](./test_20220721.py)
+- [tests](./test_20220721.py)
 
 
 ## Referências

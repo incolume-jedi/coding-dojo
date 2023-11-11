@@ -23,7 +23,7 @@ Retorna True se sim, False caso contrário :)
 
 ## Artefatos
 - [dojo](./dojo20220803.py)
-- [test](./test_20220803.py)
+- [tests](./test_20220803.py)
 
 
 ## Referências

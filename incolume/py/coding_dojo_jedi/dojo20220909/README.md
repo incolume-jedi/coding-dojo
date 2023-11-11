@@ -31,7 +31,7 @@ Os números Fizz e Buzz sempre serão inteiros entre 1 e 50, e a sequência ter�
 ## Artefatos
 
 - [dojo](./dojo20220909.py)
-- [test](./test_20220909.py)
+- [tests](./test_20220909.py)
 
 
 ## Referências

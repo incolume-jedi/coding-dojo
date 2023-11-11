@@ -40,7 +40,7 @@ _obs_: você pode optar por uma das opções:
 ## Artefatos
 - [main1](./main1.py)
 - [star wars1](./star_wars1.py)
-- [test](./test_20220725.py)
+- [tests](./test_20220725.py)
 
 
 ## Referências

@@ -38,7 +38,7 @@ E com 6 andares parece com isto:
 ## Artefatos
 
 - [dojo](./dojo20220812.py)
-- [test](./test_20220812.py)
+- [tests](./test_20220812.py)
 
 ## Referências
 

@@ -39,14 +39,14 @@ def test_annotations(element, expected):
 
 ## Exemplos
 
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>
@@ -56,7 +56,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 ## Artefatos
 
 - [dojo](./dojo.py)
-- [test](./test_20231030.py)
+- [tests](./test_20231030.py)
 
 ## Referências
 

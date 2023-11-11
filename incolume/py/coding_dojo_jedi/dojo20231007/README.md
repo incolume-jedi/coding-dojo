@@ -29,7 +29,7 @@ Observe que a lista ou matriz vazia também é uma sublista/subarray válida.
 ## Artefatos
 
 - [dojo](./__init__.py)
-- [test](./test_20231007.py)
+- [tests](./test_20231007.py)
 
 ## Referências
   - https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/train/python

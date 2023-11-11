@@ -27,7 +27,7 @@ ACCGGGTTTT
 ## Artefatos
 
 - [dojo](./dojo.py)
-- [test](./test_20231019.py)
+- [tests](./test_20231019.py)
 
 ## Referências
 - https://rosalind.info/problems/revc/

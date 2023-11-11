@@ -29,7 +29,7 @@ from_roman(MD) == 1500
 ## Artefatos
 
 - [dojo](./dojo.py)
-- [test](./test_20231016.py)
+- [tests](./test_20231016.py)
 
 ## Referências
 issue #39

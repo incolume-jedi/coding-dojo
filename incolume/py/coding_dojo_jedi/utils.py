@@ -6,7 +6,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 import logging
 import re
 from pathlib import Path
-
+from itertools import count
 import requests
 
 
@@ -32,15 +32,17 @@ def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
 
     sout: list[str] = []
-    for i, filemd in enumerate(sorted(
+    i = count(0, 1)
+    for filemd in sorted(
         Path(__file__).parents[1].rglob('**/*.md'),
-    ),):
+        reverse=reverse,
+    ):
         try:
-            result = re.search(regex, filemd.read_text(), flags=re.I)
             title = filemd.parts[-2].capitalize()
+            result = re.search(regex, filemd.read_text(), flags=re.I)
             desc = result.group(1)  # type: ignore[union-attr]
             link = Path().joinpath(*filemd.parts[-2:])
-            sout.insert(0, f'{i}. [{title} &#8212; {desc}]({link})\n')
+            sout.insert(0, f'{next(i)}. [{title} &#8212; {desc}]({link})\n')
         except AttributeError:  # noqa: PERF203
             pass
 

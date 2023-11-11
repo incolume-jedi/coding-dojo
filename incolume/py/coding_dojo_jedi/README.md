@@ -8,7 +8,7 @@
 
 ---
 
-50 dojos resolvidos
+51 dojos resolvidos
 
 ---
 
@@ -51,6 +51,7 @@
  - [Dojo20220805 &#8212; Calcular Massa Corporal](dojo20220805/README.md)
  - [Dojo20220801 &#8212; A is_square of squares](dojo20220801/README.md)
  - [Dojo20220731 &#8212; Imprimir tabela ASCII código e caracteres](dojo20220731/README.md)
+ - [Dojo20220730 &#8212; Workshop python iniciante exercício 8](dojo20220730/README.md)
  - [Dojo20220729 &#8212; Conversão de DNA para RNA](dojo20220729/README.md)
  - [Dojo20220727 &#8212; Workshop python iniciante exercícios 7](dojo20220727/README.md)
  - [Dojo20220725 &#8212; Workshop python iniciante exercício 6](dojo20220725/README.md)

@@ -29,7 +29,7 @@ bmi(50, 1.50), "Normal"
 
 ## Artefatos
 - [dojo](./dojo20220805.py)
-- [test](./test_20220805.py)
+- [tests](./test_20220805.py)
 
 
 ## Referências

@@ -30,7 +30,7 @@ index(65536) == ?
 ## Artefatos
 
 - [dojo](./dojo20220815.py)
-- [test](./test_20220815.py)
+- [tests](./test_20220815.py)
 
 ## Referências
 

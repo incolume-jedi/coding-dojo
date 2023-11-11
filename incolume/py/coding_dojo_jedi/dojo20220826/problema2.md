@@ -32,7 +32,7 @@ Obs: Você deve verificar se o usuário não digitou o final menor que o inicial
 ## Artefatos
 
 - [dojo](./dojo20220826.py)
-- [test](./problema2.md)
+- [tests](./test_20220826.py)
 
 ## Referências
 

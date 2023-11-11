@@ -103,7 +103,7 @@ python dojo.py
 
 ## Artefatos
 - [dojo](./dojo20220809.py)
-- [test](./tests/calc.txt)
+- [tests](./tests/calc.txt)
 
 
 ## Referências

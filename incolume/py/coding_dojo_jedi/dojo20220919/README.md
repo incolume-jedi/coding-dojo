@@ -29,7 +29,7 @@ weekday(9) == ValorError('Valor Inválido')
 ## Artefatos
 
 - [dojo](./dojo20220919.py)
-- [test](./test_20220919.py)
+- [tests](./test_20220919.py)
 
 ## Referências
 

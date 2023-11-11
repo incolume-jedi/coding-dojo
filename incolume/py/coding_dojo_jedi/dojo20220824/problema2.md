@@ -33,7 +33,7 @@ result = 61000
 ## Artefatos
 
 - [dojo](./dojo20220824.py)
-- [test](./problema2.md)
+- [tests](./test_20220824.py)
 
 ## Referências
 

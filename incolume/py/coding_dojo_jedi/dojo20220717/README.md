@@ -21,7 +21,7 @@ Implemente uma função que verifique se algo é um palíndromo. Se a entrada fo
 
 ## Artefatos
 - [dojo](./dojo20220717.py)
-- [test](./test_20220717.py)
+- [tests](./test_20220717.py)
 
 
 # Referência

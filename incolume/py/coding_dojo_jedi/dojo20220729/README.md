@@ -29,7 +29,7 @@ cada string de entrada consistirá apenas em 'G', 'C', 'A' e/ou 'T'.
 
 ## Artefatos
 - [dojo](./dojo20220729.py)
-- [test](./test_20220729.py)
+- [tests](./test_20220729.py)
 
 
 ## Referências

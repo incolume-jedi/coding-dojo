@@ -12,7 +12,7 @@ O ácido desoxirribonucleico (DNA) é uma substância química encontrada no nú
 
 Se você quiser saber mais: http://en.wikipedia.org/wiki/DNA
 
-Nas cadeias de DNA, os símbolos "A" e "T" são complementares um do outro, como "C" e "G". Sua função recebe um lado do DNA; você precisa retornar o outro lado complementar. 
+Nas cadeias de DNA, os símbolos "A" e "T" são complementares um do outro, como "C" e "G". Sua função recebe um lado do DNA; você precisa retornar o outro lado complementar.
 
 A fita de DNA nunca está vazia ou não há DNA.
 
@@ -39,7 +39,7 @@ Exemplo: (entrada --> saída)
 ## Artefatos
 
 - [dojo](./dojo20220824.py)
-- [test](./problema1.md)
+- [tests](test_20220824.py)
 
 ## Referências
 

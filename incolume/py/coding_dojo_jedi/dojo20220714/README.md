@@ -14,4 +14,4 @@ Experado: nohtyP
 
 ## Artefatos
 - [dojo](./dojo20220714.py)
-- [test](./test_20220714.py)
+- [tests](./test_20220714.py)

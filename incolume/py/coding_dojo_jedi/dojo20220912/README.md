@@ -27,7 +27,7 @@ weekday('terça-feira', 180) == ??
 ## Artefatos
 
 - [dojo](./dojo20220912.py)
-- [test](./test_20220912.py)
+- [tests](./test_20220912.py)
 
 # Referências
 

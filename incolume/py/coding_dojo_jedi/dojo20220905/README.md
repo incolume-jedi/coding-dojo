@@ -34,7 +34,7 @@ devolve o valor respectivo, conforme tabela de preços vigente.
 ## Artefatos
 
 - [dojo](./dojo20220905.py)
-- [test](./test_20220905.py)
+- [tests](./test_20220905.py)
 
 ## Exemplos
 

@@ -366,7 +366,7 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 pre_docs-build={help='Pre docs-build', cmd="poetry run task gcl"}
 docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
-gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file}", use_vars=true}
+gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file} -r ", use_vars=true}
 lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}
@@ -390,7 +390,7 @@ sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
 pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
-pre_test-all={help='', cmd='task lint && task clean-all'}
+pre_test-all={help='', cmd='task lint'}
 test-all={help='Test all cases', cmd='task tests'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}

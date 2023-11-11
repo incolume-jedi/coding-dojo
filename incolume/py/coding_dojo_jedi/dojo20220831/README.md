@@ -37,7 +37,7 @@ conceito(6, 4) == 'Média 5, "D", REPROVADO'
 ## Artefatos
 
 - [dojo](./dojo20220831.py)
-- [test](./test_20220831.py)
+- [tests](./test_20220831.py)
 
 ## Referências
 

@@ -25,7 +25,7 @@ Escrever uma função show_table_ascii() que exibe código e valor ASCII respect
 
 ## Artefatos
 - [dojo](./dojo20220731.py)
-- [test](./test_20220731.py)
+- [tests](./test_20220731.py)
 
 
 ## Referências

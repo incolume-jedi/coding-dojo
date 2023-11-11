@@ -23,7 +23,7 @@ Crie uma função para remover todo o sinal de exclamação presente no texto pa
 ## Artefatos
 
 - [dojo](./dojo20220826.py)
-- [test](./problema1.md)
+- [tests](./test_20220826.py)
 
 ## Referências
 

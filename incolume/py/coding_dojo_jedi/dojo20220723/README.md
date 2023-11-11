@@ -16,7 +16,7 @@ return: 65
 
 ## Artefatos
 - [dojo](./dojo20220723.py)
-- [test](./test_20220723.py)
+- [tests](./test_20220723.py)
 
 
 ## Referências

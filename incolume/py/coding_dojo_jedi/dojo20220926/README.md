@@ -83,7 +83,7 @@ protein('AUGUAUCCUUCCAUCAAGGAAACCAUGCGCGUUCAGCUUUCUAUGGAGGGUAGUGUUAACUACCACGCCUU
 ## Artefatos
 
 - [dojo](./dojo20220926.py)
-- [test](./test_20220926.py)
+- [tests](./test_20220926.py)
 
 ## Referências
 

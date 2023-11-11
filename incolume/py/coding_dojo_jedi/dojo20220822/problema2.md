@@ -29,7 +29,7 @@ Panificadora Pão de Ontem - Tabela de preços
 ## Artefatos
 
 - [dojo](./dojo20220822.py)
-- [test](./test_20220822.py)
+- [tests](./test_20220822.py)
 
 ## Referências
 

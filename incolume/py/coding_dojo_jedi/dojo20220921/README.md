@@ -31,7 +31,7 @@ to_roman(1500) == MD
 ## Artefatos
 
 - [dojo](./dojo20220921.py)
-- [test](./test_20220921.py)
+- [tests](./test_20220921.py)
 
 ## Referências
 

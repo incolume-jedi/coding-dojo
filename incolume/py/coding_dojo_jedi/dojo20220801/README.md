@@ -33,7 +33,7 @@ Os testes sempre usarão algum número inteiro, então não se preocupe com isso
 
 ## Artefatos
 - [dojo](./dojo20220801.py)
-- [test](./test_20220801.py)
+- [tests](./test_20220801.py)
 
 
 ## Referências

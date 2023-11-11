@@ -42,7 +42,7 @@ Mais do que 40 Obesidade grau 3
 ## Artefatos
 
 - [dojo](./dojo20220826.py)
-- [test](./test_20220826.py)
+- [tests](./test_20220826.py)
 
 ## Referências
 

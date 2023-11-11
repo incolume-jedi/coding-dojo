@@ -20,7 +20,7 @@ def count_links(arq_entrada: Path) -> int:
     contagem = 0
     with arq_entrada.open() as f:
         for line in f:
-            if line.startswith('1'):
+            if line.startswith(' -'):
                 contagem += 1
     return contagem
 

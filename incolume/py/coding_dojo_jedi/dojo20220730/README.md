@@ -22,6 +22,7 @@ Outras ideias? Vá em frente e tente :D
 
 - [dojo](dojo.py)
 - [tests](test_20220730.py)
+- [CLI](cli.py)
 
 ## Referências
 - [...  exercícios 1 a 4 ...](../dojo20220721/README.md)

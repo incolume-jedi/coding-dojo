@@ -25,17 +25,33 @@ def check_connectivity(
     return False
 
 
-def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
+def filesmd() -> list[Path]:
+    """Get files.md on directories."""
+    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
+    files = [
+        file
+        for file in Path(__file__)
+        .parents[3]
+        .joinpath('incolume', 'py', 'coding_dojo_jedi')
+        .rglob('**/*.md')
+        if re.search(regex, file.read_text(), flags=re.I)
+    ]
+    logging.debug(files)
+    return files
+
+
+def generator_sumary(
+    fout: Path | None = None,
+    *,
+    reverse: bool = False,
+) -> Path:
     """Gerador de sumário."""
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
 
     sout: list[str] = []
-    for filemd in sorted(
-        Path(__file__).parents[1].rglob('**/*.md'),
-        reverse=reverse,
-    ):
+    for filemd in sorted(filesmd(), reverse=reverse):
         try:
             result = re.search(regex, filemd.read_text(), flags=re.I)
             title = filemd.parts[-2].capitalize()
@@ -54,7 +70,7 @@ def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
                 '(https://discord.gg/eBNamXVtBW)\n\n',
                 '## Sumário dos dojos\n\n',
                 '---\n\n',
-                f'{len(sout)} dojos resolvidos\n\n' '---\n\n',
+                f'{len(sout)} dojos resolvidos\n\n---\n\n',
             ],
         )
         fmd.writelines(sout)

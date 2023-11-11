@@ -14,7 +14,7 @@ from incolume.py.coding_dojo_jedi.utils import generator_sumary
     help='Path for sumary file.',
 )
 @click.option('--reverse', '-r', is_flag=True)
-def sumary(file: str = '', reverse: bool = False) -> bool:
+def sumary(file: str = '', *, reverse: bool = False) -> bool:
     """Interface CLI para gerador de sumário.
 
     :param file full filename for sumary;

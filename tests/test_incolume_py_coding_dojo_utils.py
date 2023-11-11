@@ -1,12 +1,11 @@
 """Test module for utils."""
 import logging
-import re
 import sys
 from pathlib import Path
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.utils import generator_sumary
+from incolume.py.coding_dojo_jedi.utils import filesmd, generator_sumary
 
 
 @pytest.fixture()
@@ -33,30 +32,11 @@ def count_links(arq_entrada: Path) -> int:
     sys.platform.startswith('win'),
     reason='Not available on windows.',
 )
-def count_dojos(path_dojos: Path) -> int:
-    """Contar os dojos no Sistema de Arquivos."""
-    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
-    total = 0
-    for file in path_dojos.rglob('**/*.md'):
-        result = re.search(regex, file.read_text(), flags=re.I)
-        if result:
-            total += 1
-    return total
-
-
-@pytest.mark.skipif(
-    sys.version_info < (3, 10),
-    reason='requires python3.10 or higher',
-)
-@pytest.mark.skipif(
-    sys.platform.startswith('win'),
-    reason='Not available on windows.',
-)
 def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     """Testar se a quantidade de links e dojos são iguais."""
     arq = next(Path(__file__).absolute().parents[1].rglob('coding_dojo_jedi'))
     c_links = count_links(generator_sumary(filemd))
-    c_dirs = count_dojos(arq)
+    c_dirs = len(filesmd())
     logging.debug('%s %s %s', arq, c_dirs, c_links)
     assert c_links == c_dirs
 

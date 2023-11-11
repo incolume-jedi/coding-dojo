@@ -1,26 +1,11 @@
 """Test for dojo README.md."""
-import logging
 import re
-from pathlib import Path
 
 import pytest
 
+from incolume.py.coding_dojo_jedi.utils import filesmd
+
 __author__ = '@britodfbr'  # pragma: no cover
-
-
-def filesmd() -> list[Path]:
-    """Get files.md on directories."""
-    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
-    files = [
-        file
-        for file in Path(__file__)
-        .parents[1]
-        .joinpath('incolume', 'py', 'coding_dojo_jedi')
-        .rglob('**/*.md')
-        if re.search(regex, file.read_text(), flags=re.I)
-    ]
-    logging.debug(files)
-    return files
 
 
 @pytest.mark.parametrize(
@@ -38,7 +23,8 @@ def test_has_artefact(file) -> None:
 )
 def test_has_dojo_link(file) -> None:
     """Teste se há link dojo na sessão Artefatos."""
-    assert re.search(r'- \[dojo\]\(.*\.py\)', file.read_text(), re.I)
+    regex = r'- \[dojo\]\(.*\.py\)'
+    assert re.search(regex, file.read_text(), re.I)
 
 
 @pytest.mark.parametrize(

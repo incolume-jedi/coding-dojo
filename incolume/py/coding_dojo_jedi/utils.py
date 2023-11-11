@@ -27,7 +27,7 @@ def check_connectivity(
 
 def filesmd() -> list[Path]:
     """Get files.md on directories."""
-    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
+    regex = r'## Problema\s*\*\*(([\w\d]+\s*)+)\*\*'
     files = [
         file
         for file in Path(__file__)

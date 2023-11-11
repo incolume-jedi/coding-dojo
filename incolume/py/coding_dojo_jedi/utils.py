@@ -6,6 +6,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 import logging
 import re
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 import requests
 
@@ -38,6 +39,11 @@ def filesmd() -> list[Path]:
     ]
     logging.debug(files)
     return files
+
+
+def genfile(prefix: str = 'File', suffix: str = '') -> Path:
+    """Return empty file."""
+    return Path(NamedTemporaryFile(prefix=prefix, suffix=suffix).name)
 
 
 def generator_sumary(

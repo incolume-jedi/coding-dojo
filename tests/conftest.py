@@ -1,13 +1,11 @@
 """Configure switch test."""
 from pathlib import Path
-
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
 from sys import version_info
-from tempfile import NamedTemporaryFile
 
 import pytest
 from dotenv import load_dotenv
+
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 load_dotenv()
 
@@ -36,4 +34,4 @@ def semver_regex() -> str:
 @pytest.fixture()
 def fakefile() -> Path:
     """Return fiction file for tests."""
-    return Path(NamedTemporaryFile(prefix='File-testing-').name)
+    return genfile(prefix='File-testing-')

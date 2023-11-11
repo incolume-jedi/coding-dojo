@@ -354,7 +354,6 @@ path = "incolume/ tests/"
 CHANGELOGFILE = "docs/about/CHANGELOG.md"
 URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
 
-
 [tool.taskipy.tasks]
 #bandit={help='', cmd='poetry run bandit -c pyproject.toml -r {path}', use_vars=true}
 #pre_check-all = {cmd='echo Starting Check all ..', help=''}
@@ -367,6 +366,7 @@ pre_docs-build={help='Pre docs-build', cmd="poetry run task gcl"}
 docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
 gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file} -r ", use_vars=true}
+post_gsumary={cmd='git commit -m "docs: Atualização do sumário" {sumary_file}', use_vars=true}
 lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}
@@ -383,6 +383,7 @@ patch={cmd='v=$(poetry version patch) && poetry run task tests && git ci -m "$v"
 post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}
 premajor={cmd='v=$(poetry version premajor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
 preminor={cmd='v=$(poetry version preminor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
+pre_prerelease='poetry run task gsumary'
 prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
 safety={help='Check safety of packages into project.', cmd='poetry run safety check'}
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}

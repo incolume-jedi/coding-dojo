@@ -3,12 +3,12 @@
 import json
 import logging
 import os
-from pathlib import Path
-from tempfile import gettempdir
 from typing import Any
-from incolume.py.coding_dojo_jedi.utils import genfile
+
 import dotenv
 import requests
+
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()
 logging.basicConfig(

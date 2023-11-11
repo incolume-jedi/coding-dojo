@@ -7,6 +7,7 @@ from incolume.py.coding_dojo_jedi.dojo20220730.dojo import research
 
 CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 
+
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option(
     '-n',

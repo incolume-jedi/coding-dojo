@@ -3,12 +3,12 @@
 import json
 import logging
 import os
-from pathlib import Path
-from tempfile import gettempdir
-from incolume.py.coding_dojo_jedi.utils import genfile
+
 import dotenv
 import requests
 from fuzzywuzzy import fuzz  # type: ignore[import-untyped]
+
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()
 logging.basicConfig(
@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 
 
-def research(
+def research(  # noqa: C901
     name: str = '',
     url: str = '',
     pagina: int = 0,
@@ -39,7 +39,7 @@ def research(
                 x = r.json()
                 resposta += x['results']
                 pagina += 1
-            except KeyError:
+            except KeyError:  # noqa: PERF203
                 break
         personagens = {p.get('name').casefold(): p for p in resposta}
         logging.info('personagens=%s', personagens)

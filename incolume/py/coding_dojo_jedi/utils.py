@@ -32,15 +32,16 @@ def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
 
     sout: list[str] = []
-    for i, filemd in enumerate(sorted(
+    for filemd in sorted(
         Path(__file__).parents[1].rglob('**/*.md'),
-    ),):
+        reverse=reverse,
+    ):
         try:
             result = re.search(regex, filemd.read_text(), flags=re.I)
             title = filemd.parts[-2].capitalize()
             desc = result.group(1)  # type: ignore[union-attr]
             link = Path().joinpath(*filemd.parts[-2:])
-            sout.insert(0, f'{i}. [{title} &#8212; {desc}]({link})\n')
+            sout.append(f' - [{title} &#8212; {desc}]({link})\n')
         except AttributeError:  # noqa: PERF203
             pass
 
@@ -53,6 +54,7 @@ def generator_sumary(fout: Path | None = None, reverse: bool = False) -> Path:
                 '(https://discord.gg/eBNamXVtBW)\n\n',
                 '## Sumário dos dojos\n\n',
                 '---\n\n',
+                f'{len(sout)} dojos resolvidos\n\n' '---\n\n',
             ],
         )
         fmd.writelines(sout)

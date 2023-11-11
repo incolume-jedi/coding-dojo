@@ -6,13 +6,8 @@
 
 ## Problema
 
-**Exercícios do [Workshop python iniciante](https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md)**
+**Workshop python iniciante exercício 5**
 
-### Exercício
-
-```Obs: Atividade excedeu o tempo disponível, e foi fracionada para este dojo.```
-
-[...  exercícios Anteriores ...](/coding_dojo_jedi/20220721/README.md)
 
 **5. Crie uma aplicação que procura os dados de um personagem**
 
@@ -21,6 +16,9 @@
 * O arquivo `star_wars.py` vai ter a lógica de comunicação com o _SWAPI_
 * Receba um parâmetro `nome` no `main.py` e imprima as seguintes informações:
 `name`, `height`, `birth_year` e a _quantidade de filmes que ele aparece_.
+
+``` Obs: Atividade excedeu o tempo disponível, e foi fracionada para este dojo.```
+
 
 ``` python
 exemplo
@@ -45,7 +43,6 @@ _dicas_:
 
 ``` Obs: Atividade excedeu o tempo disponível, e foi fracionada para o proximo dojo. ```
 
-[... Continuação dos exercícios ...](/coding_dojo_jedi/20220723/README.md)
 
 ## Artefatos
 - [dojo](./dojo20220722.py)
@@ -54,4 +51,8 @@ _dicas_:
 
 ## Referências
 
+- [...  exercícios Anteriores ...](/coding_dojo_jedi/20220721/README.md)
+- [... Continuação dos exercícios ...](/coding_dojo_jedi/20220723/README.md)
+
+- **Exercícios do [Workshop python iniciante](https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md)**
 - https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md

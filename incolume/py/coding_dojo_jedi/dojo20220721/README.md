@@ -6,7 +6,7 @@
 
 ## Problema
 
-**Exercícios do [Workshop python iniciante](https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md)**
+**Workshop python iniciante exercícios 1 a 4**
 
 ### Exercício
 
@@ -51,4 +51,5 @@ usar o método `r.json()` disponível na requisição da biblioteca `requests`.
 
 ## Referências
 
+- **Exercícios do [Workshop python iniciante](https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md)**
 - https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md

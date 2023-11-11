@@ -8,7 +8,7 @@
 
 ---
 
-46 dojos resolvidos
+50 dojos resolvidos
 
 ---
 
@@ -17,7 +17,11 @@
  - [Dojo20220717 &#8212; Palindrome strings](dojo20220717/README.md)
  - [Dojo20220718 &#8212; Pegar valor ASCII do caracter](dojo20220718/README.md)
  - [Dojo20220720 &#8212; TDD Pytest](dojo20220720/README.md)
+ - [Dojo20220721 &#8212; Workshop python iniciante exercícios 1 a 4](dojo20220721/README.md)
+ - [Dojo20220722 &#8212; Workshop python iniciante exercício 5](dojo20220722/README.md)
  - [Dojo20220723 &#8212; Pegar código do caracter ASCII](dojo20220723/README.md)
+ - [Dojo20220725 &#8212; Workshop python iniciante exercício 6](dojo20220725/README.md)
+ - [Dojo20220727 &#8212; Workshop python iniciante exercícios 7](dojo20220727/README.md)
  - [Dojo20220729 &#8212; Conversão de DNA para RNA](dojo20220729/README.md)
  - [Dojo20220731 &#8212; Imprimir tabela ASCII código e caracteres](dojo20220731/README.md)
  - [Dojo20220801 &#8212; A is_square of squares](dojo20220801/README.md)

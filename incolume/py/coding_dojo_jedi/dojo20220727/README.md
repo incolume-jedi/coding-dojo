@@ -6,15 +6,7 @@
 
 ## Problema
 
-**Exercícios do [Workshop python iniciante](https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md)**
-
-### Exercício
-
-[...  exercícios 1 a 4 ...](/coding_dojo_jedi/20220721/README.md)
-
-[...  exercício 5 ...](/coding_dojo_jedi/20220722/README.md)
-
-[...  exercício 6 ...](/coding_dojo_jedi/20220725/README.md)
+**Workshop python iniciante exercícios 7**
 
 **7. Se não encontrar pelo termo pesquisado, de sugestões**
 
@@ -42,14 +34,17 @@ Nenhum personagem "Skywaler" encontrado, mas encontrei: "Luke Skywalker", "Anaki
 # o mesmo acontece com fuzz.partial_ratio('skywaler', 'Anakin Skywalker')
 ```
 
-[... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
 ## Artefatos
-- [main2](./main2.py)
-- [star wars2](./star_wars2.py)
+- [dojo](./star_wars2.py)
 - [tests](./test_20220717.py)
+- [main2](./main2.py)
 
 
 ## Referências
+- [...  exercícios 1 a 4 ...](/coding_dojo_jedi/20220721/README.md)
+- [...  exercício 5 ...](/coding_dojo_jedi/20220722/README.md)
+- [...  exercício 6 ...](/coding_dojo_jedi/20220725/README.md)
+- [... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
 - https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md

@@ -6,13 +6,7 @@
 
 ## Problema
 
-**Exercícios do [Workshop python iniciante](https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md)**
-
-### Exercício
-
-[...  exercícios 1 a 4 ...](/coding_dojo_jedi/20220721/README.md)
-
-[...  exercício 5 ...](/coding_dojo_jedi/20220722/README.md)
+**Workshop python iniciante exercício 6**
 
 **6. Faça _matching_ parcial dos nomes**
 
@@ -35,14 +29,16 @@ _obs_: você pode optar por uma das opções:
     * Caso contrário, a pesquisa é exata
 
 
-[... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
 ## Artefatos
-- [main1](./main1.py)
-- [star wars1](./star_wars1.py)
+- [dojo](./star_wars1.py)
 - [tests](./test_20220725.py)
+- [main1](./main1.py)
 
 
 ## Referências
+- [...  exercícios 1 a 4 ...](/coding_dojo_jedi/20220721/README.md)
+- [...  exercício 5 ...](/coding_dojo_jedi/20220722/README.md)
+- [... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
 
 - https://github.com/incolume-jedi/workshop-python-iniciante/blob/master/exercicio/README.md

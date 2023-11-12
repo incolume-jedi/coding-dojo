@@ -10,9 +10,9 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-11-11:
+## [Unreleased]	 &#8212; 	2023-11-12:
 ### Added
-  - Dojo;
+  - Adicionado orientações sobre Keep a CHANGELOG.md em docs/user_guide/keep-a-chagelog.md;
 
 ## [1.45.0]	 &#8212; 	2023-11-11:
 ### Added

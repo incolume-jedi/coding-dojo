@@ -59,8 +59,9 @@ def generator_sumary(
     sout: list[str] = []
     for filemd in sorted(filesmd(), reverse=reverse):
         try:
-            result = re.search(regex,
-                               filemd.read_text(encoding='utf-8'), flags=re.I)
+            result = re.search(
+                regex, filemd.read_text(encoding='utf-8'), flags=re.I
+            )
             title = filemd.parts[-2].capitalize()
             desc = result.group(1)  # type: ignore[union-attr]
             link = Path().joinpath(*filemd.parts[-2:])

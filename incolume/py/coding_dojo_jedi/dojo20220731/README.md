@@ -23,6 +23,11 @@ Escrever uma função show_table_ascii() que exibe código e valor ASCII respect
 
 255, ~
 
+## Artefatos
+- [dojo](./dojo20220731.py)
+- [tests](./test_20220731.py)
+
+
 ## Referências
 
 Para referência da tabela ASCII:  http://www.asciitable.com/

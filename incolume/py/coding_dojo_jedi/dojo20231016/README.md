@@ -25,5 +25,11 @@ from_roman(MMXI) == 2011
 from_roman(D) == 500
 from_roman(MD) == 1500
 ```
+
+## Artefatos
+
+- [dojo](./dojo.py)
+- [tests](./test_20231016.py)
+
 ## Referências
 issue #39

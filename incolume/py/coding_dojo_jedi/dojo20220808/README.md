@@ -20,6 +20,9 @@ is_par(13) = 'Ímpar'
 is_par(17) = 'Ímpar'
 is_par(0) = 'Par'
 
+## Artefatos
+- [dojo](./dojo20220808.py)
+- [tests](./test_20220808.py)
 
 
 ## Referências

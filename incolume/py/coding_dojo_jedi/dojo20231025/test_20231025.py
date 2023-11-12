@@ -26,7 +26,12 @@ def count_links(arq_entrada: Path) -> int:
 
 
 @pytest.mark.skipif(
-    sys.platform.startswith('win'), reason='Not available on windows.'
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
+)
+@pytest.mark.skipif(
+    sys.platform.startswith('win'),
+    reason='Not available on windows.',
 )
 def count_dojos(path_dojos: Path) -> int:
     """Contar os dojos no Sistema de Arquivos."""
@@ -40,7 +45,12 @@ def count_dojos(path_dojos: Path) -> int:
 
 
 @pytest.mark.skipif(
-    sys.platform.startswith('win'), reason='Not available on windows.'
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
+)
+@pytest.mark.skipif(
+    sys.platform.startswith('win'),
+    reason='Not available on windows.',
 )
 def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     """Testar se a quantidade de links e dojos são iguais."""
@@ -49,6 +59,10 @@ def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     assert c_links == c_dirs
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
+)
 @pytest.mark.parametrize(
     'entrance',
     [

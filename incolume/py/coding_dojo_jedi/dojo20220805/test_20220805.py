@@ -1,3 +1,4 @@
+"""Test for dojo."""
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi
@@ -14,7 +15,8 @@ from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi
         (70, 1.50, 'Obese'),
     ],
 )
-def test_bmi0(peso, altura, esperado):
+def test_bmi0(peso, altura, esperado) -> None:
+    """Test bmi."""
     assert bmi(peso, altura) == esperado
 
 
@@ -29,5 +31,6 @@ def test_bmi0(peso, altura, esperado):
         (70, 1.50, 'Obese'),
     ],
 )
-def test_bmi(peso, altura, esperado):
+def test_bmi(peso, altura, esperado) -> None:
+    """Test bmi."""
     assert bmi(peso, altura) == esperado

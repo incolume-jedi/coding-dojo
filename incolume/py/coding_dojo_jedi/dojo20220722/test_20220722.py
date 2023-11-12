@@ -1,3 +1,4 @@
+"""Unittest for dojo."""
 from os import environ
 from sys import version_info
 
@@ -13,7 +14,7 @@ from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
 @pytest.mark.webtest()
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (
             'Obi-Wan Kenobi',
             {
@@ -101,8 +102,9 @@ from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
                 'vehicles': [],
             },
         ),
-    ),
+    ],
 )
-def test_research(entrance, expected):
+def test_research(entrance, expected) -> None:
+    """Test research."""
     timeout = float(environ.get('TIMEOUT', 0.8))
     assert research(entrance, timeout=timeout) == expected

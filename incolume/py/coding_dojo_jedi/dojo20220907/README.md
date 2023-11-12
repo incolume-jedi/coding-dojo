@@ -26,6 +26,11 @@ fizzbuzz(150) = FizzBuzz
 fizzbuzz(10) = Buzz
 fizzbuzz(15) = Buzz
 
+## Artefatos
+
+- [dojo](./dojo20220907.py)
+- [tests](./test_20220907.py)
+
 ## Referências
 
 https://www.codewars.com/kata/59ad13d5589d2a1d84000020

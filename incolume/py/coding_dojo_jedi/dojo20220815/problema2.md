@@ -26,6 +26,11 @@ index('xpto', 3073) == ?
 index('xpto', 65536) == ?
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220815.py)
+- [tests](./test_20220815.py)
+
 ## Referências
 
 Issue #37

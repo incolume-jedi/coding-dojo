@@ -27,6 +27,11 @@ A string de entrada pode ser de tamanho arbitrário - em particular,
 pode estar vazia. Toda entrada é garantida como válida, ou seja,
 cada string de entrada consistirá apenas em 'G', 'C', 'A' e/ou 'T'.
 
+## Artefatos
+- [dojo](./dojo20220729.py)
+- [tests](./test_20220729.py)
+
+
 ## Referências
 
 https://www.codewars.com/kata/5556282156230d0e5e000089/python

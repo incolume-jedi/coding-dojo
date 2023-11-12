@@ -39,6 +39,11 @@ Mais do que 40 Obesidade grau 3
 1.78m, 95kg == Obesidade I
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220826.py)
+- [tests](./test_20220826.py)
+
 ## Referências
 
 <https://classroom.google.com/u/1/c/NDg4NDYxNjU2MTQw/a/NDg4NDYxOTU0MTUx/details>

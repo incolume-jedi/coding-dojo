@@ -3,12 +3,12 @@
 import json
 import logging
 import os
-from pathlib import Path
-from tempfile import gettempdir
 
 import dotenv
 import requests
-from fuzzywuzzy import fuzz  # type: ignore
+from fuzzywuzzy import fuzz  # type: ignore[import-untyped]
+
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()
 logging.basicConfig(
@@ -28,7 +28,7 @@ def research(
     name = name or 'Luke Skywalker'
     pagina = pagina or 1
     url = url or 'https://swapi.dev/api/people/?page={}'
-    cache_file = Path(gettempdir()).joinpath('20220727_personagens.json')
+    cache_file = genfile().with_name('personagens.json')
     logging.info('%s', cache_file)
     logging.info('cache_file.is_file()=%s', cache_file.is_file())
     if not cache_file.is_file():
@@ -71,11 +71,11 @@ def research(
     return [
         personagem.get('name')
         for key, personagem in personagens.items()
-        if fuzz.partial_ratio(name.casefold(), key) > 75
+        if fuzz.partial_ratio(name.casefold(), key) > 75  # noqa: PLR2004
     ]
 
 
 if __name__ == '__main__':
-    print(research('Tion Medon'), end='\n\n')
-    print(research('Luke Skywalker'), end='\n\n')
-    print(research('Obi-Wan Kenobi'), end='\n\n')
+    print(research('Tion Medon'), end='\n\n')  # noqa: T201
+    print(research('Luke Skywalker'), end='\n\n')  # noqa: T201
+    print(research('Obi-Wan Kenobi'), end='\n\n')  # noqa: T201

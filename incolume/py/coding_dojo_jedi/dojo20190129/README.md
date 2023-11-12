@@ -77,6 +77,11 @@ MOEDAS:
 1 moeda(s) de R$ 0.01;
 ```
 
+## Artefatos
+- [dojo](./dojo20190129.py)
+- [tests](./test_20190129.py)
+
+
 ## Referências
 
 Exemplo de dojo realizado pela comunidade python de Blumenau em [20190129](https://github.com/pythonbnu/dojo/blob/master/2019_01_29/dojo.py)

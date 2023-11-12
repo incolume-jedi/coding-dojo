@@ -1,4 +1,6 @@
 """Testes dojo20231016."""
+import sys
+
 # !/usr/bin/env python
 import pytest
 
@@ -7,6 +9,10 @@ from incolume.py.coding_dojo_jedi.dojo20231016.dojo import from_roman
 __author__ = '@britodfbr'  # pragma: no cover
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
+)
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [

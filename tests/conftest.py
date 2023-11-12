@@ -1,12 +1,28 @@
 """Configure switch test."""
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
+from pathlib import Path
 from sys import version_info
 
 import pytest
 from dotenv import load_dotenv
 
+from incolume.py.coding_dojo_jedi.utils import genfile
+
 load_dotenv()
+
+
+collect_ignore = [
+    'incolume/py/dojo20220928',
+]
+
+
+if version_info < (3, 10, 0):  # noqa: UP036
+    collect_ignore.extend(
+        (
+            'incolume/py/dojo20220720',
+            'incolume/py/dojo20220808',
+            'incolume/py/dojo20220910',
+        ),
+    )
 
 
 @pytest.fixture(scope='session')
@@ -15,14 +31,7 @@ def semver_regex() -> str:
     return r'^\d+(\.\d+){2}((-\w+\.\d+)|(\w+\d+))?$'
 
 
-collect_ignore = ['incolume/py/20220928']
-
-
-if version_info < (3, 10, 0):
-    collect_ignore.extend(
-        (
-            'incolume/py/20220720',
-            'incolume/py/20220808',
-            'incolume/py/20220910',
-        ),
-    )
+@pytest.fixture()
+def fakefile() -> Path:
+    """Return fiction file for tests."""
+    return genfile(prefix='File-testing-')

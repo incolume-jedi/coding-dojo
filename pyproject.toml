@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.44.0"
+version = "1.45.0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
@@ -43,6 +43,8 @@ fuzzywuzzy = "^0.18.0"
 # incolumepy-utils = {git = "https://gitlab.com/development-incolume/incolumepy.utils.git", rev = "master"}
 levenshtein = "^0.21.1"
 incolumepy-utils = {path = "extra-src/incolumepy_utils-2.10.0-py3-none-any.whl"}
+click = "^8.1.7"
+toml = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
 
@@ -58,6 +60,7 @@ mypy = "^1.5.1"
 mypy-extensions = "^1.0.0"
 ruff = "^0.0.290"
 types-requests = "^2.31.0.5"
+types-toml = "^0.10.8.7"
 
 
 [tool.poetry.group.docs.dependencies]
@@ -65,6 +68,9 @@ mkdocs = "^1.5.3"
 mkdocstrings = "^0.23.0"
 mkdocstrings-python = "^1.7.0"
 mkdocs-material = "^9.4.2"
+
+[tool.poetry.scripts]
+sumary = 'incolume.py.coding_dojo_jedi.cli:sumary'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -211,14 +217,6 @@ unfixable = ["B"]
   "ANN101",
   "PLR6301",
   "S101",
-#  TODO remover ANN001 ANN201 ANN202 D100 D103 D202 PT007 após estabilizar teste piloto
-#  TODO remover temporários no futuro
-#  "ANN201",
-#  "ANN202",
-#  "D100",
-#  "D103",
-#  "D202",
-#  "PT007",
 ]
 
 [tool.ruff.mccabe]
@@ -351,10 +349,10 @@ max_line_length = 79
 ignore = ['E203']
 
 [tool.taskipy.variables]
+sumary_file = "incolume/py/coding_dojo_jedi/README.md"
 path = "incolume/ tests/"
 CHANGELOGFILE = "docs/about/CHANGELOG.md"
 URLCOMPARE = "https://github.com/incolume-jedi/coding-dojo/compare"
-
 
 [tool.taskipy.tasks]
 #bandit={help='', cmd='poetry run bandit -c pyproject.toml -r {path}', use_vars=true}
@@ -367,6 +365,8 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 pre_docs-build={help='Pre docs-build', cmd="poetry run task gcl"}
 docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
+gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file} -r ", use_vars=true}
+post_gsumary={cmd='git commit -m "docs: Atualização do sumário" {sumary_file}', use_vars=true}
 lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
 lint={help='Checking all linters configurated', cmd=''}
@@ -383,12 +383,16 @@ patch={cmd='v=$(poetry version patch) && poetry run task tests && git ci -m "$v"
 post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}
 premajor={cmd='v=$(poetry version premajor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
 preminor={cmd='v=$(poetry version preminor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
+#pre_prerelease='poetry run task gsumary'
 prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
 safety={help='Check safety of packages into project.', cmd='poetry run safety check'}
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
 sec={help="Checking environment's safety", cmd=''}
 pre_changelog='poetry run pytest -m fast'
+pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
+pre_test-all={help='', cmd='task lint'}
+test-all={help='Test all cases', cmd='task tests'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}
 #xpto = { cmd = "echo {path} {CHANGELOGFILE} {URLCOMPARE}", use_vars = true }

@@ -17,10 +17,16 @@ Um exemplo de uma cadeia de DNA de comprimento 21 (cujo alfabeto contém os sím
 ## Exemplos
 ```bash
 Conjunto de dados de amostra
-AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC 
+AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
 
 Saída de Amostra
 20 12 17 21
 ```
+
+## Artefatos
+
+- [dojo](./dojo.py)
+- [tests](./test_20231019.py)
+
 ## Referências
 - https://rosalind.info/problems/dna/

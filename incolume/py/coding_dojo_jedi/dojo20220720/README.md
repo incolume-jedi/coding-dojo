@@ -73,6 +73,11 @@ def test_calculadora_except(entrance, expected):
 pytest tests.py
 ```
 
+## Artefatos
+- [dojo](./dojo20220720.py)
+- [tests](./test_20220720.py)
+
+
 ## Referências
 
 https://bitbucket.org/incolume-dev/calculadora_pytest

@@ -1,3 +1,4 @@
+"""Unittest."""
 from sys import version_info
 
 import pytest
@@ -8,42 +9,48 @@ from incolume.py.coding_dojo_jedi.dojo20220902.dojo20220902 import (
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
-def test_moedas_150():
+def test_moedas_150() -> None:
+    """Teste com 150."""
     (notas, moedas) = trocar_dinheiro(1.5)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 0, 0, 0, 0]
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
-def test_moedas_191():
+def test_moedas_191() -> None:
+    """Test com 191."""
     (notas, moedas) = trocar_dinheiro(1.91)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 1]
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
-def test_moedas_192():
+def test_moedas_192() -> None:
+    """Test com 192."""
     (notas, moedas) = trocar_dinheiro(1.92)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 2]
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
-def test_notas_101():
+def test_notas_101() -> None:
+    """Test com 101."""
     (notas, moedas) = trocar_dinheiro(101)
     assert notas == [0, 1, 0, 0, 0, 0, 0]
     assert moedas == [1, 0, 0, 0, 0, 0]
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
-def test_notas_101_92():
+def test_notas_101_92() -> None:
+    """Test com 101.92."""
     (notas, moedas) = trocar_dinheiro(101.92)
     assert notas == [0, 1, 0, 0, 0, 0, 0]
     assert moedas == [1, 1, 1, 1, 1, 2]
 
 
 @pytest.mark.skip(reason='replaced for pytest.mark.parametrize')
-def test_notas_0():
+def test_notas_0() -> None:
+    """Test com 0.0."""
     (notas, moedas) = trocar_dinheiro(0.0)
     assert notas == [0, 0, 0, 0, 0, 0, 0]
     assert moedas == [0, 0, 0, 0, 0, 0]
@@ -55,7 +62,7 @@ def test_notas_0():
 )
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
-    (
+    [
         (0, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0])),
         (101, ([0, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0])),
         (101.01, ([0, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1])),
@@ -90,9 +97,9 @@ def test_notas_0():
         (311.11, ([1, 1, 0, 0, 1, 0, 0], [1, 0, 0, 1, 0, 1])),
         (262.61, ([1, 0, 1, 0, 1, 0, 1], [0, 1, 0, 1, 0, 1])),
         (126.30, ([0, 1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 0])),
-    ),
+    ],
 )
-def test_trocar_dinheiro(entrance, expected):
+def test_trocar_dinheiro(entrance, expected) -> None:
     """Teste para troca de notas.
 
     calculo para o menor número de notas e moedas

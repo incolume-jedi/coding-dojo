@@ -1,4 +1,5 @@
 """Teste dojo contagem de nucleotídeos."""
+import sys
 
 import pytest
 
@@ -8,6 +9,10 @@ from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
 )
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
+)
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
     [
@@ -27,6 +32,10 @@ def test_contador_nucleotideos(entrance, expected) -> None:
     assert contador_nucleotideos(entrance) == expected
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 10),
+    reason='requires python3.10 or higher',
+)
 @pytest.mark.parametrize(
     ('entrance', 'expected'),
     [

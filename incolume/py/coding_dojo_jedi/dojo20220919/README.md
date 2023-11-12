@@ -26,6 +26,11 @@ weekday(8) == ValorError('Valor Inválido')
 weekday(9) == ValorError('Valor Inválido')
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220919.py)
+- [tests](./test_20220919.py)
+
 ## Referências
 
 Estruturas de decisão nº 13

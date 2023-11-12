@@ -27,6 +27,11 @@ Obs:
 
    - Aplique soluções pythonicas com o comando heapq
 
+## Artefatos
+
+- [dojo](.//dojo20220819.py)
+- [tests](./test_20220819.py)
+
 ## Referências
 
 https://www.youtube.com/shorts/lnTPnx9O6nM

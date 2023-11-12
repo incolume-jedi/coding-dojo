@@ -2,18 +2,16 @@
 import logging
 from pathlib import Path
 
-from tomli import load
+from toml import load
 
 __author__ = '@britodfbr'
 
 configfile = Path(__file__).parents[3].joinpath('pyproject.toml')
 versionfile = Path(__file__).parent.joinpath('version.txt')
 
-with configfile.open('rb') as file:
-    versionfile.write_text(
-        f"{load(file)['tool']['poetry']['version']}\n",
-        encoding='utf-8',
-    )
+versionfile.write_text(
+    f"{load(configfile)['tool']['poetry']['version']}\n",
+)
 
 __version__ = versionfile.read_text(encoding='utf-8').strip()
 

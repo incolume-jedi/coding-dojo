@@ -10,12 +10,37 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-10-08:
+## [Unreleased]	 &#8212; 	2023-11-11:
+### Added
+  - ..;
+
+## [1.45.0]	 &#8212; 	2023-11-11:
+### Added
+  - Aplicado QA em CI/CD;
+  - Dojo20231109 — Remove anchor from URL;
+  - Dojo20231030 — Inteiro Reverso;
+  - Dojo20231030 — Exercitando TDD;
+  - Teste de compatibilidade com python 3.12;
+  - Sumário de dojos resolvidos;
 ### Changed
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
+  - Correção nas mensagens de changelog para release 1.44.0;
+  - Acrescentado condicional em testes unitários para Python 3.10+ a partir de dojos resolvidos no ano 2023;
+  - Lint style **ruff** aplicado a 90% do código;
+  - Acrescentado sessão Artefatos ao README de dojo contendo os arquivos de implementação e de testes;
+  - CI/CD plenamente funcional;
+  - Scripts automatizados para geração de sumário;
+  - Script automatizado para atualização de sumário;
+### Fixed
+  - Erros de encoding em Windows;
+  - Recuperado Dojo20220730 — Workshop python iniciante exercício 8;
+  - Corrigido falso/positivo na leitura dos arquivo de montagem automática do sumário;
 
-## [1.44.0]	 &#8212; 	2023-10-29:
+## [1.44.0]	 &#8212; 	2023-10-30:
 ### Added
+  - Pacote markdown;
+  - Redefinição do template para dojos;
+  - Redefinição de template para issues;
   - Solução do Dojo20231016 — Números Romanos para Arábicos;
   - Solução do Dojo20231019 — Contando nucleotídeos de DNA;
   - Solução do Dojo20231019 — Complementando uma fita de DNA;
@@ -23,6 +48,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ### Changed
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
   - Ampliação de cobertura para ruff;
+  - Atualização da documentação;
+### Fixed
+  - Ruff:FA102 Missing from __future__ import annotations, but uses PEP 604 union;
+  - Skip testes para windows devido ao não reconhecimento de encode do OS.;
 
 ## [1.40.1]	 &#8212; 	2023-10-10:
 ### Added
@@ -302,4 +331,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.40.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.39.0...1.40.0
 [1.40.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.0...1.40.1
 [1.44.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.1...1.44.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.44.0...Unreleased
+[1.45.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.44.0...1.45.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.45.0...Unreleased

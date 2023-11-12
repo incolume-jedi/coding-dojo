@@ -30,6 +30,11 @@ s = 1
 result = 61000
 ```
 
+## Artefatos
+
+- [dojo](./dojo20220824.py)
+- [tests](./test_20220824.py)
+
 ## Referências
 
 https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/python

@@ -6,7 +6,7 @@
 
 ## Problema
 
-**A square of squares**
+**A is_square of squares**
 
 Suponha que você gosta de blocos de construção. Você gosta especialmente de blocos de construção que são quadrados. E o que você gosta ainda mais é organizá-los em um quadrado de blocos de construção quadrados!
 
@@ -30,6 +30,11 @@ Os testes sempre usarão algum número inteiro, então não se preocupe com isso
 25  =>  true
 26  =>  false
 ```
+
+## Artefatos
+- [dojo](./dojo20220801.py)
+- [tests](./test_20220801.py)
+
 
 ## Referências
 

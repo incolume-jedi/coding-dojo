@@ -50,8 +50,7 @@ class TestCase:
     def test_same_version(self, entrance: Path) -> None:
         """Test same version."""
         try:
-            with entrance.open('rb') as stream:
-                version = load(stream)['tool']['poetry']['version']
+            version = load(entrance)['tool']['poetry']['version']
         except ValueError:
             version = entrance.read_text().strip()
         assert version == __version__

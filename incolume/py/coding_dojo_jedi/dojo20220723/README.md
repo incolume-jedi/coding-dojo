@@ -14,6 +14,11 @@ Escrever uma função get_code() que pega um valor ASCII e retorna o código cor
 get_code('A')
 return: 65
 
+## Artefatos
+- [dojo](./dojo20220723.py)
+- [tests](./test_20220723.py)
+
+
 ## Referências
 
 Para referência da tabela ASCII:  http://www.asciitable.com/

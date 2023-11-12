@@ -12,7 +12,7 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 
 ## [Unreleased]	 &#8212; 	2023-11-11:
 ### Added
-  - ..;
+  - Dojo;
 
 ## [1.45.0]	 &#8212; 	2023-11-11:
 ### Added

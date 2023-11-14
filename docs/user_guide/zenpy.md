@@ -10,14 +10,14 @@
 - Esparso é melhor do que denso.
 - A legibilidade é importante.
 - Casos especiais não são especiais o suficiente para quebrar as regras.
-- Embora a praticidade seja melhor que a pureza.
+Embora a praticidade seja melhor que a pureza.
 - Os erros nunca devem passar silenciosamente.
-- A menos que sejam explicitamente silenciados.
+A menos que sejam explicitamente silenciados.
 - Em caso de ambiguidade, recuse a tentação de adivinhar.
 - Deve haver uma - e, de preferência, apenas uma - maneira óbvia de fazer isso.
-- Embora essa maneira possa não ser óbvia a princípio, a menos que você seja holandês.
+Embora essa maneira possa não ser óbvia a princípio, a menos que você seja holandês.
 - Agora é melhor do que nunca.
-- Embora, muitas vezes, nunca seja melhor do que *agora*.
+Embora, muitas vezes, nunca seja melhor do que *agora*.
 - Se a implementação for difícil de explicar, é uma má ideia.
 - Se a implementação for fácil de explicar, pode ser uma boa ideia.
 - Os namespaces são uma ótima ideia - vamos fazer mais deles!

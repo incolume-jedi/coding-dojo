@@ -10,9 +10,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-11-12:
+## [Unreleased]	 &#8212; 	2023-11-14:
 ### Added
   - Adicionado orientações sobre Keep a CHANGELOG.md em docs/user_guide/keep-a-chagelog.md;
+  - Adicionado Orientações sobre versionamento semântico docs/user_guide/semver.md;
 ### Changed
   - Menu da documentação atualizado com keep-a-changelog;
 

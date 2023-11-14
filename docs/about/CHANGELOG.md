@@ -12,6 +12,7 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 
 ## [Unreleased]	 &#8212; 	2023-11-14:
 ### Added
+  - Dojo20231113 — Notas e Moedas POO;
   - Adicionado orientações sobre Keep a CHANGELOG.md em docs/user_guide/keep-a-chagelog.md;
   - Adicionado Orientações sobre versionamento semântico docs/user_guide/semver.md;
 ### Changed

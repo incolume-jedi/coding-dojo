@@ -49,6 +49,7 @@ nav:
             - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
             - Keep a CHANGELOG.md: user_guide/keep-a-changelog.md
             - Mkdocs: user_guide/writing-your-docs.md
+            - Semver: user_guide/semver.md
             - Zen Python: user_guide/zenpy.md
 #        - Base: prefacio.md
 #        - Contributing: user_guide/development.md

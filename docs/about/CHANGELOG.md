@@ -17,6 +17,9 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
   - Adicionado Orientações sobre versionamento semântico docs/user_guide/semver.md;
 ### Changed
   - Menu da documentação atualizado com keep-a-changelog;
+  - Atualizado o layout coding challenge com arrow-up em SVG;
+### Fixed
+  - Melhoria no feedback de erro para os elementos de Artefatos no arquivo README.md dos dojos;
 
 ## [1.45.0]	 &#8212; 	2023-11-11:
 ### Added

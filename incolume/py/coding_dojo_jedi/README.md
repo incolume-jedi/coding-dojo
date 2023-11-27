@@ -8,10 +8,11 @@
 
 ---
 
-52 dojos resolvidos
+53 dojos resolvidos
 
 ---
 
+ - [Dojo20231115 &#8212; milissegundos](dojo20231115/README.md)
  - [Dojo20231113 &#8212; Notas e Moedas POO](dojo20231113/README.md)
  - [Dojo20231109 &#8212; Remove anchor from URL](dojo20231109/README.md)
  - [Dojo20231030 &#8212; Inteiro Reverso](dojo20231030/problema2.md)

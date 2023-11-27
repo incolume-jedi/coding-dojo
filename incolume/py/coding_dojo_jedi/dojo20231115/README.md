@@ -34,6 +34,11 @@ milissegundos(time(h, m, s)) == 61000
 
 ```
 
+## Artefatos
+- [dojo](dojo.py)
+- [tests](test_20231115.py)
+
+
 ## Referências
 - https://docs.python.org/3/library/functools.html
 - [Issue#10](https://github.com/incolume-jedi/coding-dojo/issues/10)

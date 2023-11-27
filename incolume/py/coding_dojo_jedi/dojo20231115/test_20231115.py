@@ -1,20 +1,10 @@
+"""Test milissegundos."""
+import datetime
 from re import escape
 
 import pytest
-from incolume.py.coding_dojo_jedi.dojo20231115.dojo import (
-    milissegundos, validar_entrada)
 
-
-# def test_validar_entrada() -> None:
-#     """Test validar_entrada."""
-#     assert validar_entrada(1, 2, 3, 2) == ''
-    # h = 0
-    # m = 1
-    # s = 1
-    #
-    # milissegundos(h, m, s) == 61000
-    # milissegundos(datetime(h, m, s)) == 61000
-    # milissegundos(time(h, m, s)) == 61000
+from incolume.py.coding_dojo_jedi.dojo20231115.dojo import milissegundos
 
 
 @pytest.mark.parametrize(
@@ -29,6 +19,42 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo import (
         ({'h': 1, 'm': 1}, 3_660_000),
         ({'h': 0, 'm': 0, 's': 0}, 0),
         ({'h': 23, 'm': 59, 's': 59}, 86_399_000),
+        ({'hms': datetime.time(hour=1)}, 3_600_000),
+        ({'hms': datetime.time(minute=1)}, 60_000),
+        ({'hms': datetime.time(second=1)}, 1_000),
+        ({'hms': datetime.time(minute=1, second=1)}, 61_000),
+        (
+            {
+                'hms': datetime.datetime(
+                    year=2023, month=11, day=27, hour=1, tzinfo='',
+                ),
+            },
+            3_600_000,
+        ),
+        (
+            {
+                'hms': datetime.datetime(
+                    year=2023, month=11, day=27, minute=1, tzinfo='',
+                ),
+            },
+            60_000,
+        ),
+        (
+            {
+                'hms': datetime.datetime(
+                    year=2023, month=11, day=27, second=1, tzinfo='',
+                ),
+            },
+            1_000,
+        ),
+        (
+            {
+                'hms': datetime.datetime(
+                    year=2023, month=11, day=27, minute=1, second=1, tzinfo='',
+                ),
+            },
+            61_000,
+        ),
     ],
 )
 def test_millissenconds(entrance, expected) -> None:
@@ -36,7 +62,7 @@ def test_millissenconds(entrance, expected) -> None:
     assert milissegundos(**entrance) == expected
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
@@ -44,23 +70,22 @@ def test_millissenconds(entrance, expected) -> None:
             (0, 0, 0),
             {
                 'expected_exception': TypeError,
-                'match': r'millisseconds\(\) takes 0 positional'
-                         r' arguments but 3 were given',
+                'match': escape(
+                    'milissegundos() takes 0 positional'
+                    ' arguments but 3 were given',
+                ),
             },
-            marks=pytest.mark.skip,
         ),
         pytest.param(
             (1, 1, 1),
             {
                 'expected_exception': TypeError,
                 'match': escape(
-                    'millisseconds() takes 0 positional '
-                    'arguments but 3 were given',
+                    'milissegundos() takes 0 positional'
+                    ' arguments but 3 were given',
                 ),
             },
-            marks=pytest.mark.skip
         ),
-
     ],
 )
 def test_millissenconds_exception0(entrance, expected) -> None:
@@ -68,7 +93,8 @@ def test_millissenconds_exception0(entrance, expected) -> None:
     with pytest.raises(**expected):
         milissegundos(*entrance)
 
-@pytest.mark.skip
+
+# @pytest.mark.skip
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
@@ -96,7 +122,7 @@ def test_millissenconds_exception0(entrance, expected) -> None:
             {'h': 0, 'm': 0, 's': 60},
             {'expected_exception': ValueError, 'match': '0 <= s <= 59'},
         ),
-    ]
+    ],
 )
 def test_millissenconds_exception(entrance, expected) -> None:
     """Test for millisseconds exceptions."""

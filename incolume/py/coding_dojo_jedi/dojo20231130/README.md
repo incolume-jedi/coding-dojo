@@ -37,7 +37,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 ## Artefatos
 
 - [dojo](dojo.py)
-- [tests](test_YYYYMMDD.py)
+- [tests](tests.py)
 
 
 ## Referências

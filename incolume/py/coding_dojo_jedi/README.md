@@ -8,10 +8,12 @@
 
 ---
 
-53 dojos resolvidos
+55 dojos resolvidos
 
 ---
 
+ - [Dojo20231130 &#8212; Busca de padrões com algoritmo boyermoore](dojo20231130/README.md)
+ - [Dojo20231127 &#8212; Get Planet Name By ID](dojo20231127/README.md)
  - [Dojo20231115 &#8212; milissegundos](dojo20231115/README.md)
  - [Dojo20231113 &#8212; Notas e Moedas POO](dojo20231113/README.md)
  - [Dojo20231109 &#8212; Remove anchor from URL](dojo20231109/README.md)

@@ -62,25 +62,18 @@ class TestDateTime:
 def test_timestamp(m_dt) -> None:
     """Test it."""
     time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
-    expected = (
-        a := time_stamp.year,
-        b := time_stamp.strftime('%FT%T%z'),
-    )
-    m_dt.today.year.return_value = a
-    m_dt.today.strftime.return_value = b
+    expected = (a := time_stamp.year, b := time_stamp.strftime('%FT%T%z'))
+    m_dt.today.return_value.year = a
+    m_dt.today.return_value.strftime.return_value = b
     assert timestamp() == expected
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_factorial():
-    entrance = 3
-    expected = 1
-    with mock.patch(f'{__package__}.factorial', autospec=True) as mock_fact:
+    entrance = 4
+    with mock.patch(f'{__package__}.factorial', autospec=True) as m_fact:
         factorial(entrance)
-        mock_fact.assert_called()
-        assert mock_fact.call_args_list == expected
-        assert mock_fact.call_count == expected
-
+        assert m_fact.call_args_list == [mock.call(3)]
 
 @mock.patch(f'{__package__}.requests.get')
 def test_consuming_api_httpbin(mock_requests_get) -> None:
@@ -682,83 +675,85 @@ def test_consuming_api_swapi_next_page(m_req_get) -> None:
     assert consuming_api_swapi_next_page(entrance) == expected
 
 
-@mock.patch(f'{__package__}.requests.get', autospec=True)
-def test_other_0(m_req_get):
-    """Test it."""
-    url = 'http://example.org'
-    m_req_get.return_value.url = url
+class TestRequests:
+    """Test requests."""
+    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    def test_other_0(self, m_req_get):
+        """Test it."""
+        url = 'http://example.org'
+        m_req_get.return_value.url = url
 
-    u = requests.get('abc')
-    assert u.url == url
-    assert m_req_get.call_args_list == [mock.call('abc')]
+        u = requests.get('abc')
+        assert u.url == url
+        assert m_req_get.call_args_list == [mock.call('abc')]
 
 
-@pytest.mark.parametrize(
-    'entrance expected'.split(),
-    [
-        ('ok', True),
-        ('status_code', HTTPStatus.OK),
-        ('status_code', HTTPStatus.FORBIDDEN),
-        ('status_code', HTTPStatus.NOT_FOUND),
-        ('status_code', HTTPStatus.MOVED_PERMANENTLY),
-        ('url', 'https://httpbin.org/ip'),
-    ],
-)
-@mock.patch(f'{__package__}.requests.get', autospec=True)
-def test_other_1(m_req_get, entrance, expected):
-    """Test it."""
-    url = 'http://example.org'
-    m_req_get.return_value = mock.Mock(
-        **{
-            entrance: expected,
-        }
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            ('ok', True),
+            ('status_code', HTTPStatus.OK),
+            ('status_code', HTTPStatus.FORBIDDEN),
+            ('status_code', HTTPStatus.NOT_FOUND),
+            ('status_code', HTTPStatus.MOVED_PERMANENTLY),
+            ('url', 'https://httpbin.org/ip'),
+        ],
     )
-    req = requests.get(url)
-    assert getattr(req, entrance) == expected
+    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    def test_other_1(self, m_req_get, entrance, expected):
+        """Test it."""
+        url = 'http://example.org'
+        m_req_get.return_value = mock.Mock(
+            **{
+                entrance: expected,
+            }
+        )
+        req = requests.get(url)
+        assert getattr(req, entrance) == expected
 
 
-@pytest.mark.parametrize(
-    'entrance mocking expected'.split(),
-    [
-        ('ok', {'ok': True, 'status_code': HTTPStatus.OK}, True),
-        (
-            'status_code',
-            {'ok': True, 'status_code': HTTPStatus.OK},
-            HTTPStatus.OK,
-        ),
-        (
-            'status_code',
-            {'ok': False, 'status_code': HTTPStatus.FORBIDDEN},
-            HTTPStatus.FORBIDDEN,
-        ),
-        (
-            'status_code',
-            {'ok': False, 'status_code': HTTPStatus.NOT_FOUND},
-            HTTPStatus.NOT_FOUND,
-        ),
-        (
-            'status_code',
-            {'ok': False, 'status_code': HTTPStatus.MOVED_PERMANENTLY},
-            HTTPStatus.MOVED_PERMANENTLY,
-        ),
-        (
-            'url',
-            {
-                'ok': True,
-                'status_code': HTTPStatus.OK,
-                'url': 'https://httpbin.org/ip',
-            },
-            'https://httpbin.org/ip',
-        ),
-    ],
-)
-@mock.patch(f'{__package__}.requests.get', autospec=True)
-def test_other_2(m_req_get, entrance, mocking, expected):
-    """Test it."""
-    url = 'http://example.org'
-    m_req_get.return_value = mock.Mock(**mocking)
-    req = requests.get(url)
-    assert getattr(req, entrance) == expected
+    @pytest.mark.parametrize(
+        'entrance mocking expected'.split(),
+        [
+            ('ok', {'ok': True, 'status_code': HTTPStatus.OK}, True),
+            (
+                'status_code',
+                {'ok': True, 'status_code': HTTPStatus.OK},
+                HTTPStatus.OK,
+            ),
+            (
+                'status_code',
+                {'ok': False, 'status_code': HTTPStatus.FORBIDDEN},
+                HTTPStatus.FORBIDDEN,
+            ),
+            (
+                'status_code',
+                {'ok': False, 'status_code': HTTPStatus.NOT_FOUND},
+                HTTPStatus.NOT_FOUND,
+            ),
+            (
+                'status_code',
+                {'ok': False, 'status_code': HTTPStatus.MOVED_PERMANENTLY},
+                HTTPStatus.MOVED_PERMANENTLY,
+            ),
+            (
+                'url',
+                {
+                    'ok': True,
+                    'status_code': HTTPStatus.OK,
+                    'url': 'https://httpbin.org/ip',
+                },
+                'https://httpbin.org/ip',
+            ),
+        ],
+    )
+    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    def test_other_2(self, m_req_get, entrance, mocking, expected):
+        """Test it."""
+        url = 'http://example.org'
+        m_req_get.return_value = mock.Mock(**mocking)
+        req = requests.get(url)
+        assert getattr(req, entrance) == expected
 
 
 @pytest.mark.skip

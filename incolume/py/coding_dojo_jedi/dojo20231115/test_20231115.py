@@ -26,7 +26,11 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo import milissegundos
         (
             {
                 'hms': datetime.datetime(
-                    year=2023, month=11, day=27, hour=1, tzinfo='',
+                    year=2023,
+                    month=11,
+                    day=27,
+                    hour=1,
+                    tzinfo=None,
                 ),
             },
             3_600_000,
@@ -34,7 +38,11 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo import milissegundos
         (
             {
                 'hms': datetime.datetime(
-                    year=2023, month=11, day=27, minute=1, tzinfo='',
+                    year=2023,
+                    month=11,
+                    day=27,
+                    minute=1,
+                    tzinfo=None,
                 ),
             },
             60_000,
@@ -42,7 +50,11 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo import milissegundos
         (
             {
                 'hms': datetime.datetime(
-                    year=2023, month=11, day=27, second=1, tzinfo='',
+                    year=2023,
+                    month=11,
+                    day=27,
+                    second=1,
+                    tzinfo=None,
                 ),
             },
             1_000,
@@ -50,7 +62,12 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo import milissegundos
         (
             {
                 'hms': datetime.datetime(
-                    year=2023, month=11, day=27, minute=1, second=1, tzinfo='',
+                    year=2023,
+                    month=11,
+                    day=27,
+                    minute=1,
+                    second=1,
+                    tzinfo=None,
                 ),
             },
             61_000,

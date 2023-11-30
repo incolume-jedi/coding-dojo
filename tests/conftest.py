@@ -1,4 +1,5 @@
 """Configure switch test."""
+
 from pathlib import Path
 from sys import version_info
 

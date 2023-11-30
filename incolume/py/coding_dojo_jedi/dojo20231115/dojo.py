@@ -29,7 +29,7 @@ def millisec_datetime(hms: dt.datetime) -> int:
     return millisec_int(h=hms.hour, m=hms.minute, s=hms.second)
 
 
-def milissegundos(**kwargs: dict) -> int:
+def milissegundos(**kwargs) -> int:
     """Calculo de milissegundos."""
     hms = kwargs.get('hms')
     if hms:

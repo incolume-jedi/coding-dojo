@@ -60,7 +60,9 @@ def generator_sumary(
     for filemd in sorted(filesmd(), reverse=reverse):
         try:
             result = re.search(
-                regex, filemd.read_text(encoding='utf-8'), flags=re.I
+                regex,
+                filemd.read_text(encoding='utf-8'),
+                flags=re.I,
             )
             title = filemd.parts[-2].capitalize()
             desc = result.group(1)  # type: ignore[union-attr]

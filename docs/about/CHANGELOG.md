@@ -10,8 +10,11 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-11-14:
+## [Unreleased]	 &#8212; 	2023-11-30:
 ### Added
+  - Dojo20231130 — boyer-moore (algoritmo de busca);
+  - Dojo20231127 — Get Planet name by id (condicional sem if);
+  - Dojo20231115 — milissegundos (sobrecarga de função);
   - Dojo20231113 — Notas e Moedas POO;
   - Adicionado orientações sobre Keep a CHANGELOG.md em docs/user_guide/keep-a-chagelog.md;
   - Adicionado Orientações sobre versionamento semântico docs/user_guide/semver.md;

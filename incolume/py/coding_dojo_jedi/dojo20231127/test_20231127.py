@@ -1,6 +1,10 @@
-"""Test Get Planet Name By ID"""
+"""Test Get Planet Name By ID."""
 import pytest
-from incolume.py.coding_dojo_jedi.dojo20231127.dojo import get_planet_name0, get_planet_name
+
+from incolume.py.coding_dojo_jedi.dojo20231127.dojo import (
+    get_planet_name,
+    get_planet_name0,
+)
 
 
 @pytest.mark.parametrize(
@@ -12,7 +16,7 @@ from incolume.py.coding_dojo_jedi.dojo20231127.dojo import get_planet_name0, get
         (4, 'Mars'),
         (8, 'Neptune'),
         (1, 'Mercury'),
-    ]
+    ],
 )
 def test_get_planet_name0(entrance, expected) -> None:
     """Test it."""
@@ -28,7 +32,7 @@ def test_get_planet_name0(entrance, expected) -> None:
         (4, 'Mars'),
         (8, 'Neptune'),
         (1, 'Mercury'),
-    ]
+    ],
 )
 def test_get_planet_name(entrance, expected) -> None:
     """Test it."""

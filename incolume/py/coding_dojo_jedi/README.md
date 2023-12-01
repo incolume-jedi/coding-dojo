@@ -8,10 +8,16 @@
 
 ---
 
-51 dojos resolvidos
+57 dojos resolvidos
 
 ---
 
+ - [Dojo20231130 &#8212; Busca de padrões com algoritmo boyermoore](dojo20231130/README.md)
+ - [Dojo20231129 &#8212; Perímetro terrestre](dojo20231129/README.md)
+ - [Dojo20231128 &#8212; Mock API](dojo20231128/README.md)
+ - [Dojo20231127 &#8212; Get Planet Name By ID](dojo20231127/README.md)
+ - [Dojo20231115 &#8212; milissegundos](dojo20231115/README.md)
+ - [Dojo20231113 &#8212; Notas e Moedas POO](dojo20231113/README.md)
  - [Dojo20231109 &#8212; Remove anchor from URL](dojo20231109/README.md)
  - [Dojo20231030 &#8212; Inteiro Reverso](dojo20231030/problema2.md)
  - [Dojo20231030 &#8212; Exercitando TDD](dojo20231030/problema1.md)

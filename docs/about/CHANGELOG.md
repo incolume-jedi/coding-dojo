@@ -10,9 +10,37 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-11-11:
+## [Unreleased]	 &#8212; 	2023-12-01:
 ### Added
-  - ..;
+  - Dojo20231130 — boyer-moore (algoritmo de busca);
+  - Dojo20231129 - Perímetro terrestre (Lógica de localizar padrão vizinho);
+  - Dojo20231128 — Mock API;
+  - Dojo20231127 — Get Planet name by id (condicional sem if);
+  - Dojo20231115 — milissegundos (sobrecarga de função);
+  - Dojo20231113 — Notas e Moedas POO;
+  - Adicionado orientações sobre Keep a CHANGELOG.md em docs/user_guide/keep-a-chagelog.md;
+  - Adicionado Orientações sobre versionamento semântico docs/user_guide/semver.md;
+### Changed
+  - Menu da documentação atualizado com keep-a-changelog;
+  - Atualizado o layout coding challenge com arrow-up em SVG;
+### Fixed
+  - Melhoria no feedback de erro para os elementos de Artefatos no arquivo README.md dos dojos;
+
+## [1.46.0]	 &#8212; 	2023-12-01:
+### Added
+  - Dojo20231130 — boyer-moore (algoritmo de busca);
+  - Dojo20231129 - Perímetro terrestre (Lógica de localizar padrão vizinho);
+  - Dojo20231128 — Mock API;
+  - Dojo20231127 — Get Planet name by id (condicional sem if);
+  - Dojo20231115 — milissegundos (sobrecarga de função);
+  - Dojo20231113 — Notas e Moedas POO;
+  - Adicionado orientações sobre Keep a CHANGELOG.md em docs/user_guide/keep-a-chagelog.md;
+  - Adicionado Orientações sobre versionamento semântico docs/user_guide/semver.md;
+### Changed
+  - Menu da documentação atualizado com keep-a-changelog;
+  - Atualizado o layout coding challenge com arrow-up em SVG;
+### Fixed
+  - Melhoria no feedback de erro para os elementos de Artefatos no arquivo README.md dos dojos;
 
 ## [1.45.0]	 &#8212; 	2023-11-11:
 ### Added
@@ -332,4 +360,5 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.40.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.0...1.40.1
 [1.44.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.1...1.44.0
 [1.45.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.44.0...1.45.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.45.0...Unreleased
+[1.46.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.45.0...1.46.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.46.0...Unreleased

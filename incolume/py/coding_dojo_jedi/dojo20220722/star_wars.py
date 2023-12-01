@@ -28,7 +28,7 @@ def research(
     name = name or 'Luke Skywalker'
     pagina = pagina or 1
     url = url or 'https://swapi.dev/api/people/?page={}'
-    cache_file = genfile().with_name('personagens.json')
+    cache_file = genfile().with_name('personagens-20220722.json')
     logging.info('cache_file=%s', cache_file)
     logging.info('cache_file.is_file()=%s', cache_file.is_file())
     if not cache_file.is_file():

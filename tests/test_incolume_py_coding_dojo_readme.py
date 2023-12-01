@@ -14,7 +14,9 @@ __author__ = '@britodfbr'  # pragma: no cover
 )
 def test_has_artefact(file) -> None:
     """Teste se há sessão Artefatos."""
-    assert 'Artefatos' in file.read_text(encoding='utf-8')
+    assert 'Artefatos' in file.read_text(
+        encoding='utf-8',
+    ), 'Existe a sessão "## Artefatos"?'
 
 
 @pytest.mark.parametrize(
@@ -24,7 +26,11 @@ def test_has_artefact(file) -> None:
 def test_has_dojo_link(file) -> None:
     """Teste se há link dojo na sessão Artefatos."""
     regex = r'- \[dojo\]\(.*\.py\)'
-    assert re.search(regex, file.read_text(encoding='utf-8'), re.I)
+    assert re.search(
+        regex,
+        file.read_text(encoding='utf-8'),
+        re.I,
+    ), 'Falta o link: "- [dojo](./dojo.py)"'
 
 
 @pytest.mark.parametrize(
@@ -34,4 +40,8 @@ def test_has_dojo_link(file) -> None:
 def test_has_test_dojo_link(file) -> None:
     """Teste se há link para testes do dojo na sessão Artefatos."""
     regex = r'- \[tests\]\((\.\/)?(test_.*\.py|tests\/.*\.txt)\)'
-    assert re.search(regex, file.read_text(encoding='utf-8'), re.I)
+    assert re.search(
+        regex,
+        file.read_text(encoding='utf-8'),
+        re.I,
+    ), 'Falta o link: "- [tests](./test_YYYYMMDD.py)"'

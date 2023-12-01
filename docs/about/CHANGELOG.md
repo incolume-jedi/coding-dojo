@@ -10,11 +10,10 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-11-30:
+## [Unreleased]	 &#8212; 	2023-12-01:
 ### Added
   - Dojo20231130 — boyer-moore (algoritmo de busca);
-  - Dojo20231129 - perimetro terrestre;
-  - Dojo20231128 - Test mock API;
+  - Dojo20231129 - Perímetro terrestre (Lógica de localizar padrão vizinho);
   - Dojo20231127 — Get Planet name by id (condicional sem if);
   - Dojo20231115 — milissegundos (sobrecarga de função);
   - Dojo20231113 — Notas e Moedas POO;

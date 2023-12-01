@@ -1,5 +1,6 @@
 """Test dojo20231129."""
 import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20231129 import dojo
 
 tests = [
@@ -52,6 +53,7 @@ tests = [
     ),
 ]
 
+
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     tests,
@@ -87,10 +89,11 @@ def test_perimetro_terrestre_3(entrance, expected) -> None:
     """Test it."""
     assert dojo.land_perimeter_3(entrance) == expected
 
+
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     tests,
 )
-def test_landPermetecal(entrance, expected) -> None:
+def test_land_permetecal(entrance, expected) -> None:
     """Test it."""
     assert dojo.land_permetercal(entrance) == expected

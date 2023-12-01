@@ -48,5 +48,10 @@ deve retornar: "Total land perimeter: 18"
 
 Boa sorte!
 
+## Artefatos
+- [dojo](dojo.py)
+- [tests](test_20231129.py)
+
+
 ## Referências
 [https://www.codewars.com/kata/5839c48f0cf94640a2000]

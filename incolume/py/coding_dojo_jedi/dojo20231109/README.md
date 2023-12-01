@@ -8,7 +8,7 @@
 
 **Remove anchor from URL**
 
-Implemente uma função/metodo que retorne uma URL com qualquer conteúdo após cerquilha (#) removido.
+Implemente uma função/timemstamp que retorne uma URL com qualquer conteúdo após cerquilha (#) removido.
 
 ## Exemplos
 

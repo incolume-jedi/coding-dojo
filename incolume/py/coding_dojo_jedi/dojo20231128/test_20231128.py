@@ -6,11 +6,13 @@ from incolume.py.coding_dojo_jedi.dojo20231128.dojo import (
     consuming_api_httpbin,
     consuming_api_swapi_one_page,
     consuming_api_swapi_one_person,
-    consuming_api_swapi_next_page,
-    consuming_api_swapi_index_page,
+    consuming_api_swapi_index_page_0,
+    consuming_api_swapi_index_page_1,
+    consuming_api_swapi_index_page_2,
     timestamp,
     requests,
     factorial,
+    ConsumingNextPageSWAPI,
 )
 from unittest import mock
 import pytest
@@ -666,17 +668,52 @@ def test_consuming_api_swapi_one_page(m_req_get, entrance, expected) -> None:
     m_req_get.assert_called_with(url)
 
 
-@pytest.mark.skip
-@mock.patch(f'{__package__}.requests.get', autospec=True)
-def test_consuming_api_swapi_next_page(m_req_get) -> None:
-    """Test it."""
-    entrance = 1
-    expected = ''
-    assert consuming_api_swapi_next_page(entrance) == expected
+class TestConsumingNextPageSWAPI:
+    """Class test it."""
+    obj = ConsumingNextPageSWAPI()
 
+    @pytest.mark.skip(reason='Fail. This dont ran.')
+    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    def test_consuming_api_swapi_next_page_0(self, m_req_get) -> None:
+        """Test it."""
+        entrance = 1
+        expected = ''
+        assert self.obj.tratativa0(entrance) == expected
+
+    def test_consuming_api_swapi_next_page_1(self) -> None:
+        """Test it."""
+        entrance = 1
+        expected = f'{self.obj.url}/?page={entrance+1}'
+        with mock.patch(f'{__package__}.requests.get') as m_req:
+            m_req.return_value.json.return_value = {'next': expected}
+            assert self.obj.tratativa1(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance n_page'.split(),
+        [
+            (1, 2),
+            (0, 7),
+            (9, None),
+        ],
+    )
+    def test_consuming_api_swapi_next_page_2(self, entrance, n_page) -> None:
+        """Test it."""
+        expected = f'{self.obj.url}/?page={n_page}' if n_page else n_page
+        with mock.patch(f'{__package__}.requests.get', autospec=True) as m_req:
+            m_req.return_value.json.return_value = {'next': expected}
+            assert self.obj.tratativa1(entrance) == expected
 
 class TestRequests:
     """Test requests."""
+    headers = {
+        'date': 'Wed, 29 Nov 2023 14:29:06 GMT',
+        'content-type': 'application/json',
+        'content-length': '34',
+        'connection': 'keep-alive',
+        'server': 'gunicorn/19.9.0',
+        'access-control-allow-origin': '*',
+        'access-control-allow-credentials': 'true'
+    }
     @mock.patch(f'{__package__}.requests.get', autospec=True)
     def test_other_0(self, m_req_get):
         """Test it."""
@@ -755,11 +792,35 @@ class TestRequests:
         req = requests.get(url)
         assert getattr(req, entrance) == expected
 
+    def test_other_3(self):
+        """Test it."""
+        url = 'http://httpbin.org/ip'
+        with mock.patch(f'{__package__}.requests.get') as rq:
+            rq.return_value.headers = self.headers
+            r = requests.get(url)
+            assert r.headers == self.headers
 
-@pytest.mark.skip
-@mock.patch(f'{__package__}.requests.get')
-def test_consuming_api_swapi_index_page(m_req_get) -> None:
-    """Test it."""
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            ('Content-Type', 'application/json'),
+            ('content-type', 'application/json'),
+            ('Date', 'Wed, 29 Nov 2023 14:29:06 GMT'),
+            ('Server', 'gunicorn/19.9.0'),
+            ('Content-Length', '34'),
+            ('Connection', 'keep-alive'),
+        ]
+    )
+    def test_other_4(self, entrance, expected):
+        """Test it."""
+        url = 'http://httpbin.org/ip'
+        with mock.patch(f'{__package__}.requests.get') as rq:
+            rq.return_value.headers = self.headers
+            r = requests.get(url)
+            assert r.headers.get(entrance.casefold()) == expected
+
+
+class TestConsumingIndexPageSWAPI:
     values = [
         'https://swapi.dev/api/people/?page=1',
         'https://swapi.dev/api/people/?page=2',
@@ -772,7 +833,42 @@ def test_consuming_api_swapi_index_page(m_req_get) -> None:
         'https://swapi.dev/api/people/?page=9',
         'https://swapi.dev/api/people/?page=10',
     ]
-    m_req_get.status_code = HTTPStatus.OK
-    m_req_get.return_value.url.side_effect = values
-    assert consuming_api_swapi_index_page() == values
-    assert m_req_get.call_args_list == []
+
+    # @pytest.mark.skip
+    @pytest.mark.webtest
+    def test_case_1(self) -> None:
+        """Test it."""
+        assert consuming_api_swapi_index_page_0() == self.values
+
+    def test_case_2(self) -> None:
+        """Test it with mock.
+
+        Test de apenas uma página.
+        """
+        with mock.patch(f'{__package__}.requests.get') as m_req_get:
+            m_req_get.return_value.url = self.values[0]
+            assert consuming_api_swapi_index_page_0() == self.values[:1]
+            assert m_req_get.call_args_list == [
+                mock.call(self.values[0]),
+            ]
+
+    @pytest.mark.webtest
+    def test_case_3(self) -> None:
+        """Test it with mock."""
+        assert consuming_api_swapi_index_page_1() == self.values
+
+    @pytest.mark.skip
+    def test_case_4(self) -> None:
+        """Test it with mock."""
+        with mock.patch(f'{__package__}.requests.get') as m_req_get:
+            m_req_get.status_code = HTTPStatus.OK
+            m_req_get.ok = True
+            m_req_get.return_value.url.side_effect = self.values
+            assert consuming_api_swapi_index_page_1() == self.values
+            assert m_req_get.call_args_list == []
+
+    @pytest.mark.webtest
+    def test_case_5(self) -> None:
+        """Test it with mock."""
+        assert consuming_api_swapi_index_page_2() == self.values
+

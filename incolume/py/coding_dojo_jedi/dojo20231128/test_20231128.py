@@ -1,36 +1,39 @@
 """Test dojo."""
 
+from http import HTTPStatus
+from unittest import mock
+
+import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20231128.dojo import (
-    __package__,
-    dt,
+    TIMEOUT,
+    ConsumingNextPageSWAPI,
+    __pkg__,
     consuming_api_httpbin,
-    consuming_api_swapi_one_page,
-    consuming_api_swapi_one_person,
     consuming_api_swapi_index_page_0,
     consuming_api_swapi_index_page_1,
     consuming_api_swapi_index_page_2,
-    timestamp,
-    requests,
+    consuming_api_swapi_one_page,
+    consuming_api_swapi_one_person,
+    dt,
     factorial,
-    ConsumingNextPageSWAPI,
+    requests,
+    timestamp,
 )
-from unittest import mock
-import pytest
-from http import HTTPStatus
 
 __author__ = '@britodfbr'  # pragma: no cover
 
 
 def test_package_name() -> None:
     """Test package name."""
-    assert __package__ == 'incolume.py.coding_dojo_jedi.dojo20231128.dojo'
+    assert __pkg__ == 'incolume.py.coding_dojo_jedi.dojo20231128.dojo'
 
 
 # @pytest.mark.skip
 class TestDateTime:
     """Class DateTime."""
 
-    @mock.patch(f'{__package__}.dt.datetime')
+    @mock.patch(f'{__pkg__}.dt.datetime')
     def test_datetime_0(self, m_dt) -> None:
         """Test it."""
         time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
@@ -38,7 +41,7 @@ class TestDateTime:
         assert dt.datetime.today() == time_stamp
         assert m_dt.call_args_list == [mock.call(2000, 1, 2, 3, 4, 56)]
 
-    @mock.patch(f'{__package__}.dt.datetime')
+    @mock.patch(f'{__pkg__}.dt.datetime')
     def test_datetime_1(self, m_dt) -> None:
         """Test it."""
         time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
@@ -48,19 +51,19 @@ class TestDateTime:
     def test_datetime_2(self) -> None:
         """Test it."""
         time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
-        with mock.patch(f'{__package__}.dt.datetime') as m_dt:
+        with mock.patch(f'{__pkg__}.dt.datetime') as m_dt:
             m_dt.today.return_value = time_stamp
             assert dt.datetime.today() == time_stamp
 
     def test_datetime_3(self) -> None:
         """Test it."""
         time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
-        with mock.patch(f'{__package__}.dt.datetime') as m_dt:
+        with mock.patch(f'{__pkg__}.dt.datetime') as m_dt:
             m_dt.now.return_value = time_stamp
             assert dt.datetime.now() == time_stamp
 
 
-@mock.patch(f'{__package__}.dt.datetime')
+@mock.patch(f'{__pkg__}.dt.datetime')
 def test_timestamp(m_dt) -> None:
     """Test it."""
     time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
@@ -73,11 +76,12 @@ def test_timestamp(m_dt) -> None:
 # @pytest.mark.skip
 def test_factorial():
     entrance = 4
-    with mock.patch(f'{__package__}.factorial', autospec=True) as m_fact:
+    with mock.patch(f'{__pkg__}.factorial', autospec=True) as m_fact:
         factorial(entrance)
         assert m_fact.call_args_list == [mock.call(3)]
 
-@mock.patch(f'{__package__}.requests.get')
+
+@mock.patch(f'{__pkg__}.requests.get')
 def test_consuming_api_httpbin(mock_requests_get) -> None:
     """Test it."""
     mock_requests_get.return_value = mock.Mock(
@@ -87,8 +91,12 @@ def test_consuming_api_httpbin(mock_requests_get) -> None:
         }
     )
     assert consuming_api_httpbin() == '1.1.1.1'
-    mock_requests_get.assert_called_once_with('https://httpbin.org/ip')
-    mock_requests_get.assert_called_with('https://httpbin.org/ip')
+    mock_requests_get.assert_called_once_with(
+        'https://httpbin.org/ip', timeout=TIMEOUT
+    )
+    mock_requests_get.assert_called_with(
+        'https://httpbin.org/ip', timeout=TIMEOUT
+    )
 
 
 @pytest.mark.parametrize(
@@ -153,12 +161,14 @@ def test_consuming_api_httpbin(mock_requests_get) -> None:
         ),
     ],
 )
-@mock.patch(f'{__package__}.requests.get', autospec=True)
+@mock.patch(f'{__pkg__}.requests.get', autospec=True)
 def test_consuming_api_swapi_one_person(m_req, entrance, expected) -> None:
     """Test it."""
     m_req.return_value.json.return_value = expected
     assert consuming_api_swapi_one_person(entrance) == expected
-    m_req.assert_called_once_with(f'https://swapi.dev/api/people/{entrance}')
+    m_req.assert_called_once_with(
+        f'https://swapi.dev/api/people/{entrance}', timeout=TIMEOUT
+    )
 
 
 @pytest.mark.parametrize(
@@ -651,7 +661,7 @@ def test_consuming_api_swapi_one_person(m_req, entrance, expected) -> None:
         ),
     ],
 )
-@mock.patch(f'{__package__}.requests.get', autospec=True)
+@mock.patch(f'{__pkg__}.requests.get', autospec=True)
 def test_consuming_api_swapi_one_page(m_req_get, entrance, expected) -> None:
     """Test it."""
     m_req_get.return_value = mock.Mock(
@@ -663,17 +673,19 @@ def test_consuming_api_swapi_one_page(m_req_get, entrance, expected) -> None:
     )
     assert consuming_api_swapi_one_page(entrance) == expected
     m_req_get.assert_called_once_with(
-        url := f'https://swapi.dev/api/people/?page={entrance}'
+        url := f'https://swapi.dev/api/people/?page={entrance}',
+        timeout=TIMEOUT,
     )
-    m_req_get.assert_called_with(url)
+    m_req_get.assert_called_with(url, timeout=TIMEOUT)
 
 
 class TestConsumingNextPageSWAPI:
     """Class test it."""
+
     obj = ConsumingNextPageSWAPI()
 
     @pytest.mark.skip(reason='Fail. This dont ran.')
-    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    @mock.patch(f'{__pkg__}.requests.get', autospec=True)
     def test_consuming_api_swapi_next_page_0(self, m_req_get) -> None:
         """Test it."""
         entrance = 1
@@ -684,7 +696,7 @@ class TestConsumingNextPageSWAPI:
         """Test it."""
         entrance = 1
         expected = f'{self.obj.url}/?page={entrance+1}'
-        with mock.patch(f'{__package__}.requests.get') as m_req:
+        with mock.patch(f'{__pkg__}.requests.get') as m_req:
             m_req.return_value.json.return_value = {'next': expected}
             assert self.obj.tratativa1(entrance) == expected
 
@@ -699,12 +711,14 @@ class TestConsumingNextPageSWAPI:
     def test_consuming_api_swapi_next_page_2(self, entrance, n_page) -> None:
         """Test it."""
         expected = f'{self.obj.url}/?page={n_page}' if n_page else n_page
-        with mock.patch(f'{__package__}.requests.get', autospec=True) as m_req:
+        with mock.patch(f'{__pkg__}.requests.get', autospec=True) as m_req:
             m_req.return_value.json.return_value = {'next': expected}
             assert self.obj.tratativa1(entrance) == expected
 
+
 class TestRequests:
     """Test requests."""
+
     headers = {
         'date': 'Wed, 29 Nov 2023 14:29:06 GMT',
         'content-type': 'application/json',
@@ -712,18 +726,18 @@ class TestRequests:
         'connection': 'keep-alive',
         'server': 'gunicorn/19.9.0',
         'access-control-allow-origin': '*',
-        'access-control-allow-credentials': 'true'
+        'access-control-allow-credentials': 'true',
     }
-    @mock.patch(f'{__package__}.requests.get', autospec=True)
+
+    @mock.patch(f'{__pkg__}.requests.get', autospec=True)
     def test_other_0(self, m_req_get):
         """Test it."""
         url = 'http://example.org'
         m_req_get.return_value.url = url
 
-        u = requests.get('abc')
+        u = requests.get('abc', timeout=TIMEOUT)
         assert u.url == url
-        assert m_req_get.call_args_list == [mock.call('abc')]
-
+        assert m_req_get.call_args_list == [mock.call('abc', timeout=TIMEOUT)]
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -736,7 +750,7 @@ class TestRequests:
             ('url', 'https://httpbin.org/ip'),
         ],
     )
-    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    @mock.patch(f'{__pkg__}.requests.get', autospec=True)
     def test_other_1(self, m_req_get, entrance, expected):
         """Test it."""
         url = 'http://example.org'
@@ -745,9 +759,8 @@ class TestRequests:
                 entrance: expected,
             }
         )
-        req = requests.get(url)
+        req = requests.get(url, timeout=TIMEOUT)
         assert getattr(req, entrance) == expected
-
 
     @pytest.mark.parametrize(
         'entrance mocking expected'.split(),
@@ -784,20 +797,20 @@ class TestRequests:
             ),
         ],
     )
-    @mock.patch(f'{__package__}.requests.get', autospec=True)
+    @mock.patch(f'{__pkg__}.requests.get', autospec=True)
     def test_other_2(self, m_req_get, entrance, mocking, expected):
         """Test it."""
         url = 'http://example.org'
         m_req_get.return_value = mock.Mock(**mocking)
-        req = requests.get(url)
+        req = requests.get(url, timeout=TIMEOUT)
         assert getattr(req, entrance) == expected
 
     def test_other_3(self):
         """Test it."""
         url = 'http://httpbin.org/ip'
-        with mock.patch(f'{__package__}.requests.get') as rq:
+        with mock.patch(f'{__pkg__}.requests.get') as rq:
             rq.return_value.headers = self.headers
-            r = requests.get(url)
+            r = requests.get(url, timeout=TIMEOUT)
             assert r.headers == self.headers
 
     @pytest.mark.parametrize(
@@ -809,14 +822,14 @@ class TestRequests:
             ('Server', 'gunicorn/19.9.0'),
             ('Content-Length', '34'),
             ('Connection', 'keep-alive'),
-        ]
+        ],
     )
     def test_other_4(self, entrance, expected):
         """Test it."""
         url = 'http://httpbin.org/ip'
-        with mock.patch(f'{__package__}.requests.get') as rq:
+        with mock.patch(f'{__pkg__}.requests.get') as rq:
             rq.return_value.headers = self.headers
-            r = requests.get(url)
+            r = requests.get(url, timeout=TIMEOUT)
             assert r.headers.get(entrance.casefold()) == expected
 
 
@@ -845,11 +858,11 @@ class TestConsumingIndexPageSWAPI:
 
         Test de apenas uma página.
         """
-        with mock.patch(f'{__package__}.requests.get') as m_req_get:
+        with mock.patch(f'{__pkg__}.requests.get') as m_req_get:
             m_req_get.return_value.url = self.values[0]
             assert consuming_api_swapi_index_page_0() == self.values[:1]
             assert m_req_get.call_args_list == [
-                mock.call(self.values[0]),
+                mock.call(self.values[0], timeout=TIMEOUT),
             ]
 
     @pytest.mark.webtest
@@ -860,7 +873,7 @@ class TestConsumingIndexPageSWAPI:
     @pytest.mark.skip
     def test_case_4(self) -> None:
         """Test it with mock."""
-        with mock.patch(f'{__package__}.requests.get') as m_req_get:
+        with mock.patch(f'{__pkg__}.requests.get') as m_req_get:
             m_req_get.status_code = HTTPStatus.OK
             m_req_get.ok = True
             m_req_get.return_value.url.side_effect = self.values
@@ -871,4 +884,3 @@ class TestConsumingIndexPageSWAPI:
     def test_case_5(self) -> None:
         """Test it with mock."""
         assert consuming_api_swapi_index_page_2() == self.values
-

@@ -16,7 +16,7 @@ def test_has_artefact(file) -> None:
     """Teste se há sessão Artefatos."""
     assert 'Artefatos' in file.read_text(
         encoding='utf-8',
-    ), 'Existe a sessão "## Artefatos"?'
+    ), f'Existe a sessão "## Artefatos" em {file.as_posix()}?'
 
 
 @pytest.mark.parametrize(
@@ -30,7 +30,7 @@ def test_has_dojo_link(file) -> None:
         regex,
         file.read_text(encoding='utf-8'),
         re.I,
-    ), 'Falta o link: "- [dojo](./dojo.py)"'
+    ), f'Falta o link: "- [dojo](./dojo.py)" em {file.as_posix()}'
 
 
 @pytest.mark.parametrize(
@@ -44,4 +44,4 @@ def test_has_test_dojo_link(file) -> None:
         regex,
         file.read_text(encoding='utf-8'),
         re.I,
-    ), 'Falta o link: "- [tests](./test_YYYYMMDD.py)"'
+    ), f'Falta o link: "- [tests](./test_YYYYMMDD.py)" em {file.as_posix()}'

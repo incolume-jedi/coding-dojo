@@ -8,10 +8,11 @@
 
 ---
 
-57 dojos resolvidos
+58 dojos resolvidos
 
 ---
 
+ - [Dojo20240317 &#8212; eu sou o perímetro](dojo20240317/README.md)
  - [Dojo20231130 &#8212; Busca de padrões com algoritmo boyermoore](dojo20231130/README.md)
  - [Dojo20231129 &#8212; Perímetro terrestre](dojo20231129/README.md)
  - [Dojo20231128 &#8212; Mock API](dojo20231128/README.md)

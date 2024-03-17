@@ -88,14 +88,14 @@ def test_consuming_api_httpbin(mock_requests_get) -> None:
         **{
             'status_code': HTTPStatus.OK,
             'json.return_value': {'origin': '1.1.1.1'},
-        }
+        },
     )
     assert consuming_api_httpbin() == '1.1.1.1'
     mock_requests_get.assert_called_once_with(
-        'https://httpbin.org/ip', timeout=TIMEOUT
+        'https://httpbin.org/ip', timeout=TIMEOUT,
     )
     mock_requests_get.assert_called_with(
-        'https://httpbin.org/ip', timeout=TIMEOUT
+        'https://httpbin.org/ip', timeout=TIMEOUT,
     )
 
 
@@ -167,7 +167,7 @@ def test_consuming_api_swapi_one_person(m_req, entrance, expected) -> None:
     m_req.return_value.json.return_value = expected
     assert consuming_api_swapi_one_person(entrance) == expected
     m_req.assert_called_once_with(
-        f'https://swapi.dev/api/people/{entrance}', timeout=TIMEOUT
+        f'https://swapi.dev/api/people/{entrance}', timeout=TIMEOUT,
     )
 
 
@@ -669,7 +669,7 @@ def test_consuming_api_swapi_one_page(m_req_get, entrance, expected) -> None:
             'name': 'Mock response',
             'status_code': 200,
             'json.return_value': expected,
-        }
+        },
     )
     assert consuming_api_swapi_one_page(entrance) == expected
     m_req_get.assert_called_once_with(
@@ -757,7 +757,7 @@ class TestRequests:
         m_req_get.return_value = mock.Mock(
             **{
                 entrance: expected,
-            }
+            },
         )
         req = requests.get(url, timeout=TIMEOUT)
         assert getattr(req, entrance) == expected
@@ -848,7 +848,7 @@ class TestConsumingIndexPageSWAPI:
     ]
 
     # @pytest.mark.skip
-    @pytest.mark.webtest
+    @pytest.mark.webtest()
     def test_case_1(self) -> None:
         """Test it."""
         assert consuming_api_swapi_index_page_0() == self.values
@@ -865,12 +865,12 @@ class TestConsumingIndexPageSWAPI:
                 mock.call(self.values[0], timeout=TIMEOUT),
             ]
 
-    @pytest.mark.webtest
+    @pytest.mark.webtest()
     def test_case_3(self) -> None:
         """Test it with mock."""
         assert consuming_api_swapi_index_page_1() == self.values
 
-    @pytest.mark.skip
+    @pytest.mark.skip()
     def test_case_4(self) -> None:
         """Test it with mock."""
         with mock.patch(f'{__pkg__}.requests.get') as m_req_get:
@@ -880,7 +880,7 @@ class TestConsumingIndexPageSWAPI:
             assert consuming_api_swapi_index_page_1() == self.values
             assert m_req_get.call_args_list == []
 
-    @pytest.mark.webtest
+    @pytest.mark.webtest()
     def test_case_5(self) -> None:
         """Test it with mock."""
         assert consuming_api_swapi_index_page_2() == self.values

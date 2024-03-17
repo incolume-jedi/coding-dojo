@@ -75,7 +75,7 @@ def land_perimeter_3(arr):
         return sum(t == ('X', 'X') for r in a for t in zip(r, r[1:])) * 2
 
     return 'Total land perimeter: ' + str(
-        ''.join(arr).count('X') * 4 - land(arr) - land(zip(*arr))
+        ''.join(arr).count('X') * 4 - land(arr) - land(zip(*arr)),
     )
 
 

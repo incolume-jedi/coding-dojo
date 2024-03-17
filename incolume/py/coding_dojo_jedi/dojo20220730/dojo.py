@@ -7,7 +7,6 @@ import os
 import dotenv
 import requests
 from fuzzywuzzy import fuzz  # type: ignore[import-untyped]
-
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()

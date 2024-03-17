@@ -2,7 +2,6 @@
 from pathlib import Path
 
 import click
-
 from incolume.py.coding_dojo_jedi.utils import generator_sumary
 
 

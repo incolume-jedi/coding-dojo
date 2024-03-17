@@ -5,7 +5,6 @@ import os
 
 import dotenv
 import requests
-
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()

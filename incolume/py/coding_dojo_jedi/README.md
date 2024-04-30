@@ -8,10 +8,12 @@
 
 ---
 
-57 dojos resolvidos
+59 dojos resolvidos
 
 ---
 
+ - [Dojo20240317 &#8212; Quantidade de latas](dojo20240317/problema2.md)
+ - [Dojo20240317 &#8212; eu sou o perímetro](dojo20240317/problema1.md)
  - [Dojo20231130 &#8212; Busca de padrões com algoritmo boyermoore](dojo20231130/README.md)
  - [Dojo20231129 &#8212; Perímetro terrestre](dojo20231129/README.md)
  - [Dojo20231128 &#8212; Mock API](dojo20231128/README.md)

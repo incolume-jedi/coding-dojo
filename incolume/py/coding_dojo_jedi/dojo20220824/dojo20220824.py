@@ -40,4 +40,4 @@ def millisseconds(*, h: int = 0, m: int = 0, s: int = 0) -> int:
 
 
 if __name__ == '__main__':  # pragma: no cover
-    print(dna_complementary('ATC'))  # noqa: T201
+    print(dna_complementary('ATC'))

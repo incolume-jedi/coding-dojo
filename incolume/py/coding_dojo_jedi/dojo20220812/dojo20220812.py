@@ -9,7 +9,7 @@ def tower0(n_floors: int, char: str | None = None) -> list:
     result = []
     line = ''
     for i in range(1, n_floors + 1):
-        if i < 3:  # noqa: PLR2004
+        if i < 3:
             line += char * i
         else:
             line = char * (len(line) + 2)
@@ -39,4 +39,4 @@ def tower(n_floors: int, char: str | None = None) -> list:
 
 
 if __name__ == '__main__':
-    pprint(tower(26))  # noqa: T203
+    pprint(tower(26))

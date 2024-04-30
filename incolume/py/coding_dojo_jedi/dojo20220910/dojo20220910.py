@@ -8,17 +8,17 @@ def weekday0(num: int) -> str:
     """
     if num == 1:
         resposta = 'Domingo'
-    elif num == 2:  # noqa: PLR2004
+    elif num == 2:
         resposta = 'Segunda'
-    elif num == 3:  # noqa: PLR2004
+    elif num == 3:
         resposta = 'Terça'
-    elif num == 4:  # noqa: PLR2004
+    elif num == 4:
         resposta = 'Quarta'
-    elif num == 5:  # noqa: PLR2004
+    elif num == 5:
         resposta = 'Quinta'
-    elif num == 6:  # noqa: PLR2004
+    elif num == 6:
         resposta = 'Sexta'
-    elif num == 7:  # noqa: PLR2004
+    elif num == 7:
         resposta = 'Sábado'
     else:
         resposta = 'Valor inválido'

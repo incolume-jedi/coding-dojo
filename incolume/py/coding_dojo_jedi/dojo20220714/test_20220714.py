@@ -6,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220714 import dojo20220714
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         ('Python', 'nohtyP'),
         ('Brasil', 'lisarB'),

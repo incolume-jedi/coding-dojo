@@ -26,11 +26,17 @@ def test_perimeter(entrance, expected) -> None:
     [
         (
             108,
-            'Area: 108 m2; Galão(ões): 7 (3.6)L x R$25 = R$ 175; Lata(s): 2 (18)L x R$80 = R$ 160',
+            (
+                'Area: 108 m2; Galão(ões): 7 (3.6)L x R$25 = R$ 175;'
+                ' Lata(s): 2 (18)L x R$80 = R$ 160'
+            ),
         ),
         (
             18,
-            'Area: 18 m2; Galão(ões): 2 (3.6)L x R$25 = R$ 50; Lata(s): 1 (18)L x R$80 = R$ 80',
+            (
+                'Area: 18 m2; Galão(ões): 2 (3.6)L x R$25 = R$ 50;'
+                ' Lata(s): 1 (18)L x R$80 = R$ 80'
+            ),
         ),
     ],
 )

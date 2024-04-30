@@ -16,7 +16,7 @@ from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
     reason='This run only Python 3.8 or higher',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (('+', 3, '4'), 7),
         (('+', 3, 4), 7),
@@ -43,7 +43,7 @@ def test_calculadora(entrance, expected) -> None:
     reason='This run only Python 3.8 or higher',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (
             ('^', 3, 5),

@@ -1,6 +1,7 @@
 """Test dojo."""
 
 from http import HTTPStatus
+from typing import ClassVar
 from unittest import mock
 
 import pytest
@@ -722,7 +723,7 @@ class TestConsumingNextPageSWAPI:
 class TestRequests:
     """Test requests."""
 
-    headers = {
+    headers: ClassVar = {
         'date': 'Wed, 29 Nov 2023 14:29:06 GMT',
         'content-type': 'application/json',
         'content-length': '34',
@@ -837,7 +838,7 @@ class TestRequests:
 
 
 class TestConsumingIndexPageSWAPI:
-    values = [
+    values: ClassVar = [
         'https://swapi.dev/api/people/?page=1',
         'https://swapi.dev/api/people/?page=2',
         'https://swapi.dev/api/people/?page=3',

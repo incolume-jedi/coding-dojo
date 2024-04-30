@@ -77,7 +77,7 @@ def protein0(chain: str) -> str:
 
     def aminoacid(string: str) -> str:
         """Transforma cadeia de códon em aminoacido."""
-        if len(string) <= 3:  # noqa: PLR2004
+        if len(string) <= 3:
             return codons[string]
         return f'{codons.get(string[:3])}{aminoacid(string[3:])}'
 
@@ -86,7 +86,7 @@ def protein0(chain: str) -> str:
 
 def aminoacid1(string: str, codons: dict) -> str:
     """Transforma cadeia de códon em aminoacido."""
-    if len(string) <= 3:  # noqa: PLR2004
+    if len(string) <= 3:
         return str(codons.get(string))
     return f'{codons.get(string[:3])}{aminoacid1(string[3:], codons)}'
 
@@ -234,13 +234,13 @@ def protein(chain: str) -> str:
         'UAG': '',
     }
     chain = chain.upper()
-    if len(chain) <= 3:  # noqa: PLR2004
+    if len(chain) <= 3:
         return f'{codons.get(chain)}'
     return f'{codons.get(chain[:3])}{protein(chain[3:])}'
 
 
 if __name__ == '__main__':  # pragma: no cover
-    print(  # noqa: T201
+    print(
         protein('CAU'),
         protein('CAUAAAGAA'),
         protein('CAUAAAUAGGAA'),

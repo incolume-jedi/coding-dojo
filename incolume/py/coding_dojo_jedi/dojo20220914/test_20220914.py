@@ -6,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220914.dojo20220914 import weekday
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (('sábado', 1), 'domingo'),
         (('sábado', 2), 'segunda-feira'),

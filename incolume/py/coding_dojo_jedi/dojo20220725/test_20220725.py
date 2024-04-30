@@ -14,7 +14,7 @@ from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 )
 @pytest.mark.webtest()
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (
             'Obi-Wan Kenobi',

@@ -9,7 +9,7 @@ from incolume.py.coding_dojo_jedi.dojo20220912.dojo20220912 import (
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (('sábado', 1), 'domingo'),
         (('quinta-feira', 3), 'domingo'),
@@ -31,7 +31,7 @@ def test_weekday0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (('sábado', 1), 'domingo'),
         (('quinta-feira', 3), 'domingo'),

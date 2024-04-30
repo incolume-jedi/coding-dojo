@@ -6,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220819.dojo20220819 import classify
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         ((4, [33, 37, 87, 87, 23]), ((87, 87, 37, 33), (23, 33, 37, 87))),
         (

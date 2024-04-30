@@ -70,23 +70,19 @@ def qlatas(area: float, recipiente: list[RecipienteTinta] | None = None):
         RecipienteTinta(18, 80),
     ]
     orc = Orcamento(area)
-    # result = []
-    # result = [
-    #     f'Area {area}m2 {orc.calc_vol_simples(recipiente[1].volume)} Lata ({recipiente[1].volume}L/R${recipiente[1].valor}) = R${recipiente[1].valor}',
-    #     f'Area {area}m2 {orc.calc_vol_simples(recipiente[0].volume)} Lata ({recipiente[0].volume}L/R${recipiente[0].valor}) = R${recipiente[0].valor}',
-    # ]
-    # result.galon = result.calc_vol_simples(3.6)
-    # result.extend((area, orc.calc_vol_simples(recipiente[1].volume), orc.calc_vol_simples(recipiente[1].volume)))
 
-    result = (
+    return (
         f'Area: {area} m2;'
         f' Galão(ões): {orc.calc_vol_simples(recipiente[0].volume)}'
         f' ({recipiente[0].volume})L'
         f' x R${recipiente[0].valor}'
-        f' = R$ {orc.calc_vol_simples(recipiente[0].volume) * recipiente[0].valor};'
+        f' = R$ {
+            orc.calc_vol_simples(recipiente[0].volume) * recipiente[0].valor
+        };'
         f' Lata(s): {orc.calc_vol_simples(recipiente[1].volume)}'
         f' ({recipiente[1].volume})L'
         f' x R${recipiente[1].valor}'
-        f' = R$ {orc.calc_vol_simples(recipiente[1].volume) * recipiente[1].valor}'
+        f' = R$ {
+            orc.calc_vol_simples(recipiente[1].volume) * recipiente[1].valor
+        }'
     )
-    return result

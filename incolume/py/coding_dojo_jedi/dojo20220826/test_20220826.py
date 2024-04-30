@@ -11,7 +11,7 @@ from incolume.py.coding_dojo_jedi.dojo20220826.dojo20220826 import (
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         ('Hello World!', 'Hello World'),
         ('Hello World!!!', 'Hello World'),

@@ -1,11 +1,12 @@
 """Solução para demanda #116."""
+
 from pathlib import Path
 
 
 def tratativa0() -> None:
     """Exibir arquivos com problemas de import."""
     arquivos = ''
-    print(arquivos)   # noqa: T201
+    print(arquivos)  # noqa: T201
 
 
 def tratativa1() -> None:

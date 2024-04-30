@@ -1,6 +1,5 @@
 """Dojo."""
 
-
 from pprint import pprint
 
 

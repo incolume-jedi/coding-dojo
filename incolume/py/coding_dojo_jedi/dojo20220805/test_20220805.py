@@ -1,4 +1,5 @@
 """Test for dojo."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi

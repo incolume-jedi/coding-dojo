@@ -239,7 +239,7 @@ def protein(chain: str) -> str:
     return f'{codons.get(chain[:3])}{protein(chain[3:])}'
 
 
-if __name__ == '__main__':    # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     print(  # noqa: T201
         protein('CAU'),
         protein('CAUAAAGAA'),

@@ -92,10 +92,12 @@ def test_consuming_api_httpbin(mock_requests_get) -> None:
     )
     assert consuming_api_httpbin() == '1.1.1.1'
     mock_requests_get.assert_called_once_with(
-        'https://httpbin.org/ip', timeout=TIMEOUT,
+        'https://httpbin.org/ip',
+        timeout=TIMEOUT,
     )
     mock_requests_get.assert_called_with(
-        'https://httpbin.org/ip', timeout=TIMEOUT,
+        'https://httpbin.org/ip',
+        timeout=TIMEOUT,
     )
 
 
@@ -167,7 +169,8 @@ def test_consuming_api_swapi_one_person(m_req, entrance, expected) -> None:
     m_req.return_value.json.return_value = expected
     assert consuming_api_swapi_one_person(entrance) == expected
     m_req.assert_called_once_with(
-        f'https://swapi.dev/api/people/{entrance}', timeout=TIMEOUT,
+        f'https://swapi.dev/api/people/{entrance}',
+        timeout=TIMEOUT,
     )
 
 
@@ -695,7 +698,7 @@ class TestConsumingNextPageSWAPI:
     def test_consuming_api_swapi_next_page_1(self) -> None:
         """Test it."""
         entrance = 1
-        expected = f'{self.obj.url}/?page={entrance+1}'
+        expected = f'{self.obj.url}/?page={entrance + 1}'
         with mock.patch(f'{__pkg__}.requests.get') as m_req:
             m_req.return_value.json.return_value = {'next': expected}
             assert self.obj.tratativa1(entrance) == expected

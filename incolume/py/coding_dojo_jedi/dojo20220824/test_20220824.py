@@ -1,4 +1,5 @@
 """Test unittest for dojo."""
+
 from re import escape
 
 import pytest

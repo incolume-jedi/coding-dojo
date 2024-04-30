@@ -1,4 +1,5 @@
 """Testing dojo."""
+
 import sys
 
 import pytest

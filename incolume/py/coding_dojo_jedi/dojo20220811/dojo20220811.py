@@ -1,4 +1,5 @@
 """Dojo."""
+
 from typing import Any
 
 

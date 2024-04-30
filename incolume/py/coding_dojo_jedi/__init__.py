@@ -1,4 +1,5 @@
 """Principal Module."""
+
 import logging
 from pathlib import Path
 

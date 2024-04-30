@@ -1,4 +1,5 @@
 """Teste dojo contagem de nucleotídeos."""
+
 import sys
 
 import pytest

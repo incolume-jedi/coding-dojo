@@ -1,4 +1,5 @@
 """Unittest."""
+
 from sys import version_info
 
 import pytest

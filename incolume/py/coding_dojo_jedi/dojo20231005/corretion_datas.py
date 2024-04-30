@@ -2,6 +2,7 @@
 
 que trata da reestruturação de nomes para diretórios dos dojos.
 """
+
 import subprocess
 from pathlib import Path
 
@@ -10,7 +11,7 @@ def tratativa0() -> None:
     """Descobrir o nome dos diretórios afetados."""
     dirs = Path().absolute().parent.rglob('2022*')
     for pasta in dirs:
-        print(pasta.name)    # noqa: T201
+        print(pasta.name)  # noqa: T201
 
 
 def tratativa1() -> None:

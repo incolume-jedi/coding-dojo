@@ -1,4 +1,5 @@
 """Test dojo."""
+
 from os import environ
 from sys import version_info
 

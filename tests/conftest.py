@@ -5,7 +5,6 @@ from sys import version_info
 
 import pytest
 from dotenv import load_dotenv
-
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 load_dotenv()

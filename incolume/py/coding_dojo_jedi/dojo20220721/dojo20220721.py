@@ -1,4 +1,5 @@
 """Dojo."""
+
 import requests
 
 

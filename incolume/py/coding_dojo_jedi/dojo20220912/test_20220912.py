@@ -1,4 +1,5 @@
 """Testing dojo."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220912.dojo20220912 import (

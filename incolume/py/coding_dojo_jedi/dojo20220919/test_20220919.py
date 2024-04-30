@@ -1,4 +1,5 @@
 """Testing dojo."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220919.dojo20220919 import weekday

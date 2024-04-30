@@ -1,4 +1,5 @@
 """Test for dojo 20220811."""
+
 # tests.py
 import re
 import sys
@@ -34,14 +35,14 @@ class MyTestCase(unittest.TestCase):
     """Class MyTestCase."""
 
     @classmethod
-    def setUpClass(cls) -> None:  # noqa: ANN102
+    def setUpClass(cls) -> None:
         """Pré-configuração da classe."""
 
     def setUp(self) -> None:
         """Preconfiguração para métodos."""
 
     @classmethod
-    def tearDownClass(cls) -> None:  # noqa: ANN102
+    def tearDownClass(cls) -> None:
         """Método chamado imediatamente após concluir o método de teste."""
 
     def tearDown(self) -> None:
@@ -95,7 +96,7 @@ class TestCalculadora(unittest.TestCase):
 
     def test_menos_float(self) -> None:
         """Test menos float."""
-        assert calculadora('-', 3.0, 4) == -1.0  # noqa: PLR2004
+        assert calculadora('-', 3.0, 4) == -1.0
 
     def test_mult(self) -> None:
         """Test mult."""
@@ -111,7 +112,7 @@ class TestCalculadora(unittest.TestCase):
 
     def test_dividir_float(self) -> None:
         """Test dividir float."""
-        assert calculadora('/', 4, 4.0) == 1.0  # noqa: PLR2004
+        assert calculadora('/', 4, 4.0) == 1.0
         assert calculadora('/', 4, 3) == 1.3333333333333333  # noqa: PLR2004
 
     def test_mod(self) -> None:

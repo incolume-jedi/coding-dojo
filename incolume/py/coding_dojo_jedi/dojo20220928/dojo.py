@@ -1,4 +1,5 @@
 """Dojo."""
+
 # !/usr/bin/env python
 from collections.abc import Iterable
 

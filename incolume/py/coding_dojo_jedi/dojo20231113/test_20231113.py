@@ -1,4 +1,5 @@
 """Test Notas e Moedas POO."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20231113.dojo import TrocaNotas

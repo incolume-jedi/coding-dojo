@@ -74,7 +74,7 @@ except SyntaxError as err:
     raise OSError(MSG) from err
 
 
-if __name__ == '__main__':    # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     from dis import dis
 
     dis(weekday0)

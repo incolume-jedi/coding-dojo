@@ -1,4 +1,5 @@
 """utils module."""
+
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = '@britodfbr'  # pragma: no cover
@@ -21,8 +22,8 @@ def check_connectivity(
     try:
         if req.status_code == http_ok:
             return True
-    except Exception as err:   # noqa: BLE001 pylint: disable=W0718
-        logging.error(err)   # noqa: TRY400
+    except Exception as err:  # noqa: BLE001 pylint: disable=W0718
+        logging.error(err)  # noqa: TRY400
     return False
 
 

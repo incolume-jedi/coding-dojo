@@ -1,4 +1,5 @@
 """Test for dojo."""
+
 from sys import version_info
 
 import pytest

@@ -1,4 +1,5 @@
 """Test para dojo Reverter a posição dos carecteres de uma string."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220714 import dojo20220714

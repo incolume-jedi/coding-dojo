@@ -35,7 +35,7 @@ def fizzbuzz2(num: int) -> str:
     ]
 
 
-if __name__ == '__main__':    # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     from dis import dis
 
     dis(fizzbuzz0)

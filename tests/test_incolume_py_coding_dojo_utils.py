@@ -1,4 +1,5 @@
 """Test module for utils."""
+
 import logging
 import sys
 from pathlib import Path

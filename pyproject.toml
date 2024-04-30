@@ -63,10 +63,10 @@ incolume-py-changelog = ">=0.8"
 
 
 [tool.poetry.group.docs.dependencies]
-mkdocs = "^1.5.3"
-mkdocstrings = "^0.23.0"
-mkdocstrings-python = "^1.7.0"
-mkdocs-material = "^9.4.2"
+mkdocs = ">=1.5.3"
+mkdocstrings = ">=0.23.0"
+mkdocstrings-python = ">=1.7.0"
+mkdocs-material = ">=9.4.2"
 
 [tool.poetry.scripts]
 sumary = 'incolume.py.coding_dojo_jedi.cli:sumary'

@@ -1,4 +1,5 @@
 """Test module for dojo20240317."""
+
 from incolume.py.coding_dojo_jedi.dojo20240317.dojo import perimeter, qlatas
 import pytest
 
@@ -23,9 +24,15 @@ def test_perimeter(entrance, expected) -> None:
 @pytest.mark.parametrize(
     "entrance expected".split(),
     [
-        (108, ['1 lata 18L']),
-        (18, ['1 galão 3.6L']),
-    ]
+        (
+            108,
+            "Area: 108 m2; Galão(ões): 7 (3.6)L x R$25 = R$ 175; Lata(s): 2 (18)L x R$80 = R$ 160",
+        ),
+        (
+            18,
+            "Area: 18 m2; Galão(ões): 2 (3.6)L x R$25 = R$ 50; Lata(s): 1 (18)L x R$80 = R$ 80",
+        ),
+    ],
 )
 def test_qlatas(entrance, expected) -> None:
     """Test qlatas."""

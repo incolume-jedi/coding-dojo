@@ -1,4 +1,5 @@
 """Dojo realizado em 17 Mar 2024."""
+
 from dataclasses import dataclass, field
 from math import ceil
 
@@ -31,6 +32,7 @@ def perimeter(matriz: list[list, ...]) -> int:
 @dataclass
 class RecipienteTinta:
     """Recipiente tinta."""
+
     volume: float
     valor: float
 
@@ -38,6 +40,7 @@ class RecipienteTinta:
 @dataclass
 class Orcamento:
     """Orçamento de tintas."""
+
     area: float
     rendimento: float = 6
     folga: float = field(repr=False, default=1.1)
@@ -53,25 +56,37 @@ class Orcamento:
 
     def calc_vol_simples(self, capacidade: float):
         """Calcula volume de latas."""
-        return ceil(self.litros_total * self.folga /capacidade)
+        return ceil(self.litros_total * self.folga / capacidade)
 
     def calc_volume(self):
         """Calcula volume de latas."""
         result, resto = 0, 0
 
 
-def qlatas(area: float, recipiente: list[RecipienteTinta]|None = None):
+def qlatas(area: float, recipiente: list[RecipienteTinta] | None = None):
     """Calcula quantia de latas."""
-    recipiente = (recipiente or
-                  [RecipienteTinta(3.6, 25), RecipienteTinta(18, 80)]
-                  )
-    orc = Orcamento(area)
-
-    result = [
-        f'Area {area}m2 {orc.calc_vol_simples(recipiente[1].volume)} Lata ({recipiente[1].volume}L/R${recipiente[1].valor}) = R${recipiente[1].valor}',
-        f'Area {area}m2 {orc.calc_vol_simples(recipiente[0].volume)} Lata ({recipiente[0].volume}L/R${recipiente[0].valor}) = R${recipiente[0].valor}',
+    recipiente = recipiente or [
+        RecipienteTinta(3.6, 25),
+        RecipienteTinta(18, 80),
     ]
+    orc = Orcamento(area)
+    # result = []
+    # result = [
+    #     f'Area {area}m2 {orc.calc_vol_simples(recipiente[1].volume)} Lata ({recipiente[1].volume}L/R${recipiente[1].valor}) = R${recipiente[1].valor}',
+    #     f'Area {area}m2 {orc.calc_vol_simples(recipiente[0].volume)} Lata ({recipiente[0].volume}L/R${recipiente[0].valor}) = R${recipiente[0].valor}',
+    # ]
     # result.galon = result.calc_vol_simples(3.6)
+    # result.extend((area, orc.calc_vol_simples(recipiente[1].volume), orc.calc_vol_simples(recipiente[1].volume)))
 
-
+    result = (
+        f"Area: {area} m2;"
+        f" Galão(ões): {orc.calc_vol_simples(recipiente[0].volume)}"
+        f" ({recipiente[0].volume})L"
+        f" x R${recipiente[0].valor}"
+        f" = R$ {orc.calc_vol_simples(recipiente[0].volume) * recipiente[0].valor};"
+        f" Lata(s): {orc.calc_vol_simples(recipiente[1].volume)}"
+        f" ({recipiente[1].volume})L"
+        f" x R${recipiente[1].valor}"
+        f" = R$ {orc.calc_vol_simples(recipiente[1].volume) * recipiente[1].valor}"
+    )
     return result

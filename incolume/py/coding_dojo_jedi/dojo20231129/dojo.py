@@ -1,8 +1,5 @@
 """Dojo."""
 
-from itertools import pairwise
-
-
 def land_perimeter_0(arr):
     """Calculate perimeter.
 
@@ -74,10 +71,10 @@ def land_perimeter_3(arr):
     """
 
     def land(a):
-        return sum(t == ('X', 'X') for r in a for t in pairwise(r, r[1:])) * 2
+        return sum(t == ('X', 'X') for r in a for t in zip(r, r[1:])) * 2
 
     return 'Total land perimeter: ' + str(
-        ''.join(arr).count('X') * 4 - land(arr) - land(pairwise(*arr)),
+        ''.join(arr).count('X') * 4 - land(arr) - land(zip(*arr)),
     )
 
 
@@ -87,11 +84,7 @@ def land_permetercal(matriz: list) -> str:
     def land_next(line_or_column) -> int:
         """Count land neighbord."""
         return (
-            sum(
-                t == ('X', 'X')
-                for r in line_or_column
-                for t in pairwise(r, r[1:])
-            )
+            sum(t == ('X', 'X') for r in line_or_column for t in zip(r, r[1:]))
             * 2
         )
 

@@ -91,6 +91,11 @@ No nosso algoritmo, vamos verificar se todos os dígitos do CPF são iguais e, n
 777.777.777-77 == False
 
 
+## Artefatos
+
+- [dojo](./dojo.py)
+- [tests](./test_20240502.py)
+
 ## Referências
 
 - https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/

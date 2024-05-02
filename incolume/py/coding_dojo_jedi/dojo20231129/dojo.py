@@ -1,5 +1,7 @@
 """Dojo."""
 
+# ruff: noqa: B905 C901 RUF007
+
 
 def land_perimeter_0(arr):
     """Calculate perimeter.
@@ -82,7 +84,7 @@ def land_perimeter_3(arr):
 def land_permetercal(matriz: list) -> str:
     """Calcular perímetro de um espaço."""
 
-    def land_next(line_or_column) -> int:
+    def land_next(line_or_column: list) -> int:
         """Count land neighbord."""
         return (
             sum(t == ('X', 'X') for r in line_or_column for t in zip(r, r[1:]))

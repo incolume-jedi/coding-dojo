@@ -1,4 +1,5 @@
 """Test para dojo 2023-10-07."""
+
 import sys
 
 import pytest

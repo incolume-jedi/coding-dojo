@@ -1,4 +1,5 @@
 """Test remove anchor."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20231109.dojo import (

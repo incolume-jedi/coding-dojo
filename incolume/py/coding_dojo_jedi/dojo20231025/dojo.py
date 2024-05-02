@@ -1,4 +1,5 @@
 """Modulo para dojo20231025."""
+
 import re
 from pathlib import Path
 
@@ -29,7 +30,7 @@ def generator_sumary(fout: Path | None = None) -> Path:
                 link = Path('..').joinpath(*filemd.parts[-2:])
                 sout = f'1. [{title} &#8212; {desc}]({link})\n'
                 fmd.write(sout)
-            except AttributeError:  # noqa: PERF203
+            except AttributeError:
                 pass
         fmd.writelines(
             [
@@ -40,5 +41,5 @@ def generator_sumary(fout: Path | None = None) -> Path:
     return file
 
 
-if __name__ == '__main__':    # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     generator_sumary()

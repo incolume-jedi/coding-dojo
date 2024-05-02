@@ -16,7 +16,7 @@ class TestSemVer:
         assert re.fullmatch(semver_regex, __version__, re.I)
 
     @pytest.mark.parametrize(
-        ('entrance', 'expected'),
+        ['entrance', 'expected'],
         [
             (__version__, True),
             ('1', False),

@@ -1,4 +1,5 @@
 """Dojo."""
+
 import sys
 
 import click

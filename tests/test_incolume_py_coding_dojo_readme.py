@@ -1,4 +1,5 @@
 """Test for dojo README.md."""
+
 import re
 
 import pytest

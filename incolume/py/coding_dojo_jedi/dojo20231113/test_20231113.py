@@ -1,4 +1,5 @@
 """Test Notas e Moedas POO."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20231113.dojo import TrocaNotas
@@ -13,7 +14,7 @@ class TestCase:
         return TrocaNotas()
 
     @pytest.mark.parametrize(
-        ('entrance', 'expected'),
+        ['entrance', 'expected'],
         [
             ('cedulas', [200, 100, 50, 20, 10, 5, 2]),
             ('moedas', [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]),
@@ -24,7 +25,7 @@ class TestCase:
         assert getattr(obj_trocanotas, entrance) == expected
 
     @pytest.mark.parametrize(
-        ('entrance', 'expected'),
+        ['entrance', 'expected'],
         [
             (0, ([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0])),
             (101, ([0, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0])),
@@ -76,7 +77,7 @@ class TestCase:
         assert obj_trocanotas.trocar(entrance) == expected
 
     @pytest.mark.parametrize(
-        ('entrance', 'expected'),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 0,
@@ -248,7 +249,7 @@ class TestCase:
 
     # @pytest.mark.skip()
     @pytest.mark.parametrize(
-        ('entrance', 'expected'),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 0,

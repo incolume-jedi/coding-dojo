@@ -1,4 +1,5 @@
 """Test dojo."""
+
 from os import environ
 from sys import version_info
 
@@ -13,7 +14,7 @@ from incolume.py.coding_dojo_jedi.dojo20220730.dojo import research
 )
 @pytest.mark.webtest()
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (
             'Obi-Wan Kenobi',

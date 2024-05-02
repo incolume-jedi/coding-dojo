@@ -1,4 +1,5 @@
 """Dojo."""
+
 import datetime as dt
 from http import HTTPStatus
 from pathlib import Path
@@ -39,7 +40,8 @@ def consuming_api_httpbin():
 def consuming_api_swapi_one_person(id_person: int):
     """Swapi one person."""
     response = requests.get(
-        f"{urls['swapi-people']}/{id_person}", timeout=TIMEOUT,
+        f"{urls['swapi-people']}/{id_person}",
+        timeout=TIMEOUT,
     )
     return response.json()
 
@@ -47,7 +49,8 @@ def consuming_api_swapi_one_person(id_person: int):
 def consuming_api_swapi_one_page(nr_page: int):
     """Swapi one page."""
     response = requests.get(
-        f'https://swapi.dev/api/people/?page={nr_page}', timeout=TIMEOUT,
+        f'https://swapi.dev/api/people/?page={nr_page}',
+        timeout=TIMEOUT,
     )
     if response.status_code == HTTPStatus.OK:
         return response.json()
@@ -67,7 +70,9 @@ class ConsumingNextPageSWAPI:
     def tratativa1(self, nr_page: int):
         """Swapi Next page."""
         response = requests.get(
-            self.url, params={'page': nr_page}, timeout=TIMEOUT,
+            self.url,
+            params={'page': nr_page},
+            timeout=TIMEOUT,
         )
         if response.ok:
             return response.json()['next']
@@ -80,7 +85,8 @@ def consuming_api_swapi_index_page_0(initial_page: int = 1):
     results = []
     while check == HTTPStatus.OK:
         response = requests.get(
-            f"{urls['swapi-people']}/?page={initial_page}", timeout=TIMEOUT,
+            f"{urls['swapi-people']}/?page={initial_page}",
+            timeout=TIMEOUT,
         )
         results.append(url := response.url)
         print(url)
@@ -95,7 +101,8 @@ def consuming_api_swapi_index_page_1(initial_page: int = 1):
     results = []
     while check:
         response = requests.get(
-            f'{urls["swapi-people"]}/?page={initial_page}', timeout=TIMEOUT,
+            f'{urls["swapi-people"]}/?page={initial_page}',
+            timeout=TIMEOUT,
         )
         results.append(url := response.url)
         print(url)

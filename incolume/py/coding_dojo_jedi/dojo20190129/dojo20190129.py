@@ -2,6 +2,7 @@
 
 # https://www.urionlinejudge.com.br/judge/pt/problems/view/1021
 """
+
 from typing import Any, Final
 
 MOEDAS: Final = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
@@ -52,7 +53,7 @@ def calcula2(
 ) -> tuple[Any, Any]:
     """Fatora o valor de acordo com a base monetária fornecida."""
     quantidades = [0] * len(cedulas)
-    for (i, cedula) in enumerate(cedulas):
+    for i, cedula in enumerate(cedulas):
         # poderíamos usar divmod() também
         quantidades[i] = int(valor / cedula)
         valor = round(valor % cedula, 2)

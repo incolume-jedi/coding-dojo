@@ -1,4 +1,5 @@
 """Testing dojo20220815."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220815.dojo20220815 import (
@@ -10,7 +11,7 @@ from incolume.py.coding_dojo_jedi.dojo20220815.dojo20220815 import (
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (0, 'P'),
         (6, 'P'),
@@ -29,7 +30,7 @@ def test_index0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (0, 'P'),
         (6, 'P'),
@@ -48,7 +49,7 @@ def test_index1(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (('Python', 0), 'P'),
         (('casa', 6), 's'),
@@ -67,7 +68,7 @@ def test_index(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (1, 'a'),
         (5, 'e'),

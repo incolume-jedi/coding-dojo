@@ -1,4 +1,5 @@
 """Test Get Planet Name By ID."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20231127.dojo import (

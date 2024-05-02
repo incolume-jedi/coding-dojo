@@ -1,4 +1,5 @@
 """Tests examples."""
+
 import sys
 import unittest
 

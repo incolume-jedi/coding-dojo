@@ -1,4 +1,5 @@
 """Test module for dojo."""
+
 import re
 import sys
 from pathlib import Path

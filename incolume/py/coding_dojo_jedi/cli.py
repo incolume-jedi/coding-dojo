@@ -1,4 +1,5 @@
 """CLI Module."""
+
 from pathlib import Path
 
 import click

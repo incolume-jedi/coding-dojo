@@ -58,6 +58,6 @@ def research(
 
 
 if __name__ == '__main__':
-    print(research('Tion Medon'), end='\n\n')    # noqa: T201
-    print(research('Luke Skywalker'), end='\n\n')    # noqa: T201
-    print(research('Obi-Wan Kenobi'), end='\n\n')    # noqa: T201
+    print(research('Tion Medon'), end='\n\n')
+    print(research('Luke Skywalker'), end='\n\n')
+    print(research('Obi-Wan Kenobi'), end='\n\n')

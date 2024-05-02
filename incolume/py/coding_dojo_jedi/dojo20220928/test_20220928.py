@@ -1,4 +1,5 @@
 """Dojo."""
+
 from collections.abc import Iterable
 
 import pytest
@@ -9,7 +10,7 @@ from incolume.py.coding_dojo_jedi.dojo20220928.dojo import max_sequence
 class TestCase:
     """Test Case."""
 
-    __test__ = False    # Will not be discovered as a test
+    __test__ = False  # Will not be discovered as a test
 
     @pytest.mark.skip()
     @pytest.mark.parametrize(

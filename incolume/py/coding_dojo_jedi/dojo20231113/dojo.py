@@ -1,4 +1,5 @@
 """Dojo Notas e Moedas POO."""
+
 import inspect
 import logging
 

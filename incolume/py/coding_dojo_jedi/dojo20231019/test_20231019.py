@@ -4,7 +4,7 @@ import sys
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
+from incolume.py.coding_dojo_jedi.dojo20231019.dojo20231019 import (
     complemento_fita_dna,
     contador_nucleotideos,
 )

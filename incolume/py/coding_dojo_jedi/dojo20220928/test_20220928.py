@@ -4,7 +4,7 @@ from collections.abc import Iterable
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220928.dojo import max_sequence
+from incolume.py.coding_dojo_jedi.dojo20220928.dojo20220928 import max_sequence
 
 
 class TestCase:

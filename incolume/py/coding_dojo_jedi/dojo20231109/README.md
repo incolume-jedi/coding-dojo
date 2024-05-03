@@ -20,7 +20,7 @@ Implemente uma função/timemstamp que retorne uma URL com qualquer conteúdo ap
   (remove_url_anchor("www.codewars.com/katas/"), "www.codewars.com/katas/")
 
 ## Artefatos
-- [dojo](dojo.py)
+- [dojo](dojo20231109.py)
 - [tests](test_20231109.py)
 
 ## Referências

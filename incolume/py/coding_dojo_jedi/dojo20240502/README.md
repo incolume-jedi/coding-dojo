@@ -35,7 +35,7 @@ O próximo passo da verificação também é simples, basta multiplicarmos esse 
 
     295 * 10 / 11
 
-O resultado que nos interessa na verdade é o RESTO da divisão. 
+O resultado que nos interessa na verdade é o RESTO da divisão.
 Se ele for igual ao primeiro dígito verificador (primeiro dígito depois do '-'), a primeira parte da validação está correta.
 
 **Observação Importante**: Se o resto da divisão for igual a 10, nós o consideramos como 0.
@@ -48,7 +48,7 @@ Isso significa que o nosso CPF exemplo passou na validação do primeiro dígito
 
 ### Validação do segundo dígito
 
-A validação do segundo dígito é semelhante à primeira, porém vamos considerar os 9 primeiros dígitos, mais o primeiro dígito verificador, e vamos multiplicar esses 10 números pela sequencia decrescente de suas posições (11 a 2). 
+A validação do segundo dígito é semelhante à primeira, porém vamos considerar os 9 primeiros dígitos, mais o primeiro dígito verificador, e vamos multiplicar esses 10 números pela sequencia decrescente de suas posições (11 a 2).
 
 Vejamos:
 
@@ -72,7 +72,7 @@ Com essa verificação, constatamos que o CPF 529.982.247-25 é válido.
 
 ### CPFS INVÁLIDOS CONHECIDOS
 
-Existe alguns casos de CPFs que passam nessa validação que expliquei, mas que ainda são inválidos. 
+Existe alguns casos de CPFs que passam nessa validação que expliquei, mas que ainda são inválidos.
 É os caso dos CPFs com dígitos repetidos (111.111.111-11, 222.222.222-22, ..., 999.999.999-99)
 
 Esses CPF atendem à validação, mas ainda são considerados inválidos.
@@ -93,7 +93,7 @@ No nosso algoritmo, vamos verificar se todos os dígitos do CPF são iguais e, n
 
 ## Artefatos
 
-- [dojo](./dojo.py)
+- [dojo](./dojo20240502.py)
 - [tests](./test_20240502.py)
 
 ## Referências

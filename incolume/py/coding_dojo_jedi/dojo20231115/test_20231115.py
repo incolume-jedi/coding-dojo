@@ -5,7 +5,7 @@ from re import escape
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231115.dojo import milissegundos
+from incolume.py.coding_dojo_jedi.dojo20231115.dojo2023115 import milissegundos
 
 
 @pytest.mark.parametrize(

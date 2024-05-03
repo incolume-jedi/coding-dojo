@@ -2,7 +2,7 @@
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231109.dojo import (
+from incolume.py.coding_dojo_jedi.dojo20231109.dojo20231109 import (
     remove_url_anchor,
     remove_url_anchor0,
     remove_url_anchor1,

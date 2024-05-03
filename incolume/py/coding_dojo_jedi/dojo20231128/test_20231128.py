@@ -6,7 +6,7 @@ from unittest import mock
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231128.dojo import (
+from incolume.py.coding_dojo_jedi.dojo20231128.dojo20231128 import (
     TIMEOUT,
     ConsumingNextPageSWAPI,
     __pkg__,
@@ -27,7 +27,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 def test_package_name() -> None:
     """Test package name."""
-    assert __pkg__ == 'incolume.py.coding_dojo_jedi.dojo20231128.dojo'
+    assert __pkg__ == 'incolume.py.coding_dojo_jedi.dojo20231128.dojo20231128'
 
 
 # @pytest.mark.skip

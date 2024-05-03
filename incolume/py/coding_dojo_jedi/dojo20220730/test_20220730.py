@@ -5,7 +5,7 @@ from sys import version_info
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220730.dojo import research
+from incolume.py.coding_dojo_jedi.dojo20220730.dojo20220730 import research
 
 
 @pytest.mark.skipif(

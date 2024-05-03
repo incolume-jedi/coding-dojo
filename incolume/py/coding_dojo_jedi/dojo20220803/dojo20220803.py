@@ -8,7 +8,7 @@ def cavaleiro0(balas: int, dragoes: int) -> bool:
 
 def cavaleiro1(balas: int, dragoes: int) -> bool:
     """Calcula vida cavaleiro/dragão."""
-    if (balas // 2) >= dragoes:
+    if (balas // 2) >= dragoes:  # noqa: SIM103
         return True
     return False
 

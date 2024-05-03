@@ -69,8 +69,8 @@ def test_timestamp(m_dt) -> None:
     """Test it."""
     time_stamp = dt.datetime(2000, 1, 2, 3, 4, 56)
     expected = (a := time_stamp.year, b := time_stamp.strftime('%FT%T%z'))
-    m_dt.today.return_value.year = a
-    m_dt.today.return_value.strftime.return_value = b
+    m_dt.now.return_value.year = a
+    m_dt.now.return_value.strftime.return_value = b
     assert timestamp() == expected
 
 

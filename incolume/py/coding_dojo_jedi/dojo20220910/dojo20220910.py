@@ -1,7 +1,8 @@
 """Dojo."""
+# ruff: noqa: PLR2004
 
 
-def weekday0(num: int) -> str:
+def weekday0(num: int) -> str:  # noqa: C901
     """Retorna o dia da semana.
 
     implementação if elif

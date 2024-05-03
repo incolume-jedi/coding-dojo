@@ -1,5 +1,7 @@
 """Dojo 2022-08-05."""
 
+# ruff: noqa: PLR2004
+
 
 def bmi0(peso: float, alt: float) -> str:
     """Calcula o indice de massa corporal."""

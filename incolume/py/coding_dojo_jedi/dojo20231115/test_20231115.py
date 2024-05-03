@@ -2,10 +2,14 @@
 
 import datetime
 from re import escape
+from typing import Final
 
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20231115.dojo2023115 import milissegundos
+from pytz import timezone
+
+TZ: Final[timezone] = timezone('America/Sao_Paulo')
 
 
 @pytest.mark.parametrize(
@@ -31,7 +35,7 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo2023115 import milissegundos
                     month=11,
                     day=27,
                     hour=1,
-                    tzinfo=None,
+                    tzinfo=TZ,
                 ),
             },
             3_600_000,
@@ -43,7 +47,7 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo2023115 import milissegundos
                     month=11,
                     day=27,
                     minute=1,
-                    tzinfo=None,
+                    tzinfo=TZ,
                 ),
             },
             60_000,
@@ -55,7 +59,7 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo2023115 import milissegundos
                     month=11,
                     day=27,
                     second=1,
-                    tzinfo=None,
+                    tzinfo=TZ,
                 ),
             },
             1_000,
@@ -68,7 +72,7 @@ from incolume.py.coding_dojo_jedi.dojo20231115.dojo2023115 import milissegundos
                     day=27,
                     minute=1,
                     second=1,
-                    tzinfo=None,
+                    tzinfo=TZ,
                 ),
             },
             61_000,

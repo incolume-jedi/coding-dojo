@@ -11,7 +11,7 @@ def tratativa0() -> None:
     """Descobrir o nome dos diretórios afetados."""
     dirs = Path().absolute().parent.rglob('2022*')
     for pasta in dirs:
-        print(pasta.name)
+        print(pasta.name)  #  noqa: T201
 
 
 def tratativa1() -> None:
@@ -19,9 +19,9 @@ def tratativa1() -> None:
     escopo = sorted(Path(__file__).parents[1].rglob('20*'))
     for i in escopo:
         original, novo = i, i.with_name(f'dojo{i.stem}')
-        print(original, novo)
+        print(original, novo)  #  noqa: T201
         subprocess.run(
-            ['git', 'mv', original, novo],
+            ['git', 'mv', original, novo],  # noqa: S603 S607
             check=False,
         )
 

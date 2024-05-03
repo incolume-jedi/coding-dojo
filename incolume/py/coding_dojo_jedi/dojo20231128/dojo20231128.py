@@ -1,11 +1,14 @@
 """Dojo."""
 
 import datetime as dt
+from collections.abc import Container
 from http import HTTPStatus
 from pathlib import Path
+from typing import Final
 from urllib.parse import urlunparse
 
 import requests
+from pytz import timezone
 
 __author__ = '@britodfbr'  # pragma: no cover
 _ = (p := Path(__file__).parts)[p.index('incolume') :]
@@ -16,15 +19,20 @@ urls = {
     'httpbin-ip': 'https://httpbin.org/ip',
 }
 
+TZ: Final[timezone] = timezone('America/Sao_Paulo')
+
 
 def timestamp():
     """Timestamp."""
-    return dt.datetime.today().year, dt.datetime.today().strftime('%FT%X%z')
+    return (
+        dt.datetime.now(tz=TZ).year,
+        dt.datetime.now(tz=TZ).strftime('%FT%X%z'),
+    )
 
 
 def factorial(n):
     """Factorial recursive."""
-    if n < 2:
+    if n < 2:  # noqa: PLR2004
         return 1
     return n * factorial(n - 1)
 
@@ -32,12 +40,12 @@ def factorial(n):
 def consuming_api_httpbin():
     """Consuming API httpbin."""
     response = requests.get(urls['httpbin-ip'], timeout=TIMEOUT)
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         return response.json()['origin']
     return None
 
 
-def consuming_api_swapi_one_person(id_person: int):
+def consuming_api_swapi_one_person(id_person: int) -> str:
     """Swapi one person."""
     response = requests.get(
         f"{urls['swapi-people']}/{id_person}",
@@ -46,7 +54,7 @@ def consuming_api_swapi_one_person(id_person: int):
     return response.json()
 
 
-def consuming_api_swapi_one_page(nr_page: int):
+def consuming_api_swapi_one_page(nr_page: int) -> str:
     """Swapi one page."""
     response = requests.get(
         f'https://swapi.dev/api/people/?page={nr_page}',
@@ -62,12 +70,12 @@ class ConsumingNextPageSWAPI:
 
     url = urls['swapi-people']
 
-    def tratativa0(self, nr_page: int):
+    def tratativa0(self, nr_page: int) -> str:
         """Swapi Next page."""
         response = requests.get(f'{self.url}/?page={nr_page}', timeout=TIMEOUT)
         return response.next
 
-    def tratativa1(self, nr_page: int):
+    def tratativa1(self, nr_page: int) -> any:
         """Swapi Next page."""
         response = requests.get(
             self.url,
@@ -79,7 +87,7 @@ class ConsumingNextPageSWAPI:
         return None
 
 
-def consuming_api_swapi_index_page_0(initial_page: int = 1):
+def consuming_api_swapi_index_page_0(initial_page: int = 1) -> list[Container]:
     """Swapi index page."""
     check = HTTPStatus.OK.value
     results = []
@@ -89,13 +97,13 @@ def consuming_api_swapi_index_page_0(initial_page: int = 1):
             timeout=TIMEOUT,
         )
         results.append(url := response.url)
-        print(url)
+        print(url)  #  noqa: T201
         check = response.status_code
         initial_page += 1
     return results
 
 
-def consuming_api_swapi_index_page_1(initial_page: int = 1):
+def consuming_api_swapi_index_page_1(initial_page: int = 1) -> list[Container]:
     """Swapi index page."""
     check = True
     results = []
@@ -105,13 +113,13 @@ def consuming_api_swapi_index_page_1(initial_page: int = 1):
             timeout=TIMEOUT,
         )
         results.append(url := response.url)
-        print(url)
+        print(url)  #  noqa: T201
         check = response.ok
         initial_page += 1
     return results
 
 
-def consuming_api_swapi_index_page_2(initial_page: int = 1):
+def consuming_api_swapi_index_page_2(initial_page: int = 1) -> list[Container]:
     """Swapi index page."""
     check = True
     url = urlunparse((urls['swapi-people'], f'?page={initial_page}'))

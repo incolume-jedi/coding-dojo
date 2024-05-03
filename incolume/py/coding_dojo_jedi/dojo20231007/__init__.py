@@ -9,15 +9,13 @@ def max_sequence(lista: list) -> int:
     soma = 0
     resultado = []
 
-    for x in lista:
-        resultado.append(x < 0)
+    resultado.append(x for x in lista if x < 0)
 
     if all(resultado):
         return 0
 
     resultado.clear()
-    for y in lista:
-        resultado.append(y >= 0)
+    resultado.append(y for y in lista if y >= 0)
 
     if all(resultado):
         soma = 0

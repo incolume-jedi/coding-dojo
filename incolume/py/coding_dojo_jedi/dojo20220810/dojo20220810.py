@@ -10,9 +10,7 @@ def is_vogal0(letra: str) -> bool:
 def is_vogal1(letra: str) -> bool:
     """Verifica se é vogal."""
     vogais = ['a', 'e', 'i', 'o', 'u']
-    if letra in vogais:
-        return True
-    return False
+    return letra in vogais
 
 
 def is_vogal(letra: str) -> bool:

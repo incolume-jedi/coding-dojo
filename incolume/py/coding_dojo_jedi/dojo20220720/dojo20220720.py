@@ -1,7 +1,7 @@
 """Dojo 2022-07-20."""
 
 
-def calculadora(op: str, x: float, y: float) -> float:
+def calculadora(op: str, x: float, y: float) -> float:  # noqa: C901
     """Calculadora básica."""
     result: float = 0
     operadores = '+ - * ** / // %'.split()

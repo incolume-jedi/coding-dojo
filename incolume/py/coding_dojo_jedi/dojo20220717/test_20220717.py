@@ -16,7 +16,7 @@ def test_dojo202207172() -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'esperado'),
+    ['entrada', 'esperado'],
     [
         ('walter', False),
         (12321, True),

@@ -35,7 +35,7 @@ def test_is_par(entrance, expected) -> None:
     reason='This run only Python 3.10+',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'exception', 'msg'),
+    ['entrance', 'exception', 'msg'],
     [
         (None, ValueError, 'Valor inválido.'),
         ('a', TypeError, 'Somente números inteiros.'),

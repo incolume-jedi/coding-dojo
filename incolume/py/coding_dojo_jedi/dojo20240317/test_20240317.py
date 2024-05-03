@@ -1,6 +1,9 @@
 """Test module for dojo20240317."""
 
-from incolume.py.coding_dojo_jedi.dojo20240317.dojo20240317 import perimeter, qlatas
+from incolume.py.coding_dojo_jedi.dojo20240317.dojo20240317 import (
+    perimeter,
+    qlatas,
+)
 import pytest
 
 

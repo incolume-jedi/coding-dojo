@@ -20,7 +20,7 @@ def test_ascii(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'esperado'),
+    ['entrada', 'esperado'],
     [
         (65, 'A'),
         (70, 'F'),

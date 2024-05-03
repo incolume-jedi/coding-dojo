@@ -8,4 +8,4 @@ def saudacao(timeout: float = 9) -> None:
     r = requests.get('https://swapi.dev/api/people/1/', timeout=timeout)
 
     name = r.json()['name']
-    print('Hello,', name + '!')
+    print('Hello,', name + '!')  #  noqa: T201

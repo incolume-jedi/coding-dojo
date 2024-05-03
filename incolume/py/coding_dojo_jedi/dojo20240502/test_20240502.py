@@ -1,7 +1,7 @@
 """Dojo validação de CPF realizado em 02/05/2024."""
 
 import pytest
-from dojo import check_cpf, verify_cpf
+from dojo20240502 import check_cpf, verify_cpf
 
 
 class TestCheckCPF:

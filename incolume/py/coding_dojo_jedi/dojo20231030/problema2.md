@@ -25,7 +25,7 @@ Output: -321
 Example 3:
 Input: x = 120
 Output: 21
- 
+
 
 Constraints:
 
@@ -33,7 +33,7 @@ Constraints:
 
 ## Artefatos
 
-- [dojo](dojo.py)
+- [dojo](dojo20231030.py)
 - [tests](test_20231030.py)
 
 

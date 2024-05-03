@@ -2,7 +2,7 @@
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231113.dojo import TrocaNotas
+from incolume.py.coding_dojo_jedi.dojo20231113.dojo20231113 import TrocaNotas
 
 
 class TestCase:

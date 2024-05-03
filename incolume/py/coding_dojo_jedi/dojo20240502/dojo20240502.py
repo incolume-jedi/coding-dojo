@@ -24,7 +24,9 @@ def check_cpf(cpf: int | str) -> bool:
     >>> check_cpf('529.982.247-25')
     True
     >>> check_cpf('52998224725')
-    False
+    True
+    >>> check_cpf(52998224725)
+    True
     >>> check_cpf('111.111.111-11')
     False
     """
@@ -65,7 +67,9 @@ def verify_cpf(cpf: int | str) -> bool:
     >>> verify_cpf('529.982.247-25')
     True
     >>> verify_cpf('52998224725')
-    False
+    True
+    >>> verify_cpf(52998224725)
+    True
     >>> verify_cpf('111.111.111-11')
     False
     """

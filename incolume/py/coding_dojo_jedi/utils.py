@@ -22,8 +22,8 @@ def check_connectivity(
     try:
         if req.status_code == http_ok:
             return True
-    except Exception as err:  # pylint: disable=W0718
-        logging.exception(err)
+    except Exception:  # pylint: disable=W0718
+        logging.exception()
     return False
 
 
@@ -69,7 +69,7 @@ def generator_sumary(
             desc = result.group(1)  # type: ignore[union-attr]
             link = Path().joinpath(*filemd.parts[-2:])
             sout.append(f' - [{title} &#8212; {desc}]({link})\n')
-        except AttributeError:
+        except AttributeError:  #  noqa: PERF203
             pass
 
     with file.open('w') as fmd:

@@ -1,5 +1,7 @@
 """Dojo 2022-08-31."""
 
+# ruff: noqa: PLR2004
+
 # def conceito(*args, **kwargs):
 #         if args else (kwargs.get('nota1') + kwargs.get('nota2'))/2
 

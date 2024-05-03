@@ -28,6 +28,6 @@ def adedonha(num: int) -> str:
 
 
 if __name__ == '__main__':
-    print(
+    print(  #  noqa: T201
         index(input('Qual a palavra: '), int(input('Qual a posição: '))),
     )

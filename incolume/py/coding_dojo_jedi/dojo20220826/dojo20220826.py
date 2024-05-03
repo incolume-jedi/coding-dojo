@@ -2,6 +2,8 @@
 
 import logging
 
+#  ruff: noqa: PLR2004
+
 
 def no_exclamation0(frase: str) -> str:
     """Problema 1."""

@@ -1,5 +1,7 @@
 """Dojo."""
 
+# ruff: noqa: C901
+
 
 def boyermoore_0(palavra: str, texto: str) -> int:
     """Algoritmo boyer-moore.

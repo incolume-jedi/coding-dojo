@@ -30,7 +30,7 @@ def generator_sumary(fout: Path | None = None) -> Path:
                 link = Path('..').joinpath(*filemd.parts[-2:])
                 sout = f'1. [{title} &#8212; {desc}]({link})\n'
                 fmd.write(sout)
-            except AttributeError:
+            except AttributeError:  #  noqa: PERF203
                 pass
         fmd.writelines(
             [

@@ -10,6 +10,8 @@ import requests
 
 from incolume.py.coding_dojo_jedi.dojo20220811.dojo20220811 import calculadora
 
+# ruff: noqa: PLR2004
+
 
 def check_connectivity(url: str = 'https://google.com') -> bool:
     """Check web connectivity."""
@@ -17,7 +19,7 @@ def check_connectivity(url: str = 'https://google.com') -> bool:
         req = requests.get(url, timeout=0.8)
         if req.status_code != 200:
             msg = 'Not connected'
-            raise ConnectionError(msg)
+            raise ConnectionError(msg)  # noqa: TRY301
     except ConnectionError:
         return False
     return True
@@ -76,7 +78,7 @@ class MyTestCase(unittest.TestCase):
         Defina um skip com a mensagem 'Dont ran'.
         """
         # pylint: disable=comparison-of-constants
-        assert True is False
+        assert True is False  # noqa: PLR0133
 
 
 class TestCalculadora(unittest.TestCase):

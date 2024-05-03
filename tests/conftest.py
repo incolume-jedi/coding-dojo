@@ -15,7 +15,7 @@ collect_ignore = [
 ]
 
 
-if version_info < (3, 10, 0):
+if version_info < (3, 10, 0):  # noqa: UP036
     collect_ignore.extend(
         (
             'incolume/py/dojo20220720',

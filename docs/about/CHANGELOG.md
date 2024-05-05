@@ -5,14 +5,42 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolumepy.utils](https://gitlab.com/development-incolume/incolumepy.utils/-/tree/2.10.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.8.0)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-03-17:
+## [Unreleased]	 &#8212; 	2024-04-30:
 ### Added
   - Dojo20240317 - Eu sou o perímetro;
+  - Pacote pre-commit;
+### Changed
+  - Incolumepy.utils > incolume.py.changelog;
+
+## [1.48.1]	 &#8212; 	2024-05-05:
+### Fixed
+  - Correção no README dojo 20240503;
+
+## [1.48.0]	 &#8212; 	2024-05-05:
+### Added
+  - Dojo20240317 - Eu sou o perímetro;
+  - Dojo 20240317 - quantidade de latas;
+  - Dojo 20240502 - validação de cpf;
+  - Dojo 20240503 - criar cpf validos;
+  - Pacote pre-commit;
+### Changed
+  - Incolumepy.utils > incolume.py.changelog;
+### Fixed
+  - Correções CI/CD;
+  - Configuração pytest;
+  - Configuração ruff;
+
+## [1.47.0]	 &#8212; 	2024-04-30:
+### Added
+  - Dojo20240317 - Eu sou o perímetro;
+  - Pacote pre-commit;
+### Changed
+  - Incolumepy.utils > incolume.py.changelog;
 
 ## [1.46.0]	 &#8212; 	2023-12-01:
 ### Added
@@ -301,6 +329,7 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 ## 0.1.0	 &#8212; 	2022-07-22:
 ### Added
   - Dojos anteriores a estruturação;
+
 ---
 
 [1.0.0]: https://github.com/incolume-jedi/coding-dojo/compare/0.1.0...1.0.0
@@ -349,4 +378,7 @@ This file was automatically generated for [incolumepy.utils](https://gitlab.com/
 [1.44.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.40.1...1.44.0
 [1.45.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.44.0...1.45.0
 [1.46.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.45.0...1.46.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.46.0...Unreleased
+[1.47.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.46.0...1.47.0
+[1.48.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.47.0...1.48.0
+[1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...Unreleased

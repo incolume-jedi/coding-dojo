@@ -8,10 +8,12 @@
 
 ---
 
-59 dojos resolvidos
+61 dojos resolvidos
 
 ---
 
+ - [Dojo20240503 &#8212; Criar CPF](dojo20240503/README.md)
+ - [Dojo20240502 &#8212; Validação de CPF](dojo20240502/README.md)
  - [Dojo20240317 &#8212; Quantidade de latas](dojo20240317/problema2.md)
  - [Dojo20240317 &#8212; eu sou o perímetro](dojo20240317/problema1.md)
  - [Dojo20231130 &#8212; Busca de padrões com algoritmo boyermoore](dojo20231130/README.md)

@@ -24,3 +24,16 @@ def gen_cpf0() -> str:
         prefix.append(digito_verificador)
     return ''.join(str(n) for n in prefix)
 
+
+def gen_cpf1() -> str:
+    """Gerador de CPF aleatórios."""
+    prefix = [int(char) for char in secrets.token_hex(13) if char.isdigit()][
+        :9
+    ]
+    while len(prefix) < CPF_DIGITS:
+        resto = (
+            sum(v * (len(prefix) + 1 - i) for i, v in enumerate(prefix)) % 11
+        )
+        digito_verificador = 0 if resto <= 1 else 11 - resto
+        prefix.append(digito_verificador)
+    return ''.join(str(n) for n in prefix)

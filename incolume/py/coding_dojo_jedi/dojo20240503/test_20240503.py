@@ -28,3 +28,17 @@ class CheckDojoGenCPF:
         """Test it."""
         random.seed(seed)
         assert gen_cpf0() == expected
+
+    @pytest.mark.parametrize(
+        'expected',
+        [
+            '00000000191',
+            '66048764707',
+            '52601815906',
+            '78778932807',
+        ],
+    )
+    def test_gen_pdf1(self, expected) -> NoReturn:
+        """Test it."""
+        with mock.patch('secrets.token_hex', return_value=expected):
+            assert gen_cpf1() == expected

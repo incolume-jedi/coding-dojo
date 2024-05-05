@@ -1,4 +1,5 @@
 """Testing dojo."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220921.dojo20220921 import (
@@ -9,7 +10,7 @@ from incolume.py.coding_dojo_jedi.dojo20220921.dojo20220921 import (
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'experado'),
+    ['entrada', 'experado'],
     [
         (1, 'I'),
         (2, 'II'),
@@ -41,7 +42,7 @@ def test_to_roman0(entrada, experado) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'experado'),
+    ['entrada', 'experado'],
     [
         (1, 'I'),
         (2, 'II'),
@@ -73,7 +74,7 @@ def test_to_roman1(entrada, experado) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'experado'),
+    ['entrada', 'experado'],
     [
         (1, 'I'),
         (2, 'II'),

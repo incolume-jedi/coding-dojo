@@ -1,5 +1,8 @@
 """Dojo."""
+
 import logging
+
+#  ruff: noqa: PLR2004
 
 
 def no_exclamation0(frase: str) -> str:
@@ -42,11 +45,11 @@ def imc0(altura: float, peso: float) -> str:
         'peso normal',
         'abaixo do peso',
     ][
-        (imc_value < 39.9)  # noqa: PLR2004
-        + (imc_value < 34.9)  # noqa: PLR2004
-        + (imc_value < 29.9)  # noqa: PLR2004
-        + (imc_value < 24.9)  # noqa: PLR2004
-        + (imc_value < 18.5)  # noqa: PLR2004
+        (imc_value < 39.9)
+        + (imc_value < 34.9)
+        + (imc_value < 29.9)
+        + (imc_value < 24.9)
+        + (imc_value < 18.5)
     ]
 
 

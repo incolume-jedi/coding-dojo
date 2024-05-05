@@ -1,4 +1,5 @@
 """Unittest for dojo."""
+
 from incolume.py.coding_dojo_jedi.dojo20220729.dojo20220729 import dna2rna
 
 

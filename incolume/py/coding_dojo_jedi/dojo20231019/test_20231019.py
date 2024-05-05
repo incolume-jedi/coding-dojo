@@ -1,9 +1,10 @@
 """Teste dojo contagem de nucleotídeos."""
+
 import sys
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
+from incolume.py.coding_dojo_jedi.dojo20231019.dojo20231019 import (
     complemento_fita_dna,
     contador_nucleotideos,
 )
@@ -14,7 +15,7 @@ from incolume.py.coding_dojo_jedi.dojo20231019.dojo import (
     reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         ('ATCG', '1 1 1 1'),
         ('ATATGGCC', '2 2 2 2'),
@@ -37,7 +38,7 @@ def test_contador_nucleotideos(entrance, expected) -> None:
     reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         ('AAAACCCGGT', 'ACCGGGTTTT'),
     ],

@@ -1,4 +1,5 @@
 """Test for dojo README.md."""
+
 import re
 
 import pytest
@@ -30,7 +31,7 @@ def test_has_dojo_link(file) -> None:
         regex,
         file.read_text(encoding='utf-8'),
         re.I,
-    ), f'Falta o link: "- [dojo](./dojo.py)" em {file.as_posix()}'
+    ), f'Falta o link: "- [dojo](./dojo20231025.py)" em {file.as_posix()}'
 
 
 @pytest.mark.parametrize(

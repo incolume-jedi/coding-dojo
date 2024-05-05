@@ -1,11 +1,12 @@
 """Testing dojo."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220919.dojo20220919 import weekday
 
 
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (1, 'Domingo'),
         (2, 'Segunda'),

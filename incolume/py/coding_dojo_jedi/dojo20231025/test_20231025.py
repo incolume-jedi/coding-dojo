@@ -1,4 +1,5 @@
 """Test module for dojo."""
+
 import re
 import sys
 from pathlib import Path
@@ -6,7 +7,9 @@ from tempfile import NamedTemporaryFile
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231025.dojo import generator_sumary
+from incolume.py.coding_dojo_jedi.dojo20231025.dojo20231025 import (
+    generator_sumary,
+)
 
 
 @pytest.fixture()

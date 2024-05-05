@@ -3,9 +3,10 @@
 Introcution, Tools, and Formatting
 Tests for annotations examples
 """
+
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231030.dojo import (
+from incolume.py.coding_dojo_jedi.dojo20231030.dojo20231030 import (
     NewPoint,
     Point,
     int_reverso,

@@ -1,4 +1,5 @@
 """Test Module."""
+
 from incolume.py.coding_dojo_jedi.dojo20190129 import dojo20190129
 
 

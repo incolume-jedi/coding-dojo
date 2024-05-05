@@ -1,4 +1,5 @@
 """Test for dojo."""
+
 from sys import version_info
 
 import pytest
@@ -11,7 +12,7 @@ from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par
     reason='This run only Python 3.10+',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (5, 'Ímpar'),
         (56, 'Par'),
@@ -34,7 +35,7 @@ def test_is_par(entrance, expected) -> None:
     reason='This run only Python 3.10+',
 )
 @pytest.mark.parametrize(
-    ('entrance', 'exception', 'msg'),
+    ['entrance', 'exception', 'msg'],
     [
         (None, ValueError, 'Valor inválido.'),
         ('a', TypeError, 'Somente números inteiros.'),

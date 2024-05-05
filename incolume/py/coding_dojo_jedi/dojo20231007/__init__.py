@@ -4,20 +4,18 @@ from collections.abc import Iterable
 from sys import maxsize
 
 
-def max_sequence(lista: list) -> int:  # noqa: C901
+def max_sequence(lista: list) -> int:
     """_Soma os valores dentro de um array."""
     soma = 0
     resultado = []
 
-    for x in lista:
-        resultado.append(x < 0)  # noqa: PERF401
+    resultado.append(x for x in lista if x < 0)
 
     if all(resultado):
         return 0
 
     resultado.clear()
-    for y in lista:
-        resultado.append(y >= 0)  # noqa: PERF401
+    resultado.append(y for y in lista if y >= 0)
 
     if all(resultado):
         soma = 0

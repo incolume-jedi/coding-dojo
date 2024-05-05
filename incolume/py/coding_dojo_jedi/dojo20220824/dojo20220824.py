@@ -39,5 +39,5 @@ def millisseconds(*, h: int = 0, m: int = 0, s: int = 0) -> int:
     return (h * 3600 + m * 60 + s) * 1000
 
 
-if __name__ == '__main__':    # pragma: no cover
-    print(dna_complementary('ATC'))    # noqa: T201
+if __name__ == '__main__':  # pragma: no cover
+    print(dna_complementary('ATC'))  #  noqa: T201

@@ -1,10 +1,11 @@
 """Test dojo."""
+
 from os import environ
 from sys import version_info
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220730.dojo import research
+from incolume.py.coding_dojo_jedi.dojo20220730.dojo20220730 import research
 
 
 @pytest.mark.skipif(
@@ -13,7 +14,7 @@ from incolume.py.coding_dojo_jedi.dojo20220730.dojo import research
 )
 @pytest.mark.webtest()
 @pytest.mark.parametrize(
-    ('entrance', 'expected'),
+    ['entrance', 'expected'],
     [
         (
             'Obi-Wan Kenobi',

@@ -22,4 +22,4 @@ def table_p2() -> dict:
 def show() -> None:
     """Exibe a tabela."""
     for i, j in table_p2().items():
-        print(f'{i:4} = R$ {j:6.2f}')    # noqa: T201
+        print(f'{i:4} = R$ {j:6.2f}')  #  noqa: T201

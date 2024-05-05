@@ -1,7 +1,8 @@
 """Test Get Planet Name By ID."""
+
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231127.dojo import (
+from incolume.py.coding_dojo_jedi.dojo20231127.dojo20231127 import (
     get_planet_name,
     get_planet_name0,
 )

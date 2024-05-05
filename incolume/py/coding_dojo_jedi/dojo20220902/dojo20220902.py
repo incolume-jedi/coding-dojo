@@ -33,7 +33,7 @@ def trocar_dinheiro(valor: float) -> tuple[list, list]:
     )
 
 
-if __name__ == '__main__':    # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     trocar_dinheiro(386.96)
     trocar_dinheiro(576.73)
     trocar_dinheiro(6)

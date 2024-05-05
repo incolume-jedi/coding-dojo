@@ -20,7 +20,7 @@ def test_ascii(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'esperado'),
+    ['entrada', 'esperado'],
     [
         (65, 'A'),
         (70, 'F'),
@@ -49,4 +49,4 @@ def test_ascii_exception_1() -> None:
         ValueError,
         match='num deve ser um número entre 0 e 0x10ffff.',
     ):
-        assert dojo20220718.get_char('a')   # type: ignore[arg-type]
+        assert dojo20220718.get_char('a')  # type: ignore[arg-type]

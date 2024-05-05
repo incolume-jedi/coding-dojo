@@ -1,4 +1,5 @@
 """Dojo."""
+
 import json
 import logging
 import os
@@ -13,7 +14,7 @@ logging.basicConfig(
 )
 
 
-def research(
+def research(  # noqa: C901
     name: str = '',
     url: str = '',
     pagina: int = 0,
@@ -36,7 +37,7 @@ def research(
                 x = r.json()
                 resposta += x['results']
                 pagina += 1
-            except KeyError:
+            except KeyError:  # noqa: PERF203
                 break
         personagens = {p.get('name').casefold(): p for p in resposta}
         logging.info('personagens=%s', personagens)
@@ -65,6 +66,6 @@ def research(
 
 
 if __name__ == '__main__':
-    print(research('Tion Medon'), end='\n\n')  # noqa: T201
-    print(research('Luke Skywalker'), end='\n\n')  # noqa: T201
-    print(research('Obi-Wan Kenobi'), end='\n\n')  # noqa: T201
+    print(research('Tion Medon'), end='\n\n')  #  noqa: T201
+    print(research('Luke Skywalker'), end='\n\n')  #  noqa: T201
+    print(research('Obi-Wan Kenobi'), end='\n\n')  #  noqa: T201

@@ -21,13 +21,13 @@ def get_planet_name(id):
         case 4: name = "Mars"
         case 5: name = "Jupiter"
         case 6: name = "Saturn"
-        case 7: name = "Uranus"  
+        case 7: name = "Uranus"
         case 8: name = "Neptune"
     return name
 ```
 ## Artefatos
 
-- [dojo](dojo.py)
+- [dojo](dojo20231127.py)
 - [tests](test_YYYYMMDD.py)
 
 ## Exemplos

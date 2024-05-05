@@ -38,4 +38,4 @@ def weekday(dia: str, qtd: int) -> str:
 
 
 if __name__ == '__main__':
-    print(weekday('domingo', 1))  # noqa: T201
+    print(weekday('domingo', 1))  #  noqa: T201

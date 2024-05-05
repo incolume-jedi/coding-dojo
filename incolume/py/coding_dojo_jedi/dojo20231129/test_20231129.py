@@ -1,7 +1,8 @@
 """Test dojo20231129."""
+
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231129 import dojo
+from incolume.py.coding_dojo_jedi.dojo20231129 import dojo20231129 as dojo
 
 tests = [
     (

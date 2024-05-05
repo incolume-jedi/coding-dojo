@@ -1,11 +1,12 @@
 """Unittest for dojo."""
+
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220801.dojo20220801 import is_square
 
 
 @pytest.mark.parametrize(
-    ('entrada', 'esperado'),
+    ['entrada', 'esperado'],
     [
         (-1, False),
         (0, True),

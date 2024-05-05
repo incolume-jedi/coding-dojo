@@ -1,4 +1,5 @@
 """Test for dojo 20220811."""
+
 # tests.py
 import re
 import sys
@@ -9,14 +10,16 @@ import requests
 
 from incolume.py.coding_dojo_jedi.dojo20220811.dojo20220811 import calculadora
 
+# ruff: noqa: PLR2004
+
 
 def check_connectivity(url: str = 'https://google.com') -> bool:
     """Check web connectivity."""
     try:
         req = requests.get(url, timeout=0.8)
-        if req.status_code != 200:  # noqa: PLR2004
+        if req.status_code != 200:
             msg = 'Not connected'
-            raise ConnectionError(msg)
+            raise ConnectionError(msg)  # noqa: TRY301
     except ConnectionError:
         return False
     return True
@@ -34,14 +37,14 @@ class MyTestCase(unittest.TestCase):
     """Class MyTestCase."""
 
     @classmethod
-    def setUpClass(cls) -> None:  # noqa: ANN102
+    def setUpClass(cls) -> None:
         """Pré-configuração da classe."""
 
     def setUp(self) -> None:
         """Preconfiguração para métodos."""
 
     @classmethod
-    def tearDownClass(cls) -> None:  # noqa: ANN102
+    def tearDownClass(cls) -> None:
         """Método chamado imediatamente após concluir o método de teste."""
 
     def tearDown(self) -> None:
@@ -83,11 +86,11 @@ class TestCalculadora(unittest.TestCase):
 
     def test_soma(self) -> None:
         """Test soma."""
-        assert calculadora('+', 3, '4') == 7  # noqa: PLR2004
+        assert calculadora('+', 3, '4') == 7
 
     def test_soma_float(self) -> None:
         """Test soma float."""
-        assert calculadora('+', 3, 4) == 7.0  # noqa: PLR2004
+        assert calculadora('+', 3, 4) == 7.0
 
     def test_menos(self) -> None:
         """Test menos."""
@@ -95,24 +98,24 @@ class TestCalculadora(unittest.TestCase):
 
     def test_menos_float(self) -> None:
         """Test menos float."""
-        assert calculadora('-', 3.0, 4) == -1.0  # noqa: PLR2004
+        assert calculadora('-', 3.0, 4) == -1.0
 
     def test_mult(self) -> None:
         """Test mult."""
-        assert calculadora('*', 3, '4') == 12  # noqa: PLR2004
+        assert calculadora('*', 3, '4') == 12
 
     def test_mult_float(self) -> None:
         """Test mult float."""
-        assert calculadora('*', 3, '4.0') == 12.0  # noqa: PLR2004
+        assert calculadora('*', 3, '4.0') == 12.0
 
     def test_dividir(self) -> None:
         """Test dividir inteiro."""
-        assert calculadora('/', 3, '4') == 0.75  # noqa: PLR2004
+        assert calculadora('/', 3, '4') == 0.75
 
     def test_dividir_float(self) -> None:
         """Test dividir float."""
-        assert calculadora('/', 4, 4.0) == 1.0  # noqa: PLR2004
-        assert calculadora('/', 4, 3) == 1.3333333333333333  # noqa: PLR2004
+        assert calculadora('/', 4, 4.0) == 1.0
+        assert calculadora('/', 4, 3) == 1.3333333333333333
 
     def test_mod(self) -> None:
         """Test mod."""
@@ -120,11 +123,11 @@ class TestCalculadora(unittest.TestCase):
 
     def test_mod1(self) -> None:
         """Test mod."""
-        assert calculadora('%', 12, 7) == 5  # noqa: PLR2004
+        assert calculadora('%', 12, 7) == 5
 
     def test_pow(self) -> None:
         """Test pow."""
-        assert calculadora('**', 3, 4) == 81  # noqa: PLR2004
+        assert calculadora('**', 3, 4) == 81
 
     def test_dividir_except(self) -> None:
         """Test dividir except."""

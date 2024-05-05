@@ -20,14 +20,14 @@ boyermoore('THIS', "THIS IS A TEST TEXT") == {'THIS': 0}
 boyermoore("AABA", 'AABAACAADAABAABA') == {'AABA': [0, 9,12]}
 boyermoore("1234", '012342798123468791251234') == {'1234': [1, 10, 21]}
 ```
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>
@@ -36,7 +36,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 ## Artefatos
 
-- [dojo](dojo.py)
+- [dojo](dojo20231130.py)
 - [tests](test_20231130.py)
 
 
@@ -47,4 +47,4 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 ---
 
-Copyright &copy; **incolume.com.br** since 2010 
+Copyright &copy; **incolume.com.br** since 2010

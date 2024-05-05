@@ -1,8 +1,7 @@
 """Dojo."""
-from typing import Any
 
 
-def calculadora(op: str, x: Any, y: Any) -> float:  # noqa: ANN401
+def calculadora(op: str, x: str, y: str) -> float:
     """Calculadora."""
     operadores = '+ - * ** // / %'.split()
 

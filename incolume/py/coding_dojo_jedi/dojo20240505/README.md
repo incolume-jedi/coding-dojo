@@ -6,9 +6,8 @@
 
 ## Problema
 
-**Título do problema**
+**Validação de CPF**
 
-Validação de CPF
 
 Desenvolva um programa que utilize Programação orientada a objetos (POO), onde solicite a digitação de um
 número de CPF no formato ###.###.###-## e indique se é um número de CPF válido ou

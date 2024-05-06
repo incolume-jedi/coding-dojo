@@ -8,10 +8,12 @@
 
 ---
 
-61 dojos resolvidos
+63 dojos resolvidos
 
 ---
 
+ - [Dojo20240505 &#8212; Título do problema](dojo20240505/README.md)
+ - [Dojo20240504 &#8212; Criar dígitos verificadores para CPF](dojo20240504/README.md)
  - [Dojo20240503 &#8212; Criar CPF](dojo20240503/README.md)
  - [Dojo20240502 &#8212; Validação de CPF](dojo20240502/README.md)
  - [Dojo20240317 &#8212; Quantidade de latas](dojo20240317/problema2.md)

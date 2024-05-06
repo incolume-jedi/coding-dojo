@@ -10,12 +10,10 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-04-30:
+## [Unreleased]	 &#8212; 	2024-05-06:
 ### Added
-  - Dojo20240317 - Eu sou o perímetro;
-  - Pacote pre-commit;
-### Changed
-  - Incolumepy.utils > incolume.py.changelog;
+  - Dojo20240504 - Criar dígitos verificadores para CPF;
+  - Dojo20240505 - Validação de CPF (POO);
 
 ## [1.48.1]	 &#8212; 	2024-05-05:
 ### Fixed

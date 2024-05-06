@@ -8,10 +8,11 @@
 
 ---
 
-63 dojos resolvidos
+64 dojos resolvidos
 
 ---
 
+ - [Dojo20240506 &#8212; Números felizes](dojo20240506/README.md)
  - [Dojo20240505 &#8212; Validação de CPF](dojo20240505/README.md)
  - [Dojo20240504 &#8212; Criar dígitos verificadores para CPF](dojo20240504/README.md)
  - [Dojo20240503 &#8212; Criar CPF](dojo20240503/README.md)

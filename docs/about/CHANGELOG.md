@@ -14,6 +14,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Added
   - Dojo20240504 - Criar dígitos verificadores para CPF;
   - Dojo20240505 - Validação de CPF (POO);
+  - Dojo20240506 - Número Feliz;
 
 ## [1.48.1]	 &#8212; 	2024-05-05:
 ### Fixed

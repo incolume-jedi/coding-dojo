@@ -25,7 +25,7 @@ CPF(52998224725).is_valid() == True
 ## Artefatos
 
 - [dojo](./__init__.py)
-- [tests](./tset_20240505.py)
+- [tests](./test_20240505.py)
 
 ## Referências
 

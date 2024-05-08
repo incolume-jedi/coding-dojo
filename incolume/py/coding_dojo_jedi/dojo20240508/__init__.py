@@ -16,3 +16,12 @@ def double_minor_feliz():
         n = next(num)
         if is_feliz(n) and is_feliz(n + 1):
             return n, n + 1
+
+
+def trio_minor_feliz():
+    """Felizes consecutivos."""
+    num = count(1)
+    while True:
+        n = next(num)
+        if is_feliz(n) and is_feliz(n + 1) and is_feliz(n + 2):
+            return n, n + 1, n + 2

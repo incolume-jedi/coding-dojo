@@ -36,7 +36,7 @@ iteração|algarismos|soma
 
 ## Artefatos
 
-- [dojo](./__main__.py)
+- [dojo](./__init__.py)
 - [tests](./test_20240506.py)
 
 

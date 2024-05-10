@@ -3,7 +3,7 @@
 import pytest
 
 
-from . import is_narcisist, char_position
+from . import is_narcisist, char_position, counting_sheep
 
 
 __author__ = '@britodfbr'  # pragma: no cover
@@ -130,3 +130,96 @@ class TestLettersPosition:
     def test_check(self, entrance, expected):
         """Check result."""
         assert char_position(entrance) == expected
+
+
+class TestSheep:
+    """Case test sheep."""
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (
+                [
+                    True,
+                    True,
+                    True,
+                    'nill',
+                    True,
+                    True,
+                    True,
+                    True,
+                    True,
+                    'null',
+                    True,
+                    'false',
+                    True,
+                    False,
+                    'undefined',
+                    'True',
+                    'true',
+                    True,
+                    True,
+                    True,
+                    False,
+                    False,
+                    True,
+                    True,
+                ],
+                17,
+            ),
+            (
+                [
+                    True,
+                    True,
+                    True,
+                    False,
+                    True,
+                    True,
+                    True,
+                    True,
+                    True,
+                    False,
+                    True,
+                    False,
+                    True,
+                    False,
+                    False,
+                    True,
+                    True,
+                    True,
+                    True,
+                    True,
+                    False,
+                    False,
+                    True,
+                    True,
+                ],
+                17,
+            ),
+            (
+                [
+                    [True, True, True, False],
+                    [True, True, True, True],
+                    [True, False, True, False],
+                    [True, False, False, True],
+                    [True, True, True, True],
+                    [False, False, True, True],
+                ],
+                17,
+            ),
+            (
+                [
+                    [True, True, True, 'undefined'],
+                    [True, True, True, True],
+                    [True, False, True, 'nill'],
+                    [True, None, False, True],
+                    [True, True, True, True],
+                    [False, 'null', 'True', True],
+                ],
+                17,
+            ),
+        ],
+    )
+    def test_counting_sheep(self, entrance, expected):
+        """Test count sheep."""
+        assert counting_sheep(entrance) == expected

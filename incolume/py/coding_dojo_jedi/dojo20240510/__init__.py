@@ -1,11 +1,14 @@
 """Module."""
 
+import logging
+
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 from collections import defaultdict
 
 __author__ = '@britodfbr'  # pragma: no cover
+
+from collections.abc import Container
 
 
 def is_narcisist(num: int) -> bool:
@@ -20,3 +23,23 @@ def char_position(text: str) -> dict[str, list[int]]:
     for i, char in enumerate(text):
         result[char].append(i)
     return result
+
+
+def counting_sheep0(array: list) -> int:
+    """Count sheeps."""
+    if isinstance(array[0], Container):
+        array = [item for m in array for item in m]
+    for i, item in enumerate(array):
+        if not isinstance(item, bool) and item != 'True':
+            array[i] = False
+    return sum(array)
+
+
+def counting_sheep(array: list) -> int:
+    """Count sheeps."""
+    if isinstance(array[0], Container):
+        array = [item for m in array for item in m]
+    for i, item in enumerate([str(m) for m in array]):
+        array[i] = item.casefold() == 'true'
+    logging.debug(array)
+    return sum(array)

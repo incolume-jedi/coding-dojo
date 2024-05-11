@@ -30,12 +30,15 @@ def check_connectivity(
 def filesmd() -> list[Path]:
     """Get files.md on directories."""
     regex = r'## Problema\s*\*\*(([\w\d]+\s*)+)\*\*'
-    files = [
-        file
-        for file in Path(__file__)
+
+    glob=Path(__file__)
         .parents[3]
         .joinpath('incolume', 'py', 'coding_dojo_jedi')
         .rglob('**/*.md')
+
+    files = [
+        file
+        for file in glob
         if re.search(regex, file.read_text(encoding='utf-8'), flags=re.I)
     ]
     logging.debug(files)

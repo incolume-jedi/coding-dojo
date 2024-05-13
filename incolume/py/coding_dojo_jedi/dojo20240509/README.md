@@ -36,6 +36,13 @@ Crie uma classe chamada numeros com 2 metodos (from_roman e to_roman), que conve
     from_roman(MMXI) == 2011
     from_roman(D) == 500
     from_roman(MD) == 1500
+
+## Artefatos
+
+- [dojo](./__init__.py)
+- [tests](./test_20240509.py)
+
+
 ## Referências
 - [new-dojo] Números Romanos para Arábicos  #40
 - Números Arábicos para Romanos #39

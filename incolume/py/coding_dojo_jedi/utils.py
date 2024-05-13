@@ -9,8 +9,19 @@ import re
 from http import HTTPStatus
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+from typing import Final
 
 import requests
+
+MD_DIR: Final[Path] = (
+    Path(__file__)
+    .parents[3]
+    .joinpath(
+        'incolume',
+        'py',
+        'coding_dojo_jedi',
+    )
+)
 
 
 def check_connectivity(
@@ -27,9 +38,11 @@ def check_connectivity(
     return False
 
 
-def filesmd() -> list[Path]:
+def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
     regex = r'## Problema\s*\*\*(([\w\d]+\s*)+)\*\*'
+    dir_target = dir_target or MD_DIR
+    glob = dir_target.rglob('dojo*/*.md')
 
     glob=Path(__file__)
         .parents[3]
@@ -95,3 +108,13 @@ def generator_sumary(
             ],
         )
     return file
+
+
+def run():
+    """Run it."""
+    files = filesmd()
+    print(list(files))
+
+
+if __name__ == '__main__':  # pragma: no cover
+    run()

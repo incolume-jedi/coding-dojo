@@ -38,7 +38,7 @@ def test_has_dojo_link(file) -> None:
     'file',
     filesmd(),
 )
-def test_has_test_dojo_link(file) -> None:
+def test_has_test_link(file) -> None:
     """Teste se há link para testes do dojo na sessão Artefatos."""
     regex = r'- \[tests\]\((\.\/)?(test_.*\.py|tests\/.*\.txt)\)'
     assert re.search(

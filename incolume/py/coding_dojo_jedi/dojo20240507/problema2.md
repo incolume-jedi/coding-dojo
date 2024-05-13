@@ -6,7 +6,7 @@
 
 ## Problema
 
-**Quais são os primeiros 25 números felizes?**
+**Quais são os primeiros 25 números felizes**
 
 Um número é feliz se somando os quadrados de seus algarismos e iterando o processo seja possível chegar ao número 1.
 

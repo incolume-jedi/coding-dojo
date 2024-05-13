@@ -6,6 +6,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 import logging
 import re
+from http import HTTPStatus
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
@@ -18,9 +19,8 @@ def check_connectivity(
 ) -> bool:
     """Check web connectivity."""
     req = requests.get(url, timeout=timeout)
-    http_ok: int = 200
     try:
-        if req.status_code == http_ok:
+        if req.status_code == HTTPStatus.OK:
             return True
     except Exception:  # pylint: disable=W0718
         logging.exception()

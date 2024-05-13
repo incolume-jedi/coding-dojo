@@ -45,7 +45,7 @@ def file_filter(file: Path, regex: str = '') -> bool:
 
 def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
-    logging.debug('started %s', stack()[0][3])
+    logging.debug('called %s', stack()[0][3])
     regex = rb'## Problema\s*'
     dir_target = dir_target or MD_DIR
     glob = dir_target.rglob('dojo*/*.md')
@@ -66,12 +66,27 @@ def generator_sumary(
     reverse: bool = False,
 ) -> Path:
     """Gerador de sumário."""
+    logging.debug('called %s', stack()[0][3])
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
 
-    sout: list[str] = []
-    for filemd in sorted(filesmd(), reverse=reverse):
+    sout: list[str] = [
+        '# Coding Dojo\n\n',
+        '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
+        '- [Seja membro da Guilda JEDI Incolume]'
+        '(https://discord.gg/eBNamXVtBW)\n\n',
+        '## Sumário dos dojos\n\n',
+        '---\n\n',
+    ]
+    count: int = 0
+    temp_sout: list = []
+
+    for count, filemd in enumerate(
+        sorted(filesmd(), reverse=reverse),
+        start=1,
+    ):
+        logging.debug('iteration %s %s', count, filemd)
         try:
             result = re.search(
                 regex,
@@ -79,31 +94,26 @@ def generator_sumary(
                 flags=re.I,
             )
             title = filemd.parts[-2].capitalize()
+            logging.debug(title)
             desc = result.group(1)  # type: ignore[union-attr]
+            logging.debug(desc)
             link = Path().joinpath(*filemd.parts[-2:])
-            sout.append(f' - [{title} &#8212; {desc}]({link})\n')
-        except AttributeError:  #  noqa: PERF203
+            logging.debug(link)
+            temp_sout.append(f' - [{title} &#8212; {desc}]({link})\n')
+        except AttributeError:
             pass
 
-    with file.open('w') as fmd:
-        fmd.writelines(
-            [
-                '# Coding Dojo\n\n',
-                '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
-                '- [Seja membro da Guilda JEDI Incolume]'
-                '(https://discord.gg/eBNamXVtBW)\n\n',
-                '## Sumário dos dojos\n\n',
-                '---\n\n',
-                f'{len(sout)} dojos resolvidos\n\n---\n\n',
-            ],
-        )
+    sout.append(f'{count} dojos resolvidos\n\n---\n\n')
+    sout += [
+        *temp_sout,
+        '\n---\n\n',
+        'Copyrigth &copy; **Incolume.com.br** since 2010\n\n',
+    ]
+    sout = [bytes(content, encoding='utf-8') for content in sout]
+
+    with file.open('wb') as fmd:
         fmd.writelines(sout)
-        fmd.writelines(
-            [
-                '\n---\n\n',
-                'Copyrigth &copy; **Incolume.com.br** since 2010\n\n',
-            ],
-        )
+
     return file
 
 
@@ -112,6 +122,7 @@ def run():
     files = filesmd()
     logging.debug(len(files))
     logging.debug(files)
+    generator_sumary()
 
 
 if __name__ == '__main__':  # pragma: no cover

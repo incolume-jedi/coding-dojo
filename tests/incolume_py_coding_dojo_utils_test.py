@@ -70,40 +70,20 @@ class TestUtilsModule:
         'entrance',
         [
             pytest.param(
-                r'# Coding Dojo',
-                marks=pytest.mark.skipif(
-                    sys.platform.startswith('win'),
-                    reason='Does not run on windows.',
-                ),
+                b'# Coding Dojo',
             ),
             pytest.param(
-                '**Guilda JEDI Incolume - Grupo Python Incolume**',
-                marks=pytest.mark.skipif(
-                    sys.platform.startswith('win'),
-                    reason='Does not run on windows.',
-                ),
+                b'**Guilda JEDI Incolume - Grupo Python Incolume**',
             ),
             pytest.param(
-                '- [Seja membro da Guilda JEDI Incolume]'
-                '(https://discord.gg/eBNamXVtBW)',
-                marks=pytest.mark.skipif(
-                    sys.platform.startswith('win'),
-                    reason='Does not run on windows.',
-                ),
+                b'- [Seja membro da Guilda JEDI Incolume]'
+                b'(https://discord.gg/eBNamXVtBW)',
             ),
             pytest.param(
-                '## Sumário dos dojos',
-                marks=pytest.mark.skipif(
-                    sys.platform.startswith('win'),
-                    reason='Does not run on windows.',
-                ),
+                bytes('## Sumário dos dojos', encoding='utf-8'),
             ),
             pytest.param(
-                '&copy; **Incolume.com.br**',
-                marks=pytest.mark.skipif(
-                    sys.platform.startswith('win'),
-                    reason='Does not run on windows.',
-                ),
+                b'&copy; **Incolume.com.br**',
             ),
         ],
     )
@@ -114,4 +94,4 @@ class TestUtilsModule:
     ) -> None:
         """Teste para escopo do sumário."""
         file = generator_sumary(filemd)
-        assert entrance in file.read_text()
+        assert entrance in file.read_bytes()

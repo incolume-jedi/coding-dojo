@@ -43,20 +43,12 @@ def file_filter(file: Path, regex: str = '') -> bool:
 
 def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
-    regex = r'## Problema\s*\*\*(([\w\d]+\s*)+)\*\*'
+    logging.debug('started %s', stack()[0][3])
+    regex = r'## Problema\s*'
     dir_target = dir_target or MD_DIR
     glob = dir_target.rglob('dojo*/*.md')
 
-    glob=Path(__file__)
-        .parents[3]
-        .joinpath('incolume', 'py', 'coding_dojo_jedi')
-        .rglob('**/*.md')
-
-    files = [
-        file
-        for file in glob
-        if re.search(regex, file.read_text(encoding='utf-8'), flags=re.I)
-    ]
+    files = list(file for file in glob if file_filter(file, regex))
     logging.debug(files)
     return files
 
@@ -116,7 +108,7 @@ def generator_sumary(
 def run():
     """Run it."""
     files = filesmd()
-    print(list(files))
+    print(len(files))
 
 
 if __name__ == '__main__':  # pragma: no cover

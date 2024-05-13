@@ -7,21 +7,14 @@ __author__ = '@britodfbr'  # pragma: no cover
 import logging
 import re
 from http import HTTPStatus
+from inspect import stack
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import Final
 
 import requests
 
-MD_DIR: Final[Path] = (
-    Path(__file__)
-    .parents[3]
-    .joinpath(
-        'incolume',
-        'py',
-        'coding_dojo_jedi',
-    )
-)
+MD_DIR: Final[Path] = Path(__file__).parents[3].joinpath('incolume', 'py', 'coding_dojo_jedi')
 
 
 def check_connectivity(
@@ -35,6 +28,16 @@ def check_connectivity(
             return True
     except Exception:  # pylint: disable=W0718
         logging.exception()
+    return False
+
+
+def file_filter(file: Path, regex: str = '') -> bool:
+    """Filter files."""
+    logging.debug('called %s', stack()[0][3])
+    with file.open() as f:
+        for line in f:
+            if re.search(regex, line, flags=re.I):
+                return True
     return False
 
 

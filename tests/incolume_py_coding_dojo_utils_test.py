@@ -50,7 +50,7 @@ class TestUtilsModule:
     )
     @pytest.mark.skipif(
         sys.platform.startswith('win'),
-        reason='Not available on windows.',
+        reason='Not available on windows. Requires other Operation System.',
     )
     def test_quantia(self, filemd) -> None:  # pylint: disable=redefined-outer-name
         """Testar se a quantidade de links e dojos são iguais."""

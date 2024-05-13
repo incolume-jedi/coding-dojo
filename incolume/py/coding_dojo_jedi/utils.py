@@ -14,7 +14,9 @@ from typing import Final
 
 import requests
 
-MD_DIR: Final[Path] = Path(__file__).parents[3].joinpath('incolume', 'py', 'coding_dojo_jedi')
+MD_DIR: Final[Path] = (
+    Path(__file__).parents[3].joinpath('incolume', 'py', 'coding_dojo_jedi')
+)
 
 
 def check_connectivity(
@@ -44,11 +46,11 @@ def file_filter(file: Path, regex: str = '') -> bool:
 def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
     logging.debug('started %s', stack()[0][3])
-    regex = br'## Problema\s*'
+    regex = rb'## Problema\s*'
     dir_target = dir_target or MD_DIR
     glob = dir_target.rglob('dojo*/*.md')
 
-    files = list(file for file in glob if file_filter(file, regex))
+    files = [file for file in glob if file_filter(file, regex)]
     logging.debug(files)
     return files
 
@@ -108,8 +110,8 @@ def generator_sumary(
 def run():
     """Run it."""
     files = filesmd()
-    print(len(files))
-    print(files)
+    logging.debug(len(files))
+    logging.debug(files)
 
 
 if __name__ == '__main__':  # pragma: no cover

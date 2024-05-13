@@ -38,8 +38,7 @@ class TestUtilsModule:
 
     def test_md_dir_value(self):
         """Check directory value."""
-        assert MD_DIR.parts[-4:] == (
-            'coding-dojo-jedi',
+        assert MD_DIR.parts[-3:] == (
             'incolume',
             'py',
             'coding_dojo_jedi',

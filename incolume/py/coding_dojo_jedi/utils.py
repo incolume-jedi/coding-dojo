@@ -34,7 +34,7 @@ def check_connectivity(
 def file_filter(file: Path, regex: str = '') -> bool:
     """Filter files."""
     logging.debug('called %s', stack()[0][3])
-    with file.open() as f:
+    with file.open('rb') as f:
         for line in f:
             if re.search(regex, line, flags=re.I):
                 return True
@@ -44,7 +44,7 @@ def file_filter(file: Path, regex: str = '') -> bool:
 def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
     logging.debug('started %s', stack()[0][3])
-    regex = r'## Problema\s*'
+    regex = br'## Problema\s*'
     dir_target = dir_target or MD_DIR
     glob = dir_target.rglob('dojo*/*.md')
 
@@ -109,6 +109,7 @@ def run():
     """Run it."""
     files = filesmd()
     print(len(files))
+    print(files)
 
 
 if __name__ == '__main__':  # pragma: no cover

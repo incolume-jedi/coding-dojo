@@ -6,10 +6,17 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 import logging
 import re
+from http import HTTPStatus
+from inspect import stack
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+from typing import Final
 
 import requests
+
+MD_DIR: Final[Path] = (
+    Path(__file__).parents[3].joinpath('incolume', 'py', 'coding_dojo_jedi')
+)
 
 
 def check_connectivity(
@@ -18,26 +25,32 @@ def check_connectivity(
 ) -> bool:
     """Check web connectivity."""
     req = requests.get(url, timeout=timeout)
-    http_ok: int = 200
     try:
-        if req.status_code == http_ok:
+        if req.status_code == HTTPStatus.OK:
             return True
     except Exception:  # pylint: disable=W0718
         logging.exception()
     return False
 
 
-def filesmd() -> list[Path]:
+def file_filter(file: Path, regex: str = '') -> bool:
+    """Filter files."""
+    logging.debug('called %s', stack()[0][3])
+    with file.open('rb') as f:
+        for line in f:
+            if re.search(regex, line, flags=re.I):
+                return True
+    return False
+
+
+def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
-    regex = r'## Problema\s*\*\*(([\w\d]+\s*)+)\*\*'
-    files = [
-        file
-        for file in Path(__file__)
-        .parents[3]
-        .joinpath('incolume', 'py', 'coding_dojo_jedi')
-        .rglob('**/*.md')
-        if re.search(regex, file.read_text(encoding='utf-8'), flags=re.I)
-    ]
+    logging.debug('started %s', stack()[0][3])
+    regex = rb'## Problema\s*'
+    dir_target = dir_target or MD_DIR
+    glob = dir_target.rglob('dojo*/*.md')
+
+    files = [file for file in glob if file_filter(file, regex)]
     logging.debug(files)
     return files
 
@@ -92,3 +105,14 @@ def generator_sumary(
             ],
         )
     return file
+
+
+def run():
+    """Run it."""
+    files = filesmd()
+    logging.debug(len(files))
+    logging.debug(files)
+
+
+if __name__ == '__main__':  # pragma: no cover
+    run()

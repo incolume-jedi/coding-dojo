@@ -10,11 +10,25 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-06:
+## [1.49.0]	 &#8212; 	2024-05-14:
 ### Added
   - Dojo20240504 - Criar dígitos verificadores para CPF;
   - Dojo20240505 - Validação de CPF (POO);
   - Dojo20240506 - Número Feliz;
+  - Dojo 20240507 - Todos Números felizes menores que 100;
+  - Dojo 20040507 - Quais são os primeiros 25 números felizes?;
+  - Dojo 20240508 - Quais são os dois menores números felizes consecutivos?;
+  - Dojo 20240508 - Quais são os três menores números felizes consecutivos?;
+  - Dojo 20240508 - Quais as alturas dos números felizes 7, 13, 19, 68 e 97?;
+  - Dojo 20240509 - (POO) Romanos > Arábicos / Arábicos > Romanos;
+  - Dojo 20240510 - Posição das letras;
+  - Dojo 20240510 - Número narcisista;
+  - Date 20240510 - Counting sheep;
+### Fixed
+  - Corrigido encode quebrado no Windows para arquivos markdown;
+  - Corrigido geração do sumário de dojos;
+  - Corrigido conflito entre ruff e isort;
+  - Corrigido erro de sintaxe em string literais;
 
 ## [1.48.1]	 &#8212; 	2024-05-05:
 ### Fixed
@@ -380,4 +394,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.47.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.46.0...1.47.0
 [1.48.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.47.0...1.48.0
 [1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...Unreleased
+[1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0

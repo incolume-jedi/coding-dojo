@@ -321,6 +321,7 @@ Click to Up.
 ### [The Algorithms](https://the-algorithms.com/pt)
 
 A maior biblioteca de algoritmos de código aberto do GitHub.
+Com diversos exemplos no [github](https://github.com/TheAlgorithms/Python/blob/master/DIRECTORY.md)
 [<svg height="25" width="25">
 <polygon points="15,3 6,25 25,25" class="triangle" fill="#4051b5"/>
 Click to Up.

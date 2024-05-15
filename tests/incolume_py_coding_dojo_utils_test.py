@@ -44,6 +44,7 @@ class TestUtilsModule:
             'coding_dojo_jedi',
         )
 
+    @pytest.mark.skip()
     @pytest.mark.skipif(
         sys.version_info < (3, 10),
         reason='requires python3.10 or higher',

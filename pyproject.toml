@@ -69,6 +69,7 @@ pre-commit = [
   ]
 pytz = "^2024.1"
 poetry = "^1.8.3"
+pandas = "^2.2.2"
 
 
 [tool.poetry.group.docs.dependencies]

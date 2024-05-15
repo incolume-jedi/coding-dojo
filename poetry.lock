@@ -519,6 +519,23 @@ test = ["certifi", "pretend", "pytest (>=6.2.0)", "pytest-benchmark", "pytest-co
 test-randomorder = ["pytest-randomly"]
 
 [[package]]
+name = "deepl"
+version = "1.18.0"
+description = "Python library for the DeepL API."
+optional = false
+python-versions = "<4,>=3.6.2"
+files = [
+    {file = "deepl-1.18.0-py3-none-any.whl", hash = "sha256:2afe9adc459f5c591282e4d74570a0dc5041554d54dd687f72d3b0b77936e9ce"},
+    {file = "deepl-1.18.0.tar.gz", hash = "sha256:5ae41763939441edbca7640fd344280cbee47d490641ce35206910a8b01e778e"},
+]
+
+[package.dependencies]
+requests = ">=2,<3"
+
+[package.extras]
+keyring = ["keyring (>=23.4.1,<24.0.0)"]
+
+[[package]]
 name = "dill"
 version = "0.3.8"
 description = "serialize all of Python"
@@ -3033,4 +3050,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "8395823e979524f9082a591e5b9913df45a769ae32dbe8b42255bc89df49638f"
+content-hash = "5ed0a405270e1d1aff748a1d106c46918f445a164e5b9c45a8c7c1d25a135c86"

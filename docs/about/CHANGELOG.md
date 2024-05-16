@@ -11,6 +11,11 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 
 ## [Unreleased]	 &#8212; 	2024-05-16:
+### Deprecated
+  - Blue;
+  - Isort;
+  - Pydocstyle;
+  - Pylint;
 ### Added
   - Dojo20240513 - Raspagem de dados;
   - Dojo20240514 - popular SGBD SQLite;
@@ -20,6 +25,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Adicionado pacote httpx;
   - Adicionado pacote deepl;
   - Acrescentado variável para token deepl no ambiente github;
+  - Dojo20240516 - two sum;
 ### Changed
   - Acrescentado em desafios: https://osprogramadores.com/desafios/;
 

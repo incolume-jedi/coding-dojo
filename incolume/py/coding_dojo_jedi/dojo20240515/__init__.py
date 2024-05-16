@@ -10,10 +10,12 @@ import httpx
 from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent / '.env')
+url_api = 'https://api-free.deepl.com/v2/translate'
 
 
-def translate_deepl0(text: str, lang: str = 'EN') -> dict:
+def translate_deepl0(text: str, lang: str = 'EN', url: str = '') -> dict:
     """Translate with deepl API."""
+    url = url or url_api
     header: dict = {
         'Content-Type': 'application/json',
         'Authorization': f'DeepL-Auth-Key {environ.get("DEEPL_API_KEY")}',
@@ -22,7 +24,8 @@ def translate_deepl0(text: str, lang: str = 'EN') -> dict:
         'text': [text],
         'target_lang': lang,
     }
-    resp = httpx.post('https://api-free.deepl.com', headers=header, data=data)
+    resp = httpx.post(url, headers=header, json=data)
+
     if resp.status_code == HTTPStatus.OK:
         return resp.json()
     return {}
@@ -38,8 +41,10 @@ def translate_deepl(text: str, lang: str = 'EN-US') -> dict:
 
 def run():
     """Run it."""
-    s = translate_deepl('Boa Noite', 'IT')
-    logging.degub(s)
+    r = translate_deepl0('boa noite', lang='FR')
+    logging.debug(r)
+    s = translate_deepl('boa noite', 'IT')
+    logging.debug(s)
 
 
 if __name__ == '__main__':

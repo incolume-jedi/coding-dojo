@@ -3,7 +3,11 @@
 from typing import ClassVar
 
 import pytest
-from incolume.py.coding_dojo_jedi.dojo20240516 import two_sum, two_sum0
+from incolume.py.coding_dojo_jedi.dojo20240516 import (
+    two_sum,
+    two_sum0,
+    inverter_names,
+)
 
 __author__ = '@britodfbr'  # pragma: no cover
 
@@ -33,3 +37,16 @@ class CheckDojo:
     def test_twosum(self, entrance, expected):
         """Test two_sum."""
         assert two_sum(**entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (
+                ['Brett', 'Emily', 'Gregory', 'Pablo', 'Thomas'],
+                ['Tterb', 'Ylime', 'Yrogerg', 'Olbap', 'Samoht'],
+            ),
+        ],
+    )
+    def test_inverter_names(self, entrance, expected):
+        """Test inverter_names."""
+        assert inverter_names(entrance) == expected

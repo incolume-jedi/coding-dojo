@@ -6,7 +6,7 @@
 Neste dojo resolvemos multiplos problemas:
 
 - [two sum](./problema1.md)
-- [...](./problema2.md)
+- [Inverter nomes de uma lista](./problema2.md)
 - [...](./problema3.md)
 
 ---

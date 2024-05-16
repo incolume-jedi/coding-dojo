@@ -27,3 +27,8 @@ def two_sum(array: list, target: int) -> list[int, int]:
             return [mhash[diff], idm]
         mhash[m] = idm
     return []
+
+
+def inverter_names(names_list: list) -> list[str]:
+    """Iverter names."""
+    return [name[::-1].capitalize() for name in names_list]

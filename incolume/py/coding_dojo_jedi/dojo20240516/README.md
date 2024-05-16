@@ -7,7 +7,7 @@ Neste dojo resolvemos multiplos problemas:
 
 - [two sum](./problema1.md)
 - [Inverter nomes de uma lista](./problema2.md)
-- [...](./problema3.md)
+- [Classificação de Valores (Maiores e Menores)](./problema3.md)
 
 ---
 

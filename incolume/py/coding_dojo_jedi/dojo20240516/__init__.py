@@ -1,5 +1,7 @@
 """Module."""
 
+import heapq
+
 __author__ = '@britodfbr'  # pragma: no cover
 
 
@@ -32,3 +34,11 @@ def two_sum(array: list, target: int) -> list[int, int]:
 def inverter_names(names_list: list) -> list[str]:
     """Iverter names."""
     return [name[::-1].capitalize() for name in names_list]
+
+
+def classify(quantia: int = 1, array: list | None = None) -> tuple:
+    """Classifica maior e menor."""
+    array = array or []
+    if quantia > len(array):
+        return ()
+    return heapq.nlargest(quantia, array), heapq.nsmallest(quantia, array)

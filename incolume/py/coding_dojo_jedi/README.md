@@ -8,10 +8,12 @@
 
 ---
 
-76 dojos resolvidos
+78 dojos resolvidos
 
 ---
 
+ - [Dojo20240515 &#8212; API Translation](dojo20240515/README.md)
+ - [Dojo20240514 &#8212; Popular SGBD Sqlite](dojo20240514/README.md)
  - [Dojo20240513 &#8212; Raspagem de dados](dojo20240513/README.md)
  - [Dojo20240510 &#8212; Counting sheep](dojo20240510/problema3.md)
  - [Dojo20240510 &#8212; Posição das letras](dojo20240510/problema2.md)

@@ -239,6 +239,13 @@ Click to Up.
 
 
 ## P
+
+
+### [Os Programadores](https://osprogramadores.com/desafios/)
+
+O grupo foi criado por um grupo de amigos, veteranos em diversas áreas de computação e eletrônica, com o intuito de ajudar aqueles que estão começando a programar. A participação é completamente gratuita, mas pedimos que os novos integrantes leiam as Regras para evitar problemas.
+
+
 ### [Programiz](https://www.programiz.com/)
 Programiz é um site de aprendizagem interativa que oferece tutoriais em várias linguagens de programação, incluindo C, C++, Python, Java e PHP. Ele é projetado para ser uma plataforma fácil de usar para iniciantes que desejam aprender a programar, bem como para programadores experientes que desejam aprimorar suas habilidades.
 

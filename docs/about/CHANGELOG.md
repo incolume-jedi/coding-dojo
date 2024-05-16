@@ -10,6 +10,19 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2024-05-16:
+### Added
+  - Dojo20240513 - Raspagem de dados;
+  - Dojo20240514 - popular SGBD SQLite;
+  - Dojo20240515 - API Translate DEEPL;
+  - Adicionado pacote html5lib;
+  - Adicionado pacote openpyxl;
+  - Adicionado pacote httpx;
+  - Adicionado pacote deepl;
+  - Acrescentado variável para token deepl no ambiente github;
+### Changed
+  - Acrescentado em desafios: https://osprogramadores.com/desafios/;
+
 ## [1.49.0]	 &#8212; 	2024-05-14:
 ### Added
   - Dojo20240504 - Criar dígitos verificadores para CPF;
@@ -395,3 +408,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.48.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.47.0...1.48.0
 [1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...Unreleased

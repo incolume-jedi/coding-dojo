@@ -6,6 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20240517 import (
     is_prime,
     is_prime0,
     is_prime1,
+    gen_prime,
 )
 
 
@@ -56,3 +57,24 @@ class CheckDojo:
     def test_is_prime(self, entrance, expected):
         """Test is_prime."""
         assert is_prime(entrance) == expected
+
+    def test_gen_prime(self):
+        """Test gen_prime."""
+        n = gen_prime()
+        assert [next(n) for _ in range(15)] == [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            37,
+            41,
+            43,
+            47,
+        ]

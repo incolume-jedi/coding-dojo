@@ -1,7 +1,7 @@
 """Module."""
 
 from functools import lru_cache
-from itertools import count
+from itertools import chain, count
 
 
 def is_prime0(num: int) -> bool:
@@ -39,3 +39,16 @@ def gen_prime():
     while True:
         if is_prime1(n := next(counter)):
             yield n
+
+
+def merge_matrix0(*args: list[int]) -> list:
+    """merge_matrix."""
+    a = []
+    for array in args:
+        a += array
+    return list(set(a))
+
+
+def merge_matrix(*args: list[int]) -> list:
+    """merge_matrix."""
+    return list(set(chain.from_iterable(args)))

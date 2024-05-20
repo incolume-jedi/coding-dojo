@@ -7,6 +7,8 @@ from incolume.py.coding_dojo_jedi.dojo20240517 import (
     is_prime0,
     is_prime1,
     gen_prime,
+    merge_matrix0,
+    merge_matrix,
 )
 
 
@@ -78,3 +80,23 @@ class CheckDojo:
             43,
             47,
         ]
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (([7, 2, 6, 2, 0], [9, 0, 5, 1, 2, 3]), [0, 1, 2, 3, 5, 6, 7, 9]),
+        ],
+    )
+    def test_merge_matrix0(self, entrance, expected):
+        """Test merge_matrix."""
+        assert merge_matrix0(*entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (([7, 2, 6, 2, 0], [9, 0, 5, 1, 2, 3]), [0, 1, 2, 3, 5, 6, 7, 9]),
+        ],
+    )
+    def test_merge_matrix(self, entrance, expected):
+        """Test merge_matrix."""
+        assert merge_matrix(*entrance) == expected

@@ -6,8 +6,8 @@
 Neste dojo resolvemos multiplos problemas:
 
 - [Identificar números primos](./problema1.md)
-- [..](./problema2.md)
-- [..](./problema3.md)
+- [Gerador de números primos](./problema2.md)
+- [Mesclando matrizes de inteiros ordenadas (sem duplicatas)](./problema3.md)
 
 ---
 

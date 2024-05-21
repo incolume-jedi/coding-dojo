@@ -13,7 +13,13 @@ def is_vogal1(letra: str) -> bool:
     return letra in vogais
 
 
-def is_vogal(letra: str) -> bool:
+def is_vogal2(letra: str) -> bool:
     """Verifica se é vogal."""
     vogais = {'a': True, 'e': True, 'i': True, 'o': True, 'u': True}
     return vogais.get(letra, False)
+
+
+def is_vogal(letra: str) -> bool:
+    """Verifica se é vogal."""
+    vogais = 'aeiou'
+    return letra in vogais

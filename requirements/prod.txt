@@ -292,9 +292,9 @@ rapidfuzz==3.9.1 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:f8869dcf072227a40a6f9e87b3fc4eb020055a08ad12b63d751c354e3a973ccb \
     --hash=sha256:fb592bad9d58b47c6681f0c180767d2c98775a35f7267131d33723139c3d6c2e \
     --hash=sha256:fbce66cb2e331b0888c79b594eab76e2c609c2637050085daadff5325d471dc2
-requests==2.32.1 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:21ac9465cdf8c1650fe1ecde8a71669a93d4e6f147550483a2967d08396a56a5 \
-    --hash=sha256:eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685
+requests==2.32.2 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289 \
+    --hash=sha256:fc06670dd0ed212426dfeb94fc1b983d917c4f9847c863f313c9dfaaffb7c23c
 toml==0.10.2 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b \
     --hash=sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f

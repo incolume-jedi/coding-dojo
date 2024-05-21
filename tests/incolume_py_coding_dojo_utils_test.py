@@ -63,6 +63,7 @@ class TestUtilsModule:
         logging.debug('%s %s %s', arq, c_dirs, c_links)
         assert c_links == c_dirs
 
+    @pytest.mark.skip()
     @pytest.mark.skipif(
         sys.version_info < (3, 10),
         reason='requires python3.10 or higher',

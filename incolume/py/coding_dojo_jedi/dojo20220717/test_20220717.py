@@ -27,3 +27,4 @@ def test_dojo202207172() -> None:
 def test_dojo20220717(*, entrada: str, esperado: bool) -> None:
     """Testar multiplas possibilidades da função palindrome."""
     assert dojo20220717.palindrome(entrada) == esperado
+    assert dojo20220717.palindrome0(entrada) == esperado 

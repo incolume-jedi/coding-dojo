@@ -10,8 +10,6 @@ from incolume.py.coding_dojo_jedi.dojo20220810.dojo20220810 import (
 )
 
 
-
-
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -56,6 +54,7 @@ def test_is_vogal0(entrance, expected) -> None:
 def test_is_vogal1(entrance, expected) -> None:
     """Test is_vogal."""
     assert is_vogal1(entrance) == expected
+
 
 @pytest.mark.parametrize(
     ['entrance', 'expected'],

@@ -2,7 +2,7 @@
 
 from typing import ClassVar, NoReturn
 import pytest
-from . import temp, temp0
+from . import temp, temp0, temp1
 
 
 class TestCase:
@@ -443,6 +443,13 @@ class TestCase:
         """Test temperature."""
         assert temp0(**entrance) == expected
 
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        testes,
+    )
+    def test_temp1(self, entrance, expected) -> NoReturn:
+        """Test temperature."""
+        assert temp1(**entrance) == expected
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

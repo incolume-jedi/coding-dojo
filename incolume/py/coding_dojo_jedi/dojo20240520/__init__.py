@@ -1,5 +1,8 @@
 """Dojo module."""
 
+from codecs import encode
+from functools import partial
+
 
 def rot13a(texto: str) -> str:
     """Rot13."""
@@ -18,6 +21,9 @@ def rot13b(texto: str) -> str:
         'NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm',
     )
     return texto.translate(encode)
+
+
+rot13c = partial(encode, encoding='rot_13')
 
 
 def rot13(texto: str) -> str:

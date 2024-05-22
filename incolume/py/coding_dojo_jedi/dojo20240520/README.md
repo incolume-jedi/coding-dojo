@@ -18,6 +18,9 @@ De acordo com a Wikipedia, o ROT13 é frequentemente usado para ofuscar piadas n
 
     OBS: Para essa tarefa, você só deve substituir caracteres. Não espaços, pontuação, números, etc.
 
+![ROT13](https://github.com/incolume-jedi/coding-dojo/assets/3737857/d694bf56-4c53-4d0f-987a-7da366765ddb)
+
+
 ## Exemplos
 
     "EBG13 rknzcyr." -> "ROT13 example."

@@ -1,7 +1,7 @@
 """Test module."""
 
 import pytest
-from . import rot13, rot13a, rot13b
+from . import rot13, rot13a, rot13b, rot13c
 
 
 testes = [
@@ -38,6 +38,15 @@ def test_rot13a(entrance, expected):
 def test_rot13b(entrance, expected):
     """Test."""
     assert rot13b(entrance) == expected
+
+
+@pytest.mark.parametrize(
+    'entrance expected'.split(),
+    testes,
+)
+def test_rot13c(entrance, expected):
+    """Test."""
+    assert rot13c(entrance) == expected
 
 
 @pytest.mark.parametrize(

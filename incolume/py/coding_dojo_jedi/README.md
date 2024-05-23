@@ -8,10 +8,20 @@
 
 ---
 
-61 dojos resolvidos
+75 dojos resolvidos
 
 ---
 
+ - [Dojo20240510 &#8212; Counting sheep](dojo20240510/problema3.md)
+ - [Dojo20240510 &#8212; Posição das letras](dojo20240510/problema2.md)
+ - [Dojo20240510 &#8212; Número narcisista](dojo20240510/problema1.md)
+ - [Dojo20240508 &#8212; Quais são os três menores números felizes consecutivos](dojo20240508/problema2.md)
+ - [Dojo20240508 &#8212; Quais são os dois menores números felizes consecutivos](dojo20240508/problema1.md)
+ - [Dojo20240507 &#8212; Quais são os primeiros 25 números felizes](dojo20240507/problema2.md)
+ - [Dojo20240507 &#8212; Todos Números felizes menores que 100](dojo20240507/problema1.md)
+ - [Dojo20240506 &#8212; Números felizes](dojo20240506/README.md)
+ - [Dojo20240505 &#8212; Validação de CPF](dojo20240505/README.md)
+ - [Dojo20240504 &#8212; Criar dígitos verificadores para CPF](dojo20240504/README.md)
  - [Dojo20240503 &#8212; Criar CPF](dojo20240503/README.md)
  - [Dojo20240502 &#8212; Validação de CPF](dojo20240502/README.md)
  - [Dojo20240317 &#8212; Quantidade de latas](dojo20240317/problema2.md)

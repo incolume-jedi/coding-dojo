@@ -8,10 +8,20 @@
 
 ---
 
-75 dojos resolvidos
+88 dojos resolvidos
 
 ---
 
+ - [Dojo20240521 &#8212; Média de temperatura](dojo20240521/README.md)
+ - [Dojo20240520 &#8212; ROT13](dojo20240520/README.md)
+ - [Dojo20240519 &#8212; Convert Age to Days](dojo20240519/README.md)
+ - [Dojo20240518 &#8212; Romeu e Julieta](dojo20240518/README.md)
+ - [Dojo20240517 &#8212; Gerador de números primos](dojo20240517/problema2.md)
+ - [Dojo20240517 &#8212; Identificar números primos](dojo20240517/problema1.md)
+ - [Dojo20240516 &#8212; Inverter nomes](dojo20240516/problema2.md)
+ - [Dojo20240515 &#8212; API Translation](dojo20240515/README.md)
+ - [Dojo20240514 &#8212; Popular SGBD Sqlite](dojo20240514/README.md)
+ - [Dojo20240513 &#8212; Raspagem de dados](dojo20240513/README.md)
  - [Dojo20240510 &#8212; Counting sheep](dojo20240510/problema3.md)
  - [Dojo20240510 &#8212; Posição das letras](dojo20240510/problema2.md)
  - [Dojo20240510 &#8212; Número narcisista](dojo20240510/problema1.md)

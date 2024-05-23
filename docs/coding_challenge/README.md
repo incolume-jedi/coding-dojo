@@ -239,6 +239,13 @@ Click to Up.
 
 
 ## P
+
+
+### [Os Programadores](https://osprogramadores.com/desafios/)
+
+O grupo foi criado por um grupo de amigos, veteranos em diversas áreas de computação e eletrônica, com o intuito de ajudar aqueles que estão começando a programar. A participação é completamente gratuita, mas pedimos que os novos integrantes leiam as Regras para evitar problemas.
+
+
 ### [Programiz](https://www.programiz.com/)
 Programiz é um site de aprendizagem interativa que oferece tutoriais em várias linguagens de programação, incluindo C, C++, Python, Java e PHP. Ele é projetado para ser uma plataforma fácil de usar para iniciantes que desejam aprender a programar, bem como para programadores experientes que desejam aprimorar suas habilidades.
 
@@ -321,6 +328,7 @@ Click to Up.
 ### [The Algorithms](https://the-algorithms.com/pt)
 
 A maior biblioteca de algoritmos de código aberto do GitHub.
+Com diversos exemplos no [github](https://github.com/TheAlgorithms/Python/blob/master/DIRECTORY.md)
 [<svg height="25" width="25">
 <polygon points="15,3 6,25 25,25" class="triangle" fill="#4051b5"/>
 Click to Up.

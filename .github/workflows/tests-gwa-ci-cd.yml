@@ -9,9 +9,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  LANG: "pt_BR.UTF-8"
-
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -21,21 +18,6 @@ jobs:
         python-version: ['3.10', '3.11']
 
     steps:
-      - name: Set locale pt_BR.UTF-8
-        run: |
-          sudo apt-get update && sudo apt-get install tzdata locales -y && sudo locale-gen pt_BR.UTF-8
-          sudo localectl set-locale LANG="pt_BR.UTF-8"
-          export LANG="pt_BR.UTF-8"
-          sudo update-locale
-          locale -a
-          locale
-          locale -c -k LC_NUMERIC
-          localectl status
-
-      - name: date
-        run: |
-            date
-
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3

@@ -10,7 +10,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-16:
+## [1.50.0]	 &#8212; 	2024-05-23:
 ### Deprecated
   - Blue;
   - Isort;
@@ -26,6 +26,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Adicionado pacote deepl;
   - Acrescentado variável para token deepl no ambiente github;
   - Dojo20240516 - two sum;
+  - Dojo20240517 - identificar-números-primos;
+  - Dojo20240517 - solução Gerador de números primos;
+  - Dojo20240517 - Mesclando matrizes de inteiros ordenadas - sem duplicatas;
+  - Dojo20240518 - Romeu e Julieta (FizzBuzz);
+  - Dojo20240519 - Convert Age to Days;
+  - Dojo20240520 - Rot13;
+  - Dojo20240521 - Média de temperatura;
 ### Changed
   - Acrescentado em desafios: https://osprogramadores.com/desafios/;
 
@@ -414,4 +421,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.48.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.47.0...1.48.0
 [1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...Unreleased
+[1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0

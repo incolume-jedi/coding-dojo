@@ -9,7 +9,20 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  LANG: "pt_BR.UTF-8"
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: pt_BR.UTF-8
+      run: |
+          sudo locale-gen pt_BR.UTF-8
+          sudo update-locale LANG=pt_BR.UTF-8
+    - name: date
+      run: |
+          date
   test:
     runs-on: ${{ matrix.os }}
     strategy:

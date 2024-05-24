@@ -144,7 +144,6 @@ class TestCase:
             ],
         ),
         ('xpto', []),
-        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
         (
             'jinn',
             [
@@ -168,6 +167,7 @@ class TestCase:
                 },
             ],
         ),
+        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
     ]
 
     @pytest.mark.skipif(
@@ -191,7 +191,7 @@ class TestCase:
     def test_research_mock(self, entrance, expected) -> None:
         """Test research."""
         cache_file = genfile().with_name('personagens-20220730.json')
-        cache_file.unlink()
+        cache_file.unlink(missing_ok=True)
 
         with mock.patch('requests.get') as m_req:
             objreq = mock.MagicMock()
@@ -200,7 +200,9 @@ class TestCase:
                 'count': 0,
                 'next': None,
                 'previus': None,
-                'results': expected,
+                'results': expected
+                if (not expected or isinstance(expected[0], dict))
+                else [{'name': x} for x in expected if x],
             }
 
             objreq2 = mock.MagicMock()

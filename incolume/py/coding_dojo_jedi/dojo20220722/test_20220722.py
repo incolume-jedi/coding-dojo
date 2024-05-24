@@ -2,20 +2,17 @@
 
 from os import environ
 from sys import version_info
+from typing import ClassVar
 
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
 
 
-@pytest.mark.skipif(
-    version_info < (3, 8, 0),
-    reason='This run only Python 3.8+',
-)
-@pytest.mark.webtest()
-@pytest.mark.parametrize(
-    ['entrance', 'expected'],
-    [
+class TestCase:
+    """Test case."""
+
+    case_test_1: ClassVar = [
         (
             'Obi-Wan Kenobi',
             {
@@ -103,9 +100,18 @@ from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
                 'vehicles': [],
             },
         ),
-    ],
-)
-def test_research(entrance, expected) -> None:
-    """Test research."""
-    timeout = float(environ.get('TIMEOUT', 0.8))
-    assert research(entrance, timeout=timeout) == expected
+    ]
+
+    @pytest.mark.skipif(
+        version_info < (3, 8, 0),
+        reason='This run only Python 3.8+',
+    )
+    @pytest.mark.webtest()
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        case_test_1,
+    )
+    def test_research(self, entrance, expected) -> None:
+        """Test research."""
+        timeout = float(environ.get('TIMEOUT', 0.8))
+        assert research(entrance, timeout=timeout) == expected

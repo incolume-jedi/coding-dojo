@@ -110,7 +110,7 @@ class TestCase:
         ),
     ]
 
-    @pytest.mark.webtest()
+    @pytest.mark.skip(reason='Replaced for test_research_mock')
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         case_test_1,

@@ -11,7 +11,7 @@ from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()
 logging.basicConfig(
-    level=int(os.environ.get('LOGGING-LEVEL', logging.WARNING)),
+    level=int(os.environ.get('LOGGING-LEVEL', logging.DEBUG)),
 )
 
 

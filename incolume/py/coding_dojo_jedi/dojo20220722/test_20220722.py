@@ -3,12 +3,20 @@
 from os import environ
 from sys import version_info
 from typing import ClassVar
-
+from http import HTTPStatus
+from unittest import mock
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
+from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import (
+    research,
+)
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 
+@pytest.mark.skipif(
+    version_info < (3, 8, 0),
+    reason='This run only Python 3.8+',
+)
 class TestCase:
     """Test case."""
 
@@ -102,10 +110,6 @@ class TestCase:
         ),
     ]
 
-    @pytest.mark.skipif(
-        version_info < (3, 8, 0),
-        reason='This run only Python 3.8+',
-    )
     @pytest.mark.webtest()
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
@@ -115,3 +119,30 @@ class TestCase:
         """Test research."""
         timeout = float(environ.get('TIMEOUT', 0.8))
         assert research(entrance, timeout=timeout) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        case_test_1,
+    )
+    def test_research_mock(self, entrance, expected) -> None:
+        """Test research."""
+        cache_file = genfile().with_name('personagens-20220722.json')
+        cache_file.unlink()
+        with mock.patch('requests.get') as m_req:
+            objreq = mock.MagicMock()
+            objreq.status_code = HTTPStatus.OK
+            objreq.json.return_value = {
+                'count': 1,
+                'next': None,
+                'previus': None,
+                'results': [expected],
+            }
+
+            objreq2 = mock.MagicMock()
+            objreq2.status_code = HTTPStatus.NOT_FOUND
+            objreq2.json.return_value = {'detail': 'Not found'}
+
+            m_req.side_effect = [objreq, objreq2]
+
+            timeout = float(environ.get('TIMEOUT', 0.8))
+            assert research(entrance, timeout=timeout) == expected

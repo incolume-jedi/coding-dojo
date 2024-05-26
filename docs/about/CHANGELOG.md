@@ -10,6 +10,15 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2024-05-26:
+### Added
+  - Implementado mock para testes em SWAPI dojo20220722;
+  - Implementado mock para testes em SWAPI dojo 20220530;
+  - Implementado mock para testes em SWAPI dojo20220725;
+  - Implementado mock para testes em SWAPI dojo20220727;
+### Changed
+  - Otimizado execução de rotinas CI/CD;
+
 ## [1.50.0]	 &#8212; 	2024-05-23:
 ### Deprecated
   - Blue;
@@ -422,3 +431,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
 [1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...Unreleased

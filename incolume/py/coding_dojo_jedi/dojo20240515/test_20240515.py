@@ -11,7 +11,7 @@ from typing import ClassVar
 class CheckDeepl:
     """Check API de tradução."""
 
-    __test__ = False
+    # __test__ = False
 
     tests0: ClassVar = [
         ('IT', 'Buona sera'),

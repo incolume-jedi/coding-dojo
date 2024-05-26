@@ -25,7 +25,6 @@ def translate_deepl_api(text: str, lang: str = 'EN', url: str = '') -> dict:
         'target_lang': lang,
     }
     resp = httpx.post(url, headers=header, json=data)
-
     if resp.status_code == HTTPStatus.OK:
         return resp.json()
     return {}

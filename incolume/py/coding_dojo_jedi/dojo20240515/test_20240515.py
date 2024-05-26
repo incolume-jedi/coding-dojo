@@ -1,5 +1,7 @@
 """Test module."""
 
+from unittest import mock
+from http import HTTPStatus
 from incolume.py.coding_dojo_jedi.dojo20240515 import (
     translate_deepl,
     translate_deepl_api,
@@ -19,7 +21,7 @@ class CheckDeepl:
         ('FR', 'Bonsoir à tous'),
     ]
 
-    @pytest.mark.skip
+    @pytest.mark.skip()
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         tests0,
@@ -29,7 +31,27 @@ class CheckDeepl:
         result = translate_deepl_api('Boa Noite', entrance)
         assert result['translations'][0]['text'] == expected
 
-    @pytest.mark.skip
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        tests0,
+    )
+    def test_tranlate_deepl_api_mock(self, entrance, expected):
+        """Test tranlate deepl."""
+        with mock.patch('httpx.post', return_value=mock.MagicMock()) as m_resp:
+            m_resp.status_code = HTTPStatus.OK
+            m_resp.json.return_value = {
+                'translations': [
+                    {
+                        'detected_source_language': 'PT',
+                        'text': expected,
+                    },
+                ],
+            }
+            result = translate_deepl_api(text='Boa Noite', lang=entrance)
+            assert result == ''
+            assert result['translations'][0]['text'] == expected
+
+    @pytest.mark.skip()
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         tests0,

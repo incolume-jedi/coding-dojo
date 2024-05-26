@@ -2,7 +2,7 @@
 
 from incolume.py.coding_dojo_jedi.dojo20240515 import (
     translate_deepl,
-    translate_deepl0,
+    translate_deepl_api,
 )
 import pytest
 from typing import ClassVar
@@ -10,8 +10,6 @@ from typing import ClassVar
 
 class CheckDeepl:
     """Check API de tradução."""
-
-    # __test__ = False
 
     tests0: ClassVar = [
         ('IT', 'Buona sera'),
@@ -25,9 +23,9 @@ class CheckDeepl:
         'entrance expected'.split(),
         tests0,
     )
-    def test_tranlate_deepl0(self, entrance, expected):
+    def test_tranlate_deepl_api(self, entrance, expected):
         """Test tranlate deepl."""
-        result = translate_deepl0('Boa Noite', entrance)
+        result = translate_deepl_api('Boa Noite', entrance)
         assert result['translations'][0]['text'] == expected
 
     @pytest.mark.parametrize(

@@ -13,7 +13,7 @@ load_dotenv(Path(__file__).parent / '.env')
 url_api = 'https://api-free.deepl.com/v2/translate'
 
 
-def translate_deepl0(text: str, lang: str = 'EN', url: str = '') -> dict:
+def translate_deepl_api(text: str, lang: str = 'EN', url: str = '') -> dict:
     """Translate with deepl API."""
     url = url or url_api
     header: dict = {
@@ -41,7 +41,7 @@ def translate_deepl(text: str, lang: str = 'EN-US') -> dict:
 
 def run():
     """Run it."""
-    r = translate_deepl0('boa noite', lang='FR')
+    r = translate_deepl_api('boa noite', lang='FR')
     logging.debug(r)
     s = translate_deepl('boa noite', 'IT')
     logging.debug(s)

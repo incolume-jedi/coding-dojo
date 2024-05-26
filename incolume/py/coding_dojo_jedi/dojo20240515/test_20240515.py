@@ -19,6 +19,7 @@ class CheckDeepl:
         ('FR', 'Bonsoir à tous'),
     ]
 
+    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         tests0,
@@ -28,6 +29,7 @@ class CheckDeepl:
         result = translate_deepl_api('Boa Noite', entrance)
         assert result['translations'][0]['text'] == expected
 
+    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         tests0,

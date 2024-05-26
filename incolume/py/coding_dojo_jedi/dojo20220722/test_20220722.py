@@ -127,7 +127,7 @@ class TestCase:
     def test_research_mock(self, entrance, expected) -> None:
         """Test research."""
         cache_file = genfile().with_name('personagens-20220722.json')
-        cache_file.unlink()
+        cache_file.unlink(missing_ok=True)
         with mock.patch('requests.get') as m_req:
             objreq = mock.MagicMock()
             objreq.status_code = HTTPStatus.OK

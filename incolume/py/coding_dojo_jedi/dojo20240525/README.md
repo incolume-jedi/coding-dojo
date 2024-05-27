@@ -18,12 +18,12 @@ Obs: crie uma solução com inteiros e outra com strings.
 
 ## Exemplos
 
-896 = 23
-111 = 3
-1000000000000000 = 1
-900000000001 = 10
-321 = 6
-123 = 6
+    896 = 23
+    111 = 3
+    1000000000000000 = 1
+    900000000001 = 10
+    321 = 6
+    123 = 6
 
 <details>
   <summary>Spoiler?</summary>

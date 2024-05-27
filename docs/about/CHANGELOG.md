@@ -10,8 +10,12 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-26:
+## [Unreleased]	 &#8212; 	2024-05-27:
 ### Added
+  - Dojo20240525 - soma de algarismos absolutos;
+  - Dojo20240524 - playlist;
+  - Dojo20240523 análise de notas;
+  - Dojo20240522 Número Palindromo;
   - Implementado mock para testes em SWAPI dojo20220722;
   - Implementado mock para testes em SWAPI dojo 20220530;
   - Implementado mock para testes em SWAPI dojo20220725;

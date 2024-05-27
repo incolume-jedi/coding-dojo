@@ -8,10 +8,14 @@
 
 ---
 
-88 dojos resolvidos
+92 dojos resolvidos
 
 ---
 
+ - [Dojo20240525 &#8212; Soma de algarismos absolutos](dojo20240525/README.md)
+ - [Dojo20240524 &#8212; Playlists](dojo20240524/README.md)
+ - [Dojo20240523 &#8212; Análise de notas](dojo20240523/README.md)
+ - [Dojo20240522 &#8212; Número Palíndromo](dojo20240522/README.md)
  - [Dojo20240521 &#8212; Média de temperatura](dojo20240521/README.md)
  - [Dojo20240520 &#8212; ROT13](dojo20240520/README.md)
  - [Dojo20240519 &#8212; Convert Age to Days](dojo20240519/README.md)
@@ -97,4 +101,3 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
-

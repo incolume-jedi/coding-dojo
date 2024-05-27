@@ -31,7 +31,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 ## Artefatos
 
 - [dojo](./__init__.py)
-- [tests][./test_20240524.py]
+- [tests](./test_20240524.py)
 
 
 ## Referências

@@ -4,8 +4,6 @@ from . import all_permutations
 
 import pytest
 
-__author__ = '@britodfbr'  # pragma: no cover
-
 
 @pytest.mark.parametrize(
     'entrance expected'.split(),

@@ -1,9 +1,25 @@
 """Module."""
 
-from . import gen_palindrome_prime
+import pytest
+
+from . import gen_palindrome_prime, is_prime
 
 
 __author__ = '@britodfbr'  # pragma: no cover
+
+
+@pytest.mark.parametrize(
+    'entrance expected'.split(),
+    [
+        (1, False),
+        (1065, False),
+        (1061, True),
+        (9973, True),
+    ],
+)
+def test_not_prime(entrance, expected):
+    """Test not prime."""
+    assert is_prime(entrance) == expected
 
 
 def test_primo_palindrome_0():

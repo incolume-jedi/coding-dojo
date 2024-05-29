@@ -8,10 +8,12 @@
 
 ---
 
-92 dojos resolvidos
+94 dojos resolvidos
 
 ---
 
+ - [Dojo20240527 &#8212; Primos de 4 algarismos](dojo20240527/README.md)
+ - [Dojo20240526 &#8212; Palindrômo primo](dojo20240526/README.md)
  - [Dojo20240525 &#8212; Soma de algarismos absolutos](dojo20240525/README.md)
  - [Dojo20240524 &#8212; Playlists](dojo20240524/README.md)
  - [Dojo20240523 &#8212; Análise de notas](dojo20240523/README.md)

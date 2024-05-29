@@ -10,8 +10,10 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-27:
+## [Unreleased]	 &#8212; 	2024-05-29:
 ### Added
+  - Dojo 20240527 primos de 4 algarismos;
+  - Dojo20240526 - Menor palindromo primo de 2 algarismos;
   - Dojo20240525 - soma de algarismos absolutos;
   - Dojo20240524 - playlist;
   - Dojo20240523 análise de notas;
@@ -22,6 +24,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Implementado mock para testes em SWAPI dojo20220727;
 ### Changed
   - Otimizado execução de rotinas CI/CD;
+  - Atualização do modelo para abertura de dojos;
 
 ## [1.50.0]	 &#8212; 	2024-05-23:
 ### Deprecated

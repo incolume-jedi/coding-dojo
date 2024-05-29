@@ -8,10 +8,11 @@
 
 ---
 
-94 dojos resolvidos
+95 dojos resolvidos
 
 ---
 
+ - [Dojo20240528 &#8212; Permutação Python](dojo20240528/README.md)
  - [Dojo20240527 &#8212; Primos de 4 algarismos](dojo20240527/README.md)
  - [Dojo20240526 &#8212; Palindrômo primo](dojo20240526/README.md)
  - [Dojo20240525 &#8212; Soma de algarismos absolutos](dojo20240525/README.md)

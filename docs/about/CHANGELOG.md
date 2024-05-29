@@ -10,7 +10,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-29:
+## [1.51.0]	 &#8212; 	2024-05-29:
 ### Added
   - Dojo 20240527 primos de 4 algarismos;
   - Dojo20240526 - Menor palindromo primo de 2 algarismos;
@@ -438,4 +438,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
 [1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...Unreleased
+[1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0

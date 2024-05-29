@@ -4,9 +4,6 @@
 # -*- coding: utf-8 -*-
 
 import itertools
-
-__author__ = '@britodfbr'  # pragma: no cover
-
 from collections.abc import Container
 from typing import TypeVar
 

@@ -39,7 +39,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 ## Artefatos
 
-- [dojo](dojo.py)
+- [dojo](__init__.py)
 - [tests](test_YYYYMMDD.py)
 
 

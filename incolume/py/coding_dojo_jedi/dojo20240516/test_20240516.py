@@ -21,6 +21,7 @@ class CheckDojo:
         ({'array': [2, 11, 7, 15], 'target': 9}, [0, 2]),
         ({'array': [11, 7, 2, 15], 'target': 9}, [1, 2]),
         ({'array': [15, 7, 11, 2], 'target': 9}, [1, 3]),
+        ({'array': [15, 7, 11, 2], 'target': 5}, []),
     ]
 
     @pytest.mark.parametrize(
@@ -145,6 +146,7 @@ class CheckDojo:
                     [1, 3, 9, 10, 15, 16, 16, 17, 18, 18],
                 ),
             ),
+            ({'quantia': 3, 'array': [19, 7]}, ()),
         ],
     )
     def test_classify(self, entrance, expected):

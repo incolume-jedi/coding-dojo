@@ -39,14 +39,20 @@ class TestCase:
         """Test read file."""
         assert read_tar_gz() == ['pi-1M.txt']
 
-    def test_info_tar_gz(self, capsys):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (
+                {'filename': None},
+                'pi-1M.txt is 1000002 bytes in size and is a regular file.\n',
+            ),
+        ],
+    )
+    def test_info_tar_gz(self, capsys, entrance, expected):
         """Test info."""
-        info_tar_gz()
+        info_tar_gz(**entrance)
         out, _ = capsys.readouterr()
-        assert (
-            out
-            == 'pi-1M.txt is 1000002 bytes in size and is a regular file.\n'
-        )
+        assert out == expected
 
     @pytest.mark.parametrize(
         'function expected'.split(),

@@ -12,7 +12,29 @@ from incolume.py.coding_dojo_jedi.dojo20240513 import (
     url,
 )
 
+
+def gen_conn() -> sqlite3.Connection:
+    """Generate connection."""
+    return sqlite3.connect(
+        Path(tempfile.NamedTemporaryFile(suffix='.db').name),
+    )
+
+
+def gen_data_file(ext: str = 'json') -> Path:
+    """Generate data."""
+    exts = ['csv', 'json', 'xlsx']
+    if ext not in exts:
+        excp = 'Valid type file. Only csv, json or xlsx'
+        raise TypeError(excp)
+    return save_dataframe(
+        scrap(url),
+        filename.with_suffix(f'.{ext}'),
+        format_output=ext,
+    )
+
+
 conn = sqlite3.connect(Path(tempfile.gettempdir()) / 'voltagem.db')
+
 filename = Path(__file__).parent.joinpath('fout.xlsx')
 
 

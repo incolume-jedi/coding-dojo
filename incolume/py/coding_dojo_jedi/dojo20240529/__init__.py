@@ -45,10 +45,23 @@ def info_tar_gz(filename: Path | None = None) -> None:
                 print('something else.')  # noqa: T201
 
 
-def get_content_tar_gz(filename: Path | None = None) -> str:
+def get_content_tar_gz_0(filename: Path | None = None) -> bytes:
+    """Get content."""
+    filename = filename or Path(__file__).parent / 'pi-1M.tar.gz'
+    with tarfile.open(filename) as tf:
+        for entry in tf:  # list each entry one by one
+            logging.info(type(entry))
+            fileobj = tf.extractfile(
+                entry,
+            )  # fileobj is now an open file object. Use read() to get content.
+            print(  # noqa: T201
+            )  # alternatively, loop over `fileobj` to read it line by line.
+        return fileobj.readline()
+
+
+def get_content_tar_gz_1(filename: Path | None = None) -> bytes:
     """Get content."""
     filename = filename or Path(__file__).parent / 'pi-1M.tar.gz'
     with tarfile.open(filename, mode='r:gz') as handler:
         file = handler.extractfile(handler.getnames()[0])
-        with open(file.name, mode='rb') as outfile:
-            return outfile.name
+        return file.readline()

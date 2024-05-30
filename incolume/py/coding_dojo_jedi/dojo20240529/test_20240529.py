@@ -3,7 +3,15 @@
 import logging
 from pathlib import Path
 
-from . import create_tar_gz, read_tar_gz, info_tar_gz, get_content_tar_gz
+import pytest
+
+from . import (
+    create_tar_gz,
+    read_tar_gz,
+    info_tar_gz,
+    get_content_tar_gz_0,
+    get_content_tar_gz_1,
+)
 
 from tempfile import NamedTemporaryFile
 
@@ -40,6 +48,13 @@ class TestCase:
             == 'pi-1M.txt is 1000002 bytes in size and is a regular file.\n'
         )
 
-    def test_get_content(self):
+    @pytest.mark.parametrize(
+        'function expected'.split(),
+        [
+            (get_content_tar_gz_0, b'3.141592'),
+            (get_content_tar_gz_1, b'3.141592'),
+        ],
+    )
+    def test_get_content(self, function, expected):
         """Test content."""
-        assert get_content_tar_gz() == {}
+        assert expected in function()

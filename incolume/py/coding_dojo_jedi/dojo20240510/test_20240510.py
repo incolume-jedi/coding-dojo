@@ -1,9 +1,11 @@
 """Module."""
 
+from typing import ClassVar
+
 import pytest
 
 
-from . import is_narcisist, char_position, counting_sheep
+from . import is_narcisist, char_position, counting_sheep, counting_sheep0
 
 
 __author__ = '@britodfbr'  # pragma: no cover
@@ -135,90 +137,131 @@ class TestLettersPosition:
 class TestSheep:
     """Case test sheep."""
 
+    case_test_0: ClassVar = [
+        (
+            [
+                True,
+                True,
+                True,
+                False,
+                True,
+                True,
+                True,
+                True,
+                True,
+                False,
+                True,
+                False,
+                True,
+                False,
+                False,
+                True,
+                True,
+                True,
+                True,
+                True,
+                False,
+                False,
+                True,
+                True,
+            ],
+            17,
+        ),
+    ]
+    case_test_1: ClassVar = [
+        (
+            [
+                True,
+                True,
+                True,
+                'nill',
+                True,
+                True,
+                True,
+                True,
+                True,
+                'null',
+                True,
+                'false',
+                True,
+                False,
+                'undefined',
+                'True',
+                'true',
+                True,
+                True,
+                True,
+                False,
+                False,
+                True,
+                True,
+            ],
+            17,
+        ),
+        (
+            [
+                True,
+                True,
+                True,
+                False,
+                True,
+                True,
+                True,
+                True,
+                True,
+                False,
+                True,
+                False,
+                True,
+                False,
+                False,
+                True,
+                True,
+                True,
+                True,
+                True,
+                False,
+                False,
+                True,
+                True,
+            ],
+            17,
+        ),
+        (
+            [
+                [True, True, True, False],
+                [True, True, True, True],
+                [True, False, True, False],
+                [True, False, False, True],
+                [True, True, True, True],
+                [False, False, True, True],
+            ],
+            17,
+        ),
+        (
+            [
+                [True, True, True, 'undefined'],
+                [True, True, True, True],
+                [True, False, True, 'nill'],
+                [True, None, False, True],
+                [True, True, True, True],
+                [False, 'null', 'True', True],
+            ],
+            17,
+        ),
+    ]
+
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-        [
-            (
-                [
-                    True,
-                    True,
-                    True,
-                    'nill',
-                    True,
-                    True,
-                    True,
-                    True,
-                    True,
-                    'null',
-                    True,
-                    'false',
-                    True,
-                    False,
-                    'undefined',
-                    'True',
-                    'true',
-                    True,
-                    True,
-                    True,
-                    False,
-                    False,
-                    True,
-                    True,
-                ],
-                17,
-            ),
-            (
-                [
-                    True,
-                    True,
-                    True,
-                    False,
-                    True,
-                    True,
-                    True,
-                    True,
-                    True,
-                    False,
-                    True,
-                    False,
-                    True,
-                    False,
-                    False,
-                    True,
-                    True,
-                    True,
-                    True,
-                    True,
-                    False,
-                    False,
-                    True,
-                    True,
-                ],
-                17,
-            ),
-            (
-                [
-                    [True, True, True, False],
-                    [True, True, True, True],
-                    [True, False, True, False],
-                    [True, False, False, True],
-                    [True, True, True, True],
-                    [False, False, True, True],
-                ],
-                17,
-            ),
-            (
-                [
-                    [True, True, True, 'undefined'],
-                    [True, True, True, True],
-                    [True, False, True, 'nill'],
-                    [True, None, False, True],
-                    [True, True, True, True],
-                    [False, 'null', 'True', True],
-                ],
-                17,
-            ),
-        ],
+        case_test_0,
+    )
+    def test_counting_sheep0(self, entrance, expected):
+        """Test count sheep."""
+        assert counting_sheep0(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        case_test_1,
     )
     def test_counting_sheep(self, entrance, expected):
         """Test count sheep."""

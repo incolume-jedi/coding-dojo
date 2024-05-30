@@ -10,9 +10,11 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-29:
+## [Unreleased]	 &#8212; 	2024-05-30:
 ### Added
   - Dojo20240527 permutação python;
+### Changed
+  - Ampliação de cobertura para dojos de maio/2024;
 
 ## [1.51.0]	 &#8212; 	2024-05-29:
 ### Added

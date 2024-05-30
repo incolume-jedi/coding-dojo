@@ -1,6 +1,6 @@
 """tests module."""
 
-from . import romeu_julieta, fizzbuzz
+from . import romeu_julieta, fizzbuzz, fizzbuzz0
 import pytest
 
 tests_fizzbuzz = [
@@ -27,7 +27,7 @@ tests_fizzbuzz = [
 )
 def test_fizzbuzz0(entrance, expected):
     """Fizzbuzz."""
-    assert fizzbuzz(entrance) == expected
+    assert fizzbuzz0(entrance) == expected
 
 
 @pytest.mark.parametrize(

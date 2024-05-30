@@ -8,7 +8,7 @@
 
 ---
 
-95 dojos resolvidos
+96 dojos resolvidos
 
 ---
 

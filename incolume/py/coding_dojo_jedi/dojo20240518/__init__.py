@@ -11,9 +11,9 @@ def romeu_julieta(num: int) -> str:
     result = str(num)
     if num % 3 == 0 and num % 5 == 0:
         result = 'romeu e julieta'
-    elif num % 3 == 0:
+    elif check_fizz_buzz(num, 3):
         result = 'queijo'
-    elif num % 5 == 0:
+    elif check_fizz_buzz(num, 5):
         result = 'goiabada'
     return result
 

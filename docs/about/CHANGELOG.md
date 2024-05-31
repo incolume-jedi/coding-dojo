@@ -10,9 +10,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-05-30:
+## [Unreleased]	 &#8212; 	2024-05-31:
 ### Added
   - Dojo20240527 permutação python;
+  - Dojo20240528 - Permutação em Python;
+  - Dojo20240529 - Manipulação de arquivo targz em python;
+  - Dojo20240530 - Validação de CNPJ;
+  - Dojo20240531 - Qual o último dígito de 2^27;
 ### Changed
   - Ampliação de cobertura para dojos de maio/2024;
 

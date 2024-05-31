@@ -8,10 +8,11 @@
 
 ---
 
-97 dojos resolvidos
+98 dojos resolvidos
 
 ---
 
+ - [Dojo20240531 &#8212; Qual é o último dígito de 2²⁷](dojo20240531/README.md)
  - [Dojo20240530 &#8212; Validação CNPJ](dojo20240530/README.md)
  - [Dojo20240529 &#8212; Manipular arquivos tar gz em python](dojo20240529/README.md)
  - [Dojo20240528 &#8212; Permutação Python](dojo20240528/README.md)

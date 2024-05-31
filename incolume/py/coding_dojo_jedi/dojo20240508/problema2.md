@@ -6,7 +6,7 @@
 
 ## Problema
 
-**Quais são os três menores números felizes consecutivos**
+**Quais são os três menores números felizes consecutivos?**
 
 Um número é feliz se somando os quadrados de seus algarismos e iterando o processo seja possível chegar ao número 1.
 

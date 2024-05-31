@@ -6,7 +6,7 @@
 
 ## Problema
 
-**Quais as alturas dos números felizes 7, 13, 19, 68 e 97**
+**Quais as alturas dos números felizes 7, 13, 19, 68 e 97?**
 
 Um número é feliz se somando os quadrados de seus algarismos e iterando o processo seja possível chegar ao número 1. A sua altura é representada que quantidade de iterações.
 

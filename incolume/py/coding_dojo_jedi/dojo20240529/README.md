@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Manipular arquivos Tar.gz em python**
+**Manipular arquivos tar gz em python**
 
 O número pi (π) é uma das mais famosas e mais facilmente reconhecidas constantes matemáticas. Originalmente definido como o resultado da divisão da circunferência de um círculo pelo seu diâmetro, π é um número irracional e a sua representação decimal é infinita e não se repete.
 

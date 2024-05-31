@@ -8,10 +8,12 @@
 
 ---
 
-96 dojos resolvidos
+97 dojos resolvidos
 
 ---
 
+ - [Dojo20240530 &#8212; Validação CNPJ](dojo20240530/README.md)
+ - [Dojo20240529 &#8212; Manipular arquivos tar gz em python](dojo20240529/README.md)
  - [Dojo20240528 &#8212; Permutação Python](dojo20240528/README.md)
  - [Dojo20240527 &#8212; Primos de 4 algarismos](dojo20240527/README.md)
  - [Dojo20240526 &#8212; Palindrômo primo](dojo20240526/README.md)

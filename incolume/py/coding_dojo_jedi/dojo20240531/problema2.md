@@ -13,13 +13,14 @@
 Crie um programa que converta números arábicos  em números por extenso.
 
 ## Exemplos
-vinte = 20
-cento e quarenta e cinco = 145
-mil e um = 1001
-dezenove = 19
-doze = 12
-um = 1
-zero = 0
+
+- vinte = 20
+- cento e quarenta e cinco = 145
+- mil e um = 1001
+- dezenove = 19
+- doze = 12
+- um = 1
+- zero = 0
 
 <details>
   <summary>Spoiler?</summary>

@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Qual é o último dígito de 2²⁷**
+**Qual é o último dígito de 2²⁷?**
 
 Descubra qual o último digito da potência informada.
 

@@ -69,9 +69,9 @@ def generator_sumary(
     logging.debug('called %s', stack()[0][3])
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
-    regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
+    regex = r'## Problema\s*\*\*((.*\s*)+)\*\*'
 
-    sout: list[str] = [
+    sout: list[str | bytes] = [
         '# Coding Dojo\n\n',
         '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
         '- [Seja membro da Guilda JEDI Incolume]'

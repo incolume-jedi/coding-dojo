@@ -63,13 +63,14 @@ def genfile(prefix: str = 'File', suffix: str = '') -> Path:
 def generator_sumary(
     fout: Path | None = None,
     *,
+    regex: str = '',
     reverse: bool = False,
 ) -> Path:
     """Gerador de sumário."""
     logging.debug('called %s', stack()[0][3])
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
-    regex = r'## Problema\s*\*\*((.*\s*)+)\*\*'
+    regex = regex or r'## Problema\s*\*\*((\w[-,\?]*\s*)+)\*\*'
 
     sout: list[str | bytes] = [
         '# Coding Dojo\n\n',

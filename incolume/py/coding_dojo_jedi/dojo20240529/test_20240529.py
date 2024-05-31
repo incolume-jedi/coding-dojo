@@ -1,6 +1,7 @@
 """Module."""
 
 import logging
+import sys
 from pathlib import Path
 
 import pytest
@@ -29,6 +30,10 @@ class TestCase:
         create_tar_gz(self.filename)
         assert self.filename.is_file()
 
+    @pytest.mark.skipif(
+        sys.platform.startswith('win'),
+        reason='Not available on windows.',
+    )
     def test_content_tar_gz(self, caplog):
         """Test content create file."""
         with caplog.at_level(logging.INFO):

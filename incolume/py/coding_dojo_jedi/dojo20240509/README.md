@@ -3,7 +3,7 @@ Guilda JEDI Incolume - Grupo Python Incolume
 
 ## Problema
 
-**Romanos > Arábicos / Arábicos > Romanos**
+**Romanos para Arábicos e vice versa em POO**
 
 Crie uma classe chamada numeros com 2 metodos (from_roman e to_roman), que convertam para números arábicos e romanos respectivamente.
 

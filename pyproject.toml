@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.52.0a6"
+version = "1.52.0a7"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
@@ -75,6 +75,7 @@ html5lib = "^1.1"
 openpyxl = "^3.1.2"
 httpx = "^0.27.0"
 deepl = "^1.18.0"
+icecream = "^2.1.3"
 
 
 [tool.poetry.group.docs.dependencies]

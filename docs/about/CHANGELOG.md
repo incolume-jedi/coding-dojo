@@ -16,7 +16,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240528 - Permutação em Python;
   - Dojo20240529 - Manipulação de arquivo targz em python;
   - Dojo20240530 - Validação de CNPJ;
-  - Dojo20240531 - Qual o último dígito de 2^27;
+  - Dojo20240531 - Qual o último dígito de 2^27?;
+  - Dojo20240531 - Números por extenso;
 ### Changed
   - Ampliação de cobertura para dojos de maio/2024;
 ### Fixed

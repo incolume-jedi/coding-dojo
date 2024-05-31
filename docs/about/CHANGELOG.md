@@ -19,6 +19,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240531 - Qual o último dígito de 2^27;
 ### Changed
   - Ampliação de cobertura para dojos de maio/2024;
+### Fixed
+  - Implementado mock para API Deepl de tradução;
 
 ## [1.51.0]	 &#8212; 	2024-05-29:
 ### Added

@@ -8,10 +8,11 @@
 
 ---
 
-99 dojos resolvidos
+100 dojos resolvidos
 
 ---
 
+ - [Dojo20240601 &#8212; Fatorar Pythonicamente solução Java](dojo20240601/README.md)
  - [Dojo20240531 &#8212; Número por extenso](dojo20240531/problema2.md)
  - [Dojo20240531 &#8212; Qual é o último dígito de 2²⁷?](dojo20240531/problema1.md)
  - [Dojo20240530 &#8212; Validação CNPJ](dojo20240530/README.md)

@@ -4,7 +4,9 @@
 # -*- coding: utf-8 -*-
 __author__ = '@britodfbr'  # pragma: no cover
 
+import datetime
 import logging
+import os
 import re
 from http import HTTPStatus
 from inspect import stack
@@ -12,11 +14,18 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import Final
 
+import pytz
 import requests
+from icecream import ic
+
+ic.disable()
+if os.getenv('DEBUG_MODE'):
+    ic.enable()
 
 MD_DIR: Final[Path] = (
     Path(__file__).parents[3].joinpath('incolume', 'py', 'coding_dojo_jedi')
 )
+TZ: Final[str] = 'America/Sao_Paulo'
 
 
 def check_connectivity(
@@ -116,6 +125,49 @@ def generator_sumary(
         fmd.writelines(sout)
 
     return file
+
+
+def dojo_init(
+    dojo_path: Path | str | None = None,
+    dojo_date: datetime.datetime | None = None,
+    time_zone: str = '',
+) -> list[Path]:
+    """Create dojo structure."""
+    dojo_path = Path(dojo_path) or MD_DIR
+    time_zone = time_zone or TZ
+    timestamp = dojo_date.strftime('%Y%m%d') or datetime.datetime.now(
+        tz=pytz.timezone(time_zone),
+    ).strftime('%Y%m%d')
+
+    boilerplate: dict[str, bytes] = {
+        'README.md': b'',
+        '__init__.py': b'"""dojo module."""',
+        f'test_{timestamp}.py': b'"""Test module."""\n\n'
+        b'from typing import ClassVar, NoReturn\n'
+        b'import . as pkg\n'
+        b'import pytest\n\n'
+        b'class TestCase:\n'
+        b'    """Test case class."""\n\n'
+        b'    @pytest.mark.parametrize(\n'
+        b"        'entrance expected'.split(),\n"
+        b'        [\n'
+        b'             (None, None),\n'
+        b'        ],\n'
+        b'    )\n'
+        b'    def test_0(self, entrance, expected) -> NoReturn:\n'
+        b'        """Unittest."""\n'
+        b'        assert pkg.dojo(entrance) == expected\n',
+    }
+    result = []
+    try:
+        dojo_dir = dojo_path.joinpath(f'dojo{timestamp}')
+        dojo_dir.mkdir(exist_ok=True)
+        for file, content in boilerplate.items():
+            result.append(dojo_dir.joinpath(file))
+            ic(ic(result[-1]).write_bytes(content))
+    except PermissionError:
+        pass
+    return result
 
 
 def run():

@@ -25,6 +25,7 @@ if os.getenv('DEBUG_MODE'):
 MD_DIR: Final[Path] = (
     Path(__file__).parents[3].joinpath('incolume', 'py', 'coding_dojo_jedi')
 )
+TZ: Final[str] = 'America/Sao_Paulo'
 
 
 def check_connectivity(
@@ -133,7 +134,7 @@ def dojo_init(
 ) -> list[Path]:
     """Create dojo structure."""
     dojo_path = Path(dojo_path) or MD_DIR
-    time_zone = time_zone or 'America/Sao_Paulo'
+    time_zone = time_zone or TZ
     timestamp = dojo_date.strftime('%Y%m%d') or datetime.datetime.now(
         tz=pytz.timezone(time_zone),
     ).strftime('%Y%m%d')

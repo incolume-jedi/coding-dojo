@@ -1,15 +1,19 @@
 """Test module for utils."""
 
+import datetime as dt
 import logging
 import sys
 from pathlib import Path
-
+from typing import NoReturn
+import tempfile
 import pytest
+import pytz
 
 from incolume.py.coding_dojo_jedi.utils import (
     MD_DIR,
     filesmd,
     generator_sumary,
+    dojo_init,
 )
 
 
@@ -31,6 +35,9 @@ def count_links(arq_entrada: Path) -> int:
 
 class TestUtilsModule:
     """Case test utils."""
+
+    tz: str = 'America/Sao_Paulo'
+    timestamp = dt.datetime(1978, 6, 20, tzinfo=pytz.timezone(tz))
 
     def test_md_dir_type(self):
         """Check directory type."""
@@ -97,3 +104,39 @@ class TestUtilsModule:
         """Teste para escopo do sumário."""
         file = generator_sumary(filemd)
         assert entrance in file.read_bytes()
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (
+                {
+                    'dojo_path': tempfile.gettempdir(),
+                    'dojo_date': timestamp,
+                },
+                Path(tempfile.gettempdir())
+                / f'dojo{timestamp:%Y%m%d}'
+                / 'README.md',
+            ),
+            (
+                {
+                    'dojo_path': tempfile.gettempdir(),
+                    'dojo_date': timestamp,
+                },
+                Path(tempfile.gettempdir())
+                / f'dojo{timestamp:%Y%m%d}'
+                / '__init__.py',
+            ),
+            (
+                {
+                    'dojo_path': tempfile.gettempdir(),
+                    'dojo_date': timestamp,
+                },
+                Path(tempfile.gettempdir())
+                / f'dojo{timestamp:%Y%m%d}'
+                / 'test_19780620.py',
+            ),
+        ],
+    )
+    def test_dojo_init(self, entrance, expected) -> NoReturn:
+        """Test dojo init."""
+        assert expected in dojo_init(**entrance)

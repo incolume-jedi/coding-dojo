@@ -12,6 +12,12 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [Unreleased]	 &#8212; 	2024-06-01:
 ### Added
+  - Script CLI para gerenciar projeto `dojo --help`;
+  - Script CLI `dojo init --help`;
+  - Fusão do script sumary com script dojo `dojo sumary --help`;
+
+## [1.52.0]	 &#8212; 	2024-06-01:
+### Added
   - Dojo20240527 - Permutação em Python;
   - Dojo20240528 - Primos de 4 algarismos;
   - Dojo20240529 - Manipulação de arquivo targz em python;
@@ -454,4 +460,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
 [1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0
 [1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...Unreleased
+[1.52.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...1.52.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...Unreleased

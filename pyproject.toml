@@ -147,7 +147,8 @@ exclude_lines = [
   "def run",
   "def terminal.",
   "__author__",
-  "class IElements"
+  "ic.enable",
+  "ic.disable",
 ]
 
 [tool.ruff]

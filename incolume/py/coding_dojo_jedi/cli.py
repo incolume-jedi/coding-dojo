@@ -57,14 +57,14 @@ def init(path: str, date: str, tz: str) -> NoReturn:
 )
 @click.option('--reverse', '-r', is_flag=True)
 @click.pass_context
-def sumary(file: str = '', *, reverse: bool = False) -> bool:
+def sumary(filename: str = '', *, reverse: bool = False) -> bool:
     """Generates a summary file with solved dojos.
 
-    :param file: full filename for sumary file;
+    :param filename: full filename for sumary file;
     :param reverse: sort reversed
     :return: bool: True if success
     """
-    fout: Path = Path(file)
+    fout: Path = Path(filename)
     click.echo(f'Sumário em {fout} .. ', nl=False)
     generator_sumary(fout=fout, reverse=reverse)
     click.echo('criado com sucesso!', color='green')

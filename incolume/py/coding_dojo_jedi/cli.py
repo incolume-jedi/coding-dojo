@@ -1,12 +1,19 @@
 """CLI Module."""
 
 import datetime
+import os
 from pathlib import Path
 from typing import NoReturn
 
 import click
 import pytz
+from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import TZ, dojo_init, generator_sumary
+
+ic.disable()
+if os.getenv('DEBUG_MODE'):
+    ic.enable()
+
 
 CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 
@@ -40,32 +47,52 @@ def dojo(ctx, **kwargs):
     help='Timezone for datetime object.',
 )
 @click.pass_context
-def init(path: str, date: str, tz: str) -> NoReturn:
+def init(ctx: click.Context, path: str, date: str, tz: str) -> NoReturn:
     """Initiate a dojo boilerplate."""
+    ic(type(ctx))
+    ic()
     date = datetime.datetime.strptime(date, '%Y%m%d').astimezone(
         datetime.timezone.utc,
     )
-    dojo_init(dojo_path=path, dojo_date=date, time_zone=tz)
+    files = dojo_init(dojo_path=path, dojo_date=date, time_zone=tz)
+    click.secho(
+        f'Boilerplate para dojo criado com sucesso em {files[0].parent}.',
+    )
 
 
 @dojo.command()
 @click.option(
-    '--file',
+    '--filename',
     '-f',
     default='incolume/py/coding_dojo_jedi/README.md',
     help='full filename for sumary file.',
 )
 @click.option('--reverse', '-r', is_flag=True)
 @click.pass_context
-def sumary(filename: str = '', *, reverse: bool = False) -> bool:
+def sumary(
+    ctx: click.Context,
+    filename: str = '',
+    *,
+    reverse: bool = False,
+) -> bool:
     """Generates a summary file with solved dojos.
 
     :param filename: full filename for sumary file;
     :param reverse: sort reversed
     :return: bool: True if success
     """
+    ic(type(ic(ctx)))
     fout: Path = Path(filename)
     click.echo(f'Sumário em {fout} .. ', nl=False)
     generator_sumary(fout=fout, reverse=reverse)
     click.echo('criado com sucesso!', color='green')
     return fout.is_file()
+
+
+@dojo.command()
+@click.pass_context
+def show(ctx: click.Context) -> NoReturn:
+    """Show configuration."""
+    ic(type(ic(ctx)))
+    click.secho(f'{ctx.obj}')
+    click.echo('Debug is %s' % (ctx.obj['debug'] and 'on' or 'off'))

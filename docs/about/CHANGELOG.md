@@ -10,11 +10,14 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-06-01:
+## [Unreleased]	 &#8212; 	2024-06-03:
 ### Added
   - Script CLI para gerenciar projeto `dojo --help`;
   - Script CLI `dojo init --help`;
   - Fusão do script sumary com script dojo `dojo sumary --help`;
+  - Dojo20240602 - Raspagem Brasileirão 2021 em POO;
+### Deprecated
+  - Script `sumary` será substituido por `dojo sumary`;
 
 ## [1.52.0]	 &#8212; 	2024-06-01:
 ### Added

@@ -8,10 +8,11 @@
 
 ---
 
-100 dojos resolvidos
+101 dojos resolvidos
 
 ---
 
+ - [Dojo20240602 &#8212; campeonato brasileiro 2021](dojo20240602/README.md)
  - [Dojo20240601 &#8212; Fatorar Pythonicamente solução Java](dojo20240601/README.md)
  - [Dojo20240531 &#8212; Número por extenso](dojo20240531/problema2.md)
  - [Dojo20240531 &#8212; Qual é o último dígito de 2²⁷?](dojo20240531/problema1.md)

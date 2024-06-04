@@ -16,6 +16,9 @@ Como descobrir a raiz quadrada pela fórmula da Júlia
 
 O melhor ainda do método de Júlia é que ele dispensa grandes operações. É fácil, simples e rápido!
 
+
+## Exemplos
+
 Digamos que você queira descobrir a raiz quadrada de 144.
 
 Primeiro, multiplique 10×10 para tentar chegar perto. Conseguiu o resultado de 100.
@@ -24,9 +27,6 @@ Depois, some o 10, usado na primeira multiplicação, o seguinte 11 e o resultad
 
 Por fim, some 121 + 11 + 12 e chegue no valor de 144. Assim, a raiz quadrada de 144 é o último número somada na operação, 12.
 
-
-
-## Exemplos
 
 <details>
   <summary>Spoiler?</summary>

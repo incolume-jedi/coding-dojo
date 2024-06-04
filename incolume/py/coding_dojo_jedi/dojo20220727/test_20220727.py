@@ -341,7 +341,7 @@ def test_research(entrance, expected) -> None:
 def test_research_mock(entrance, expected) -> None:
     """Test research with mock."""
     cache_file = genfile().with_name('personagens.json')
-    cache_file.unlink()
+    cache_file.unlink(missing_ok=True)
 
     response_mock = mock.MagicMock()
     response_mock.status_code = HTTPStatus.OK

@@ -1,15 +1,17 @@
 """dojo module."""
 
 import logging
-import time
-from icecream import ic 
 import os
+import time
+from collections.abc import Callable
+from functools import wraps
+from inspect import stack
 
+from icecream import ic
 
 ic.disable()
 if os.getenv('DEBUG_MODE'):
     ic.enable()
-
 
 
 def calc_square0(l: list) -> list:  # noqa: E741
@@ -34,4 +36,38 @@ def calc_cube0(l: list) -> list:  # noqa: E741
     return result
 
 
-def timeit(func: )
+def timeit(func: Callable) -> Callable:
+    """Timeit."""
+
+    @wraps(func)
+    def inner(*args, **kwargs):
+        """Inner function."""
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        msg = '%s executou em %s milisegundos'
+        logging.debug(msg, func.__name__, start - end)
+        return result
+    return inner
+
+
+def calc_pow_list(lst: list, exp: int) -> list:
+    """Potência de cada elemento da lista."""
+    return [pow(x, exp) for x in lst]
+
+
+@timeit
+def calc_square(lst: list) -> list:
+    """Quadrado de cada elemento da lista."""
+    return calc_pow_list(lst, 2)
+
+
+@timeit
+def calc_cube(lst: list) -> list:
+    """Cubo de cada elemento da lista."""
+    return calc_pow_list(lst, 3)
+
+
+if __name__ == '__main__':
+    ic(calc_square(range(1,4)))
+    ic(calc_cube(range(1,4)))

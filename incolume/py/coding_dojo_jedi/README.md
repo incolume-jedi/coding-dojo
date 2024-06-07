@@ -8,10 +8,11 @@
 
 ---
 
-102 dojos resolvidos
+103 dojos resolvidos
 
 ---
 
+ - [Dojo20240604 &#8212; campeonato brasileiro 2022](dojo20240604\README.md)
  - [Dojo20240603 &#8212; Raiz quadrada método Júlia](dojo20240603\README.md)
  - [Dojo20240602 &#8212; campeonato brasileiro 2021](dojo20240602\README.md)
  - [Dojo20240601 &#8212; Fatorar Pythonicamente solução Java](dojo20240601\README.md)
@@ -114,3 +115,4 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
+

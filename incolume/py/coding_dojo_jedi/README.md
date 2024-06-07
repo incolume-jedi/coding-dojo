@@ -8,10 +8,11 @@
 
 ---
 
-103 dojos resolvidos
+104 dojos resolvidos
 
 ---
 
+ - [Dojo20240607 &#8212; House robber](dojo20240607\README.md)
  - [Dojo20240604 &#8212; campeonato brasileiro 2022](dojo20240604\README.md)
  - [Dojo20240603 &#8212; Raiz quadrada método Júlia](dojo20240603\README.md)
  - [Dojo20240602 &#8212; campeonato brasileiro 2021](dojo20240602\README.md)

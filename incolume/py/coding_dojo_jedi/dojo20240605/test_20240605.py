@@ -11,9 +11,29 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            ('', None),
+            pytest.param('', True, marks=pytest.mark.webtest),
+        ],
+    )
+    def test_download(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        assert pkg.download_html(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param('', True),
+        ],
+    )
+    def test_scrap_estados(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        assert pkg.scrap_estados(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param('', True, marks=pytest.mark.webtest),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.scrap_estados(entrance) == expected
+        assert pkg.scrap_bandeiras(entrance) == expected

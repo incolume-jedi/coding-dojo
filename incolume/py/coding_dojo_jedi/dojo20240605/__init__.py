@@ -1,5 +1,7 @@
 """dojo module."""
 
+from __future__ import annotations
+
 from pathlib import Path
 
 import httpx
@@ -7,6 +9,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from icecream import ic
 from unidecode import unidecode
+from urllib.parse import urlsplit, urljoin, urlparse, urlunparse, urlunsplit
 
 url_default: str = 'https://www.todamateria.com.br/estados-do-brasil/'
 dir_report: Path = Path(__file__).parent
@@ -20,10 +23,26 @@ regioes_estados: dict[str, list[str]] = {
 estados_regioes = {e: r for r, v in regioes_estados.items() for e in v}
 
 
-def scrap_estados(page: str = '', json_out: Path | None = None) -> bool:
-    """Raspagem da lista de estados no site todamateria."""
+def download_html(page: str = '', fout: Path | None = None) -> bool:
+    """Baixar a pagina principal de todamateria."""
     page = page or url_default
-    json_out = json_out or dir_report / 'report.json'
+    fout = fout or Path(__file__).parent / 'index.html'
+
+    if not fout.is_file():
+        response = httpx.get(page)
+        soup = BeautifulSoup(response.content, 'html5lib')
+        fout.write_bytes(soup.prettify(encoding='utf-8'))
+
+    return fout.is_file()
+
+
+def scrap_estados(
+    page: Path | None = None,
+    json_out: Path | None = None,
+) -> bool:
+    """Raspagem da lista de estados no site todamateria."""
+    page = page or Path(__file__).parent / 'index.html'
+    json_out = json_out or dir_report / 'estados.json'
     response = pd.read_html(page)
     estados = response[0]
     ic(estados.tail())
@@ -38,5 +57,33 @@ def scrap_estados(page: str = '', json_out: Path | None = None) -> bool:
     return json_out.is_file()
 
 
-def scrap_bandeiras(page: str) -> dict:
+def scrap_bandeiras(page: Path|None = None) -> list:
     """Raspagem de bandeiras no site todamateria."""
+    page = page or Path(__file__).parent / 'index.html'
+    result: list = []
+    soup = BeautifulSoup(page.read_bytes(), 'html5lib')
+    figures = soup.select('figure img')
+    ic(figures)
+    # result = [{img.attrs.get('alt'): img.attrs.get('src')} for img in figures]
+    # result = [urlsplit(img.attrs.get('src')) for img in figures]
+    # result = [urlunsplit(urlsplit(img.attrs.get('src'))) for img in figures]
+    # result = [urlparse(img.attrs.get('src')) for img in figures]
+    # result = [urlunparse(urlparse(img.attrs.get('src'))) for img in figures]
+    # result = [list(urlparse(img.attrs.get('src'))) for img in figures]
+    # result = [urlunparse(urlparse(img.attrs.get('src')), **{'query':'width=100'}) for img in figures]
+    # result = [{idx: urlsplit(img.attrs.get('src'))} for idx, img in enumerate(figures)]
+    # result = [urlunsplit({'scheme':'https', 'netloc':'static.todamateria.com.br',
+    #                     'path': '/upload/am/az/amazonas-cke.jpg',
+    #                     'query':'width=100', 'fragment': ''}.values()) for idx, img in enumerate(figures)]
+    for img in figures:
+        element = urlsplit(img.attrs['src'])
+        key = img.attrs['alt']
+
+        if 'bandeira' in key.casefold():
+            result.append({key: urlunsplit([element.scheme, element.netloc, element.path, 'width=100', ''])})
+        else:
+            result.append({key: urlunsplit(
+                [element.scheme, element.netloc, element.path, '', ''])})
+
+    return result
+

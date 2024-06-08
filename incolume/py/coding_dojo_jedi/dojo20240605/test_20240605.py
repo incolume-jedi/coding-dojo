@@ -1,8 +1,9 @@
 """Test module."""
 
-from typing import ClassVar, NoReturn
-import . as pkg
+from typing import NoReturn
+import incolume.py.coding_dojo_jedi.dojo20240605 as pkg
 import pytest
+
 
 class TestCase:
     """Test case class."""
@@ -10,9 +11,9 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-             (None, None),
+            ('', None),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        assert pkg.scrap_estados(entrance) == expected

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
@@ -13,6 +15,7 @@ from unidecode import unidecode
 
 url_default: str = 'https://www.todamateria.com.br/estados-do-brasil/'
 dir_report: Path = Path(__file__).parent
+json_report: Path = dir_report / 'estados.json'
 regioes_estados: dict[str, list[str]] = {
     'Norte': 'AC AP AM PA RO RR TO'.split(),
     'Nordeste': 'MA PI CE RN PB PE AL SE BA'.split(),
@@ -21,6 +24,17 @@ regioes_estados: dict[str, list[str]] = {
     'Suldeste': 'SP RJ MG ES'.split(),
 }
 estados_regioes = {e: r for r, v in regioes_estados.items() for e in v}
+
+
+@dataclass()
+class UnidadesFederativas:
+    """Estados Brasileiros."""
+
+    UF: str
+    SIGLA: str
+    CAPITAL: str
+    REGIAO: str
+    BANDEIRA: bytes = b''
 
 
 def download_html(page: str = '', fout: Path | None = None) -> bool:
@@ -42,11 +56,11 @@ def scrap_estados(
 ) -> bool:
     """Raspagem da lista de estados no site todamateria."""
     page = page or Path(__file__).parent / 'index.html'
-    json_out = json_out or dir_report / 'estados.json'
+    json_out = json_out or json_report
     response = pd.read_html(page)
     estados = response[0]
     ic(estados.tail())
-    estados = estados.rename({'Estado': 'unidade federativa'}, axis=1)
+    estados = estados.rename({'Estado': 'uf'}, axis=1)
     estados.loc[len(estados)] = ['Distrito Federal', 'DF', 'Brasília']
 
     estados.columns = estados.columns.str.upper().map(unidecode)
@@ -90,3 +104,13 @@ def identify_bandeiras(page: Path | None = None) -> list[dict[str, str]]:
             })
 
     return ic(result)
+
+
+def load_estados_from_json(
+    json_filename: Path | None = None,
+) -> list[UnidadesFederativas]:
+    """Load estrados from json."""
+    json_filename = json_filename or json_report
+    with json_filename.open('rb') as f:
+        result = [UnidadesFederativas(**estado) for estado in json.load(f)]
+    return result

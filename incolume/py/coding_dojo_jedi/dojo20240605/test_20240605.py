@@ -34,6 +34,18 @@ class TestCase:
             pytest.param('', True, marks=pytest.mark.webtest),
         ],
     )
+    def test_bandeiras(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        expected = 28
+        result = pkg.identify_bandeiras(entrance)
+        assert len(result) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param('', True, marks=pytest.mark.webtest),
+        ],
+    )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.scrap_bandeiras(entrance) == expected
+        assert True

@@ -42,14 +42,18 @@ class TestCase:
 
     def test_load_from_json(self) -> NoReturn:
         """Unittest."""
-        assert all(isinstance(x, pkg.UnidadesFederativas) for x in pkg.load_estados_from_json())
+        assert all(
+            isinstance(x, pkg.UnidadesFederativas)
+            for x in pkg.load_estados_from_json()
+        )
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            pytest.param('', True, marks=pytest.mark.webtest),
+            pytest.param('', None, marks=pytest.mark.webtest),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert True
+        expected = ''
+        assert pkg.add_bandeiras(entrance) == expected

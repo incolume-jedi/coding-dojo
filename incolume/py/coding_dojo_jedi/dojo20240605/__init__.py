@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
-
+import base64
 import httpx
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -35,6 +35,10 @@ class UnidadesFederativas:
     CAPITAL: str
     REGIAO: str
     BANDEIRA: bytes = b''
+
+    def as_dict(self):
+        """To dict."""
+        return asdict(self)
 
 
 def download_html(page: str = '', fout: Path | None = None) -> bool:
@@ -84,7 +88,7 @@ def identify_bandeiras(page: Path | None = None) -> list[dict[str, str]]:
 
         if 'bandeira' in key.casefold():
             result.append({
-                key: urlunsplit([
+                ' '.join(key.split()[2:]): urlunsplit([
                     element.scheme,
                     element.netloc,
                     element.path,
@@ -94,7 +98,7 @@ def identify_bandeiras(page: Path | None = None) -> list[dict[str, str]]:
             })
         else:
             result.append({
-                key: urlunsplit([
+                ''.join(key.split()[3:]): urlunsplit([
                     element.scheme,
                     element.netloc,
                     element.path,
@@ -114,3 +118,31 @@ def load_estados_from_json(
     with json_filename.open('rb') as f:
         result = [UnidadesFederativas(**estado) for estado in json.load(f)]
     return result
+
+
+def add_bandeiras(
+    estados: list[UnidadesFederativas] = None,
+    bandeiras: list[dict[str, str]] = None,
+) -> list[UnidadesFederativas]:
+    """Add flags to objects."""
+
+    estados = estados or load_estados_from_json()
+    bandeiras = bandeiras or identify_bandeiras()
+    staff = 0
+    for estado in estados:
+        for bandeira in bandeiras:
+            key = list(bandeira.keys())[0]
+            print(key)
+            if estado.UF == key:
+                estado.BANDEIRA = bandeira.get(key)
+
+
+    df_uf = pd.DataFrame([uf.as_dict() for uf in estados])
+    ic(df_uf)
+    for idx, item in df_uf.iterrows():
+        response = httpx.get(ic(item.BANDEIRA))
+        base64_bytes = base64.b64encode(response.content)
+        obj_b64 = base64_bytes.decode()
+        df_uf.loc[df_uf.UF == item.UF].BANDEIRA = obj_b64
+
+    return df_uf.head()

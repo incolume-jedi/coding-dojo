@@ -13,7 +13,9 @@
 
 ## Problema
 
-**Título do problema**
+**Popular SGBD PostgreSQL**
+
+Utilizar os dados extraídos e armazenados em arquivos CSV, JSON, XLSX. para popular o SGBD PostgreSQL.
 
 Descrição/apresentação do problema.
 
@@ -39,6 +41,10 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 - [tests](test_20250108.py)
 
 ## Referências
+
+- #77
+- #78
+- #214
 
 N/A - Referências para o dojo, o problema ou para elicidações extras.
 ---

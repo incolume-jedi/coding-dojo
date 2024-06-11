@@ -12,5 +12,9 @@ class TestCase:
     def test_0(self) -> NoReturn:
         """Unittest."""
         entrance = Path(NamedTemporaryFile().name)
-        entrance = None
+        # entrance = None
         assert pkg.set_compose_file(entrance)
+    
+    def test_1(self) -> NoReturn:
+        """Unittest."""
+        assert isinstance(pkg.connect(), pkg.psycopg2._T_conn)

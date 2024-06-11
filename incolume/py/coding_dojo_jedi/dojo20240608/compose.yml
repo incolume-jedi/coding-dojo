@@ -1,3 +1,9 @@
+# File: docker-compose.yml
+# Access via "http://localhost:8081"
+#
+# Call example:
+# $ docker compose -f incolume/py/coding_dojo_jedi/dojo20240608/compose.yml up -d --build
+
 version: "3.9"
 
 services:
@@ -6,7 +12,7 @@ services:
         environment:
             - POSTGRES_USER=admin
             - POSTGRES_PASSWORD=admin1234
-            - POSTGRES_DB=records
+            - POSTGRES_DB=voltagem
         ports:
             - "5432:5432"
         restart: always

@@ -96,6 +96,7 @@ jsonpickle = "^4.0.1"
 opencv-python = "^4.10.0.84"
 matplotlib = "^3.10.0"
 deprecated = "^1.2.15"
+psycopg2 = "^2.9.10"
 
 
 [tool.poetry.group.docs.dependencies]

@@ -5,7 +5,6 @@ import os
 import time
 from collections.abc import Callable
 from functools import wraps
-from inspect import stack
 
 from icecream import ic
 
@@ -48,6 +47,7 @@ def timeit(func: Callable) -> Callable:
         msg = '%s executou em %s milisegundos'
         logging.debug(msg, func.__name__, start - end)
         return result
+
     return inner
 
 
@@ -69,5 +69,5 @@ def calc_cube(lst: list) -> list:
 
 
 if __name__ == '__main__':
-    ic(calc_square(range(1,4)))
-    ic(calc_cube(range(1,4)))
+    ic(calc_square(range(1, 4)))
+    ic(calc_cube(range(1, 4)))

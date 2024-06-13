@@ -45,11 +45,10 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-            case_test_cube,
+        case_test_cube,
     )
     def test_cube_1(self, entrance, expected, caplog) -> NoReturn:
         """Unittest."""
         with caplog.set_level(logging.DEBUG):
             assert pkg.calc_cube(entrance) == expected
             assert 'warning text' in caplog.text
-

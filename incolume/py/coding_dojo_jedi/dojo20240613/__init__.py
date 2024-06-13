@@ -2,14 +2,20 @@
 
 from __future__ import annotations
 
+import datetime as dt
+import os
+import random
 from pathlib import Path
 
 import pandas as pd
+import pytz
 from faker import Faker
 from icecream import ic
-import datetime as dt
-import random
-import secrets
+
+ic.disable()
+if os.getenv('DEBUG_MODE'):
+    ic.enable()
+
 
 Faker.seed(1061)
 fake = Faker('pt_BR')
@@ -41,18 +47,18 @@ def write_xlsx(data: pd.DataFrame, filename: Path | None = None) -> bool:
     return filename.is_file()
 
 
-def sorteio(filename: Path|None = None) -> Path:
+def sorteio(k: int = 1, filename: Path | None = None) -> Path:
     """Lotery by xlsx file."""
     filename = filename or Path(__file__).parent / 'empregados.xlsx'
     ext = {'.xlsx': pd.read_excel}
-    fout: Path = filename.with_name(f'{filename.stem}{dt.datetime.now(tz=None).isoformat()}.xlsx')
+    fout: Path = filename.with_name(
+        f'{filename.stem}{dt.datetime.now(tz=pytz.timezone("America/Sao_Paulo")).isoformat()}.xlsx',
+    )
     df0 = ext.get(ic(filename.suffix))(filename)
     ic(df0)
 
-    itens = list(df0.index)
-    random.shuffle(itens)
-    ic(itens)
-    ic(random.sample(list(df0.index), k=3))
+    items = list(df0.index)
+    result = random.sample(items, k=k)
 
+    ic(df0.loc[result]).to_excel(fout)
     return fout
-

@@ -4,6 +4,8 @@ from pathlib import Path
 from typing import NoReturn
 from unittest import mock
 
+import pandas as pd
+
 import incolume.py.coding_dojo_jedi.dojo20240613 as pkg
 import pytest
 from tempfile import NamedTemporaryFile
@@ -45,7 +47,7 @@ class TestCase:
                 'data': pkg.generate_dataframe(),
             },
             {
-                'data': pkg.generate_dataframe(100),
+                'data': pkg.generate_dataframe(),
             },
         ],
     )
@@ -53,6 +55,30 @@ class TestCase:
         """Unittest."""
         assert pkg.write_xlsx(**entrance)
 
-    def test_3(self) -> NoReturn:
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            (
+                {
+                    'k': 3,
+                    'filename': Path(NamedTemporaryFile(suffix='.xlsx').name),
+                },
+                3,
+            ),
+            (
+                {
+                    'k': 10,
+                    'filename': Path(NamedTemporaryFile(suffix='.xlsx').name),
+                },
+                10,
+            ),
+        ],
+    )
+    def test_3(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.sorteio() == ''
+        pkg.write_xlsx(
+            data=pkg.generate_dataframe(100),
+            filename=entrance.get('filename'),
+        )
+        result = pkg.sorteio(**entrance)
+        assert pd.read_excel(result).shape[0] == expected

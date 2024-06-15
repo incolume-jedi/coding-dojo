@@ -13,6 +13,7 @@
 ---
 
  - [Dojo20240613 &#8212; Sorteio em arquivo xlsx](dojo20240613/README.md)
+ - [Dojo20240608 &#8212; Fatorar algoritmo para calculo raiz (método Júlia)](dojo20240608/README.md)
  - [Dojo20240607 &#8212; House robber](dojo20240607/README.md)
  - [Dojo20240604 &#8212; campeonato brasileiro 2022](dojo20240604/README.md)
  - [Dojo20240603 &#8212; Raiz quadrada método Júlia](dojo20240603/README.md)
@@ -33,8 +34,10 @@
  - [Dojo20240520 &#8212; ROT13](dojo20240520/README.md)
  - [Dojo20240519 &#8212; Convert Age to Days](dojo20240519/README.md)
  - [Dojo20240518 &#8212; Romeu e Julieta](dojo20240518/README.md)
+ - [Dojo20240517 &#8212; Mesclando matrizes de inteiros ordenadas - sem duplicatas](dojo20240517/problema3.md)
  - [Dojo20240517 &#8212; Gerador de números primos](dojo20240517/problema2.md)
  - [Dojo20240517 &#8212; Identificar números primos](dojo20240517/problema1.md)
+ - [Dojo20240516 &#8212; Classificação de Valores (Maiores e Menores)](dojo20240516/problema3.md)
  - [Dojo20240516 &#8212; Inverter nomes](dojo20240516/problema2.md)
  - [Dojo20240515 &#8212; API Translation](dojo20240515/README.md)
  - [Dojo20240514 &#8212; Popular SGBD Sqlite](dojo20240514/README.md)
@@ -87,6 +90,7 @@
  - [Dojo20220824 &#8212; Complementary DNA](dojo20220824/problema1.md)
  - [Dojo20220822 &#8212; Tabela de caixa II](dojo20220822/problema2.md)
  - [Dojo20220822 &#8212; Tabela de caixa I](dojo20220822/problema1.md)
+ - [Dojo20220819 &#8212; Classificação de Valores (Maiores e Menores)](dojo20220819/README.md)
  - [Dojo20220817 &#8212; Ordenação de 3](dojo20220817/problema2.md)
  - [Dojo20220817 &#8212; Highest and Lowest](dojo20220817/problema1.md)
  - [Dojo20220815 &#8212; Adedonha](dojo20220815/problema3.md)

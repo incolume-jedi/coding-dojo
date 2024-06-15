@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Fatorar algoritmo para calculo raiz (método júlia)**
+**Fatorar algoritmo para calculo raiz (método Júlia)**
 
 Júlia Pimentel Ferreira, brasileira, 11 anos, de Minas Gerais teve uma sacada genial e criou uma nova fórmula para descobrir a raiz quadrada. O método da menina deu tão certo que foi parar até numa revista científica.
 

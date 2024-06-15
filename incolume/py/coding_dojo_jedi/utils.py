@@ -27,6 +27,8 @@ MD_DIR: Final[Path] = (
 )
 TZ: Final[str] = 'America/Sao_Paulo'
 
+sumary_regex: str = r'## Problema\s*\*\*((\w[\-,!\?\(\)\s]*\s*)+)\*\*'
+
 
 def check_connectivity(
     url: str = 'https://google.com',
@@ -79,7 +81,7 @@ def generator_sumary(
     logging.debug('called %s', stack()[0][3])
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
-    regex = regex or r'## Problema\s*\*\*((\w[-,\?]*\s*)+)\*\*'
+    regex = regex or sumary_regex
 
     sout: list[str | bytes] = [
         '# Coding Dojo\n\n',

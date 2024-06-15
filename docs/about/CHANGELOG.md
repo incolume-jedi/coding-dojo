@@ -10,12 +10,17 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-06-03:
+## [Unreleased]	 &#8212; 	2024-06-15:
 ### Added
   - Script CLI para gerenciar projeto `dojo --help`;
   - Script CLI `dojo init --help`;
   - Fusão do script sumary com script dojo `dojo sumary --help`;
   - Dojo20240602 - Raspagem Brasileirão 2021 em POO;
+  - Dojo20240603 - Raiz quadrada método júlia;
+  - Dojo20240606 - fatorar código Python;
+  - Dojo20240607 - House robber;
+  - Dojo20240608 - Fatorar algoritmo para calculo raiz (método Júlia);
+  - Dojo20240613 - Sorteio em arquivo xlsx;
 ### Deprecated
   - Script `sumary` será substituido por `dojo sumary`;
 

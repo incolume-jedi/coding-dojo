@@ -8,13 +8,14 @@
 
 ---
 
-106 dojos resolvidos
+107 dojos resolvidos
 
 ---
 
  - [Dojo20240613 &#8212; Sorteio em arquivo xlsx](dojo20240613/README.md)
  - [Dojo20240608 &#8212; Fatorar algoritmo para calculo raiz (método Júlia)](dojo20240608/README.md)
  - [Dojo20240607 &#8212; House robber](dojo20240607/README.md)
+ - [Dojo20240606 &#8212; Fatorar código - Performance pythonica](dojo20240606/README.md)
  - [Dojo20240604 &#8212; campeonato brasileiro 2022](dojo20240604/README.md)
  - [Dojo20240603 &#8212; Raiz quadrada método Júlia](dojo20240603/README.md)
  - [Dojo20240602 &#8212; campeonato brasileiro 2021](dojo20240602/README.md)

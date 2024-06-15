@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Fatorar código - Coding refactory**
+**Fatorar código - Performance pythonica**
 
 No código a seguir aplique as melhores praticas de desenvolvimento para melhorá-lo.
 

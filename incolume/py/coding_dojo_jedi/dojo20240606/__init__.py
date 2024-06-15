@@ -41,11 +41,11 @@ def timeit(func: Callable) -> Callable:
     @wraps(func)
     def inner(*args, **kwargs):
         """Inner function."""
-        start = time.time()
+        start = time.perf_counter_ns()
         result = func(*args, **kwargs)
-        end = time.time()
+        end = time.perf_counter_ns()
         msg = '%s executou em %s milisegundos'
-        logging.debug(msg, func.__name__, start - end)
+        logging.debug(msg, func.__name__, end - start)
         return result
 
     return inner

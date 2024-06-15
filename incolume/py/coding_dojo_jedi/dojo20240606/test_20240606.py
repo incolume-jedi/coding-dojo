@@ -39,9 +39,9 @@ class TestCase:
     )
     def test_square_1(self, entrance, expected, caplog) -> NoReturn:
         """Unittest."""
-        with caplog.set_level(logging.DEBUG):
+        with caplog.at_level(logging.DEBUG):
             assert pkg.calc_square(entrance) == expected
-            assert 'warning text' in caplog.text
+            assert 'calc_square executou em' in caplog.text
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -49,6 +49,6 @@ class TestCase:
     )
     def test_cube_1(self, entrance, expected, caplog) -> NoReturn:
         """Unittest."""
-        with caplog.set_level(logging.DEBUG):
+        with caplog.at_level(logging.DEBUG):
             assert pkg.calc_cube(entrance) == expected
-            assert 'warning text' in caplog.text
+            assert 'calc_cube executou em' in caplog.text

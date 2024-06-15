@@ -79,7 +79,7 @@ def generator_sumary(
     logging.debug('called %s', stack()[0][3])
     file = fout or Path().parent.joinpath('sumario.md')
     file.parent.mkdir(parents=True, exist_ok=True)
-    regex = regex or r'## Problema\s*\*\*((\w+[\(\)\-,\?]*\s*)+)\*\*'
+    regex = regex or r'## Problema\s*\*\*((\w[-,\?]*\s*)+)\*\*'
 
     sout: list[str | bytes] = [
         '# Coding Dojo\n\n',

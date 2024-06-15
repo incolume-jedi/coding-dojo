@@ -1,6 +1,7 @@
 """Test module."""
 
 import logging
+import sys
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20240606 as pkg
 import pytest
@@ -10,11 +11,25 @@ class TestCase:
     """Test case class."""
 
     case_test_square: ClassVar = [
-        (range(5), [pow(x, 2) for x in range(5)]),
+        pytest.param(
+            range(5),
+            [pow(x, 2) for x in range(5)],
+            marks=pytest.mark.skipif(
+                condition=sys.platform.startswith('win'),
+                reason='Not available on windows.',
+            ),
+        ),
     ]
 
     case_test_cube: ClassVar = [
-        (list(range(5)), [pow(x, 3) for x in range(5)]),
+        pytest.param(
+            list(range(5)),
+            [pow(x, 3) for x in range(5)],
+            marks=pytest.mark.skipif(
+                condition=sys.platform.startswith('win'),
+                reason='Not available on windows.',
+            ),
+        ),
     ]
 
     @pytest.mark.parametrize(

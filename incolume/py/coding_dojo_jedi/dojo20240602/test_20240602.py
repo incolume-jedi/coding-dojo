@@ -18,7 +18,7 @@ class TestCaseCBF:
         pytest.param(
             'http://localhost:8000',
             '',
-            marks=pytest.mark.webtest,
+            marks=[pytest.mark.webtest, pytest.mark.offci],
         ),
         pytest.param(
             Path(__file__).parent.joinpath('index.html').as_posix(),
@@ -191,25 +191,25 @@ class TestCaseCBF:
                 'http://localhost:8000',
                 'Chapecoense',
                 15,
-                marks=pytest.mark.webtest,
+                marks=[pytest.mark.webtest, pytest.mark.offci],
             ),
             pytest.param(
                 'http://localhost:8000',
                 'Grêmio',
                 43,
-                marks=pytest.mark.webtest,
+                marks=[pytest.mark.webtest, pytest.mark.offci],
             ),
             pytest.param(
                 'http://localhost:8000',
                 'Bahia',
                 43,
-                marks=pytest.mark.webtest,
+                marks=[pytest.mark.webtest, pytest.mark.offci],
             ),
             pytest.param(
                 'http://localhost:8000',
                 'Sport Recife',
                 38,
-                marks=pytest.mark.webtest,
+                marks=[pytest.mark.webtest, pytest.mark.offci],
             ),
             (
                 Path(__file__).parent.joinpath('index.html').as_posix(),

@@ -64,7 +64,7 @@ class TestCase:
                     'Nazaré',
                 ),
                 'Meu nome é "Jesus" nascido em '
-                '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
+                '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
                 marks=[pytest.mark.skipif(not sys.platform.startswith("win"),    reason="fork only available on Windows")]
             ),
         ],
@@ -103,7 +103,7 @@ class TestCase:
                     'Nazaré',
                 ),
                 'Meu nome é "Jesus" nascido em '
-                '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
+                '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
                 marks=[pytest.mark.skipif(not sys.platform.startswith("win"),    reason="fork only available on Windows")]
             ),
         ],

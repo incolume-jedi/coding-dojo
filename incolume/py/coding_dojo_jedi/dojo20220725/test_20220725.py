@@ -9,6 +9,8 @@ import pytest
 from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 from incolume.py.coding_dojo_jedi.utils import genfile
 
+
+# ruff: noqa: E501
 @pytest.mark.skip(reason='replaced for test_research_mock')
 @pytest.mark.skipif(
     version_info < (3, 9, 0),
@@ -153,6 +155,7 @@ def test_research(entrance, expected) -> None:
     timeout = float(environ.get('TIMEOUT', 0.8))
     assert research(entrance, timeout=timeout) == expected
 
+
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -287,25 +290,46 @@ def test_research(entrance, expected) -> None:
     ],
 )
 def test_research_mock(entrance, expected) -> None:
-    """Teste research_mock.""" # DocString.
-    cache_file = genfile().with_name('personagens-20220725.json') # Criando cache_file.
-    cache_file.touch(exist_ok=True) # Cria o arquivo se ele não existir e atualiza o timestamp de acesso e modificação
-    cache_file.unlink(missing_ok=True) # Remove o arquivo se ele existir; se não existir, não faz nada
-    with mock.patch('requests.get') as mock_req: # Utilizando o módulo mock para substituir temporariamente a função request.get por um objeto mock.
-        objreq = mock.MagicMock() # Criando uma instância de MagicMock.
-        objreq.status_code = HTTPStatus.OK # Definindo o código de status como "bem-sucedido"
-        objreq.json.return_value = { # Quando json() for chamado em objreq, ele retornará o dicionário especificado:
+    """Teste research_mock."""  # DocString.
+    cache_file = genfile().with_name(
+        'personagens-20220725.json',
+    )  # Criando cache_file.
+    cache_file.touch(
+        exist_ok=True,
+    )  # Cria o arquivo se ele não existir e atualiza o timestamp de acesso e modificação
+    cache_file.unlink(
+        missing_ok=True,
+    )  # Remove o arquivo se ele existir; se não existir, não faz nada
+    with (
+        mock.patch('requests.get') as mock_req
+    ):  # Utilizando o módulo mock para substituir temporariamente a função request.get por um objeto mock.
+        objreq = mock.MagicMock()  # Criando uma instância de MagicMock.
+        objreq.status_code = (
+            HTTPStatus.OK
+        )  # Definindo o código de status como "bem-sucedido"
+        objreq.json.return_value = {  # Quando json() for chamado em objreq, ele retornará o dicionário especificado:
             'count': 1,
             'next': None,
             'previus': None,
             'results': expected,
         }
 
-        objreq2 = mock.MagicMock() # Criando nova instância, que será usada para simular uma resposta diferente.
-        objreq2.status_code = HTTPStatus.NOT_FOUND # Definindo o código de status como "não encontrado".
-        objreq2.json.return_value = {'detail': 'Not found'} # Quando json() for chamado em objreq2, ele retornará o dicionário.
+        objreq2 = mock.MagicMock()  # Criando nova instância, que será usada para simular uma resposta diferente.
+        objreq2.status_code = (
+            HTTPStatus.NOT_FOUND
+        )  # Definindo o código de status como "não encontrado".
+        objreq2.json.return_value = {
+            'detail': 'Not found',
+        }  # Quando json() for chamado em objreq2, ele retornará o dicionário.
 
-        mock_req.side_effect = [objreq, objreq2] # Especificando comportamentos diferentes em chamadas consecutivas do mock.
+        mock_req.side_effect = [
+            objreq,
+            objreq2,
+        ]  # Especificando comportamentos diferentes em chamadas consecutivas do mock.
 
-        timeout = float(environ.get('TIMEOUT', 0.8)) # Convertendo valor de TIMEOUT para float.
-        assert research(entrance, timeout=timeout) == expected # Verificando research e expected
+        timeout = float(
+            environ.get('TIMEOUT', 0.8),
+        )  # Convertendo valor de TIMEOUT para float.
+        assert (
+            research(entrance, timeout=timeout) == expected
+        )  # Verificando research e expected

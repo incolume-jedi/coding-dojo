@@ -8,10 +8,11 @@
 
 ---
 
-107 dojos resolvidos
+108 dojos resolvidos
 
 ---
 
+ - [Dojo20240829 &#8212; Use a descompactação de objetos de forma prática](dojo20240829/README.md)
  - [Dojo20240613 &#8212; Sorteio em arquivo xlsx](dojo20240613/README.md)
  - [Dojo20240608 &#8212; Fatorar algoritmo para calculo raiz (método Júlia)](dojo20240608/README.md)
  - [Dojo20240607 &#8212; House robber](dojo20240607/README.md)
@@ -122,3 +123,4 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
+

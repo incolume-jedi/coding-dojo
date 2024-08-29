@@ -35,3 +35,12 @@ def dojo0(pessoa: Pessoa) -> str:
     )
 
 
+def dojo(pessoa: Pessoa) -> str:
+    """Dojo solution."""
+    return (
+        'Meu nome é "{first_name}"'
+        ' nascido em "{born_date:%A %d de %B do ano %Y}"'
+        ' na cidade de "{city}"'
+    ).format_map(
+        pessoa.asdict(),
+    )

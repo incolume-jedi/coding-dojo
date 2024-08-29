@@ -3,6 +3,7 @@
 from typing import NoReturn
 import incolume.py.coding_dojo_jedi.dojo20240829 as pkg
 import pytest
+import sys
 
 
 class TestCase:
@@ -36,7 +37,7 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            (
+            pytest.param(
                 (
                     'Jesus Cristo',
                     pkg.dt.datetime(1, 12, 25, 0, 0, 1),
@@ -44,6 +45,27 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
+                marks=[pytest.mark.skipif(not sys.platform.startswith("lin"),    reason="fork only available on Linux")]
+            ),
+            pytest.param(
+                (
+                    'Jesus Cristo',
+                    pkg.dt.datetime(1, 12, 25, 0, 0, 1),
+                    'Nazaré',
+                ),
+                'Meu nome é "Jesus" nascido em '
+                '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
+                marks=[pytest.mark.skipif(not sys.platform.startswith("mac"),    reason="fork only available on MacOS")]
+            ),
+            pytest.param(
+                (
+                    'Jesus Cristo',
+                    pkg.dt.datetime(1, 12, 25, 0, 0, 1),
+                    'Nazaré',
+                ),
+                'Meu nome é "Jesus" nascido em '
+                '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
+                marks=[pytest.mark.skipif(not sys.platform.startswith("win"),    reason="fork only available on Windows")]
             ),
         ],
     )
@@ -54,7 +76,7 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            (
+            pytest.param(
                 (
                     'Jesus Cristo',
                     pkg.dt.datetime(1, 12, 25, 0, 0, 1),
@@ -62,6 +84,27 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
+                marks=[pytest.mark.skipif(not sys.platform.startswith("lin"),    reason="fork only available on Linux")]
+            ),
+            pytest.param(
+                (
+                    'Jesus Cristo',
+                    pkg.dt.datetime(1, 12, 25, 0, 0, 1),
+                    'Nazaré',
+                ),
+                'Meu nome é "Jesus" nascido em '
+                '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
+                marks=[pytest.mark.skipif(not sys.platform.startswith("mac"),    reason="fork only available on MacOS")]
+            ),
+            pytest.param(
+                (
+                    'Jesus Cristo',
+                    pkg.dt.datetime(1, 12, 25, 0, 0, 1),
+                    'Nazaré',
+                ),
+                'Meu nome é "Jesus" nascido em '
+                '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
+                marks=[pytest.mark.skipif(not sys.platform.startswith("win"),    reason="fork only available on Windows")]
             ),
         ],
     )

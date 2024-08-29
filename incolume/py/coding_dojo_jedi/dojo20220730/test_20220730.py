@@ -1,21 +1,21 @@
 """Test dojo."""
 
+from http import HTTPStatus
 from os import environ
 from sys import version_info
+from typing import ClassVar
+from unittest import mock
 
+from incolume.py.coding_dojo_jedi.utils import genfile
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220730.dojo20220730 import research
 
 
-@pytest.mark.skipif(
-    version_info < (3, 9, 0),
-    reason='This run only Python 3.9+',
-)
-@pytest.mark.webtest()
-@pytest.mark.parametrize(
-    ['entrance', 'expected'],
-    [
+class TestCase:
+    """Test case."""
+
+    test_case_1: ClassVar = [
         (
             'Obi-Wan Kenobi',
             [
@@ -144,7 +144,6 @@ from incolume.py.coding_dojo_jedi.dojo20220730.dojo20220730 import research
             ],
         ),
         ('xpto', []),
-        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
         (
             'jinn',
             [
@@ -168,9 +167,48 @@ from incolume.py.coding_dojo_jedi.dojo20220730.dojo20220730 import research
                 },
             ],
         ),
-    ],
-)
-def test_research(entrance, expected) -> None:
-    """Test research."""
-    timeout = float(environ.get('TIMEOUT', 0.8))
-    assert research(entrance, timeout=timeout) == expected
+        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
+    ]
+
+    @pytest.mark.skipif(
+        version_info < (3, 9, 0),
+        reason='This run only Python 3.9+',
+    )
+    @pytest.mark.skip(reason='Replaced for test_research_mock')
+    @pytest.mark.webtest()
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        test_case_1,
+    )
+    def test_research(self, entrance, expected) -> None:
+        """Test research."""
+        timeout = float(environ.get('TIMEOUT', 0.8))
+        assert research(entrance, timeout=timeout) == expected
+
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        test_case_1,
+    )
+    def test_research_mock(self, entrance, expected) -> None:
+        """Test research."""
+        cache_file = genfile().with_name('personagens-20220730.json')
+        cache_file.unlink(missing_ok=True)
+
+        with mock.patch('requests.get') as m_req:
+            objreq = mock.MagicMock()
+            objreq.status_code = HTTPStatus.OK
+            objreq.json.return_value = {
+                'count': 0,
+                'next': None,
+                'previus': None,
+                'results': expected
+                if (not expected or isinstance(expected[0], dict))
+                else [{'name': x} for x in expected if x],
+            }
+
+            objreq2 = mock.MagicMock()
+            objreq2.status_code = HTTPStatus.NOT_FOUND
+            objreq2.json.return_value = {'detail': 'Not found'}
+
+            m_req.side_effect = [objreq, objreq2]
+            assert research(entrance) == expected

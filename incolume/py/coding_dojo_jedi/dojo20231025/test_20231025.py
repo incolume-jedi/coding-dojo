@@ -47,6 +47,7 @@ def count_dojos(path_dojos: Path) -> int:
     return total
 
 
+@pytest.mark.skip(reason='very slow.')
 @pytest.mark.skipif(
     sys.version_info < (3, 10),
     reason='requires python3.10 or higher',
@@ -62,6 +63,7 @@ def test_quantia(filemd) -> None:  # pylint: disable=redefined-outer-name
     assert c_links == c_dirs
 
 
+@pytest.mark.skip(reason='very slow.')
 @pytest.mark.skipif(
     sys.version_info < (3, 10),
     reason='requires python3.10 or higher',

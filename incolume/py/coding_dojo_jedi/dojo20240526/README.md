@@ -1,12 +1,3 @@
----
-name: New dojo template
-about: "Problem Title"
-title: "[new-dojo] "
-labels: enhancement
-assignees: ''
-
----
-
 # Coding Dojo
 
 **Guilda JEDI Incolume - Grupo Python Incolume**
@@ -17,20 +8,20 @@ assignees: ''
 
 ## Problema
 
-**Título do problema**
+**Palindrômo primo**
 
-Descrição/apresentação do problema.
+Encontre o menor número primo palindrômo com 2 algarismos ou mais.
 
 ## Exemplos
 
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>
@@ -39,8 +30,8 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 ## Artefatos
 
-- [dojo](__init__.py)
-- [tests](test_YYYYMMDD.py)
+- [dojo](./__init__.py)
+- [tests](./test_20240526.py)
 
 
 ## Referências

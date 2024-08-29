@@ -10,6 +10,22 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [1.51.0]	 &#8212; 	2024-05-29:
+### Added
+  - Dojo 20240527 primos de 4 algarismos;
+  - Dojo20240526 - Menor palindromo primo de 2 algarismos;
+  - Dojo20240525 - soma de algarismos absolutos;
+  - Dojo20240524 - playlist;
+  - Dojo20240523 análise de notas;
+  - Dojo20240522 Número Palindromo;
+  - Implementado mock para testes em SWAPI dojo20220722;
+  - Implementado mock para testes em SWAPI dojo 20220530;
+  - Implementado mock para testes em SWAPI dojo20220725;
+  - Implementado mock para testes em SWAPI dojo20220727;
+### Changed
+  - Otimizado execução de rotinas CI/CD;
+  - Atualização do modelo para abertura de dojos;
+
 ## [1.50.0]	 &#8212; 	2024-05-23:
 ### Deprecated
   - Blue;
@@ -422,3 +438,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.48.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.0...1.48.1
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
 [1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0
+[1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0

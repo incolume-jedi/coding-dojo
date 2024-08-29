@@ -1,12 +1,3 @@
----
-name: New dojo template
-about: "Problem Title"
-title: "[new-dojo] "
-labels: enhancement
-assignees: ''
-
----
-
 # Coding Dojo
 
 **Guilda JEDI Incolume - Grupo Python Incolume**
@@ -17,20 +8,20 @@ assignees: ''
 
 ## Problema
 
-**Título do problema**
+**Playlists**
 
-Descrição/apresentação do problema.
+Crie um algoritmo para uma playlist, quer seja vídeo ou áudio, onde as trilhas não se repitam antes que todas as trilhas tiverem sido tocadas.
 
 ## Exemplos
 
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>
@@ -39,8 +30,8 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 ## Artefatos
 
-- [dojo](__init__.py)
-- [tests](test_YYYYMMDD.py)
+- [dojo](./__init__.py)
+- [tests](./test_20240524.py)
 
 
 ## Referências
@@ -49,4 +40,4 @@ N/A - Referências para o dojo, o problema ou para elicidações extras.
 
 ---
 
-Copyright &copy; **incolume.com.br** since 2010
+&copy; Incolume.com.br

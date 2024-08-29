@@ -10,7 +10,24 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-06-01:
+## [1.53.0]	 &#8212; 	2024-08-29:
+### Added
+  - Script CLI para gerenciar projeto `dojo --help`;
+  - Script CLI `dojo init --help`;
+  - Fusão do script sumary com script dojo `dojo sumary --help`;
+  - Dojo20240602 - Raspagem Brasileirão 2021 em POO;
+  - Dojo20240603 - Raiz quadrada método júlia;
+  - Dojo20240606 - fatorar código Python;
+  - Dojo20240607 - House robber;
+  - Dojo20240608 - Fatorar algoritmo para calculo raiz (método Júlia);
+  - Dojo20240613 - Sorteio em arquivo xlsx;
+  - Dojo20240829 - descompactação de objetos de forma prática;
+### Deprecated
+  - Script `sumary` será substituido por `dojo sumary`;
+### Fixed
+  - Correções CI/CD;
+
+## [1.52.0]	 &#8212; 	2024-08-29:
 ### Added
   - Dojo20240527 - Permutação em Python;
   - Dojo20240528 - Primos de 4 algarismos;
@@ -25,7 +42,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Implementado mock para API Deepl de tradução;
   - Melhoria de performance na geração do arquivo de sumário;
 
-## [1.51.0]	 &#8212; 	2024-05-29:
+## [1.51.0]	 &#8212; 	2024-08-29:
 ### Added
   - Dojo 20240527 primos de 4 algarismos;
   - Dojo20240526 - Menor palindromo primo de 2 algarismos;
@@ -454,4 +471,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
 [1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0
 [1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...Unreleased
+[1.52.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...1.52.0
+[1.53.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...1.53.0

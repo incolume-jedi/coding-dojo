@@ -45,7 +45,7 @@ def weekday1(num: int) -> str:
 
 try:
 
-    def weekday(num: int) -> str:
+    def weekday(num: int) -> str:  # noqa: C901
         """Retorna o dia da semana.
 
         implementação match case.

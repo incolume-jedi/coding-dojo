@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.52.0a10"
+version = "1.53.0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
@@ -76,6 +76,9 @@ openpyxl = "^3.1.2"
 httpx = "^0.27.0"
 deepl = "^1.18.0"
 icecream = "^2.1.3"
+bs4 = "^0.0.2"
+selenium = "^4.21.0"
+faker = "^25.8.0"
 
 
 [tool.poetry.group.docs.dependencies]
@@ -86,6 +89,7 @@ mkdocs-material = ">=9.4.2"
 
 [tool.poetry.scripts]
 sumary = 'incolume.py.coding_dojo_jedi.cli:sumary'
+dojo = 'incolume.py.coding_dojo_jedi.cli:dojo'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -108,9 +112,10 @@ python_files = [
 python_classes = ["Test", "Check"]
 python_functions = ["test_*"]
 markers = [
+  "fast: marks tests as fast (deselect with '-m \"not fast\"')",
+  "offci: marks tests as fast (deselect with '-m \"not offci\"')",
   "slow: marks tests as slow (deselect with '-m \"not slow\"')",
   "webtest: marks tests as webtest (deselect with '-m \"not webtest\"')",
-  "fast: marks tests as fast (deselect with '-m \"not fast\"')",
 ]
 
 
@@ -146,7 +151,8 @@ exclude_lines = [
   "def run",
   "def terminal.",
   "__author__",
-  "class IElements"
+  "ic.enable",
+  "ic.disable",
 ]
 
 [tool.ruff]

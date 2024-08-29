@@ -1,7 +1,7 @@
 """Dojo."""
 
 
-def get_planet_name0(id_planet: int) -> str:
+def get_planet_name0(id_planet: int) -> str:  # noqa: C901
     """Get planet name."""
     name = ''
     match id_planet:

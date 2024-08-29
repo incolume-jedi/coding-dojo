@@ -1,39 +1,27 @@
 """Test dojo module."""
 
-import sqlite3
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+
+import pytest
+
 from incolume.py.coding_dojo_jedi.dojo20240514 import (
-    url,
-    save_dataframe,
-    scrap,
     load_db,
+    gen_conn,
+    gen_data_file,
 )
 
 
 filename: Path = Path(NamedTemporaryFile(prefix='testing-').name)
 
 
-def gen_data_file(ext: str = 'json') -> Path:
-    """Generate data."""
-    exts = ['csv', 'json', 'xlsx']
-    if ext not in exts:
-        excp = 'Valid type file. Only csv, json or xlsx'
-        raise TypeError(excp)
-    return save_dataframe(
-        scrap(url),
-        filename.with_suffix(f'.{ext}'),
-        format_output=ext,
-    )
-
-
-def gen_conn() -> sqlite3.Connection:
-    """Generate connection."""
-    return sqlite3.connect(Path(NamedTemporaryFile(suffix='.db').name))
-
-
 class CheckSQLite:
     """Check SQLite."""
+
+    def test_gen_dta_file(self):
+        """Test gendata file."""
+        with pytest.raises(TypeError):
+            gen_data_file('xml')
 
     def test_query_json(self):
         """Check query."""

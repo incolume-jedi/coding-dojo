@@ -8,10 +8,16 @@
 
 ---
 
-94 dojos resolvidos
+100 dojos resolvidos
 
 ---
 
+ - [Dojo20240601 &#8212; Fatorar Pythonicamente solução Java](dojo20240601/README.md)
+ - [Dojo20240531 &#8212; Número por extenso](dojo20240531/problema2.md)
+ - [Dojo20240531 &#8212; Qual é o último dígito de 2²⁷?](dojo20240531/problema1.md)
+ - [Dojo20240530 &#8212; Validação CNPJ](dojo20240530/README.md)
+ - [Dojo20240529 &#8212; Manipular arquivos tar gz em python](dojo20240529/README.md)
+ - [Dojo20240528 &#8212; Permutação Python](dojo20240528/README.md)
  - [Dojo20240527 &#8212; Primos de 4 algarismos](dojo20240527/README.md)
  - [Dojo20240526 &#8212; Palindrômo primo](dojo20240526/README.md)
  - [Dojo20240525 &#8212; Soma de algarismos absolutos](dojo20240525/README.md)
@@ -31,9 +37,11 @@
  - [Dojo20240510 &#8212; Counting sheep](dojo20240510/problema3.md)
  - [Dojo20240510 &#8212; Posição das letras](dojo20240510/problema2.md)
  - [Dojo20240510 &#8212; Número narcisista](dojo20240510/problema1.md)
- - [Dojo20240508 &#8212; Quais são os três menores números felizes consecutivos](dojo20240508/problema2.md)
- - [Dojo20240508 &#8212; Quais são os dois menores números felizes consecutivos](dojo20240508/problema1.md)
- - [Dojo20240507 &#8212; Quais são os primeiros 25 números felizes](dojo20240507/problema2.md)
+ - [Dojo20240509 &#8212; Romanos para Arábicos e vice versa em POO](dojo20240509/README.md)
+ - [Dojo20240508 &#8212; Quais as alturas dos números felizes 7, 13, 19, 68 e 97?](dojo20240508/problema3.md)
+ - [Dojo20240508 &#8212; Quais são os três menores números felizes consecutivos?](dojo20240508/problema2.md)
+ - [Dojo20240508 &#8212; Quais são os dois menores números felizes consecutivos?](dojo20240508/problema1.md)
+ - [Dojo20240507 &#8212; Quais são os primeiros 25 números felizes?](dojo20240507/problema2.md)
  - [Dojo20240507 &#8212; Todos Números felizes menores que 100](dojo20240507/problema1.md)
  - [Dojo20240506 &#8212; Números felizes](dojo20240506/README.md)
  - [Dojo20240505 &#8212; Validação de CPF](dojo20240505/README.md)
@@ -85,6 +93,7 @@
  - [Dojo20220809 &#8212; TDD Doctest](dojo20220809/README.md)
  - [Dojo20220808 &#8212; Par ou Impar](dojo20220808/README.md)
  - [Dojo20220805 &#8212; Calcular Massa Corporal](dojo20220805/README.md)
+ - [Dojo20220803 &#8212; Is he gonna survive?](dojo20220803/README.md)
  - [Dojo20220801 &#8212; A is_square of squares](dojo20220801/README.md)
  - [Dojo20220731 &#8212; Imprimir tabela ASCII código e caracteres](dojo20220731/README.md)
  - [Dojo20220730 &#8212; Workshop python iniciante exercício 8](dojo20220730/README.md)

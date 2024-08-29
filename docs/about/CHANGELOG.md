@@ -10,6 +10,21 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2024-06-01:
+### Added
+  - Dojo20240527 - Permutação em Python;
+  - Dojo20240528 - Primos de 4 algarismos;
+  - Dojo20240529 - Manipulação de arquivo targz em python;
+  - Dojo20240530 - Validação de CNPJ;
+  - Dojo20240531 - Qual o último dígito de 2^27?;
+  - Dojo20240531 - Números por extenso;
+  - Dojo20240601 - Fatorar Pythonicamente solução Java;
+### Changed
+  - Ampliação de cobertura para dojos de maio/2024;
+### Fixed
+  - Implementado mock para API Deepl de tradução;
+  - Melhoria de performance na geração do arquivo de sumário;
+
 ## [1.51.0]	 &#8212; 	2024-05-29:
 ### Added
   - Dojo 20240527 primos de 4 algarismos;
@@ -439,3 +454,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.49.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.48.1...1.49.0
 [1.50.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.49.0...1.50.0
 [1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...Unreleased

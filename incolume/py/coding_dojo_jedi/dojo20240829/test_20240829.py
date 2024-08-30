@@ -45,7 +45,12 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
-                marks=[pytest.mark.skipif(not sys.platform.startswith("lin"),    reason="fork only available on Linux")]
+                marks=[
+                    pytest.mark.skipif(
+                        not sys.platform.startswith('lin'),
+                        reason='fork only available on Linux',
+                    ),
+                ],
             ),
             pytest.param(
                 (
@@ -55,7 +60,12 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
-                marks=[pytest.mark.skipif(not sys.platform.startswith("mac"),    reason="fork only available on MacOS")]
+                marks=[
+                    pytest.mark.skipif(
+                        not sys.platform.startswith('mac'),
+                        reason='fork only available on MacOS',
+                    ),
+                ],
             ),
             pytest.param(
                 (
@@ -65,7 +75,12 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
-                marks=[pytest.mark.skipif(not sys.platform.startswith("win"),    reason="fork only available on Windows")]
+                marks=[
+                    pytest.mark.skipif(
+                        not sys.platform.startswith('win'),
+                        reason='fork only available on Windows',
+                    ),
+                ],
             ),
         ],
     )
@@ -84,7 +99,12 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
-                marks=[pytest.mark.skipif(not sys.platform.startswith("lin"),    reason="fork only available on Linux")]
+                marks=[
+                    pytest.mark.skipif(
+                        not sys.platform.startswith('lin'),
+                        reason='fork only available on Linux',
+                    ),
+                ],
             ),
             pytest.param(
                 (
@@ -94,7 +114,12 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
-                marks=[pytest.mark.skipif(not sys.platform.startswith("mac"),    reason="fork only available on MacOS")]
+                marks=[
+                    pytest.mark.skipif(
+                        not sys.platform.startswith('mac'),
+                        reason='fork only available on MacOS',
+                    ),
+                ],
             ),
             pytest.param(
                 (
@@ -104,7 +129,12 @@ class TestCase:
                 ),
                 'Meu nome é "Jesus" nascido em '
                 '"Tuesday 25 de December do ano 0001" na cidade de "Nazaré"',
-                marks=[pytest.mark.skipif(not sys.platform.startswith("win"),    reason="fork only available on Windows")]
+                marks=[
+                    pytest.mark.skipif(
+                        not sys.platform.startswith('win'),
+                        reason='fork only available on Windows',
+                    ),
+                ],
             ),
         ],
     )

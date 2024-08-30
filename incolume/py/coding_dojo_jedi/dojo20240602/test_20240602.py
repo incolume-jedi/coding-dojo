@@ -22,7 +22,8 @@ class TestCaseCBF:
                 pytest.mark.webtest,
                 pytest.mark.offci,
                 pytest.mark.xfail(
-                    raises=URLError, reason='server localhost offline.',
+                    raises=URLError,
+                    reason='server localhost offline.',
                 ),
             ],
         ),
@@ -201,7 +202,8 @@ class TestCaseCBF:
                     pytest.mark.webtest,
                     pytest.mark.offci,
                     pytest.mark.xfail(
-                        raises=URLError, reason='server localhost offline.',
+                        raises=URLError,
+                        reason='server localhost offline.',
                     ),
                 ],
             ),
@@ -213,7 +215,8 @@ class TestCaseCBF:
                     pytest.mark.webtest,
                     pytest.mark.offci,
                     pytest.mark.xfail(
-                        raises=URLError, reason='server localhost offline.',
+                        raises=URLError,
+                        reason='server localhost offline.',
                     ),
                 ],
             ),
@@ -225,7 +228,8 @@ class TestCaseCBF:
                     pytest.mark.webtest,
                     pytest.mark.offci,
                     pytest.mark.xfail(
-                        raises=URLError, reason='server localhost offline.',
+                        raises=URLError,
+                        reason='server localhost offline.',
                     ),
                 ],
             ),
@@ -237,7 +241,8 @@ class TestCaseCBF:
                     pytest.mark.webtest,
                     pytest.mark.offci,
                     pytest.mark.xfail(
-                        raises=URLError, reason='server localhost offline.',
+                        raises=URLError,
+                        reason='server localhost offline.',
                     ),
                 ],
             ),

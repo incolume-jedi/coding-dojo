@@ -1,6 +1,5 @@
 """Testing dojo."""
 
-from sys import version_info
 
 import pytest
 
@@ -50,6 +49,7 @@ def test_weekday0(entrance, expected) -> None:
 def test_weekday1(entrance, expected) -> None:
     """Unittest for weekday1."""
     assert weekday1(entrance) == expected
+
 
 @Py310
 @pytest.mark.parametrize(

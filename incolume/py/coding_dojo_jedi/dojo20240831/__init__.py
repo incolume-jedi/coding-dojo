@@ -16,7 +16,7 @@ def group_anagram(anagram_list: list[str]) -> list[list[str]]:
     result = defaultdict(list)
     for anagram in sorted(anagram_list):
         result[''.join(sorted(anagram))].append(anagram)
-    return list(result.values())
+    return sorted(result.values())
 
 
 if __name__ == '__main__':

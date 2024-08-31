@@ -89,5 +89,5 @@ class TestCase:
     def test_1(self):
         """Unut test."""
         entrance = 'ab'
-        expected = ['ba', 'ab']
+        expected = ['ab', 'ba']
         assert pkg.anagrams_gen(entrance) == expected

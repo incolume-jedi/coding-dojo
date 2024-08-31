@@ -14,6 +14,9 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Added
   - Acrescentado compatibilidade com Python 3.12;
   - Dojo20240830 - Fatoração pythônica;
+  - Dojo20240831 - Hashmap (grupamento de anagramas);
+### Changed
+  - Melhoria de performance nos testes de versões específicas para Python;
 
 ## [1.53.0]	 &#8212; 	2024-08-29:
 ### Added

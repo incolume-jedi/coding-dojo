@@ -9,6 +9,7 @@ from incolume.py.coding_dojo_jedi.dojo20220910.dojo20220910 import (
     weekday0,
     weekday1,
 )
+from tests import Py310
 
 
 @pytest.mark.parametrize(
@@ -50,11 +51,7 @@ def test_weekday1(entrance, expected) -> None:
     """Unittest for weekday1."""
     assert weekday1(entrance) == expected
 
-
-@pytest.mark.skipif(
-    version_info < (3, 10, 0),
-    reason='This run only Python 3.10+',
-)
+@Py310
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [

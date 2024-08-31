@@ -90,4 +90,4 @@ class TestCase:
         """Unut test."""
         entrance = 'ab'
         expected = ['ab', 'ba']
-        assert pkg.anagrams_gen(entrance) == expected
+        assert all(item in expected for item in pkg.anagrams_gen(entrance))

@@ -15,6 +15,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Acrescentado compatibilidade com Python 3.12;
   - Dojo20240830 - Fatoração pythônica;
   - Dojo20240831 - Hashmap (grupamento de anagramas);
+  - Dojo20240901: Número arábicos para números por extenso;
 ### Changed
   - Melhoria de performance nos testes de versões específicas para Python;
 

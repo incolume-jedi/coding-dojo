@@ -10,6 +10,11 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2024-08-31:
+### Added
+  - Acrescentado compatibilidade com Python 3.12;
+  - Dojo20240830 - Fatoração pythônica;
+
 ## [1.53.0]	 &#8212; 	2024-08-29:
 ### Added
   - Script CLI para gerenciar projeto `dojo --help`;
@@ -473,3 +478,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0
 [1.52.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...1.52.0
 [1.53.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...1.53.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.53.0...Unreleased

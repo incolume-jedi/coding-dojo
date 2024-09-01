@@ -34,6 +34,7 @@ class TestCase:
         """Unittest."""
         assert pkg.download(**entrance) == expected
 
+    @pytest.mark.xfail(raises=pkg.httpx.ReadTimeout)
     def test_content(self):
         """Test content."""
         expected = True

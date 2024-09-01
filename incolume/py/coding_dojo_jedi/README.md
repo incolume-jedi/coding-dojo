@@ -8,10 +8,12 @@
 
 ---
 
-110 dojos resolvidos
+112 dojos resolvidos
 
 ---
 
+ - [Dojo20240902 &#8212; Two sum](dojo20240902/README.md)
+ - [Dojo20240901 &#8212; Número arábicos para números por extenso](dojo20240901/README.md)
  - [Dojo20240831 &#8212; Hashmap - grupamento de anagramas](dojo20240831/README.md)
  - [Dojo20240830 &#8212; Fatoração pythônica](dojo20240830/README.md)
  - [Dojo20240829 &#8212; Use a descompactação de objetos de forma prática](dojo20240829/README.md)

@@ -10,6 +10,10 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [1.54.1]	 &#8212; 	2024-09-01:
+### Fixed
+  - Aplicado refinamentos e atualizações em CI/CD;
+
 ## [1.54.0]	 &#8212; 	2024-09-01:
 ### Added
   - Acrescentado compatibilidade com Python 3.12;
@@ -487,3 +491,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.52.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...1.52.0
 [1.53.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...1.53.0
 [1.54.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.53.0...1.54.0
+[1.54.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.0...1.54.1

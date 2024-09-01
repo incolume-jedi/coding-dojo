@@ -11,22 +11,10 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            (
-                5,
-                20,
-            ),
-            (
-                1,
-                10,
-            ),
-            (
-                2,
-                10,
-            ),
-            (
-                3,
-                14,
-            ),
+            pytest.param(5, 20, marks=[pytest.mark.slow]),
+            pytest.param(1, 10, marks=[]),
+            pytest.param(2, 10, marks=[]),
+            pytest.param(3, 14, marks=[]),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:

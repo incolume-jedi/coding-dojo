@@ -13,6 +13,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## [Unreleased]	 &#8212; 	2024-09-01:
 ### Added
   - Acrescentado compatibilidade com Python 3.12;
+  - Dojo20240620 - Há quantos números narcisistas de 1 dígito?;
+  - Dojo20240705 - Há quantos números narcisistas de N dígitos?;
   - Dojo20240830 - Fatoração pythônica;
   - Dojo20240831 - Hashmap (grupamento de anagramas);
   - Dojo20240902 - Two sun;

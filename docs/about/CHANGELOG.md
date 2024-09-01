@@ -16,6 +16,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240830 - Fatoração pythônica;
   - Dojo20240831 - Hashmap (grupamento de anagramas);
   - Dojo20240902 - Two sun;
+  - Dojo20240903 - Adição de dois números;
 ### Changed
   - Melhoria de performance nos testes de versões específicas para Python;
 

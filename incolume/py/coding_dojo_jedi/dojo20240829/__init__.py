@@ -11,8 +11,8 @@ class Pessoa:
     full_name: str
     born_date: dt.datetime
     city: str
-    first_name: str = field(default='')
-    last_name: str = field(default='')
+    first_name: str = field(default='', init=False)
+    last_name: str = field(default='', init=False)
 
     def __post_init__(self):
         """Post init."""

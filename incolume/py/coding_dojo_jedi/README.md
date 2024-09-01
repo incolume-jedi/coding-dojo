@@ -8,11 +8,19 @@
 
 ---
 
-108 dojos resolvidos
+116 dojos resolvidos
 
 ---
 
+ - [Dojo20240904 &#8212; rot47](dojo20240904/README.md)
+ - [Dojo20240903 &#8212; Adição de Dois Números](dojo20240903/README.md)
+ - [Dojo20240902 &#8212; Two sum](dojo20240902/README.md)
+ - [Dojo20240901 &#8212; Número arábicos para números por extenso](dojo20240901/README.md)
+ - [Dojo20240831 &#8212; Hashmap - grupamento de anagramas](dojo20240831/README.md)
+ - [Dojo20240830 &#8212; Fatoração pythônica](dojo20240830/README.md)
  - [Dojo20240829 &#8212; Use a descompactação de objetos de forma prática](dojo20240829/README.md)
+ - [Dojo20240705 &#8212; Há quantos números narcisista de N digito?](dojo20240705/README.md)
+ - [Dojo20240620 &#8212; Há quantos números narcisista de 1 digito?](dojo20240620/README.md)
  - [Dojo20240613 &#8212; Sorteio em arquivo xlsx](dojo20240613/README.md)
  - [Dojo20240608 &#8212; Fatorar algoritmo para calculo raiz (método Júlia)](dojo20240608/README.md)
  - [Dojo20240607 &#8212; House robber](dojo20240607/README.md)

@@ -1,16 +1,12 @@
 """Test for dojo."""
 
-from sys import version_info
-
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par
+from tests import Py310
 
 
-@pytest.mark.skipif(
-    version_info < (3, 10, 0),
-    reason='This run only Python 3.10+',
-)
+@Py310
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -30,10 +26,7 @@ def test_is_par(entrance, expected) -> None:
     assert is_par(entrance) == expected
 
 
-@pytest.mark.skipif(
-    version_info < (3, 10, 0),
-    reason='This run only Python 3.10+',
-)
+@Py310
 @pytest.mark.parametrize(
     ['entrance', 'exception', 'msg'],
     [

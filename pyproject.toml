@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.53.0"
+version = "1.54.0"
 description = "códigos da guilda jedi incolume"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
@@ -62,7 +62,7 @@ ruff = [
   ]
 types-requests = "^2.31.0.5"
 types-toml = "^0.10.8.7"
-incolume-py-changelog = ">=0.8"
+incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", rev = "0.10.0"}
 pre-commit = [
   {version=">=3.5", python='~3.8'},
   {version="^3.7", python='>=3.9'},

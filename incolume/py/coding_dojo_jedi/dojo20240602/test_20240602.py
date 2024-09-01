@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import ClassVar
 
 import pytest
-
+from urllib.error import URLError
 from . import CBF
 
 __author__ = '@britodfbr'  # pragma: no cover
@@ -18,7 +18,14 @@ class TestCaseCBF:
         pytest.param(
             'http://localhost:8000',
             '',
-            marks=[pytest.mark.webtest, pytest.mark.offci],
+            marks=[
+                pytest.mark.webtest,
+                pytest.mark.offci,
+                pytest.mark.xfail(
+                    raises=URLError,
+                    reason='server localhost offline.',
+                ),
+            ],
         ),
         pytest.param(
             Path(__file__).parent.joinpath('index.html').as_posix(),
@@ -191,25 +198,53 @@ class TestCaseCBF:
                 'http://localhost:8000',
                 'Chapecoense',
                 15,
-                marks=[pytest.mark.webtest, pytest.mark.offci],
+                marks=[
+                    pytest.mark.webtest,
+                    pytest.mark.offci,
+                    pytest.mark.xfail(
+                        raises=URLError,
+                        reason='server localhost offline.',
+                    ),
+                ],
             ),
             pytest.param(
                 'http://localhost:8000',
                 'Grêmio',
                 43,
-                marks=[pytest.mark.webtest, pytest.mark.offci],
+                marks=[
+                    pytest.mark.webtest,
+                    pytest.mark.offci,
+                    pytest.mark.xfail(
+                        raises=URLError,
+                        reason='server localhost offline.',
+                    ),
+                ],
             ),
             pytest.param(
                 'http://localhost:8000',
                 'Bahia',
                 43,
-                marks=[pytest.mark.webtest, pytest.mark.offci],
+                marks=[
+                    pytest.mark.webtest,
+                    pytest.mark.offci,
+                    pytest.mark.xfail(
+                        raises=URLError,
+                        reason='server localhost offline.',
+                    ),
+                ],
             ),
             pytest.param(
                 'http://localhost:8000',
                 'Sport Recife',
                 38,
-                marks=[pytest.mark.webtest, pytest.mark.offci],
+                marks=[
+                    pytest.mark.webtest,
+                    pytest.mark.offci,
+                    pytest.mark.xfail(
+                        raises=URLError,
+                        reason='server localhost offline.',
+                    ),
+                ],
             ),
             (
                 Path(__file__).parent.joinpath('index.html').as_posix(),

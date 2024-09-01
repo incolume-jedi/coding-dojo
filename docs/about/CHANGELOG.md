@@ -5,10 +5,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.8.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.10.0)
 
 ---
 
+
+## [1.54.0]	 &#8212; 	2024-09-01:
+### Added
+  - Acrescentado compatibilidade com Python 3.12;
+  - Dojo20240620 - Há quantos números narcisistas de 1 dígito?;
+  - Dojo20240705 - Há quantos números narcisistas de N dígitos?;
+  - Dojo20240830 - Fatoração pythônica;
+  - Dojo20240831 - Hashmap (grupamento de anagramas);
+  - Dojo20240902 - Two sun;
+  - Dojo20240903 - Adição de dois números;
+  - Dojo20240904 - Rot47;
+### Changed
+  - Melhoria de performance nos testes de versões específicas para Python;
 
 ## [1.53.0]	 &#8212; 	2024-08-29:
 ### Added
@@ -473,3 +486,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.51.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.50.0...1.51.0
 [1.52.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.51.0...1.52.0
 [1.53.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...1.53.0
+[1.54.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.53.0...1.54.0

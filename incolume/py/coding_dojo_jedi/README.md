@@ -8,7 +8,7 @@
 
 ---
 
-114 dojos resolvidos
+115 dojos resolvidos
 
 ---
 
@@ -19,6 +19,7 @@
  - [Dojo20240831 &#8212; Hashmap - grupamento de anagramas](dojo20240831/README.md)
  - [Dojo20240830 &#8212; Fatoração pythônica](dojo20240830/README.md)
  - [Dojo20240829 &#8212; Use a descompactação de objetos de forma prática](dojo20240829/README.md)
+ - [Dojo20240620 &#8212; Há quantos números narcisista de 1 digito?](dojo20240620/README.md)
  - [Dojo20240613 &#8212; Sorteio em arquivo xlsx](dojo20240613/README.md)
  - [Dojo20240608 &#8212; Fatorar algoritmo para calculo raiz (método Júlia)](dojo20240608/README.md)
  - [Dojo20240607 &#8212; House robber](dojo20240607/README.md)

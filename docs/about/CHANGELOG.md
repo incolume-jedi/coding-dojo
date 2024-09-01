@@ -10,12 +10,12 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-08-31:
+## [Unreleased]	 &#8212; 	2024-09-01:
 ### Added
   - Acrescentado compatibilidade com Python 3.12;
   - Dojo20240830 - Fatoração pythônica;
   - Dojo20240831 - Hashmap (grupamento de anagramas);
-  - Dojo20240901: Número arábicos para números por extenso;
+  - Dojo20240902 - Two sun;
 ### Changed
   - Melhoria de performance nos testes de versões específicas para Python;
 

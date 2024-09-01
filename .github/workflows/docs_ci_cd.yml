@@ -48,6 +48,10 @@ jobs:
         run: |
           python -m pip install -U poetry
           poetry install
+      
+      # Runs a single command using the runners shell
+      - name: Show poetry version
+        run: poetry -V
 
       # Generate and deploy the documentation
       - name: Generate and deploy the documentation

@@ -10,6 +10,10 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2024-09-02:
+### Added
+  - Sumário de dojos resolvidos adicionado a documentação oficial;
+
 ## [1.54.1]	 &#8212; 	2024-09-01:
 ### Fixed
   - Aplicado refinamentos e atualizações em CI/CD;
@@ -21,6 +25,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240705 - Há quantos números narcisistas de N dígitos?;
   - Dojo20240830 - Fatoração pythônica;
   - Dojo20240831 - Hashmap (grupamento de anagramas);
+  - Dojo20240901 - Número arábicos para números por extenso;
   - Dojo20240902 - Two sun;
   - Dojo20240903 - Adição de dois números;
   - Dojo20240904 - Rot47;
@@ -492,3 +497,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.53.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...1.53.0
 [1.54.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.53.0...1.54.0
 [1.54.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.0...1.54.1
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.1...Unreleased

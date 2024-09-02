@@ -1,7 +1,7 @@
 """Module."""
 
 from pathlib import Path
-
+from urllib.error import URLError
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20240513 import (
@@ -18,6 +18,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 class CheckDojo:
     """Test case."""
 
+    @pytest.mark.skipif(raises=[URLError, TimeoutError])
     def test_raspagem_tabela_html(self):
         """Test scrap."""
         assert isinstance(scrap(url), pd.DataFrame)

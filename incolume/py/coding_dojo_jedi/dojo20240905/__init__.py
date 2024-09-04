@@ -3,7 +3,7 @@
 import logging
 
 
-def check_luhn0(card_num):
+def check_luhn_0(card_num):
     """Dojo solution.
 
     Python3 program to implement
@@ -31,7 +31,7 @@ def check_luhn0(card_num):
     return False
 
 
-def check_luhn(card_num: int | str) -> bool:
+def check_luhn_1(card_num: int | str) -> bool:
     """Dojo solution."""
     card_num = str(card_num)
     q_digits = len(card_num)
@@ -44,6 +44,27 @@ def check_luhn(card_num: int | str) -> bool:
         if is_second:
             d = d * 2
 
+        n_sum += d // 10
+        n_sum += d % 10
+        is_second = not is_second
+    return n_sum % 10 == 0
+
+
+def check_luhn(card_num: str | int) -> bool:
+    """Dojo solution."""
+    card_num = str(card_num)
+
+    if not card_num.isdigit():
+        m_error = 'Card number not is a valid.'
+        raise ValueError(m_error)
+
+    n_sum = 0
+    is_second = False
+
+    for n in card_num:
+        d = int(n)
+        if is_second:
+            d *= 2
         n_sum += d // 10
         n_sum += d % 10
         is_second = not is_second

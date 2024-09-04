@@ -238,13 +238,14 @@ Click to Up.
 </svg>](#coding-challenge)
 
 
-## P
+## O
 
 
 ### [Os Programadores](https://osprogramadores.com/desafios/)
 
 O grupo foi criado por um grupo de amigos, veteranos em diversas áreas de computação e eletrônica, com o intuito de ajudar aqueles que estão começando a programar. A participação é completamente gratuita, mas pedimos que os novos integrantes leiam as Regras para evitar problemas.
 
+## P
 
 ### [Programiz](https://www.programiz.com/)
 Programiz é um site de aprendizagem interativa que oferece tutoriais em várias linguagens de programação, incluindo C, C++, Python, Java e PHP. Ele é projetado para ser uma plataforma fácil de usar para iniciantes que desejam aprender a programar, bem como para programadores experientes que desejam aprimorar suas habilidades.
@@ -333,6 +334,9 @@ Com diversos exemplos no [github](https://github.com/TheAlgorithms/Python/blob/m
 <polygon points="15,3 6,25 25,25" class="triangle" fill="#4051b5"/>
 Click to Up.
 </svg>](#coding-challenge)
+
+### [The odin Project](https://www.theodinproject.com/)
+O Projeto Odin é um daqueles recursos "O que eu gostaria de ter quando estava aprendendo". Nem todo mundo tem acesso a uma educação em ciência da computação ou os fundos para frequentar uma escola intensiva de codificação e nenhum deles é certo para todos de qualquer maneira. Este projeto é projetado para preencher a lacuna para as pessoas que estão tentando hackear por conta própria, mas ainda querem uma educação de alta qualidade.
 
 
 ### [TopCoder](https://www.topcoder.com/challenges/?pageIndex=1)

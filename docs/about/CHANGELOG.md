@@ -10,11 +10,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-09-02:
+## [Unreleased]	 &#8212; 	2024-09-04:
 ### Deprecated
   - O pacote `incolume-py-utils` foi substituído por `incolume-py-changelog` e será removido nas próximas releases;
 ### Added
   - Sumário de dojos resolvidos adicionado a documentação oficial;
+  - Dojo20240905 - Algoritmo Luhn;
+  - Dojo20240906 - Há quantos números menores que 10**3 que são primos, narcisistas e felizes?;
 
 ## [1.54.1]	 &#8212; 	2024-09-01:
 ### Fixed

@@ -8,10 +8,11 @@
 
 ---
 
-116 dojos resolvidos
+117 dojos resolvidos
 
 ---
 
+ - [Dojo20240905 &#8212; Luhn algorithm](dojo20240905/README.md)
  - [Dojo20240904 &#8212; rot47](dojo20240904/README.md)
  - [Dojo20240903 &#8212; Adição de Dois Números](dojo20240903/README.md)
  - [Dojo20240902 &#8212; Two sum](dojo20240902/README.md)

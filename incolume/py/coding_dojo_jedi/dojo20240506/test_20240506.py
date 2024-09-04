@@ -1,7 +1,7 @@
 """Test module."""
 
 import pytest
-from . import feliz
+from . import is_feliz
 
 
 class TestFeliz:
@@ -20,4 +20,4 @@ class TestFeliz:
     )
     def test_feliz(self, entrance, expected):
         """Test it."""
-        assert feliz(entrance) == expected
+        assert is_feliz(entrance) == expected

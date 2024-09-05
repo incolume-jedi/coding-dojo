@@ -10,8 +10,13 @@ class TestCase:
 
     test5: ClassVar = [
         (5061, 5),
+        (5062, 0),
     ]
     test7: ClassVar = [
+        (1, 7),
+        (2, 9),
+        (3, 3),
+        (4, 1),
         (7063, 3),
     ]
 
@@ -36,8 +41,24 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-        test7,
+        test5,
     )
     def test_2(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        assert pkg.last_digit_for_pow5(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        test7,
+    )
+    def test_3(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        assert pkg.last_digit_for_pow7_0(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        test7,
+    )
+    def test_4(self, entrance, expected) -> NoReturn:
         """Unittest."""
         assert pkg.last_digit_for_pow7(entrance) == expected

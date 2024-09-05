@@ -8,10 +8,14 @@
 
 ---
 
-118 dojos resolvidos
+121 dojos resolvidos
 
 ---
 
+ - [Dojo20240908 &#8212; Encontre o último dígito da potência 7e7063](dojo20240908/problem2.md)
+ - [Dojo20240908 &#8212; Encontre o último dígito da potência 5e5061](dojo20240908/problem1.md)
+ - [Dojo20240907 &#8212; Encontre o último dígito da potência 3e1061](dojo20240907/README.md)
+ - [Dojo20240906 &#8212; Quantos números menores que 10³ são primos, narcisistas e felizes? ](dojo20240906/README.md)
  - [Dojo20240905 &#8212; Luhn algorithm](dojo20240905/README.md)
  - [Dojo20240904 &#8212; rot47](dojo20240904/README.md)
  - [Dojo20240903 &#8212; Adição de Dois Números](dojo20240903/README.md)

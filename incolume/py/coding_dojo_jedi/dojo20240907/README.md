@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Encontre o último dígito da potência 3^1061**
+**Encontre o último dígito da potência 3e1061**
 
 
 

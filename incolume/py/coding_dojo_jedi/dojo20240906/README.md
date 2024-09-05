@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Quantos números menores que 10^3 são primos, narcisistas e felizes? **
+**Quantos números menores que 10³ são primos, narcisistas e felizes? **
 
 Desenvolva um programa que apresente todos os números primos, felizes e narcisistas menores que o limite informado.
 

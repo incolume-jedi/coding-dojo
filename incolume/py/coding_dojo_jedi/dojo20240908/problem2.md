@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Encontre o último dígito da potência 7^7063**
+**Encontre o último dígito da potência 7e7063**
 
 Descubra qual o último digito da potência informada.
 

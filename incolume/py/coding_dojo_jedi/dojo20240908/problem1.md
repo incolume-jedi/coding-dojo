@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Encontre o último dígito da potência 5^5061**
+**Encontre o último dígito da potência 5e5061**
 
 Resolva o problema.
 

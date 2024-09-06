@@ -3,8 +3,16 @@
 MODE_ENCRYPT = 1
 MODE_DECRYPT = 0
 
+
 def caesar(data, key, mode):
-    alphabet = 'abcdefghijklmnopqrstuvwyzàáãâéêóôõíúçABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÕÍÚÇ'
+    """Cifra de caesar.
+
+    Disponível em https://gist.githubusercontent.com/ustropo/4aead578401fe57166a9ce1d45375696/raw/b81dd00c74ccaecd252678ea1353c7ef402a6866/caesar_cypher.py
+    """
+    alphabet = (
+        'abcdefghijklmnopqrstuvwyzàáãâéêóôõíúç'
+        'ABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÕÍÚÇ'
+    )
     new_data = ''
     for c in data:
         index = alphabet.find(c)
@@ -13,14 +21,5 @@ def caesar(data, key, mode):
         else:
             new_index = index + key if mode == MODE_ENCRYPT else index - key
             new_index = new_index % len(alphabet)
-            new_data += alphabet[new_index:new_index+1]
+            new_data += alphabet[new_index : new_index + 1]
     return new_data
-
-# Tests
-key = 5
-original = 'a ligeira raposa marrom saltou sobre o cachorro cansado'
-print('  Original:', original)
-ciphered = caesar(original, key, MODE_ENCRYPT)
-print('Encriptada:', ciphered)
-plain = caesar(ciphered, key, MODE_DECRYPT)
-print('Decriptada:', plain)

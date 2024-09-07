@@ -35,6 +35,16 @@ class Mode(Enum):
         return cls.ENCRYPT
 
 
+def prepara_frase(frase: str) -> str:
+    """Prepara frase."""
+    result = [frase]
+    if any(x in frase for x in SIMBOLS.values()):
+        for simbol, cod in SIMBOLS.items():
+            result.append(re.sub(cod, simbol, result[-1]))
+        return result[-1]
+    return ''.join(SIMBOLS.get(x, x) for x in frase)
+
+
 def caesar(data: str, key: int, mode: int) -> str:
     """Cifra de caesar.
 

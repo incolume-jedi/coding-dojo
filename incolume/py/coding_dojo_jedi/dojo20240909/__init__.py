@@ -1,5 +1,6 @@
 """dojo module."""
 
+import logging
 import re
 import string
 from enum import Enum, auto
@@ -7,7 +8,7 @@ from typing import Final
 
 alphabet = (
     'abcdefghijklmnopqrstuvwyzàáãâéêóôõíúç'
-    'ABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÕÍÚÇ'
+    'ABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÔÕÍÚÇ'
 )
 MODE_ENCRYPT = 1
 MODE_DECRYPT = 0
@@ -31,8 +32,9 @@ class Mode(Enum):
     ENCRYPT = auto()
 
     @classmethod
-    def _missing_(cls):
+    def _missing_(cls, value):
         """On missing."""
+        logging.debug('%s', value)
         return cls.ENCRYPT
 
 
@@ -53,10 +55,10 @@ def caesar(data: str, key: int, mode: int) -> str:
     """
     alphabet = (
         'abcdefghijklmnopqrstuvwyzàáãâéêóôõíúç'
-        'ABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÕÍÚÇ'
+        'ABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÔÕÍÚÇ'
     )
     new_data = ''
-    for c in data:
+    for c in prepara_frase(data):
         index = alphabet.find(c)
         if index == -1:
             new_data += c
@@ -64,10 +66,10 @@ def caesar(data: str, key: int, mode: int) -> str:
             new_index = index + key if mode == MODE_ENCRYPT else index - key
             new_index = new_index % len(alphabet)
             new_data += alphabet[new_index : new_index + 1]
-    return new_data
+    return prepara_frase(new_data)
 
 
-def cesar(data: str, key: int, *, decryp_mode: bool = False) -> str:
+def cesar(data: str, key: int, *, decrypt_mode: bool = False) -> str:
     """Cifra de caesar."""
     key = key or KEY
     new_data = ''
@@ -76,7 +78,7 @@ def cesar(data: str, key: int, *, decryp_mode: bool = False) -> str:
         if index == -1:
             new_data += c
         else:
-            new_index = index + key if decryp_mode else index - key
+            new_index = index + key if decrypt_mode else index - key
             new_index = new_index % len(alphabet)
             new_data += alphabet[new_index : new_index + 1]
     return new_data

@@ -11,6 +11,7 @@ alphabet = (
 )
 MODE_ENCRYPT = 1
 MODE_DECRYPT = 0
+KEY: Final[int] = 23
 SIMBOLS = {
     ' ': 'WBRW',
     ',': 'WVRW',
@@ -81,3 +82,22 @@ def cesar(data: str, key: int, *, decryp_mode: bool = False) -> str:
     return new_data
 
 
+def cypher_cesar(
+    data: str,
+    key: int = KEY,
+    *,
+    decrypt_mode: bool = False,
+    alphabet: str = '',
+) -> str:
+    """Cifra de caesar."""
+    alphabet = alphabet or string.ascii_letters
+    new_data = ''
+    for c in prepara_frase(data):
+        index = alphabet.find(c)
+        if index == -1:
+            new_data += c
+        else:
+            new_index = index + key if decrypt_mode else index - key
+            new_index = new_index % len(alphabet)
+            new_data += alphabet[new_index : new_index + 1]
+    return prepara_frase(new_data)

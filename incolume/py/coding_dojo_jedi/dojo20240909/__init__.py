@@ -64,3 +64,20 @@ def caesar(data: str, key: int, mode: int) -> str:
             new_index = new_index % len(alphabet)
             new_data += alphabet[new_index : new_index + 1]
     return new_data
+
+
+def cesar(data: str, key: int, *, decryp_mode: bool = False) -> str:
+    """Cifra de caesar."""
+    key = key or KEY
+    new_data = ''
+    for c in prepara_frase(data):
+        index = alphabet.find(c)
+        if index == -1:
+            new_data += c
+        else:
+            new_index = index + key if decryp_mode else index - key
+            new_index = new_index % len(alphabet)
+            new_data += alphabet[new_index : new_index + 1]
+    return new_data
+
+

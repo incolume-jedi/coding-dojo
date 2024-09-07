@@ -11,6 +11,16 @@ alphabet = (
 )
 MODE_ENCRYPT = 1
 MODE_DECRYPT = 0
+SIMBOLS = {
+    ' ': 'WBRW',
+    ',': 'WVRW',
+    '.': 'WPTW',
+    ';': 'WPVW',
+    ':': 'WDPW',
+    '!': 'WEXW',
+    '?': 'WINW',
+    '-': 'WHFW',
+}
 
 
 def caesar(data, key, mode):

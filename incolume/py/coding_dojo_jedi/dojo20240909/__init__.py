@@ -23,7 +23,7 @@ SIMBOLS = {
 }
 
 
-def caesar(data, key, mode):
+def caesar(data: str, key: int, mode: int) -> str:
     """Cifra de caesar.
 
     Disponível em https://gist.githubusercontent.com/ustropo/4aead578401fe57166a9ce1d45375696/raw/b81dd00c74ccaecd252678ea1353c7ef402a6866/caesar_cypher.py

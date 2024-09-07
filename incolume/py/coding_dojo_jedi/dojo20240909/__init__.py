@@ -23,6 +23,18 @@ SIMBOLS = {
 }
 
 
+class Mode(Enum):
+    """Class mode."""
+
+    DECRYPT = 0
+    ENCRYPT = auto()
+
+    @classmethod
+    def _missing_(cls):
+        """On missing."""
+        return cls.ENCRYPT
+
+
 def caesar(data: str, key: int, mode: int) -> str:
     """Cifra de caesar.
 

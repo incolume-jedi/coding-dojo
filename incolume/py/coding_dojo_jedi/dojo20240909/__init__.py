@@ -1,5 +1,14 @@
 """dojo module."""
 
+import re
+import string
+from enum import Enum, auto
+from typing import Final
+
+alphabet = (
+    'abcdefghijklmnopqrstuvwyzàáãâéêóôõíúç'
+    'ABCDEFGHIJKLMNOPQRSTUVWYZÀÁÃÂÉÊÓÕÍÚÇ'
+)
 MODE_ENCRYPT = 1
 MODE_DECRYPT = 0
 

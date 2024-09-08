@@ -8,10 +8,11 @@
 
 ---
 
-126 dojos resolvidos
+127 dojos resolvidos
 
 ---
 
+ - [Dojo20240914 &#8212; Combinações de letras de um número de telefone](dojo20240914/README.md)
  - [Dojo20240913 &#8212; Single Number III](dojo20240913/README.md)
  - [Dojo20240912 &#8212; Faturar pythonicamente solução csharp](dojo20240912/README.md)
  - [Dojo20240911 &#8212; Contabilizar Peças de Xadrez](dojo20240911/README.md)

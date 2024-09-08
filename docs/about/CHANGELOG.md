@@ -26,6 +26,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240911 — Contabilizar Peças de Xadrez;
   - Dojo20240912 — Faturar pythonicamente solução csharp;
   - Dojo20240913 — Single Number III;
+  - Dojo20240914 — Combinações de letras de um número de telefone;
 
 ## [1.54.1]	 &#8212; 	2024-09-01:
 ### Fixed

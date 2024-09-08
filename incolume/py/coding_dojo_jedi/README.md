@@ -8,10 +8,11 @@
 
 ---
 
-124 dojos resolvidos
+125 dojos resolvidos
 
 ---
 
+ - [Dojo20240912 &#8212; Faturar pythonicamente solução csharp](dojo20240912/README.md)
  - [Dojo20240911 &#8212; Contabilizar Peças de Xadrez](dojo20240911/README.md)
  - [Dojo20240910 &#8212; Fatorar código para POO](dojo20240910/README.md)
  - [Dojo20240909 &#8212; Cifra de César](dojo20240909/README.md)

@@ -8,10 +8,11 @@
 
 ---
 
-125 dojos resolvidos
+126 dojos resolvidos
 
 ---
 
+ - [Dojo20240913 &#8212; Single Number III](dojo20240913/README.md)
  - [Dojo20240912 &#8212; Faturar pythonicamente solução csharp](dojo20240912/README.md)
  - [Dojo20240911 &#8212; Contabilizar Peças de Xadrez](dojo20240911/README.md)
  - [Dojo20240910 &#8212; Fatorar código para POO](dojo20240910/README.md)

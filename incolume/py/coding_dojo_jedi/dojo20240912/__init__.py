@@ -48,11 +48,11 @@ class Stack:
     def push(self, item):
         """Push method."""
         if self.is_empty:
-            self.top = StackItem(item)  # Stack contains a single element
+            self.top = StackItem(item=item)  # Stack contains a single element
         else:
             self.top = StackItem(
-                self.top,
-                item,
+                previous=self.top,
+                item=item,
             )
         self.count += 1
 

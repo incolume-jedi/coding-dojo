@@ -44,5 +44,8 @@ class TestCase:
         for item in entrance:
             stack.push(item)
 
+        total = -1
+
         while stack.count > 0:
-            assert stack.pop() == ''
+            assert stack.pop() == entrance[total]
+            total -= 1

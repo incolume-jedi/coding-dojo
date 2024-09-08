@@ -24,22 +24,17 @@ class TestCase:
             stack.push(item)
         assert stack.count == expected
 
-    @pytest.mark.parametrize(
-        'entrance',
-        [
-            (
-                (None, None),
-                {'a': 1, 'b': 2},
-                'Como a pilha é genérica, podemos inserir'
-                ' quaisquer elementos,\n'
-                'até objetos heterogêneos',
-                {'MadeIn': 'Brazil'},
-                'Execute esse código para ver a pilha ser invertida',
-            ),
-        ],
-    )
-    def test_1(self, entrance) -> NoReturn:
+    def test_1(self) -> NoReturn:
         """Unittest."""
+        entrance = (
+            (None, None),
+            {'a': 1, 'b': 2},
+            'Como a pilha é genérica, podemos inserir'
+            ' quaisquer elementos,\n'
+            'até objetos heterogêneos',
+            {'MadeIn': 'Brazil'},
+            'Execute esse código para ver a pilha ser invertida',
+        )
         stack = pkg.Stack()
         for item in entrance:
             stack.push(item)

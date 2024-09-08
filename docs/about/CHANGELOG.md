@@ -23,6 +23,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240908 - Encontre o último dígito da potência 7**7063;
   - Dojo20240909 — Cifra de César;
   - Dojo20240910 — Fatorar código para POO;
+  - Dojo20240911 — Contabilizar Peças de Xadrez;
 
 ## [1.54.1]	 &#8212; 	2024-09-01:
 ### Fixed

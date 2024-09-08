@@ -8,10 +8,11 @@
 
 ---
 
-123 dojos resolvidos
+124 dojos resolvidos
 
 ---
 
+ - [Dojo20240911 &#8212; Contabilizar Peças de Xadrez](dojo20240911/README.md)
  - [Dojo20240910 &#8212; Fatorar código para POO](dojo20240910/README.md)
  - [Dojo20240909 &#8212; Cifra de César](dojo20240909/README.md)
  - [Dojo20240908 &#8212; Encontre o último dígito da potência 7e7063](dojo20240908/problem2.md)

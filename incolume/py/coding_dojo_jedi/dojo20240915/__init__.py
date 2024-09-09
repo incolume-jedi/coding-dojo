@@ -8,15 +8,14 @@ class SizeError(AttributeError):
 def is_valid_parenteses(texto: str) -> bool:
     """Valid entrance."""
     stack = []
-    mapping = {'(': ')', '[': ']', '{': '}'}
+    mapping = {')': '(', ']': '[', '}': '{'}
 
     for s in texto:
-        if s in mapping:
-            stack.append(mapping.get(s))
-        elif stack and mapping.get(s) == stack[-1]:
+        if s in mapping and stack and stack[-1] == mapping.get(s):
             stack.pop()
-        else:
-            return False
+        elif s in [*mapping, *mapping.values()]:
+            stack.append(s)
+
     return not stack
 
 

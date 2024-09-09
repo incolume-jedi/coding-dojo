@@ -28,6 +28,11 @@ class TestCase:
             pytest.param({}, r'{[()]()}', True),
             pytest.param({}, r'{[(]()}', False),
             pytest.param({}, '(]', False),
+            pytest.param({}, '()[()]{[]}()]', False),
+            pytest.param({}, '[0()[()]{[]}()]', True),
+            pytest.param(
+                {}, '[10e5(6+9)[3(1.73 - .73)+2]{2[3.5]**2}+(2-1)**3]', True,
+            ),
         ],
     )
     def test_0(self, exception, entrance, expected) -> NoReturn:

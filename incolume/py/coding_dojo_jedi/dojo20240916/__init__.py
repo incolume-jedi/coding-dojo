@@ -1,7 +1,6 @@
 """dojo module."""
 
 
-
 def v_dac(c: float) -> float:
     """Conversor digital analógico."""
     v = 1023

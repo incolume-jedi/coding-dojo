@@ -8,10 +8,11 @@
 
 ---
 
-128 dojos resolvidos
+129 dojos resolvidos
 
 ---
 
+ - [Dojo20240916 &#8212; DAC Virtual](dojo20240916/README.md)
  - [Dojo20240915 &#8212; Parênteses Válido](dojo20240915/README.md)
  - [Dojo20240914 &#8212; Combinações de letras de um número de telefone](dojo20240914/README.md)
  - [Dojo20240913 &#8212; Single Number III](dojo20240913/README.md)

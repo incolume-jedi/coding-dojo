@@ -10,7 +10,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-09-08:
+## [Unreleased]	 &#8212; 	2024-09-10:
 ### Deprecated
   - O pacote `incolume-py-utils` foi substituído por `incolume-py-changelog` e será removido nas próximas releases;
 ### Added
@@ -27,6 +27,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240912 — Faturar pythonicamente solução csharp;
   - Dojo20240913 — Single Number III;
   - Dojo20240914 — Combinações de letras de um número de telefone;
+  - Dojo20240915 — Parênteses Válido;
+  - Dojo20240916 — DAC Virtual;
 
 ## [1.54.1]	 &#8212; 	2024-09-01:
 ### Fixed

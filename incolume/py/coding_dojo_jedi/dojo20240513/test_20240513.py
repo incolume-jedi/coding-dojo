@@ -2,7 +2,6 @@
 
 from pathlib import Path
 from unittest import mock
-from urllib.error import URLError
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20240513 import (
@@ -15,12 +14,13 @@ from tempfile import NamedTemporaryFile
 
 __author__ = '@britodfbr'  # pragma: no cover
 
-file = Path('Voltagem-codigos-2020-10-05.html')
+file = Path(__file__).parent / 'Voltagem-codigos-2020-10-05.html'
 
 
 class CheckDojo:
     """Test case."""
-    dataframe = pd.read_html(file)
+
+    dataframe = pd.read_html(file.read_bytes())
 
     def test_raspagem_tabela_html(self):
         """Test scrap."""

@@ -142,23 +142,29 @@ def dojo_init(
     ).strftime('%Y%m%d')
 
     boilerplate: dict[str, bytes] = {
-        'README.md': b'',
-        '__init__.py': b'"""dojo module."""',
-        f'test_{timestamp}.py': b'"""Test module."""\n\n'
-        b'from typing import ClassVar, NoReturn\n'
-        b'import . as pkg\n'
-        b'import pytest\n\n'
-        b'class TestCase:\n'
-        b'    """Test case class."""\n\n'
-        b'    @pytest.mark.parametrize(\n'
-        b"        'entrance expected'.split(),\n"
-        b'        [\n'
-        b'             (None, None),\n'
-        b'        ],\n'
-        b'    )\n'
-        b'    def test_0(self, entrance, expected) -> NoReturn:\n'
-        b'        """Unittest."""\n'
-        b'        assert pkg.dojo(entrance) == expected\n',
+        'README.md': '',
+        '__init__.py': (
+            '"""dojo module."""\n\n'
+            'def dojo(x: str)->str:\n'
+            '    """Dojo solution."""\n'
+            '    return x\n'
+        ),
+        f'test_{timestamp}.py': '"""Test module."""\n\n'
+        'from typing import ClassVar, NoReturn\n'
+        f'import incolume.py.coding_dojo_jedi.dojo{timestamp} as pkg\n'
+        'import pytest\n\n'
+        'class TestCase:\n'
+        '    """Test case class."""\n\n'
+        '    t0: ClassVar=None\n\n'
+        '    @pytest.mark.parametrize(\n'
+        "        'entrance expected'.split(),\n"
+        '        [\n'
+        '             (None, None),\n'
+        '        ],\n'
+        '    )\n'
+        '    def test_0(self, entrance, expected) -> NoReturn:\n'
+        '        """Unittest."""\n'
+        '        assert pkg.dojo(entrance) == expected\n',
     }
     result = []
     try:
@@ -166,7 +172,7 @@ def dojo_init(
         dojo_dir.mkdir(exist_ok=True)
         for file, content in boilerplate.items():
             result.append(dojo_dir.joinpath(file))
-            ic(ic(result[-1]).write_bytes(content))
+            ic(ic(result[-1]).write_bytes(content.encode('utf-8')))
     except PermissionError:
         pass
     return result

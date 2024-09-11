@@ -154,7 +154,7 @@ def dojo_init(
         ),
         f'test_{timestamp}.py': '"""Test module."""\n\n'
         'from typing import ClassVar, NoReturn\n'
-        f'import {'.'.join(dojo_dir.parts)} as pkg\n'
+        f'import {".".join(dojo_dir.parts)} as pkg\n'
         'import pytest\n\n'
         'class TestCase:\n'
         '    """Test case class."""\n\n'

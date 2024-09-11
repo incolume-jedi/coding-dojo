@@ -18,26 +18,26 @@ __author__ = '@britodfbr'  # pragma: no cover
 class CheckDojo:
     """Test case."""
 
-    @pytest.mark.skipif(
-        raises=[URLError, TimeoutError],
-        reason='URL conection error.',
-    )
+    # @pytest.mark.skipif(
+    #     raises=[URLError, TimeoutError],
+    #     reason='URL conection error.',
+    # )
     def test_raspagem_tabela_html(self):
         """Test scrap."""
         assert isinstance(scrap(url), pd.DataFrame)
 
-    @pytest.mark.skipif(
-        raises=[URLError, TimeoutError],
-        reason='URL conection error.',
-    )
+    # @pytest.mark.skipif(
+    #     raises=[URLError, TimeoutError],
+    #     reason='URL conection error.',
+    # )
     def test_raspagem_shape(self):
         """Test scrap."""
         assert scrap(url).shape == (258, 9)
 
-    @pytest.mark.skipif(
-        raises=[URLError, TimeoutError],
-        reason='URL conection error.',
-    )
+    # @pytest.mark.skipif(
+    #     raises=[URLError, TimeoutError],
+    #     reason='URL conection error.',
+    # )
     @pytest.mark.parametrize(
         'format_output',
         [

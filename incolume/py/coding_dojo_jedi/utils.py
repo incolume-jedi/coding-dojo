@@ -140,18 +140,21 @@ def dojo_init(
     timestamp = dojo_date.strftime('%Y%m%d') or datetime.datetime.now(
         tz=pytz.timezone(time_zone),
     ).strftime('%Y%m%d')
+    dojo_dir = dojo_path.joinpath(f'dojo{timestamp}')
+    dojo_dir.mkdir(exist_ok=True)
 
     boilerplate: dict[str, bytes] = {
         'README.md': '',
         '__init__.py': (
             '"""dojo module."""\n\n'
-            'def dojo(x: str)->str:\n'
+            'def dojo(*args: str, **kwargs: str)->dict[str]:\n'
             '    """Dojo solution."""\n'
-            '    return x\n'
+            '    kwargs["args"] = args\n'
+            '    return kwargs\n'
         ),
         f'test_{timestamp}.py': '"""Test module."""\n\n'
         'from typing import ClassVar, NoReturn\n'
-        f'import incolume.py.coding_dojo_jedi.dojo{timestamp} as pkg\n'
+        f'import {'.'.join(dojo_dir.parts)} as pkg\n'
         'import pytest\n\n'
         'class TestCase:\n'
         '    """Test case class."""\n\n'
@@ -168,8 +171,6 @@ def dojo_init(
     }
     result = []
     try:
-        dojo_dir = dojo_path.joinpath(f'dojo{timestamp}')
-        dojo_dir.mkdir(exist_ok=True)
         for file, content in boilerplate.items():
             result.append(dojo_dir.joinpath(file))
             ic(ic(result[-1]).write_bytes(content.encode('utf-8')))

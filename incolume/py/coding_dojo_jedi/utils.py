@@ -76,10 +76,15 @@ def generator_sumary(
     *,
     regex: str = '',
     reverse: bool = False,
+    is_doc: bool = False,
 ) -> Path:
     """Gerador de sumário."""
     logging.debug('called %s', stack()[0][3])
-    file = fout or Path().parent.joinpath('sumario.md')
+    file = fout or (
+        Path(__file__).parents[3].joinpath('docs', 'user_guide', 'dojos-resolvidos.md')
+        if is_doc
+        else Path().parent.joinpath('sumario.md')
+    )
     file.parent.mkdir(parents=True, exist_ok=True)
     regex = regex or sumary_regex
 

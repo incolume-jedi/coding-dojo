@@ -6,7 +6,7 @@ from unittest import mock
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20231128.dojo20231128 import (
+from incolume.py.coding_dojo_jedi.dojo20231128 import (
     TIMEOUT,
     ConsumingNextPageSWAPI,
     __pkg__,
@@ -27,7 +27,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 def test_package_name() -> None:
     """Test package name."""
-    assert __pkg__ == 'incolume.py.coding_dojo_jedi.dojo20231128.dojo20231128'
+    assert __pkg__ == 'incolume.py.coding_dojo_jedi.dojo20231128'
 
 
 # @pytest.mark.skip
@@ -839,7 +839,7 @@ class TestRequests:
             assert r.headers.get(entrance.casefold()) == expected
 
 
-@pytest.mark.skip(reason='Falha na chamada WEB; Necessário mock.')
+# @pytest.mark.skip(reason='Falha na chamada WEB; Necessário mock.')
 class TestConsumingIndexPageSWAPI:
     """TestConsumingIndexPageSWAPI class."""
 
@@ -890,7 +890,13 @@ class TestConsumingIndexPageSWAPI:
             assert consuming_api_swapi_index_page_1() == self.values
             assert m_req_get.call_args_list == []
 
+    @pytest.mark.skip()
     @pytest.mark.webtest()
     def test_case_5(self) -> None:
         """Test it with mock."""
-        assert consuming_api_swapi_index_page_2() == self.values
+        with mock.patch(
+            f'{__pkg__}.requests.get',
+            autospec=True,
+            side_effect=[],
+        ):
+            assert consuming_api_swapi_index_page_2() == []

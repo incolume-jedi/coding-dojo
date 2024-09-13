@@ -64,7 +64,7 @@ def init(ctx: click.Context, path: str, date: str, tz: str) -> NoReturn:
 @click.option(
     '--filename',
     '-f',
-    default='incolume/py/coding_dojo_jedi/README.md',
+    default='',
     help='full filename for sumary file.',
 )
 @click.option('--reverse', '-r', is_flag=True, help='Reverse order.')

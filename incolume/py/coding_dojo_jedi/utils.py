@@ -73,7 +73,7 @@ def genfile(prefix: str = 'File', suffix: str = '') -> Path:
 
 def sumary(
     regex: str = '', *, reverse: bool = True, is_doc: bool = False,
-) -> list[str]:
+) -> tuple[int, list[str]]:
     """Get sumary content."""
     regex = regex or sumary_regex
     l_out: list[str] = []
@@ -110,7 +110,7 @@ def sumary(
             l_out.append(value)
         except AttributeError:
             pass
-    return l_out
+    return count, l_out
 
 
 def generator_sumary(
@@ -139,8 +139,7 @@ def generator_sumary(
         '## Sumário dos dojos\n\n',
         '---\n\n',
     ]
-    temp_sout = sumary(regex=regex, reverse=reverse, is_doc=is_doc)
-    count = len(temp_sout)
+    count, temp_sout = sumary(regex=regex, reverse=reverse, is_doc=is_doc)
 
     sout.append(f'{count} dojos resolvidos\n\n---\n\n')
     sout += [

@@ -70,6 +70,20 @@ class TestUtilsModule:
         logging.debug('%s %s %s', arq, c_dirs, c_links)
         assert c_links == c_dirs
 
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            ({}, 'sumario.md'),
+            (
+                {'is_doc': True},
+                'coding-dojo/docs/user_guide/dojos-resolvidos.md',
+            ),
+        ],
+    )
+    def test_sumary_name(self, entrance, expected) -> NoReturn:
+        """Test sumary name."""
+        assert expected in generator_sumary(**entrance).as_posix()
+
     @pytest.mark.skip()
     @pytest.mark.skipif(
         sys.version_info < (3, 10),

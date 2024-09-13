@@ -64,15 +64,17 @@ def init(ctx: click.Context, path: str, date: str, tz: str) -> NoReturn:
 @click.option(
     '--filename',
     '-f',
-    default='incolume/py/coding_dojo_jedi/README.md',
+    default='',
     help='full filename for sumary file.',
 )
-@click.option('--reverse', '-r', is_flag=True)
+@click.option('--reverse', '-r', is_flag=True, help='Reverse order.')
+@click.option('--doc', is_flag=True, help='Generate sumary for documentation.')
 @click.pass_context
 def sumary(
     ctx: click.Context,
     filename: str = '',
     *,
+    doc: bool = False,
     reverse: bool = False,
 ) -> bool:
     """Generates a summary file with solved dojos.
@@ -82,9 +84,10 @@ def sumary(
     :return: bool: True if success
     """
     ic(type(ic(ctx)))
-    fout: Path = Path(filename)
+    fout: Path = filename or (Path(__file__).parents[3].joinpath('docs', 'user_guide', 'dojos-resolvidos.md') if doc else 'incolume/py/coding_dojo_jedi/README.md')
+    fout = Path(fout)
     click.echo(f'Sumário em {fout} .. ', nl=False)
-    generator_sumary(fout=fout, reverse=reverse)
+    generator_sumary(fout=fout, reverse=reverse, is_doc=doc)
     click.echo('criado com sucesso!', color='green')
     return fout.is_file()
 

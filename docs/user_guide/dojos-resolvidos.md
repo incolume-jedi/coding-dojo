@@ -8,11 +8,27 @@
 
 ---
 
-116 dojos resolvidos
+129 dojos resolvidos
 
 ---
 
+
+
 ### 2024
+
+ - [Dojo20240916 &#8212; DAC Virtual](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240916/README.md){:target="_blank"}
+ - [Dojo20240915 &#8212; Parênteses Válido](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240915/README.md){:target="_blank"}
+ - [Dojo20240914 &#8212; Combinações de letras de um número de telefone](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240914/README.md){:target="_blank"}
+ - [Dojo20240913 &#8212; Single Number III](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240913/README.md){:target="_blank"}
+ - [Dojo20240912 &#8212; Faturar pythonicamente solução csharp](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240912/README.md){:target="_blank"}
+ - [Dojo20240911 &#8212; Contabilizar Peças de Xadrez](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240911/README.md){:target="_blank"}
+ - [Dojo20240910 &#8212; Fatorar código para POO](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240910/README.md){:target="_blank"}
+ - [Dojo20240909 &#8212; Cifra de César](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240909/README.md){:target="_blank"}
+ - [Dojo20240908 &#8212; Encontre o último dígito da potência 7e7063](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240908/problem2.md){:target="_blank"}
+ - [Dojo20240908 &#8212; Encontre o último dígito da potência 5e5061](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240908/problem1.md){:target="_blank"}
+ - [Dojo20240907 &#8212; Encontre o último dígito da potência 3e1061](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240907/README.md){:target="_blank"}
+ - [Dojo20240906 &#8212; Quantos números menores que 10³ são primos, narcisistas e felizes? ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240906/README.md){:target="_blank"}
+ - [Dojo20240905 &#8212; Luhn algorithm](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240905/README.md){:target="_blank"}
  - [Dojo20240904 &#8212; rot47](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240904/README.md){:target="_blank"}
  - [Dojo20240903 &#8212; Adição de Dois Números](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240903/README.md){:target="_blank"}
  - [Dojo20240902 &#8212; Two sum](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240902/README.md){:target="_blank"}
@@ -69,7 +85,7 @@
  - [Dojo20240502 &#8212; Validação de CPF](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240502/README.md){:target="_blank"}
  - [Dojo20240317 &#8212; Quantidade de latas](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240317/problema2.md){:target="_blank"}
  - [Dojo20240317 &#8212; eu sou o perímetro](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240317/problema1.md){:target="_blank"}
- 
+
 
 ### 2023
 
@@ -88,7 +104,7 @@
  - [Dojo20231016 &#8212; Números Romanos para Arábicos](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20231016/README.md){:target="_blank"}
  - [Dojo20231007 &#8212; Subarray de soma máxima](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20231007/README.md){:target="_blank"}
  - [Dojo20231003 &#8212; Subarray de soma máxima](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20231003/README.md){:target="_blank"}
- 
+
 
 ### 2022
 
@@ -135,7 +151,7 @@
  - [Dojo20220718 &#8212; Pegar valor ASCII do caracter](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20220718/README.md){:target="_blank"}
  - [Dojo20220717 &#8212; Palindrome strings](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20220717/README.md){:target="_blank"}
  - [Dojo20220714 &#8212; Reverter a posição dos carecteres de uma string](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20220714/README.md){:target="_blank"}
- 
+
 
 ### 2019
 

@@ -74,8 +74,11 @@ class TestUtilsModule:
         'entrance expected'.split(),
         [
             ({}, 'sumario.md'),
-            ({'is_doc':True}, 'coding-dojo/docs/user_guide/dojos-resolvidos.md'),
-        ]
+            (
+                {'is_doc': True},
+                'coding-dojo/docs/user_guide/dojos-resolvidos.md',
+            ),
+        ],
     )
     def test_sumary_name(self, entrance, expected) -> NoReturn:
         """Test sumary name."""

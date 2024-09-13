@@ -71,34 +71,13 @@ def genfile(prefix: str = 'File', suffix: str = '') -> Path:
     return Path(NamedTemporaryFile(prefix=prefix, suffix=suffix).name)
 
 
-def generator_sumary(
-    fout: Path | None = None,
-    *,
-    regex: str = '',
-    reverse: bool = False,
-    is_doc: bool = False,
-) -> Path:
-    """Gerador de sumário."""
-    logging.debug('called %s', stack()[0][3])
-    file = fout or (
-        Path(__file__).parents[3].joinpath('docs', 'user_guide', 'dojos-resolvidos.md')
-        if is_doc
-        else Path().parent.joinpath('sumario.md')
-    )
-    file.parent.mkdir(parents=True, exist_ok=True)
+def sumary(
+    regex: str = '', *, reverse: bool = True, is_doc: bool = False,
+) -> list[str]:
+    """Get sumary content."""
     regex = regex or sumary_regex
-
-    sout: list[str | bytes] = [
-        '# Coding Dojo\n\n',
-        '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
-        '- [Seja membro da Guilda JEDI Incolume]'
-        '(https://discord.gg/eBNamXVtBW)\n\n',
-        '## Sumário dos dojos\n\n',
-        '---\n\n',
-    ]
-    count: int = 0
-    temp_sout: list = []
-
+    l_out: list[str] = []
+    year: str = ''
     for count, filemd in enumerate(
         sorted(filesmd(), reverse=reverse),
         start=1,
@@ -116,9 +95,52 @@ def generator_sumary(
             logging.debug(desc)
             link = Path().joinpath(*filemd.parts[-2:])
             logging.debug(link)
-            temp_sout.append(f' - [{title} &#8212; {desc}]({link})\n')
+            if is_doc and year != (
+                ano := ''.join(c for c in title if c.isdigit())[:4]
+            ):
+                year = ano
+                l_out.append(f'\n\n### {year}\n\n')
+            value = (
+                (
+                    f' - [{title} &#8212; {desc}](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/{link}){chr(123)}:target="_blank"{chr(125)}\n'
+                )
+                if is_doc
+                else f' - [{title} &#8212; {desc}]({link})\n'
+            )
+            l_out.append(value)
         except AttributeError:
             pass
+    return l_out
+
+
+def generator_sumary(
+    fout: Path | None = None,
+    *,
+    regex: str = '',
+    reverse: bool = False,
+    is_doc: bool = False,
+) -> Path:
+    """Gerador de sumário."""
+    logging.debug('called %s', stack()[0][3])
+    file = fout or (
+        Path(__file__)
+        .parents[3]
+        .joinpath('docs', 'user_guide', 'dojos-resolvidos.md')
+        if is_doc
+        else Path().parent.joinpath('sumario.md')
+    )
+    file.parent.mkdir(parents=True, exist_ok=True)
+
+    sout: list[str | bytes] = [
+        '# Coding Dojo\n\n',
+        '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
+        '- [Seja membro da Guilda JEDI Incolume]'
+        '(https://discord.gg/eBNamXVtBW)\n\n',
+        '## Sumário dos dojos\n\n',
+        '---\n\n',
+    ]
+    temp_sout = sumary(regex=regex, reverse=reverse, is_doc=is_doc)
+    count = len(temp_sout)
 
     sout.append(f'{count} dojos resolvidos\n\n---\n\n')
     sout += [

@@ -84,7 +84,13 @@ def sumary(
     :return: bool: True if success
     """
     ic(type(ic(ctx)))
-    fout: Path = filename or (Path(__file__).parents[3].joinpath('docs', 'user_guide', 'dojos-resolvidos.md') if doc else 'incolume/py/coding_dojo_jedi/README.md')
+    fout: Path = filename or (
+        Path(__file__)
+        .parents[3]
+        .joinpath('docs', 'user_guide', 'dojos-resolvidos.md')
+        if doc
+        else 'incolume/py/coding_dojo_jedi/README.md'
+    )
     fout = Path(fout)
     click.echo(f'Sumário em {fout} .. ', nl=False)
     generator_sumary(fout=fout, reverse=reverse, is_doc=doc)

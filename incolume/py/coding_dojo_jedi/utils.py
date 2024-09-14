@@ -72,7 +72,10 @@ def genfile(prefix: str = 'File', suffix: str = '') -> Path:
 
 
 def sumary(
-    regex: str = '', *, reverse: bool = True, is_doc: bool = False,
+    regex: str = '',
+    *,
+    reverse: bool = True,
+    is_doc: bool = False,
 ) -> tuple[int, list[str]]:
     """Get sumary content."""
     regex = regex or sumary_regex

@@ -8,6 +8,7 @@ from typing import NoReturn
 import tempfile
 import pytest
 import pytz
+from tempfile import NamedTemporaryFile
 
 from incolume.py.coding_dojo_jedi.utils import (
     MD_DIR,
@@ -38,6 +39,7 @@ class TestUtilsModule:
 
     tz: str = 'America/Sao_Paulo'
     timestamp = dt.datetime(1978, 6, 20, tzinfo=pytz.timezone(tz))
+    filename = Path(NamedTemporaryFile().name)
 
     def test_md_dir_type(self):
         """Check directory type."""
@@ -73,10 +75,13 @@ class TestUtilsModule:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            ({}, 'sumario.md'),
+            ({'fout': filename.with_name('sumario.md')}, 'sumario.md'),
             (
-                {'is_doc': True},
-                'coding-dojo/docs/user_guide/dojos-resolvidos.md',
+                {
+                    'fout': filename.with_name('dojos-resolvidos.md'),
+                    'is_doc': True,
+                },
+                'dojos-resolvidos.md',
             ),
         ],
     )

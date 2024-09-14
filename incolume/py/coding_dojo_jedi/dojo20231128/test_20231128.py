@@ -840,6 +840,7 @@ class TestRequests:
 
 
 # @pytest.mark.skip(reason='Falha na chamada WEB; Necessário mock.')
+@pytest.mark.xfail(raises=[requests.exceptions.ReadTimeout])
 class TestConsumingIndexPageSWAPI:
     """TestConsumingIndexPageSWAPI class."""
 

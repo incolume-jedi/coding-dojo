@@ -2,6 +2,9 @@
 name = "coding-dojo-jedi"
 version = "1.55.0a23"
 description = "códigos da guilda jedi incolume"
+documentation='https://incolume-jedi.github.io/coding-dojo/'
+readme = ["README.md", "docs/index.md"]
+repository = "https://github.com/incolume-jedi/coding-dojo/"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages = [{include = "incolume"}]
 

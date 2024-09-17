@@ -20,8 +20,8 @@ def tratativa1() -> None:
     for i in escopo:
         original, novo = i, i.with_name(f'dojo{i.stem}')
         print(original, novo)  #  noqa: T201
-        subprocess.run(
-            ['git', 'mv', original, novo],  # noqa: S603 S607
+        subprocess.run(  # noqa: S603
+            ['git', 'mv', original, novo],  # noqa: S607
             check=False,
         )
 

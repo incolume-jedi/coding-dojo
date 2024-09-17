@@ -20,14 +20,14 @@ def remove_url_anchor1(url: str) -> str:
 def remove_url_anchor2(url: str) -> str:
     """Remove anchor da url."""
     regex = r'((ht|f)tp[s]?://)?[\w\.\/\?\-\=]+'
-    result = re.search(regex, url, flags=re.I)
+    result = re.search(regex, url, flags=re.IGNORECASE)
     return result.group(0)  # type: ignore[union-attr]
 
 
 def remove_url_anchor3(url: str) -> str:
     """Remove anchor da url."""
     regex = r'^(.+)#'
-    result = re.search(regex, url, flags=re.I)
+    result = re.search(regex, url, flags=re.IGNORECASE)
     try:
         return result.group(1)  # type: ignore[union-attr]
     except AttributeError:

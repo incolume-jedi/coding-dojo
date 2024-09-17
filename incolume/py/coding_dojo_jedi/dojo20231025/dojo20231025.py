@@ -24,7 +24,11 @@ def generator_sumary(fout: Path | None = None) -> Path:
             Path(__file__).parents[1].rglob('**/*.md'),
         ):
             try:
-                result = re.search(regex, filemd.read_text(), flags=re.I)
+                result = re.search(
+                    regex,
+                    filemd.read_text(),
+                    flags=re.IGNORECASE,
+                )
                 title = filemd.parts[-2].capitalize()
                 desc = result.group(1)  # type: ignore[union-attr]
                 link = Path('..').joinpath(*filemd.parts[-2:])

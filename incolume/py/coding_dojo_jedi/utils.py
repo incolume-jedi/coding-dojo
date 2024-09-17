@@ -30,6 +30,12 @@ TZ: Final[str] = 'America/Sao_Paulo'
 sumary_regex: str = r'## Problema\s*\*\*((\w[\-,!\?\(\)\s]*\s*)+)\*\*'
 
 
+def pseudo_filename(**kwargs: str) -> Path:
+    """Return a temporary filename."""
+    with NamedTemporaryFile(**kwargs) as f:
+        return Path(f.name)
+
+
 def check_connectivity(
     url: str = 'https://google.com',
     timeout: float = 1.8,
@@ -49,7 +55,7 @@ def file_filter(file: Path, regex: str = '') -> bool:
     logging.debug('called %s', stack()[0][3])
     with file.open('rb') as f:
         for line in f:
-            if re.search(regex, line, flags=re.I):
+            if re.search(regex, line, flags=re.IGNORECASE):
                 return True
     return False
 
@@ -68,7 +74,7 @@ def filesmd(dir_target: Path | None = None) -> list[Path]:
 
 def genfile(prefix: str = 'File', suffix: str = '') -> Path:
     """Return empty file."""
-    return Path(NamedTemporaryFile(prefix=prefix, suffix=suffix).name)
+    return pseudo_filename(prefix=prefix, suffix=suffix)
 
 
 def sumary(
@@ -90,7 +96,7 @@ def sumary(
             result = re.search(
                 regex,
                 filemd.read_text(encoding='utf-8'),
-                flags=re.I,
+                flags=re.IGNORECASE,
             )
             title = filemd.parts[-2].capitalize()
             logging.debug(title)

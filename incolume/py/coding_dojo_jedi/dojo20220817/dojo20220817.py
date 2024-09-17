@@ -7,10 +7,8 @@ def high_and_low0(seq: str) -> str:
 
     new_seq: list[int] = [int(x) for x in seq.split()]
     for i in new_seq:
-        if i > maximo:
-            maximo = i
-        if i < minimo:
-            minimo = i
+        maximo = max(i, maximo)
+        minimo = min(i, minimo)
     return f'{maximo} {minimo}'
 
 

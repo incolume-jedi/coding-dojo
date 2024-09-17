@@ -14,7 +14,8 @@ from incolume.py.coding_dojo_jedi.dojo20240514 import (
 )
 from incolume.py.coding_dojo_jedi.dojo20240513.test_20240513 import file
 
-filename: Path = Path(NamedTemporaryFile(prefix='testing-').name)
+with NamedTemporaryFile(prefix='testing-') as fl:
+    filename: Path = Path(fl.name)
 
 
 class CheckSQLite:

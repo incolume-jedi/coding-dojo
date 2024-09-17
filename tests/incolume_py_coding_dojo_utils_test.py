@@ -8,17 +8,17 @@ from typing import NoReturn
 import tempfile
 import pytest
 import pytz
-from tempfile import NamedTemporaryFile
 
 from incolume.py.coding_dojo_jedi.utils import (
     MD_DIR,
     filesmd,
     generator_sumary,
     dojo_init,
+    pseudo_filename,
 )
 
 
-@pytest.fixture()
+@pytest.fixture
 def filemd(fakefile) -> Path:
     """Retornar arquivo MD."""
     return fakefile.with_suffix('.md')
@@ -39,7 +39,7 @@ class TestUtilsModule:
 
     tz: str = 'America/Sao_Paulo'
     timestamp = dt.datetime(1978, 6, 20, tzinfo=pytz.timezone(tz))
-    filename = Path(NamedTemporaryFile().name)
+    filename = pseudo_filename()
 
     def test_md_dir_type(self):
         """Check directory type."""
@@ -53,7 +53,7 @@ class TestUtilsModule:
             'coding_dojo_jedi',
         )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     @pytest.mark.skipif(
         sys.version_info < (3, 10),
         reason='requires python3.10 or higher',
@@ -89,7 +89,7 @@ class TestUtilsModule:
         """Test sumary name."""
         assert expected in generator_sumary(**entrance).as_posix()
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     @pytest.mark.skipif(
         sys.version_info < (3, 10),
         reason='requires python3.10 or higher',

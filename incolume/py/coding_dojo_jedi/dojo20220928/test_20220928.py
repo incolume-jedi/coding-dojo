@@ -12,7 +12,7 @@ class TestCase:
 
     __test__ = False  # Will not be discovered as a test
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [

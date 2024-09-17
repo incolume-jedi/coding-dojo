@@ -65,7 +65,7 @@ class MyTestCase(unittest.TestCase):
     def test_linux_support(self) -> None:
         """Linux specific testing code."""
 
-    @pytest.mark.webtest()
+    @pytest.mark.webtest
     def test_maybe_skipped(self) -> None:
         """Test code that depends on the external resource."""
         if not check_connectivity():

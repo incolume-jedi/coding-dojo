@@ -170,11 +170,9 @@ class MyTestCase(unittest.TestCase):
     @classmethod
     def tearDownClass(cls: object) -> None:
         """Método chamado imediatamente após concluir o método de teste."""
-        #
 
     def tearDown(self) -> None:
         """Método chamado imediatamente após concluir a classe de teste."""
-        #
 
     @unittest.skip('Futuring work')
     class MySkippedTestCase(unittest.TestCase):

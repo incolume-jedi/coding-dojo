@@ -30,7 +30,7 @@ def test_has_dojo_link(file) -> None:
     assert re.search(
         regex,
         file.read_bytes(),
-        re.I,
+        re.IGNORECASE,
     ), f'Falta o link: "- [dojo](./dojoYYYYMMDD.py)" em {file.as_posix()}'
 
 
@@ -44,5 +44,5 @@ def test_has_test_link(file) -> None:
     assert re.search(
         regex,
         file.read_bytes(),
-        re.I,
+        re.IGNORECASE,
     ), f'Falta o link: "- [tests](./test_YYYYMMDD.py)" em {file.as_posix()}'

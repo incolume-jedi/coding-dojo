@@ -4,7 +4,8 @@ import re
 
 from click.testing import CliRunner
 from incolume.py.coding_dojo_jedi import cli
-from tempfile import NamedTemporaryFile, gettempdir
+from tempfile import gettempdir
+from incolume.py.coding_dojo_jedi.utils import pseudo_filename
 
 
 __author__ = '@britodfbr'  # pragma: no cover
@@ -37,7 +38,7 @@ class TestCaseCLI:
         """Test dojo sumary."""
         result = self.runner.invoke(
             cli.dojo,
-            ['sumary', '-f', NamedTemporaryFile().name],
+            ['sumary', '-f', pseudo_filename().name],
         )
         assert result.exit_code == 0
         assert re.search(
@@ -49,7 +50,7 @@ class TestCaseCLI:
         """Test sumary."""
         result = self.runner.invoke(
             cli.sumary,
-            ['-f', NamedTemporaryFile().name],
+            ['-f', pseudo_filename().name],
         )
         assert result.exit_code == 0
         assert re.search(

@@ -11,7 +11,7 @@ class Chess(Enum):
     """Chess bits."""
 
     vazio = 0
-    peão = 1
+    peão = 1  # noqa: PLC2401
     bispo = auto()
     cavalo = auto()
     torre = auto()

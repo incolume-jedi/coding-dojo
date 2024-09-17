@@ -42,14 +42,15 @@ class CheckDojo:
     )
     def test_output(self, format_output):
         """Test arquivo gravado."""
-        with mock.patch('pandas.read_html', return_value=self.dataframe):
+        with (
+            mock.patch('pandas.read_html', return_value=self.dataframe),
+            NamedTemporaryFile(
+                prefix='testting-',
+                suffix=f'.{format_output}',
+            ) as file,
+        ):
             data = scrap(url)
-            filename = Path(
-                NamedTemporaryFile(
-                    prefix='testting-',
-                    suffix=f'.{format_output}',
-                ).name,
-            )
+            filename = Path(file.name)
             result = save_dataframe(
                 df=data,
                 filename=filename,

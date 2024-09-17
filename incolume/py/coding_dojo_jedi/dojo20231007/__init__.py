@@ -40,8 +40,7 @@ def subarray_max_sum(array: Iterable) -> int:
     for value in array:
         soma += value
         soma = max(0, soma)
-        if soma > result:
-            result = soma
+        result = max(soma, result)
     return result
 
 

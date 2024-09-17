@@ -16,7 +16,7 @@ from incolume.py.coding_dojo_jedi.utils import genfile
     version_info < (3, 9, 0),
     reason='This run only Python 3.9+',
 )
-@pytest.mark.webtest()
+@pytest.mark.webtest
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [

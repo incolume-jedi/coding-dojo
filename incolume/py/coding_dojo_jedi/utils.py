@@ -74,7 +74,7 @@ def filesmd(dir_target: Path | None = None) -> list[Path]:
 
 def genfile(prefix: str = 'File', suffix: str = '') -> Path:
     """Return empty file."""
-    return Path(NamedTemporaryFile(prefix=prefix, suffix=suffix).name)
+    return pseudo_filename(prefix=prefix, suffix=suffix)
 
 
 def sumary(

@@ -12,10 +12,11 @@ from incolume.py.coding_dojo_jedi.dojo20231025.dojo20231025 import (
 )
 
 
-@pytest.fixture()
+@pytest.fixture
 def filemd() -> Path:
     """Retornar arquivo MD."""
-    return Path(NamedTemporaryFile(suffix='.md', prefix='File-').name)
+    with NamedTemporaryFile(suffix='.md', prefix='File-') as pseud:
+        return Path(pseud.name)
 
 
 def count_links(arq_entrada: Path) -> int:
@@ -41,7 +42,7 @@ def count_dojos(path_dojos: Path) -> int:
     regex = r'## Problema\s*\*\*((\w+\s*)+)\*\*'
     total = 0
     for file in path_dojos.rglob('**/*.md'):
-        result = re.search(regex, file.read_text(), flags=re.I)
+        result = re.search(regex, file.read_text(), flags=re.IGNORECASE)
         if result:
             total += 1
     return total

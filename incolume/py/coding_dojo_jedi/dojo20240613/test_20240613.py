@@ -13,7 +13,7 @@ from incolume.py.coding_dojo_jedi.utils import pseudo_filename
 class TestCase:
     """Test case class."""
 
-    @pytest.mark.skip
+    @pytest.mark.skip()
     def test_0(self) -> NoReturn:
         """Unittest."""
         expected = (
@@ -42,7 +42,7 @@ class TestCase:
         'entrance',
         [
             {
-                'filename': pseudo_filename().name,
+                'filename': pseudo_filename(),
                 'data': pkg.generate_dataframe(),
             },
             {
@@ -60,14 +60,14 @@ class TestCase:
             (
                 {
                     'k': 3,
-                    'filename': pseudo_filename(suffix='.xlsx').name,
+                    'filename': pseudo_filename(suffix='.xlsx'),
                 },
                 3,
             ),
             (
                 {
                     'k': 10,
-                    'filename': pseudo_filename(suffix='.xlsx').name,
+                    'filename': pseudo_filename(suffix='.xlsx'),
                 },
                 10,
             ),

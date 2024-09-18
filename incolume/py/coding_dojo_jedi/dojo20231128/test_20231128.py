@@ -1,6 +1,7 @@
 """Test dojo."""
 
 from http import HTTPStatus
+import sys
 from typing import ClassVar
 from unittest import mock
 
@@ -858,8 +859,11 @@ class TestConsumingIndexPageSWAPI:
         'https://swapi.dev/api/people/?page=10',
     ]
 
-    # @pytest.mark.skip
-    @pytest.mark.webtest
+    @pytest.mark.skipif(
+        sys.platform.casefold().startswith('win'),
+        reason='does not run on windows',
+    )
+    @pytest.mark.webtest()
     def test_case_1(self) -> None:
         """Test it."""
         assert consuming_api_swapi_index_page_0() == self.values
@@ -876,12 +880,16 @@ class TestConsumingIndexPageSWAPI:
                 mock.call(self.values[0], timeout=TIMEOUT),
             ]
 
-    @pytest.mark.webtest
+    @pytest.mark.skipif(
+        sys.platform.casefold().startswith('win'),
+        reason='does not run on windows',
+    )
+    @pytest.mark.webtest()
     def test_case_3(self) -> None:
         """Test it with mock."""
         assert consuming_api_swapi_index_page_1() == self.values
 
-    @pytest.mark.skip
+    @pytest.mark.skip()
     def test_case_4(self) -> None:
         """Test it with mock."""
         with mock.patch(f'{__pkg__}.requests.get') as m_req_get:
@@ -891,8 +899,8 @@ class TestConsumingIndexPageSWAPI:
             assert consuming_api_swapi_index_page_1() == self.values
             assert m_req_get.call_args_list == []
 
-    @pytest.mark.skip
-    @pytest.mark.webtest
+    @pytest.mark.skip()
+    @pytest.mark.webtest()
     def test_case_5(self) -> None:
         """Test it with mock."""
         with mock.patch(

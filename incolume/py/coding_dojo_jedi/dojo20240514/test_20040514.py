@@ -36,8 +36,8 @@ class CheckSQLite:
                 'incolume.py.coding_dojo_jedi.dojo20240513.scrap',
                 return_value=self.dataframe,
             ),
-            gen_conn() as conn,
         ):
+            conn = gen_conn()
             load_db(file, conn)
             cur = conn.cursor()
             cur.execute(

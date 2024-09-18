@@ -24,7 +24,7 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                {'url': pkg.url, 'fout': pseudo_filename().name},
+                {'url': pkg.url, 'fout': pseudo_filename()},
                 True,
                 marks=pytest.mark.webtest,
             ),

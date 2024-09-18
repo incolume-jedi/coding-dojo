@@ -13,12 +13,13 @@ from incolume.py.coding_dojo_jedi.dojo20240513 import (
 )
 
 
-def gen_conn() -> sqlite3.Connection:
+def gen_conn(filename: str = '') -> sqlite3.Connection:
     """Generate connection."""
     with tempfile.NamedTemporaryFile(suffix='.db') as file:
-        return sqlite3.connect(
-            Path(file.name),
-        )
+        filename = filename or file.name
+    return sqlite3.connect(
+        database=Path(filename).resolve().as_posix(),
+    )
 
 
 def gen_data_file(ext: str = 'json') -> Path:

@@ -2,6 +2,7 @@
 
 from pathlib import Path
 from unittest import mock
+from incolume.py.coding_dojo_jedi.utils import genfile
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20240513 import (
@@ -10,7 +11,6 @@ from incolume.py.coding_dojo_jedi.dojo20240513 import (
     scrap,
     save_dataframe,
 )
-from tempfile import NamedTemporaryFile
 
 __author__ = '@britodfbr'  # pragma: no cover
 
@@ -44,13 +44,9 @@ class CheckDojo:
         """Test arquivo gravado."""
         with (
             mock.patch('pandas.read_html', return_value=self.dataframe),
-            NamedTemporaryFile(
-                prefix='testting-',
-                suffix=f'.{format_output}',
-            ) as file,
         ):
             data = scrap(url)
-            filename = Path(file.name)
+            filename = genfile(prefix='testting-', suffix=f'.{format_output}')
             result = save_dataframe(
                 df=data,
                 filename=filename,

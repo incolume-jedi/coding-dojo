@@ -3,8 +3,10 @@
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20240917 as pkg
 import pytest
+from tests.conftest import pytestmark
 
 
+@pytestmark
 class TestCase:
     """Test case class."""
 

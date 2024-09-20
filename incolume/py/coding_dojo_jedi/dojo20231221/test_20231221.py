@@ -1,5 +1,7 @@
 """Test module."""
 
+from pathlib import Path
+from tempfile import gettempdir
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20231221 as pkg
 import pytest
@@ -13,9 +15,17 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            (None, ''),
+            ({}, 'dojo.json'),
+            (
+                {
+                    'output': (
+                        file := Path(gettempdir(), 'presidente.json').resolve()
+                    ),
+                },
+                file.as_posix(),
+            ),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        assert pkg.dojo(**entrance).as_posix() == expected

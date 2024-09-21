@@ -1,6 +1,5 @@
 """Configure switch test."""
 
-import sys
 from pathlib import Path
 from sys import version_info
 
@@ -15,56 +14,6 @@ collect_ignore = [
     'incolume/py/dojo20220928',
 ]
 
-pytestmark = pytest.mark.skip('all tests still WIP')
-
-py38 = pytest.mark.skipif(
-    sys.version_info < (3, 8),
-    reason='requires python3.8 or higher',
-)
-py39 = pytest.mark.skipif(
-    sys.version_info < (3, 9),
-    reason='requires python3.9 or higher',
-)
-py310 = pytest.mark.skipif(
-    sys.version_info < (3, 10),
-    reason='requires python3.10 or higher',
-)
-py311 = pytest.mark.skipif(
-    sys.version_info < (3, 11),
-    reason='requires python3.11 or higher',
-)
-py312 = pytest.mark.skipif(
-    sys.version_info < (3, 12),
-    reason='requires python3.12 or higher',
-)
-py313 = pytest.mark.skipif(
-    sys.version_info < (3, 13),
-    reason='requires python3.13 or higher',
-)
-require_mac = pytest.mark.skipif(
-    not sys.platform.casefold().startswith('mac'),
-    reason='requires MacOS',
-)
-not_mac = pytest.mark.skipif(
-    sys.platform.casefold().startswith('mac'),
-    reason='does not run on MacOS',
-)
-require_lin = pytest.mark.skipif(
-    not sys.platform.casefold().startswith('lin'),
-    reason='requires Linux',
-)
-not_lin = pytest.mark.skipif(
-    sys.platform.casefold().startswith('lin'),
-    reason='does not run on Linux',
-)
-require_win = pytest.mark.skipif(
-    sys.platform.casefold().startswith('win'),
-    reason='requires windows',
-)
-not_win = pytest.mark.skipif(
-    not sys.platform.casefold().startswith('win'),
-    reason='does not run on windows',
-)
 
 if version_info < (3, 10, 0):  # noqa: UP036
     collect_ignore.extend(

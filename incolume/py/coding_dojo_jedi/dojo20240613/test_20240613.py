@@ -13,7 +13,7 @@ from incolume.py.coding_dojo_jedi.utils import pseudo_filename
 class TestCase:
     """Test case class."""
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     def test_0(self) -> NoReturn:
         """Unittest."""
         expected = (

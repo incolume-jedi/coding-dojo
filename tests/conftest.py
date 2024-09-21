@@ -82,7 +82,7 @@ def semver_regex() -> str:
     return r'^\d+(\.\d+){2}((-\w+\.\d+)|(\w+\d+))?$'
 
 
-@pytest.fixture()
+@pytest.fixture
 def fakefile() -> Path:
     """Return fiction file for tests."""
     return genfile(prefix='File-testing-')

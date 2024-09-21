@@ -5,7 +5,7 @@ import sys
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.utils import pseudo_filename
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 from . import (
     create_tar_gz,
@@ -22,7 +22,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 class TestCase:
     """Test case."""
 
-    filename = pseudo_filename()
+    filename = genfile()
 
     def test_create_tar_gz(self):
         """Test create file."""

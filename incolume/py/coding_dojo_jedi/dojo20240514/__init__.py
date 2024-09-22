@@ -13,10 +13,12 @@ from incolume.py.coding_dojo_jedi.dojo20240513 import (
 )
 
 
-def gen_conn() -> sqlite3.Connection:
+def gen_conn(filename: str = '') -> sqlite3.Connection:
     """Generate connection."""
+    with tempfile.NamedTemporaryFile(suffix='.db') as file:
+        filename = filename or file.name
     return sqlite3.connect(
-        Path(tempfile.NamedTemporaryFile(suffix='.db').name),
+        database=Path(filename).resolve().as_posix(),
     )
 
 

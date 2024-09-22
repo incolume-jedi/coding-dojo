@@ -44,17 +44,18 @@ nav:
     - Home: index.md
     - Coding Challenge: coding_challenge/README.md
     - 'User Guide':
-        - Código de Conduta: user_guide/code_of_conduct.md
-        - Medotologias:
-            - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
-            - Keep a CHANGELOG.md: user_guide/keep-a-changelog.md
-            - Mkdocs: user_guide/writing-your-docs.md
-            - Semver: user_guide/semver.md
-            - Zen Python: user_guide/zenpy.md
-#        - Base: prefacio.md
-#        - Contributing: user_guide/development.md
-#        - Installation: user_guide/INSTALLATION.md
-#        - Usage: user_guide/usage.md
+      - Dojos Resolvidos: user_guide/dojos-resolvidos.md
+      - Código de Conduta: user_guide/code_of_conduct.md
+      - Medotologias:
+          - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
+          - Keep a CHANGELOG.md: user_guide/keep-a-changelog.md
+          - Mkdocs: user_guide/writing-your-docs.md
+          - Semver: user_guide/semver.md
+          - Zen Python: user_guide/zenpy.md
+#      - Base: prefacio.md
+#      - Contributing: user_guide/development.md
+#      - Installation: user_guide/INSTALLATION.md
+#      - Usage: user_guide/usage.md
     - About:
 #      - Contributors: about/CONTRIBUTORS.md
       - License: about/LICENSE.md

@@ -1,6 +1,5 @@
 """Test module."""
 
-from pathlib import Path
 from typing import NoReturn
 from unittest import mock
 
@@ -8,13 +7,13 @@ import pandas as pd
 
 import incolume.py.coding_dojo_jedi.dojo20240613 as pkg
 import pytest
-from tempfile import NamedTemporaryFile
+from incolume.py.coding_dojo_jedi.utils import pseudo_filename
 
 
 class TestCase:
     """Test case class."""
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     def test_0(self) -> NoReturn:
         """Unittest."""
         expected = (
@@ -43,7 +42,7 @@ class TestCase:
         'entrance',
         [
             {
-                'filename': Path(NamedTemporaryFile().name),
+                'filename': pseudo_filename(),
                 'data': pkg.generate_dataframe(),
             },
             {
@@ -61,14 +60,14 @@ class TestCase:
             (
                 {
                     'k': 3,
-                    'filename': Path(NamedTemporaryFile(suffix='.xlsx').name),
+                    'filename': pseudo_filename(suffix='.xlsx'),
                 },
                 3,
             ),
             (
                 {
                     'k': 10,
-                    'filename': Path(NamedTemporaryFile(suffix='.xlsx').name),
+                    'filename': pseudo_filename(suffix='.xlsx'),
                 },
                 10,
             ),

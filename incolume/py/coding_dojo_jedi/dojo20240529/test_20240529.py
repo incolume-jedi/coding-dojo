@@ -2,9 +2,10 @@
 
 import logging
 import sys
-from pathlib import Path
 
 import pytest
+
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 from . import (
     create_tar_gz,
@@ -14,8 +15,6 @@ from . import (
     get_content_tar_gz_1,
 )
 
-from tempfile import NamedTemporaryFile
-
 
 __author__ = '@britodfbr'  # pragma: no cover
 
@@ -23,7 +22,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 class TestCase:
     """Test case."""
 
-    filename = Path(NamedTemporaryFile().name)
+    filename = genfile()
 
     def test_create_tar_gz(self):
         """Test create file."""

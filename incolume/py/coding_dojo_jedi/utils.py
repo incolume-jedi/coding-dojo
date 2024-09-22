@@ -30,6 +30,12 @@ TZ: Final[str] = 'America/Sao_Paulo'
 sumary_regex: str = r'## Problema\s*\*\*((\w[\-,!\?\(\)\s]*\s*)+)\*\*'
 
 
+def pseudo_filename(**kwargs: str) -> Path:
+    """Return a temporary filename."""
+    with NamedTemporaryFile(**kwargs) as f:
+        return Path(f.name)
+
+
 def check_connectivity(
     url: str = 'https://google.com',
     timeout: float = 1.8,
@@ -49,7 +55,7 @@ def file_filter(file: Path, regex: str = '') -> bool:
     logging.debug('called %s', stack()[0][3])
     with file.open('rb') as f:
         for line in f:
-            if re.search(regex, line, flags=re.I):
+            if re.search(regex, line, flags=re.IGNORECASE):
                 return True
     return False
 
@@ -68,32 +74,19 @@ def filesmd(dir_target: Path | None = None) -> list[Path]:
 
 def genfile(prefix: str = 'File', suffix: str = '') -> Path:
     """Return empty file."""
-    return Path(NamedTemporaryFile(prefix=prefix, suffix=suffix).name)
+    return pseudo_filename(prefix=prefix, suffix=suffix)
 
 
-def generator_sumary(
-    fout: Path | None = None,
-    *,
+def sumary(
     regex: str = '',
-    reverse: bool = False,
-) -> Path:
-    """Gerador de sumário."""
-    logging.debug('called %s', stack()[0][3])
-    file = fout or Path().parent.joinpath('sumario.md')
-    file.parent.mkdir(parents=True, exist_ok=True)
+    *,
+    reverse: bool = True,
+    is_doc: bool = False,
+) -> tuple[int, list[str]]:
+    """Get sumary content."""
     regex = regex or sumary_regex
-
-    sout: list[str | bytes] = [
-        '# Coding Dojo\n\n',
-        '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
-        '- [Seja membro da Guilda JEDI Incolume]'
-        '(https://discord.gg/eBNamXVtBW)\n\n',
-        '## Sumário dos dojos\n\n',
-        '---\n\n',
-    ]
-    count: int = 0
-    temp_sout: list = []
-
+    l_out: list[str] = []
+    year: str = ''
     for count, filemd in enumerate(
         sorted(filesmd(), reverse=reverse),
         start=1,
@@ -103,7 +96,7 @@ def generator_sumary(
             result = re.search(
                 regex,
                 filemd.read_text(encoding='utf-8'),
-                flags=re.I,
+                flags=re.IGNORECASE,
             )
             title = filemd.parts[-2].capitalize()
             logging.debug(title)
@@ -111,9 +104,51 @@ def generator_sumary(
             logging.debug(desc)
             link = Path().joinpath(*filemd.parts[-2:])
             logging.debug(link)
-            temp_sout.append(f' - [{title} &#8212; {desc}]({link})\n')
+            if is_doc and year != (
+                ano := ''.join(c for c in title if c.isdigit())[:4]
+            ):
+                year = ano
+                l_out.append(f'\n\n### {year}\n\n')
+            value = (
+                (
+                    f' - [{title} &#8212; {desc}](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/{link}){chr(123)}:target="_blank"{chr(125)}\n'
+                )
+                if is_doc
+                else f' - [{title} &#8212; {desc}]({link})\n'
+            )
+            l_out.append(value)
         except AttributeError:
             pass
+    return count, l_out
+
+
+def generator_sumary(
+    fout: Path | None = None,
+    *,
+    regex: str = '',
+    reverse: bool = False,
+    is_doc: bool = False,
+) -> Path:
+    """Gerador de sumário."""
+    logging.debug('called %s', stack()[0][3])
+    file = fout or (
+        Path(__file__)
+        .parents[3]
+        .joinpath('docs', 'user_guide', 'dojos-resolvidos.md')
+        if is_doc
+        else Path().parent.joinpath('sumario.md')
+    )
+    file.parent.mkdir(parents=True, exist_ok=True)
+
+    sout: list[str | bytes] = [
+        '# Coding Dojo\n\n',
+        '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n',
+        '- [Seja membro da Guilda JEDI Incolume]'
+        '(https://discord.gg/eBNamXVtBW)\n\n',
+        '## Sumário dos dojos\n\n',
+        '---\n\n',
+    ]
+    count, temp_sout = sumary(regex=regex, reverse=reverse, is_doc=is_doc)
 
     sout.append(f'{count} dojos resolvidos\n\n---\n\n')
     sout += [
@@ -140,33 +175,40 @@ def dojo_init(
     timestamp = dojo_date.strftime('%Y%m%d') or datetime.datetime.now(
         tz=pytz.timezone(time_zone),
     ).strftime('%Y%m%d')
+    dojo_dir = dojo_path.joinpath(f'dojo{timestamp}')
+    dojo_dir.mkdir(exist_ok=True)
 
     boilerplate: dict[str, bytes] = {
-        'README.md': b'',
-        '__init__.py': b'"""dojo module."""',
-        f'test_{timestamp}.py': b'"""Test module."""\n\n'
-        b'from typing import ClassVar, NoReturn\n'
-        b'import . as pkg\n'
-        b'import pytest\n\n'
-        b'class TestCase:\n'
-        b'    """Test case class."""\n\n'
-        b'    @pytest.mark.parametrize(\n'
-        b"        'entrance expected'.split(),\n"
-        b'        [\n'
-        b'             (None, None),\n'
-        b'        ],\n'
-        b'    )\n'
-        b'    def test_0(self, entrance, expected) -> NoReturn:\n'
-        b'        """Unittest."""\n'
-        b'        assert pkg.dojo(entrance) == expected\n',
+        'README.md': '',
+        '__init__.py': (
+            '"""dojo module."""\n\n'
+            'def dojo(*args: str, **kwargs: str)->dict[str]:\n'
+            '    """Dojo solution."""\n'
+            '    kwargs["args"] = args\n'
+            '    return kwargs\n'
+        ),
+        f'test_{timestamp}.py': '"""Test module."""\n\n'
+        'from typing import ClassVar, NoReturn\n'
+        f'import {".".join(dojo_dir.parts)} as pkg\n'
+        'import pytest\n\n'
+        'class TestCase:\n'
+        '    """Test case class."""\n\n'
+        '    t0: ClassVar=None\n\n'
+        '    @pytest.mark.parametrize(\n'
+        "        'entrance expected'.split(),\n"
+        '        [\n'
+        '             (None, None),\n'
+        '        ],\n'
+        '    )\n'
+        '    def test_0(self, entrance, expected) -> NoReturn:\n'
+        '        """Unittest."""\n'
+        '        assert pkg.dojo(entrance) == expected\n',
     }
     result = []
     try:
-        dojo_dir = dojo_path.joinpath(f'dojo{timestamp}')
-        dojo_dir.mkdir(exist_ok=True)
         for file, content in boilerplate.items():
             result.append(dojo_dir.joinpath(file))
-            ic(ic(result[-1]).write_bytes(content))
+            ic(ic(result[-1]).write_bytes(content.encode('utf-8')))
     except PermissionError:
         pass
     return result

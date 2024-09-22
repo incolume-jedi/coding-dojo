@@ -7,13 +7,13 @@ import pytest
 from incolume.py.coding_dojo_jedi import __version__
 
 
-@pytest.mark.fast()
+@pytest.mark.fast
 class TestSemVer:
     """Test case class for Sematic Versions."""
 
     def test_version(self, semver_regex: str) -> None:
         """Validação de versionamento semântico para versão do pacote."""
-        assert re.fullmatch(semver_regex, __version__, re.I)
+        assert re.fullmatch(semver_regex, __version__, re.IGNORECASE)
 
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
@@ -62,7 +62,7 @@ class TestSemVer:
                 re.fullmatch(
                     semver_regex,
                     entrance,
-                    flags=re.I,
+                    flags=re.IGNORECASE,
                 ),
             )
             == expected

@@ -3,14 +3,14 @@
 from typing import NoReturn
 import incolume.py.coding_dojo_jedi.dojo20240604 as pkg
 import pytest
-from tempfile import NamedTemporaryFile
-from pathlib import Path
+
+from incolume.py.coding_dojo_jedi.utils import pseudo_filename
 
 
 class TestCase:
     """Test case class."""
 
-    filename = Path(NamedTemporaryFile().name)
+    filename = pseudo_filename()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -24,7 +24,7 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                {'url': pkg.url, 'fout': Path(NamedTemporaryFile().name)},
+                {'url': pkg.url, 'fout': pseudo_filename()},
                 True,
                 marks=pytest.mark.webtest,
             ),

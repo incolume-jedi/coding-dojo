@@ -3,7 +3,7 @@
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par
-from tests import Py310
+from tests.conftest import Py310
 
 
 @Py310

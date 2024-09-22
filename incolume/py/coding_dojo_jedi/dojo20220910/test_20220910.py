@@ -7,7 +7,7 @@ from incolume.py.coding_dojo_jedi.dojo20220910.dojo20220910 import (
     weekday0,
     weekday1,
 )
-from tests import Py310
+from tests.conftest import Py310
 
 
 @pytest.mark.parametrize(

@@ -4,11 +4,10 @@
 # -*- encode: utf-8 -*-
 
 import re
-from sys import version_info
 
 import pytest
 from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
-from tests import Py38
+from tests.conftest import Py38
 
 
 @Py38
@@ -35,10 +34,7 @@ def test_calculadora(entrance, expected) -> None:
     assert calculadora(*entrance) == expected
 
 
-@pytest.mark.skipif(
-    version_info <= (3, 8, 0),
-    reason='This run only Python 3.8 or higher',
-)
+@Py38
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [

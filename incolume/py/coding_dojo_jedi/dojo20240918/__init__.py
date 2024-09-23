@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import base64
 import json
+import logging
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
@@ -22,7 +23,7 @@ regioes_estados: dict[str, list[str]] = {
     'Nordeste': 'MA PI CE RN PB PE AL SE BA'.split(),
     'Centro-Oeste': 'DF GO MT MS'.split(),
     'Sul': 'PR SC RS'.split(),
-    'Suldeste': 'SP RJ MG ES'.split(),
+    'Sudeste': 'SP RJ MG ES'.split(),
 }
 estados_regioes = {e: r for r, v in regioes_estados.items() for e in v}
 
@@ -118,27 +119,28 @@ def load_estados_from_json(
     json_filename = json_filename or json_report
     with json_filename.open('rb') as f:
         result = [UnidadesFederativas(**estado) for estado in json.load(f)]
+    logging.debug(result)
     return result
 
 
 def add_bandeiras(
-    estados: list[UnidadesFederativas] = None,
-    bandeiras: list[dict[str, str]] = None,
+    estados: list[UnidadesFederativas] | None = None,
+    bandeiras: list[dict[str, str]] | None = None,
 ) -> list[UnidadesFederativas]:
     """Add flags to objects."""
     estados = estados or load_estados_from_json()
     bandeiras = bandeiras or identify_bandeiras()
-    staff = 0
     for estado in estados:
         for bandeira in bandeiras:
-            key = list(bandeira.keys())[0]
-            print(key)
+            key = next(iter(bandeira.keys()))
+            logging.debug(key)
             if key == estado.UF:
                 estado.BANDEIRA = bandeira.get(key)
 
     df_uf = pd.DataFrame([uf.as_dict() for uf in estados])
     ic(df_uf)
     for idx, item in df_uf.iterrows():
+        logging.debug(idx)
         response = httpx.get(ic(item.BANDEIRA))
         base64_bytes = base64.b64encode(response.content)
         obj_b64 = base64_bytes.decode()

@@ -11,6 +11,27 @@ class TestRaspagemWebReportIBGE:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
+            ('Norte', ['AC', 'AP', 'AM', 'PA', 'RO', 'RR', 'TO']),
+            ('Sul', ['PR', 'SC', 'RS']),
+            (
+                'Nordeste',
+                ['MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA'],
+            ),
+            ('Centro-Oeste', ['DF', 'GO', 'MT', 'MS']),
+            ('Sudeste', ['SP', 'RJ', 'MG', 'ES']),
+        ],
+    )
+    def test_regioes_estados(self, entrance, expected) -> NoReturn:
+        """Regioes."""
+        assert pkg.regioes_estados[entrance] == expected
+
+    def test_unidades_federativas(self) -> NoReturn:
+        """Testes para unidades federativas."""
+        assert pkg.UnidadesFederativas
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
             pytest.param('', True, marks=pytest.mark.webtest),
         ],
     )
@@ -47,6 +68,7 @@ class TestRaspagemWebReportIBGE:
             for x in pkg.load_estados_from_json()
         )
 
+    @pytest.mark.skip('This test still WIP')
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [

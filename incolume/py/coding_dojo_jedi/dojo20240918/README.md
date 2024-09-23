@@ -20,14 +20,14 @@ Os nomes de campos/colunas devem ser em formato ASCII com "_" no lugar de espaç
 
 ## Exemplos
 
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>

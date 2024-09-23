@@ -1,11 +1,11 @@
 """Test module."""
 
 from typing import NoReturn
-import incolume.py.coding_dojo_jedi.dojo20240605 as pkg
+import incolume.py.coding_dojo_jedi.dojo20240918 as pkg
 import pytest
 
 
-class TestCase:
+class TestRaspagemWebReportIBGE:
     """Test case class."""
 
     @pytest.mark.parametrize(

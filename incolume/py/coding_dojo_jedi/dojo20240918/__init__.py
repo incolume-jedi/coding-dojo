@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
+import base64
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
-import base64
+
 import httpx
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -125,7 +126,6 @@ def add_bandeiras(
     bandeiras: list[dict[str, str]] = None,
 ) -> list[UnidadesFederativas]:
     """Add flags to objects."""
-
     estados = estados or load_estados_from_json()
     bandeiras = bandeiras or identify_bandeiras()
     staff = 0
@@ -133,9 +133,8 @@ def add_bandeiras(
         for bandeira in bandeiras:
             key = list(bandeira.keys())[0]
             print(key)
-            if estado.UF == key:
+            if key == estado.UF:
                 estado.BANDEIRA = bandeira.get(key)
-
 
     df_uf = pd.DataFrame([uf.as_dict() for uf in estados])
     ic(df_uf)

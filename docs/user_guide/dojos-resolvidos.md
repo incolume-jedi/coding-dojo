@@ -8,7 +8,7 @@
 
 ---
 
-130 dojos resolvidos
+131 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20240917 &#8212; Longest Palindromic Substring](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240917\README.md){:target="_blank"}
  - [Dojo20240916 &#8212; DAC Virtual](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240916\README.md){:target="_blank"}
  - [Dojo20240915 &#8212; Parênteses Válido](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240915\README.md){:target="_blank"}
  - [Dojo20240914 &#8212; Combinações de letras de um número de telefone](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240914\README.md){:target="_blank"}

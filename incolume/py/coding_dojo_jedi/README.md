@@ -8,10 +8,11 @@
 
 ---
 
-130 dojos resolvidos
+131 dojos resolvidos
 
 ---
 
+ - [Dojo20240917 &#8212; Longest Palindromic Substring](dojo20240917\README.md)
  - [Dojo20240916 &#8212; DAC Virtual](dojo20240916\README.md)
  - [Dojo20240915 &#8212; Parênteses Válido](dojo20240915\README.md)
  - [Dojo20240914 &#8212; Combinações de letras de um número de telefone](dojo20240914\README.md)

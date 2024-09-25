@@ -59,7 +59,7 @@ require_win = pytest.mark.skipif(
 )
 not_win = pytest.mark.skipif(
     not sys.platform.casefold().startswith('win'),
-    reason='does not run on windows',
+    reason='Not available on windows. Requires other Operation System.',
 )
 
 collect_ignore = [

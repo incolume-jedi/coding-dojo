@@ -2,7 +2,6 @@
 
 import datetime as dt
 import logging
-import sys
 from pathlib import Path
 from typing import NoReturn
 import tempfile
@@ -16,6 +15,7 @@ from incolume.py.coding_dojo_jedi.utils import (
     dojo_init,
     pseudo_filename,
 )
+from tests.conftest import Py310, not_win
 
 
 @pytest.fixture
@@ -54,14 +54,8 @@ class TestUtilsModule:
         )
 
     @pytest.mark.skip
-    @pytest.mark.skipif(
-        sys.version_info < (3, 10),
-        reason='requires python3.10 or higher',
-    )
-    @pytest.mark.skipif(
-        sys.platform.startswith('win'),
-        reason='Not available on windows. Requires other Operation System.',
-    )
+    @Py310
+    @not_win
     def test_quantia(self, filemd) -> None:  # pylint: disable=redefined-outer-name
         """Testar se a quantidade de links e dojos são iguais."""
         arq = next(
@@ -90,10 +84,7 @@ class TestUtilsModule:
         assert expected in generator_sumary(**entrance).as_posix()
 
     @pytest.mark.skip
-    @pytest.mark.skipif(
-        sys.version_info < (3, 10),
-        reason='requires python3.10 or higher',
-    )
+    @Py310
     @pytest.mark.parametrize(
         'entrance',
         [

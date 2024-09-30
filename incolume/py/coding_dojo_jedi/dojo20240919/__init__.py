@@ -80,11 +80,8 @@ class LinkedList:
 
     def pop(self, n):
         """Pop values."""
-        before = self.head
-        last = self.head
-
-        while last.next:
-            if last.index == n:
-                before, last = last, last.next
-
-        return before
+        parent, temp = self.head, self.head
+        while temp:
+            if temp.index == n:
+                self.head = temp.next.next
+            temp = temp.next

@@ -32,16 +32,19 @@ class TestCase:
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-        t0,
+        [
+            ({1}, 0),
+            ({1, 5, 9}, 2),
+            ((1, 7, 3, 1, 5), 4),
+        ],
     )
     def test_nodo_index(self, entrance, expected) -> NoReturn:
         """Test this."""
         lista = pkg.LinkedList()
-        [lista.push(x) for x in entrance[0]]
-        print(lista.head)
-        assert lista.head.next == entrance[1]
+        [lista.push(x) for x in entrance]
+        assert lista.head.index == expected
 
-    @pytest.mark.skip
+    # @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         t0,
@@ -51,7 +54,7 @@ class TestCase:
         lista = pkg.LinkedList()
         [lista.push(x) for x in entrance[0]]
         lista.pop(entrance[1])
-        assert lista.display() == expected
+        assert lista.head == expected
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

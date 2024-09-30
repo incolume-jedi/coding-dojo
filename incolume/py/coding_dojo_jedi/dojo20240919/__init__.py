@@ -1,6 +1,8 @@
 """dojo module."""
 
+import logging
 from dataclasses import dataclass
+from typing import Any, Self
 
 
 class SizeError(Exception):
@@ -37,3 +39,52 @@ def dojo(lista: list, nodo: int) -> list[int]:
     except IndexError:
         lista.pop(-1)
     return lista
+
+
+@dataclass
+class Node:
+    """Nodo."""
+
+    data: Any
+    index: int = -1
+    next: Self | None = None
+
+
+@dataclass
+class LinkedList:
+    """Linked list."""
+
+    head: Node = None
+    length: int = 0
+
+    def push(self, data):
+        """Push values."""
+        new_node = Node(data)
+        new_node.next = self.head
+        try:
+            new_node.index = self.head.index + 1
+        except ArithmeticError:
+            logging.exception()
+        except AttributeError:
+            new_node.index += 1
+
+        self.head = new_node
+        self.length += 1
+
+    def display(self):
+        """Show elements."""
+        temp = self.head
+        while temp:
+            print(temp.data)  # noqa: T201
+            temp = temp.next
+
+    def pop(self, n):
+        """Pop values."""
+        before = self.head
+        last = self.head
+
+        while last.next:
+            if last.index == n:
+                before, last = last, last.next
+
+        return before

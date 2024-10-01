@@ -78,10 +78,19 @@ class LinkedList:
             print(temp.data)  # noqa: T201
             temp = temp.next
 
+    def get_values(self) -> list:
+        """Return a list with values."""
+        temp = self.head
+        result = []
+        while temp:
+            result.insert(0, temp.data)
+            temp = temp.next
+        return result
+
     def pop(self, n):
         """Pop values."""
         parent, temp = self.head, self.head
         while temp:
             if temp.index == n:
-                self.head = temp.next.next
-            temp = temp.next
+                parent.next = temp.next
+            parent, temp = temp, temp.next

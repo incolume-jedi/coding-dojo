@@ -44,17 +44,33 @@ class TestCase:
         [lista.push(x) for x in entrance]
         assert lista.head.index == expected
 
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            [1, 2, 3],
+            [11, 12, 13],
+        ],
+    )
+    def test_get_values(self, entrance) -> NoReturn:
+        """Test this."""
+        lista = pkg.LinkedList()
+        [lista.push(x) for x in entrance]
+        assert lista.get_values() == entrance
+
     # @pytest.mark.skip
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
-        t0,
+        'entrance delete expected'.split(),
+        [
+            ([3, 2, 1], 2, [3, 2]),
+            ([3, 2, 1], 1, [3, 1]),
+        ],
     )
-    def test_delete(self, entrance, expected) -> NoReturn:
+    def test_delete(self, entrance, delete, expected) -> NoReturn:
         """Unittest."""
         lista = pkg.LinkedList()
-        [lista.push(x) for x in entrance[0]]
-        lista.pop(entrance[1])
-        assert lista.head == expected
+        [lista.push(x) for x in entrance]
+        lista.pop(delete)
+        assert lista.get_values() == expected
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

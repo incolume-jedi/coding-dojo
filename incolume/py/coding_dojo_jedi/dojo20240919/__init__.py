@@ -78,7 +78,7 @@ class LinkedList:
             print(temp.data)  # noqa: T201
             temp = temp.next
 
-    def get_values(self) -> list:
+    def get_values(self) -> list[int]:
         """Return a list with values."""
         temp = self.head
         result = []

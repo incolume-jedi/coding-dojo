@@ -8,7 +8,7 @@
 
 ---
 
-131 dojos resolvidos
+134 dojos resolvidos
 
 ---
 
@@ -16,6 +16,9 @@
 
 ### 2024
 
+ - [Dojo20241001 &#8212; Reverter Posição das letras](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241001\README.md){:target="_blank"}
+ - [Dojo20240919 &#8212; Remover o enésimo nó do final da lista](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240919\README.md){:target="_blank"}
+ - [Dojo20240918 &#8212; Raspagem de dados Web e construção de relatórios](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240918\README.md){:target="_blank"}
  - [Dojo20240917 &#8212; Longest Palindromic Substring](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240917\README.md){:target="_blank"}
  - [Dojo20240916 &#8212; DAC Virtual](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240916\README.md){:target="_blank"}
  - [Dojo20240915 &#8212; Parênteses Válido](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240915\README.md){:target="_blank"}
@@ -162,4 +165,3 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
-

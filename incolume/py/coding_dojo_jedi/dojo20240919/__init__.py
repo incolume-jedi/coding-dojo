@@ -9,7 +9,7 @@ from typing import Any
 
 if sys.version_info <= (3, 10):
     from typing_extensions import Self
-else:
+if sys.version_info >= (3, 11):
     from typing import Self
 
 

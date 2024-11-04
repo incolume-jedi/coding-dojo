@@ -3,8 +3,14 @@
 from __future__ import annotations
 
 import logging
+import sys
 from dataclasses import dataclass
-from typing import Any, Self
+from typing import Any
+
+if sys.version_info <= (3, 10):
+    from typing_extensions import Self
+else:
+    from typing import Self
 
 
 class SizeError(Exception):

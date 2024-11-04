@@ -20,15 +20,15 @@ def analise_nota():
         pass
     result += f'quantidade: {len(notas)};\n'
     result += f'Notas: {" ".join(str(n) for n in notas)};\n'
-    result += f"Reverso: {' '.join(str(n) for n in notas[::-1])};\n"
+    result += f'Reverso: {" ".join(str(n) for n in notas[::-1])};\n'
     result += f'Soma: {sum(notas)};'
     result += f'Média: {(media := median(notas))};'
     result += (
-        f"Acima da média: {' '.join(str(n) for n in notas if n >= media)};"
+        f'Acima da média: {" ".join(str(n) for n in notas if n >= media)};'
     )
     result += (
-        f"Abaixo de {(num := 7)}: "
-        f"{' '.join(str(n) for n in notas if n < num)};"
+        f'Abaixo de {(num := 7)}: '
+        f'{" ".join(str(n) for n in notas if n < num)};'
     )
     result += 'Bye bye.'
     print(result)  # noqa: T201

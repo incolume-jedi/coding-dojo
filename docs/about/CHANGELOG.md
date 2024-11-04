@@ -10,7 +10,17 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-09-10:
+## [1.56.0]	 &#8212; 	2024-11-04:
+### Added
+  - Dojo20241001 — Reverter Posição das letras;
+  - Dojo20240919 — Remover o enésimo nó do final da lista;
+  - Dojo20240918 — Raspagem de dados Web e construção de relatórios;
+  - Instalado pacote pillow;
+### Changed
+  - Ajustes de testes para execução em CI/CD;
+  - Test: Aplicado configuração predefinida aos testes do módulo utils;
+
+## [1.55.0]	 &#8212; 	2024-09-22:
 ### Deprecated
   - O pacote `incolume-py-utils` foi substituído por `incolume-py-changelog` e será removido nas próximas releases;
 ### Added
@@ -29,6 +39,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240914 — Combinações de letras de um número de telefone;
   - Dojo20240915 — Parênteses Válido;
   - Dojo20240916 — DAC Virtual;
+  - Dojo20231221 — presidentes brasileiros em relatório json;
 
 ## [1.54.1]	 &#8212; 	2024-09-01:
 ### Fixed
@@ -513,4 +524,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.53.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.52.0...1.53.0
 [1.54.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.53.0...1.54.0
 [1.54.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.0...1.54.1
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.1...Unreleased
+[1.55.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.1...1.55.0
+[1.56.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.55.0...1.56.0

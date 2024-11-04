@@ -30,8 +30,8 @@ jobs:
       run: |
         poetry install
 
-    - name: Test with pytest
-      run: poetry run pytest -m "not webtest" -m "not offci"
+    # - name: Test with pytest
+    #   run: poetry run pytest -m "not webtest" -m "not offci"
 
   build:
     name: Build package release

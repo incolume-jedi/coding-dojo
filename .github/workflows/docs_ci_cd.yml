@@ -48,12 +48,16 @@ jobs:
         run: |
           python -m pip install -U poetry
           poetry install
-      
+
       # Runs a single command using the runners shell
       - name: Show poetry version
         run: poetry -V
 
       # Generate and deploy the documentation
+
+      - name: Update CHANGELOG.md
+        run: poetry run gcl -r --doc -u https://github.com/incolume-jedi/coding-dojo/compare
+
       - name: Generate and deploy the documentation
         run: |
           git pull origin --no-rebase

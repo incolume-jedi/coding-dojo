@@ -48,7 +48,7 @@ def consuming_api_httpbin():
 def consuming_api_swapi_one_person(id_person: int) -> str:
     """Swapi one person."""
     response = requests.get(
-        f"{urls['swapi-people']}/{id_person}",
+        f'{urls["swapi-people"]}/{id_person}',
         timeout=TIMEOUT,
     )
     return response.json()
@@ -93,7 +93,7 @@ def consuming_api_swapi_index_page_0(initial_page: int = 1) -> list[Container]:
     results = []
     while check == HTTPStatus.OK:
         response = requests.get(
-            f"{urls['swapi-people']}/?page={initial_page}",
+            f'{urls["swapi-people"]}/?page={initial_page}',
             timeout=TIMEOUT,
         )
         results.append(url := response.url)

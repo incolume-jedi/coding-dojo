@@ -8,10 +8,14 @@
 
 ---
 
-130 dojos resolvidos
+134 dojos resolvidos
 
 ---
 
+ - [Dojo20241001 &#8212; Reverter Posição das letras](dojo20241001\README.md)
+ - [Dojo20240919 &#8212; Remover o enésimo nó do final da lista](dojo20240919\README.md)
+ - [Dojo20240918 &#8212; Raspagem de dados Web e construção de relatórios](dojo20240918\README.md)
+ - [Dojo20240917 &#8212; Longest Palindromic Substring](dojo20240917\README.md)
  - [Dojo20240916 &#8212; DAC Virtual](dojo20240916\README.md)
  - [Dojo20240915 &#8212; Parênteses Válido](dojo20240915\README.md)
  - [Dojo20240914 &#8212; Combinações de letras de um número de telefone](dojo20240914\README.md)
@@ -145,4 +149,3 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
-

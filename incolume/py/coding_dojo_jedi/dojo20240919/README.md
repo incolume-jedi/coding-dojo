@@ -8,37 +8,44 @@
 
 ## Problema
 
+**Remover o enésimo nó do final da lista**
 
-**Longest Palindromic Substring**
-
-
-Given a string s, return the longest 
-
-palindromic
+Dado o `head` valor de uma lista vinculada, remova o nó do final da lista e retorne seu cabeçalho n^th
 
  
 
-substring
+Exemplo 1:
 
- in s.
+Entrada: 
+    cabeça = [1,2,3,4,5], 
+    n = 2 
+Saída: [1,2,3,5] 
+
+Exemplo 2:
+
+Entrada: 
+    cabeça = [1], 
+    n = 1 
+Saída: [] 
+
+Exemplo 3:
+
+Entrada: 
+    cabeça = [1,2], 
+    n = 1 
+Saída : [1]
 
  
 
-Example 1:
+Restrições:
 
-Input: s = "babad" Output: "bab" Explanation: "aba" is also a valid answer. 
+O número de nós na lista é sz.
 
-Example 2:
+1 <= sz <= 30
 
-Input: s = "cbbd" Output: "bb" 
+0 <= Node.val <= 100
 
- 
-
-Constraints:
-
-1 <= s.length <= 1000
-
-s consist of only ASCII.
+1 <= n <= sz
 
 
 
@@ -61,12 +68,12 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 ## Artefatos
 
 - [dojo](__init__.py)
-- [tests](test_20240917.py)
+- [tests](test_20240919.py)
 
 
 ## Referências
 
-- https://leetcode.com/problems/longest-palindromic-substring/
+- https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 N/A - Referências para o dojo, o problema ou para elicidações extras.
 

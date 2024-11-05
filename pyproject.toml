@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.55.0"
+version = "1.58.0"
 description = "códigos da guilda jedi incolume"
 documentation='https://incolume-jedi.github.io/coding-dojo/'
 readme = ["README.md", "docs/index.md"]
@@ -84,6 +84,7 @@ selenium = "^4.21.0"
 faker = "^25.8.0"
 ipykernel = "^6.29.5"
 uv = {version="^0.4.10", optional=true, python='>=3.8'}
+pillow = "^10.3.0"
 
 
 [tool.poetry.group.docs.dependencies]
@@ -97,8 +98,8 @@ sumary = 'incolume.py.coding_dojo_jedi.cli:sumary'
 dojo = 'incolume.py.coding_dojo_jedi.cli:dojo'
 
 [tool.poetry.extras]
-uv = ["uv"]
-all = ["uv"]
+# uv = ["uv"]
+# all = ["uv"]
 
 
 [build-system]

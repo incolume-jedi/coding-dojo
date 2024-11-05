@@ -15,9 +15,9 @@ __author__ = '@britodfbr'  # pragma: no cover
 )
 def test_has_artefact(file) -> None:
     """Teste se há sessão Artefatos."""
-    assert (
-        b'Artefatos' in file.read_bytes()
-    ), f'Existe a sessão "## Artefatos" em {file.as_posix()}?'
+    assert b'Artefatos' in file.read_bytes(), (
+        f'Existe a sessão "## Artefatos" em {file.as_posix()}?'
+    )
 
 
 @pytest.mark.parametrize(

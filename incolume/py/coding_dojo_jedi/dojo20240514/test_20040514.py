@@ -41,7 +41,7 @@ class CheckSQLite:
             load_db(file, conn)
             cur = conn.cursor()
             cur.execute(
-                'SELECT PAIS FROM codigo_voltagem' ' WHERE "Pais" == "Brasil"',
+                'SELECT PAIS FROM codigo_voltagem WHERE "Pais" == "Brasil"',
             )
             result = cur.fetchone()
             assert result[0] == 'Brasil'

@@ -30,7 +30,7 @@ jobs:
           poetry install
 
       - name: Test with pytest
-        run: poetry run pytest -m "not offci" -m "not webtest" incolume/py/coding_dojo_jedi
+        run: poetry run pytest -m "not offci" -m "not webtest" incolume/py/coding_dojo_jedi tests/
 
   linters:
     needs: [test]

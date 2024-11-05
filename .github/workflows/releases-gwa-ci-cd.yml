@@ -30,8 +30,8 @@ jobs:
       run: |
         poetry install
 
-    # - name: Test with pytest
-    #   run: poetry run pytest -m "not webtest" -m "not offci"
+    - name: Test with pytest
+      run: poetry run pytest -m "not offci" -m "not webtest" incolume/py/coding_dojo_jedi tests/
 
   build:
     name: Build package release

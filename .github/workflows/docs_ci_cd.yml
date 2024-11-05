@@ -57,6 +57,7 @@ jobs:
 
       - name: Update CHANGELOG.md
         run: |
+          git fetch
           git tag -d Unreleased
           poetry run gcl -r --doc -u https://github.com/incolume-jedi/coding-dojo/compare
 

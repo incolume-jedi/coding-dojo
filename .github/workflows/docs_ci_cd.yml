@@ -59,7 +59,7 @@ jobs:
         run: |
           git fetch
           git tag -d Unreleased
-          poetry run gcl -r --doc -u https://github.com/incolume-jedi/coding-dojo/compare
+          poetry run gcl -r true --doc -u https://github.com/incolume-jedi/coding-dojo/compare
 
       - name: Generate and deploy the documentation
         run: |

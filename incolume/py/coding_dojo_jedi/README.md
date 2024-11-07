@@ -8,10 +8,11 @@
 
 ---
 
-134 dojos resolvidos
+135 dojos resolvidos
 
 ---
 
+ - [Dojo20241106 &#8212; Recuperar cotação de moedas em tempo real](dojo20241106\README.md)
  - [Dojo20241001 &#8212; Reverter Posição das letras](dojo20241001\README.md)
  - [Dojo20240919 &#8212; Remover o enésimo nó do final da lista](dojo20240919\README.md)
  - [Dojo20240918 &#8212; Raspagem de dados Web e construção de relatórios](dojo20240918\README.md)

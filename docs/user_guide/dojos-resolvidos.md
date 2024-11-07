@@ -8,7 +8,7 @@
 
 ---
 
-134 dojos resolvidos
+135 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20241106 &#8212; Recuperar cotação de moedas em tempo real](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241106\README.md){:target="_blank"}
  - [Dojo20241001 &#8212; Reverter Posição das letras](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241001\README.md){:target="_blank"}
  - [Dojo20240919 &#8212; Remover o enésimo nó do final da lista](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240919\README.md){:target="_blank"}
  - [Dojo20240918 &#8212; Raspagem de dados Web e construção de relatórios](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20240918\README.md){:target="_blank"}

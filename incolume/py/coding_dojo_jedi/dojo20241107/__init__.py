@@ -1,6 +1,8 @@
 """dojo module."""
 
-def dojo(*args: str, **kwargs: str)->dict[str]:
+from incolume.py.coding_dojo_jedi.dojo20241106 import quotation
+
+
+def dojo(moeda: str) -> dict[str]:
     """Dojo solution."""
-    kwargs["args"] = args
-    return kwargs
+    return quotation(moeda)

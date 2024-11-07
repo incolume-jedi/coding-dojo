@@ -85,6 +85,7 @@ faker = "^25.8.0"
 ipykernel = "^6.29.5"
 uv = {version="^0.4.10", optional=true, python='>=3.8'}
 pillow = "^10.3.0"
+respx = "^0.21.1"
 
 
 [tool.poetry.group.docs.dependencies]

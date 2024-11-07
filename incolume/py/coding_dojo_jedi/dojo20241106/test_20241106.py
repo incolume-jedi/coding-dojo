@@ -129,8 +129,22 @@ class TestCase:
             ),
             pytest.param(
                 'USD',
-                {},
-                5.7821,
+                {
+                    'USDBRL': {
+                        'code': 'USD',
+                        'codein': 'BRL',
+                        'name': 'Dólar Americano/Real Brasileiro',
+                        'high': '5.8604',
+                        'low': '5.739',
+                        'varBid': '0.039',
+                        'pctChange': '0.68',
+                        'bid': '5.7892',
+                        'ask': '5.7821',
+                        'timestamp': '1730900947',
+                        'create_date': '2024-11-06 10:49:07',
+                    },
+                },
+                'Última cotação: 5.7821',
             ),
             pytest.param(
                 'eur',
@@ -149,7 +163,7 @@ class TestCase:
                         'create_date': '2024-11-06 10:49:07',
                     },
                 },
-                0,
+                'Última cotação: 5.7905',
             ),
             pytest.param(
                 'eth',
@@ -168,7 +182,7 @@ class TestCase:
                         'create_date': '2024-11-06 10:49:07',
                     },
                 },
-                0,
+                'Última cotação: 5.7905',
             ),
             pytest.param(
                 'btc',
@@ -187,7 +201,7 @@ class TestCase:
                         'create_date': '2024-11-06 10:49:07',
                     },
                 },
-                0,
+                'Última cotação: 5.7905',
             ),
         ],
     )

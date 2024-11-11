@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Testes em eventos temporais com `time-machine`**
+**Testes em eventos temporais com time-machine**
 
 Utilize o dojo [#287](https://github.com/incolume-jedi/coding-dojo/issues/288) com a biblioteca de testes `time-machine` para validar eventos temporais.
 

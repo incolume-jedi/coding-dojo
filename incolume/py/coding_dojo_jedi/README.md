@@ -8,10 +8,11 @@
 
 ---
 
-135 dojos resolvidos
+136 dojos resolvidos
 
 ---
 
+ - [Dojo20241107 &#8212; Testes em eventos temporais com time-machine](dojo20241107\README.md)
  - [Dojo20241106 &#8212; Recuperar cotação de moedas em tempo real](dojo20241106\README.md)
  - [Dojo20241001 &#8212; Reverter Posição das letras](dojo20241001\README.md)
  - [Dojo20240919 &#8212; Remover o enésimo nó do final da lista](dojo20240919\README.md)

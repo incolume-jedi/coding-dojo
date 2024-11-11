@@ -39,7 +39,7 @@ class FJson:
     def __post_init__(self):
         """Post init."""
         self.code = self.code.upper()
-        self.timestamp = int(dt.datetime.now(tz=TZ).timestamp())
+        self.timestamp = int(dt.datetime.now(dt.UTC).timestamp())
 
     def to_dict(self) -> dict[str, Any]:
         """Dict."""
@@ -63,7 +63,7 @@ def f_resp(
     return httpx.Response(status_code=status, json=json)
 
 
-@pytest.fixture()
+@pytest.fixture
 def fake_response() -> httpx.Response:
     """Fake response."""
     return f_resp()

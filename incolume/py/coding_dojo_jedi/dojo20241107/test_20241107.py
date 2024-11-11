@@ -10,6 +10,7 @@ import pytz
 import incolume.py.coding_dojo_jedi.dojo20241107 as pkg
 from functools import partial
 from time_machine import travel
+import respx
 
 TZ = pytz.timezone('America/Sao_Paulo')
 
@@ -18,8 +19,8 @@ TZ = pytz.timezone('America/Sao_Paulo')
 
 
 @dataclass
-class Json:
-    """Response JSON."""
+class FJson:
+    """Response Fake JSON."""
 
     code: str
     ask: float
@@ -44,23 +45,31 @@ class Json:
         """Dict."""
         dict_values = {**self.__dict__}
         del dict_values['timestamp']
-        o = Json(**dict_values)
+        o = FJson(**dict_values)
         o.create_date = self.create_date.isoformat(sep=' ')
         return {f'{self.code}{self.codein}': asdict(o)}
 
 
-@pytest.fixture()
-def fake_response(
+def f_resp(
     status: HTTPStatus | None = None,
-    json: Json | dict | None = None,
+    json: FJson | dict | None = None,
 ) -> httpx.Response:
     """Fake response."""
     status = status or HTTPStatus.OK
-    json = Json.to_dict() or {'USDBRL': {'ask': 123}}
+    try:
+        json = json.to_dict()
+    except (AttributeError, TypeError):
+        json = {'USDBRL': {'ask': 123}}
     return httpx.Response(status_code=status, json=json)
 
 
-resp_200 = partial(fake_response, status=HTTPStatus.OK)
+@pytest.fixture()
+def fake_response() -> httpx.Response:
+    """Fake response."""
+    return f_resp()
+
+
+resp_200 = partial(f_resp, status=HTTPStatus.OK)
 
 
 class TestCase0:
@@ -78,7 +87,7 @@ class TestCase0:
 
     def test_2(self):
         """Unit test."""
-        o = Json('usd', ask=1.234)
+        o = FJson('usd', ask=1.234)
         assert set('code ask timestamp create_date'.split()).issubset(
             o.to_dict()['USDBRL'].keys(),
         )
@@ -168,20 +177,98 @@ class TestCase0:
     )
     def test_3(self, entrance, expected):
         """Unit test."""
-        assert Json(**entrance).to_dict() == expected
+        assert FJson(**entrance).to_dict() == expected
+
+    @travel('2024-11-07 12:34:56')
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                {'code': 'usd', 'ask': 1.23},
+                {
+                    'USDBRL': {
+                        'code': 'USD',
+                        'ask': 1.23,
+                        'codein': 'BRL',
+                        'name': '',
+                        'high': 0.0,
+                        'low': 0.0,
+                        'varBid': 0.0,
+                        'pctChange': 0.0,
+                        'bid': 0.0,
+                        'timestamp': 1730993696,
+                        'create_date': '2024-11-07 12:34:56-03:00',
+                    },
+                },
+                marks=[],
+            ),
+            pytest.param(
+                {'code': 'eur', 'ask': 123},
+                {
+                    'EURBRL': {
+                        'code': 'EUR',
+                        'ask': 123,
+                        'codein': 'BRL',
+                        'name': '',
+                        'high': 0.0,
+                        'low': 0.0,
+                        'varBid': 0.0,
+                        'pctChange': 0.0,
+                        'bid': 0.0,
+                        'timestamp': 1730993696,
+                        'create_date': '2024-11-07 12:34:56-03:00',
+                    },
+                },
+                marks=[],
+            ),
+            pytest.param(
+                {'code': 'BTC', 'ask': 123},
+                {
+                    'BTCBRL': {
+                        'code': 'BTC',
+                        'ask': 123,
+                        'codein': 'BRL',
+                        'name': '',
+                        'high': 0.0,
+                        'low': 0.0,
+                        'varBid': 0.0,
+                        'pctChange': 0.0,
+                        'bid': 0.0,
+                        'timestamp': 1730993696,
+                        'create_date': '2024-11-07 12:34:56-03:00',
+                    },
+                },
+                marks=[],
+            ),
+        ],
+    )
+    def test_4(self, entrance, expected):
+        """Unit test."""
+        obj = resp_200(json=FJson(**entrance))
+        assert obj.status_code.value == HTTPStatus.OK
+        assert obj.json() == expected
 
 
 class TestCase1:
     """Test case class."""
 
-    __test__ = False
+    # __test__ = False
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            ('usd', ''),
+            pytest.param({'code': 'usd', 'ask': 1.23}, 'Última cotação: 1.23'),
+            pytest.param({'code': 'eth', 'ask': 12.3}, 'Última cotação: 12.3'),
+            pytest.param({'code': 'btc', 'ask': 123}, 'Última cotação: 123'),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        url = 'https://economia.awesomeapi.com.br/json/last/{}'.format(
+            entrance.get('code'),
+        )
+        mocked_resp = resp_200(json=FJson(**entrance))
+        with respx.mock:
+            my_route = respx.get(url)
+            my_route.mock(mocked_resp)
+            assert pkg.dojo(entrance.get('code')) == expected

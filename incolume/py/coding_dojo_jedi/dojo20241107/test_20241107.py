@@ -63,7 +63,7 @@ def f_resp(
     return httpx.Response(status_code=status, json=json)
 
 
-@pytest.fixture()
+@pytest.fixture
 def fake_response() -> httpx.Response:
     """Fake response."""
     return f_resp()

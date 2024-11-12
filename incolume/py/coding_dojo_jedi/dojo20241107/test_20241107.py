@@ -13,7 +13,7 @@ from time_machine import travel
 import respx
 
 TZ = pytz.timezone('America/Sao_Paulo')
-
+UTC = pytz.timezone('UTC')
 
 # ruff: noqa: ERA001
 
@@ -39,7 +39,7 @@ class FJson:
     def __post_init__(self):
         """Post init."""
         self.code = self.code.upper()
-        self.timestamp = int(dt.datetime.now(dt.UTC).timestamp())
+        self.timestamp = int(self.create_date.timestamp())
 
     def to_dict(self) -> dict[str, Any]:
         """Dict."""
@@ -63,7 +63,7 @@ def f_resp(
     return httpx.Response(status_code=status, json=json)
 
 
-@pytest.fixture
+@pytest.fixture()
 def fake_response() -> httpx.Response:
     """Fake response."""
     return f_resp()
@@ -92,7 +92,7 @@ class TestCase0:
             o.to_dict()['USDBRL'].keys(),
         )
 
-    @travel('2024-11-07 12:34:56')
+    @travel('2024-11-07 12:34:56-03:00')
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
@@ -179,7 +179,7 @@ class TestCase0:
         """Unit test."""
         assert FJson(**entrance).to_dict() == expected
 
-    @travel('2024-11-07 12:34:56')
+    @travel('2024-11-07 12:34:56-03:00')
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
@@ -254,6 +254,7 @@ class TestCase1:
 
     # __test__ = False
 
+    @travel('2024-11-07 12:34:56-03:00')
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [

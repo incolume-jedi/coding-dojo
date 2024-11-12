@@ -11,6 +11,7 @@
 9. Transparency / Alpha Channel
 """
 
+import cv2
 from matplotlib import pyplot as plt
 
 
@@ -39,6 +40,11 @@ def display(im_path):
     ax.imshow(im_data, cmap='gray')
 
     plt.show()
+
+
+def inverted_image(img):
+    image = cv2.bitwise_not(img)
+    return cv2.imwrite('temp/inverted.jpg', image)
 
 
 def dojo(*args: str, **kwargs: str) -> dict[str]:

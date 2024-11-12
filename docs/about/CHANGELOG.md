@@ -10,6 +10,57 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2024-11-11:
+### Added
+  - Dojo20241107 — Testes em eventos temporais com time-machine;
+
+## [1.59.0]	 &#8212; 	2024-11-05:
+### Fixed
+  - Atualização do CHANGELOG na documentação oficial;
+
+## [1.58.3]	 &#8212; 	2024-11-05:
+### Fixed
+  - Atualizção de comando para gerar CHANGELOG.md;
+
+## [1.58.2]	 &#8212; 	2024-11-05:
+### Fixed
+  - Carregamento das tags `git`;
+
+## [1.58.1]	 &#8212; 	2024-11-05:
+### Fixed
+  - Erro na chamada ci/cd para comando `git`;
+
+## [1.58.0]	 &#8212; 	2024-11-05:
+### Added
+  - Atualização CHANGELOG.md através do ci/cd;
+
+## [1.57.0]	 &#8212; 	2024-11-05:
+### Changed
+  - Atualizado garantia de compatibilidade Python 3.10+ via CI/CD;
+### Deprecated
+  - Python 3.9 tornado obsoleto;
+### Fixed
+  - CI/CD validado para Python 3.10;
+  - CI/CD validado para Python 3.11;
+  - CI/CD validado para Python 3.12;
+  - CI/CD validado para Python 3.13;
+
+## [1.56.4]	 &#8212; 	2024-11-05:
+### Changed
+  - Reativado CI/CD para testes em gerar pacotes.;
+
+## [1.56.3]	 &#8212; 	2024-11-04:
+### Changed
+  - Desativado testes para build ci/cd temporariamente;
+
+## [1.56.2]	 &#8212; 	2024-11-04:
+### Changed
+  - Versão do action/checkout;
+
+## [1.56.1]	 &#8212; 	2024-11-04:
+### Fixed
+  - Atualizado versão do action/checkout;
+
 ## [1.56.0]	 &#8212; 	2024-11-04:
 ### Added
   - Dojo20241001 — Reverter Posição das letras;
@@ -18,7 +69,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Instalado pacote pillow;
 ### Changed
   - Ajustes de testes para execução em CI/CD;
-  - Test: Aplicado configuração predefinida aos testes do módulo utils;
+  - Aplicado configuração predefinida aos testes do módulo utils;
 
 ## [1.55.0]	 &#8212; 	2024-09-22:
 ### Deprecated
@@ -131,7 +182,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240520 - Rot13;
   - Dojo20240521 - Média de temperatura;
 ### Changed
-  - Acrescentado em desafios: https://osprogramadores.com/desafios/;
+  - Acrescentado em desafios de `https://osprogramadores.com/desafios/`;
 
 ## [1.49.0]	 &#8212; 	2024-05-14:
 ### Added
@@ -206,7 +257,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
   - Correção nas mensagens de changelog para release 1.44.0;
   - Acrescentado condicional em testes unitários para Python 3.10+ a partir de dojos resolvidos no ano 2023;
-  - Lint style **ruff** aplicado a 90% do código;
+  - Lint style `ruff` aplicado a 90% do código;
   - Acrescentado sessão Artefatos ao README de dojo contendo os arquivos de implementação e de testes;
   - CI/CD plenamente funcional;
   - Scripts automatizados para geração de sumário;
@@ -526,3 +577,14 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.54.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.0...1.54.1
 [1.55.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.54.1...1.55.0
 [1.56.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.55.0...1.56.0
+[1.56.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.56.0...1.56.1
+[1.56.2]: https://github.com/incolume-jedi/coding-dojo/compare/1.56.1...1.56.2
+[1.56.3]: https://github.com/incolume-jedi/coding-dojo/compare/1.56.2...1.56.3
+[1.56.4]: https://github.com/incolume-jedi/coding-dojo/compare/1.56.3...1.56.4
+[1.57.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.56.4...1.57.0
+[1.58.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.57.0...1.58.0
+[1.58.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.0...1.58.1
+[1.58.2]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.1...1.58.2
+[1.58.3]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.2...1.58.3
+[1.59.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.3...1.59.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.59.0...Unreleased

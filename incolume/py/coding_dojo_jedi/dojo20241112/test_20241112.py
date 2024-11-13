@@ -15,7 +15,7 @@ class TestCase0:
 
     def test_0(self):
         """Unittest."""
-        assert pkg.async_stream(pkg.urls[0])
+        assert pkg.async_stream(pkg.URLS[0])
 
 
 class TestCase1:
@@ -28,24 +28,24 @@ class TestCase1:
 
     def test_0(self):
         """Unittest."""
-        assert pkg.sync_download(pkg.urls[0]).is_file()
+        assert pkg.sync_download(pkg.URLS[0]).is_file()
 
     def test_1(self):
         """Unittest."""
-        assert asyncio.run(pkg.stream_download(pkg.urls[1])).absolute() == ''
+        assert asyncio.run(pkg.stream_download(pkg.URLS[1])).absolute() == ''
 
     @pytest.mark.parametrize(
         'entrance',
-        pkg.urls,
+        pkg.URLS,
     )
     def test_2(self, entrance) -> NoReturn:
         """Unittest."""
         assert pkg.sync_download(entrance).is_file()
 
-    @pytest.mark.skip
+    @pytest.mark.skip()
     @pytest.mark.parametrize(
         'entrance',
-        pkg.urls,
+        pkg.URLS,
     )
     def test_3(self, entrance) -> NoReturn:
         """Unittest."""

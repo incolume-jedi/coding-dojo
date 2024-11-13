@@ -1,9 +1,11 @@
 """dojo module."""
 
+import asyncio
 import http
 import os
 import urllib
 import urllib.parse
+from collections.abc import Coroutine
 from pathlib import Path
 
 import httpx
@@ -17,7 +19,7 @@ ic.disable()
 if os.getenv('DEBUG_MODE'):
     ic.enable()
 
-urls = [
+URLS = [
     'https://bd.camara.leg.br/bd/bitstream/handle/bdcamara/18319/colleccao_leis_1808_parte1.pdf?sequence=4&isAllowed=y',
     'https://bd.camara.leg.br/bd/bitstream/handle/bdcamara/18319/colleccao_leis_1808_parte2.pdf?sequence=5',
     'https://bd.camara.leg.br/bd/bitstream/handle/bdcamara/18321/colleccao_leis_1809_parte1.pdf?sequence=1',
@@ -47,7 +49,8 @@ urls = [
 ]
 
 
-async def async_stream(url: str, output: str = ''):
+async def async_stream(url: str, output: str = '') -> Path:
+    """Async Stream download."""
     output = Path(output) if output else Path('files')
     output.mkdir(exist_ok=True)
     file = output / Path(urllib.parse.urlsplit(url).path).name
@@ -57,6 +60,7 @@ async def async_stream(url: str, output: str = ''):
             async with client.stream('GET', url) as r:
                 async for chunk in r.aiter_bytes():
                     f.write(chunk)
+    return file
 
 
 def sync_download(url: str, output: str = '') -> Path:
@@ -99,26 +103,26 @@ async def stream_download(url: str, output: str = '') -> Path:
     return file
 
 
-# async def async_download(*urls: str, *, output: str = '') -> dict[str]:
-#     """Dojo solution."""
-#     file = urllib.parse.urlsplit()
-#     output.mkdir(exist_ok=True)
-#     # file = output / Path(urllib.parse.urlsplit(url).path).name
+async def async_download(*urls: str, output: str = '') -> dict[str]:
+    """Dojo solution."""
+    file = urllib.parse.urlsplit()
+    output.mkdir(exist_ok=True)
+    # file = output / Path(urllib.parse.urlsplit(url).path).name
 
-#     async def get_async(url: str):
-#         """Get async."""
-#         async with httpx.AsyncClient() as client:
-#             return await client.get(url)
+    async def get_async(url: str) -> Coroutine:
+        """Get async."""
+        async with httpx.AsyncClient() as client:
+            return await client.get(url)
 
-#     async def launch():
-#         """Launch async."""
-#         resps = await asyncio.gather(*map(get_async, urls))
-#         data = [resp.text for resp in resps]
+    async def launch():
+        """Launch async."""
+        resps = await asyncio.gather(*map(get_async, urls))
+        data = [resp.text for resp in resps]
 
-#         for html in data:
-#             ic(html)
+        for html in data:
+            ic(html)
 
-#     return file
+    return file
 
 
 def dojo():

@@ -85,11 +85,11 @@ def sync_download(url: str, output: str = '') -> Path:
     return file
 
 
-async def stream_download(url: str, output: str = '') -> Path:
+async def stream_download(url: str, output_path: Path | None = None) -> Path:
     """Dojo solution."""
-    output = Path(output) if output else Path('files')
-    output.mkdir(exist_ok=True)
-    file = output / Path(urllib.parse.urlsplit(url).path).name
+    output_path = output_path or Path('files')
+    output_path.mkdir(exist_ok=True)
+    file = output_path / Path(urllib.parse.urlsplit(url).path).name
 
     with file.open('wb') as f:
         async with (
@@ -97,6 +97,10 @@ async def stream_download(url: str, output: str = '') -> Path:
             client.stream('GET', url) as r,
         ):
             ic(r.status_code)
+            if r.status_code == http.HTTPStatus.FOUND.value:
+                r = client.stream('GET', r.next_request.url)
+                ic(r.status_code)
+                ic(r.url)
             async for chunk in r.aiter_bytes():
                 f.write(chunk)
     ic(file.absolute())

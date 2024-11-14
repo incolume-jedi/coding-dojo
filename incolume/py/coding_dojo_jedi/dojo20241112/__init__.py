@@ -93,16 +93,13 @@ async def stream_download(url: str, output_path: Path | None = None) -> Path:
     file = output_path / Path(urllib.parse.urlsplit(url).path).name
 
     with file.open('wb') as f:
-        async with (
-            httpx.AsyncClient() as client,
-        ):
-            r = client.stream('GET', url)
-            ic(r.args)
-            # if r.status_code == http.HTTPStatus.FOUND.value:
-            # r = client.stream('GET', r.next_request.url)
-            # ic(r.status_code)
-            async for chunk in r.aiter_bytes():
-                f.write(chunk)
+        async with httpx.AsyncClient() as client:
+            async with client.stream('GET', url) as r:
+                ic(r.is_redirect())
+                ic(r.headers.get_list())
+                async for chunk in r.aiter_bytes():
+                    f.write(chunk)
+
     ic(file.absolute())
     return file
 

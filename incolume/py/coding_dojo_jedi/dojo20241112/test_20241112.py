@@ -1,26 +1,34 @@
 """Test module."""
 
+from pathlib import Path
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20241112 as pkg
 import pytest
 import asyncio
+from tempfile import gettempdir
 
 pkg.ic.enable()
 
 
+# ruff: noqa: ERA001
 class TestCase0:
     """Test case class."""
 
+    path_out: ClassVar = Path(gettempdir()) / 'files'
     url: ClassVar = 'https://download.freebsd.org/ftp/releases/amd64/amd64/ISO-IMAGES/12.0/FreeBSD-12.0-RELEASE-amd64-mini-memstick.img'
 
     def test_0(self):
         """Unittest."""
-        assert pkg.async_stream(pkg.URLS[0])
+        assert pkg.async_stream(
+            pkg.URLS[0],
+            output_path=self.path_out,
+        )
 
 
 class TestCase1:
     """Test case class."""
 
+    path_out: ClassVar = Path(gettempdir()) / 'files'
     t0: ClassVar = None
     t1: ClassVar = [
         'https://httpbin.org',
@@ -28,7 +36,10 @@ class TestCase1:
 
     def test_0(self):
         """Unittest."""
-        assert pkg.sync_download(pkg.URLS[0]).is_file()
+        assert pkg.sync_download(
+            pkg.URLS[0],
+            output_path=self.path_out,
+        ).is_file()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -46,7 +57,11 @@ class TestCase1:
     def test_1(self, entrance, expected):
         """Unittest."""
         assert (
-            asyncio.run(pkg.stream_download(entrance)).absolute().is_file()
+            asyncio.run(
+                pkg.stream_download(entrance, output_path=self.path_out),
+            )
+            .absolute()
+            .is_file()
             == expected
         )
 
@@ -56,9 +71,10 @@ class TestCase1:
     )
     def test_2(self, entrance) -> NoReturn:
         """Unittest."""
-        assert asyncio.run(pkg.stream_download(entrance)).is_file()
+        assert asyncio.run(
+            pkg.stream_download(entrance, output_path=self.path_out),
+        ).is_file()
 
-    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance',
         pkg.URLS,
@@ -68,4 +84,4 @@ class TestCase1:
         assert pkg.async_download(entrance)
 
 
-# pkg.ic.disable()  # noqa: ERA001
+pkg.ic.disable()

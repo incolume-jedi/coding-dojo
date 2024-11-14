@@ -104,26 +104,29 @@ async def stream_download(url: str, output_path: Path | None = None) -> Path:
     return file
 
 
-async def async_download(*urls: str, output_path: str = '') -> dict[str]:
+async def async_download(
+    *urls: str,
+    output_path: Path | None = None,
+) -> dict[str]:
     """Dojo solution."""
-    file = urllib.parse.urlsplit()
+    output_path = output_path or Path('files')
     output_path.mkdir(exist_ok=True)
     # file = output / Path(urllib.parse.urlsplit(url).path).name
 
     async def get_async(url: str) -> Coroutine:
         """Get async."""
         async with httpx.AsyncClient() as client:
-            return await client.get(url)
+            return await client.get(url, follow_redirects=True, timeout=3)
 
     async def launch():
         """Launch async."""
-        resps = await asyncio.gather(*map(get_async, urls))
-        data = [resp.text for resp in resps]
+        responses = await asyncio.gather(*map(get_async, urls))
+        datas = [resp.content async for resp in responses]
 
-        for html in data:
-            ic(html)
+        for data in datas:
+            ic(data)
 
-    return file
+    asyncio.run(launch())
 
 
 def dojo():

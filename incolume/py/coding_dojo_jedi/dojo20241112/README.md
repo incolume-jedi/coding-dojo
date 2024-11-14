@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Download com Python**
+**Download sincrono e assíncrono com Python utilizando `httpx`**
 
 Utilize python para fazer download dos volumes CLBR disponíveis em `https://www2.camara.leg.br/atividade-legislativa/legislacao/colecao-anual-de-leis`.
 

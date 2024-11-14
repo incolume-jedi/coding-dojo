@@ -32,7 +32,7 @@ class TestCase1:
 
     def test_1(self):
         """Unittest."""
-        assert asyncio.run(pkg.stream_download(pkg.URLS[1])).absolute() == ''
+        assert asyncio.run(pkg.stream_download(pkg.URLS[2])).absolute() == ''
 
     @pytest.mark.parametrize(
         'entrance',
@@ -42,7 +42,7 @@ class TestCase1:
         """Unittest."""
         assert pkg.sync_download(entrance).is_file()
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance',
         pkg.URLS,
@@ -52,4 +52,4 @@ class TestCase1:
         assert pkg.async_download(entrance)
 
 
-pkg.ic.disable()
+# pkg.ic.disable()  # noqa: ERA001

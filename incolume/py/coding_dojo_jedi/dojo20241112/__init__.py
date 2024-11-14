@@ -18,6 +18,7 @@ nest_asyncio.apply()
 ic.disable()
 if os.getenv('DEBUG_MODE'):
     ic.enable()
+# ruff: noqa: ERA001
 
 URLS = [
     'https://bd.camara.leg.br/bd/bitstream/handle/bdcamara/18319/colleccao_leis_1808_parte1.pdf?sequence=4&isAllowed=y',
@@ -94,13 +95,12 @@ async def stream_download(url: str, output_path: Path | None = None) -> Path:
     with file.open('wb') as f:
         async with (
             httpx.AsyncClient() as client,
-            client.stream('GET', url) as r,
         ):
-            ic(r.status_code)
-            if r.status_code == http.HTTPStatus.FOUND.value:
-                r = client.stream('GET', r.next_request.url)
-                ic(r.status_code)
-                ic(r.url)
+            r = client.stream('GET', url)
+            ic(r.args)
+            # if r.status_code == http.HTTPStatus.FOUND.value:
+            # r = client.stream('GET', r.next_request.url)
+            # ic(r.status_code)
             async for chunk in r.aiter_bytes():
                 f.write(chunk)
     ic(file.absolute())

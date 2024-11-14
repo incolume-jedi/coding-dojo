@@ -95,8 +95,11 @@ async def stream_download(url: str, output_path: Path | None = None) -> Path:
     with file.open('wb') as f:
         async with httpx.AsyncClient() as client:
             async with client.stream('GET', url) as r:
-                ic(r.is_redirect())
-                ic(r.headers.get_list())
+                ic(r.is_redirect)
+                ic(r.headers)
+                ic(r.headers.items())
+                if r.is_redirect:
+                    r = client.stream('GET', r.headers.get('location'))
                 async for chunk in r.aiter_bytes():
                     f.write(chunk)
 

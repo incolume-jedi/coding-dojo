@@ -50,11 +50,11 @@ URLS = [
 ]
 
 
-async def async_stream(url: str, output: str = '') -> Path:
+async def async_stream(url: str, output_path: str = '') -> Path:
     """Async Stream download."""
-    output = Path(output) if output else Path('files')
-    output.mkdir(exist_ok=True)
-    file = output / Path(urllib.parse.urlsplit(url).path).name
+    output_path = Path(output_path) if output_path else Path('files')
+    output_path.mkdir(exist_ok=True)
+    file = output_path / Path(urllib.parse.urlsplit(url).path).name
 
     with file.open('wb') as f:
         async with httpx.AsyncClient() as client:
@@ -64,11 +64,11 @@ async def async_stream(url: str, output: str = '') -> Path:
     return file
 
 
-def sync_download(url: str, output: str = '') -> Path:
+def sync_download(url: str, output_path: str = '') -> Path:
     """Dojo solution."""
-    output = Path(output) if output else Path('files')
-    output.mkdir(exist_ok=True)
-    file = output / Path(urllib.parse.urlsplit(url).path).name
+    output_path = Path(output_path) if output_path else Path('files')
+    output_path.mkdir(exist_ok=True)
+    file = output_path / Path(urllib.parse.urlsplit(url).path).name
     resp = httpx.get(url)
 
     ic(resp.status_code)
@@ -94,12 +94,9 @@ async def stream_download(url: str, output_path: Path | None = None) -> Path:
 
     with file.open('wb') as f:
         async with httpx.AsyncClient() as client:
-            async with client.stream('GET', url) as r:
+            async with client.stream('GET', url, follow_redirects=True) as r:
                 ic(r.is_redirect)
                 ic(r.headers)
-                ic(r.headers.items())
-                if r.is_redirect:
-                    r = client.stream('GET', r.headers.get('location'))
                 async for chunk in r.aiter_bytes():
                     f.write(chunk)
 
@@ -107,10 +104,10 @@ async def stream_download(url: str, output_path: Path | None = None) -> Path:
     return file
 
 
-async def async_download(*urls: str, output: str = '') -> dict[str]:
+async def async_download(*urls: str, output_path: str = '') -> dict[str]:
     """Dojo solution."""
     file = urllib.parse.urlsplit()
-    output.mkdir(exist_ok=True)
+    output_path.mkdir(exist_ok=True)
     # file = output / Path(urllib.parse.urlsplit(url).path).name
 
     async def get_async(url: str) -> Coroutine:

@@ -30,9 +30,25 @@ class TestCase1:
         """Unittest."""
         assert pkg.sync_download(pkg.URLS[0]).is_file()
 
-    def test_1(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                'https://bd-rest.camara.leg.br/server/api/core/bitstreams/1d479a9f-1fb5-4fdf-ad7b-d635382a6cfd/content',
+                True,
+                marks=[],
+            ),
+            pytest.param(pkg.URLS[0], True, marks=[]),
+            pytest.param(pkg.URLS[1], True, marks=[]),
+            pytest.param(pkg.URLS[2], True, marks=[]),
+        ],
+    )
+    def test_1(self, entrance, expected):
         """Unittest."""
-        assert asyncio.run(pkg.stream_download(pkg.URLS[2])).absolute() == ''
+        assert (
+            asyncio.run(pkg.stream_download(entrance)).absolute().is_file()
+            == expected
+        )
 
     @pytest.mark.parametrize(
         'entrance',
@@ -40,7 +56,7 @@ class TestCase1:
     )
     def test_2(self, entrance) -> NoReturn:
         """Unittest."""
-        assert pkg.sync_download(entrance).is_file()
+        assert asyncio.run(pkg.stream_download(entrance)).is_file()
 
     @pytest.mark.skip
     @pytest.mark.parametrize(

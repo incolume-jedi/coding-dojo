@@ -1,7 +1,9 @@
 """dojo module."""
 
+import base64
+from pathlib import Path
 
-def dojo(*args: str, **kwargs: str) -> dict[str]:
+
+def dojo(file: Path | None = None) -> dict[str]:
     """Dojo solution."""
-    kwargs['args'] = args
-    return kwargs
+    return base64.b64encode(file.read_bytes())

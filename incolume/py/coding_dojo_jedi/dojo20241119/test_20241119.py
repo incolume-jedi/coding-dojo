@@ -1,7 +1,7 @@
 """Test module."""
 
 from typing import ClassVar, NoReturn
-import incolume.py.coding_dojo_jedi.dojo20241114 as pkg
+import incolume.py.coding_dojo_jedi.dojo20241119 as pkg
 import pytest
 
 

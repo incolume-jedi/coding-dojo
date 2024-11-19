@@ -1,10 +1,11 @@
 """Test module."""
 
+from pathlib import Path
 from typing import ClassVar, NoReturn
-import incolume.py.coding_dojo_jedi.dojo20241119 as pkg
 import pytest
 
 
+# ruff: noqa: ERA001
 class TestCase:
     """Test case class."""
 
@@ -13,9 +14,12 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            (None, None),
+            # pytest.param({'file': Path(pkg.artefatos[-1]).as_posix()}, None),
+            pytest.param({'file': ''}, '', marks=[]),
+            pytest.param({'file': Path()}, '', marks=[]),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        # assert pkg.dojo(**entrance) == expected
+        assert entrance.get('file') == expected

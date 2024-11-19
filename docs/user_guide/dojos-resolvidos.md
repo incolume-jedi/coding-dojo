@@ -8,7 +8,7 @@
 
 ---
 
-137 dojos resolvidos
+138 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20241118 &#8212; Transformar arquivos binários em base64 para transporte como strings](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241118\README.md){:target="_blank"}
  - [Dojo20241107 &#8212; Testes em eventos temporais com time-machine](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241107\README.md){:target="_blank"}
  - [Dojo20241106 &#8212; Recuperar cotação de moedas em tempo real](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241106\README.md){:target="_blank"}
  - [Dojo20241001 &#8212; Reverter Posição das letras](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241001\README.md){:target="_blank"}

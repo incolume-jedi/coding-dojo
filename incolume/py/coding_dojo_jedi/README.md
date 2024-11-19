@@ -8,10 +8,11 @@
 
 ---
 
-137 dojos resolvidos
+138 dojos resolvidos
 
 ---
 
+ - [Dojo20241118 &#8212; Transformar arquivos binários em base64 para transporte como strings](dojo20241118\README.md)
  - [Dojo20241107 &#8212; Testes em eventos temporais com time-machine](dojo20241107\README.md)
  - [Dojo20241106 &#8212; Recuperar cotação de moedas em tempo real](dojo20241106\README.md)
  - [Dojo20241001 &#8212; Reverter Posição das letras](dojo20241001\README.md)

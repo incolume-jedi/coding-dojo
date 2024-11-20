@@ -87,6 +87,8 @@ uv = {version="^0.4.10", optional=true, python='>=3.8'}
 pillow = "^10.3.0"
 respx = "^0.21.1"
 time-machine = "^2.16.0"
+python-magic = "^0.4.27"
+filetype = "^1.2.0"
 
 
 [tool.poetry.group.docs.dependencies]

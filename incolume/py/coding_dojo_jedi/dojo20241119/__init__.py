@@ -1,5 +1,7 @@
 """dojo module."""
 
+import inspect
+import logging
 import sys
 from pathlib import Path
 from typing import TypeAlias
@@ -14,7 +16,7 @@ else:
 Method: TypeAlias = Literal['filetype', 'magic']
 
 
-artefatos: list[str] = {
+artefatos: dict[str, list[str]] = {
     'url': [
         r'https://www.python.org/static/community_logos/python-powered-h-50x65.png',
         r'https://www.python.org/static/community_logos/python-powered-h.svg',
@@ -33,20 +35,23 @@ artefatos: list[str] = {
 
 def with_filetype(file: str) -> str:
     """Identify type with filetype."""
+    logging.debug(inspect.stack()[0][1])
 
 
 def with_magic(file: str) -> str:
     """Identify type with magic."""
+    logging.debug(inspect.stack()[0][1])
     mime = magic.Magic(mime=True)
     return mime.from_file(file)
 
 
 def dojo(file: str, *, method: Method = 'magic') -> str:
     """Dojo solution."""
+    logging.debug(inspect.stack()[0][1])
     match method:
         case 'magic':
-            return 'python-magic', file
+            return f'python-magic, {file}'
         case 'filetype':
-            return 'filetype', file
+            return f'filetype, {file}'
         case _:
             return f'Método inválido utilize: {get_args(Method)}'

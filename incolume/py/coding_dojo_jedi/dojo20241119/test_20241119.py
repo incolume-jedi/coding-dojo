@@ -94,6 +94,14 @@ class TestCase:
                 'application/pdf',
                 marks=[],
             ),
+            pytest.param(
+                {
+                    'file': pkg.artefatos['path'][3].as_posix(),
+                    'method': None,
+                },
+                "Método inválido utilize: ('filetype', 'magic')",
+                marks=[],
+            ),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:

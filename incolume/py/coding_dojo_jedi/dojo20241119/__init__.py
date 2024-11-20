@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 from typing import TypeAlias
 
+import filetype
 import magic
 
 if sys.version_info >= (3, 11):
@@ -25,17 +26,19 @@ artefatos: dict[str, list[str]] = {
         r'https://portal.ead.senasp.gov.br/noticias/ciclos/resultado-preliminar-2013-selecao-de-tutores-ajap-va-1/modelo-de-declaracao.docx/@@download/file/MODELO%20DE%20DECLARA%C3%87%C3%83O.docx',
     ],
     'path': [
-        Path(__file__).parent / 'dojo20241118' / 'files' / 'filedocx.docx',
-        Path(__file__).parent / 'dojo20241118' / 'files' / 'fileodt.odt',
-        Path(__file__).parent / 'dojo20241118' / 'files' / 'filexlsx.xlsx',
-        Path(__file__).parent / 'dojo20241118' / 'files' / 'filepdf.pdf',
+        Path(__file__).parents[1] / 'dojo20241118' / 'files' / 'filedocx.docx',
+        Path(__file__).parents[1] / 'dojo20241118' / 'files' / 'fileodt.odt',
+        Path(__file__).parents[1] / 'dojo20241118' / 'files' / 'filexlsx.xlsx',
+        Path(__file__).parents[1] / 'dojo20241118' / 'files' / 'filepdf.pdf',
     ],
 }
 
 
-def with_filetype(file: str) -> str:
+def with_filetype(file: str | Path) -> str:
     """Identify type with filetype."""
     logging.debug(inspect.stack()[0][1])
+    kind = filetype.guess(file)
+    return kind.mime
 
 
 def with_magic(file: str) -> str:
@@ -50,8 +53,12 @@ def dojo(file: str, *, method: Method = 'magic') -> str:
     logging.debug(inspect.stack()[0][1])
     match method:
         case 'magic':
-            return f'python-magic, {file}'
+            result = with_magic(file)
+            logging.debug('python-magic, %s: %s', result, file)
+            return result
         case 'filetype':
-            return f'filetype, {file}'
+            result = with_filetype(file)
+            logging.debug('filetype, %s: %s', result, file)
+            return result
         case _:
             return f'Método inválido utilize: {get_args(Method)}'

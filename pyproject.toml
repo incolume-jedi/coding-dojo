@@ -67,8 +67,9 @@ types-requests = "^2.31.0.5"
 types-toml = "^0.10.8.7"
 incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", rev = "0.10.0"}
 pre-commit = [
-  {version=">=3.5", python='~3.8'},
-  {version="^3.7", python='>=3.9'},
+  {version="~3.5", python='~3.8'},
+  {version="^3.7", python='~3.9'},
+  {version=">=3.8", python='>=3.10'},
   ]
 pytz = "^2024.1"
 poetry = "^1.8.3"

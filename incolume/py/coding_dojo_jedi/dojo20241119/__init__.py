@@ -56,9 +56,12 @@ def with_puremagic(file: str) -> str:
     return mime[0].mime_type
 
 
-def dojo(file: str, *, method: Method = 'magic') -> str:
+def dojo(file: str | Path, *, method: Method = 'magic') -> str:
     """Dojo solution."""
     logging.debug(inspect.stack()[0][1])
+    if not file.is_file():
+        return f'Arquivo "{file.as_posix()}" inexistente ou inválido!'
+
     match method:
         case 'magic':
             result = with_magic(file)

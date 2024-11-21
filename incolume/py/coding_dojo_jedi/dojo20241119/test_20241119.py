@@ -30,7 +30,7 @@ class TestCase:
                     ),
                 },
                 'application/pdf',
-                marks=[pytest.importorskip('magic')],
+                marks=[],
             ),
             pytest.param(
                 {'file': pkg.artefatos['path'][0].as_posix()},
@@ -88,7 +88,7 @@ class TestCase:
                     'method': 'filetype',
                 },
                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                marks=[pytest.importorskip('filetype')],
+                marks=[],
             ),
             pytest.param(
                 {

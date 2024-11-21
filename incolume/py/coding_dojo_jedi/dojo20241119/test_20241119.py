@@ -26,27 +26,27 @@ class TestCase:
                     ),
                 },
                 'application/pdf',
-                marks=[pytest.importorskip('magic')],
+                marks=[],
             ),
             pytest.param(
                 {'file': pkg.artefatos['path'][0].as_posix()},
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                marks=[pytest.importorskip('magic')],
+                marks=[],
             ),
             pytest.param(
                 {'file': pkg.artefatos['path'][1].as_posix()},
                 'application/vnd.oasis.opendocument.text',
-                marks=[pytest.importorskip('magic')],
+                marks=[],
             ),
             pytest.param(
                 {'file': pkg.artefatos['path'][2].as_posix()},
                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                marks=[pytest.importorskip('magic')],
+                marks=[],
             ),
             pytest.param(
                 {'file': pkg.artefatos['path'][3].as_posix()},
                 'application/pdf',
-                marks=[pytest.importorskip('magic')],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -60,7 +60,7 @@ class TestCase:
                     'method': 'filetype',
                 },
                 'application/pdf',
-                marks=[pytest.importorskip('filetype')],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -68,7 +68,7 @@ class TestCase:
                     'method': 'filetype',
                 },
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                marks=[pytest.importorskip('filetype')],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -76,7 +76,7 @@ class TestCase:
                     'method': 'filetype',
                 },
                 'application/vnd.oasis.opendocument.text',
-                marks=[pytest.importorskip('filetype')],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -84,7 +84,7 @@ class TestCase:
                     'method': 'filetype',
                 },
                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                marks=[pytest.importorskip('filetype')],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -92,7 +92,7 @@ class TestCase:
                     'method': 'filetype',
                 },
                 'application/pdf',
-                marks=[pytest.importorskip('filetype')],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -108,7 +108,7 @@ class TestCase:
                     'method': 'puremagic',
                 },
                 'application/pdf',
-                marks=[pytest.importorskip('puremagic')],
+                marks=[],
             ),
         ],
     )

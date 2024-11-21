@@ -8,13 +8,14 @@ from typing import TypeAlias
 
 import filetype
 import magic
+import puremagic
 
 if sys.version_info >= (3, 11):
     from typing import Literal, get_args
 else:
     from typing_extensions import Literal, get_args  # noqa: UP035
 
-Method: TypeAlias = Literal['filetype', 'magic']
+Method: TypeAlias = Literal['filetype', 'magic', 'puremagic']
 
 
 artefatos: dict[str, list[str]] = {
@@ -48,6 +49,13 @@ def with_magic(file: str) -> str:
     return mime.from_file(file)
 
 
+def with_puremagic(file: str) -> str:
+    """Identify type with magic."""
+    logging.debug(inspect.stack()[0][1])
+    mime = puremagic.magic_file(file)
+    return mime[0].mime_type
+
+
 def dojo(file: str, *, method: Method = 'magic') -> str:
     """Dojo solution."""
     logging.debug(inspect.stack()[0][1])
@@ -59,6 +67,10 @@ def dojo(file: str, *, method: Method = 'magic') -> str:
         case 'filetype':
             result = with_filetype(file)
             logging.debug('filetype, %s: %s', result, file)
+            return result
+        case 'puremagic':
+            result = with_puremagic(file)
+            logging.debug('puremagic, %s: %s', result, file)
             return result
         case _:
             return f'Método inválido utilize: {get_args(Method)}'

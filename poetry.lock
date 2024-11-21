@@ -1570,6 +1570,16 @@ files = [
 rapidfuzz = ">=3.9.0,<4.0.0"
 
 [[package]]
+name = "libmagic"
+version = "1.0"
+description = "libmagic bindings"
+optional = false
+python-versions = "*"
+files = [
+    {file = "libmagic-1.0.tar.gz", hash = "sha256:649f1ce7fb7c92796badbb812555e4a926351da4f5cdf82e810b5cd371aedf8d"},
+]
+
+[[package]]
 name = "lxml"
 version = "5.3.0"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
@@ -4173,4 +4183,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "d9dcb0e2a47e2e33a8a96e17390a17056bbd74da8b8a8f6c2702b2490a7f61fc"
+content-hash = "a276e732259c58b40409d19fdd43d04bd85dd8da8f690c140e2ca986e2e0e6d5"

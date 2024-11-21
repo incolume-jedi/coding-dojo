@@ -88,8 +88,11 @@ uv = {version="^0.4.10", optional=true, python='>=3.8'}
 pillow = "^10.3.0"
 respx = "^0.21.1"
 time-machine = "^2.16.0"
-python-magic = [{version="^0.4.27"}]
-python-magic-bin = [{version="^0.4.14", markers="sys_platform == 'win32'"}]
+python-magic = [{version="^0.4.27", platform="linux"}]
+python-magic-bin = [{version="^0.4.14", platform = "win32"}]
+libmagic =[
+  {version = "*", platform = "darwin"}
+]
 filetype = "^1.2.0"
 puremagic = "^1.28"
 

@@ -67,8 +67,9 @@ types-requests = "^2.31.0.5"
 types-toml = "^0.10.8.7"
 incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", rev = "0.10.0"}
 pre-commit = [
-  {version=">=3.5", python='~3.8'},
-  {version="^3.7", python='>=3.9'},
+  {version="~3.5", python='~3.8'},
+  {version="^3.7", python='~3.9'},
+  {version=">=3.8", python='>=3.10'},
   ]
 pytz = "^2024.1"
 poetry = "^1.8.3"
@@ -87,8 +88,8 @@ uv = {version="^0.4.10", optional=true, python='>=3.8'}
 pillow = "^10.3.0"
 respx = "^0.21.1"
 time-machine = "^2.16.0"
-python-magic = {version="^0.4.27", python='<3.10'}
-python-magic-bin = {version="^0.4.14", python='<3.10', markers="sys_platform == 'win32'"}
+python-magic = [{version="^0.4.27"}]
+python-magic-bin = [{version="^0.4.14", markers="sys_platform == 'win32'"}]
 filetype = "^1.2.0"
 puremagic = "^1.28"
 

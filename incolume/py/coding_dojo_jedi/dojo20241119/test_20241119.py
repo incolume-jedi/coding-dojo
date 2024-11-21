@@ -99,7 +99,15 @@ class TestCase:
                     'file': pkg.artefatos['path'][3].as_posix(),
                     'method': None,
                 },
-                "Método inválido utilize: ('filetype', 'magic')",
+                "Método inválido utilize: ('filetype', 'magic', 'puremagic')",
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'file': pkg.artefatos['path'][3].as_posix(),
+                    'method': 'puremagic',
+                },
+                'application/pdf',
                 marks=[],
             ),
         ],

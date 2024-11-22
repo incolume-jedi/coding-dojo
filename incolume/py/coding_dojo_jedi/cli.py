@@ -104,4 +104,4 @@ def show(ctx: click.Context) -> NoReturn:
     """Show configuration."""
     ic(type(ic(ctx)))
     click.secho(f'{ctx.obj}')
-    click.echo('Debug is %s' % (ctx.obj['debug'] and 'on' or 'off'))
+    click.echo('Debug is %s' % ((ctx.obj['debug'] and 'on') or 'off'))

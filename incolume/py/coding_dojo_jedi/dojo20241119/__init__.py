@@ -5,10 +5,6 @@ import logging
 import sys
 from pathlib import Path
 from typing import TypeAlias
-
-import filetype
-import magic
-import puremagic
 from icecream import ic
 
 if sys.platform.casefold() in ['macos', 'darwin']:
@@ -16,6 +12,11 @@ if sys.platform.casefold() in ['macos', 'darwin']:
     logging.info(msg)
     ic(msg)
     sys.exit(0)
+
+
+import filetype
+import magic
+import puremagic
 
 if sys.version_info >= (3, 11):
     from typing import Literal, get_args

@@ -15,7 +15,7 @@ from incolume.py.coding_dojo_jedi.utils import (
     dojo_init,
     pseudo_filename,
 )
-from tests.conftest import Py310, not_win
+from tests.conftest import py310, not_win
 
 
 @pytest.fixture
@@ -54,7 +54,7 @@ class TestUtilsModule:
         )
 
     @pytest.mark.skip
-    @Py310
+    @py310
     @not_win
     def test_quantia(self, filemd) -> None:  # pylint: disable=redefined-outer-name
         """Testar se a quantidade de links e dojos são iguais."""
@@ -84,7 +84,7 @@ class TestUtilsModule:
         assert expected in generator_sumary(**entrance).as_posix()
 
     @pytest.mark.skip
-    @Py310
+    @py310
     @pytest.mark.parametrize(
         'entrance',
         [

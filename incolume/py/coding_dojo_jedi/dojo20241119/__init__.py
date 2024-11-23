@@ -9,6 +9,13 @@ from typing import TypeAlias
 import filetype
 import magic
 import puremagic
+from icecream import ic
+
+if sys.platform.casefold() in ['macos', 'darwin']:
+    msg = 'Do not run in this operate system.'
+    logging.info(msg)
+    ic(msg)
+    sys.exit(0)
 
 if sys.version_info >= (3, 11):
     from typing import Literal, get_args

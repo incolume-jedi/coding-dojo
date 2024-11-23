@@ -14,6 +14,7 @@ filetype = pytest.importorskip('filetype')
 class TestCase:
     """Test case class."""
 
+    __test__ = False
     t0: ClassVar = None
 
     @pytest.mark.parametrize(

@@ -3,10 +3,10 @@
 import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par
-from tests.conftest import Py310
+from tests.conftest import py310
 
 
-@Py310
+@py310
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -26,7 +26,7 @@ def test_is_par(entrance, expected) -> None:
     assert is_par(entrance) == expected
 
 
-@Py310
+@py310
 @pytest.mark.parametrize(
     ['entrance', 'exception', 'msg'],
     [

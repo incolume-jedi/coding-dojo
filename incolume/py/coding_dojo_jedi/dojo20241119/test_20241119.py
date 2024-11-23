@@ -4,7 +4,10 @@ import incolume.py.coding_dojo_jedi.dojo20241119 as pkg
 from pathlib import Path
 from typing import ClassVar, NoReturn
 import pytest
+from tests.conftest import not_mac
 
+
+not_mac()
 puremagic = pytest.importorskip('puremagic')
 magic = pytest.importorskip('magic')
 filetype = pytest.importorskip('filetype')

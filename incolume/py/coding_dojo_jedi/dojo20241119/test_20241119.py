@@ -17,6 +17,7 @@ class TestCase:
     __test__ = False
     t0: ClassVar = None
 
+    @pytest.mark.offci
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [

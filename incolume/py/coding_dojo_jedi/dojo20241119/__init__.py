@@ -11,7 +11,7 @@ if sys.platform.casefold() in ['macos', 'darwin']:
     msg = 'Do not run in this operate system.'
     logging.info(msg)
     ic(msg)
-    sys.exit()
+    sys.exit(1)
 
 
 import filetype

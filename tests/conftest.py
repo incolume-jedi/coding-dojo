@@ -1,11 +1,13 @@
 """Configure switch test."""
 
+import inspect
 import sys
 from pathlib import Path
 from sys import version_info
 
 import pytest
 from dotenv import load_dotenv
+from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 load_dotenv()
@@ -16,8 +18,9 @@ def pytestmark():
     return pytest.mark.skip('This test still WIP')
 
 
-def py38():
+def py38(*args, **kwargs):
     """Mark for Python 3.8 or lower."""
+    ic(f'{inspect.stack()[0][1]}: {args}, {kwargs}')
     return pytest.mark.skipif(
         sys.version_info < (3, 8),
         reason='This run only Python 3.8 or higher',
@@ -32,8 +35,9 @@ def py39():
     )
 
 
-def py310():
+def py310(*args, **kwargs):
     """Mark for Python 3.10 or lower."""
+    ic(f'{inspect.stack()[0][1]}: {args}, {kwargs}')
     return pytest.mark.skipif(
         sys.version_info < (3, 10),
         reason='requires python3.10 or higher',
@@ -96,8 +100,9 @@ def require_lin():
     )
 
 
-def not_lin():
+def not_lin(*args, **kwargs):
     """Not run on Linux."""
+    ic(f'{inspect.stack()[0][1]}: {args}, {kwargs}')
     return pytest.mark.skipif(
         sys.platform.casefold().startswith('lin'),
         reason='does not run on Linux',
@@ -112,8 +117,9 @@ def require_win():
     )
 
 
-def not_win():
+def not_win(*args, **kwargs):
     """Not run on MS-Windows."""
+    ic(f'{inspect.stack()[0][1]}: {args}, {kwargs}')
     return pytest.mark.skipif(
         not sys.platform.casefold().startswith('win'),
         reason='Not available on windows. Requires other Operation System.',

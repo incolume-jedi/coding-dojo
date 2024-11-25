@@ -1,23 +1,22 @@
 """dojo module."""
 
+# ruff: noqa: ERA001
 import inspect
 import logging
 import sys
 from pathlib import Path
 from typing import TypeAlias
 
+import filetype
+import puremagic
 from icecream import ic
 
-if sys.platform.casefold() in ['macos', 'darwin']:
-    msg = 'Do not run in this operate system.'
-    logging.info(msg)
-    ic(msg)
-    sys.exit(1)
+# import magic  incompatível com MacOS
 
+msg = sys.platform.casefold()
+logging.info(msg)
+ic(msg)
 
-import filetype
-import magic
-import puremagic
 
 if sys.version_info >= (3, 11):
     from typing import Literal, get_args
@@ -51,11 +50,11 @@ def with_filetype(file: str | Path) -> str:
     return kind.mime
 
 
-def with_magic(file: str) -> str:
-    """Identify type with magic."""
-    logging.debug(inspect.stack()[0][1])
-    mime = magic.Magic(mime=True)
-    return mime.from_file(file)
+# def with_magic(file: str) -> str:
+#     """Identify type with magic."""
+#     logging.debug(inspect.stack()[0][1])
+#     mime = magic.Magic(mime=True)
+#     return mime.from_file(file)
 
 
 def with_puremagic(file: str) -> str:
@@ -72,10 +71,10 @@ def dojo(file: str | Path, *, method: Method = 'magic') -> str:
         return f'Arquivo "{file.as_posix()}" inexistente ou inválido!'
 
     match method:
-        case 'magic':
-            result = with_magic(file)
-            logging.debug('python-magic, %s: %s', result, file)
-            return result
+        # case 'magic':
+        #     result = with_magic(file)
+        #     logging.debug('python-magic, %s: %s', result, file)
+        #     return result
         case 'filetype':
             result = with_filetype(file)
             logging.debug('filetype, %s: %s', result, file)

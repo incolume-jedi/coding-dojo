@@ -65,6 +65,7 @@ class TestCase1:
             == expected
         )
 
+    @pytest.mark.offci()
     @pytest.mark.parametrize(
         'entrance',
         pkg.URLS,
@@ -75,6 +76,7 @@ class TestCase1:
             pkg.stream_download(entrance, output_path=self.path_out),
         ).is_file()
 
+    @pytest.mark.offci()
     @pytest.mark.parametrize(
         'entrance',
         pkg.URLS,

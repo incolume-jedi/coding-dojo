@@ -65,10 +65,12 @@ class TestCase1:
             == expected
         )
 
-    @pytest.mark.offci()
     @pytest.mark.parametrize(
         'entrance',
-        pkg.URLS,
+        [
+            pytest.param(x, marks=[pytest.mark.offci, pytest.mark.webtest])
+            for x in pkg.URLS
+        ],
     )
     def test_2(self, entrance) -> NoReturn:
         """Unittest."""
@@ -76,10 +78,12 @@ class TestCase1:
             pkg.stream_download(entrance, output_path=self.path_out),
         ).is_file()
 
-    @pytest.mark.offci()
     @pytest.mark.parametrize(
         'entrance',
-        pkg.URLS,
+        [
+            pytest.param(x, marks=[pytest.mark.offci, pytest.mark.webtest])
+            for x in pkg.URLS
+        ],
     )
     def test_3(self, entrance) -> NoReturn:
         """Unittest."""

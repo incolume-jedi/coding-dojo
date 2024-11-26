@@ -1,11 +1,13 @@
 """Test module."""
 
+import io
 from pathlib import Path
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20241112 as pkg
 import pytest
 import asyncio
 from tempfile import gettempdir
+import respx
 
 pkg.ic.enable()
 
@@ -36,10 +38,15 @@ class TestCase1:
 
     def test_0(self):
         """Unittest."""
-        assert pkg.sync_download(
-            pkg.URLS[0],
-            output_path=self.path_out,
-        ).is_file()
+        with respx.mock(base_url=pkg.URLS[0]) as mock:
+            mock.return_value = pkg.httpx.Response(
+                200,
+                stream=io.BytesIO(b':D'),
+            )
+            assert pkg.sync_download(
+                pkg.URLS[0],
+                output_path=self.path_out,
+            ).is_file()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

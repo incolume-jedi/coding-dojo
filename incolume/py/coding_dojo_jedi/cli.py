@@ -68,7 +68,12 @@ def init(ctx: click.Context, path: str, date: str, tz: str) -> NoReturn:
     help='full filename for sumary file.',
 )
 @click.option('--reverse', '-r', is_flag=True, help='Reverse order.')
-@click.option('--doc', is_flag=True, help='Generate sumary for documentation.')
+@click.option(
+    '--doc',
+    '-d',
+    is_flag=True,
+    help='Generate sumary for documentation.',
+)
 @click.pass_context
 def sumary(
     ctx: click.Context,

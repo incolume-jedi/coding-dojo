@@ -24,6 +24,7 @@ else:
     from typing_extensions import Literal, get_args  # noqa: UP035
 
 Method: TypeAlias = Literal['filetype', 'magic', 'puremagic']
+Method: TypeAlias = Literal['filetype', 'puremagic']
 
 
 artefatos: dict[str, list[str]] = {
@@ -50,31 +51,32 @@ def with_filetype(file: str | Path) -> str:
     return kind.mime
 
 
-# def with_magic(file: str) -> str:
-#     """Identify type with magic."""
-#     logging.debug(inspect.stack()[0][1])
-#     mime = magic.Magic(mime=True)
-#     return mime.from_file(file)
+def with_magic(file: str) -> str:
+    """Identify type with magic."""
+    logging.debug('%s: %s', inspect.stack()[0][1], file)
+    # mime = magic.Magic(mime=True)
+    # return mime.from_file(file)
+    return 'desativado por incompatibilidade com multiplataforma.'
 
 
 def with_puremagic(file: str) -> str:
     """Identify type with magic."""
-    logging.debug(inspect.stack()[0][1])
+    logging.debug('%s: %s', inspect.stack()[0][1], file)
     mime = puremagic.magic_file(file)
     return mime[0].mime_type
 
 
-def dojo(file: str | Path, *, method: Method = 'magic') -> str:
+def dojo(file: str | Path, *, method: Method = 'puremagic') -> str:
     """Dojo solution."""
-    logging.debug(inspect.stack()[0][1])
+    logging.debug('%s: %s', inspect.stack()[0][1], file)
     if not file.is_file():
         return f'Arquivo "{file.as_posix()}" inexistente ou inválido!'
 
     match method:
-        # case 'magic':
-        #     result = with_magic(file)
-        #     logging.debug('python-magic, %s: %s', result, file)
-        #     return result
+        case 'magic':
+            result = with_magic(file)
+            logging.debug('python-magic, %s: %s', result, file)
+            return result
         case 'filetype':
             result = with_filetype(file)
             logging.debug('filetype, %s: %s', result, file)

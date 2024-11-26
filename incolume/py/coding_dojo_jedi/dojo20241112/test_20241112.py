@@ -6,8 +6,6 @@ import incolume.py.coding_dojo_jedi.dojo20241112 as pkg
 import pytest
 import asyncio
 from tempfile import gettempdir
-import respx
-
 
 pkg.ic.enable()
 
@@ -38,13 +36,10 @@ class TestCase1:
 
     def test_0(self):
         """Unittest."""
-        url_test = pkg.URLS[0]
-        with respx.get(url_test) as mock:
-            mock.side_effect = pkg.httpx.Response(200, content=b'xpto')
-            assert pkg.sync_download(
-                url=url_test,
-                output_path=self.path_out,
-            ).is_file()
+        assert pkg.sync_download(
+            pkg.URLS[0],
+            output_path=self.path_out,
+        ).is_file()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

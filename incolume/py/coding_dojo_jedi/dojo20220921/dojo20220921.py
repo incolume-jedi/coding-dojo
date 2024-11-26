@@ -1,4 +1,5 @@
 """Dojo."""
+# ruff: noqa: PLC0206, RUF100
 
 
 def to_roman0(num: int) -> str:

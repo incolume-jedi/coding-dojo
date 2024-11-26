@@ -88,14 +88,6 @@ uv = {version="^0.4.10", optional=true, python='>=3.8'}
 pillow = "^10.3.0"
 respx = "^0.21.1"
 time-machine = "^2.16.0"
-python-magic = [{version="^0.4.27", platform="linux"}]
-python-magic-bin = [
-  {version="^0.4.14", platform = "win32"},
-  {version="^0.4.14", platform = "win64"},
-]
-libmagic =[
-  {version = "*", platform = "darwin"}
-]
 filetype = "^1.2.0"
 puremagic = "^1.28"
 
@@ -194,7 +186,7 @@ target-version = "py310"
 # Decrease the maximum line length to 79 character.
 line-length = 79
 
-namespace-packages = ["incolume/py/planalto_legis"]
+namespace-packages = ["incolume/py/coding_dojo_jedi"]
 
 # Allow imports relative to directories
 src = ["incolume/", "tests/", "examples/"]

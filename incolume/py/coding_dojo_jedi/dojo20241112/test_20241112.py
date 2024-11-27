@@ -34,30 +34,10 @@ class TestCase1:
         'https://httpbin.org',
     ]
 
-    def test_0(self, respx_mock):
+    def test_0(self):
         """Unittest."""
-        url_test = pkg.URLS[0]
-        response = pkg.httpx.Response(
-            200,
-            content=b'xpto',
-            headers={
-                'date': 'Tue, 26 Nov 2024 16:20:24 GMT',
-                'server': 'gunicorn/19.9.0',
-                'x-cache': 'MISS from 172.27.32.103',
-                'access-control-allow-origin': '*',
-                'access-control-allow-credentials': 'true',
-                'content-type': 'text/html; charset=utf-8',
-                'content-length': '9593',
-                'proxy-connection': 'Keep-Alive',
-                'location': url_test,
-            },
-            request=pkg.httpx.Request('GET', url=url_test),
-        )
-        respx_mock.get(url_test).mock(
-            side_effect=response,
-        )
         assert pkg.sync_download(
-            url_test,
+            pkg.URLS[0],
             output_path=self.path_out,
         ).is_file()
 

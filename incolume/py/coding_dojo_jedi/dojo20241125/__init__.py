@@ -26,16 +26,20 @@ def dojo(frase: str) -> str:
     frase = frase.casefold()
     alphabet = range(97, 123)
     other = {}
-    msg = ''
-    result = ''
+    result, temp = '', ''
 
     validate_rules(frase)
 
     for idx, char in enumerate(frase):
         c = ord(char)
         if c in alphabet:
-            result += char
+            temp += char
         else:
             other[idx] = char
 
-    return result, other
+    for idx, char in enumerate(temp[::-1]):
+        if idx in other:
+            result += other[idx]
+        result += char
+
+    return result

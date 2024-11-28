@@ -1,5 +1,7 @@
 """dojo module."""
 
+from string import ascii_letters
+
 
 def validate_rules(frase: str, maximum: int = 100) -> bool:
     """Validade rules."""
@@ -23,23 +25,13 @@ def validate_rules(frase: str, maximum: int = 100) -> bool:
 
 def dojo(frase: str) -> str:
     """Dojo solution."""
-    frase = frase.casefold()
-    alphabet = range(97, 123)
-    other = {}
-    result, temp = '', ''
-
+    pos = 0
     validate_rules(frase)
+    result = list(frase)
+    temp = [x for x in frase if x in ascii_letters][::-1]
 
-    for idx, char in enumerate(frase):
-        c = ord(char)
-        if c in alphabet:
-            temp += char
-        else:
-            other[idx] = char
-
-    for idx, char in enumerate(temp[::-1]):
-        if idx in other:
-            result += other[idx]
-        result += char
-
-    return result
+    for idx, letra in enumerate(temp):
+        if result[idx + pos] in ascii_letters:
+            result[idx + pos] = letra
+            pos += 1
+    return ''.join(result)

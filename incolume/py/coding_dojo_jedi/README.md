@@ -8,10 +8,11 @@
 
 ---
 
-139 dojos resolvidos
+140 dojos resolvidos
 
 ---
 
+ - [Dojo20241125 &#8212; Reverse Only Letters](dojo20241125/README.md)
  - [Dojo20241119 &#8212; Identifique arquivos por MIME Type](dojo20241119/README.md)
  - [Dojo20241118 &#8212; Transformar arquivos binários em base64 para transporte como strings](dojo20241118/README.md)
  - [Dojo20241107 &#8212; Testes em eventos temporais com time-machine](dojo20241107/README.md)

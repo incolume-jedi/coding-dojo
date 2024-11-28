@@ -27,11 +27,16 @@ def dojo(frase: str) -> str:
     """Dojo solution."""
     pos = 0
     validate_rules(frase)
-    result = list(frase)
-    temp = [x for x in frase if x in ascii_letters][::-1]
+    simbols = {}
+    result = []
 
-    for idx, letra in enumerate(temp):
-        if result[idx + pos] in ascii_letters:
-            result[idx + pos] = letra
-            pos += 1
+    for pos, item in enumerate(frase):
+        if item in ascii_letters:
+            result.insert(0, item)
+        else:
+            simbols[pos] = item
+
+    for idx, item in simbols.items():
+        result.insert(idx, item)
+
     return ''.join(result)

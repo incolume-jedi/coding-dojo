@@ -8,7 +8,7 @@
 
 ---
 
-140 dojos resolvidos
+141 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241127/README.md){:target="_blank"}
  - [Dojo20241125 &#8212; Reverse Only Letters](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241125/README.md){:target="_blank"}
  - [Dojo20241119 &#8212; Identifique arquivos por MIME Type](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241119/README.md){:target="_blank"}
  - [Dojo20241118 &#8212; Transformar arquivos binários em base64 para transporte como strings](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241118/README.md){:target="_blank"}

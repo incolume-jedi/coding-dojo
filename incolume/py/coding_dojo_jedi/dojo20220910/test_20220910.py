@@ -7,7 +7,7 @@ from incolume.py.coding_dojo_jedi.dojo20220910.dojo20220910 import (
     weekday0,
     weekday1,
 )
-from tests.conftest import Py310
+from tests.conftest import py310
 
 
 @pytest.mark.parametrize(
@@ -50,7 +50,7 @@ def test_weekday1(entrance, expected) -> None:
     assert weekday1(entrance) == expected
 
 
-@Py310
+@py310
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [

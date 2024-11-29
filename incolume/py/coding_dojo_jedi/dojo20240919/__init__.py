@@ -7,9 +7,11 @@ import sys
 from dataclasses import dataclass
 from typing import Any
 
-if sys.version_info <= (3, 10):
+if sys.version_info < (3, 11):
+    # for Python 3.10-
     from typing_extensions import Self
 if sys.version_info >= (3, 11):
+    # for Python 3.11+
     from typing import Self
 
 

@@ -102,7 +102,7 @@ def sumary(
             logging.debug(title)
             desc = result.group(1)  # type: ignore[union-attr]
             logging.debug(desc)
-            link = Path().joinpath(*filemd.parts[-2:])
+            link = '/'.join(filemd.parts[-2:])
             logging.debug(link)
             if is_doc and year != (
                 ano := ''.join(c for c in title if c.isdigit())[:4]

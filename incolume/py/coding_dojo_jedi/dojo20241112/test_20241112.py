@@ -34,6 +34,7 @@ class TestCase1:
         'https://httpbin.org',
     ]
 
+    @pytest.mark.webtest
     def test_0(self):
         """Unittest."""
         assert pkg.sync_download(
@@ -47,11 +48,23 @@ class TestCase1:
             pytest.param(
                 'https://bd-rest.camara.leg.br/server/api/core/bitstreams/1d479a9f-1fb5-4fdf-ad7b-d635382a6cfd/content',
                 True,
-                marks=[],
+                marks=[pytest.mark.offci, pytest.mark.webtest],
             ),
-            pytest.param(pkg.URLS[0], True, marks=[]),
-            pytest.param(pkg.URLS[1], True, marks=[]),
-            pytest.param(pkg.URLS[2], True, marks=[]),
+            pytest.param(
+                pkg.URLS[0],
+                True,
+                marks=[pytest.mark.offci, pytest.mark.webtest],
+            ),
+            pytest.param(
+                pkg.URLS[1],
+                True,
+                marks=[pytest.mark.offci, pytest.mark.webtest],
+            ),
+            pytest.param(
+                pkg.URLS[2],
+                True,
+                marks=[pytest.mark.offci, pytest.mark.webtest],
+            ),
         ],
     )
     def test_1(self, entrance, expected):

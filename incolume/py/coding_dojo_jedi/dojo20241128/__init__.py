@@ -7,7 +7,7 @@ from typing import TypeAlias
 Board: TypeAlias = list[list[str]]
 
 
-def quadrant(sudoku: Board, x: int, y: int) -> Board:
+def quadrant(sudoku: Board, x: int = 0, y: int = 0) -> Board:
     """Find quadrant."""
     xx = x // 3
     yy = y // 3

@@ -5,12 +5,13 @@ solution adapted from https://bvanelli.github.io/2020/03/15/resolvendo-problemas
 
 from __future__ import annotations
 
-from typing import TypeAlias
+from typing import TYPE_CHECKING
 
 import numpy as np
 from icecream import ic
 
-Board: TypeAlias = list[list[str]]
+if TYPE_CHECKING:
+    from . import Board
 
 
 def is_valid(sudoku: Board, x: int, y: int, value: int) -> bool:

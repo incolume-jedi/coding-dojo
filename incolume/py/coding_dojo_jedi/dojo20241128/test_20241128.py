@@ -5,10 +5,37 @@ import incolume.py.coding_dojo_jedi.dojo20241128 as pkg
 import pytest
 
 
-class TestCase:
+class TestCase0:
     """Test case class."""
 
+    def test_0(self):
+        """Unittest."""
+
+    def test_1(self):
+        """Unittest."""
+
+
+class TestCase1:
+    """Test case class."""
+
+    __test__ = False
+
     t0: ClassVar = [
+        pytest.param(
+            [
+                [3, 0, 6, 5, 0, 8, 4, 0, 0],
+                [5, 2, 0, 0, 0, 0, 0, 0, 0],
+                [0, 8, 7, 0, 0, 0, 0, 3, 1],
+                [0, 0, 3, 0, 1, 0, 0, 8, 0],
+                [9, 0, 0, 8, 6, 3, 0, 0, 5],
+                [0, 5, 0, 0, 9, 0, 6, 0, 0],
+                [1, 3, 0, 0, 0, 0, 2, 5, 0],
+                [0, 0, 0, 0, 0, 0, 0, 7, 4],
+                [0, 0, 5, 2, 0, 6, 3, 0, 0],
+            ],
+            True,
+            marks=[],
+        ),
         pytest.param(
             [
                 [5, 3, 0, 0, 7, 0, 0, 0, 0],

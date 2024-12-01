@@ -90,27 +90,24 @@ class Solution0:
         given row, col
         """
         # Check if we find the same num
-        # in the similar row , we
-        # return false
+        # in the similar row , will return false
         for x in range(9):
             if grid[row][x] == num:
                 return False
 
         # Check if we find the same num in
-        # the similar column , we
-        # return false
+        # the similar column , will return false
         for x in range(9):
             if grid[x][col] == num:
                 return False
 
         # Check if we find the same num in
-        # the particular 3*3 matrix,
-        # we return false
-        startRow = row - row % 3
-        startCol = col - col % 3
+        # the particular 3*3 matrix, will return false
+        start_row = row - row % 3
+        start_col = col - col % 3
         for i in range(3):
             for j in range(3):
-                if grid[i + startRow][j + startCol] == num:
+                if grid[i + start_row][j + start_col] == num:
                     return False
         return True
 

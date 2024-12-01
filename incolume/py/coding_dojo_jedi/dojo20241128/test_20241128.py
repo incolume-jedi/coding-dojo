@@ -9,27 +9,28 @@ import numpy as np
 class TestCase0:
     """Test case class."""
 
+    t0: ClassVar = np.array([
+        [3, 0, 6, 5, 0, 8, 4, 0, 0],
+        [5, 2, 0, 0, 0, 0, 0, 0, 0],
+        [0, 8, 7, 0, 0, 0, 0, 3, 1],
+        [0, 0, 3, 0, 1, 0, 0, 8, 0],
+        [9, 0, 0, 8, 6, 3, 0, 0, 5],
+        [0, 5, 0, 0, 9, 0, 6, 0, 0],
+        [1, 3, 0, 0, 0, 0, 2, 5, 0],
+        [0, 0, 0, 0, 0, 0, 0, 7, 4],
+        [0, 0, 5, 2, 0, 6, 3, 0, 0],
+    ]).reshape([9, 9])
     obj = pkg.Solution1()
 
     def test_0(self):
         """Unittest."""
         entrance = (
-            np.array([
-                [3, 0, 6, 5, 0, 8, 4, 0, 0],
-                [5, 2, 0, 0, 0, 0, 0, 0, 0],
-                [0, 8, 7, 0, 0, 0, 0, 3, 1],
-                [0, 0, 3, 0, 1, 0, 0, 8, 0],
-                [9, 0, 0, 8, 6, 3, 0, 0, 5],
-                [0, 5, 0, 0, 9, 0, 6, 0, 0],
-                [1, 3, 0, 0, 0, 0, 2, 5, 0],
-                [0, 0, 0, 0, 0, 0, 0, 7, 4],
-                [0, 0, 5, 2, 0, 6, 3, 0, 0],
-            ]).reshape([9, 9]),
+            self.t0,
             1,
             1,
         )
-        expected = [[3, 0, 6], [5, 2, 0], [0, 8, 7]]
-        assert self.obj.quadrant(*entrance) == expected
+        expected = np.array([[3, 0, 6], [5, 2, 0], [0, 8, 7]])
+        assert (self.obj.quadrant(*entrance) == expected).all()
 
     def test_1(self):
         """Unittest."""

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import TypeAlias
 
+import numpy as np
 from icecream import ic
 
 Board: TypeAlias = list[list[str]]
@@ -19,6 +20,53 @@ def quadrant(sudoku: Board, x: int = 0, y: int = 0) -> Board:
 def is_valid_sudoku(sudoku: Board) -> bool:
     """Is validate sudoku."""
     return False or sudoku
+
+
+class Solution1:
+    """Tratativa 2."""
+
+    def to_ndarray(self, sudoku: Board) -> np.ndarray:
+        """ND Array."""
+        return np.array(sudoku).reshape([9, 9])
+
+    def is_valid(self, sudoku: Board, x: int, y: int, value: int) -> bool:
+        """Is valid."""
+        sudoku = self.to_ndarray(sudoku)
+        return (
+            value not in sudoku[x, :]
+            and value not in sudoku[:, y]
+            and value not in quadrant(sudoku, x, y)
+        )
+
+    def quadrant(self, sudoku: Board, x: int, y: int) -> Board:
+        """Quadrant."""
+        sudoku = self.to_ndarray(sudoku)
+        xx = x // 3
+        yy = y // 3
+        result = sudoku[xx * 3 : (xx + 1) * 3, yy * 3 : (yy + 1) * 3]
+        ic(result)
+        return result
+
+    def possibilities(self, sudoku: Board, x: int, y: int) -> Board:
+        """Possibilities."""
+        sudoku = self.to_ndarray(sudoku)
+        return [
+            value
+            for value in range(1, 10)
+            if self.is_valid(sudoku, x, y, value)
+        ]
+
+    def solver(self, sudoku: Board, solutions: list[Board]) -> list[Board]:
+        """Solver."""
+        sudoku = self.to_ndarray(sudoku)
+        for (x, y), value in np.ndenumerate(sudoku):
+            if value == 0:
+                for possibility in self.possibilities(sudoku, x, y):
+                    sudoku[x, y] = possibility
+                    self.solver(sudoku, solutions)
+                    sudoku[x, y] = 0
+                return
+        solutions.append(sudoku.copy())
 
 
 class Solution0:

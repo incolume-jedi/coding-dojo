@@ -8,11 +8,12 @@
 
 ---
 
-141 dojos resolvidos
+142 dojos resolvidos
 
 ---
 
  - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](dojo20241127/README.md)
+ - [Dojo20241126 &#8212; New in Python 3.13: Replace](dojo20241126/README.md)
  - [Dojo20241125 &#8212; Reverse Only Letters](dojo20241125/README.md)
  - [Dojo20241119 &#8212; Identifique arquivos por MIME Type](dojo20241119/README.md)
  - [Dojo20241118 &#8212; Transformar arquivos binários em base64 para transporte como strings](dojo20241118/README.md)
@@ -155,4 +156,3 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
-

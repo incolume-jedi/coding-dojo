@@ -8,12 +8,10 @@ from dataclasses import asdict
 import copy
 
 
-pytest.mark.skipif(
+@pytest.mark.skipif(
     sys.version_info < (3, 13),
     reason='requires python3.13 or higher',
 )
-
-
 class TestCase:
     """Test case class."""
 

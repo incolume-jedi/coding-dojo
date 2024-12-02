@@ -22,14 +22,19 @@ class TestCase0:
     ]).reshape([9, 9])
     obj = pkg.Solution1()
 
-    def test_0(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        pytest.param(
+            (t0, 1, 1),
+            np.array([[3, 0, 6], [5, 2, 0], [0, 8, 7]]),
+            marks=[],
+        ),
+        pytest.param((t0, 2, 2), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
+        pytest.param((t0, 3, 3), [], marks=[]),
+        pytest.param((t0, 1, 1), [], marks=[]),
+    )
+    def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        entrance = (
-            self.t0,
-            1,
-            1,
-        )
-        expected = np.array([[3, 0, 6], [5, 2, 0], [0, 8, 7]])
         assert (self.obj.quadrant(*entrance) == expected).all()
 
     def test_1(self):

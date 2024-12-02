@@ -13,7 +13,7 @@
 Novo recurso em Python 3.13
 
 <details>
-  <summary>Excluivo para Python 3.13</summary>
+  <summary>Exclusivo para Python 3.13</summary>
    Instalação Python 3.13 via uv:
 
     > pip install uv
@@ -21,6 +21,9 @@ Novo recurso em Python 3.13
     > uv venv -p 3.13
     > uvx poetry install
     > uvx poetry shell
+    > ruff format
+    > ruff check --fix
+    > pytest -vvv
 
 </details>
 

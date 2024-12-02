@@ -1,4 +1,9 @@
-"""dojo module."""
+"""dojo module.
+
+Para executar este dojo, faz-se necessário proceder
+com os passos descritos no README.md,
+referentes a `Exclusivo para Python 3.13`
+"""
 
 from dataclasses import dataclass
 

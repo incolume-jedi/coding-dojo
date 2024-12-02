@@ -68,5 +68,5 @@ jobs:
 
       - name: Check lint with Ruff
         run: |
-          poetry run ruff --format=github
+          poetry run ruff check --fix
         continue-on-error: true

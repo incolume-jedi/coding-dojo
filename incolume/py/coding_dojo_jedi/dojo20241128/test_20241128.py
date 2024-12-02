@@ -9,7 +9,7 @@ import numpy as np
 class TestCase0:
     """Test case class."""
 
-    t0: ClassVar = np.array([
+    t0: ClassVar = [
         [3, 0, 6, 5, 0, 8, 4, 0, 0],
         [5, 2, 0, 0, 0, 0, 0, 0, 0],
         [0, 8, 7, 0, 0, 0, 0, 3, 1],
@@ -19,22 +19,25 @@ class TestCase0:
         [1, 3, 0, 0, 0, 0, 2, 5, 0],
         [0, 0, 0, 0, 0, 0, 0, 7, 4],
         [0, 0, 5, 2, 0, 6, 3, 0, 0],
-    ]).reshape([9, 9])
+    ]
     obj = pkg.Solution1()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-        pytest.param(
-            (t0, 1, 1),
-            np.array([[3, 0, 6], [5, 2, 0], [0, 8, 7]]),
-            marks=[],
-        ),
-        pytest.param((t0, 2, 2), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
-        pytest.param((t0, 3, 3), [], marks=[]),
-        pytest.param((t0, 1, 1), [], marks=[]),
+        [
+            pytest.param(
+                (t0, 1, 1),
+                [[3, 0, 6], [5, 2, 0], [0, 8, 7]],
+                marks=[],
+            ),
+            pytest.param((t0, 2, 2), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
+            pytest.param((t0, 3, 3), [4, 0, 0, 0, 0, 0, 0, 3, 1], marks=[]),
+            pytest.param((t0, 1, 1), [2, 5, 0, 0, 7, 4, 3, 0, 0], marks=[]),
+        ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
+        expected = np.array(expected)
         assert (self.obj.quadrant(*entrance) == expected).all()
 
     def test_1(self):

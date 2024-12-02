@@ -4,6 +4,7 @@ from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20241128 as pkg
 import pytest
 import numpy as np
+from icecream import ic
 
 
 class TestCase0:
@@ -30,15 +31,18 @@ class TestCase0:
                 [[3, 0, 6], [5, 2, 0], [0, 8, 7]],
                 marks=[],
             ),
-            pytest.param((t0, 2, 2), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
+            pytest.param((t0, 1, 4), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
             pytest.param((t0, 3, 3), [4, 0, 0, 0, 0, 0, 0, 3, 1], marks=[]),
+            pytest.param((t0, 5, 5), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
             pytest.param((t0, 1, 1), [2, 5, 0, 0, 7, 4, 3, 0, 0], marks=[]),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
         expected = np.array(expected)
-        assert (self.obj.quadrant(*entrance) == expected).all()
+        r = self.obj.quadrant(*entrance)
+        ic(r)
+        assert (r == expected).all()
 
     def test_1(self):
         """Unittest."""

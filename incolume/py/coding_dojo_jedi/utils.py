@@ -27,7 +27,7 @@ MD_DIR: Final[Path] = (
 )
 TZ: Final[str] = 'America/Sao_Paulo'
 
-sumary_regex: str = r'## Problema\s*\*\*((\w[\-,!\?\(\)\s]*\s*)+)\*\*'
+sumary_regex: str = r'## Problema\s*\*\*((\w[\.\:\-,!\?\(\)\s]*\s*)+)\*\*'
 
 
 def pseudo_filename(**kwargs: str) -> Path:

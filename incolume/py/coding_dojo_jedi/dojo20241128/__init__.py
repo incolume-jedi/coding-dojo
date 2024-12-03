@@ -7,14 +7,7 @@ from typing import TypeAlias
 import numpy as np
 from icecream import ic
 
-Board: TypeAlias = list[list[str]]
-
-
-def quadrant(sudoku: Board, x: int = 0, y: int = 0) -> Board:
-    """Find quadrant."""
-    xx = x // 3
-    yy = y // 3
-    return sudoku[xx * 3 : (xx + 1) * 3, yy * 3 : (yy + 1) * 3]
+Board: TypeAlias = list[list[str | int]]
 
 
 def is_valid_sudoku(sudoku: Board) -> bool:
@@ -32,10 +25,12 @@ class Solution1:
     def is_valid(self, sudoku: Board, x: int, y: int, value: int) -> bool:
         """Is valid."""
         sudoku = self.to_ndarray(sudoku)
+        ic(sudoku[x, :])
+        ic(sudoku[:, y])
         return (
             value not in sudoku[x, :]
             and value not in sudoku[:, y]
-            and value not in quadrant(sudoku, x, y)
+            and value not in self.quadrant(sudoku, x, y)
         )
 
     def quadrant(self, sudoku: Board, x: int, y: int) -> Board:
@@ -44,7 +39,7 @@ class Solution1:
         xx = x // 3
         yy = y // 3
         result = sudoku[xx * 3 : (xx + 1) * 3, yy * 3 : (yy + 1) * 3]
-        ic(result)
+        ic(result, type(result))
         return result
 
     def possibilities(self, sudoku: Board, x: int, y: int) -> Board:

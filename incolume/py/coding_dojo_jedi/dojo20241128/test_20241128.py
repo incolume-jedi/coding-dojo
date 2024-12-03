@@ -37,15 +37,31 @@ class TestCase0:
             pytest.param((t0, 1, 1), [2, 5, 0, 0, 7, 4, 3, 0, 0], marks=[]),
         ],
     )
-    def test_0(self, entrance, expected) -> NoReturn:
+    def test_solution1_quadrant(self, entrance, expected) -> NoReturn:
         """Unittest."""
         expected = np.array(expected)
         r = self.obj.quadrant(*entrance)
-        ic(r)
-        assert (r == expected).all()
+        assert isinstance(expected, np.ndarray)
+        assert isinstance(r, np.ndarray)
+        assert r.all() == expected.all()
 
-    def test_1(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param((t0, 0, 1, 1), True, marks=[]),
+            pytest.param((t0, 2, 1, 8), False, marks=[]),
+            pytest.param((t0, 1, 4, 1), False, marks=[]),
+            pytest.param((t0, 3, 3, 1), False, marks=[]),
+            pytest.param((t0, 5, 5, 1), False, marks=[]),
+            pytest.param((t0, 7, 1, 1), False, marks=[]),
+        ],
+    )
+    def test_solution1_is_valid(self, entrance, expected) -> NoReturn:
         """Unittest."""
+        expected = np.array(expected)
+        ic()
+        ic(entrance[0])
+        assert self.obj.is_valid(*entrance) == expected
 
 
 class TestCase1:

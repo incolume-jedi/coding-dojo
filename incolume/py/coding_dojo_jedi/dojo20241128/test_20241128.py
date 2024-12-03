@@ -58,10 +58,24 @@ class TestCase0:
     )
     def test_solution1_is_valid(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        expected = np.array(expected)
         ic()
         ic(entrance[0])
         assert self.obj.is_valid(*entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param((t0, 0, 1), [1, 9], marks=[]),
+            pytest.param((t0, 2, 1), [4, 9], marks=[]),
+            pytest.param((t0, 1, 4), [3, 4, 7], marks=[]),
+            pytest.param((t0, 3, 3), [4, 7], marks=[]),
+            pytest.param((t0, 5, 5), [2, 4, 7], marks=[]),
+            pytest.param((t0, 7, 1), [6, 9], marks=[]),
+        ],
+    )
+    def test_solution1_possibilities(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        assert self.obj.possibilities(*entrance) == expected
 
 
 class TestCase1:

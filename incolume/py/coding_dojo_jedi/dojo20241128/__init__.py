@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import TypeAlias
+from typing import ClassVar, TypeAlias
 
 import numpy as np
 from icecream import ic
@@ -10,13 +10,10 @@ from icecream import ic
 Board: TypeAlias = list[list[str | int]]
 
 
-def is_valid_sudoku(sudoku: Board) -> bool:
-    """Is validate sudoku."""
-    return False or sudoku
-
-
 class Solution1:
     """Tratativa 2."""
+
+    solutions: ClassVar[list[Board]] = []
 
     def to_ndarray(self, sudoku: Board) -> np.ndarray:
         """ND Array."""
@@ -189,4 +186,4 @@ class Solution0:
 
 def dojo(sudoku: Board) -> dict[str]:
     """Dojo solution."""
-    return is_valid_sudoku(sudoku)
+    return sudoku

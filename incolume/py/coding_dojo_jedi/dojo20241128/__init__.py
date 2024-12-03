@@ -48,17 +48,23 @@ class Solution1:
             if self.is_valid(sudoku, x, y, value)
         ]
 
-    def solver(self, sudoku: Board, solutions: list[Board]) -> list[Board]:
+    def solver(
+        self,
+        sudoku: Board,
+        solutions: None | list[Board] = None,
+    ) -> list[Board]:
         """Solver."""
-        sudoku = self.to_ndarray(sudoku)
-        for (x, y), value in np.ndenumerate(sudoku):
+        solutions = solutions or []
+        solution = self.to_ndarray(sudoku)
+        for (x, y), value in np.ndenumerate(solution):
+            ic(x, y, value)
             if value == 0:
-                for possibility in self.possibilities(sudoku, x, y):
-                    sudoku[x, y] = possibility
-                    self.solver(sudoku, solutions)
-                    sudoku[x, y] = 0
-                return
-        solutions.append(sudoku.copy())
+                ic(value)
+                for possibility in self.possibilities(solution, x, y):
+                    solution[x, y] = possibility
+                    self.solver(solution, solutions)
+        self.solutions.append(solution.copy())
+        return self.solutions
 
 
 class Solution0:

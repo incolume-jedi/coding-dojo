@@ -23,13 +23,27 @@ def get_list_html(path_dir: Path | None = None) -> map:
     path_dir = path_dir or directory[0]
     return path_dir.rglob(pattern='*.htm?', case_sensitive=False)
 
-def get_content_html(filename: Path) -> bytes:
+
+def get_content_html(filename: Path) -> BeautifulSoup:
     """Return HTML content."""
-    soup = BeautifulSoup(filename.read_bytes(), 'html5lib')
-    return soup.prettify()
+    with filename.open('rb') as f:
+        return BeautifulSoup(f.read(), 'html5lib')
+
+
+def find_list_ahref(soup: BeautifulSoup) -> list[str, str]:
+    """Return a[href]."""
+    return soup.select('a[href]')
+
+
+def find_list_ahref_files(soup: BeautifulSoup) -> list[str, str]:
+    """Return a[href]."""
+    ext = ['doc', 'docx', 'rtf', 'xls', 'xlsx']
+
+    return soup.select('a[href="docx"]')
+
 
 def dojo() -> Path:
     """Dojo solution."""
-    for file in get_list_html():
-        return get_content_html(file)
-    return None
+    file = next(get_list_html())
+    soup = get_content_html(file)
+    return soup.select('a[href$="#"]')

@@ -29,8 +29,7 @@ class TestCase:
 
     def test_3(self) -> NoReturn:
         """Unittest."""
-        soup = BeautifulSoup(self.content, 'html5lib')
-        assert pkg.find_list_ahref_files(soup)
+        assert pkg.dojo()
 
     def test_2(self) -> NoReturn:
         """Unittest."""

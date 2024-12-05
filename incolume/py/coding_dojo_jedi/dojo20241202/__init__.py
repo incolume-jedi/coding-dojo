@@ -1,5 +1,6 @@
 """dojo module."""
 
+import dataclasses
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -42,8 +43,19 @@ def find_list_ahref_files(soup: BeautifulSoup) -> list[str, str]:
     return soup.select('a[href="docx"]')
 
 
-def dojo() -> Path:
+@dataclasses.dataclass
+class Item:
+    """Item."""
+
+    file: Path
+    items: list[str]
+
+
+def dojo() -> list[Item]:
     """Dojo solution."""
-    file = next(get_list_html())
-    soup = get_content_html(file)
-    return soup.select('a[href$="#"]')
+    result: list[Item] = []
+    for file in get_list_html():
+        soup = get_content_html(file)
+        res = soup.select('a[href]')
+        result.append(Item(file, res))
+    return result

@@ -17,7 +17,7 @@ from incolume.py.coding_dojo_jedi.utils import genfile
     version_info < (3, 9, 0),
     reason='This run only Python 3.9+',
 )
-@pytest.mark.webtest
+@pytest.mark.webtest()
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -177,7 +177,7 @@ from incolume.py.coding_dojo_jedi.utils import genfile
 )
 def test_research(entrance, expected) -> None:
     """Test research."""
-    timeout = float(environ.get('TIMEOUT', 0.8))
+    timeout = float(environ.get('TIMEOUT', '0.8'))
     assert research(entrance, timeout=timeout) == expected
 
 
@@ -359,5 +359,5 @@ def test_research_mock(entrance, expected) -> None:
     objreq2.json.return_value = {'detail': 'Not found'}
 
     with mock.patch('requests.get', side_effect=[response_mock, objreq2]):
-        timeout = float(environ.get('TIMEOUT', 0.8))
+        timeout = float(environ.get('TIMEOUT', '0.8'))
         assert research(entrance, timeout=timeout) == expected

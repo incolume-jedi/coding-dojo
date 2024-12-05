@@ -175,14 +175,14 @@ class TestCase:
         reason='This run only Python 3.9+',
     )
     @pytest.mark.skip(reason='Replaced for test_research_mock')
-    @pytest.mark.webtest
+    @pytest.mark.webtest()
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         test_case_1,
     )
     def test_research(self, entrance, expected) -> None:
         """Test research."""
-        timeout = float(environ.get('TIMEOUT', 0.8))
+        timeout = float(environ.get('TIMEOUT', '0.8'))
         assert research(entrance, timeout=timeout) == expected
 
     @pytest.mark.parametrize(

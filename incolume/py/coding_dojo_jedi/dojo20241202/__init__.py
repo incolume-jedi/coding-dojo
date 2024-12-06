@@ -4,6 +4,7 @@ import dataclasses
 from pathlib import Path
 
 from bs4 import BeautifulSoup
+from icecream import ic
 
 directory: list[Path] = [
     Path('z:', 'acervo-legis'),
@@ -58,4 +59,5 @@ def dojo() -> list[Item]:
         soup = get_content_html(file)
         res = soup.select('a[href]')
         result.append(Item(file, res))
+        ic(result[-1])
     return result

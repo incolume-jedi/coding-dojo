@@ -1,6 +1,7 @@
 """dojo module."""
 
 import dataclasses
+import pickle
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -55,7 +56,12 @@ class Item:
 def dojo() -> list[Item]:
     """Dojo solution."""
     result: list[Item] = []
-    for file in get_list_html():
+    for idx, file in enumerate(get_list_html()):
+        if idx % 10**5:
+            with Path(f'result{idx:0>5}.pkl').open('wb') as f:
+                pickle.dump(result, f)
+                ic(f.name)
+            result.clear()
         soup = get_content_html(file)
         res = soup.select('a[href]')
         result.append(Item(file, res))

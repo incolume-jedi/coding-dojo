@@ -56,11 +56,11 @@ class Item:
 def dojo() -> list[Item]:
     """Dojo solution."""
     result: list[Item] = []
-    for idx, file in enumerate(get_list_html()):
-        if idx % 10**5:
-            with Path(f'result{idx:0>5}.pkl').open('wb') as f:
-                pickle.dump(result, f)
-                ic(f.name)
+    for idx, file in enumerate(get_list_html(), 1):
+        if idx % 10**5 == 0:
+            f = Path(f'result{idx:0>5}.pkl')
+            pickle.dump(result, f.open('wb'))
+            ic(f.name)
             result.clear()
         soup = get_content_html(file)
         res = soup.select('a[href]')

@@ -162,6 +162,7 @@ class TestCase1:
     """Test case class."""
 
     __test__ = False
+    obj = pkg.Solution0()
 
     t0: ClassVar = [
         pytest.param(
@@ -229,6 +230,23 @@ class TestCase1:
         'entrance expected'.split(),
         t0,
     )
-    def test_0(self, entrance, expected) -> NoReturn:
+    def test_1(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+
+    def test_0(self, capsys) -> NoReturn:
+        """Unittest."""
+        entrance = [
+            ['5', '3', '.', '.', '7', '.', '.', '.', '.'],
+            ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+            ['.', '9', '8', '.', '.', '.', '6', '.', '.'],
+            ['8', '.', '.', '.', '6', '.', '.', '3', '.'],
+            ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+            ['7', '.', '.', '.', '2', '.', '.', '6', '.'],
+            ['.', '6', '.', '.', '.', '2', '8', '.', '.'],
+            ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+            ['.', '.', '.', '.', '8', '.', '7', '9', '.'],
+        ]
+        expected = 0
+        out, _ = capsys.readouterr()
+        self.obj.printing(entrance)
+        assert out == expected

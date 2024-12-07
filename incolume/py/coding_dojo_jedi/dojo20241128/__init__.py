@@ -63,8 +63,8 @@ class Solution1:
                 for possibility in self.possibilities(solution, x, y):
                     solution[x, y] = possibility
                     self.solver(solution, solutions)
-        self.solutions.append(solution.copy())
-        return self.solutions
+        solutions.append(solution.copy())
+        return solutions
 
 
 class Solution0:

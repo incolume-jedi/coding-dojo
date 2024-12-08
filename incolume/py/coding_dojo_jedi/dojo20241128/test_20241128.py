@@ -1,11 +1,17 @@
 """Test module."""
 
+import os
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20241128 as pkg
 import pytest
 import numpy as np
 from icecream import ic
 from itertools import chain
+
+
+ic.disable()
+if os.getenv('DEBUG_MODE'):
+    ic.enable()
 
 
 class TestCase0:

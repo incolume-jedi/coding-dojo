@@ -17,6 +17,93 @@ if os.getenv('DEBUG_MODE'):
 class TestCase0:
     """Test case class."""
 
+    t0: ClassVar = np.array([
+        [3, 0, 6, 5, 0, 8, 4, 0, 0],
+        [5, 2, 0, 0, 0, 0, 0, 0, 0],
+        [0, 8, 7, 0, 0, 0, 0, 3, 1],
+        [0, 0, 3, 0, 1, 0, 0, 8, 0],
+        [9, 0, 0, 8, 6, 3, 0, 0, 5],
+        [0, 5, 0, 0, 9, 0, 6, 0, 0],
+        [1, 3, 0, 0, 0, 0, 2, 5, 0],
+        [0, 0, 0, 0, 0, 0, 0, 7, 4],
+        [0, 0, 5, 2, 0, 6, 3, 0, 0],
+    ])
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                (t0, 2, 5),
+                [[5, 0, 8], [0, 0, 0], [0, 0, 0]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 6, 6),
+                [[2, 5, 0], [0, 7, 4], [3, 0, 0]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 1, 1),
+                [[3, 0, 6], [5, 2, 0], [0, 8, 7]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 2, 4),
+                [[5, 0, 8], [0, 0, 0], [0, 0, 0]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 0, 6),
+                [[4, 0, 0], [0, 0, 0], [0, 3, 1]],
+                marks=[],
+            ),
+        ],
+    )
+    def test_quadrant(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        expected = np.array(expected)
+        r = pkg.quadrant(*entrance)
+        assert isinstance(expected, np.ndarray)
+        assert isinstance(r, np.ndarray)
+        assert r.all() == expected.all()
+        assert np.array_equal(r, expected)
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param((t0, 0, 1, 1), True, marks=[]),
+            pytest.param((t0, 2, 1, 8), False, marks=[]),
+            pytest.param((t0, 1, 4, 1), False, marks=[]),
+            pytest.param((t0, 3, 3, 1), False, marks=[]),
+            pytest.param((t0, 5, 5, 1), False, marks=[]),
+            pytest.param((t0, 7, 1, 1), False, marks=[]),
+        ],
+    )
+    def test_is_valid(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        ic()
+        ic(entrance[0])
+        assert pkg.is_valid(*entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param((t0, 0, 1), [1, 9], marks=[]),
+            pytest.param((t0, 2, 1), [4, 9], marks=[]),
+            pytest.param((t0, 1, 4), [3, 4, 7], marks=[]),
+            pytest.param((t0, 3, 3), [4, 7], marks=[]),
+            pytest.param((t0, 5, 5), [2, 4, 7], marks=[]),
+            pytest.param((t0, 7, 1), [6, 9], marks=[]),
+        ],
+    )
+    def test_possibilities(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        assert pkg.possibilities(*entrance) == expected
+
+
+class TestCase1:
+    """Test case class."""
+
     t0: ClassVar = [
         [3, 0, 6, 5, 0, 8, 4, 0, 0],
         [5, 2, 0, 0, 0, 0, 0, 0, 0],
@@ -164,7 +251,7 @@ class TestCase0:
         assert result1 == [list(chain(*x)) for x in expected]
 
 
-class TestCase1:
+class TestCase2:
     """Test case class."""
 
     __test__ = False

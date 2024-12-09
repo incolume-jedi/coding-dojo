@@ -3,49 +3,10 @@
 solution adapted from https://bvanelli.github.io/2020/03/15/resolvendo-problemas-com-python/
 """
 
-from __future__ import annotations
-
-from typing import TYPE_CHECKING
-
 import numpy as np
 from icecream import ic
 
-if TYPE_CHECKING:
-    from . import Board
-
-
-def is_valid(sudoku: Board, x: int, y: int, value: int) -> bool:
-    """Is valid."""
-    return (
-        value not in sudoku[x, :]
-        and value not in sudoku[:, y]
-        and value not in quadrant(sudoku, x, y)
-    )
-
-
-def quadrant(sudoku: Board, x: int, y: int) -> Board:
-    """Quadrant."""
-    xx = x // 3
-    yy = y // 3
-    return sudoku[xx * 3 : (xx + 1) * 3, yy * 3 : (yy + 1) * 3]
-
-
-def possibilities(sudoku: Board, x: int, y: int) -> Board:
-    """Possibilities."""
-    return [value for value in range(1, 10) if is_valid(sudoku, x, y, value)]
-
-
-def solver(sudoku: Board, solutions: list[Board]) -> list[Board]:
-    """Solver."""
-    for (x, y), value in np.ndenumerate(sudoku):
-        if value == 0:
-            for possibility in possibilities(sudoku, x, y):
-                sudoku[x, y] = possibility
-                solver(sudoku, solutions)
-                sudoku[x, y] = 0
-            return
-    solutions.append(sudoku.copy())
-
+from . import solver
 
 if __name__ == '__main__':
     sudoku = np.array([

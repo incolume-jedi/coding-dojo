@@ -14,7 +14,7 @@ if os.getenv('DEBUG_MODE'):
     ic.enable()
 
 
-class TestCase0:
+class TestSolution0:
     """Test case class."""
 
     t0: ClassVar = np.array([
@@ -170,7 +170,7 @@ class TestCase0:
         assert all(map(np.array_equal, result, expected))
 
 
-class TestCase1:
+class TestSolution1:
     """Test case class."""
 
     t0: ClassVar = [
@@ -205,19 +205,33 @@ class TestCase1:
                 [[3, 0, 6], [5, 2, 0], [0, 8, 7]],
                 marks=[],
             ),
-            pytest.param((t0, 1, 4), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
-            pytest.param((t0, 3, 3), [4, 0, 0, 0, 0, 0, 0, 3, 1], marks=[]),
-            pytest.param((t0, 5, 5), [5, 0, 8, 0, 0, 0, 0, 0, 0], marks=[]),
-            pytest.param((t0, 1, 1), [2, 5, 0, 0, 7, 4, 3, 0, 0], marks=[]),
+            pytest.param(
+                (t0, 1, 4),
+                [[5, 0, 8], [0, 0, 0], [0, 0, 0]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 0, 6),
+                [[4, 0, 0], [0, 0, 0], [0, 3, 1]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 2, 5),
+                [[5, 0, 8], [0, 0, 0], [0, 0, 0]],
+                marks=[],
+            ),
+            pytest.param(
+                (t0, 6, 6),
+                [[2, 5, 0], [0, 7, 4], [3, 0, 0]],
+                marks=[],
+            ),
         ],
     )
-    def test_solution1_quadrant(self, entrance, expected) -> NoReturn:
+    def test_quadrant(self, entrance, expected) -> NoReturn:
         """Unittest."""
         expected = np.array(expected)
         r = self.obj.quadrant(*entrance)
-        assert isinstance(expected, np.ndarray)
-        assert isinstance(r, np.ndarray)
-        assert r.all() == expected.all()
+        assert np.array_equal(r, expected)
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -230,7 +244,7 @@ class TestCase1:
             pytest.param((t0, 7, 1, 1), False, marks=[]),
         ],
     )
-    def test_solution1_is_valid(self, entrance, expected) -> NoReturn:
+    def test_is_valid(self, entrance, expected) -> NoReturn:
         """Unittest."""
         ic()
         ic(entrance[0])
@@ -247,7 +261,7 @@ class TestCase1:
             pytest.param((t0, 7, 1), [6, 9], marks=[]),
         ],
     )
-    def test_solution1_possibilities(self, entrance, expected) -> NoReturn:
+    def test_possibilities(self, entrance, expected) -> NoReturn:
         """Unittest."""
         assert self.obj.possibilities(*entrance) == expected
 
@@ -312,7 +326,7 @@ class TestCase1:
             ),
         ],
     )
-    def test_solution1_solver(self, entrance, expected) -> NoReturn:
+    def test_solver(self, entrance, expected) -> NoReturn:
         """Unittest."""
         result = self.obj.solver(entrance)
         assert len(result) == len(expected)
@@ -320,11 +334,11 @@ class TestCase1:
         assert result1 == [list(chain(*x)) for x in expected]
 
 
-class TestCase2:
+class TestSolution2:
     """Test case class."""
-
+''
     __test__ = False
-    obj = pkg.Solution0()
+    obj = pkg.Solution2()
 
     t0: ClassVar = [
         pytest.param(

@@ -103,7 +103,7 @@ class Solution1:
         return solutions
 
 
-class Solution0:
+class Solution2:
     """Tratativa 1."""
 
     # N is the size of the 2D matrix   N*N

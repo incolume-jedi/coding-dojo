@@ -408,8 +408,39 @@ class TestSolution2:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            pytest.param(t0[-1], True),
+            pytest.param(
+                {'grid': t0[1], 'row': 0, 'col': 3, 'num': 5},
+                False,
+                marks=[],
+            ),
+            pytest.param(
+                {'grid': t0[1], 'row': 0, 'col': 3, 'num': 9},
+                False,
+                marks=[],
+            ),
+            pytest.param(
+                {'grid': t0[1], 'row': 0, 'col': 3, 'num': 2},
+                True,
+                marks=[],
+            ),
         ],
     )
     def test_is_safe(self, entrance, expected) -> NoReturn:
         """Unittest."""
+        assert self.obj.is_safe(**entrance) == expected
+
+    @pytest.mark.skip(reason='O(n^2) muito longo')
+    def test_solve(self) -> NoReturn:
+        """Unittest."""
+        entrance = (self.t0[1], 0, 0)
+        expected = ''
+        assert self.obj.solve_sudoku(*entrance) == expected
+
+    @pytest.mark.skip(reason='O(n^2) muito longo')
+    def test_obj_run(self, capsys) -> NoReturn:
+        """UNittest."""
+        expected = ''
+        self.obj.run()
+        out, err = capsys.readouterr()
+        assert err == ''
+        assert out == expected

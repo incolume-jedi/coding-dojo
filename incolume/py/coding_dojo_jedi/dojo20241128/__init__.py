@@ -2,13 +2,10 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, ClassVar, TypeAlias
+from typing import ClassVar, TypeAlias
 
 import numpy as np
 from icecream import ic
-
-if TYPE_CHECKING:
-    from . import Board
 
 Board: TypeAlias = list[list[str | int]]
 
@@ -119,12 +116,13 @@ class Solution2:
             matrix += '\n'
         print(matrix)  # noqa: T201
 
-    def is_safe(self, grid, row, col, num):  # noqa: C901
+    def is_safe(self, grid: Board, row: int, col: int, num: int) -> bool:  # noqa: C901
         """Checks whether it will be.
 
         legal to assign num to the
         given row, col
         """
+        ic(grid)
         # Check if we find the same num
         # in the similar row , will return false
         for x in range(9):
@@ -147,7 +145,7 @@ class Solution2:
                     return False
         return True
 
-    def solve_sudoku(self, grid, row, col):  # noqa: C901
+    def solve_sudoku(self, grid: Board, row: int, col: int) -> bool:  # noqa: C901
         """Solver sudoku.
 
         Takes a partially filled-in grid and attempts
@@ -156,6 +154,7 @@ class Solution2:
         Sudoku solution (non-duplication across rows,
         columns, and boxes) */.
         """
+        ic(grid)
         # Check if we have reached the 8th
         # row and 9th column (0
         # indexed matrix) , we are
@@ -223,11 +222,6 @@ class Solution2:
         if self.solve_sudoku(grid, 0, 0):
             self.printing(grid)
         else:
-            ic('no solution  exists ')
+            print('no solution  exists ')  # noqa: T201
 
             # This code is contributed by sudhanshgupta2019a
-
-
-def dojo(sudoku: Board) -> dict[str]:
-    """Dojo solution."""
-    return sudoku

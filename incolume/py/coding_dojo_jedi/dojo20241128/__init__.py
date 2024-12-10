@@ -112,10 +112,12 @@ class Solution2:
     # A utility function to print grid
     def printing(self, arr):
         """Printing."""
+        matrix = ''
         for i in range(self.N):
             for j in range(self.N):
-                ic(f'{arr[i][j]} ')
-            ic()
+                matrix += f'{arr[i][j]} '
+            matrix += '\n'
+        print(matrix)  # noqa: T201
 
     def is_safe(self, grid, row, col, num):  # noqa: C901
         """Checks whether it will be.

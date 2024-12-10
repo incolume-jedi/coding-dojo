@@ -150,6 +150,7 @@ omit = [
   "/usr/*",
   # omit this single file
   "configure/truncus.py",
+  "__main__.py"
 ]
 
 

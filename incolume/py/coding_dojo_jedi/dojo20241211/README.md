@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Crie número para CNPJ**
+**Crie número válidos para CNPJ**
 
 Atenda a necessidade do problema.
 

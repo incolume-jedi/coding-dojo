@@ -8,10 +8,11 @@
 
 ---
 
-142 dojos resolvidos
+143 dojos resolvidos
 
 ---
 
+ - [Dojo20241128 &#8212; Sudoku válido](dojo20241128/README.md)
  - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](dojo20241127/README.md)
  - [Dojo20241126 &#8212; New in Python 3.13: Replace](dojo20241126/README.md)
  - [Dojo20241125 &#8212; Reverse Only Letters](dojo20241125/README.md)
@@ -156,3 +157,4 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
+

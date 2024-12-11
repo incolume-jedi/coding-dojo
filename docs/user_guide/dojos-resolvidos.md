@@ -8,7 +8,7 @@
 
 ---
 
-142 dojos resolvidos
+144 dojos resolvidos
 
 ---
 
@@ -16,6 +16,8 @@
 
 ### 2024
 
+ - [Dojo20241211 &#8212; Crie número válidos para CNPJ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241211/README.md){:target="_blank"}
+ - [Dojo20241128 &#8212; Sudoku válido](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241128/README.md){:target="_blank"}
  - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241127/README.md){:target="_blank"}
  - [Dojo20241126 &#8212; New in Python 3.13: Replace](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241126/README.md){:target="_blank"}
  - [Dojo20241125 &#8212; Reverse Only Letters](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241125/README.md){:target="_blank"}
@@ -172,3 +174,4 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
+

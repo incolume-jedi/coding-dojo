@@ -117,7 +117,7 @@ class TestCase:
     )
     def test_research(self, entrance, expected) -> None:
         """Test research."""
-        timeout = float(environ.get('TIMEOUT', 0.8))
+        timeout = float(environ.get('TIMEOUT', '0.8'))
         assert research(entrance, timeout=timeout) == expected
 
     @pytest.mark.parametrize(
@@ -144,5 +144,5 @@ class TestCase:
 
             m_req.side_effect = [objreq, objreq2]
 
-            timeout = float(environ.get('TIMEOUT', 0.8))
+            timeout = float(environ.get('TIMEOUT', '0.8'))
             assert research(entrance, timeout=timeout) == expected

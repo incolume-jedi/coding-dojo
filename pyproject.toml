@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.62.1"
+version = "1.63.0"
 description = "códigos da guilda jedi incolume"
 documentation='https://incolume-jedi.github.io/coding-dojo/'
 readme = ["README.md", "docs/index.md"]
@@ -150,6 +150,7 @@ omit = [
   "/usr/*",
   # omit this single file
   "configure/truncus.py",
+  "__main__.py"
 ]
 
 

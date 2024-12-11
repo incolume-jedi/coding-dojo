@@ -152,7 +152,7 @@ from incolume.py.coding_dojo_jedi.utils import genfile
 )
 def test_research(entrance, expected) -> None:
     """Test research."""
-    timeout = float(environ.get('TIMEOUT', 0.8))
+    timeout = float(environ.get('TIMEOUT', '0.8'))
     assert research(entrance, timeout=timeout) == expected
 
 
@@ -328,7 +328,7 @@ def test_research_mock(entrance, expected) -> None:
         ]  # Especificando comportamentos diferentes em chamadas consecutivas do mock.
 
         timeout = float(
-            environ.get('TIMEOUT', 0.8),
+            environ.get('TIMEOUT', '0.8'),
         )  # Convertendo valor de TIMEOUT para float.
         assert (
             research(entrance, timeout=timeout) == expected

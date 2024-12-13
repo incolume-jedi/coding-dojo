@@ -106,7 +106,7 @@ class TestSolucionadorSudoku:
                     'value': 9,
                 },
                 False,
-                marks=[pytest.mark.skip],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -143,7 +143,7 @@ class TestSolucionadorSudoku:
                     'value': 2,
                 },
                 True,
-                marks=[pytest.mark.skip],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -153,7 +153,7 @@ class TestSolucionadorSudoku:
                     'value': 1,
                 },
                 True,
-                marks=[pytest.mark.skip],
+                marks=[],
             ),
         ],
     )
@@ -170,8 +170,8 @@ class TestSolucionadorSudoku:
                     'x': 0,
                     'y': 1,
                 },
-                [1, 9],
-                marks=[pytest.mark.skip],
+                [1, 2, 4],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -179,8 +179,8 @@ class TestSolucionadorSudoku:
                     'x': 2,
                     'y': 1,
                 },
-                [4, 9],
-                marks=[pytest.mark.skip],
+                [1, 2, 4, 7],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -188,8 +188,8 @@ class TestSolucionadorSudoku:
                     'x': 1,
                     'y': 4,
                 },
-                [3, 4, 7],
-                marks=[pytest.mark.skip],
+                [3, 4],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -197,8 +197,8 @@ class TestSolucionadorSudoku:
                     'x': 3,
                     'y': 3,
                 },
-                [4, 7],
-                marks=[pytest.mark.skip],
+                [4, 5, 7, 9],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -206,8 +206,8 @@ class TestSolucionadorSudoku:
                     'x': 5,
                     'y': 5,
                 },
-                [2, 4, 7],
-                marks=[pytest.mark.skip],
+                [1, 4, 9],
+                marks=[],
             ),
             pytest.param(
                 {
@@ -215,7 +215,7 @@ class TestSolucionadorSudoku:
                     'x': 7,
                     'y': 1,
                 },
-                [6, 9],
+                [2, 7, 8],
                 marks=[],
             ),
         ],

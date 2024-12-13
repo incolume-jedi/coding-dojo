@@ -1,5 +1,6 @@
 """dojo module."""
 
+import contextlib
 from typing import TypeAlias
 
 import numpy as np
@@ -14,7 +15,8 @@ class SudokuSolver:
     def __to_ndarray(self, sudoku: Board) -> np.ndarray:
         """ND Array."""
         sudoku = np.array(sudoku).reshape([9, 9])
-        sudoku = np.strings.replace(sudoku, '.', 0)
+        with contextlib.suppress(ValueError):
+            sudoku = np.strings.replace(sudoku, '.', 0)
         sudoku = sudoku.astype(int)
         ic(sudoku)
         return sudoku

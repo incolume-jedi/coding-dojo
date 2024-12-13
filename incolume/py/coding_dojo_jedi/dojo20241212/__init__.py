@@ -5,11 +5,11 @@ from typing import TypeAlias
 import numpy as np
 from icecream import ic
 
+Board: TypeAlias = list[list[str | int]]
+
 
 class SudokuSolver:
     """Sudoku solutions."""
-
-    Board: TypeAlias = list[list[str]]
 
     def __to_ndarray(self, sudoku: Board) -> np.ndarray:
         """ND Array."""
@@ -36,6 +36,14 @@ class SudokuSolver:
             and value not in sudoku[:, y]
             and value not in self.check_quadrant(sudoku, x, y)
         )
+
+    def possibilities(self, sudoku: Board, x: int, y: int) -> Board:
+        """List possibilities."""
+        return [
+            value
+            for value in range(1, 10)
+            if self.is_valid(sudoku, x, y, value)
+        ]
 
 
 def dojo(*args: str, **kwargs: str) -> dict[str]:

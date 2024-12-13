@@ -21,6 +21,23 @@ class SudokuSolver:
         ic(sudoku)
         return sudoku
 
+    def solver(
+        self,
+        sudoku: Board,
+        solutions: None | list[Board] = None,
+    ) -> list[Board]:
+        """Solver."""
+        solutions = solutions or []
+        solution = self.__to_ndarray(sudoku)
+        for (x, y), value in np.ndenumerate(solution):
+            ic(x, y, value)
+            if value == 0:
+                ic(value)
+                for possibility in self.possibilities(solution, x, y):
+                    solution[x, y] = possibility
+                    self.solver(solution, solutions)
+        solutions.append(solution.copy())
+        return solutions
 
     def check_quadrant(self, sudoku: Board, x: int, y: int) -> Board:
         """Check quadrant."""
@@ -46,9 +63,3 @@ class SudokuSolver:
             for value in range(1, 10)
             if self.is_valid(sudoku, x, y, value)
         ]
-
-
-def dojo(*args: str, **kwargs: str) -> dict[str]:
-    """Dojo solution."""
-    kwargs['args'] = args
-    return kwargs

@@ -8,10 +8,11 @@
 
 ---
 
-144 dojos resolvidos
+145 dojos resolvidos
 
 ---
 
+ - [Dojo20241212 &#8212; Solucionador de Sudoku](dojo20241212/README.md)
  - [Dojo20241211 &#8212; Crie número válidos para CNPJ](dojo20241211/README.md)
  - [Dojo20241128 &#8212; Sudoku válido](dojo20241128/README.md)
  - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](dojo20241127/README.md)

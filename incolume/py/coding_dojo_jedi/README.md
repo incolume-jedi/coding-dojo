@@ -8,10 +8,11 @@
 
 ---
 
-146 dojos resolvidos
+147 dojos resolvidos
 
 ---
 
+ - [Dojo20241214 &#8212; Top K Frequent Elements](dojo20241214/README.md)
  - [Dojo20241213 &#8212; Longest Consecutive Sequence](dojo20241213/README.md)
  - [Dojo20241212 &#8212; Solucionador de Sudoku](dojo20241212/README.md)
  - [Dojo20241211 &#8212; Crie número válidos para CNPJ](dojo20241211/README.md)

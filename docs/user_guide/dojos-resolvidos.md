@@ -8,7 +8,7 @@
 
 ---
 
-146 dojos resolvidos
+147 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20241214 &#8212; Top K Frequent Elements](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241214/README.md){:target="_blank"}
  - [Dojo20241213 &#8212; Longest Consecutive Sequence](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241213/README.md){:target="_blank"}
  - [Dojo20241212 &#8212; Solucionador de Sudoku](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241212/README.md){:target="_blank"}
  - [Dojo20241211 &#8212; Crie número válidos para CNPJ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241211/README.md){:target="_blank"}

@@ -8,10 +8,11 @@
 
 ---
 
-145 dojos resolvidos
+146 dojos resolvidos
 
 ---
 
+ - [Dojo20241213 &#8212; Longest Consecutive Sequence](dojo20241213/README.md)
  - [Dojo20241212 &#8212; Solucionador de Sudoku](dojo20241212/README.md)
  - [Dojo20241211 &#8212; Crie número válidos para CNPJ](dojo20241211/README.md)
  - [Dojo20241128 &#8212; Sudoku válido](dojo20241128/README.md)

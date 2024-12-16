@@ -12,10 +12,14 @@ class TestPresidenteFoto:
 
     t0: ClassVar = None
 
+    def test_source(self):
+        """Unittest."""
+        assert pkg.SOURCE.is_file()
+
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            pytest.param({}, 'dojo.json'),
+            pytest.param({}, 'dojo_review.json'),
             pytest.param(
                 {
                     'output': (
@@ -26,6 +30,7 @@ class TestPresidenteFoto:
             ),
         ],
     )
-    def test_0(self, entrance, expected) -> NoReturn:
+    def test_review(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(**entrance).as_posix() == expected
+        assert pkg.dojo_review(**entrance).is_file()
+        assert pkg.dojo_review(**entrance).as_posix() == expected

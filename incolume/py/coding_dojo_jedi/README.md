@@ -8,10 +8,11 @@
 
 ---
 
-147 dojos resolvidos
+148 dojos resolvidos
 
 ---
 
+ - [Dojo20241215 &#8212; relatório de presidentes brasileiros com foto em formato json](dojo20241215/README.md)
  - [Dojo20241214 &#8212; Top K Frequent Elements](dojo20241214/README.md)
  - [Dojo20241213 &#8212; Longest Consecutive Sequence](dojo20241213/README.md)
  - [Dojo20241212 &#8212; Solucionador de Sudoku](dojo20241212/README.md)

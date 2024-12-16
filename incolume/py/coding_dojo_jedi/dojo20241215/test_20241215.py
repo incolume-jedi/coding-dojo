@@ -3,8 +3,11 @@
 from pathlib import Path
 from tempfile import gettempdir
 from typing import ClassVar, NoReturn
+from collections.abc import Container
 import incolume.py.coding_dojo_jedi.dojo20241215 as pkg
 import pytest
+import mimetypes
+from icecream import ic
 
 
 class TestPresidenteFoto:
@@ -34,3 +37,120 @@ class TestPresidenteFoto:
         """Unittest."""
         assert pkg.dojo_review(**entrance).is_file()
         assert pkg.dojo_review(**entrance).as_posix() == expected
+
+    def test_title_len(self):
+        """Unittest."""
+        assert len(pkg.title)
+
+    def test_title_type(self):
+        """Unittest."""
+        assert isinstance(pkg.title, Container)
+        assert len(pkg.title)
+
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param('NR', marks=[]),
+            pytest.param('PRESIDENTE', marks=[]),
+            pytest.param('FOTOGRAFIA', marks=[]),
+            pytest.param('MANDATO', marks=[]),
+            pytest.param('PARTIDO', marks=[]),
+            pytest.param('VICE-PRESIDENTE(S)', marks=[]),
+            pytest.param('REFERÊNCIAS E NOTAS', marks=[]),
+            pytest.param('ELEIÇÃO', marks=[]),
+        ],
+    )
+    def test_title_content(self, entrance):
+        """Unittest."""
+        assert entrance in pkg.title
+
+    def test_1(self):
+        """Unittest."""
+        assert set(pkg.content_to_dataframe().columns) == set(pkg.title)
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                {
+                    'file_type': 'json',
+                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                },
+                'presidente.json',
+            ),
+            pytest.param(
+                {
+                    'file_type': 'csv',
+                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                },
+                'presidente.csv',
+            ),
+            pytest.param(
+                {
+                    'file_type': 'excel',
+                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                },
+                'presidente.xlsx',
+            ),
+        ],
+    )
+    def test_2(self, entrance, expected):
+        """Unittest."""
+        file = pkg.dojo(**entrance)
+        assert file.is_file()
+        assert file.name == expected
+
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param(
+                {'file_type': None},
+                marks=[],
+            ),
+            pytest.param(
+                {'file_type': 'tsv'},
+                marks=[],
+            ),
+        ],
+    )
+    def test_2_exceptions(self, entrance):
+        """Unittest."""
+        with pytest.raises(TypeError, match=''):
+            assert pkg.dojo(**entrance).name
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                {
+                    'file_type': 'json',
+                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                },
+                'application/json',
+            ),
+            pytest.param(
+                {
+                    'file_type': 'csv',
+                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                },
+                'text/csv',
+            ),
+            pytest.param(
+                {
+                    'file_type': 'excel',
+                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                },
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                marks=[
+                    pytest.mark.skip(reason='Falso positivo'),
+                ],
+            ),
+        ],
+    )
+    def test_mime_type(self, entrance, expected):
+        """Unittest."""
+        file = pkg.dojo(**entrance)
+        mime = mimetypes.MimeTypes()
+        ic(file)
+        assert file.is_file()
+        assert mime.guess_type(file)[0] == expected

@@ -1,1 +1,0 @@
-#coordinates{display:none}

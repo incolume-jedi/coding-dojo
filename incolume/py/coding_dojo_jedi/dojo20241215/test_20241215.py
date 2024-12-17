@@ -154,3 +154,39 @@ class TestPresidenteFoto:
         ic(file)
         assert file.is_file()
         assert mime.guess_type(file)[0] == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
+                str,
+                # marks=[pytest.mark.skip],
+            ),
+            pytest.param(
+                None,
+                Path,
+                marks=[
+                    # pytest.mark.skip
+                ],
+            ),
+            pytest.param(
+                pkg.SOURCE,
+                Path,
+                marks=[
+                    # pytest.mark.skip
+                ],
+            ),
+            pytest.param(
+                Path(pkg.SOURCE),
+                Path,
+                marks=[
+                    # pytest.mark.skip
+                ],
+            ),
+        ],
+    )
+    def test_valid_url_or_path(self, entrance, expected):
+        """Unittest."""
+        assert isinstance(pkg.valid_url_or_path(entrance), expected)
+

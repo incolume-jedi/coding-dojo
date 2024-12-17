@@ -4,7 +4,9 @@ import inspect
 from pathlib import Path
 from typing import Final, Literal, TypeAlias
 
+import httpx
 import pandas as pd
+from bs4 import BeautifulSoup
 from icecream import ic
 from incolume.py.coding_dojo_jedi.dojo20231221 import dojo as v1
 
@@ -73,6 +75,28 @@ def content_to_dataframe(
     return dataframe
 
 
+def get_foto(url_or_path: str | Path = '') -> list[str]:
+    """Get presidente fotograph."""
+    if not url_or_path:
+        url_or_path = SOURCE
+    elif isinstance(url_or_path, Path) or 'http' in url_or_path:
+        pass
+    else:
+        url_or_path = Path(url_or_path)
+
+    try:
+        response = httpx.get(url_or_path)
+        content = response.content
+    except TypeError:
+        content = url_or_path.read_bytes()
+
+    soup = BeautifulSoup(content, 'html5lib')
+
+    result = [x.get('src') for x in soup.table.select('img')]
+    ic(result)
+    return result
+
+
 def dojo(
     url_or_path: str | Path = '',
     output: str | Path = '',
@@ -88,7 +112,7 @@ def dojo(
     ic(output)
 
     presidentes = content_to_dataframe(url_or_path, output)
-
+    ic(presidentes.FOTOGRAFIA)
     fields = [
         'PRESIDENTE',
         'VICE-PRESIDENTE(S)',

@@ -190,3 +190,7 @@ class TestPresidenteFoto:
         """Unittest."""
         assert isinstance(pkg.valid_url_or_path(entrance), expected)
 
+    def test_get_foto(self):
+        """Unittest."""
+        # assert isinstance(pkg.get_foto(entrance), list)
+        # assert pkg.get_foto(entrance) == expected

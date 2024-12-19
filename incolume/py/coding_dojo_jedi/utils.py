@@ -179,7 +179,36 @@ def dojo_init(
     dojo_dir.mkdir(exist_ok=True)
 
     boilerplate: dict[str, bytes] = {
-        'README.md': '',
+        'README.md': (
+            ''
+            '# Coding Dojo\n\n'
+            '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n'
+            '- _[Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)_\n\n'
+            '---\n\n'
+            '## Problema\n\n'
+            '**Título do problema**\n\n'
+            'Descrição/apresentação do problema.\n\n'
+            '## Exemplos\n\n'
+            '<details> \n'
+            '  <summary>Spoiler?</summary> \n'
+            '   Considerar em caso de fatoração:\n\n'
+            '    > modo pythônico\n'
+            '    > sem condicionais \n'
+            '    > estruturas performáticas\n'
+            '    > redução de complexidade ciclomática \n'
+            '    > análise assintótica de algoritmos (big O)\n\n'
+            '</details>\n\n'
+            'N/A - Exemplos de solução e resposta do problema.'
+            ' Geralmente utilizado para validar os testes do TDD.\n\n'
+            '## Artefatos\n\n'
+            '- [dojo](__init__.py)\n'
+            f'- [tests](test_{timestamp}.py)\n\n'
+            '## Referências\n\n'
+            'N/A - Referências para o dojo, '
+            'o problema ou para elicidações extras.\n'
+            '---\n\n'
+            'Copyright &copy; **incolume.com.br** since 2010\n'
+        ),
         '__init__.py': (
             '"""dojo module."""\n\n'
             'def dojo(*args: str, **kwargs: str)->dict[str]:\n'

@@ -13,9 +13,9 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            (None, None),
+            pytest.param(pkg.url, 200),
         ],
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        assert pkg.download_file(entrance) == expected

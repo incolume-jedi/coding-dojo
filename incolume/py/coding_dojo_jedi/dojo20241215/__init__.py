@@ -1,5 +1,6 @@
 """dojo module."""
 
+import base64
 import inspect
 from pathlib import Path
 from typing import Final, Literal, TypeAlias
@@ -23,7 +24,9 @@ def valid_url_or_path(url_or_path: str | Path = '') -> str | Path:
     """Identify path or URL."""
     if not url_or_path:
         url_or_path = SOURCE
-    elif isinstance(url_or_path, Path) or 'http' in url_or_path:
+    elif (
+        isinstance(url_or_path, str) and 'http' in url_or_path
+    ) or isinstance(url_or_path, Path):
         pass
     else:
         url_or_path = Path(url_or_path)
@@ -77,12 +80,8 @@ def content_to_dataframe(
 
 def get_foto(url_or_path: str | Path = '') -> list[str]:
     """Get presidente fotograph."""
-    if not url_or_path:
-        url_or_path = SOURCE
-    elif isinstance(url_or_path, Path) or 'http' in url_or_path:
-        pass
-    else:
-        url_or_path = Path(url_or_path)
+    url_or_path = valid_url_or_path(url_or_path)
+    result = []
 
     try:
         response = httpx.get(url_or_path)
@@ -91,8 +90,12 @@ def get_foto(url_or_path: str | Path = '') -> list[str]:
         content = url_or_path.read_bytes()
 
     soup = BeautifulSoup(content, 'html5lib')
+    ic(soup.table)
 
-    result = [x.get('src') for x in soup.table.select('img')]
+    foto = base64.b64encode(b'')
+    ic(foto)
+
+    result.extend(x.get('src') for x in soup.table.select('img'))
     ic(result)
     return result
 

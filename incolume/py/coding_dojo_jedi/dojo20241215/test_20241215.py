@@ -161,28 +161,21 @@ class TestPresidenteFoto:
             pytest.param(
                 'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
                 str,
-                # marks=[pytest.mark.skip],
             ),
             pytest.param(
                 None,
                 Path,
-                marks=[
-                    # pytest.mark.skip
-                ],
+                marks=[],
             ),
             pytest.param(
                 pkg.SOURCE,
                 Path,
-                marks=[
-                    # pytest.mark.skip
-                ],
+                marks=[],
             ),
             pytest.param(
                 Path(pkg.SOURCE),
                 Path,
-                marks=[
-                    # pytest.mark.skip
-                ],
+                marks=[],
             ),
         ],
     )
@@ -190,7 +183,25 @@ class TestPresidenteFoto:
         """Unittest."""
         assert isinstance(pkg.valid_url_or_path(entrance), expected)
 
-    def test_get_foto(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
+                str,
+            ),
+            pytest.param(
+                pkg.Path,
+                Path,
+                marks=[
+                    # pytest.mark.skip
+                ],
+            ),
+        ],
+    )
+    def test_get_foto(self, entrance, expected):
         """Unittest."""
-        # assert isinstance(pkg.get_foto(entrance), list)
+        assert pkg.get_foto(entrance)
+        # assert len(pkg.get_foto(entrance)) == 46
+        # assert isinstance(pkg.get_foto(entrance), expected)
         # assert pkg.get_foto(entrance) == expected

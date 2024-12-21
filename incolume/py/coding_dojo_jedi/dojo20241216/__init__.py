@@ -11,7 +11,11 @@ url: str = (
 
 
 def download_file(link: str = '', fout: Path | None = None) -> httpx.Response:
-    """Donwnload files."""
+    """Donwnload files.
+    
+    link: string link for donwload file
+    fout: full path for output file.
+    """
     ans = httpx.get(link, follow_redirects=True)
     filename = url.split('/')[-1]
     fout = fout or Path(filename)
@@ -22,8 +26,8 @@ def download_file(link: str = '', fout: Path | None = None) -> httpx.Response:
 def dojo(**kwargs: str) -> Path:
     """Dojo solution.
 
-    link
-    fout.
+    link: string link for donwload file
+    fout: full path for output file.
     """
     response = download_file(**kwargs)
     result = base64.encodebytes(response.content)

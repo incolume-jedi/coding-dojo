@@ -1,5 +1,6 @@
 """dojo module."""
 
+import base64
 from pathlib import Path
 
 import httpx
@@ -9,13 +10,22 @@ url: str = (
 )
 
 
-def download_file(link: str = '') -> Path:
+def download_file(link: str = '', fout: Path | None = None) -> httpx.Response:
     """Donwnload files."""
     ans = httpx.get(link, follow_redirects=True)
-    return ans.status_code
+    filename = url.split('/')[-1]
+    fout = fout or Path(filename)
+    fout.write_bytes(ans.content)
+    return ans
 
 
-def dojo(*args: str, **kwargs: str) -> dict[str]:
-    """Dojo solution."""
-    kwargs['args'] = args
-    return kwargs
+def dojo(**kwargs: str) -> Path:
+    """Dojo solution.
+
+    link
+    fout.
+    """
+    response = download_file(**kwargs)
+    result = base64.encodebytes(response.content)
+
+    return result

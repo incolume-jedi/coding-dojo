@@ -43,13 +43,28 @@ def download_file(link: str = '', fout: Path | None = None) -> httpx.Response:
     return ans
 
 
+def convert_byte_base64(content: bytes | str) -> base64:
+    """Convert byte to base64."""
+    result = base64.encodebytes(content)
+    ic(result)
+    return result
+
+
 def dojo(**kwargs: str) -> Path:
     """Dojo solution.
 
     link: string link for donwload file
     fout: full path for output file.
     """
-    response = download_file(**kwargs)
-    result = base64.encodebytes(response.content)
+    fout = kwargs.get('fout') or 'solution.json'
+    fout = Path(fout)
+    content = download_file(**kwargs).content
+    result = convert_byte_base64(content)
+    ic(result)
 
-    return result
+    img_obj = ImageFile(filename='image.png', content=result)
+
+    with fout.with_suffix('.json').open('wb') as f:
+        json.dump(f, img_obj.to_dict())
+
+    return fout

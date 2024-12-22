@@ -7,13 +7,27 @@ import httpx
 import incolume.py.coding_dojo_jedi.dojo20241216 as pkg
 import pytest
 import respx
+import tempfile
+from icecream import ic
+
+# ruff: noqa: SIM115
 
 
 class TestCase:
     """Test case class."""
 
     t0: ClassVar = None
-    client: httpx.Client()
+    client: pkg.httpx.Client()
+
+    def test_image_model(self):
+        """Unit test."""
+        entrance = {
+            'filename': tempfile.NamedTemporaryFile().name,
+            'content': 'xpto',
+        }
+        obj = pkg.ImageFile(**entrance)
+        assert isinstance(obj.to_dict(), dict)
+        assert entrance == obj.to_dict()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

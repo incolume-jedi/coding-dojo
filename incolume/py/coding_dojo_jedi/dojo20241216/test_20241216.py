@@ -3,12 +3,12 @@
 import http
 from typing import ClassVar, NoReturn
 
-import httpx
 import incolume.py.coding_dojo_jedi.dojo20241216 as pkg
 import pytest
 import respx
 import tempfile
 from icecream import ic
+import json
 
 # ruff: noqa: SIM115
 
@@ -19,7 +19,7 @@ class TestCase:
     t0: ClassVar = None
     client: pkg.httpx.Client()
 
-    def test_image_model(self):
+    def test_image_model_dict(self):
         """Unit test."""
         entrance = {
             'filename': tempfile.NamedTemporaryFile().name,
@@ -28,6 +28,16 @@ class TestCase:
         obj = pkg.ImageFile(**entrance)
         assert isinstance(obj.to_dict(), dict)
         assert entrance == obj.to_dict()
+
+    def test_image_model_json(self):
+        """Unit test."""
+        entrance = {
+            'filename': tempfile.NamedTemporaryFile().name,
+            'content': 'xpto',
+        }
+        obj = pkg.ImageFile(**entrance)
+        assert isinstance(obj.to_json(), str)
+        assert json.dumps(entrance) == obj.to_json()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

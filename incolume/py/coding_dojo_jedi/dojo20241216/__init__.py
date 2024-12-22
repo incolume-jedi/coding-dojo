@@ -1,6 +1,7 @@
 """dojo module."""
 
 import base64
+import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -20,8 +21,12 @@ class ImageFile:
     content: str
 
     def to_dict(self):
-        """Return dict."""
+        """Return self dict."""
         return asdict(self)
+
+    def to_json(self):
+        """Return self json."""
+        return json.dumps(self.to_dict())
 
 
 def download_file(link: str = '', fout: Path | None = None) -> httpx.Response:

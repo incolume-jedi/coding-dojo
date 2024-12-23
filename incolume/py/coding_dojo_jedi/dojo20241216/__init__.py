@@ -64,7 +64,6 @@ def dojo(**kwargs: str) -> Path:
 
     img_obj = ImageFile(filename='image.png', content=result)
 
-    with fout.with_suffix('.json').open('wb') as f:
-        json.dump(f, img_obj.to_dict())
+    json.dump(fout.with_suffix('.json').as_posix(), img_obj.to_dict())
 
     return fout

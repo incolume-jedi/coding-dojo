@@ -5,6 +5,7 @@ import incolume.py.coding_dojo_jedi.dojo20241216 as dojo147
 import incolume.py.coding_dojo_jedi.dojo20241220 as pkg
 import pytest
 from pathlib import Path
+import mimetypes
 
 
 class TestCase:
@@ -38,3 +39,5 @@ class TestCase:
         result = pkg.recover_image(**entrance)
         assert isinstance(result, Path)
         assert result.name == expected
+        assert result.is_file()
+        assert mimetypes.guess_type(result)[0] == 'image/png'

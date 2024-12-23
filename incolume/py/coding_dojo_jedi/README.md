@@ -8,10 +8,11 @@
 
 ---
 
-148 dojos resolvidos
+149 dojos resolvidos
 
 ---
 
+ - [Dojo20241220 &#8212; Revert String to image from json file.](dojo20241220/README.md)
  - [Dojo20241216 &#8212; Convert Image to String and write into json file.](dojo20241216/README.md)
  - [Dojo20241214 &#8212; Top K Frequent Elements](dojo20241214/README.md)
  - [Dojo20241213 &#8212; Longest Consecutive Sequence](dojo20241213/README.md)

@@ -8,7 +8,7 @@
 
 ---
 
-148 dojos resolvidos
+149 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20241220 &#8212; Revert String to image from json file.](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241220/README.md){:target="_blank"}
  - [Dojo20241216 &#8212; Convert Image to String and write into json file.](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241216/README.md){:target="_blank"}
  - [Dojo20241214 &#8212; Top K Frequent Elements](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241214/README.md){:target="_blank"}
  - [Dojo20241213 &#8212; Longest Consecutive Sequence](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241213/README.md){:target="_blank"}

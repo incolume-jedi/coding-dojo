@@ -2,11 +2,11 @@
 
 import http
 from typing import ClassVar, NoReturn
-
 import incolume.py.coding_dojo_jedi.dojo20241216 as pkg
 import pytest
 import respx
 import tempfile
+from pathlib import Path
 from icecream import ic
 import json
 from incolume.py.coding_dojo_jedi.utils import check_connectivity
@@ -42,7 +42,7 @@ class TestCase:
     def test_bytes2base64(self):
         """Unittest."""
         entrance = 'nação'.encode()
-        expected = b'bmHDp8Ojbw==\n'
+        expected = 'bmHDp8Ojbw==\n'
         assert pkg.convert_byte_base64(entrance) == expected
 
     @pytest.mark.parametrize(
@@ -109,9 +109,11 @@ class TestCase:
 
     def test_solution(self):
         """Unittest."""
+        filename = Path('xpto.png')
+        # filename = Path(tempfile.NamedTemporaryFile(suffix='.png').name)
         entrance = dict(
             link=pkg.url,
-            fout=tempfile.NamedTemporaryFile(suffix='.png').name,
+            fout=filename,
         )
-        expected = ''
+        expected = filename.with_suffix('.json')
         assert pkg.dojo(**entrance) == expected

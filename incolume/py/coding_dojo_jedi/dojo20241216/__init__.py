@@ -47,7 +47,7 @@ def convert_byte_base64(content: bytes | str) -> base64:
     """Convert byte to base64."""
     result = base64.encodebytes(content)
     ic(result)
-    return result
+    return result.decode()
 
 
 def dojo(**kwargs: str) -> Path:
@@ -56,15 +56,19 @@ def dojo(**kwargs: str) -> Path:
     link: string link for donwload file
     fout: full path for output file.
     """
-    fout = kwargs.get('fout') or 'solution.json'
+    fout = kwargs.get('fout') or 'solution.png'
     fout = Path(fout)
+
+    json_fout = fout.with_suffix('.json')
+    ic(json_fout)
+
     content = download_file(**kwargs).content
     result = convert_byte_base64(content)
     ic(result)
 
     img_obj = ImageFile(filename='image.png', content=result)
 
-    with fout.with_suffix('.json').open('wb') as f:
-        json.dump(f, img_obj.to_dict())
+    with json_fout.open('w') as f:
+        json.dump(img_obj.to_dict(), f)
 
-    return fout
+    return json_fout

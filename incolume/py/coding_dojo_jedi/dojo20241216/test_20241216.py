@@ -109,8 +109,7 @@ class TestCase:
 
     def test_solution(self):
         """Unittest."""
-        filename = Path('xpto.png')
-        # filename = Path(tempfile.NamedTemporaryFile(suffix='.png').name)
+        filename = Path(tempfile.NamedTemporaryFile(suffix='.png').name)
         entrance = dict(
             link=pkg.url,
             fout=filename,

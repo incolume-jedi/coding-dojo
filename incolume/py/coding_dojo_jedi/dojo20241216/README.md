@@ -8,7 +8,7 @@
 
 ## Problema
 
-**Convert Image to String and vice-versa**
+**Convert Image to String and write into json file.**
 
 Converta a imagem https://www.python.org/static/community_logos/python-powered-h-50x65.png em string, armazene a string em um arquivo json.
 

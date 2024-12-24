@@ -4,7 +4,7 @@ from pathlib import Path
 from tempfile import gettempdir
 from typing import ClassVar, NoReturn
 from collections.abc import Container
-import incolume.py.coding_dojo_jedi.dojo20241215 as pkg
+import incolume.py.coding_dojo_jedi.dojo20241224 as pkg
 import pytest
 import mimetypes
 from icecream import ic

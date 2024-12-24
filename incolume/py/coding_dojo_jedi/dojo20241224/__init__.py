@@ -24,12 +24,12 @@ def valid_url_or_path(url_or_path: str | Path = '') -> str | Path:
     """Identify path or URL."""
     if not url_or_path:
         url_or_path = SOURCE
-    elif (
-        isinstance(url_or_path, str) and 'http' in url_or_path
-    ) or isinstance(url_or_path, Path):
-        pass
-    else:
-        url_or_path = Path(url_or_path)
+
+    if isinstance(url_or_path, str) and 'http' in url_or_path:
+        return url_or_path
+
+    url_or_path = Path(url_or_path)
+    ic(url_or_path)
     return url_or_path
 
 

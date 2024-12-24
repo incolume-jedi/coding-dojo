@@ -10,6 +10,9 @@ import mimetypes
 from icecream import ic
 
 
+# ruff: noqa: ERA001
+
+
 class TestPresidenteFoto:
     """Test case class."""
 

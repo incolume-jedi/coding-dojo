@@ -8,10 +8,16 @@
 
 ---
 
-144 dojos resolvidos
+150 dojos resolvidos
 
 ---
 
+ - [Dojo20241221 &#8212; Sum of Subarray Minimums](dojo20241221/README.md)
+ - [Dojo20241220 &#8212; Revert String to image from json file.](dojo20241220/README.md)
+ - [Dojo20241216 &#8212; Convert Image to String and write into json file.](dojo20241216/README.md)
+ - [Dojo20241214 &#8212; Top K Frequent Elements](dojo20241214/README.md)
+ - [Dojo20241213 &#8212; Longest Consecutive Sequence](dojo20241213/README.md)
+ - [Dojo20241212 &#8212; Solucionador de Sudoku](dojo20241212/README.md)
  - [Dojo20241211 &#8212; Crie número válidos para CNPJ](dojo20241211/README.md)
  - [Dojo20241128 &#8212; Sudoku válido](dojo20241128/README.md)
  - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](dojo20241127/README.md)

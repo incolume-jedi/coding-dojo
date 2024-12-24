@@ -8,7 +8,7 @@
 
 ---
 
-144 dojos resolvidos
+150 dojos resolvidos
 
 ---
 
@@ -16,6 +16,12 @@
 
 ### 2024
 
+ - [Dojo20241221 &#8212; Sum of Subarray Minimums](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241221/README.md){:target="_blank"}
+ - [Dojo20241220 &#8212; Revert String to image from json file.](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241220/README.md){:target="_blank"}
+ - [Dojo20241216 &#8212; Convert Image to String and write into json file.](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241216/README.md){:target="_blank"}
+ - [Dojo20241214 &#8212; Top K Frequent Elements](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241214/README.md){:target="_blank"}
+ - [Dojo20241213 &#8212; Longest Consecutive Sequence](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241213/README.md){:target="_blank"}
+ - [Dojo20241212 &#8212; Solucionador de Sudoku](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241212/README.md){:target="_blank"}
  - [Dojo20241211 &#8212; Crie número válidos para CNPJ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241211/README.md){:target="_blank"}
  - [Dojo20241128 &#8212; Sudoku válido](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241128/README.md){:target="_blank"}
  - [Dojo20241127 &#8212; Criar dígitos verificadores para CNPJ](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241127/README.md){:target="_blank"}

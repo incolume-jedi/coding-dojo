@@ -8,10 +8,11 @@
 
 ---
 
-150 dojos resolvidos
+151 dojos resolvidos
 
 ---
 
+ - [Dojo20241224 &#8212; relatório de presidentes brasileiros com foto em formato json](dojo20241224/README.md)
  - [Dojo20241221 &#8212; Sum of Subarray Minimums](dojo20241221/README.md)
  - [Dojo20241220 &#8212; Revert String to image from json file.](dojo20241220/README.md)
  - [Dojo20241216 &#8212; Convert Image to String and write into json file.](dojo20241216/README.md)

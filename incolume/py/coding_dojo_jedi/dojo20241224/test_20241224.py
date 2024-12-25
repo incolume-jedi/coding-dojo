@@ -8,11 +8,17 @@ import incolume.py.coding_dojo_jedi.dojo20241224 as pkg
 import pytest
 import mimetypes
 from icecream import ic
-
+from incolume.py.coding_dojo_jedi.utils import check_connectivity
 
 # ruff: noqa: ERA001
 
 
+@pytest.mark.webtest
+@pytest.mark.slow
+@pytest.mark.skipif(
+    not check_connectivity(),
+    reason='This test need network connectivity.',
+)
 class TestPresidenteFoto:
     """Test case class."""
 

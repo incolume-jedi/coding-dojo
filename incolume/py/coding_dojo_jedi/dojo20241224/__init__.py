@@ -2,8 +2,10 @@
 
 import base64
 import inspect
+import itertools
 from pathlib import Path
 from typing import Final, Literal, TypeAlias
+from urllib.parse import urljoin
 
 import httpx
 import pandas as pd
@@ -12,7 +14,10 @@ from icecream import ic
 from incolume.py.coding_dojo_jedi.dojo20231221 import dojo as v1
 
 Types: TypeAlias = Literal['excel', 'csv', 'json']
-
+Fotos: TypeAlias = list[str]
+URL: Final[str] = (
+    'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil'
+)
 SOURCE: Final[Path] = (
     Path(__file__)
     .parents[1]
@@ -20,10 +25,13 @@ SOURCE: Final[Path] = (
 )
 
 
-def valid_url_or_path(url_or_path: str | Path = '') -> str | Path:
+def valid_url_or_path(
+    url_or_path: str | Path = '',
+    default: str | Path = SOURCE,
+) -> str | Path:
     """Identify path or URL."""
     if not url_or_path:
-        url_or_path = SOURCE
+        url_or_path = default
 
     if isinstance(url_or_path, str) and 'http' in url_or_path:
         return url_or_path
@@ -62,27 +70,39 @@ def content_to_dataframe(
     output: str | Path = '',
 ) -> pd.DataFrame:
     """Dojo solution."""
-    url_or_path = Path(url_or_path or SOURCE)
+    url_or_path = valid_url_or_path(url_or_path)
     ic(url_or_path)
 
     output = Path(output or f'{inspect.stack()[0][3]}.json')
     ic(output)
 
     dataframe = pd.read_html(url_or_path)[0]
-
     dataframe.columns = title
+
+    # Sanitização
+    q = dataframe[
+        dataframe.PRESIDENTE.str.lower().str.contains('república')
+    ].index
+    ic(q)
+    dataframe = dataframe.drop(q)
+
+    dataframe = dataframe.drop_duplicates(
+        subset=['PRESIDENTE', 'MANDATO'],
+        ignore_index=True,
+        keep='last',
+    )
 
     ic(dataframe)
     ic(dataframe.columns)
+    ic(dataframe.shape)
 
     return dataframe
 
 
-def get_foto(url_or_path: str | Path = '') -> list[str]:
+def get_foto(url_or_path: str | Path = '') -> Fotos:
     """Get presidente fotograph."""
     url_or_path = valid_url_or_path(url_or_path)
-    result = []
-
+    result, fotos = [], []
     try:
         response = httpx.get(url_or_path)
         content = response.content
@@ -92,10 +112,20 @@ def get_foto(url_or_path: str | Path = '') -> list[str]:
     soup = BeautifulSoup(content, 'html5lib')
     ic(soup.table)
 
-    foto = base64.b64encode(b'')
-    ic(foto)
+    fotos.extend(x.get('src') for x in soup.table.select('img'))
+    ic(fotos)
 
-    result.extend(x.get('src') for x in soup.table.select('img'))
+    result.extend(map(urljoin, itertools.cycle([url_or_path]), fotos))
+    ic(result)
+
+    return result
+
+
+def fotos2string(url_fotos: list[str]) -> list[str]:
+    """Download fotos and encoded base64 format."""
+    fotos = [httpx.get(foto).content for foto in url_fotos[:]]
+    ic(fotos)
+    result = [base64.b64encode(foto).decode() for foto in fotos]
     ic(result)
     return result
 
@@ -106,8 +136,6 @@ def dojo(
     file_type: Types = 'json',
 ) -> Path:
     """Dojo solution."""
-    url_or_path = Path(url_or_path or SOURCE)
-
     output = Path(output or f'{inspect.stack()[0][3]}')
     output = output.with_suffix(
         f'.{"xlsx" if file_type == "excel" else file_type}',
@@ -115,7 +143,14 @@ def dojo(
     ic(output)
 
     presidentes = content_to_dataframe(url_or_path, output)
+    ic(f'>>>>>>>>>>>>>>>>>>>{len(presidentes)}')
+
+    fotos = fotos2string(get_foto(url_or_path))
+    ic(f'>>>>>>>>>>>>>>>>>>>{len(fotos)}')
+
+    presidentes.FOTOGRAFIA = fotos
     ic(presidentes.FOTOGRAFIA)
+
     fields = [
         'PRESIDENTE',
         'VICE-PRESIDENTE(S)',

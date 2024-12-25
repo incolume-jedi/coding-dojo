@@ -76,6 +76,7 @@ class TestPresidenteFoto:
         [
             pytest.param(
                 {
+                    'url_or_path': pkg.URL,
                     'file_type': 'json',
                     'output': Path(gettempdir(), 'presidente.json').resolve(),
                 },
@@ -83,6 +84,7 @@ class TestPresidenteFoto:
             ),
             pytest.param(
                 {
+                    'url_or_path': pkg.URL,
                     'file_type': 'csv',
                     'output': Path(gettempdir(), 'presidente.json').resolve(),
                 },
@@ -90,6 +92,7 @@ class TestPresidenteFoto:
             ),
             pytest.param(
                 {
+                    'url_or_path': pkg.URL,
                     'file_type': 'excel',
                     'output': Path(gettempdir(), 'presidente.json').resolve(),
                 },
@@ -126,6 +129,7 @@ class TestPresidenteFoto:
         [
             pytest.param(
                 {
+                    'url_or_path': pkg.URL,
                     'file_type': 'json',
                     'output': Path(gettempdir(), 'presidente.json').resolve(),
                 },
@@ -133,6 +137,7 @@ class TestPresidenteFoto:
             ),
             pytest.param(
                 {
+                    'url_or_path': pkg.URL,
                     'file_type': 'csv',
                     'output': Path(gettempdir(), 'presidente.json').resolve(),
                 },
@@ -140,6 +145,7 @@ class TestPresidenteFoto:
             ),
             pytest.param(
                 {
+                    'url_or_path': pkg.URL,
                     'file_type': 'excel',
                     'output': Path(gettempdir(), 'presidente.json').resolve(),
                 },
@@ -191,20 +197,24 @@ class TestPresidenteFoto:
         [
             pytest.param(
                 'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
-                str,
+                list,
             ),
             pytest.param(
                 pkg.Path,
                 Path,
-                marks=[
-                    # pytest.mark.skip
-                ],
+                marks=[pytest.mark.skip],
             ),
         ],
     )
     def test_get_foto(self, entrance, expected):
         """Unittest."""
-        assert pkg.get_foto(entrance)
-        # assert len(pkg.get_foto(entrance)) == 46
-        # assert isinstance(pkg.get_foto(entrance), expected)
-        # assert pkg.get_foto(entrance) == expected
+        assert isinstance(pkg.get_foto(entrance), expected)
+
+    def test_fotos2string(self):
+        """Unittest."""
+        entrance = pkg.get_foto(pkg.URL)
+        expected = True
+        assert (
+            all(isinstance(foto, str) for foto in pkg.fotos2string(entrance))
+            == expected
+        )

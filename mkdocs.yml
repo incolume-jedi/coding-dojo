@@ -45,7 +45,7 @@ nav:
     - Coding Challenge: coding_challenge/README.md
     - 'User Guide':
       - Dojos Resolvidos: 
-        # - alfabética: user_guide/dojos-resolvidos.md
+        # - alfabética: user_guide/dojos-alfabetica.md
         - por datas: user_guide/dojos-resolvidos.md
       - Código de Conduta: user_guide/code_of_conduct.md
       - Medotologias:

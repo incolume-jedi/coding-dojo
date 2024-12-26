@@ -17,3 +17,7 @@ Foi separado alguns [sites populares com desafios de programação](coding_chall
 Todos são convidados a participar, não existe nível inicial, a ideia é aprender com a troca de ideias e experiências.
 
 Se você não se sentir confortável em participar programando, está convidado a participar como um membro da platéia para ver a mecânica do coding dojo e poder programar no futuro. Portanto, mesmo que você não conheça python, pode vir para aprender conceitos, técnicas, e particularidades da linguagem.
+
+- ## Como configuro o ambiente python para fazer as atividades do Dojo?
+
+O ambiente para as atividades do dojo, pode ser em tua maquina local ([mais detalhes](#)), ou remoto na web ([mais detalhes](#)). Você escolhe a melhor forma que te atenda.

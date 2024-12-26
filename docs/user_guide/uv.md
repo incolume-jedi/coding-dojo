@@ -12,6 +12,8 @@ Um pacote escrito na linguagem rust para Python, extremamente rápido e gerencia
 1. Fornece gestão abrangente de projetos, com um arquivo de bloqueio universal.
 1. Gerencia dependências e ambientes para scripts de arquivo único
 
+Mais detalhes disponível na documentação oficial em [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/){:target="_blank"}
+
 ## Instalação UV
 
 ### Unix like:

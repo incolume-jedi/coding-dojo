@@ -49,10 +49,12 @@ nav:
         - por datas: user_guide/dojos-resolvidos.md
       - Código de Conduta: user_guide/code_of_conduct.md
       - Medotologias:
-          - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
+          - Facilitadores:
+            - dojo (script): user_guide/dojo-script.md
           - Gestão:
             - uv: user_guide/uv.md
             - poetry: user_guide/poetry.md
+          - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
           - Keep a CHANGELOG.md: user_guide/keep-a-changelog.md
           - Mkdocs: user_guide/writing-your-docs.md
           - Semver: user_guide/semver.md

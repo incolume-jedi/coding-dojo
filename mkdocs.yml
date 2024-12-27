@@ -44,16 +44,16 @@ nav:
     - Home: index.md
     - Coding Challenge: coding_challenge/README.md
     - 'User Guide':
+      - Código de Conduta: user_guide/code_of_conduct.md
       - Dojos Resolvidos: 
         # - alfabética: user_guide/dojos-alfabetica.md
         - por datas: user_guide/dojos-resolvidos.md
-      - Código de Conduta: user_guide/code_of_conduct.md
+      - Facilitadores:
+          - dojo (script): user_guide/facilitors/dojo-script.md
+      - Gerenciadores:
+        - uv: user_guide/managers/uv.md
+        - poetry: user_guide/managers/poetry.md
       - Medotologias:
-          - Facilitadores:
-            - dojo (script): user_guide/dojo-script.md
-          - Gestão:
-            - uv: user_guide/uv.md
-            - poetry: user_guide/poetry.md
           - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
           - Keep a CHANGELOG.md: user_guide/keep-a-changelog.md
           - Mkdocs: user_guide/writing-your-docs.md

@@ -17,7 +17,7 @@ Pessoas precisam. Seja consumidores ou desenvolvedores, os usuários finais de s
 - Versões e seções devem ser vinculáveis (com links).
 - A versão mais recente vem em primeiro lugar.
 - A data de lançamento de cada versão é exibida.
-- Mencione se você segue o [versionamento semântico](https://semver.org/).
+- Mencione se você segue o [versionamento semântico](semver.md).
 
 
 ### Tipos de mudanças

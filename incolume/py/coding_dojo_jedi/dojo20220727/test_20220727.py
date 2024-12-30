@@ -17,11 +17,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
     version_info < (3, 9, 0),
     reason='This run only Python 3.9+',
 )
-@pytest.mark.webtest()
+@pytest.mark.webtest
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
-        (
+        pytest.param(
             'Obi-Wan Kenobi',
             [
                 {
@@ -56,8 +56,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     'vehicles': ['https://swapi.dev/api/vehicles/38/'],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'Luke Skywalker',
             [
                 {
@@ -90,8 +93,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     ],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'Tion Medon',
             [
                 {
@@ -113,8 +119,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     'vehicles': [],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'luke skywalker',
             [
                 {
@@ -147,10 +156,25 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     ],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        ('xpto', []),
-        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
-        (
+        pytest.param(
+            'xpto',
+            [],
+            marks=[
+                pytest.mark.webtest,
+            ],
+        ),
+        pytest.param(
+            'skyw',
+            ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker'],
+            marks=[
+                pytest.mark.webtest,
+            ],
+        ),
+        pytest.param(
             'jinn',
             [
                 {
@@ -171,6 +195,9 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     'url': 'https://swapi.dev/api/people/32/',
                     'vehicles': ['https://swapi.dev/api/vehicles/38/'],
                 },
+            ],
+            marks=[
+                pytest.mark.webtest,
             ],
         ),
     ],
@@ -184,7 +211,7 @@ def test_research(entrance, expected) -> None:
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
-        (
+        pytest.param(
             'Obi-Wan Kenobi',
             [
                 {
@@ -219,8 +246,11 @@ def test_research(entrance, expected) -> None:
                     'vehicles': ['https://swapi.dev/api/vehicles/38/'],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'Luke Skywalker',
             [
                 {
@@ -253,8 +283,11 @@ def test_research(entrance, expected) -> None:
                     ],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'Tion Medon',
             [
                 {
@@ -276,8 +309,11 @@ def test_research(entrance, expected) -> None:
                     'vehicles': [],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'luke skywalker',
             [
                 {
@@ -310,10 +346,25 @@ def test_research(entrance, expected) -> None:
                     ],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        ('xpto', []),
-        ('skyw', ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker']),
-        (
+        pytest.param(
+            'xpto',
+            [],
+            marks=[
+                pytest.mark.webtest,
+            ],
+        ),
+        pytest.param(
+            'skyw',
+            ['Luke Skywalker', 'Anakin Skywalker', 'Shmi Skywalker'],
+            marks=[
+                pytest.mark.webtest,
+            ],
+        ),
+        pytest.param(
             'jinn',
             [
                 {
@@ -334,6 +385,9 @@ def test_research(entrance, expected) -> None:
                     'url': 'https://swapi.dev/api/people/32/',
                     'vehicles': ['https://swapi.dev/api/vehicles/38/'],
                 },
+            ],
+            marks=[
+                pytest.mark.webtest,
             ],
         ),
     ],

@@ -1,7 +1,7 @@
 """Test module."""
 
 from typing import ClassVar, NoReturn
-import incolume.py.coding_dojo_jedi.dojo20241202 as pkg
+import incolume.py.coding_dojo_jedi.dojo20241230 as pkg
 from bs4 import BeautifulSoup
 
 

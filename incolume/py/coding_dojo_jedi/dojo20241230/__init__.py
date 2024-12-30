@@ -41,7 +41,7 @@ def find_list_ahref(soup: BeautifulSoup) -> list[str, str]:
 
 def find_list_ahref_files(soup: BeautifulSoup) -> list[str, str]:
     """Return a[href]."""
-    ext = ['doc', 'docx', 'rtf', 'xls', 'xlsx']
+    ext = ['doc', 'docx', 'rtf', 'xls', 'xlsx', 'nsf']
 
     return soup.select('a[href="docx"]')
 

@@ -10,6 +10,7 @@ from icecream import ic
 directory: list[Path] = [
     Path('z:', 'acervo-legis'),
     Path(
+        '//',
         'castelo',
         'saj',
         'CENTRO DE ESTUDOS',

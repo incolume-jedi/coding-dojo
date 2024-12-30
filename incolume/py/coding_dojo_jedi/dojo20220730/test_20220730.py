@@ -175,7 +175,7 @@ class TestCase:
         reason='This run only Python 3.9+',
     )
     @pytest.mark.skip(reason='Replaced for test_research_mock')
-    @pytest.mark.webtest()
+    @pytest.mark.webtest
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         test_case_1,

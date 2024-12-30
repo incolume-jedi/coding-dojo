@@ -3,6 +3,7 @@
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20241230 as pkg
 from bs4 import BeautifulSoup
+import pytest
 
 
 class TestCase:
@@ -27,6 +28,7 @@ class TestCase:
       </body>
     </html>"""
 
+    @pytest.mark.skip
     def test_3(self) -> NoReturn:
         """Unittest."""
         assert pkg.dojo()

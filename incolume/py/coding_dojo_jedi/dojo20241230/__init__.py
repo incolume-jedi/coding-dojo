@@ -54,10 +54,10 @@ class Item:
     items: list[str]
 
 
-def dojo() -> list[Item]:
+def dojo(**kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
     result: list[Item] = []
-    for idx, file in enumerate(get_list_html(), 1):
+    for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
         if idx % 10**5 == 0:
             f = Path(f'result{idx:0>5}.pkl')
             pickle.dump(result, f.open('wb'))

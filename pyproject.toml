@@ -65,7 +65,10 @@ ruff = [
   ]
 types-requests = "^2.31.0.5"
 types-toml = "^0.10.8.7"
-incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", rev = "0.10.0"}
+# incolume-py-changelog = "^0.7.0"
+# incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", tag = "0.8.0"}
+# incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", rev = "0.10.0"}
+incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", branch = "tags"}
 pre-commit = [
   {version="~3.5", python='~3.8'},
   {version="^3.7", python='~3.9'},

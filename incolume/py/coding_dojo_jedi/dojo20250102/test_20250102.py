@@ -51,6 +51,42 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
       </body>
     </html>"""
 
+    def test_find_list_ahref_files(self):
+        """Unit test."""
+        entrance = utils.pseudo_filename()
+        expected = [
+            '<a href="anexo/xpto.doc">anexo 1</a>',
+            '<a href="anexo/xpto.docx">anexo 2</a>',
+            '<a href="anexo/xpto.docx">anexo 2</a>',
+            '<a href="anexo/xpto.rtf">anexo 5</a>',
+            '<a href="anexo/xpto.xlsx">anexo 3</a>',
+            '<a href="anexo/xpto.xls">anexo 4</a>',
+            '<a href="anexo/xpto.xlsx">anexo 3</a>',
+            '<a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/'
+            '\nViw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>',
+        ]
+        entrance.write_text(self.content)
+        soup = pkg.get_content_html(entrance)
+        assert [str(x) for x in pkg.find_list_ahref_files(soup)] == expected
+
+    def test_find_list_ahref_files_0(self):
+        """Unit test."""
+        entrance = utils.pseudo_filename()
+        expected = [
+            '<a href="anexo/xpto.doc">anexo 1</a>',
+            '<a href="anexo/xpto.docx">anexo 2</a>',
+            '<a href="anexo/xpto.docx">anexo 2</a>',
+            '<a href="anexo/xpto.rtf">anexo 5</a>',
+            '<a href="anexo/xpto.xlsx">anexo 3</a>',
+            '<a href="anexo/xpto.xls">anexo 4</a>',
+            '<a href="anexo/xpto.xlsx">anexo 3</a>',
+            '<a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/'
+            '\nViw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>',
+        ]
+        entrance.write_text(self.content)
+        soup = pkg.get_content_html(entrance)
+        assert [str(x) for x in pkg.find_list_ahref_files_0(soup)] == expected
+
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
@@ -122,7 +158,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         filename.write_text(self.content)
         ic(filename)
 
-        result = pkg.dojo(path_dir=filename.parents[0])
+        result = pkg.dojo0(path_dir=filename.parents[0])
         ic(result)
 
         assert all(isinstance(r, pkg.Item) for r in result)

@@ -1,7 +1,7 @@
 """Test module."""
 
 from typing import ClassVar, NoReturn
-import incolume.py.coding_dojo_jedi.dojo20241230 as pkg
+import incolume.py.coding_dojo_jedi.dojo20250102 as pkg
 from bs4 import BeautifulSoup
 import pytest
 from incolume.py.coding_dojo_jedi import utils
@@ -16,22 +16,34 @@ class TestCase:
     content: ClassVar[str] = """
     <html>
       <body>
-        <p>
+        <ol>
+        <li>
           <a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
-        </p>
-        <p>
+        </li>
+        <li>
           <a href="anexo/xpto.doc">anexo 1</a>
+        </li>
+        <li>
           <a href="anexo/xpto.docx">anexo 2</a>
+        </li>
+        <li>
           <a href="anexo/xpto.xlsx">anexo 3</a>
+        </li>
+        <li>
           <a href="anexo/xpto.xls">anexo 4</a>
+        </li>
+        <li>
           <a href="anexo/xpto.rtf">anexo 5</a>
+        </li>
+        <li>
           <a href="anexo/xpto.pdf">anexo 6</a>
-        </p>
-        <p>
+        </li>
+        <li>
           <a href="D11927.htm">
             Decreto nº 11.927, de 22 de fev de 2024
           </a>
-        </p>
+        </li>
+        </ol>
       </body>
     </html>"""
 

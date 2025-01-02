@@ -3,6 +3,7 @@
 import dataclasses
 import pickle
 from pathlib import Path
+from typing import Literal, TypeAlias
 
 from bs4 import BeautifulSoup
 from icecream import ic
@@ -20,6 +21,8 @@ directory: list[Path] = [
         'acervo-legis',
     ),
 ]
+
+Extentions: TypeAlias = Literal['doc', 'docx', 'rtf', 'xls', 'xlsx', 'nsf']
 
 
 def get_list_html(path_dir: Path | None = None) -> map:
@@ -39,11 +42,26 @@ def find_list_ahref(soup: BeautifulSoup) -> list[str, str]:
     return soup.select('a[href]')
 
 
-def find_list_ahref_files(soup: BeautifulSoup) -> list[str, str]:
+def find_list_ahref_files_0(soup: BeautifulSoup) -> list[str, str]:
     """Return a[href]."""
-    ext = ['doc', 'docx', 'rtf', 'xls', 'xlsx', 'nsf']
+    exts = ['doc', 'docx', 'rtf', 'xls', 'xlsx', 'nsf']
+    result = []
 
-    return soup.select('a[href="docx"]')
+    for ext in exts:
+        result.extend(soup.select(f'a[href*={ext}]'))
+    return result
+
+
+def find_list_ahref_files(
+    soup: BeautifulSoup,
+    ext: Extentions[str] = 'rtf',
+) -> list[str, str]:
+    """Return a[href]."""
+    ext = ext.casefold()
+    ext = ext if ext in Extentions else Extentions['rtf']
+    result = []
+    result.extend(soup.select(f'a[href*={ext}]'))
+    return result
 
 
 @dataclasses.dataclass
@@ -54,7 +72,7 @@ class Item:
     items: list[str]
 
 
-def dojo(*, junk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
+def dojo0(*, junk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
     junk = max(junk, 10**5)
     result: list[Item] = []

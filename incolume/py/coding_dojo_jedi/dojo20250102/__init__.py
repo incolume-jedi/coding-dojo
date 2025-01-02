@@ -25,7 +25,7 @@ directory: list[Path] = [
 def get_list_html(path_dir: Path | None = None) -> map:
     """Return list HTML files."""
     path_dir = path_dir or directory[0]
-    return path_dir.rglob(pattern='*.htm?', case_sensitive=False)
+    return ic(path_dir.rglob(pattern='**/*.htm*', case_sensitive=False))
 
 
 def get_content_html(filename: Path) -> BeautifulSoup:
@@ -54,17 +54,17 @@ class Item:
     items: list[str]
 
 
-def dojo(**kwargs: dict[str:Path]) -> list[Item]:
+def dojo(*, junk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
+    junk = max(junk, 10**5)
     result: list[Item] = []
     for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
-        if idx % 10**5 == 0:
+        if not idx % junk:
             f = Path(f'result{idx:0>5}.pkl')
             pickle.dump(result, f.open('wb'))
             ic(f.name)
-            result.clear()
         soup = get_content_html(file)
         res = soup.select('a[href]')
         result.append(Item(file, res))
-        ic(result[-1])
+        ic(idx, result[-1])
     return result

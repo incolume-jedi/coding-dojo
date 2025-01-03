@@ -1,10 +1,12 @@
 """dojo module."""
 
 import dataclasses
+import inspect
 import logging
 import pickle
 import sys
 from pathlib import Path
+from typing import Any
 
 from bs4 import BeautifulSoup
 from icecream import ic
@@ -81,7 +83,7 @@ def find_list_ahref_files(
         ext = ext if ext.casefold() in get_args(Extentions) else on_raise
     except AttributeError:
         ext = on_raise
-    ic(ext)
+    ic(inspect.stack()[0][3], ext)
     result = []
     result.extend(soup.select(f'a[href*=".{ext}" i]'))
     return result
@@ -108,4 +110,16 @@ def dojo0(*, junk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
         res = soup.select('a[href]')
         result.append(Item(file, res))
         ic(idx, result[-1])
+    return result
+
+
+def dojo(**kwargs: dict[str:Any]) -> list[Item]:
+    """Dojo solution."""
+    result: list[Item] = []
+    extentions = kwargs.get('extentions', get_args(Extentions))
+    for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
+        ic(idx, file)
+        soup = get_content_html(file)
+        for ext in extentions:
+            result.extend(find_list_ahref_files(soup, ext=ext))
     return result

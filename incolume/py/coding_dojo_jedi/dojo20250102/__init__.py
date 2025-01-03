@@ -9,6 +9,11 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from icecream import ic
 
+if sys.version_info >= (3, 11):
+    from typing import Literal, TypeAlias
+else:
+    from typing_extensions import Literal, TypeAlias  # noqa: UP035
+
 
 msg = sys.platform.casefold()
 ic(logging.info(msg))

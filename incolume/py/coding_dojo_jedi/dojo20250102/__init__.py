@@ -10,14 +10,14 @@ from bs4 import BeautifulSoup
 from icecream import ic
 
 if sys.version_info >= (3, 11):
-    from typing import Literal, TypeAlias
+    from typing import Literal, TypeAlias, get_args
 else:
-    from typing_extensions import Literal, TypeAlias  # noqa: UP035
+    from typing_extensions import Literal, TypeAlias, get_args  # noqa: UP035
 
 
 msg = sys.platform.casefold()
-ic(logging.info(msg))
-
+logging.info(msg)
+ic(msg)
 
 directory: list[Path] = [
     Path('z:', 'acervo-legis'),
@@ -33,7 +33,15 @@ directory: list[Path] = [
     ),
 ]
 
-Extentions: TypeAlias = Literal['doc', 'docx', 'rtf', 'xls', 'xlsx', 'nsf']
+Extentions: TypeAlias = Literal[
+    'doc',
+    'docx',
+    'nsf',
+    'pdf',
+    'rtf',
+    'xls',
+    'xlsx',
+]
 
 
 def get_list_html(path_dir: Path | None = None) -> map:
@@ -65,11 +73,15 @@ def find_list_ahref_files_0(soup: BeautifulSoup) -> list[str, str]:
 
 def find_list_ahref_files(
     soup: BeautifulSoup,
-    ext: Extentions[str] = 'rtf',
+    ext: Extentions = '',
+    on_raise: Extentions = 'doc',
 ) -> list[str, str]:
     """Return a[href]."""
-    ext = ext.casefold()
-    ext = ext if ext in Extentions else Extentions['rtf']
+    try:
+        ext = ext if ext.casefold() in get_args(Extentions) else on_raise
+    except AttributeError:
+        ext = on_raise
+    ic(ext)
     result = []
     result.extend(soup.select(f'a[href*=".{ext}" i]'))
     return result

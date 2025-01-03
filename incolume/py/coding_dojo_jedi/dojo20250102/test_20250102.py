@@ -86,24 +86,120 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
       </body>
     </html>"""
 
-    @pytest.mark.skip
-    def test_find_list_ahref_files(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                'doc',
+                [
+                    '<a href="anexo/xpto.doc">anexo 1</a>',
+                    '<a href="anexo/xpto.Doc">anexo 2</a>',
+                    '<a href="anexo/xpto.DOC">anexo 3</a>',
+                    '<a href="anexo/xpto.docx">anexo 4</a>',
+                    '<a href="anexo/xpto.Docx">anexo 5</a>',
+                    '<a href="anexo/xpto.DOCX">anexo 6</a>',
+                ],
+                marks=[
+                    # pytest.mark.skip,
+                ],
+            ),
+            pytest.param(
+                'docx',
+                [
+                    '<a href="anexo/xpto.docx">anexo 4</a>',
+                    '<a href="anexo/xpto.Docx">anexo 5</a>',
+                    '<a href="anexo/xpto.DOCX">anexo 6</a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                'xlsx',
+                [
+                    '<a href="anexo/xpto.xlsx">anexo 7</a>',
+                    '<a href="anexo/xpto.XLSX">anexo 8</a>',
+                    '<a href="anexo/xpto.Xlsx">anexo 9</a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                'xls',
+                [
+                    '<a href="anexo/xpto.xlsx">anexo 7</a>',
+                    '<a href="anexo/xpto.XLSX">anexo 8</a>',
+                    '<a href="anexo/xpto.Xlsx">anexo 9</a>',
+                    '<a href="anexo/xpto.xls">anexo 10</a>',
+                    '<a href="anexo/xpto.Xls">anexo 11</a>',
+                    '<a href="anexo/xpto.XLS">anexo 12</a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                'pdf',
+                [
+                    '<a href="anexo/xpto.pdf">anexo 16</a>',
+                    '<a href="anexo/xpto.Pdf">anexo 17</a>',
+                    '<a href="anexo/xpto.PDF">anexo 18</a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                'rtf',
+                [
+                    '<a href="anexo/xpto.rtf">anexo 13</a>',
+                    '<a href="anexo/xpto.rtf">anexo 14</a>',
+                    '<a href="anexo/xpto.rtf">anexo 15</a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                'nsf',
+                [
+                    '<a href="http://legislacao.planalto.gov.br/legisla/'
+                    'legislacao.NSF/\nViw_Identificacao/ACP%2031-1966?'
+                    'OpenDocument"> Link </a>',
+                    '<a href="http://legislacao.planalto.gov.br/legisla/'
+                    'legislacao.Nsf/\nViw_Identificacao/ACP%2031-1966?'
+                    'OpenDocument"> Link </a>',
+                    '<a href="http://legislacao.planalto.gov.br/legisla/'
+                    'legislacao.nsf/\nViw_Identificacao/ACP%2031-1966?'
+                    'OpenDocument"> Link </a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                None,
+                [
+                    '<a href="anexo/xpto.doc">anexo 1</a>',
+                    '<a href="anexo/xpto.Doc">anexo 2</a>',
+                    '<a href="anexo/xpto.DOC">anexo 3</a>',
+                    '<a href="anexo/xpto.docx">anexo 4</a>',
+                    '<a href="anexo/xpto.Docx">anexo 5</a>',
+                    '<a href="anexo/xpto.DOCX">anexo 6</a>',
+                ],
+                marks=[],
+            ),
+            pytest.param(
+                '',
+                [
+                    '<a href="anexo/xpto.doc">anexo 1</a>',
+                    '<a href="anexo/xpto.Doc">anexo 2</a>',
+                    '<a href="anexo/xpto.DOC">anexo 3</a>',
+                    '<a href="anexo/xpto.docx">anexo 4</a>',
+                    '<a href="anexo/xpto.Docx">anexo 5</a>',
+                    '<a href="anexo/xpto.DOCX">anexo 6</a>',
+                ],
+                marks=[],
+            ),
+        ],
+    )
+    def test_find_list_ahref_files(self, entrance, expected):
         """Unit test."""
-        entrance = utils.pseudo_filename()
-        expected = [
-            '<a href="anexo/xpto.doc">anexo 1</a>',
-            '<a href="anexo/xpto.docx">anexo 2</a>',
-            '<a href="anexo/xpto.docx">anexo 2</a>',
-            '<a href="anexo/xpto.rtf">anexo 5</a>',
-            '<a href="anexo/xpto.xlsx">anexo 3</a>',
-            '<a href="anexo/xpto.xls">anexo 4</a>',
-            '<a href="anexo/xpto.xlsx">anexo 3</a>',
-            '<a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/'
-            '\nViw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>',
-        ]
-        entrance.write_text(self.content)
-        soup = pkg.get_content_html(entrance)
-        assert [str(x) for x in pkg.find_list_ahref_files(soup)] == expected
+        filein = utils.pseudo_filename()
+        filein.write_text(self.content)
+        soup = pkg.get_content_html(filein)
+        assert [
+            str(x) for x in pkg.find_list_ahref_files(soup, ext=entrance)
+        ] == expected
 
     def test_find_list_ahref_files_0(self):
         """Unit test."""

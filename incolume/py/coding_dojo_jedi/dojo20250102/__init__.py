@@ -71,7 +71,7 @@ def find_list_ahref_files(
     ext = ext.casefold()
     ext = ext if ext in Extentions else Extentions['rtf']
     result = []
-    result.extend(soup.select(f'a[href*={ext}]'))
+    result.extend(soup.select(f'a[href*=".{ext}" i]'))
     return result
 
 

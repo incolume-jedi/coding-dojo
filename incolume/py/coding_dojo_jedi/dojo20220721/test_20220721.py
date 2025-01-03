@@ -5,7 +5,7 @@ from os import environ
 import respx
 import pytest
 import httpx
-from incolume.py.coding_dojo_jedi.dojo20220721 import saudacao
+import incolume.py.coding_dojo_jedi.dojo20220721 as pkg
 from http import HTTPStatus
 from typing import NoReturn
 
@@ -29,6 +29,6 @@ class TestMocked:
 def test_saudacao(capsys) -> None:
     """Test saudacao."""
     timeout = float(environ.get('TIMEOUT', '9'))
-    saudacao(timeout)
+    pkg.saudacao(timeout)
     output = capsys.readouterr()
     assert output.out.strip() == 'Hello, Luke Skywalker!'

@@ -1,12 +1,18 @@
 """dojo module."""
 
 import dataclasses
+import logging
 import pickle
+import sys
 from pathlib import Path
-from typing import Literal, TypeAlias
 
 from bs4 import BeautifulSoup
 from icecream import ic
+
+
+msg = sys.platform.casefold()
+ic(logging.info(msg))
+
 
 directory: list[Path] = [
     Path('z:', 'acervo-legis'),

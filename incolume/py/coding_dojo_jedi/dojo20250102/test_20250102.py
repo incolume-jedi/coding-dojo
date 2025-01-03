@@ -3,6 +3,7 @@
 import inspect
 import shutil
 from typing import ClassVar, NoReturn
+from collections.abc import Generator
 import incolume.py.coding_dojo_jedi.dojo20250102 as pkg
 from bs4 import BeautifulSoup
 import pytest
@@ -255,7 +256,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         dout.mkdir(exist_ok=True)
         ic(dout)
         result = pkg.get_list_html(dout)
-        assert isinstance(result, map)
+        assert isinstance(result, Generator)
         assert list(result) == []
 
     def test_get_list_html_0(self) -> NoReturn:
@@ -263,7 +264,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         dout = Path(gettempdir()) / inspect.stack()[0][3]
         dout.mkdir(exist_ok=True)
         ic(dout)
-        assert isinstance(pkg.get_list_html(dout), map)
+        assert isinstance(pkg.get_list_html(dout), Generator)
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

@@ -19,35 +19,70 @@ class TestCase:
     content: ClassVar[str] = """
     <html>
       <body>
-        <ol>
-        <li>
+        <ol><li>
+          <a href="http://legislacao.planalto.gov.br/legisla/legislacao.NSF/
+Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
+          <a href="http://legislacao.planalto.gov.br/legisla/legislacao.Nsf/
+Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
           <a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/
 Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
-        </li>
-        <li>
+        </li><li>
           <a href="anexo/xpto.doc">anexo 1</a>
-        </li>
-        <li>
-          <a href="anexo/xpto.docx">anexo 2</a>
-        </li>
-        <li>
-          <a href="anexo/xpto.xlsx">anexo 3</a>
-        </li>
-        <li>
-          <a href="anexo/xpto.xls">anexo 4</a>
-        </li>
-        <li>
-          <a href="anexo/xpto.rtf">anexo 5</a>
-        </li>
-        <li>
-          <a href="anexo/xpto.pdf">anexo 6</a>
-        </li>
-        <li>
-          <a href="D11927.htm">
+          <a href="anexo/xpto.Doc">anexo 2</a>
+          <a href="anexo/xpto.DOC">anexo 3</a>
+        </li><li>
+          <a href="anexo/xpto.docx">anexo 4</a>
+          <a href="anexo/xpto.Docx">anexo 5</a>
+          <a href="anexo/xpto.DOCX">anexo 6</a>
+        </li><li>
+          <a href="anexo/xpto.xlsx">anexo 7</a>
+          <a href="anexo/xpto.XLSX">anexo 8</a>
+          <a href="anexo/xpto.Xlsx">anexo 9</a>
+        </li><li>
+          <a href="anexo/xpto.xls">anexo 10</a>
+          <a href="anexo/xpto.Xls">anexo 11</a>
+          <a href="anexo/xpto.XLS">anexo 12</a>
+        </li><li>
+        </li><li>
+        </li><li>
+          <a href="anexo/xpto.rtf">anexo 13</a>
+          <a href="anexo/xpto.rtf">anexo 14</a>
+          <a href="anexo/xpto.rtf">anexo 15</a>
+        </li><li>
+        </li><li>
+        </li><li>
+          <a href="anexo/xpto.pdf">anexo 16</a>
+          <a href="anexo/xpto.Pdf">anexo 17</a>
+          <a href="anexo/xpto.PDF">anexo 18</a>
+        </li><li>
+          <a href="D11923.htm">
+            Decreto nº 11.923, de 22 de fev de 2024
+          </a>
+        </li><li>
+          <a href="D11924.Htm">
+            Decreto nº 11.924, de 22 de fev de 2024
+          </a>
+        </li><li>
+          <a href="D11925.HTM">
+            Decreto nº 11.925, de 22 de fev de 2024
+          </a>
+        </li><li>
+          <a href="D11926.html">
+            Decreto nº 11.926, de 22 de fev de 2024
+          </a>
+        </li><li>
+          <a href="D11927.Html">
             Decreto nº 11.927, de 22 de fev de 2024
           </a>
-        </li>
-        </ol>
+        </li><li>
+          <a href="D11928.htmL">
+            Decreto nº 11.928, de 22 de fev de 2024
+          </a>
+        </li><li>
+          <a href="D11929.HTML">
+            Decreto nº 11.929, de 22 de fev de 2024
+          </a>
+        </li></ol>
       </body>
     </html>"""
 

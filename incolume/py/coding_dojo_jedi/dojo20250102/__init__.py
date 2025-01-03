@@ -10,6 +10,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 from icecream import ic
+from tqdm import tqdm
 
 if sys.version_info >= (3, 11):
     from typing import Literal, TypeAlias, get_args
@@ -117,7 +118,7 @@ def dojo(**kwargs: dict[str:Any]) -> list[Item]:
     """Dojo solution."""
     result: list[Item] = []
     extentions = kwargs.get('extentions', get_args(Extentions))
-    for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
+    for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):
         ic(idx, file)
         soup = get_content_html(file)
         for ext in extentions:

@@ -50,7 +50,9 @@ Extentions: TypeAlias = Literal[
 def get_list_html(path_dir: Path | None = None) -> map:
     """Return list HTML files."""
     path_dir = path_dir or directory[0]
-    return ic(path_dir.rglob(pattern='**/*.htm*', case_sensitive=False))
+    result = path_dir.rglob(pattern='**/*.htm*', case_sensitive=False)
+    ic(result)
+    return result
 
 
 def get_content_html(filename: Path) -> BeautifulSoup:

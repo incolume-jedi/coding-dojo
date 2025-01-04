@@ -6,36 +6,13 @@
 
 ---
 
-## Problema
+## Problemas
 
-**Título do problema**
+Neste dojo foram resolvidos dois problemas:
 
-Descrição/apresentação do problema.
+- [Leitura parcial de arquivos grandes](big_files.md)
+- [Primos em PI](primos_em_pi.md)
 
-## Exemplos
-
-<details> 
-  <summary>Spoiler?</summary> 
-   Considerar em caso de fatoração:
-
-    > modo pythônico
-    > sem condicionais 
-    > estruturas performáticas
-    > redução de complexidade ciclomática 
-    > análise assintótica de algoritmos (big O)
-
-</details>
-
-N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para validar os testes do TDD.
-
-## Artefatos
-
-- [dojo](__init__.py)
-- [tests](test_20250104.py)
-
-## Referências
-
-N/A - Referências para o dojo, o problema ou para elicidações extras.
 ---
 
 Copyright &copy; **incolume.com.br** since 2010

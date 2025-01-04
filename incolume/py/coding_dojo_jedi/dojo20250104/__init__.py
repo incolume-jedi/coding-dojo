@@ -1,7 +1,6 @@
 """dojo module."""
 
 import inspect
-from urllib.parse import urlsplit
 
 import httpx
 from icecream import ic
@@ -13,7 +12,8 @@ def download_file(url: str = '') -> bool:
     """Download file."""
     url = url or URL
     response = httpx.get(url)
-    return urlsplit(url)
+    filename = url.split('/')[-1]
+    return filename
 
 
 def handler_file(fin, chunk: int) -> bool:

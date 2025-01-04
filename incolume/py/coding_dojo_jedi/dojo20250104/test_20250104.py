@@ -3,6 +3,8 @@
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20250104 as pkg
 import pytest
+import tempfile
+from pathlib import Path
 
 
 class TestCase:
@@ -18,8 +20,27 @@ class TestCase:
     )
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(**entrance) == expected
+        result = pkg.dojo(**entrance)
+        assert result == expected
 
-    def test_download(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                {'url': pkg.URL, 'dir_output': Path(tempfile.gettempdir())},
+                'pi-1M.tar.gz',
+                marks=[],
+            ),
+            pytest.param(
+                {'dir_output': Path(tempfile.gettempdir())},
+                'pi-1M.tar.gz',
+                marks=[],
+            ),
+            pytest.param({}, 'pi-1M.tar.gz', marks=[]),
+        ],
+    )
+    def test_download(self, entrance, expected):
         """Unittest."""
-        assert pkg.download_file() == ''
+        result = pkg.download_file(**entrance)
+        assert expected in result.parts
+        assert result.is_file()

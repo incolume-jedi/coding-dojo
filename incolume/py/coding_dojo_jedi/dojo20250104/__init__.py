@@ -1,6 +1,7 @@
 """dojo module."""
 
 import inspect
+from pathlib import Path
 
 import httpx
 from icecream import ic
@@ -8,11 +9,17 @@ from icecream import ic
 URL: str = 'https://osprogramadores.com/files/d11/pi-1M.tar.gz'
 
 
-def download_file(url: str = '') -> bool:
+def download_file(url: str = '', dir_output: Path | None = None) -> Path:
     """Download file."""
+    ic(inspect.stack()[0][3])
+    dir_output = dir_output or Path()
     url = url or URL
+    ic(url)
     response = httpx.get(url)
-    filename = url.split('/')[-1]
+    filename = dir_output / url.split('/')[-1]
+    ic(filename)
+    filename.parent.mkdir(exist_ok=True)
+    filename.write_bytes(response.content)
     return filename
 
 

@@ -3,28 +3,34 @@
 import inspect
 import tarfile
 from pathlib import Path
+from typing import Final
 
 import httpx
 from icecream import ic
 
-URL: str = 'https://osprogramadores.com/files/d11/pi-1M.tar.gz'
+URL_TAR_FILE: Final[str] = 'https://osprogramadores.com/files/d11/pi-1M.tar.gz'
+URL_RAW_FILE: Final[str] = 'https://pastebin.com/raw/Ak8TCbJk'
 
 
-def download_file(url: str = '', dir_output: Path | None = None) -> Path:
+def download_file(
+    url: str = '',
+    dir_output: Path | None = None,
+    fout: Path | None = None,
+) -> Path:
     """Download file."""
     ic(inspect.stack()[0][3])
     dir_output = dir_output or Path()
-    url = url or URL
+    url = url or URL_TAR_FILE
     ic(url)
     response = httpx.get(url)
-    filename = dir_output / url.split('/')[-1]
+    filename = fout or dir_output / url.split('/')[-1]
     ic(filename)
     filename.parent.mkdir(exist_ok=True)
     filename.write_bytes(response.content)
     return filename
 
 
-def handler_file(fin: Path | None = None, chunk: int = 0) -> bool:
+def handler_file(fin: Path | None = None, chunk: int = 0) -> bytes:
     """Handler file."""
     ic(inspect.stack()[0][3])
     chunk = -1 if chunk < 0 else max(chunk, 100)
@@ -34,6 +40,21 @@ def handler_file(fin: Path | None = None, chunk: int = 0) -> bool:
         if chunk == -1:
             return file.readline()
         return file.read(chunk)
+
+
+def handler_stream(url: str = '', chunk: int = 0) -> bytes:
+    """Handler stream."""
+    ic(inspect.stack()[0][3])
+    try:
+        chunk = -1 if chunk < 0 else max(chunk, 100)
+    except Exception:
+        chunk = -1
+    url = url or URL_RAW_FILE
+    response = httpx.get(url)
+    content = response.content
+    if chunk == -1:
+        return content
+    return content[:chunk]
 
 
 def dojo(**kwargs: str) -> dict[str]:

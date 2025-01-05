@@ -44,3 +44,7 @@ class TestCase:
         result = pkg.download_file(**entrance)
         assert expected in result.parts
         assert result.is_file()
+
+    def test_handler_file(self):
+        """Unittest."""
+        assert pkg.handler_file() == ''

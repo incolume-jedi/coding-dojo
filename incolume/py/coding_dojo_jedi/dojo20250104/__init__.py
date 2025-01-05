@@ -1,6 +1,7 @@
 """dojo module."""
 
 import inspect
+import tarfile
 from pathlib import Path
 
 import httpx
@@ -23,8 +24,13 @@ def download_file(url: str = '', dir_output: Path | None = None) -> Path:
     return filename
 
 
-def handler_file(fin, chunk: int) -> bool:
+def handler_file(fin: Path | None = None, chunk: int = 0) -> bool:
     """Handler file."""
+    chunk = max(chunk, 100)
+    fin = fin or Path() / 'pi-1M.tar.gz'
+    with tarfile.open(fin, mode='r:gz') as handler:
+        file = handler.extractfile(handler.getnames()[0])
+        return file.readline()
 
 
 def dojo(**kwargs: str) -> dict[str]:

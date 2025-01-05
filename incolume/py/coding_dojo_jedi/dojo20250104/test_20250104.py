@@ -14,13 +14,6 @@ class TestCase:
     t0: ClassVar = None
     expected_content: ClassVar[bytes] = b'3.141592'
 
-    with tarfile.open(
-        Path(*pkg.__package__.split('.')) / 'pi-1M.tgz',
-        mode='r:gz',
-    ) as handler:
-        file = handler.extractfile(handler.getnames()[0])
-        expected_content = file.read()
-
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
@@ -92,15 +85,6 @@ class TestCase:
                 },
                 b'3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067',
             ),
-            pytest.param(
-                {
-                    'chunk': -1,
-                },
-                expected_content,
-                marks=[
-                    # pytest.mark.skip(reason='Big File.')
-                ],
-            ),
         ],
     )
     def test_handler_file(self, entrance, expected):
@@ -120,25 +104,67 @@ class TestCase:
                 },
                 b'3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067',
             ),
-            pytest.param(
-                {
-                    'chunk': -1,
-                },
-                expected_content,
-                marks=[pytest.mark.skip(reason='Big File.')],
-            ),
-            pytest.param(
-                {'chunk': 1.0},
-                expected_content,
-                marks=[pytest.mark.skip(reason='Big File.')],
-            ),
-            pytest.param(
-                {'chunk': 'a'},
-                expected_content,
-                marks=[pytest.mark.skip(reason='Big File.')],
-            ),
         ],
     )
     def test_handler_stream(self, entrance, expected):
         """Unittest."""
         assert pkg.handler_stream(**entrance) == expected
+
+    @pytest.mark.parametrize(
+        'cmd entrance'.split(),
+        [
+            pytest.param(
+                pkg.handler_file,
+                {'chunk': 1.6180},
+                marks=[
+                    # pytest.mark.skip(reason='bigger file.')
+                ],
+            ),
+            pytest.param(
+                pkg.handler_file,
+                {'chunk': 'a'},
+                marks=[
+                    # pytest.mark.skip(reason='bigger file.')
+                ],
+            ),
+            pytest.param(
+                pkg.handler_file,
+                {'chunk': -1},
+                marks=[
+                    # pytest.mark.skip(reason='bigger file.')
+                ],
+            ),
+            pytest.param(
+                pkg.handler_stream,
+                {'chunk': 1.6180},
+                marks=[
+                    # pytest.mark.skip(reason='bigger file.')
+                ],
+            ),
+            pytest.param(
+                pkg.handler_stream,
+                {'chunk': '1k'},
+                marks=[
+                    # pytest.mark.skip(reason='bigger file.')
+                ],
+            ),
+            pytest.param(
+                pkg.handler_stream,
+                {'chunk': -1},
+                marks=[
+                    # pytest.mark.skip(reason='bigger file.')
+                ],
+            ),
+        ],
+    )
+    def test_handler_bigger(self, cmd, entrance):
+        """Unittest."""
+        with tarfile.open(
+            Path(*pkg.__package__.split('.')) / 'pi-1M.tgz',
+            mode='r:gz',
+        ) as handler:
+            file = handler.extractfile(handler.getnames()[0])
+            expected = file.read()
+            result = cmd(**entrance).strip()
+
+            assert result == expected

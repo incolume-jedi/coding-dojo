@@ -33,7 +33,10 @@ def download_file(
 def handler_file(fin: Path | None = None, chunk: int = 0) -> bytes:
     """Handler file."""
     ic(inspect.stack()[0][3])
-    chunk = -1 if chunk < 0 else max(chunk, 100)
+    chunk = (
+        -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk, 100)
+    )
+
     fin = fin or Path() / 'pi-1M.tar.gz'
     with tarfile.open(fin, mode='r:gz') as handler:
         file = handler.extractfile(handler.getnames()[0])
@@ -45,10 +48,10 @@ def handler_file(fin: Path | None = None, chunk: int = 0) -> bytes:
 def handler_stream(url: str = '', chunk: int = 0) -> bytes:
     """Handler stream."""
     ic(inspect.stack()[0][3])
-    try:
-        chunk = -1 if chunk < 0 else max(chunk, 100)
-    except Exception:
-        chunk = -1
+    chunk = (
+        -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk, 100)
+    )
+
     url = url or URL_RAW_FILE
     response = httpx.get(url)
     content = response.content

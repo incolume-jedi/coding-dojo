@@ -37,7 +37,8 @@ def handler_file(fin: Path | None = None, chunk: int = 0) -> bytes:
         -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk, 100)
     )
 
-    fin = fin or Path() / 'pi-1M.tar.gz'
+    fin = fin or Path(*__package__.split('.')) / 'pi-1M.tgz'
+    ic(fin)
     with tarfile.open(fin, mode='r:gz') as handler:
         file = handler.extractfile(handler.getnames()[0])
         if chunk == -1:

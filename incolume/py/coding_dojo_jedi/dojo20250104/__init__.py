@@ -26,11 +26,14 @@ def download_file(url: str = '', dir_output: Path | None = None) -> Path:
 
 def handler_file(fin: Path | None = None, chunk: int = 0) -> bool:
     """Handler file."""
-    chunk = max(chunk, 100)
+    ic(inspect.stack()[0][3])
+    chunk = -1 if chunk < 0 else max(chunk, 100)
     fin = fin or Path() / 'pi-1M.tar.gz'
     with tarfile.open(fin, mode='r:gz') as handler:
         file = handler.extractfile(handler.getnames()[0])
-        return file.readline()
+        if chunk == -1:
+            return file.readline()
+        return file.read(chunk)
 
 
 def dojo(**kwargs: str) -> dict[str]:

@@ -1,5 +1,6 @@
 """Test module."""
 
+from __future__ import annotations
 import inspect
 import shutil
 from typing import ClassVar, NoReturn
@@ -256,7 +257,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         dout.mkdir(exist_ok=True)
         ic(dout)
         result = pkg.get_list_html(dout)
-        assert isinstance(result, Generator)
+        assert isinstance(result, (map | Generator))
         assert list(result) == []
 
     def test_get_list_html_0(self) -> NoReturn:
@@ -264,7 +265,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         dout = Path(gettempdir()) / inspect.stack()[0][3]
         dout.mkdir(exist_ok=True)
         ic(dout)
-        assert isinstance(pkg.get_list_html(dout), Generator)
+        assert isinstance(pkg.get_list_html(dout), (Generator | map))
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

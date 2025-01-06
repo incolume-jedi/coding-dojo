@@ -12,7 +12,7 @@ from http import HTTPStatus
 from incolume.py.coding_dojo_jedi.utils import check_connectivity
 
 
-class TestCase:
+class TestHandlerFiles:
     """Test case class."""
 
     t0: ClassVar = None
@@ -215,18 +215,18 @@ class TestCase:
         [
             pytest.param(
                 {},
-                b'3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706',
+                b'3.14159265358979323846',
             ),
             pytest.param(
                 {'fin': Path(tempfile.gettempdir()) / 'pi-1M.tar.gz'},
-                b'3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706',
+                b'3.14159265358979323846',
             ),
             pytest.param(
                 {
                     'chunk': 101,
                     'fin': Path(tempfile.gettempdir()) / 'pi-1M.tar.gz',
                 },
-                b'3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067',
+                b'3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798',
             ),
         ],
     )
@@ -239,13 +239,13 @@ class TestCase:
         [
             pytest.param(
                 {},
-                b'3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706',
+                b'3.14159265358979323846',
             ),
             pytest.param(
                 {
                     'chunk': 101,
                 },
-                b'3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067',
+                b'3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798',
             ),
         ],
     )
@@ -343,3 +343,43 @@ class TestCase:
             result = cmd(**entrance).strip()
             assert test_route.called
             assert result == expected
+
+
+class TestPrimes:
+    """Case teste."""
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            ('2', False),
+            ('2i', False),
+            (b'2', False),
+            (2.0, False),
+            (10**4, False),
+            (9323, True),
+            (1, False),
+            (2, True),
+            (3, True),
+            (4, False),
+            (41, True),
+            (59, True),
+            (89, True),
+        ],
+    )
+    def test_is_prime(self, entrance, expected):
+        """Check is prime number."""
+        assert pkg.is_prime(entrance) == expected
+
+
+class TestPrimesIntoPI:
+    """Case teste."""
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param({'chunk': 20}, '41 59 2 653 5 89 7 9323'),
+        ],
+    )
+    def test_seq(self, entrance, expected):
+        """Unittest."""
+        assert pkg.dojo(**entrance) == expected

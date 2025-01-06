@@ -2,6 +2,7 @@
 
 import inspect
 import tarfile
+from functools import lru_cache
 from pathlib import Path
 from typing import Final
 
@@ -30,11 +31,11 @@ def download_file(
     return filename
 
 
-def handler_file(fin: Path | None = None, chunk: int = 0) -> bytes:
+def handler_file(*, fin: Path | None = None, chunk: int = 0) -> bytes:
     """Handler file."""
     ic(inspect.stack()[0][3])
     chunk = (
-        -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk, 100)
+        -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk + 2, 22)
     )
 
     fin = fin or Path(*__package__.split('.')) / 'pi-1M.tgz'
@@ -46,11 +47,11 @@ def handler_file(fin: Path | None = None, chunk: int = 0) -> bytes:
         return file.read(chunk)
 
 
-def handler_stream(url: str = '', chunk: int = 0) -> bytes:
+def handler_stream(*, url: str = '', chunk: int = 0) -> bytes:
     """Handler stream."""
     ic(inspect.stack()[0][3])
     chunk = (
-        -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk, 100)
+        -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk + 2, 22)
     )
 
     url = url or URL_RAW_FILE
@@ -61,7 +62,21 @@ def handler_stream(url: str = '', chunk: int = 0) -> bytes:
     return content[:chunk]
 
 
+@lru_cache
+def is_prime(num: int) -> bool:
+    """Check if prime number."""
+    if not isinstance(num, int) or num <= 1 or (num > 2 and num % 2 == 0):  # noqa: PLR2004
+        return False
+    return all(num % n != 0 for n in range(2, num // 2 + 1))
+
+
 def dojo(**kwargs: str) -> dict[str]:
     """Dojo solution."""
+    result = {}
     ic(inspect.stack()[0][3], kwargs)
-    return kwargs
+    sequence = handler_file().split(b'.')[-1]
+    result = {}
+    # for num in sequence:
+    #     result
+
+    return result

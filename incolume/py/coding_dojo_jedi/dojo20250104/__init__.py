@@ -2,15 +2,18 @@
 
 import inspect
 import tarfile
+from collections.abc import Iterator
 from functools import lru_cache
 from pathlib import Path
 from typing import Final
 
+import filetype
 import httpx
 from icecream import ic
 
 URL_TAR_FILE: Final[str] = 'https://osprogramadores.com/files/d11/pi-1M.tar.gz'
 URL_RAW_FILE: Final[str] = 'https://pastebin.com/raw/Ak8TCbJk'
+LOCAL_FILE: Path = Path(*__package__.split('.')) / 'pi-1M.tgz'
 
 
 def download_file(
@@ -38,7 +41,7 @@ def handler_file(*, fin: Path | None = None, chunk: int = 0) -> bytes:
         -1 if (not isinstance(chunk, int) or chunk < 0) else max(chunk + 2, 22)
     )
 
-    fin = fin or Path(*__package__.split('.')) / 'pi-1M.tgz'
+    fin = fin or LOCAL_FILE
     ic(fin)
     with tarfile.open(fin, mode='r:gz') as handler:
         file = handler.extractfile(handler.getnames()[0])
@@ -60,6 +63,27 @@ def handler_stream(*, url: str = '', chunk: int = 0) -> bytes:
     if chunk == -1:
         return content
     return content[:chunk]
+
+
+def iterator_handler_file(*, fin: Path | None = None) -> Iterator[bytes]:
+    """Iterator of bytes."""
+    fin = fin or LOCAL_FILE
+    kind = filetype.guess(fin)
+    ic(fin)
+    try:
+        if kind.mime == 'application/gzip':
+            with tarfile.open(fin, mode='r:gz') as handler:
+                file = handler.extractfile(handler.getnames()[0])
+                file.read(2)
+                while char := file.read(1):
+                    yield char
+    except AttributeError:
+        ...
+
+    with fin.open('rb') as file:
+        file.read(2)
+        while char := file.read(1):
+            yield char
 
 
 @lru_cache

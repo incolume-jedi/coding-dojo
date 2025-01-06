@@ -116,8 +116,22 @@ def dojo0(*, junk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     return result
 
 
-def dojo(**kwargs: dict[str:Any]) -> list[Item]:
-    """Dojo solution."""
+def dojo(**kwargs: dict[str:Any]) -> Path:
+    """Dojo solution.
+
+    Args:
+        extentions (list[str]): list of extentions for query.
+        count (int): countity for query, default 5k.
+        fout (Path): Filename output for result
+
+    Returns:
+        Path: with result.
+        list[Item]: With result.
+
+    Raises:
+        MemoryError: occurs when the code requires more
+            memory than is available in the system’s RAM.
+    """
     result: list[Item] = []
     extentions = kwargs.get('extentions', get_args(Extentions))
     for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):

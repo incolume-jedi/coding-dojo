@@ -228,7 +228,9 @@ def dojo_init(
         '    @pytest.mark.parametrize(\n'
         "        'entrance expected'.split(),\n"
         '        [\n'
-        '             (None, None),\n'
+        '             pytest.param(None, None, marks=['
+        'pytest.mark.xpass(reason="Implementation failing (but shoulded ran)")'
+        ']),\n'
         '        ],\n'
         '    )\n'
         '    def test_0(self, entrance, expected) -> NoReturn:\n'

@@ -2,6 +2,7 @@
 
 import dataclasses
 import inspect
+import json
 import logging
 import pickle
 import sys
@@ -100,12 +101,12 @@ class Item:
     items: list[str]
 
 
-def dojo0(*, junk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
+def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
-    junk = max(junk, 10**5)
+    chunk = max(chunk, 10**5)
     result: list[Item] = []
     for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
-        if not idx % junk:
+        if not idx % chunk:
             f = Path(f'result{idx:0>5}.pkl')
             pickle.dump(result, f.open('wb'))
             ic(f.name)
@@ -134,9 +135,18 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     """
     result: list[Item] = []
     extentions = kwargs.get('extentions', get_args(Extentions))
+    count = kwargs.get('count', 5_000)
+    seq = 0
+    fout = kwargs.get('fout', Path('result.json')).with_suffix('.json')
     for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):
         ic(idx, file)
         soup = get_content_html(file)
         for ext in extentions:
             result.extend(find_list_ahref_files(soup, ext=ext))
-    return result
+        if seq == count:
+            with fout.open('a') as outfile:
+                outfile.write(json.dumps(result, indent=2))
+            seq = 0
+            result.clear()
+        seq += 1
+    return fout

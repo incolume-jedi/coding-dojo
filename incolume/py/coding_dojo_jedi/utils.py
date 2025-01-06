@@ -211,12 +211,14 @@ def dojo_init(
         ),
         '__init__.py': (
             '"""dojo module."""\n\n'
+            'from __future__ import annotations\n\n'
             'def dojo(*args: str, **kwargs: str)->dict[str]:\n'
             '    """Dojo solution."""\n'
             '    kwargs["args"] = args\n'
             '    return kwargs\n'
         ),
         f'test_{timestamp}.py': '"""Test module."""\n\n'
+        'from __future__ import annotations\n'
         'from typing import ClassVar, NoReturn\n'
         f'import {".".join(dojo_dir.parts)} as pkg\n'
         'import pytest\n\n'
@@ -226,7 +228,9 @@ def dojo_init(
         '    @pytest.mark.parametrize(\n'
         "        'entrance expected'.split(),\n"
         '        [\n'
-        '             (None, None),\n'
+        '             pytest.param(None, None, marks=['
+        'pytest.mark.xpass(reason="Implementation failing (but shoulded ran)")'
+        ']),\n'
         '        ],\n'
         '    )\n'
         '    def test_0(self, entrance, expected) -> NoReturn:\n'

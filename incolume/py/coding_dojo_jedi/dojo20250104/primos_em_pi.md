@@ -84,6 +84,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 ## Referências
 
 - https://osprogramadores.com/desafios/d11/
+- https://github.com/osprogramadores/op-desafios/blob/master/desafio-11%2Fimalisoon%2Fpython%2Fmain.py
 
 
 N/A - Referências para o dojo, o problema ou para elicidações extras.

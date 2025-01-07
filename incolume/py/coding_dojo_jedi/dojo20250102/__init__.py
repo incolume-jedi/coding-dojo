@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from icecream import ic
 from tqdm import tqdm
 
@@ -46,7 +46,7 @@ Extentions: TypeAlias = Literal[
     'xls',
     'xlsx',
 ]
-CHUNK_MIN: int = 1_000
+CHUNK_MIN: int = 100
 
 
 def get_list_html(path_dir: Path | None = None) -> map:
@@ -82,7 +82,7 @@ def find_list_ahref_files(
     soup: BeautifulSoup,
     ext: Extentions = '',
     on_raise: Extentions = 'doc',
-) -> list[str, str]:
+) -> list[Tag]:
     """Return a[href]."""
     try:
         ext = ext if ext.casefold() in get_args(Extentions) else on_raise
@@ -91,6 +91,7 @@ def find_list_ahref_files(
     logging.debug(ic(inspect.stack()[0][3], ext))
     result = []
     result.extend(soup.select(f'a[href*=".{ext}" i]'))
+    logging.debug(ic(result))
     return result
 
 
@@ -101,12 +102,12 @@ class Item:
     file: Path
     items: list[str]
 
-    def jsonify(self) -> str:
+    def to_dict(self) -> str:
         """Serializer self for JSON."""
         obj = copy.copy(self)
         obj.file = self.file.as_posix()
         obj.items = [str(x) for x in self.items]
-        return json.dumps(obj.__dict__)
+        return obj.__dict__
 
 
 def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
@@ -143,10 +144,14 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
             memory than is available in the system's RAM.
     """
     result: list[Item] = []
-    extentions = kwargs.get('extentions', get_args(Extentions))
-    count = kwargs.get('count', CHUNK_MIN)
     seq = 0
+    extentions = kwargs.get('extentions', get_args(Extentions))
+    logging.info(ic(extentions))
+    count = kwargs.get('count', CHUNK_MIN)
+    logging.info(ic(count))
     fout = kwargs.get('fout', Path('result.json')).with_suffix('.json')
+    logging.info(ic(fout))
+
     for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):
         logging.info(ic(idx, file))
         soup = get_content_html(file)
@@ -155,7 +160,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
         if seq == count:
             with fout.open('a') as outfile:
                 outfile.write(
-                    [json.dumps(obj.jsonify()) for obj in result],
+                    [json.dumps(obj.to_dict()) for obj in result],
                     indent=2,
                 )
             seq = 0

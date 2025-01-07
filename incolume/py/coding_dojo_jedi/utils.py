@@ -36,12 +36,6 @@ def pseudo_filename(**kwargs: str) -> Path:
         return Path(f.name)
 
 
-def pseudo_filename(**kwargs: str) -> Path:
-    """Return a temporary filename."""
-    with NamedTemporaryFile(**kwargs) as f:
-        return Path(f.name)
-
-
 def check_connectivity(
     url: str = 'https://google.com',
     timeout: float = 1.8,

@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import jsonpickle
 from bs4 import BeautifulSoup
 from icecream import ic
 from tqdm import tqdm
@@ -20,8 +21,7 @@ else:
 
 
 msg = sys.platform.casefold()
-logging.info(msg)
-ic(msg)
+logging.info(ic(msg))
 
 directory: list[Path] = [
     Path('z:', 'acervo-legis'),
@@ -52,7 +52,7 @@ def get_list_html(path_dir: Path | None = None) -> map:
     """Return list HTML files."""
     path_dir = path_dir or directory[0]
     result = path_dir.rglob(pattern='**/*.htm*', case_sensitive=False)
-    ic(result)
+    logging.info(ic(result))
     return result
 
 
@@ -87,7 +87,7 @@ def find_list_ahref_files(
         ext = ext if ext.casefold() in get_args(Extentions) else on_raise
     except AttributeError:
         ext = on_raise
-    ic(inspect.stack()[0][3], ext)
+    logging.debug(ic(inspect.stack()[0][3], ext))
     result = []
     result.extend(soup.select(f'a[href*=".{ext}" i]'))
     return result
@@ -100,20 +100,27 @@ class Item:
     file: Path
     items: list[str]
 
+    def jsonify(self) -> str:
+        """Serializer self for JSON."""
+        return jsonpickle.encode(self)
+        # obj = copy(self)
+        # obj.file = self.file.as_posix()
+        # obj.items = [str(x) for x in self.items]
+
 
 def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
-    chunk = max(chunk, 10**5)
+    chunk = max(chunk, 10**4)
     result: list[Item] = []
     for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
         if not idx % chunk:
             f = Path(f'result{idx:0>5}.pkl')
             pickle.dump(result, f.open('wb'))
-            ic(f.name)
+            logging.info(ic(f.name))
         soup = get_content_html(file)
         res = soup.select('a[href]')
         result.append(Item(file, res))
-        ic(idx, result[-1])
+        logging.debug(ic(idx, result[-1]))
     return result
 
 
@@ -140,7 +147,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     seq = 0
     fout = kwargs.get('fout', Path('result.json')).with_suffix('.json')
     for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):
-        ic(idx, file)
+        logging.info(ic(idx, file))
         soup = get_content_html(file)
         for ext in extentions:
             result.extend(find_list_ahref_files(soup, ext=ext))

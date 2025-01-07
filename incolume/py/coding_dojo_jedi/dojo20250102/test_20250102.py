@@ -88,6 +88,14 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
       </body>
     </html>"""
 
+    def test_item(self) -> NoReturn:
+        """Unittest."""
+        filein = utils.pseudo_filename()
+        filein.write_text(self.content)
+        soup = pkg.get_content_html(filein)
+        entrance = pkg.find_list_ahref_files(soup)
+        assert pkg.Item(filein, entrance).jsonify() == ''
+
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [

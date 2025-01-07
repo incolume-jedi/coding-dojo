@@ -65,7 +65,11 @@ def handler_stream(*, url: str = '', chunk: int = 0) -> bytes:
     return content[:chunk]
 
 
-def iterator_handler_file(*, fin: Path | None = None) -> Iterator[bytes]:
+def iterator_handler_file(
+    *,
+    fin: Path | None = None,
+    chunk: int = -1,
+) -> Iterator[bytes]:
     """Iterator of bytes."""
     fin = fin or LOCAL_FILE
     kind = filetype.guess(fin)
@@ -94,13 +98,22 @@ def is_prime(num: int) -> bool:
     return all(num % n != 0 for n in range(2, num // 2 + 1))
 
 
-def dojo(**kwargs: str) -> dict[str]:
+def dojo(**kwargs: dict[str, Any]) -> dict[str]:
     """Dojo solution."""
-    result = {}
     ic(inspect.stack()[0][3], kwargs)
-    sequence = handler_file().split(b'.')[-1]
+    fin = kwargs.get('fin')
+    chunk = kwargs.get('chunk')
     result = {}
-    # for num in sequence:
-    #     result
+    minor, major, count,quant = 0, 0, 0, 0
+    primes = [x for x in range(10**4 - 1, -1, -2) if is_prime(x)]
+    sequence = iterator_handler_file(fin=fin, chunk=chunk)
+    while num:=next(sequence) or count < chunk:
+        minor = count
+        major = count
+        if is_prime:
+            quant +=1
+        else:
+            
+        count += 1
 
-    return result
+    return primes

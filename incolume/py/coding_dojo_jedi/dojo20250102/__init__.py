@@ -46,6 +46,7 @@ Extentions: TypeAlias = Literal[
     'xls',
     'xlsx',
 ]
+CHUNK_MIN: int = 1_000
 
 
 def get_list_html(path_dir: Path | None = None) -> map:
@@ -102,7 +103,6 @@ class Item:
 
     def jsonify(self) -> str:
         """Serializer self for JSON."""
-        # return jsonpickle.encode(self)
         obj = copy.copy(self)
         obj.file = self.file.as_posix()
         obj.items = [str(x) for x in self.items]
@@ -111,7 +111,7 @@ class Item:
 
 def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
-    chunk = max(chunk, 10**4)
+    chunk = max(chunk, CHUNK_MIN)
     result: list[Item] = []
     for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
         if not idx % chunk:
@@ -144,7 +144,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     """
     result: list[Item] = []
     extentions = kwargs.get('extentions', get_args(Extentions))
-    count = kwargs.get('count', 5_000)
+    count = kwargs.get('count', CHUNK_MIN)
     seq = 0
     fout = kwargs.get('fout', Path('result.json')).with_suffix('.json')
     for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):
@@ -154,7 +154,10 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
             result.extend(find_list_ahref_files(soup, ext=ext))
         if seq == count:
             with fout.open('a') as outfile:
-                outfile.write(json.dumps(result.jsonify(), indent=2))
+                outfile.write(
+                    [json.dumps(obj.jsonify()) for obj in result],
+                    indent=2,
+                )
             seq = 0
             result.clear()
         seq += 1

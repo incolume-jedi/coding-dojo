@@ -438,7 +438,14 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
-            pytest.param({}, [], marks=[pytest.mark.xpass, pytest.mark.skip]),
+            pytest.param(
+                {},
+                [],
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip
+                ],
+            ),
         ],
     )
     def test_dojo_solution(self, entrance, expected) -> NoReturn:

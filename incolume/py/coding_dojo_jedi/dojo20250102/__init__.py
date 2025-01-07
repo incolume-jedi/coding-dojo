@@ -121,9 +121,10 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     """Dojo solution.
 
     Args:
-        extentions (list[str]): list of extentions for query.
-        count (int): countity for query, default 5k.
-        fout (Path): Filename output for result
+        kwargs (dict[str:Any]): can be any these:
+          extentions (list[str]): list of extentions for query.
+          count (int): countity for query, default 5k.
+          fout (Path): Filename output for result
 
     Returns:
         Path: with result.
@@ -131,7 +132,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
 
     Raises:
         MemoryError: occurs when the code requires more
-            memory than is available in the system’s RAM.
+            memory than is available in the system's RAM.
     """
     result: list[Item] = []
     extentions = kwargs.get('extentions', get_args(Extentions))

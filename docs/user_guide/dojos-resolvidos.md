@@ -8,7 +8,7 @@
 
 ---
 
-150 dojos resolvidos
+151 dojos resolvidos
 
 ---
 
@@ -16,6 +16,7 @@
 
 ### 2024
 
+ - [Dojo20241224 &#8212; relatório de presidentes brasileiros com foto em formato json](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241224/README.md){:target="_blank"}
  - [Dojo20241221 &#8212; Sum of Subarray Minimums](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241221/README.md){:target="_blank"}
  - [Dojo20241220 &#8212; Revert String to image from json file.](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241220/README.md){:target="_blank"}
  - [Dojo20241216 &#8212; Convert Image to String and write into json file.](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20241216/README.md){:target="_blank"}

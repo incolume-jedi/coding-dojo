@@ -1,6 +1,6 @@
 # ZEN do Python
 
-**[PEP 20](https://www.python.org/dev/peps/pep-0020/)**
+**[PEP 20](https://www.python.org/dev/peps/pep-0020/){:target="_blank"}**
 
 - Bonito é melhor do que feio.
 - O explícito é melhor do que o implícito.

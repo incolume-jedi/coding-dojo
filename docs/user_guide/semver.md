@@ -1,9 +1,9 @@
 
 # Versionamento Semântico (SemVer)
-Este especifícação pode ser acompanhada na integra em seu endereço oficcial em https://semver.org/lang/pt-BR/.
+Este especifícação pode ser acompanhada na integra em seu endereço oficcial em [https://semver.org/lang/pt-BR/](https://semver.org/lang/pt-BR){:target="_blank"}.
 
 ## Especificação
-As palavras-chaves “DEVE”, “NÃO DEVE”, “OBRIGATÓRIO”, “DEVERÁ”, “NÃO DEVERÁ”, “PODEM”, “NÃO PODEM”, “RECOMENDADO”, “PODE” e “OPCIONAL” no presente documento devem ser interpretados como descrito na [RFC 2119](http://tools.ietf.org/html/rfc2119).
+As palavras-chaves “DEVE”, “NÃO DEVE”, “OBRIGATÓRIO”, “DEVERÁ”, “NÃO DEVERÁ”, “PODEM”, “NÃO PODEM”, “RECOMENDADO”, “PODE” e “OPCIONAL” no presente documento devem ser interpretados como descrito na [RFC 2119](http://tools.ietf.org/html/rfc2119){:target="_blank"}.
 
 1. Software usando Versionamento Semântico DEVE declarar uma API pública. Esta API poderá ser declarada no próprio código ou existir estritamente na documentação, desde que seja precisa e compreensiva.
 1. Um número de versão normal DEVE ter o formato de X.Y.Z, onde X, Y, e Z são inteiros não negativos, e NÃO DEVE conter zeros à esquerda. X é a versão Maior, Y é a versão Menor, e Z é a versão de Correção. Cada elemento DEVE aumentar numericamente. Por exemplo: 1.9.0 -> 1.10.0 -> 1.11.0.

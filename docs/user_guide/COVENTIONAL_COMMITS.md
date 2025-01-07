@@ -81,4 +81,4 @@ Refs: #123
 ```
 
 
-The full specification maybe access on [english lang](https://www.conventionalcommits.org/en/v1.0.0/#specification) or others languages about [Brazilian Portuguese](https://www.conventionalcommits.org/pt-br/v1.0.0/#specification).
+The full specification maybe access on [english lang](https://www.conventionalcommits.org/en/v1.0.0/#specification){:target="_blank"} or others languages about [Brazilian Portuguese](https://www.conventionalcommits.org/pt-br/v1.0.0/#specification){:target="_blank"}.

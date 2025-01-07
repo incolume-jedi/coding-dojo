@@ -1,5 +1,6 @@
 """dojo module."""
 
+import copy
 import dataclasses
 import inspect
 import json
@@ -9,7 +10,6 @@ import sys
 from pathlib import Path
 from typing import Any
 
-import jsonpickle
 from bs4 import BeautifulSoup
 from icecream import ic
 from tqdm import tqdm
@@ -102,10 +102,11 @@ class Item:
 
     def jsonify(self) -> str:
         """Serializer self for JSON."""
-        return jsonpickle.encode(self)
-        # obj = copy(self)
-        # obj.file = self.file.as_posix()
-        # obj.items = [str(x) for x in self.items]
+        # return jsonpickle.encode(self)
+        obj = copy.copy(self)
+        obj.file = self.file.as_posix()
+        obj.items = [str(x) for x in self.items]
+        return json.dumps(obj.__dict__)
 
 
 def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
@@ -153,7 +154,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
             result.extend(find_list_ahref_files(soup, ext=ext))
         if seq == count:
             with fout.open('a') as outfile:
-                outfile.write(json.dumps(result, indent=2))
+                outfile.write(json.dumps(result.jsonify(), indent=2))
             seq = 0
             result.clear()
         seq += 1

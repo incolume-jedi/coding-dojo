@@ -88,14 +88,6 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
       </body>
     </html>"""
 
-    def test_item(self) -> NoReturn:
-        """Unittest."""
-        filein = utils.pseudo_filename()
-        filein.write_text(self.content)
-        soup = pkg.get_content_html(filein)
-        entrance = pkg.find_list_ahref_files(soup)
-        assert pkg.Item(filein, entrance).jsonify() == ''
-
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
@@ -442,6 +434,14 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         assert all(isinstance(r, pkg.Item) for r in result)
         assert filename in [r.file for r in result]
         assert [str(i) for i in result[-1].items] == expected
+
+    def test_item(self) -> NoReturn:
+        """Unittest."""
+        filein = utils.pseudo_filename()
+        filein.write_text(self.content)
+        soup = pkg.get_content_html(filein)
+        entrance = pkg.find_list_ahref_files(soup)
+        assert isinstance(pkg.Item(filein, entrance).jsonify(), str)
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

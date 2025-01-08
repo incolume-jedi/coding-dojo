@@ -473,7 +473,11 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 ],
             ),
             pytest.param(
-                {'path_dir': pkg.directory[0], 'count': 1, 'fout': (fout:=utils.pseudo_filename())},
+                {
+                    'path_dir': pkg.directory[0],
+                    'count': 1,
+                    'fout': (fout := utils.pseudo_filename()),
+                },
                 fout,
                 marks=[
                     pytest.mark.xpass,
@@ -481,7 +485,11 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 ],
             ),
             pytest.param(
-                {'path_dir': pkg.directory[0], 'count': 10, 'fout': (fout:=utils.pseudo_filename())},
+                {
+                    'path_dir': pkg.directory[0],
+                    'count': 10,
+                    'fout': (fout := utils.pseudo_filename()),
+                },
                 fout,
                 marks=[
                     pytest.mark.xpass,
@@ -489,7 +497,13 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 ],
             ),
             pytest.param(
-                {'path_dir': pkg.directory[0], 'fout': (fout:=Path(*__package__.split('.'))/'report.json')},
+                {
+                    'path_dir': pkg.directory[0],
+                    'fout': (
+                        fout := Path(pkg.__package__).resolve().parent
+                        / 'report.json'
+                    ),
+                },
                 fout,
                 marks=[
                     pytest.mark.xpass,

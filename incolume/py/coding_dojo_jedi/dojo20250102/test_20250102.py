@@ -473,16 +473,24 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 ],
             ),
             pytest.param(
-                {'path_dir': pkg.directory[0], 'count': 1},
-                [],
+                {'path_dir': pkg.directory[0], 'count': 1, 'fout': (fout:=utils.pseudo_filename())},
+                fout,
                 marks=[
                     pytest.mark.xpass,
                     # pytest.mark.skip
                 ],
             ),
             pytest.param(
-                {'path_dir': pkg.directory[0], 'count': 10},
-                [],
+                {'path_dir': pkg.directory[0], 'count': 10, 'fout': (fout:=utils.pseudo_filename())},
+                fout,
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip
+                ],
+            ),
+            pytest.param(
+                {'path_dir': pkg.directory[0], 'fout': (fout:=Path(*__package__.split('.'))/'report.json')},
+                fout,
                 marks=[
                     pytest.mark.xpass,
                     # pytest.mark.skip

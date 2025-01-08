@@ -24,37 +24,47 @@ class TestCase:
         <ol><li>
           <a href="http://legislacao.planalto.gov.br/legisla/legislacao.NSF/
 Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
+        </li><li>
           <a href="http://legislacao.planalto.gov.br/legisla/legislacao.Nsf/
 Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
+        </li><li>
           <a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/
 Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         </li><li>
           <a href="anexo/xpto.doc">anexo 1</a>
+        </li><li>
           <a href="anexo/xpto.Doc">anexo 2</a>
+        </li><li>
           <a href="anexo/xpto.DOC">anexo 3</a>
         </li><li>
           <a href="anexo/xpto.docx">anexo 4</a>
+        </li><li>
           <a href="anexo/xpto.Docx">anexo 5</a>
+        </li><li>
           <a href="anexo/xpto.DOCX">anexo 6</a>
         </li><li>
           <a href="anexo/xpto.xlsx">anexo 7</a>
+        </li><li>
           <a href="anexo/xpto.XLSX">anexo 8</a>
+        </li><li>
           <a href="anexo/xpto.Xlsx">anexo 9</a>
         </li><li>
           <a href="anexo/xpto.xls">anexo 10</a>
+        </li><li>
           <a href="anexo/xpto.Xls">anexo 11</a>
+        </li><li>
           <a href="anexo/xpto.XLS">anexo 12</a>
         </li><li>
-        </li><li>
-        </li><li>
           <a href="anexo/xpto.rtf">anexo 13</a>
+        </li><li>
           <a href="anexo/xpto.rtf">anexo 14</a>
+        </li><li>
           <a href="anexo/xpto.rtf">anexo 15</a>
         </li><li>
-        </li><li>
-        </li><li>
           <a href="anexo/xpto.pdf">anexo 16</a>
+        </li><li>
           <a href="anexo/xpto.Pdf">anexo 17</a>
+        </li><li>
           <a href="anexo/xpto.PDF">anexo 18</a>
         </li><li>
           <a href="D11923.htm">
@@ -454,8 +464,29 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                     # pytest.mark.skip
                 ],
             ),
+            pytest.param(
+                {'count': 20},
+                [],
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip
+                ],
+            ),
         ],
     )
     def test_dojo_solution(self, entrance, expected) -> NoReturn:
         """Unittest."""
+        filein = utils.pseudo_filename()
+        filein = filein.with_segments(
+            filein.parents[0],
+            inspect.stack()[0][3],
+            filein.name,
+        ).with_suffix('.html')
+        shutil.rmtree(filein.parent, ignore_errors=True)
+        filein.parent.mkdir(parents=True, exist_ok=True)
+        [
+            filein.with_stem(f'{filein.stem}{_}').write_text(self.content)
+            for _ in range(10)
+        ]
+        entrance.update({'path_dir': filein.parent})
         assert pkg.dojo(**entrance) == expected

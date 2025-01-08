@@ -46,7 +46,7 @@ Extentions: TypeAlias = Literal[
     'xls',
     'xlsx',
 ]
-CHUNK_MIN: int = 100
+CHUNK_MIN: int = 10
 
 
 def get_list_html(path_dir: Path | None = None) -> map:
@@ -107,6 +107,7 @@ class Item:
         obj = copy.copy(self)
         obj.file = self.file.as_posix()
         obj.items = [str(x) for x in self.items]
+        logging.debug(ic(self.__class__, inspect.stack()[0][3], obj))
         return obj.__dict__
 
 
@@ -143,6 +144,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
         MemoryError: occurs when the code requires more
             memory than is available in the system's RAM.
     """
+    logging.debug(ic(inspect.stack()[0][3]))
     result: list[Item] = []
     seq = 0
     extentions = kwargs.get('extentions', get_args(Extentions))
@@ -158,12 +160,14 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
         for ext in extentions:
             result.extend(find_list_ahref_files(soup, ext=ext))
         if seq == count:
-            with fout.open('a') as outfile:
-                outfile.write(
-                    [json.dumps(obj.to_dict()) for obj in result],
+            logging.debug(ic(result))
+            with fout.open('a') as json_handler:
+                json.dump(
+                    [obj.to_dict() for obj in result],
+                    fp=json_handler,
                     indent=2,
                 )
-            seq = 0
+            seq = -1
             result.clear()
         seq += 1
     return fout

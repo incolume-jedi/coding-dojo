@@ -44,7 +44,7 @@ Extentions: TypeAlias = Literal[
     'rtf',
     'xls',
 ]
-CHUNK_MIN: int = 10
+CHUNK_MIN: int = 1000
 
 
 def get_list_html(path_dir: Path | None = None) -> map:

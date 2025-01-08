@@ -134,7 +134,7 @@ def write_json(content: list[Item], fout: Path, mode: str = 'a') -> Path:
     try:
         with fout.open(mode) as json_handler:
             json.dump(
-                [obj.to_dict() for obj in content if obj],
+                [ic(obj.to_dict()) for obj in content if obj],
                 fp=json_handler,
                 indent=2,
             )
@@ -162,6 +162,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     """
     logging.debug(ic(inspect.stack()[0][3]))
     result: list[Item] = []
+    file_actual: Path = None
     extentions = kwargs.get('extentions', get_args(Extentions))
     logging.info(ic(extentions))
     count = kwargs.get('count', CHUNK_MIN)
@@ -173,12 +174,17 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
         enumerate(get_list_html(kwargs.get('path_dir'))),
     ):
         logging.info(ic(idx, file))
+        if file_actual is None or file_actual.name != file.name:
+            file_actual = file
+
         soup = get_content_html(file)
+        result.append(Item(file, []))
         for ext in extentions:
-            result.extend(find_list_ahref_files(soup, ext=ext))
+            result[-1].items.extend(find_list_ahref_files(soup, ext=ext))
         # if idx % count == 0:
         #     logging.debug(ic(result))
         #     write_json(content=result, fout=fout)
         #     result.clear()
     write_json(content=result, fout=fout)
+    ic(result)
     return fout

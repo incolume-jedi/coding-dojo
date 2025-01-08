@@ -472,22 +472,43 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                     # pytest.mark.skip
                 ],
             ),
+            pytest.param(
+                {'path_dir': pkg.directory[0], 'count': 1},
+                [],
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip
+                ],
+            ),
+            pytest.param(
+                {'path_dir': pkg.directory[0], 'count': 10},
+                [],
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip
+                ],
+            ),
         ],
     )
     def test_dojo_solution(self, entrance, expected) -> NoReturn:
         """Unittest."""
+        # Nome volatil para arquivo de teste
         filein = utils.pseudo_filename()
+        # redefinido path de teste
         filein = filein.with_segments(
             filein.parents[0],
             inspect.stack()[0][3],
             filein.name,
         ).with_suffix('.html')
+        # remove estrutura anterior
         shutil.rmtree(filein.parent, ignore_errors=True)
+        # cria estrutura atual
         filein.parent.mkdir(parents=True, exist_ok=True)
         [
             filein.with_stem(f'{filein.stem}{_}').write_text(self.content)
             for _ in range(entrance.get('count', 10))
         ]
-        entrance.update({'path_dir': filein.parent})
+        if 'path_dir' not in entrance:
+            entrance.update({'path_dir': filein.parent})
 
         assert pkg.dojo(**entrance) == expected

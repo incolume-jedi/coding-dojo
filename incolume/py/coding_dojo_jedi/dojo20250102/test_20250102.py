@@ -489,4 +489,5 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             for _ in range(10)
         ]
         entrance.update({'path_dir': filein.parent})
+
         assert pkg.dojo(**entrance) == expected

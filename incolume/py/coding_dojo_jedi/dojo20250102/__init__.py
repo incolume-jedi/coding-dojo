@@ -39,12 +39,10 @@ directory: list[Path] = [
 
 Extentions: TypeAlias = Literal[
     'doc',
-    'docx',
     'nsf',
     'pdf',
     'rtf',
     'xls',
-    'xlsx',
 ]
 CHUNK_MIN: int = 10
 
@@ -127,7 +125,7 @@ def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     return result
 
 
-def write_json(content: list[Item], fout: Path, mode: str = 'w+') -> Path:
+def write_json(content: list[Item], fout: Path, mode: str = 'a') -> Path:
     """Write json file.
 
     Raises:
@@ -171,14 +169,16 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     fout = kwargs.get('fout', Path('result.json')).with_suffix('.json')
     logging.info(ic(fout))
 
-    for idx, file in tqdm(enumerate(get_list_html(kwargs.get('path_dir')), 1)):
+    for idx, file in tqdm(
+        enumerate(get_list_html(kwargs.get('path_dir'))),
+    ):
         logging.info(ic(idx, file))
         soup = get_content_html(file)
         for ext in extentions:
             result.extend(find_list_ahref_files(soup, ext=ext))
-        if idx % count == 0:
-            logging.debug(ic(result))
-            write_json(content=result, fout=fout)
-            result.clear()
+        # if idx % count == 0:
+        #     logging.debug(ic(result))
+        #     write_json(content=result, fout=fout)
+        #     result.clear()
     write_json(content=result, fout=fout)
     return fout

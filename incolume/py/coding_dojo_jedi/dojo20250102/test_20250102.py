@@ -457,7 +457,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         'entrance expected'.split(),
         [
             pytest.param(
-                {},
+                {'count': 1},
                 [],
                 marks=[
                     pytest.mark.xpass,
@@ -486,7 +486,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         filein.parent.mkdir(parents=True, exist_ok=True)
         [
             filein.with_stem(f'{filein.stem}{_}').write_text(self.content)
-            for _ in range(10)
+            for _ in range(entrance.get('count', 10))
         ]
         entrance.update({'path_dir': filein.parent})
 

@@ -181,10 +181,10 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
         result.append(Item(file, []))
         for ext in extentions:
             result[-1].items.extend(find_list_ahref_files(soup, ext=ext))
-        # if idx % count == 0:
-        #     logging.debug(ic(result))
-        #     write_json(content=result, fout=fout)
-        #     result.clear()
+        if idx % count == 0:
+            logging.debug(ic(result))
+            write_json(content=result, fout=fout)
+            result.clear()
     write_json(content=result, fout=fout)
     ic(result)
     return fout

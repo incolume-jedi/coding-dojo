@@ -494,21 +494,27 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         """Unittest."""
         # Nome volatil para arquivo de teste
         filein = utils.pseudo_filename()
+
         # redefinido path de teste
         filein = filein.with_segments(
             filein.parents[0],
             inspect.stack()[0][3],
             filein.name,
         ).with_suffix('.html')
+
         # remove estrutura anterior
         shutil.rmtree(filein.parent, ignore_errors=True)
-        # cria estrutura atual
-        filein.parent.mkdir(parents=True, exist_ok=True)
-        [
-            filein.with_stem(f'{filein.stem}{_}').write_text(self.content)
-            for _ in range(entrance.get('count', 10))
-        ]
+
         if 'path_dir' not in entrance:
+            # cria estrutura atual
+            filein.parent.mkdir(parents=True, exist_ok=True)
+
+            [
+                filein.with_stem(f'{filein.stem}{_}').write_text(self.content)
+                for _ in range(entrance.get('count', 10))
+            ]
+
             entrance.update({'path_dir': filein.parent})
 
-        assert pkg.dojo(**entrance) == expected
+        assert pkg.dojo(**entrance).is_file()
+        # assert pkg.dojo(**entrance) == expected

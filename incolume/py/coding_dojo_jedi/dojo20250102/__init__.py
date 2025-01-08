@@ -127,6 +127,24 @@ def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     return result
 
 
+def write_json(content: list[Item], fout: Path, mode: str = 'w+') -> Path:
+    """Write json file.
+
+    Raises:
+        TypeError: ..
+    """
+    try:
+        with fout.open(mode) as json_handler:
+            json.dump(
+                [obj.to_dict() for obj in content if obj],
+                fp=json_handler,
+                indent=2,
+            )
+    except TypeError as e:
+        logging.exception(ic(e))  # noqa: TRY401
+    return fout
+
+
 def dojo(**kwargs: dict[str:Any]) -> Path:
     """Dojo solution.
 
@@ -160,11 +178,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
             result.extend(find_list_ahref_files(soup, ext=ext))
         if idx % count == 0:
             logging.debug(ic(result))
-            with fout.open('w+') as json_handler:
-                json.dump(
-                    [obj.to_dict() for obj in result if obj],
-                    fp=json_handler,
-                    indent=2,
-                )
+            write_json(content=result, fout=fout)
             result.clear()
+    write_json(content=result, fout=fout)
     return fout

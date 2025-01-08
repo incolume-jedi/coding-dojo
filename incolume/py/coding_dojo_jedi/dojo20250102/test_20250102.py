@@ -458,7 +458,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         [
             pytest.param(
                 {'count': 1},
-                [],
+                'result.json',
                 marks=[
                     pytest.mark.xpass,
                     # pytest.mark.skip

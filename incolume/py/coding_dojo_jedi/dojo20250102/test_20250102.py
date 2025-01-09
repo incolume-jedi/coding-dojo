@@ -136,7 +136,8 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 ],
                 marks=[
                     pytest.mark.xfail(
-                        reason='xlsx removed..TODO: identificação parcial com extenções válidas.',
+                        reason='xlsx removed..'
+                        'TODO: identificação parcial com extenções válidas.',
                     ),
                 ],
             ),
@@ -471,7 +472,6 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         assert all(key in ['file', 'items'] for key in result.to_dict())
         assert result.to_dict().get('items') == expected
 
-    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
@@ -510,10 +510,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                     'fout': (fout := utils.pseudo_filename()),
                 },
                 fout,
-                marks=[
-                    pytest.mark.xpass,
-                    # pytest.mark.skip
-                ],
+                marks=[pytest.mark.xpass, pytest.mark.skip],
             ),
             pytest.param(
                 {
@@ -524,10 +521,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                     ),
                 },
                 fout,
-                marks=[
-                    pytest.mark.xpass,
-                    # pytest.mark.skip
-                ],
+                marks=[pytest.mark.xpass, pytest.mark.skip],
             ),
         ],
     )
@@ -543,11 +537,11 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             filein.name,
         ).with_suffix('.html')
 
-        # remove estrutura anterior
-        shutil.rmtree(filein.parent, ignore_errors=True)
-
         if 'path_dir' not in entrance:
-            # cria estrutura atual
+            # remove estrutura anterior
+            shutil.rmtree(filein.parent, ignore_errors=True)
+
+            # create environment for this test.
             filein.parent.mkdir(parents=True, exist_ok=True)
 
             [
@@ -556,6 +550,6 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             ]
 
             entrance.update({'path_dir': filein.parent})
-
+        ic(entrance.get('fout'))
         assert pkg.dojo(**entrance).is_file()
         # assert pkg.dojo(**entrance) == expected

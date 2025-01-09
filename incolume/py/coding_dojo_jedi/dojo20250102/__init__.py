@@ -98,14 +98,14 @@ class Item:
     """Item."""
 
     file: Path
-    items: list[str]
+    items: list[Tag]
 
-    def to_dict(self) -> str:
+    def to_dict(self) -> dict[str, str]:
         """Serializer self for JSON."""
         obj = copy.copy(self)
         obj.file = self.file.as_posix()
         obj.items = [str(x) for x in self.items]
-        logging.debug(ic(self.__class__, inspect.stack()[0][3], obj))
+        logging.debug(ic(self.__class__.__name__, inspect.stack()[0][3], obj))
         return obj.__dict__
 
 
@@ -128,6 +128,12 @@ def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
 def write_json(content: list[Item], fout: Path, mode: str = 'a') -> Path:
     """Write json file.
 
+    Args:
+        content::list[Item]:
+        fout::Path:
+        mode::str: default is `a`, append
+    Returns:
+        Path
     Raises:
         TypeError: ..
     """
@@ -153,8 +159,8 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
           fout (Path): Filename output for result
 
     Returns:
-        Path: with result.
-        list[Item]: With result.
+        Path: with result in json file `result.json`
+          into json content list[Item].
 
     Raises:
         MemoryError: occurs when the code requires more

@@ -9,8 +9,12 @@ import pytest
 from dotenv import load_dotenv
 from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import genfile
+import logging
+import os
 
 load_dotenv()
+
+logging.basicConfig(encoding='utf-8', level=os.getenv('LOGGING-LEVEL'))
 
 
 def pytestmark():

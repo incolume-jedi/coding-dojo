@@ -260,6 +260,8 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         ic(dout)
         expected = []
         for x in range(total):
+            dout.joinpath(f'file{x}.htmlimpressao_arquivos').mkdir()
+            dout.joinpath(f'file{x}.htmimpressao_arquivos').mkdir()
             fx = dout / f'file{x}.htm{"" if x % 2 else "l"}'
             fx.write_text('')
             expected.append(fx)

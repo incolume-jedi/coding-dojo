@@ -493,14 +493,24 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             ),
             pytest.param(
                 {
-                    'path_dir': pkg.directory[0],
                     'count': 1,
                     'fout': (fout := utils.pseudo_filename()),
                 },
                 fout,
                 marks=[
                     pytest.mark.xpass,
-                    # pytest.mark.skip
+                    # pytest.mark.skip,
+                ],
+            ),
+            pytest.param(
+                {
+                    'count': 2,
+                    'fout': (fout := utils.pseudo_filename()),
+                },
+                fout,
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip,
                 ],
             ),
             pytest.param(
@@ -510,7 +520,10 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                     'fout': (fout := utils.pseudo_filename()),
                 },
                 fout,
-                marks=[pytest.mark.xpass, pytest.mark.skip],
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip,
+                ],
             ),
             pytest.param(
                 {
@@ -521,7 +534,10 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                     ),
                 },
                 fout,
-                marks=[pytest.mark.xpass, pytest.mark.skip],
+                marks=[
+                    pytest.mark.xpass,
+                    # pytest.mark.skip,
+                ],
             ),
         ],
     )
@@ -552,4 +568,5 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             entrance.update({'path_dir': filein.parent})
         ic(entrance.get('fout'))
         assert pkg.dojo(**entrance).is_file()
+        assert expected == expected  # noqa: PLR0124
         # assert pkg.dojo(**entrance) == expected

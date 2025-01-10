@@ -104,8 +104,8 @@ class Item:
         """Serializer self for JSON."""
         obj = copy.copy(self)
         obj.file = self.file.as_posix()
-        obj.items = [str(x) for x in self.items]
-        logging.debug(ic(self.__class__.__name__, inspect.stack()[0][3], obj))
+        obj.items = [x['href'] for x in self.items]
+        logging.debug(ic(self.__class__.__name__, inspect.stack()[0][3]))
         return obj.__dict__
 
 
@@ -125,22 +125,30 @@ def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     return result
 
 
-def write_json(content: list[Item], fout: Path, mode: str = 'a') -> Path:
+def write_json(content: list[Item], fout: Path, mode: str = 'w+') -> Path:
     """Write json file.
 
     Args:
         content::list[Item]:
         fout::Path:
-        mode::str: default is `a`, append
+        mode::str: default is `w+`, append
     Returns:
         Path
     Raises:
         TypeError: ..
     """
+    final_content: list[str] = []
+
     try:
+        if fout.is_file():
+            with fout.open() as file:
+                final_content.extend(json.load(file))
+
+        final_content.extend([ic(obj.to_dict()) for obj in content if obj])
+
         with fout.open(mode) as json_handler:
             json.dump(
-                [ic(obj.to_dict()) for obj in content if obj],
+                final_content,
                 fp=json_handler,
                 indent=2,
             )
@@ -168,29 +176,27 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     """
     logging.debug(ic(inspect.stack()[0][3]))
     result: list[Item] = []
-    file_actual: Path = None
     extentions = kwargs.get('extentions', get_args(Extentions))
     logging.info(ic(extentions))
     count = kwargs.get('count', CHUNK_MIN)
     logging.info(ic(count))
-    fout = kwargs.get('fout', Path('result.json')).with_suffix('.json')
+    fout = kwargs.get('fout', Path('result')).with_suffix('.json')
     logging.info(ic(fout))
 
     for idx, file in tqdm(
         enumerate(get_list_html(kwargs.get('path_dir'))),
     ):
         logging.info(ic(idx, file))
-        if file_actual is None or file_actual.name != file.name:
-            file_actual = file
 
         soup = get_content_html(file)
         result.append(Item(file, []))
         for ext in extentions:
             result[-1].items.extend(find_list_ahref_files(soup, ext=ext))
         if idx % count == 0:
-            logging.debug(ic(result))
+            logging.debug(ic(inspect.stack()[0][3], '-module-', result))
             write_json(content=result, fout=fout)
             result.clear()
+
     write_json(content=result, fout=fout)
-    ic(result)
+    ic(inspect.stack()[0][3], result)
     return fout

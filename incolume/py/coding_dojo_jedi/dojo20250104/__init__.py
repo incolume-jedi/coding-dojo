@@ -140,16 +140,17 @@ def dojo(**kwargs: dict[str, Any]) -> dict[str]:
     chunk = kwargs.get('chunk')
     logging.debug(ic(fin, chunk))
     result = {}
-    minor, major, count,quant = 0, 0, 0, 0
-    primes = [x for x in range(10**4 - 1, -1, -2) if is_prime(x)]
-    sequence = iterator_handler_file(fin=fin, chunk=chunk)
-    while num:=next(sequence) or count < chunk:
-        minor = count
-        major = count
-        if is_prime:
-            quant +=1
-        else:
-            
+    count: int = 0
+    primes = [x for x in range(10**4, -1, -1) if is_prime(x)]
+    sequence = iterator_handler_file(fin=fin)
+
+    while 1:
+        num = int(next(sequence))
+        if count > chunk:
+            break
+
+        logging.debug(ic(count, num))
+
         count += 1
 
     return primes

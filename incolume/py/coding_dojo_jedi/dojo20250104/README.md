@@ -12,9 +12,7 @@
 ![VS Code](https://img.shields.io/badge/CodeSpace-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)
 ---
 
-## Problemas
-
-Neste dojo foram resolvidos dois problemas:
+# Neste dojo foram resolvidos dois problemas:
 
 - [Leitura parcial de arquivos grandes](big_files.md)
 - [Primos em PI](primos_em_pi.md)

@@ -5,17 +5,18 @@ from pathlib import Path
 
 from icecream import ic
 from toml import load
+import contextlib
+
 
 __author__ = '@britodfbr'
 
 configfile = Path(__file__).parents[3].joinpath('pyproject.toml')
 versionfile = Path(__file__).parent.joinpath('version.txt')
-try:
+
+with contextlib.suppress(FileNotFoundError):
     versionfile.write_text(
         f'{load(configfile)["tool"]["poetry"]["version"]}\n',
     )
-except FileNotFoundError:
-    pass
 
 __version__ = versionfile.read_text(encoding='utf-8').strip()
 

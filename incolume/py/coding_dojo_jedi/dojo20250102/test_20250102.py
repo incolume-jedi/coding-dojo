@@ -487,7 +487,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             ),
             pytest.param(
                 {'count': 20},
-                [],
+                'result.json',
                 marks=[
                     pytest.mark.xpass,
                     # pytest.mark.skip
@@ -496,7 +496,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             pytest.param(
                 {
                     'count': 1,
-                    'fout': (fout := utils.pseudo_filename()),
+                    'fout': (fout := utils.pseudo_filename(suffix='.json')),
                 },
                 fout,
                 marks=[
@@ -507,7 +507,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             pytest.param(
                 {
                     'count': 2,
-                    'fout': (fout := utils.pseudo_filename()),
+                    'fout': (fout := utils.pseudo_filename(suffix='.json')),
                 },
                 fout,
                 marks=[
@@ -517,20 +517,24 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
             ),
             pytest.param(
                 {
-                    'path_dir': pkg.directory[0],
+                    'path_dir': (din := pkg.directory[0]),
                     'count': 10,
-                    'fout': (fout := utils.pseudo_filename()),
+                    'fout': (fout := utils.pseudo_filename(suffix='.json')),
                 },
                 fout,
                 marks=[
                     pytest.mark.xpass,
                     pytest.mark.offci,
-                    # pytest.mark.skip,
+                    pytest.mark.slow,
+                    pytest.mark.skipif(
+                        not din.exists(),
+                        reason=f'{din} not exist!',
+                    ),
                 ],
             ),
             pytest.param(
                 {
-                    'path_dir': pkg.directory[0],
+                    'path_dir': (din := pkg.directory[0]),
                     'fout': (
                         fout := Path(pkg.__package__).resolve().parent
                         / 'report.json'
@@ -540,7 +544,11 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 marks=[
                     pytest.mark.xpass,
                     pytest.mark.offci,
-                    # pytest.mark.skip,
+                    pytest.mark.slow,
+                    pytest.mark.skipif(
+                        not din.exists(),
+                        reason=f'{din} not exist!',
+                    ),
                 ],
             ),
         ],
@@ -571,7 +579,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
 
             entrance.update({'path_dir': filein.parent})
         ic(entrance.get('fout'))
-        result =  pkg.dojo(**entrance)
+        result = pkg.dojo(**entrance)
         assert result.is_file()
         assert expected == expected  # noqa: PLR0124
-        assert result.as_posix() == expected
+        assert result.as_posix() == Path(expected).as_posix()

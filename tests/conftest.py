@@ -1,6 +1,8 @@
 """Configure switch test."""
 
 import inspect
+import logging
+import os
 import sys
 from pathlib import Path
 from sys import version_info
@@ -11,6 +13,8 @@ from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 load_dotenv()
+
+logging.basicConfig(encoding='utf-8', level=os.getenv('LOGGING-LEVEL'))
 
 
 def pytestmark():

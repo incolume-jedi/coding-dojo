@@ -81,7 +81,14 @@ class TestCase1:
     @pytest.mark.parametrize(
         'entrance',
         [
-            pytest.param(x, marks=[pytest.mark.offci, pytest.mark.webtest])
+            pytest.param(
+                x,
+                marks=[
+                    pytest.mark.offci,
+                    pytest.mark.webtest,
+                    pytest.mark.slow,
+                ],
+            )
             for x in pkg.URLS
         ],
     )

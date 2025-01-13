@@ -8,10 +8,11 @@
 
 ---
 
-151 dojos resolvidos
+152 dojos resolvidos
 
 ---
 
+ - [Dojo20250102 &#8212; Identificar elementos HTML em âncoras no sistema de arquivos](dojo20250102/README.md)
  - [Dojo20241224 &#8212; relatório de presidentes brasileiros com foto em formato json](dojo20241224/README.md)
  - [Dojo20241221 &#8212; Sum of Subarray Minimums](dojo20241221/README.md)
  - [Dojo20241220 &#8212; Revert String to image from json file.](dojo20241220/README.md)
@@ -165,4 +166,3 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
-

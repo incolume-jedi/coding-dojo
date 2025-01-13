@@ -1,12 +1,11 @@
 """Principal Module."""
 
+import contextlib
 import logging
 from pathlib import Path
 
 from icecream import ic
 from toml import load
-import contextlib
-
 
 __author__ = '@britodfbr'
 

@@ -508,7 +508,7 @@ class TestPrimes:
             ('2i', False),
             (b'2', False),
             (2.0, False),
-            (10**4, False),
+            (10**5, False),
             (9323, True),
             (1, False),
             (2, True),
@@ -530,6 +530,39 @@ class TestPrimesIntoPI:
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
+            pytest.param(
+                {'begin': 1, 'seq': '1415926535'},
+                '',
+                marks=[pytest.mark.xpass],
+            ),
+            pytest.param(
+                {'begin': 1, 'seq': '14159265358979323846'},
+                '',
+                marks=[pytest.mark.xpass],
+            ),
+        ],
+    )
+    def test_find_longest_prime_sequence(self, entrance, expected):
+        """Unittest."""
+        assert pkg.find_longest_prime_sequence(**entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                {'chunk': 4, 'fin': pkg.LOCAL_FILE},
+                '41 59 2 653 5 89 7 9323',
+                marks=[
+                    pytest.mark.skip,
+                ],
+            ),
+            pytest.param(
+                {'chunk': 4, 'fin': pkg.LOCAL_FILE.with_suffix('.txt')},
+                '41 59 2 653 5 89 7 9323',
+                marks=[
+                    pytest.mark.skip,
+                ],
+            ),
             pytest.param({'chunk': 20}, '41 59 2 653 5 89 7 9323'),
         ],
     )

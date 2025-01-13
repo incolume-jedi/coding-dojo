@@ -1,6 +1,7 @@
 """dojo module."""
 
 import inspect
+import logging
 import tarfile
 from collections.abc import Iterator
 from functools import lru_cache
@@ -13,7 +14,7 @@ from icecream import ic
 
 URL_TAR_FILE: Final[str] = 'https://osprogramadores.com/files/d11/pi-1M.tar.gz'
 URL_RAW_FILE: Final[str] = 'https://pastebin.com/raw/Ak8TCbJk'
-LOCAL_FILE: Path = Path(*__package__.split('.')) / 'pi-1M.tgz'
+LOCAL_FILE: Path = Path(__file__).parent / 'pi-1M.tgz'
 
 
 def download_file(
@@ -68,7 +69,7 @@ def handler_stream(*, url: str = '', chunk: int = 0) -> bytes:
 def iterator_handler_file(
     *,
     fin: Path | None = None,
-    chunk: int = -1,
+    chunk_size: int = 1,
 ) -> Iterator[bytes]:
     """Iterator of bytes."""
     fin = fin or LOCAL_FILE
@@ -79,14 +80,14 @@ def iterator_handler_file(
             with tarfile.open(fin, mode='r:gz') as handler:
                 file = handler.extractfile(handler.getnames()[0])
                 file.read(2)
-                while char := file.read(1):
+                while char := file.read(chunk_size):
                     yield char
     except AttributeError:
         ...
 
     with fin.open('rb') as file:
         file.read(2)
-        while char := file.read(1):
+        while char := file.read(chunk_size):
             yield char
 
 
@@ -98,11 +99,46 @@ def is_prime(num: int) -> bool:
     return all(num % n != 0 for n in range(2, num // 2 + 1))
 
 
+def find_longest_prime_sequence(
+    begin: int,
+    seq: str,
+    longer_seq: list[str | bytes] | None = None,
+) -> str:
+    """Find Longest Prime Sequence.
+
+    Função para encontrar a maior sequência de dígitos
+     que formam números primos.
+    """
+    longer_seq = longer_seq or ['']
+    primes = [x for x in range(10**4, -1, -1) if is_prime(x)]
+    char: str = ''
+    current_sequence: str = ''
+    pi_digits: str = ''
+    num: int = 0
+    for i in range(begin, begin + 4):
+        try:
+            char += pi_digits[i]
+            num = int(char)
+        except IndexError:
+            break
+
+        if num in primes:
+            current_sequence = seq + char
+            find_longest_prime_sequence(i + 1, current_sequence, longer_seq)
+
+    if len(current_sequence) > len(longer_seq[0]):
+        longer_seq.clear()
+        longer_seq.append(current_sequence[::])
+
+    return ''.join(longer_seq)
+
+
 def dojo(**kwargs: dict[str, Any]) -> dict[str]:
     """Dojo solution."""
-    ic(inspect.stack()[0][3], kwargs)
+    logging.info(ic(inspect.stack()[0][3], kwargs))
     fin = kwargs.get('fin')
     chunk = kwargs.get('chunk')
+    logging.debug(ic(fin, chunk))
     result = {}
     minor, major, count,quant = 0, 0, 0, 0
     primes = [x for x in range(10**4 - 1, -1, -2) if is_prime(x)]

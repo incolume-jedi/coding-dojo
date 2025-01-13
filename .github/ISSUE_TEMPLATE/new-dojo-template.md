@@ -15,6 +15,14 @@ assignees: ''
 
 ---
 
+![Python](https://img.shields.io/badge/Python-512BD4?style=flat&logo=python&logoColor=yellow)
+![JEDI Incolume](https://img.shields.io/badge/incolume-JEDI-blue?style=flat)
+![PyCharm](https://img.shields.io/badge/PyCharm-AABBCC?style=flat)
+![VS Code](https://img.shields.io/badge/VScode-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)
+![VS Code](https://img.shields.io/badge/CodeSpace-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)
+
+---
+
 ## Problema
 
 **Título do problema**

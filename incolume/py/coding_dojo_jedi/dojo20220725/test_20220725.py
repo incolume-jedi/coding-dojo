@@ -10,17 +10,16 @@ from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 
-# ruff: noqa: E501
+# ruff: noqa: E501 PT023
 @pytest.mark.skip(reason='replaced for test_research_mock')
 @pytest.mark.skipif(
     version_info < (3, 9, 0),
     reason='This run only Python 3.9+',
 )
-@pytest.mark.webtest
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
-        (
+        pytest.param(
             'Obi-Wan Kenobi',
             [
                 {
@@ -55,8 +54,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     'vehicles': ['https://swapi.dev/api/vehicles/38/'],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'Luke Skywalker',
             [
                 {
@@ -89,8 +91,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     ],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'Tion Medon',
             [
                 {
@@ -112,8 +117,11 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                     'vehicles': [],
                 },
             ],
+            marks=[
+                pytest.mark.webtest,
+            ],
         ),
-        (
+        pytest.param(
             'luke skywalker',
             [
                 {
@@ -145,6 +153,9 @@ from incolume.py.coding_dojo_jedi.utils import genfile
                         'https://swapi.dev/api/vehicles/30/',
                     ],
                 },
+            ],
+            marks=[
+                pytest.mark.webtest,
             ],
         ),
         ('xpto', []),

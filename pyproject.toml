@@ -93,6 +93,8 @@ respx = "^0.21.1"
 time-machine = "^2.16.0"
 filetype = "^1.2.0"
 puremagic = "^1.28"
+tqdm = "^4.67.1"
+jsonpickle = "^4.0.1"
 
 
 [tool.poetry.group.docs.dependencies]

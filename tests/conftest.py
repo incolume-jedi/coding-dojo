@@ -1,6 +1,8 @@
 """Configure switch test."""
 
 import inspect
+import logging
+import os
 import sys
 from pathlib import Path
 from sys import version_info
@@ -9,8 +11,6 @@ import pytest
 from dotenv import load_dotenv
 from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import genfile
-import logging
-import os
 
 load_dotenv()
 

@@ -524,6 +524,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 fout,
                 marks=[
                     pytest.mark.xpass,
+                    pytest.mark.offci,
                     # pytest.mark.skip,
                 ],
             ),
@@ -538,6 +539,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 fout,
                 marks=[
                     pytest.mark.xpass,
+                    pytest.mark.offci,
                     # pytest.mark.skip,
                 ],
             ),
@@ -569,6 +571,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
 
             entrance.update({'path_dir': filein.parent})
         ic(entrance.get('fout'))
-        assert pkg.dojo(**entrance).is_file()
+        result =  pkg.dojo(**entrance)
+        assert result.is_file()
         assert expected == expected  # noqa: PLR0124
-        # assert pkg.dojo(**entrance) == expected
+        assert result.as_posix() == expected

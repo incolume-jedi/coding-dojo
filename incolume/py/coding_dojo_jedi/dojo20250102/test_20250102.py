@@ -572,11 +572,14 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         filein = utils.pseudo_filename()
 
         # redefinido path de teste
-        filein = filein.with_segments(
-            filein.parents[0],
-            inspect.stack()[0][3],
-            filein.name,
-        ).with_suffix('.html')
+        filein = (
+            filein.parents[0]
+            .joinpath(
+                inspect.stack()[0][3],
+                filein.name,
+            )
+            .with_suffix('.html')
+        )
 
         if 'path_dir' not in entrance:
             # remove estrutura anterior

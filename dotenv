@@ -1,2 +1,3 @@
-LOGGING-LEVEL=30   #https://docs.python.org/3/library/logging.html#levels
+DEBUG_MODE=False
+LOGGING_LEVEL=30   #https://docs.python.org/3/library/logging.html#levels
 TIMEOUT=3

@@ -52,7 +52,7 @@ def get_list_html(path_dir: Path | None = None) -> map:
     path_dir = path_dir or directory[0]
     result = filter(
         lambda path: path.is_file(),
-        path_dir.rglob(pattern='**/*.htm*', case_sensitive=False),
+        path_dir.rglob(pattern='**/*.htm*'),
     )
     logging.info(ic(result))
     return result

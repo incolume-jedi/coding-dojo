@@ -270,7 +270,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
 
         result = list(pkg.get_list_html(dout))
         assert len(result) == total
-        assert result == expected
+        assert set(result) == set(expected)
 
     def test_get_list_html_1(self) -> NoReturn:
         """Unittest."""

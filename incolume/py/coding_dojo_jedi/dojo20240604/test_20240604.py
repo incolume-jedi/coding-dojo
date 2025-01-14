@@ -1,6 +1,8 @@
 """Test module."""
 
 from typing import NoReturn
+
+import httpx
 import incolume.py.coding_dojo_jedi.dojo20240604 as pkg
 import pytest
 
@@ -21,12 +23,16 @@ class TestCase:
                 marks=[
                     pytest.mark.skip(reason='only get index.html'),
                     pytest.mark.webtest,
+                    pytest.mark.xfail(raises=httpx.ReadTimeout),
                 ],
             ),
             pytest.param(
                 {'url': pkg.url, 'fout': pseudo_filename()},
                 True,
-                marks=pytest.mark.webtest,
+                marks=[
+                    pytest.mark.webtest,
+                    pytest.mark.xfail(raises=httpx.ReadTimeout),
+                ],
             ),
         ],
     )

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.66.0"
+version = "1.67.0"
 description = "códigos da guilda jedi incolume"
 documentation='https://incolume-jedi.github.io/coding-dojo/'
 readme = ["README.md", "docs/index.md"]
@@ -46,8 +46,6 @@ python-Levenshtein = [{version="^0.12.2", python='<=3.7,~3.7'}]
 levenshtein = {version=">=0.22.0", python='>=3.8'}
 click = "^8.1.7"
 toml = "^0.10.2"
-
-[tool.poetry.dev-dependencies]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"

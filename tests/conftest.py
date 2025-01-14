@@ -9,8 +9,11 @@ from sys import version_info
 
 import pytest
 from dotenv import load_dotenv
-from icecream import ic
+from icecream import ic, install
 from incolume.py.coding_dojo_jedi.utils import genfile
+
+install()
+ic.configureOutput(prefix='\n:: DEBUG :: ', includeContext=True)
 
 load_dotenv()
 

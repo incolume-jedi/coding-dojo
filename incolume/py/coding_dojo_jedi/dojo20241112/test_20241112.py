@@ -2,6 +2,8 @@
 
 from pathlib import Path
 from typing import ClassVar, NoReturn
+
+import httpx
 import incolume.py.coding_dojo_jedi.dojo20241112 as pkg
 import pytest
 import asyncio
@@ -35,6 +37,7 @@ class TestCase1:
     ]
 
     @pytest.mark.webtest
+    @pytest.mark.xfail(raises=httpx.ReadTimeout)
     def test_0(self):
         """Unittest."""
         assert pkg.sync_download(

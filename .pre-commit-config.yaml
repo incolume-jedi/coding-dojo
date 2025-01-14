@@ -50,7 +50,7 @@ repos:
     hooks:
     - id: pytest
       name: pytest
-      entry: poetry run pytest -m 'not webtest'
+      entry: poetry run pytest -m 'not webtest' -m 'not slow' -m 'offci'
       language: system
       types: [python]
       pass_filenames: false

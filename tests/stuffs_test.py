@@ -26,7 +26,7 @@ class TestCaseExamplesDontRun:
         """Test it."""
 
 
-class TestCaseExamples:
+class TestCasePytestExamples:
     """Exemplos de testes para pytest."""
 
     @pytest.mark.skipif(
@@ -157,7 +157,7 @@ class TestCaseExamples:
         assert entrance == expected
 
 
-class MyTestCase(unittest.TestCase):
+class TestCaseUnittestExamples(unittest.TestCase):
     """Exemplos com Unittest."""
 
     @classmethod

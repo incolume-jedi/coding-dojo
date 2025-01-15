@@ -93,6 +93,7 @@ filetype = "^1.2.0"
 puremagic = "^1.28"
 tqdm = "^4.67.1"
 jsonpickle = "^4.0.1"
+opencv-python = "^4.10.0.84"
 
 
 [tool.poetry.group.docs.dependencies]

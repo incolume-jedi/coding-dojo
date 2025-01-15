@@ -10,6 +10,7 @@
 8. Missing Borders
 9. Transparency / Alpha Channel
 """
+from __future__ import annotations
 
 import cv2
 from matplotlib import pyplot as plt

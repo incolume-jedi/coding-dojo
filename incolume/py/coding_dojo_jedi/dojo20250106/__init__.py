@@ -1,6 +1,6 @@
 """dojo module.
 
-1. Inverted Images
+1. **Inverted Images**
 2. Rescaling
 3. Binarization
 4. Noise Removal
@@ -10,10 +10,15 @@
 8. Missing Borders
 9. Transparency / Alpha Channel
 """
+
 from __future__ import annotations
+
+from pathlib import Path
 
 import cv2
 from matplotlib import pyplot as plt
+
+IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
 
 def display(im_path):
@@ -53,3 +58,8 @@ def dojo(*args: str, **kwargs: str) -> dict[str]:
     """Dojo solution."""
     kwargs['args'] = args
     return kwargs
+
+
+if __name__ == '__main__':
+    display(IMG_DIR / 'letter.png')
+    display(IMG_DIR / 'ctr-1808-08-25.png')

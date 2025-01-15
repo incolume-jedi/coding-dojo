@@ -50,12 +50,12 @@ def display(img_path: Path) -> None:
     plt.show()
 
 
-def inverted_image(img: Path, foutput: Path | None = None) -> Path:
+def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:
     """Inverted image."""
-    foutput = foutput | Path(gettempdir, f'{img.stem}_inverted{img.suffix}')
+    foutput = foutput | Path(gettempdir, f'{fimg.stem}_inverted{fimg.suffix}')
     ic(foutput)
-    ic(img)
-
+    ic(fimg)
+    img = plt.imread(fimg)
     image = cv2.bitwise_not(img)
     cv2.imwrite(foutput, image)
     return foutput

@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20250106 as pkg
 import pytest
+from incolume.py.coding_dojo_jedi.utils import genfile
 
 
 class TestCase:
@@ -37,7 +38,7 @@ class TestCase:
         [
             pytest.param(
                 {
-                    'img': pkg.IMG_DIR.joinpath('ctr-1808-08-25.png'),
+                    'fimg': pkg.IMG_DIR.joinpath('ctr-1808-08-25.png'),
                 },
                 None,
                 marks=[
@@ -48,7 +49,19 @@ class TestCase:
             ),
             pytest.param(
                 {
-                    'img': pkg.IMG_DIR.joinpath('letter.png'),
+                    'fimg': pkg.IMG_DIR.joinpath('letter.png'),
+                    'foutput': genfile(suffix='.png'),
+                },
+                None,
+                marks=[
+                    pytest.mark.xpass(
+                        reason='Implementation failing (but shoulded ran)',
+                    ),
+                ],
+            ),
+            pytest.param(
+                {
+                    'fimg': pkg.IMG_DIR.joinpath('letter.png'),
                 },
                 None,
                 marks=[

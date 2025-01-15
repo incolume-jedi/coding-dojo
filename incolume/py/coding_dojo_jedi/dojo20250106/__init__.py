@@ -14,22 +14,24 @@
 from __future__ import annotations
 
 from pathlib import Path
+from tempfile import gettempdir
 
 import cv2
+from icecream import ic
 from matplotlib import pyplot as plt
 
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
 
-def display(im_path):
-    """Display image.
+def display(img_path: Path) -> None:
+    """Display image on screen.
 
     https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
     """
     dpi = 80
-    im_data = plt.imread(im_path)
+    img_data = plt.imread(img_path)
 
-    height, width = im_data.shape[:2]
+    height, width = img_data.shape[:2]
 
     # What size does the figure need to be in inches to fit the image?
     figsize = width / float(dpi), height / float(dpi)
@@ -43,21 +45,20 @@ def display(im_path):
     ax.axis('off')
 
     # Display the image.
-    ax.imshow(im_data, cmap='gray')
+    ax.imshow(img_data, cmap='gray')
 
     plt.show()
 
 
-def inverted_image(img):
+def inverted_image(img: Path, foutput: Path | None = None) -> Path:
     """Inverted image."""
+    foutput = foutput | Path(gettempdir, f'{img.stem}_inverted{img.suffix}')
+    ic(foutput)
+    ic(img)
+
     image = cv2.bitwise_not(img)
-    return cv2.imwrite('temp/inverted.jpg', image)
-
-
-def dojo(*args: str, **kwargs: str) -> dict[str]:
-    """Dojo solution."""
-    kwargs['args'] = args
-    return kwargs
+    cv2.imwrite(foutput, image)
+    return foutput
 
 
 if __name__ == '__main__':

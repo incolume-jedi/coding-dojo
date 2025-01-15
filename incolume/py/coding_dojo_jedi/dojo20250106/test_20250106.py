@@ -36,7 +36,20 @@ class TestCase:
         'entrance expected'.split(),
         [
             pytest.param(
+                {
+                    'img': pkg.IMG_DIR.joinpath('ctr-1808-08-25.png'),
+                },
                 None,
+                marks=[
+                    pytest.mark.xpass(
+                        reason='Implementation failing (but shoulded ran)',
+                    ),
+                ],
+            ),
+            pytest.param(
+                {
+                    'img': pkg.IMG_DIR.joinpath('letter.png'),
+                },
                 None,
                 marks=[
                     pytest.mark.xpass(
@@ -46,6 +59,6 @@ class TestCase:
             ),
         ],
     )
-    def test_0(self, entrance, expected) -> NoReturn:
+    def test_inverted(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        assert pkg.inverted_image(**entrance) == expected

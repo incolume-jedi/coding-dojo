@@ -16,20 +16,20 @@
 
 ## Problema
 
-**Preprocess Images for Text OCR**
+**Preprocess Images for Text OCR - Inverted Images**
 
 Aplique as técnicas para extração de conteúdo via OCR em Python conforme aplicados no vídeo.
 
 ## Exemplos
 
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>
@@ -39,12 +39,12 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 ## Artefatos
 
 - [dojo](__init__.py)
-- [tests](test_20241120.py)
+- [tests](test_20250106.py)
 
 
 ## Referências
 - https://youtu.be/ADV-AjAXHdc?si=CcRBcwqwMkninAxQ
-- 
+-
 N/A - Referências para o dojo, o problema ou para elicidações extras.
 
 ---

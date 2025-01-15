@@ -55,8 +55,7 @@ def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:
     foutput = foutput | Path(gettempdir, f'{fimg.stem}_inverted{fimg.suffix}')
     ic(foutput)
     ic(fimg)
-    img = plt.imread(fimg)
-    image = cv2.bitwise_not(img)
+    image = cv2.bitwise_not(fimg)
     cv2.imwrite(foutput, image)
     return foutput
 

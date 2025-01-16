@@ -1,17 +1,24 @@
 """Test module."""
 
 from __future__ import annotations
+
+
 from pathlib import Path
 from typing import ClassVar, NoReturn
+from collections.abc import Callable
 import incolume.py.coding_dojo_jedi.dojo20250106 as pkg
 import pytest
 from incolume.py.coding_dojo_jedi.utils import genfile
 from tempfile import gettempdir
 
+import numpy as np
+
 
 class TestCase:
     """Test case class."""
 
+    img0: ClassVar[Path] = pkg.IMG_DIR / 'letter.png'
+    img1: ClassVar[Path] = pkg.IMG_DIR / 'ctr-1808-08-25.png'
     t0: ClassVar = None
 
     def test_img_dir_type(self) -> NoReturn:
@@ -41,6 +48,13 @@ class TestCase:
     def test_img_dir_path(self, entrance, expected) -> NoReturn:
         """Unittest."""
         assert expected.issubset(entrance.parts)
+
+    def test_open_plot(self) -> NoReturn:
+        """Unit test decorator."""
+        func = lambda x: x  # noqa: E731
+        func = pkg.open_plot(func)
+        assert isinstance(func, Callable)
+        assert isinstance(func(self.img0), np.ndarray)
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -86,5 +100,4 @@ class TestCase:
     )
     def test_inverted(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        # assert entrance.get('fimg').is_file()
         assert pkg.inverted_image(**entrance) == expected

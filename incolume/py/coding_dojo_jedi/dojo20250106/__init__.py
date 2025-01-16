@@ -13,12 +13,18 @@
 
 from __future__ import annotations
 
+from functools import wraps
 from pathlib import Path
 from tempfile import gettempdir
+from typing import TYPE_CHECKING
 
 import cv2
+import numpy as np
 from icecream import ic
 from matplotlib import pyplot as plt
+
+if TYPE_CHECKING:
+    import numpy as np
 
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
@@ -48,6 +54,18 @@ def display(img_path: Path) -> None:
     ax.imshow(img_data, cmap='gray')
 
     plt.show()
+
+
+def open_plot(func: callable) -> callable:
+    """Change Image Path to matrix."""
+
+    @wraps(func)
+    def inner(fimg: Path) -> np.ndarray:
+        """Inner function."""
+        img_data = plt.imread(fimg)
+        return func(img_data)
+
+    return inner
 
 
 def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:

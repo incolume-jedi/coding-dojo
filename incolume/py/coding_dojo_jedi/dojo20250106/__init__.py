@@ -29,6 +29,48 @@ if TYPE_CHECKING:
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
 
+def new_decorator(arg):
+    """New decorator."""
+
+    def wrapper(func):
+        """Wrap to function."""
+
+        @wraps(func)
+        def inner(*args, **kwargs) -> np.ndarray:
+            """Inner function.
+
+            fimg: Path|None = None, foutput: Path|None = None,
+            """
+            match len(args):
+                case 1:
+                    fimg = args[0]
+                case 2:
+                    fimg = args[0]
+                    foutput = args[1]
+                case _:
+                    ic(args)
+                    fimg = args[0]
+                    foutput = args[1]
+
+            match kwargs:
+                case [fimg]:
+                    fimg = kwargs.get('fimg')
+                case [fimg, foutput]:
+                    fimg = kwargs.get('fimg')
+                    foutput = kwargs.get('foutput')
+                case _:
+                    ic(kwargs)
+                    fimg = kwargs.get('fimg')
+                    foutput = kwargs.get('foutput')
+
+            img_data = plt.imread(fimg)
+            return func(img_data)
+
+        return inner
+
+    return wrapper
+
+
 def display(img_path: Path) -> None:
     """Display image on screen.
 

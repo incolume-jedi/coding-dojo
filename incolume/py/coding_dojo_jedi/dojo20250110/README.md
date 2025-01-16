@@ -12,9 +12,9 @@
 
 ## Problema
 
-**Título do problema**
+**Customizar agregação de funcionalidades com decoradores**
 
-Customizar agregação de funcionalidades com decoradores.
+Aplicar multiplas funcionalidades através de decoredores.
 
 ## Exemplos
 

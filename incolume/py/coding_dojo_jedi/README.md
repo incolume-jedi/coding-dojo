@@ -8,10 +8,12 @@
 
 ---
 
-152 dojos resolvidos
+154 dojos resolvidos
 
 ---
 
+ - [Dojo20250110 &#8212; Customizar agregação de funcionalidades com decoradores](dojo20250110/README.md)
+ - [Dojo20250106 &#8212; Preprocess Images for Text OCR - Inverted Images](dojo20250106/README.md)
  - [Dojo20250102 &#8212; Identificar elementos HTML em âncoras no sistema de arquivos](dojo20250102/README.md)
  - [Dojo20241224 &#8212; relatório de presidentes brasileiros com foto em formato json](dojo20241224/README.md)
  - [Dojo20241221 &#8212; Sum of Subarray Minimums](dojo20241221/README.md)

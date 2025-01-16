@@ -56,6 +56,20 @@ def display(img_path: Path) -> None:
     plt.show()
 
 
+def inverted_image0(fimg: Path, foutput: Path | None = None) -> Path:
+    """Inverted image."""
+    foutput = foutput or Path(
+        gettempdir(),
+        f'{fimg.stem}_inverted{fimg.suffix}',
+    )
+    ic(foutput)
+    ic(fimg)
+    imgdata = plt.imread(fimg)
+    image = cv2.bitwise_not(imgdata)
+    cv2.imwrite(foutput, image)
+    return foutput
+
+
 def open_plot(func: callable) -> callable:
     """Change Image Path to matrix."""
 
@@ -68,6 +82,20 @@ def open_plot(func: callable) -> callable:
     return inner
 
 
+def write_plot(func: callable) -> callable:
+    """Change Image Path to matrix."""
+
+    @wraps(func)
+    def inner(img_data: np.ndarray, foutput: Path | None = None) -> Path:
+        """Inner function."""
+        ic(img_data, foutput)
+        cv2.imwrite(foutput, img_data)
+        return func(img_data, foutput)
+
+    return inner
+
+
+@open_plot
 def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:
     """Inverted image."""
     foutput = foutput or Path(

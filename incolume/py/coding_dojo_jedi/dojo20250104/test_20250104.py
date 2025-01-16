@@ -2,6 +2,10 @@
 
 from typing import ClassVar
 import incolume.py.coding_dojo_jedi.dojo20250104 as pkg
+import incolume.py.coding_dojo_jedi.dojo20250104.example_0 as ex0
+import incolume.py.coding_dojo_jedi.dojo20250104.example_1 as ex1
+import incolume.py.coding_dojo_jedi.dojo20250104.example_2 as ex2
+import incolume.py.coding_dojo_jedi.dojo20250104.example_3 as ex3
 import pytest
 import tempfile
 from pathlib import Path
@@ -524,8 +528,43 @@ class TestPrimes:
         assert pkg.is_prime(entrance) == expected
 
 
+class TestCaseExamples:
+    """Case Examples."""
+
+    def test_example_0(self):
+        """Example case."""
+        prime_finder = ex0.PrimesPi(
+            filename=pkg.LOCAL_FILE.with_suffix('.txt'),
+        )
+        result = prime_finder.run()
+        assert (
+            result == '14590431451723416161791510706177671741511'
+            '297009743626357169179809791310760755'
+        )
+
+    @pytest.mark.skip
+    def test_example_1(self):
+        """Example case."""
+        assert ex1.ic_biggest_seq(pkg.LOCAL_FILE.with_suffix('.txt'))
+
+    @pytest.mark.skip
+    def test_example_2(self):
+        """Example case."""
+        assert ex2.generate_bigger_primes()
+
+    def test_example_3(self):
+        """Example case."""
+        result = ['']
+        content = pkg.LOCAL_FILE.with_suffix('.txt').read_text()
+        primes = get_prime(10000)
+        ex3.get_bigger_seq(prime_array=primes, array='', begin='', seq='', bigger_seq=result)
+        assert result
+
+
 class TestPrimesIntoPI:
     """Case teste."""
+
+    __test__ = False
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

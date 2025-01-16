@@ -60,7 +60,7 @@ def get_prime(limit: int) -> list[int]:
     return _primes
 
 
-def load_file(_file):
+def load_file(_file)->str:
     """Carrega os bytes do arquivo em uma array, e remove 3."""
     char = _file.read(1)
     _bytes = ''
@@ -97,22 +97,23 @@ def get_bigger_seq(prime_array, array, begin, seq, bigger_seq):
         bigger_seq.append(prime_to_add[::])
 
 
-primes = get_prime(10000)
-biggest_seq = ['']
-if len(sys.argv) < 2:  # noqa: PLR2004
-    ic(
-        'chame este programa passando o nome'
-        ' de um arquivo ex: python main.py numeros.txt',
-    )
-    sys.exit(1)
+if __name__ == '__main__':
+    primes = get_prime(10000)
+    biggest_seq = ['']
+    if len(sys.argv) < 2:  # noqa: PLR2004
+        ic(
+            'chame este programa passando o nome'
+            ' de um arquivo ex: python main.py numeros.txt',
+        )
+        sys.exit(1)
 
-file_name = Path(sys.argv[1])
-try:
-    with file_name.open(encoding='utf-8') as file:
-        loaded_file = load_file(file)
-        for index in range(len(loaded_file)):
-            get_bigger_seq(primes, loaded_file, index, '', biggest_seq)
-        ic(biggest_seq[0])
-except FileNotFoundError:
-    ic(f'arquivo: {file_name} não encontrado')
-    sys.exit(1)
+    file_name = Path(sys.argv[1])
+    try:
+        with file_name.open(encoding='utf-8') as file:
+            loaded_file = load_file(file)
+            for index in range(len(loaded_file)):
+                get_bigger_seq(primes, loaded_file, index, '', biggest_seq)
+            ic(biggest_seq[0])
+    except FileNotFoundError:
+        ic(f'arquivo: {file_name} não encontrado')
+        sys.exit(1)

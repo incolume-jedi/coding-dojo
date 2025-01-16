@@ -81,30 +81,31 @@ def generate_bigger_primes(
         bigger_sequence.append(prime_to_add[::])
 
 
-primes = get_prime(10000)
-biggest_sequence = ['']
+if __name__ == '__main__':
+    primes = get_prime(10000)
+    biggest_sequence = ['']
 
-if len(sys.argv) < 2:  # noqa: PLR2004
-    ic('[USO]: python main.py numeros.txt')
-    sys.exit(1)
+    if len(sys.argv) < 2:  # noqa: PLR2004
+        ic('[USO]: python main.py numeros.txt')
+        sys.exit(1)
 
-file_name = Path(sys.argv[1])
+    file_name = Path(sys.argv[1])
 
-try:
-    with file_name.open(encoding='utf-8') as file:
-        loaded_file = load_file(file)
+    try:
+        with file_name.open(encoding='utf-8') as file:
+            loaded_file = load_file(file)
 
-        for index in range(len(loaded_file)):
-            generate_bigger_primes(
-                primes,
-                loaded_file,
-                index,
-                '',
-                biggest_sequence,
-            )
+            for index in range(len(loaded_file)):
+                generate_bigger_primes(
+                    primes,
+                    loaded_file,
+                    index,
+                    '',
+                    biggest_sequence,
+                )
 
-        ic(biggest_sequence[0])
+            ic(biggest_sequence[0])
 
-except FileNotFoundError:
-    ic(f'arquivo: {file_name} não encontrado')
-    sys.exit(1)
+    except FileNotFoundError:
+        ic(f'arquivo: {file_name} não encontrado')
+        sys.exit(1)

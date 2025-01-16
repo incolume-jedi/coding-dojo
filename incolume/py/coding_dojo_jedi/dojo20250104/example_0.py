@@ -83,7 +83,7 @@ class PrimesPi:
             ic(f'Arquivo: {self.filename.as_posix()} não encontrado.')
             sys.exit(1)
 
-    def run(self) -> None:
+    def run(self) -> list[str]:
         """Função principal da classe.
 
         onde será feita leitura, busca e imprimir o resultado
@@ -93,7 +93,7 @@ class PrimesPi:
         self.read_file()
         for index in range(len(self.pi_digits)):
             self.find_longest_prime_sequence(index, '', longer_seq)
-        ic(longer_seq[0])
+        return ic(longer_seq[0])
 
 
 if __name__ == '__main__':

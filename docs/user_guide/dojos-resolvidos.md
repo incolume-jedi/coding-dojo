@@ -8,7 +8,7 @@
 
 ---
 
-152 dojos resolvidos
+154 dojos resolvidos
 
 ---
 
@@ -16,6 +16,8 @@
 
 ### 2025
 
+ - [Dojo20250110 &#8212; Customizar agregação de funcionalidades com decoradores](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250110/README.md){:target="_blank"}
+ - [Dojo20250106 &#8212; Preprocess Images for Text OCR - Inverted Images](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250106/README.md){:target="_blank"}
  - [Dojo20250102 &#8212; Identificar elementos HTML em âncoras no sistema de arquivos](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250102/README.md){:target="_blank"}
 
 

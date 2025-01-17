@@ -74,19 +74,6 @@ def open_plot(func: callable) -> callable:
     return inner
 
 
-def write_plot(func: callable) -> callable:
-    """Change Image Path to matrix."""
-
-    @wraps(func)
-    def inner(img_data: np.ndarray, foutput: Path | None = None) -> Path:
-        """Inner function."""
-        ic(img_data, foutput)
-        cv2.imwrite(foutput, img_data)
-        return func(img_data, foutput)
-
-    return inner
-
-
 if __name__ == '__main__':
     o = PreprocessImage()
     o.display(o.IMG_DIR / 'letter.png')

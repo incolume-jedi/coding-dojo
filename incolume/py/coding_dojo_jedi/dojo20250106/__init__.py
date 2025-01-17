@@ -87,21 +87,6 @@ def write_plot(func: callable) -> callable:
     return inner
 
 
-@open_plot
-def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:
-    """Inverted image."""
-    foutput = foutput or Path(
-        gettempdir(),
-        f'{fimg.stem}_inverted{fimg.suffix}',
-    )
-    ic(foutput)
-    ic(fimg)
-    imgdata = plt.imread(fimg)
-    image = cv2.bitwise_not(imgdata)
-    cv2.imwrite(foutput, image)
-    return foutput
-
-
 if __name__ == '__main__':
     o = PreprocessImage()
     o.display(o.IMG_DIR / 'letter.png')

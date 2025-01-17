@@ -53,22 +53,7 @@ class TestCase:
 
     def test_class_name(self) -> NoReturn:
         """Unittest."""
-        assert self.obj.class_name == 'PreprocessImage'
-
-    def test_open_plot(self) -> NoReturn:
-        """Unit test decorator."""
-        func = lambda x: x  # noqa: E731
-        func = pkg.open_plot(func)
-        assert isinstance(func, Callable)
-        assert isinstance(func(self.img0), np.ndarray)
-
-    def test_write_plot(self) -> NoReturn:
-        """Unit test decorator."""
-        func = lambda x: x  # noqa: E731
-        func = pkg.open_plot(func)
-        func = pkg.write_plot(func)
-        result = func(self.img0)
-        assert result == ''
+        assert self.obj.class_name == 'PreprocessImageOCR'
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

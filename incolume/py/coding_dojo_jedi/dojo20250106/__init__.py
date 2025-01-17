@@ -95,7 +95,7 @@ class PreprocessImageOCR:
         cv2.imwrite(fout, self.img)
         return fout
 
-    def reset(self):
+    def reset(self) -> Self:
         """Reset to original image."""
         self.img = copy(self._img_data)
         return self

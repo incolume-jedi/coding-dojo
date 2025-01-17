@@ -8,6 +8,7 @@ from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20250106 as pkg
 import pytest
 from tempfile import gettempdir
+from copy import copy
 
 
 class TestCase:
@@ -113,6 +114,6 @@ class TestCase:
     def test_reset(self):
         """Unittest."""
         self.obj.img_path = self.img0
-        value = self.obj.img
+        value = copy(self.obj.img)
         # compare two numpy arrays
-        assert (value == self.obj.inverted().reset()).all
+        assert value.all() == self.obj.inverted().reset().img.all()

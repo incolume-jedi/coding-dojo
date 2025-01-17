@@ -40,7 +40,8 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 ## Referências
 - https://youtu.be/ADV-AjAXHdc?si=CcRBcwqwMkninAxQ
--
+- https://github.com/wjbmattingly/ocr_python_textbook/blob/main/02_02_working%20with%20opencv.ipynb
+
 N/A - Referências para o dojo, o problema ou para elicidações extras.
 
 ---

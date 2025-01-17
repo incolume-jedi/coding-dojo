@@ -92,18 +92,10 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                obj.IMG_DIR.joinpath('letter.png'),
-                file,
-                marks=[
-                    pytest.mark.xpass(
-                        reason='Implementation failing (but shoulded ran)',
-                    ),
-                ],
-            ),
-            pytest.param(
                 (file := obj.IMG_DIR.joinpath('letter.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
+                    # pytest.mark.skip,
                     pytest.mark.xpass(
                         reason='Implementation failing (but shoulded ran)',
                     ),

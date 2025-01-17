@@ -13,11 +13,13 @@
 
 from __future__ import annotations
 
+import logging
 from copy import copy
 from pathlib import Path
-from typing import TYPE_CHECKING, Self
+from typing import TYPE_CHECKING, NoReturn, Self
 
 import cv2
+from icecream import ic
 from matplotlib import pyplot as plt
 
 if TYPE_CHECKING:
@@ -44,12 +46,12 @@ class PreprocessImageOCR:
         self.img: np.ndarray = None
 
     @property
-    def img_path(self):
+    def img_path(self) -> Path:
         """Imagem file."""
         return self._img_path
 
     @img_path.setter
-    def img_path(self, value: Path) -> Self:
+    def img_path(self, value: Path) -> NoReturn:
         self._img_path = value
         self._img_data = plt.imread(self._img_path)
         self.img = copy(self._img_data)
@@ -81,8 +83,9 @@ class PreprocessImageOCR:
     def save(self, fout: Path | None = None) -> Path:
         """Save current image."""
         fout = fout or (
-            Path() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
+            Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
         )
+        logging.debug(ic(fout))
         cv2.imwrite(fout, self.img)
         return fout
 

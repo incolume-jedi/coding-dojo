@@ -51,6 +51,10 @@ class TestCase:
         """Unittest."""
         assert expected.issubset(entrance.parts)
 
+    def test_class_name(self) -> NoReturn:
+        """Unittest."""
+        assert self.obj.class_name == 'PreprocessImage'
+
     def test_open_plot(self) -> NoReturn:
         """Unit test decorator."""
         func = lambda x: x  # noqa: E731

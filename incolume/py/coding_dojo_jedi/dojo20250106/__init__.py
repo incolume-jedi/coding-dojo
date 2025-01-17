@@ -26,7 +26,13 @@ from matplotlib import pyplot as plt
 if TYPE_CHECKING:
     import numpy as np
 
+def who(cls):
+    """Its Class name."""
+    cls.class_name = cls.__name__
+    return cls
 
+
+@who
 class PreprocessImage:
     """Preprocess Image."""
 

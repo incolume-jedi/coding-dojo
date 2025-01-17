@@ -14,9 +14,11 @@
 from __future__ import annotations
 
 from functools import wraps
+from copy import copy
 from pathlib import Path
 from tempfile import gettempdir
 from typing import TYPE_CHECKING
+from typing import Self
 
 import cv2
 import numpy as np
@@ -79,6 +81,11 @@ class PreprocessImageOCR:
         ax.imshow(self.img, cmap='gray')
 
         plt.show()
+
+    def save(self, fout: Path) -> Path:
+        """Save current image."""
+        fout = fout or self.img_path.with_name(f'{self.img_path.stem}_latest{self.img_path.suffix}')
+        cv2.imwrite(fout, self.img)
 
 
 if __name__ == '__main__':

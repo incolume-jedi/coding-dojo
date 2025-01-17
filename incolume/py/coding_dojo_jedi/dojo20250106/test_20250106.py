@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import ClassVar, NoReturn
 import incolume.py.coding_dojo_jedi.dojo20250106 as pkg
 import pytest
-from incolume.py.coding_dojo_jedi.utils import genfile
 from tempfile import gettempdir
 
 
@@ -56,11 +55,34 @@ class TestCase:
         'entrance expected'.split(),
         [
             pytest.param(
+                {'img': img0, 'fout': None},
+                'letter_latest.png',
+                marks=[],
+            ),
+            pytest.param(
                 {
-                    'fimg': (
-                        file := obj.IMG_DIR.joinpath('ctr-1808-08-25.png')
-                    ),
+                    'img': img0,
+                    'fout': Path(gettempdir())
+                    / f'{img0.stem}_saved{img0.suffix}',
                 },
+                'letter_saved.png',
+                marks=[],
+            ),
+        ],
+    )
+    def test_class_save(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        self.obj.img_path = entrance.get('img')
+        result = self.obj.save(entrance.get('fout'))
+        assert set(result.parts).issuperset(
+            [expected],
+        )
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                (file := obj.IMG_DIR.joinpath('ctr-1808-08-25.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
                     # pytest.mark.skip,
@@ -70,10 +92,7 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                {
-                    'fimg': obj.IMG_DIR.joinpath('letter.png'),
-                    'foutput': (file := genfile(suffix='.png')),
-                },
+                obj.IMG_DIR.joinpath('letter.png'),
                 file,
                 marks=[
                     pytest.mark.xpass(
@@ -82,9 +101,7 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                {
-                    'fimg': (file := obj.IMG_DIR.joinpath('letter.png')),
-                },
+                (file := obj.IMG_DIR.joinpath('letter.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
                     pytest.mark.xpass(
@@ -96,4 +113,8 @@ class TestCase:
     )
     def test_inverted(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.inverted_image(**entrance) == expected
+        self.obj.img_path = entrance
+        self.obj.inverted()
+        result = self.obj.save(fout=expected)
+        assert result.is_file()
+        assert result == expected

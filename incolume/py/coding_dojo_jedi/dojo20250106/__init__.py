@@ -13,20 +13,16 @@
 
 from __future__ import annotations
 
-from functools import wraps
 from copy import copy
 from pathlib import Path
-from tempfile import gettempdir
-from typing import TYPE_CHECKING
-from typing import Self
+from typing import TYPE_CHECKING, Self
 
 import cv2
-import numpy as np
-from icecream import ic
 from matplotlib import pyplot as plt
 
 if TYPE_CHECKING:
     import numpy as np
+
 
 def who(cls):
     """Its Class name."""
@@ -43,9 +39,9 @@ class PreprocessImageOCR:
     def __init__(self):
         """Initializer."""
         self.dpi: float = 80.0
-        self._img_path = None
-        self._img_data = None
-        self.img = None
+        self._img_path: Path = None
+        self._img_data: np.ndarray = None
+        self.img: np.ndarray = None
 
     @property
     def img_path(self):
@@ -82,10 +78,18 @@ class PreprocessImageOCR:
 
         plt.show()
 
-    def save(self, fout: Path) -> Path:
+    def save(self, fout: Path | None = None) -> Path:
         """Save current image."""
-        fout = fout or self.img_path.with_name(f'{self.img_path.stem}_latest{self.img_path.suffix}')
+        fout = fout or (
+            Path() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
+        )
         cv2.imwrite(fout, self.img)
+        return fout
+
+    def inverted(self) -> Self:
+        """Inverter bit image."""
+        self.img = cv2.bitwise_not(self._img_data)
+        return self
 
 
 if __name__ == '__main__':

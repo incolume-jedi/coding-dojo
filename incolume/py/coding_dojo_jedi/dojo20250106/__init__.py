@@ -33,7 +33,7 @@ def who(cls):
 
 
 @who
-class PreprocessImage:
+class PreprocessImageOCR:
     """Preprocess Image."""
 
     IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
@@ -41,15 +41,28 @@ class PreprocessImage:
     def __init__(self):
         """Initializer."""
         self.dpi: float = 80.0
+        self._img_path = None
+        self._img_data = None
+        self.img = None
+
+    @property
+    def img_path(self):
+        """Imagem file."""
+        return self._img_path
+
+    @img_path.setter
+    def img_path(self, value: Path) -> Self:
+        self._img_path = value
+        self._img_data = plt.imread(self._img_path)
+        self.img = copy(self._img_data)
 
     def display(self, img_path: Path) -> bool:
         """Display image on screen.
 
         https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
         """
-        img_data = plt.imread(img_path)
-
-        height, width = img_data.shape[:2]
+        self.img_path = img_path
+        height, width = self.img.shape[:2]
 
         # What size does the figure need to be in inches to fit the image?
         figsize = width / self.dpi, height / self.dpi
@@ -63,12 +76,12 @@ class PreprocessImage:
         ax.axis('off')
 
         # Display the image.
-        ax.imshow(img_data, cmap='gray')
+        ax.imshow(self.img, cmap='gray')
 
         plt.show()
 
 
 if __name__ == '__main__':
-    o = PreprocessImage()
+    o = PreprocessImageOCR()
     o.display(o.IMG_DIR / 'letter.png')
     o.display(o.IMG_DIR / 'ctr-1808-08-25.png')

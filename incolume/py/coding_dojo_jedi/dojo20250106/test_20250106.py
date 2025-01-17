@@ -5,19 +5,16 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import ClassVar, NoReturn
-from collections.abc import Callable
 import incolume.py.coding_dojo_jedi.dojo20250106 as pkg
 import pytest
 from incolume.py.coding_dojo_jedi.utils import genfile
 from tempfile import gettempdir
 
-import numpy as np
-
 
 class TestCase:
     """Test case class."""
 
-    obj: ClassVar[pkg.PreprocessImage] = pkg.PreprocessImage()
+    obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PreprocessImageOCR()
     img0: ClassVar[Path] = obj.IMG_DIR / 'letter.png'
     img1: ClassVar[Path] = obj.IMG_DIR / 'ctr-1808-08-25.png'
 

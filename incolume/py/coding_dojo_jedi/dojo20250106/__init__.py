@@ -25,6 +25,8 @@ from matplotlib import pyplot as plt
 if TYPE_CHECKING:
     import numpy as np
 
+IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
+
 
 def who(cls):
     """Its Class name."""
@@ -36,14 +38,13 @@ def who(cls):
 class PreprocessImageOCR:
     """Preprocess Image."""
 
-    IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
-
-    def __init__(self):
+    def __init__(self, img_path: Path | None = None):
         """Initializer."""
         self.dpi: float = 80.0
         self._img_path: Path = None
         self._img_data: np.ndarray = None
         self.img: np.ndarray = None
+        self.img_path = img_path
 
     @property
     def img_path(self) -> Path:
@@ -53,15 +54,20 @@ class PreprocessImageOCR:
     @img_path.setter
     def img_path(self, value: Path) -> NoReturn:
         self._img_path = value
-        self._img_data = plt.imread(self._img_path)
+        try:  # noqa: SIM105
+            self._img_data = plt.imread(self._img_path)
+        except AttributeError:
+            pass
         self.img = copy(self._img_data)
 
-    def display(self, img_path: Path) -> bool:
+    def display(self, img_path: Path | None = None) -> bool:
         """Display image on screen.
 
         https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
         """
-        self.img_path = img_path
+        if img_path:
+            self.img_path = img_path
+
         height, width = self.img.shape[:2]
 
         # What size does the figure need to be in inches to fit the image?
@@ -96,6 +102,5 @@ class PreprocessImageOCR:
 
 
 if __name__ == '__main__':
-    o = PreprocessImageOCR()
-    o.display(o.IMG_DIR / 'letter.png')
+    o = PreprocessImageOCR(IMG_DIR / 'letter.png')
     o.display(o.IMG_DIR / 'ctr-1808-08-25.png')

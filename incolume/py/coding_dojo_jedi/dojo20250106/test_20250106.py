@@ -14,26 +14,26 @@ class TestCase:
     """Test case class."""
 
     obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PreprocessImageOCR()
-    img0: ClassVar[Path] = obj.IMG_DIR / 'letter.png'
-    img1: ClassVar[Path] = obj.IMG_DIR / 'ctr-1808-08-25.png'
+    img0: ClassVar[Path] = pkg.IMG_DIR / 'letter.png'
+    img1: ClassVar[Path] = pkg.IMG_DIR / 'ctr-1808-08-25.png'
 
     t0: ClassVar = None
 
     def test_img_dir_type(self) -> NoReturn:
         """Unittest."""
-        entrance = self.obj.IMG_DIR
+        entrance = pkg.IMG_DIR
         assert isinstance(entrance, Path)
 
     def test_img_dir_format(self) -> NoReturn:
         """Unittest."""
-        entrance = self.obj.IMG_DIR
+        entrance = pkg.IMG_DIR
         assert entrance.is_dir()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
             pytest.param(
-                obj.IMG_DIR,
+                pkg.IMG_DIR,
                 {'generic_data', 'text_img'},
                 marks=[
                     pytest.mark.xpass(
@@ -82,7 +82,7 @@ class TestCase:
         'entrance expected'.split(),
         [
             pytest.param(
-                (file := obj.IMG_DIR.joinpath('ctr-1808-08-25.png')),
+                (file := pkg.IMG_DIR.joinpath('ctr-1808-08-25.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
                     # pytest.mark.skip,
@@ -92,7 +92,7 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                (file := obj.IMG_DIR.joinpath('letter.png')),
+                (file := pkg.IMG_DIR.joinpath('letter.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
                     # pytest.mark.skip,

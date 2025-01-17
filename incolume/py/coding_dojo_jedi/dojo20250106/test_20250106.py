@@ -17,25 +17,27 @@ import numpy as np
 class TestCase:
     """Test case class."""
 
-    img0: ClassVar[Path] = pkg.IMG_DIR / 'letter.png'
-    img1: ClassVar[Path] = pkg.IMG_DIR / 'ctr-1808-08-25.png'
+    obj: ClassVar[pkg.PreprocessImage] = pkg.PreprocessImage()
+    img0: ClassVar[Path] = obj.IMG_DIR / 'letter.png'
+    img1: ClassVar[Path] = obj.IMG_DIR / 'ctr-1808-08-25.png'
+
     t0: ClassVar = None
 
     def test_img_dir_type(self) -> NoReturn:
         """Unittest."""
-        entrance = pkg.IMG_DIR
+        entrance = self.obj.IMG_DIR
         assert isinstance(entrance, Path)
 
     def test_img_dir_format(self) -> NoReturn:
         """Unittest."""
-        entrance = pkg.IMG_DIR
+        entrance = self.obj.IMG_DIR
         assert entrance.is_dir()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
             pytest.param(
-                pkg.IMG_DIR,
+                obj.IMG_DIR,
                 {'generic_data', 'text_img'},
                 marks=[
                     pytest.mark.xpass(
@@ -70,7 +72,7 @@ class TestCase:
             pytest.param(
                 {
                     'fimg': (
-                        file := pkg.IMG_DIR.joinpath('ctr-1808-08-25.png')
+                        file := obj.IMG_DIR.joinpath('ctr-1808-08-25.png')
                     ),
                 },
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
@@ -83,7 +85,7 @@ class TestCase:
             ),
             pytest.param(
                 {
-                    'fimg': pkg.IMG_DIR.joinpath('letter.png'),
+                    'fimg': obj.IMG_DIR.joinpath('letter.png'),
                     'foutput': (file := genfile(suffix='.png')),
                 },
                 file,
@@ -95,7 +97,7 @@ class TestCase:
             ),
             pytest.param(
                 {
-                    'fimg': (file := pkg.IMG_DIR.joinpath('letter.png')),
+                    'fimg': (file := obj.IMG_DIR.joinpath('letter.png')),
                 },
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[

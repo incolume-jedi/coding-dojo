@@ -26,34 +26,40 @@ from matplotlib import pyplot as plt
 if TYPE_CHECKING:
     import numpy as np
 
-IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
+class PreprocessImage:
+    """Preprocess Image."""
 
-def display(img_path: Path) -> None:
-    """Display image on screen.
+    IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
-    https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
-    """
-    dpi = 80
-    img_data = plt.imread(img_path)
+    def __init__(self):
+        """Initializer."""
+        self.dpi: float = 80.0
 
-    height, width = img_data.shape[:2]
+    def display(self, img_path: Path) -> bool:
+        """Display image on screen.
 
-    # What size does the figure need to be in inches to fit the image?
-    figsize = width / float(dpi), height / float(dpi)
+        https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
+        """
+        img_data = plt.imread(img_path)
 
-    # Create a figure of the right size with
-    # one axes that takes up the full figure
-    fig = plt.figure(figsize=figsize)
-    ax = fig.add_axes([0, 0, 1, 1])
+        height, width = img_data.shape[:2]
 
-    # Hide spines, ticks, etc.
-    ax.axis('off')
+        # What size does the figure need to be in inches to fit the image?
+        figsize = width / self.dpi, height / self.dpi
 
-    # Display the image.
-    ax.imshow(img_data, cmap='gray')
+        # Create a figure of the right size with
+        # one axes that takes up the full figure
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_axes([0, 0, 1, 1])
 
-    plt.show()
+        # Hide spines, ticks, etc.
+        ax.axis('off')
+
+        # Display the image.
+        ax.imshow(img_data, cmap='gray')
+
+        plt.show()
 
 
 def inverted_image0(fimg: Path, foutput: Path | None = None) -> Path:
@@ -111,5 +117,6 @@ def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:
 
 
 if __name__ == '__main__':
-    display(IMG_DIR / 'letter.png')
-    display(IMG_DIR / 'ctr-1808-08-25.png')
+    o = PreprocessImage()
+    o.display(o.IMG_DIR / 'letter.png')
+    o.display(o.IMG_DIR / 'ctr-1808-08-25.png')

@@ -62,18 +62,6 @@ class PreprocessImage:
         plt.show()
 
 
-def open_plot(func: callable) -> callable:
-    """Change Image Path to matrix."""
-
-    @wraps(func)
-    def inner(fimg: Path) -> np.ndarray:
-        """Inner function."""
-        img_data = plt.imread(fimg)
-        return func(img_data)
-
-    return inner
-
-
 if __name__ == '__main__':
     o = PreprocessImage()
     o.display(o.IMG_DIR / 'letter.png')

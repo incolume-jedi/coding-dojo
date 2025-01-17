@@ -13,11 +13,10 @@ from tempfile import gettempdir
 class TestCase:
     """Test case class."""
 
-    obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PreprocessImageOCR()
-    img0: ClassVar[Path] = pkg.IMG_DIR / 'letter.png'
-    img1: ClassVar[Path] = pkg.IMG_DIR / 'ctr-1808-08-25.png'
-
     t0: ClassVar = None
+    obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PreprocessImageOCR()
+    img0: Path = pkg.IMG_DIR / 'letter.png'
+    img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
 
     def test_img_dir_type(self) -> NoReturn:
         """Unittest."""
@@ -110,3 +109,10 @@ class TestCase:
         result = self.obj.save(fout=expected)
         assert result.is_file()
         assert result == expected
+
+    def test_reset(self):
+        """Unittest."""
+        self.obj.img_path = self.img0
+        value = self.obj.img
+        # compare two numpy arrays
+        assert (value == self.obj.inverted().reset()).all

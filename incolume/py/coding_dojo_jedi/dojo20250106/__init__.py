@@ -95,6 +95,11 @@ class PreprocessImageOCR:
         cv2.imwrite(fout, self.img)
         return fout
 
+    def reset(self):
+        """Reset to original image."""
+        self.img = copy(self._img_data)
+        return self
+
     def inverted(self) -> Self:
         """Inverter bit image."""
         self.img = cv2.bitwise_not(self._img_data)

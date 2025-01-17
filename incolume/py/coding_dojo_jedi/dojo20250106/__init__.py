@@ -62,20 +62,6 @@ class PreprocessImage:
         plt.show()
 
 
-def inverted_image0(fimg: Path, foutput: Path | None = None) -> Path:
-    """Inverted image."""
-    foutput = foutput or Path(
-        gettempdir(),
-        f'{fimg.stem}_inverted{fimg.suffix}',
-    )
-    ic(foutput)
-    ic(fimg)
-    imgdata = plt.imread(fimg)
-    image = cv2.bitwise_not(imgdata)
-    cv2.imwrite(foutput, image)
-    return foutput
-
-
 def open_plot(func: callable) -> callable:
     """Change Image Path to matrix."""
 

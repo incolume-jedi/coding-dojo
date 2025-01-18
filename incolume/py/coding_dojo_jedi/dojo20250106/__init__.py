@@ -101,10 +101,11 @@ class PreprocessImageOCR:
 
     def inverted(self) -> Self:
         """Inverter bit image."""
-        self.img = cv2.bitwise_not(self._img_data)
+        self.img = cv2.bitwise_not(self.img)
         return self
 
 
 if __name__ == '__main__':
     o = PreprocessImageOCR(IMG_DIR / 'letter.png')
-    o.display(o.IMG_DIR / 'ctr-1808-08-25.png')
+    o.display()
+    o.inverted().display()

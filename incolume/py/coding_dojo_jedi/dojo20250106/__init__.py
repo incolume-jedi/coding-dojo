@@ -54,11 +54,25 @@ class PreprocessImageOCR:
     @img_path.setter
     def img_path(self, value: Path) -> NoReturn:
         self._img_path = value
-        try:  # noqa: SIM105
+        try:
             self._img_data = plt.imread(self._img_path)
+            self.img = copy(self._img_data)
         except AttributeError:
             pass
+
+    def save(self, fout: Path | None = None) -> Path:
+        """Save current image."""
+        fout = fout or (
+            Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
+        )
+        logging.debug(ic(fout))
+        cv2.imwrite(fout, self.img)
+        return fout
+
+    def reset(self) -> Self:
+        """Reset to original image."""
         self.img = copy(self._img_data)
+        return self
 
     def display(self, img_path: Path | None = None) -> bool:
         """Display image on screen.
@@ -84,20 +98,6 @@ class PreprocessImageOCR:
         ax.imshow(self.img, cmap='gray')
 
         plt.show()
-
-    def save(self, fout: Path | None = None) -> Path:
-        """Save current image."""
-        fout = fout or (
-            Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
-        )
-        logging.debug(ic(fout))
-        cv2.imwrite(fout, self.img)
-        return fout
-
-    def reset(self) -> Self:
-        """Reset to original image."""
-        self.img = copy(self._img_data)
-        return self
 
     def inverted(self) -> Self:
         """Inverter bit image."""

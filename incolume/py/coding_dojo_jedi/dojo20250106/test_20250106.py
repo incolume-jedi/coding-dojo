@@ -11,7 +11,8 @@ from tempfile import gettempdir
 from copy import copy
 
 
-class TestCase:
+@pytest.mark.offci
+class TestCasePreprocessImageOCR:
     """Test case class."""
 
     t0: ClassVar = None

@@ -65,8 +65,7 @@ class PreprocessImageOCR:
 
         https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
         """
-        if img_path:
-            self.img_path = img_path
+        self.img_path = img_path
 
         height, width = self.img.shape[:2]
 

@@ -99,6 +99,11 @@ class PreprocessImageOCR:
 
         plt.show()
 
+
+@who
+class PPIOCR(PreprocessImageOCR):
+    """New class."""
+
     def inverted(self) -> Self:
         """Inverter bit image."""
         self.img = cv2.bitwise_not(self.img)

@@ -48,9 +48,14 @@ class TestCasePreprocessImageOCR:
         """Unittest."""
         assert expected.issubset(entrance.parts)
 
-    def test_class_name(self) -> NoReturn:
+    def test_reset(self):
         """Unittest."""
-        assert self.obj.class_name == 'PreprocessImageOCR'
+        self.obj.img_path = self.img0
+        value = copy(self.obj.img)
+        # break array value
+        self.obj.img[self.obj.img < 10**3] = 0
+        # compare two numpy arrays
+        assert value.all() == self.obj.reset().img.all()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -78,6 +83,19 @@ class TestCasePreprocessImageOCR:
         assert set(result.parts).issuperset(
             [expected],
         )
+
+
+@pytest.mark.offci
+class TestCasePPIOCR:
+    """Test case."""
+
+    obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PPIOCR()
+    img0: Path = pkg.IMG_DIR / 'letter.png'
+    img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
+
+    def test_class_name(self) -> NoReturn:
+        """Unittest."""
+        assert self.obj.class_name == 'PPIOCR'
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -111,10 +129,3 @@ class TestCasePreprocessImageOCR:
         result = self.obj.save(fout=expected)
         assert result.is_file()
         assert result == expected
-
-    def test_reset(self):
-        """Unittest."""
-        self.obj.img_path = self.img0
-        value = copy(self.obj.img)
-        # compare two numpy arrays
-        assert value.all() == self.obj.inverted().reset().img.all()

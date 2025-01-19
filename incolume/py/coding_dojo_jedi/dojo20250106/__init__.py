@@ -14,13 +14,19 @@
 from __future__ import annotations
 
 import logging
+import sys
 from copy import copy
 from pathlib import Path
-from typing import TYPE_CHECKING, NoReturn, Self
+from typing import TYPE_CHECKING, NoReturn
 
 import cv2
 from icecream import ic
 from matplotlib import pyplot as plt
+
+if sys.version_info < (3, 11, 0):  # noqa: PYI066
+    from typing_extensions import Self
+else:
+    from typing import Self
 
 if TYPE_CHECKING:
     import numpy as np

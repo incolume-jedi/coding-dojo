@@ -34,7 +34,14 @@ def who(cls):
     return cls
 
 
-@who
+def add_method(method):
+    """Adding method into class."""
+
+    def wrapper(cls):
+        """Set method into class."""
+        cls.method = method
+
+
 class PreprocessImageOCR:
     """Preprocess Image."""
 
@@ -111,6 +118,6 @@ class PPIOCR(PreprocessImageOCR):
 
 
 if __name__ == '__main__':
-    o = PreprocessImageOCR(IMG_DIR / 'letter.png')
+    o = PPIOCR(IMG_DIR / 'letter.png')
     o.display()
     o.inverted().display()

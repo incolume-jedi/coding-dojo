@@ -13,13 +13,12 @@
 
 from __future__ import annotations
 
-from functools import wraps
+import logging
+from copy import copy
 from pathlib import Path
-from tempfile import gettempdir
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, NoReturn, Self
 
 import cv2
-import numpy as np
 from icecream import ic
 from matplotlib import pyplot as plt
 
@@ -29,87 +28,96 @@ if TYPE_CHECKING:
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
 
-def display(img_path: Path) -> None:
-    """Display image on screen.
-
-    https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
-    """
-    dpi = 80
-    img_data = plt.imread(img_path)
-
-    height, width = img_data.shape[:2]
-
-    # What size does the figure need to be in inches to fit the image?
-    figsize = width / float(dpi), height / float(dpi)
-
-    # Create a figure of the right size with
-    # one axes that takes up the full figure
-    fig = plt.figure(figsize=figsize)
-    ax = fig.add_axes([0, 0, 1, 1])
-
-    # Hide spines, ticks, etc.
-    ax.axis('off')
-
-    # Display the image.
-    ax.imshow(img_data, cmap='gray')
-
-    plt.show()
+def who(cls):
+    """Its Class name."""
+    cls.class_name = cls.__name__
+    return cls
 
 
-def inverted_image0(fimg: Path, foutput: Path | None = None) -> Path:
-    """Inverted image."""
-    foutput = foutput or Path(
-        gettempdir(),
-        f'{fimg.stem}_inverted{fimg.suffix}',
-    )
-    ic(foutput)
-    ic(fimg)
-    imgdata = plt.imread(fimg)
-    image = cv2.bitwise_not(imgdata)
-    cv2.imwrite(foutput, image)
-    return foutput
+def add_method(method):
+    """Adding method into class."""
+
+    def wrapper(cls):
+        """Set method into class."""
+        cls.method = method
 
 
-def open_plot(func: callable) -> callable:
-    """Change Image Path to matrix."""
+class PreprocessImageOCR:
+    """Preprocess Image."""
 
-    @wraps(func)
-    def inner(fimg: Path) -> np.ndarray:
-        """Inner function."""
-        img_data = plt.imread(fimg)
-        return func(img_data)
+    def __init__(self, img_path: Path | None = None):
+        """Initializer."""
+        self.dpi: float = 80.0
+        self._img_path: Path = None
+        self._img_data: np.ndarray = None
+        self.img: np.ndarray = None
+        self.img_path = img_path
 
-    return inner
+    @property
+    def img_path(self) -> Path:
+        """Imagem file."""
+        return self._img_path
+
+    @img_path.setter
+    def img_path(self, value: Path) -> NoReturn:
+        self._img_path = value
+        try:
+            self._img_data = plt.imread(self._img_path)
+            self.img = copy(self._img_data)
+        except AttributeError:
+            pass
+
+    def save(self, fout: Path | None = None) -> Path:
+        """Save current image."""
+        fout = fout or (
+            Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
+        )
+        logging.debug(ic(fout))
+        cv2.imwrite(fout, self.img)
+        return fout
+
+    def reset(self) -> Self:
+        """Reset to original image."""
+        self.img = copy(self._img_data)
+        return self
+
+    def display(self, img_path: Path | None = None) -> bool:
+        """Display image on screen.
+
+        https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
+        """
+        self.img_path = img_path
+
+        height, width = self.img.shape[:2]
+
+        # What size does the figure need to be in inches to fit the image?
+        figsize = width / self.dpi, height / self.dpi
+
+        # Create a figure of the right size with
+        # one axes that takes up the full figure
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_axes([0, 0, 1, 1])
+
+        # Hide spines, ticks, etc.
+        ax.axis('off')
+
+        # Display the image.
+        ax.imshow(self.img, cmap='gray')
+
+        plt.show()
 
 
-def write_plot(func: callable) -> callable:
-    """Change Image Path to matrix."""
+@who
+class PPIOCR(PreprocessImageOCR):
+    """New class."""
 
-    @wraps(func)
-    def inner(img_data: np.ndarray, foutput: Path | None = None) -> Path:
-        """Inner function."""
-        ic(img_data, foutput)
-        cv2.imwrite(foutput, img_data)
-        return func(img_data, foutput)
-
-    return inner
-
-
-@open_plot
-def inverted_image(fimg: Path, foutput: Path | None = None) -> Path:
-    """Inverted image."""
-    foutput = foutput or Path(
-        gettempdir(),
-        f'{fimg.stem}_inverted{fimg.suffix}',
-    )
-    ic(foutput)
-    ic(fimg)
-    imgdata = plt.imread(fimg)
-    image = cv2.bitwise_not(imgdata)
-    cv2.imwrite(foutput, image)
-    return foutput
+    def inverted(self) -> Self:
+        """Inverter bit image."""
+        self.img = cv2.bitwise_not(self.img)
+        return self
 
 
 if __name__ == '__main__':
-    display(IMG_DIR / 'letter.png')
-    display(IMG_DIR / 'ctr-1808-08-25.png')
+    o = PPIOCR(IMG_DIR / 'letter.png')
+    o.display()
+    o.inverted().display()

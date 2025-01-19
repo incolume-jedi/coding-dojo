@@ -5,21 +5,20 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import ClassVar, NoReturn
-from collections.abc import Callable
 import incolume.py.coding_dojo_jedi.dojo20250106 as pkg
 import pytest
-from incolume.py.coding_dojo_jedi.utils import genfile
 from tempfile import gettempdir
+from copy import copy
 
-import numpy as np
 
-
-class TestCase:
+@pytest.mark.offci
+class TestCasePreprocessImageOCR:
     """Test case class."""
 
-    img0: ClassVar[Path] = pkg.IMG_DIR / 'letter.png'
-    img1: ClassVar[Path] = pkg.IMG_DIR / 'ctr-1808-08-25.png'
     t0: ClassVar = None
+    obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PreprocessImageOCR()
+    img0: Path = pkg.IMG_DIR / 'letter.png'
+    img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
 
     def test_img_dir_type(self) -> NoReturn:
         """Unittest."""
@@ -49,30 +48,60 @@ class TestCase:
         """Unittest."""
         assert expected.issubset(entrance.parts)
 
-    def test_open_plot(self) -> NoReturn:
-        """Unit test decorator."""
-        func = lambda x: x  # noqa: E731
-        func = pkg.open_plot(func)
-        assert isinstance(func, Callable)
-        assert isinstance(func(self.img0), np.ndarray)
-
-    def test_write_plot(self) -> NoReturn:
-        """Unit test decorator."""
-        func = lambda x: x  # noqa: E731
-        func = pkg.open_plot(func)
-        func = pkg.write_plot(func)
-        result = func(self.img0)
-        assert result == ''
+    def test_reset(self):
+        """Unittest."""
+        self.obj.img_path = self.img0
+        value = copy(self.obj.img)
+        # break array value
+        self.obj.img[self.obj.img < 10**3] = 0
+        # compare two numpy arrays
+        assert value.all() == self.obj.reset().img.all()
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         [
             pytest.param(
+                {'img': img0, 'fout': None},
+                'letter_latest.png',
+                marks=[],
+            ),
+            pytest.param(
                 {
-                    'fimg': (
-                        file := pkg.IMG_DIR.joinpath('ctr-1808-08-25.png')
-                    ),
+                    'img': img0,
+                    'fout': Path(gettempdir())
+                    / f'{img0.stem}_saved{img0.suffix}',
                 },
+                'letter_saved.png',
+                marks=[],
+            ),
+        ],
+    )
+    def test_class_save(self, entrance, expected) -> NoReturn:
+        """Unittest."""
+        self.obj.img_path = entrance.get('img')
+        result = self.obj.save(entrance.get('fout'))
+        assert set(result.parts).issuperset(
+            [expected],
+        )
+
+
+@pytest.mark.offci
+class TestCasePPIOCR:
+    """Test case."""
+
+    obj: ClassVar[pkg.PreprocessImageOCR] = pkg.PPIOCR()
+    img0: Path = pkg.IMG_DIR / 'letter.png'
+    img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
+
+    def test_class_name(self) -> NoReturn:
+        """Unittest."""
+        assert self.obj.class_name == 'PPIOCR'
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                (file := pkg.IMG_DIR.joinpath('ctr-1808-08-25.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
                     # pytest.mark.skip,
@@ -82,23 +111,10 @@ class TestCase:
                 ],
             ),
             pytest.param(
-                {
-                    'fimg': pkg.IMG_DIR.joinpath('letter.png'),
-                    'foutput': (file := genfile(suffix='.png')),
-                },
-                file,
-                marks=[
-                    pytest.mark.xpass(
-                        reason='Implementation failing (but shoulded ran)',
-                    ),
-                ],
-            ),
-            pytest.param(
-                {
-                    'fimg': (file := pkg.IMG_DIR.joinpath('letter.png')),
-                },
+                (file := pkg.IMG_DIR.joinpath('letter.png')),
                 Path(gettempdir()) / f'{file.stem}_inverted{file.suffix}',
                 marks=[
+                    # pytest.mark.skip,
                     pytest.mark.xpass(
                         reason='Implementation failing (but shoulded ran)',
                     ),
@@ -108,4 +124,8 @@ class TestCase:
     )
     def test_inverted(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        assert pkg.inverted_image(**entrance) == expected
+        self.obj.img_path = entrance
+        self.obj.inverted()
+        result = self.obj.save(fout=expected)
+        assert result.is_file()
+        assert result == expected

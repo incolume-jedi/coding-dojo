@@ -23,10 +23,10 @@ import cv2
 from icecream import ic
 from matplotlib import pyplot as plt
 
-if sys.version_info < (3, 11, 0):
-    from typing_extensions import Self
-else:
+if sys.version_info >= (3, 11):
     from typing import Self
+else:
+    from typing_extensions import Self
 
 if TYPE_CHECKING:
     import numpy as np

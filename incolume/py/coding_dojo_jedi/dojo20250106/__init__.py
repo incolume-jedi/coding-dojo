@@ -23,7 +23,7 @@ import cv2
 from icecream import ic
 from matplotlib import pyplot as plt
 
-if sys.version_info < (3, 11, 0):  # noqa: PYI066
+if sys.version_info < (3, 11, 0):
     from typing_extensions import Self
 else:
     from typing import Self
@@ -72,19 +72,25 @@ class PreprocessImageOCR:
             self.img = copy(self._img_data)
         except AttributeError:
             pass
+        logging.info(ic('Image load'))
+        logging.debug(ic(self._img_path))
 
     def save(self, fout: Path | None = None) -> Path:
         """Save current image."""
         fout = fout or (
             Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
         )
-        logging.debug(ic(fout))
+        fout = fout.resolve()
+        fout.parent.mkdir(exist_ok=True)
         cv2.imwrite(fout, self.img)
+        logging.info(ic('Image saved.'))
+        logging.debug(ic(fout))
         return fout
 
     def reset(self) -> Self:
         """Reset to original image."""
         self.img = copy(self._img_data)
+        logging.info(ic('Image reseted.'))
         return self
 
     def display(self, img_path: Path | None = None) -> bool:

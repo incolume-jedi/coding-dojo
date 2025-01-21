@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, NoReturn
 
 import cv2
+from deprecated import deprecated
 from icecream import ic
 from matplotlib import pyplot as plt
 
@@ -48,6 +49,7 @@ def add_method(method):
         cls.method = method
 
 
+@deprecated(reason='use another implementation updated into dojo20250114.')
 class PreprocessImageOCR:
     """Preprocess Image."""
 

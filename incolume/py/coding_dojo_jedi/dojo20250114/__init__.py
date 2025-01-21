@@ -9,11 +9,11 @@ from typing import NoReturn, Self
 import cv2
 import numpy as np
 from icecream import ic
+from incolume.py.coding_dojo_jedi.utils import whoami
 from matplotlib import pyplot as plt
 
-from incolume.py.coding_dojo_jedi.utils import whoami
-
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
+
 
 @whoami
 class PreprocessImageOCR:
@@ -91,9 +91,16 @@ class PreprocessImageOCR:
 class PPIOCR(PreprocessImageOCR):
     """Class rescaling."""
 
+    def inverted(self) -> Self:
+        """Inverter bit image."""
+        self.img = cv2.bitwise_not(self.img)
+        logging.info(ic('Inverted image.'))
+        return self
+
     def grayscale(self) -> Self:
         """Gray scale image."""
         self.img = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+        logging.info(ic('Gray scale image.'))
         return self
 
     def black_white(self) -> Self:
@@ -102,4 +109,15 @@ class PPIOCR(PreprocessImageOCR):
         thresh, im_bw = cv2.threshold(self.img, 210, 230, cv2.THRESH_BINARY)
         logging.debug(ic(thresh, im_bw))
         self.img = im_bw
+        logging.info(ic('black and white image.'))
         return self
+
+
+if __name__ == '__main__':
+    img0: Path = IMG_DIR / 'letter.jpg'
+    img1: Path = IMG_DIR / 'ctr-1808-08-25.png'
+    obj = PPIOCR(img1)
+    obj.display()
+    obj.inverted().display()
+    obj.reset().grayscale().display()
+    obj.reset().black_white().display()

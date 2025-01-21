@@ -128,6 +128,10 @@ class PreprocessImageOCR:
 class PPIOCR(PreprocessImageOCR):
     """New class."""
 
+    @deprecated(
+        version='1.69.0a6',
+        reason='use another implementation updated into dojo20250114.',
+    )
     def inverted(self) -> Self:
         """Inverter bit image."""
         self.img = cv2.bitwise_not(self.img)

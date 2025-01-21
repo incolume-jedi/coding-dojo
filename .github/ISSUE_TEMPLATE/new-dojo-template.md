@@ -15,11 +15,8 @@ assignees: ''
 
 ---
 
-![Python](https://img.shields.io/badge/Python-512BD4?style=flat&logo=python&logoColor=yellow)
-![JEDI Incolume](https://img.shields.io/badge/incolume-JEDI-blue?style=flat)
-![PyCharm](https://img.shields.io/badge/PyCharm-AABBCC?style=flat)
-![VS Code](https://img.shields.io/badge/VScode-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)
-![VS Code](https://img.shields.io/badge/CodeSpace-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)
+![Python](https://img.shields.io/badge/Python-512BD4?style=flat&logo=python&logoColor=yellow) ![JEDI Incolume](https://img.shields.io/badge/incolume-JEDI-blue?style=flat)
+[![GitHub release](https://img.shields.io/github/v/release/incolume-jedi/coding-dojo?logo=github&logoColor=white)](https://github.com/incolume-jedi/coding-dojo/releases/latest) ![PyCharm](https://img.shields.io/badge/PyCharm-AABBCC?style=flat) ![VS Code](https://img.shields.io/badge/VScode-AABBCC?style=flat&logo=visualstudiocode&logoColor=white) ![VS Code](https://img.shields.io/badge/CodeSpace-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)
 
 ---
 
@@ -31,14 +28,14 @@ Descrição/apresentação do problema.
 
 ## Exemplos
 
-<details> 
-  <summary>Spoiler?</summary> 
+<details>
+  <summary>Spoiler?</summary>
    Considerar em caso de fatoração:
 
     > modo pythônico
-    > sem condicionais 
+    > sem condicionais
     > estruturas performáticas
-    > redução de complexidade ciclomática 
+    > redução de complexidade ciclomática
     > análise assintótica de algoritmos (big O)
 
 </details>

@@ -4,13 +4,15 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import NoReturn, Self
+from typing import TYPE_CHECKING, NoReturn, Self
 
 import cv2
-import numpy as np
 from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import whoami
 from matplotlib import pyplot as plt
+
+if TYPE_CHECKING:
+    import numpy as np
 
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
@@ -21,26 +23,24 @@ class PreprocessImageOCR:
 
     def __init__(self, img_path: Path | None = None, dpi: int | None = None):
         """Initializer."""
-        self._img_path: Path = None
+        self.__img_path: Path = None
         self.dpi: int = dpi or 80
-        self._img_data: np.ndarray = None
-        self.img: np.ndarray = None
+        self.img_data: np.ndarray = None
         self.img_path = img_path
 
     @property
     def img_path(self) -> Path:
         """Imagem file."""
-        return self._img_path
+        return self.__img_path
 
     @img_path.setter
     def img_path(self, value: Path) -> NoReturn:
-        self._img_path = value
+        self.__img_path = value
         try:
-            self._img_data = plt.imread(self._img_path)
-            self.img = plt.imread(self._img_path)
+            self.img_data = plt.imread(self.__img_path)
+            logging.info(ic('Image file loaded.'))
         except AttributeError:
             pass
-        logging.info(ic('Image load'))
         logging.debug(ic(self.img_path))
 
     def save(self, fout: Path | None = None) -> Path:
@@ -50,14 +50,14 @@ class PreprocessImageOCR:
         )
         fout = fout.resolve()
         fout.parent.mkdir(exist_ok=True)
-        cv2.imwrite(fout, self.img)
+        cv2.imwrite(fout, self.img_data)
         logging.info(ic('Image saved.'))
         logging.debug(ic(fout))
         return fout
 
     def reset(self) -> Self:
         """Reset to original image."""
-        self.img = plt.imread(self.img_path)
+        self.img_data = plt.imread(self.img_path)
         logging.info(ic('Image reseted.'))
         return self
 
@@ -69,7 +69,7 @@ class PreprocessImageOCR:
         if img_path:
             self.img_path = img_path
 
-        height, width = self.img.shape[:2]
+        height, width = self.img_data.shape[:2]
 
         # What size does the figure need to be in inches to fit the image?
         figsize = width / float(self.dpi), height / float(self.dpi)
@@ -83,7 +83,7 @@ class PreprocessImageOCR:
         ax.axis('off')
 
         # Display the image.
-        ax.imshow(self.img, cmap='gray')
+        ax.imshow(self.img_data, cmap='gray')
 
         plt.show()
 
@@ -93,22 +93,27 @@ class PPIOCR(PreprocessImageOCR):
 
     def inverted(self) -> Self:
         """Inverter bit image."""
-        self.img = cv2.bitwise_not(self.img)
+        self.img_data = cv2.bitwise_not(self.img_data)
         logging.info(ic('Inverted image.'))
         return self
 
     def grayscale(self) -> Self:
         """Gray scale image."""
-        self.img = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+        self.img_data = cv2.cvtColor(self.img_data, cv2.COLOR_BGR2GRAY)
         logging.info(ic('Gray scale image.'))
         return self
 
     def black_white(self) -> Self:
         """Black and white image."""
         self.reset().grayscale()
-        thresh, im_bw = cv2.threshold(self.img, 210, 230, cv2.THRESH_BINARY)
+        thresh, im_bw = cv2.threshold(
+            self.img_data,
+            210,
+            230,
+            cv2.THRESH_BINARY,
+        )
         logging.debug(ic(thresh, im_bw))
-        self.img = im_bw
+        self.img_data = im_bw
         logging.info(ic('black and white image.'))
         return self
 

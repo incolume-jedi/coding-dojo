@@ -53,7 +53,7 @@ class TestCase:
         self.obj.grayscale()
         result = self.obj.save()
         assert self.obj.img_path == entrance
-        assert self.obj.img is not None
+        assert self.obj.img_data is not None
         assert result.is_file()
         assert set(expected.parts[-1:]).issubset(result.parts)
 
@@ -86,6 +86,6 @@ class TestCase:
         self.obj.black_white()
         result = self.obj.save(expected)
         assert self.obj.img_path == entrance
-        assert self.obj.img is not None
+        assert self.obj.img_data is not None
         assert result.is_file()
         assert set(expected.parts[-1:]).issubset(result.parts)

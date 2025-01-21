@@ -11,9 +11,11 @@ import numpy as np
 from icecream import ic
 from matplotlib import pyplot as plt
 
+from incolume.py.coding_dojo_jedi.utils import whoami
+
 IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
 
-
+@whoami
 class PreprocessImageOCR:
     """Preprocess Image."""
 
@@ -64,7 +66,8 @@ class PreprocessImageOCR:
 
         https://stackoverflow.com/questions/28816046/displaying-different-images-with-actual-size-in-matplotlib-subplot
         """
-        self.img_path = img_path
+        if img_path:
+            self.img_path = img_path
 
         height, width = self.img.shape[:2]
 

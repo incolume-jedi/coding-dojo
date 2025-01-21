@@ -49,7 +49,10 @@ def add_method(method):
         cls.method = method
 
 
-@deprecated(varsion='1.69.0a5', reason='use another implementation updated into dojo20250114.')
+@deprecated(
+    version='1.69.0a5',
+    reason='use another implementation updated into dojo20250114.',
+)
 class PreprocessImageOCR:
     """Preprocess Image."""
 

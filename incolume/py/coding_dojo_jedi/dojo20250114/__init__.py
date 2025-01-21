@@ -126,3 +126,7 @@ if __name__ == '__main__':
     obj.inverted().display()
     obj.reset().grayscale().display()
     obj.reset().black_white().display()
+    obj.img_path = img0
+    obj.inverted().display()
+    obj.reset().grayscale().display()
+    obj.reset().black_white().display()

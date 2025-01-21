@@ -130,6 +130,6 @@ class PPIOCR(PreprocessImageOCR):
 
 
 if __name__ == '__main__':
-    o = PPIOCR(IMG_DIR / 'letter.png')
+    o = PPIOCR(IMG_DIR / 'letter.jpg')
     o.display()
     o.inverted().display()

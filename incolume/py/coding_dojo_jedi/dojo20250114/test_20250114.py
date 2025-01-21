@@ -12,7 +12,7 @@ class TestCase:
     """Test case class."""
 
     obj: ClassVar[pkg.PPIOCR] = pkg.PPIOCR()
-    img0: Path = pkg.IMG_DIR / 'letter.png'
+    img0: Path = pkg.IMG_DIR / 'letter.jpg'
     img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
 
     @pytest.mark.parametrize(
@@ -20,7 +20,7 @@ class TestCase:
         [
             pytest.param(
                 img0,
-                Path('coding-dojo/letter_latest.png'),
+                Path('coding-dojo/letter_latest.jpg'),
                 marks=[
                     pytest.mark.xpass(
                         reason='Implementation failing (but shoulded ran)',
@@ -71,7 +71,7 @@ class TestCase:
             ),
             pytest.param(
                 img0,
-                Path(gettempdir()) / 'coding-dojo/letter_latest.png',
+                Path(gettempdir()) / 'coding-dojo/letter_latest.jpg',
                 marks=[
                     pytest.mark.xpass(
                         reason='Implementation failing (but shoulded ran)',

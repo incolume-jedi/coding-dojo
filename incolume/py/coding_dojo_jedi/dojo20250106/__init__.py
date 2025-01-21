@@ -20,13 +20,14 @@ from pathlib import Path
 from typing import TYPE_CHECKING, NoReturn
 
 import cv2
+from deprecated import deprecated
 from icecream import ic
 from matplotlib import pyplot as plt
 
-if sys.version_info < (3, 11, 0):  # noqa: PYI066
-    from typing_extensions import Self
-else:
+if sys.version_info >= (3, 11):
     from typing import Self
+else:
+    from typing_extensions import Self
 
 if TYPE_CHECKING:
     import numpy as np
@@ -48,6 +49,10 @@ def add_method(method):
         cls.method = method
 
 
+@deprecated(
+    version='1.69.0a5',
+    reason='use another implementation updated into dojo20250114.',
+)
 class PreprocessImageOCR:
     """Preprocess Image."""
 
@@ -72,19 +77,25 @@ class PreprocessImageOCR:
             self.img = copy(self._img_data)
         except AttributeError:
             pass
+        logging.info(ic('Image load'))
+        logging.debug(ic(self._img_path))
 
     def save(self, fout: Path | None = None) -> Path:
         """Save current image."""
         fout = fout or (
             Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
         )
-        logging.debug(ic(fout))
+        fout = fout.resolve()
+        fout.parent.mkdir(exist_ok=True)
         cv2.imwrite(fout, self.img)
+        logging.info(ic('Image saved.'))
+        logging.debug(ic(fout))
         return fout
 
     def reset(self) -> Self:
         """Reset to original image."""
         self.img = copy(self._img_data)
+        logging.info(ic('Image reseted.'))
         return self
 
     def display(self, img_path: Path | None = None) -> bool:
@@ -117,6 +128,10 @@ class PreprocessImageOCR:
 class PPIOCR(PreprocessImageOCR):
     """New class."""
 
+    @deprecated(
+        version='1.69.0a6',
+        reason='use another implementation updated into dojo20250114.',
+    )
     def inverted(self) -> Self:
         """Inverter bit image."""
         self.img = cv2.bitwise_not(self.img)
@@ -124,6 +139,6 @@ class PPIOCR(PreprocessImageOCR):
 
 
 if __name__ == '__main__':
-    o = PPIOCR(IMG_DIR / 'letter.png')
+    o = PPIOCR(IMG_DIR / 'letter.jpg')
     o.display()
     o.inverted().display()

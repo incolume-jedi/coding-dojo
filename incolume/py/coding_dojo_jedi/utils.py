@@ -30,6 +30,13 @@ TZ: Final[str] = 'America/Sao_Paulo'
 sumary_regex: str = r'## Problema\s*\*\*((\w[\.\:\-,!\?\(\)\s]*\s*)+)\*\*'
 
 
+def whoami(cls):
+    """Its Class name decorator."""
+    cls.class_name = cls.__name__
+    cls.whoami = cls.__name__
+    return cls
+
+
 def pseudo_filename(**kwargs: str) -> Path:
     """Return a temporary filename."""
     with NamedTemporaryFile(**kwargs) as f:

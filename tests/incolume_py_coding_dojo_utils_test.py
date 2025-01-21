@@ -14,6 +14,7 @@ from incolume.py.coding_dojo_jedi.utils import (
     generator_sumary,
     dojo_init,
     pseudo_filename,
+    whoami,
 )
 from tests.conftest import py310, not_win
 
@@ -40,6 +41,18 @@ class TestUtilsModule:
     tz: str = 'America/Sao_Paulo'
     timestamp = dt.datetime(1978, 6, 20, tzinfo=pytz.timezone(tz))
     filename = pseudo_filename()
+
+    def test_whoami(self):
+        """Unittest."""
+
+        @whoami
+        class Klass:
+            """Fake class."""
+
+        o = Klass()
+        expected = 'Klass'
+        assert o.whoami == expected
+        assert o.class_name == expected
 
     def test_md_dir_type(self):
         """Check directory type."""

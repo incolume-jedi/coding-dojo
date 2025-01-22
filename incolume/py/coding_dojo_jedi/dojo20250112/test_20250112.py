@@ -31,7 +31,6 @@ class TestPrimes:
         (89, True),
     ]
 
-    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         test0,
@@ -40,7 +39,6 @@ class TestPrimes:
         """Check is prime number."""
         assert pkg.is_prime_0(entrance) == expected
 
-    @pytest.mark.skip
     @pytest.mark.parametrize(
         'entrance expected'.split(),
         test0,
@@ -72,6 +70,14 @@ class TestPrimes:
     def test_is_prime_4(self, entrance, expected):
         """Check is prime number."""
         assert pkg.is_prime_4(entrance) == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        test0,
+    )
+    def test_is_prime_5(self, entrance, expected):
+        """Check is prime number."""
+        assert pkg.is_prime_5(entrance) == expected
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),

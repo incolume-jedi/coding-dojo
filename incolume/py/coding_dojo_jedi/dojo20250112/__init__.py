@@ -19,7 +19,7 @@ def is_prime_0(num: int | bytes | str) -> bool:
     if num <= 1:
         return False
     for x in range(2, num):  # noqa: SIM110
-        if num != 2 and (num % x) == 0:
+        if (num % x) == 0:
             return False
     return True
 
@@ -34,10 +34,10 @@ def is_prime_1(num: int | bytes | str) -> bool:
     except (TypeError, ValueError):
         return False
 
-    if num <= 1:
+    if num <= 1 or (num > 2 and num % 2 == 0):
         return False
     for x in range(3, num, 2):  # noqa: SIM110
-        if num != 2 and (num % x) == 0:
+        if (num % x) == 0:
             return False
     return True
 
@@ -91,8 +91,8 @@ def is_prime_4(num: int) -> bool:
 
 
 @lru_cache
-def is_prime(num: int) -> bool:
-    """Check if prime."""
+def is_prime_5(num: int) -> bool:
+    """Check if prime number."""
     try:
         if isinstance(num, float):
             if not (num == int(num)):
@@ -100,9 +100,25 @@ def is_prime(num: int) -> bool:
         num = int(num)
     except (TypeError, ValueError):
         return False
-    if num <= 1:
+    if num <= 1 or (num > 2 and num % 2 == 0):  # noqa: PLR2004
         return False
-    return all(num % n != 0 for n in range(3, int(num**(1/2)) + 1), 2)
+    return all(num % n != 0 for n in range(2, num // 2 + 1))
+
+
+@lru_cache
+def is_prime(num: int) -> bool:
+    """Check if prime number."""
+    try:
+        if isinstance(num, float):
+            if not (num == int(num)):
+                raise ValueError
+        num = int(num)
+    except (TypeError, ValueError):
+        return False
+
+    if num <= 1 or (num > 2 and num % 2 == 0):  # noqa: PLR2004
+        return False
+    return all(num % n != 0 for n in range(3, int(num**0.5) + 1, 2))
 
 
 def gen_prime():

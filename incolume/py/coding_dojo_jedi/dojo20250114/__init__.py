@@ -3,13 +3,19 @@
 from __future__ import annotations
 
 import logging
+import sys
 from pathlib import Path
-from typing import TYPE_CHECKING, NoReturn, Self
+from typing import TYPE_CHECKING, NoReturn
 
 import cv2
 from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import whoami
 from matplotlib import pyplot as plt
+
+if sys.version_info >= (3, 11):
+    from typing import Self
+else:
+    from typing_extensions import Self
 
 if TYPE_CHECKING:
     import numpy as np

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coding-dojo-jedi"
-version = "1.68.0"
+version = "1.69.0"
 description = "códigos da guilda jedi incolume"
 documentation='https://incolume-jedi.github.io/coding-dojo/'
 readme = ["README.md", "docs/index.md"]
@@ -93,6 +93,9 @@ filetype = "^1.2.0"
 puremagic = "^1.28"
 tqdm = "^4.67.1"
 jsonpickle = "^4.0.1"
+opencv-python = "^4.10.0.84"
+matplotlib = "^3.10.0"
+deprecated = "^1.2.15"
 
 
 [tool.poetry.group.docs.dependencies]

@@ -30,6 +30,13 @@ TZ: Final[str] = 'America/Sao_Paulo'
 sumary_regex: str = r'## Problema\s*\*\*((\w[\.\:\-,!\?\(\)\s]*\s*)+)\*\*'
 
 
+def whoami(cls):
+    """Its Class name decorator."""
+    cls.class_name = cls.__name__
+    cls.whoami = cls.__name__
+    return cls
+
+
 def pseudo_filename(**kwargs: str) -> Path:
     """Return a temporary filename."""
     with NamedTemporaryFile(**kwargs) as f:
@@ -184,12 +191,20 @@ def dojo_init(
             '# Coding Dojo\n\n'
             '**Guilda JEDI Incolume - Grupo Python Incolume**\n\n'
             '- _[Seja membro da Guilda JEDI Incolume](https://discord.gg/eBNamXVtBW)_\n\n'
-            '---\n\n'
-            '![Python](https://img.shields.io/badge/Python-512BD4?style=flat&logo=python&logoColor=yellow)\n'
-            '![JEDI Incolume](https://img.shields.io/badge/incolume-JEDI-blue?style=flat)\n'
-            '![PyCharm](https://img.shields.io/badge/PyCharm-AABBCC?style=flat)\n'
-            '![VS Code](https://img.shields.io/badge/VScode-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)\n'
-            '![VS Code](https://img.shields.io/badge/CodeSpace-AABBCC?style=flat&logo=visualstudiocode&logoColor=white)\n\n'
+            '---\n\n\n'
+            '![Python](https://img.shields.io/badge/Python-512BD4?style=flat'
+            '&logo=python&logoColor=yellow) '
+            '![JEDI Incolume](https://img.shields.io/badge/incolume-JEDI-blue'
+            '?style=flat) '
+            '[![GitHub release](https://img.shields.io/github/v/release/incolume-jedi/'
+            'coding-dojo?logo=github&logoColor=white)]'
+            '(https://github.com/incolume-jedi/coding-dojo/releases/latest) '
+            '![PyCharm](https://img.shields.io/badge/PyCharm-AABBCC?'
+            'style=flat) '
+            '![VS Code](https://img.shields.io/badge/VScode-AABBCC?'
+            'style=flat&logo=visualstudiocode&logoColor=white) '
+            '![VS Code](https://img.shields.io/badge/CodeSpace-AABBCC?'
+            'style=flat&logo=visualstudiocode&logoColor=white)\n\n'
             '---\n\n'
             '## Problema\n\n'
             '**Título do problema**\n\n'

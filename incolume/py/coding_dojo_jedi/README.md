@@ -8,10 +8,12 @@
 
 ---
 
-154 dojos resolvidos
+156 dojos resolvidos
 
 ---
 
+ - [Dojo20250114 &#8212; Preprocess Images for Text OCR - Binarization](dojo20250114/README.md)
+ - [Dojo20250112 &#8212; Unificar todas as soluções para validação de números primos](dojo20250112/README.md)
  - [Dojo20250110 &#8212; Customizar agregação de funcionalidades com decoradores](dojo20250110/README.md)
  - [Dojo20250106 &#8212; Preprocess Images for Text OCR - Inverted Images](dojo20250106/README.md)
  - [Dojo20250102 &#8212; Identificar elementos HTML em âncoras no sistema de arquivos](dojo20250102/README.md)
@@ -168,4 +170,3 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
-

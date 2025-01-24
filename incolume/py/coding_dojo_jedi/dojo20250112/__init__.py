@@ -4,6 +4,10 @@ from __future__ import annotations
 
 from functools import lru_cache
 from itertools import count
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
 
 
 def is_prime_0(num: int | bytes | str) -> bool:
@@ -79,9 +83,8 @@ def is_prime_3(num: int) -> bool:
 def is_prime_4(num: int) -> bool:
     """Check if prime."""
     try:
-        if isinstance(num, float):
-            if not (num == int(num)):
-                raise ValueError
+        if isinstance(num, float) and num != int(num):
+            return False
         num = int(num)
     except (TypeError, ValueError):
         return False
@@ -94,9 +97,8 @@ def is_prime_4(num: int) -> bool:
 def is_prime_5(num: int) -> bool:
     """Check if prime number."""
     try:
-        if isinstance(num, float):
-            if not (num == int(num)):
-                raise ValueError
+        if isinstance(num, float) and num != int(num):
+            return False
         num = int(num)
     except (TypeError, ValueError):
         return False
@@ -106,12 +108,11 @@ def is_prime_5(num: int) -> bool:
 
 
 @lru_cache
-def is_prime(num: int) -> bool:
+def is_prime(num: str | bytes | float) -> bool:
     """Check if prime number."""
     try:
-        if isinstance(num, float):
-            if not (num == int(num)):
-                raise ValueError
+        if isinstance(num, float) and num != int(num):
+            return False
         num = int(num)
     except (TypeError, ValueError):
         return False
@@ -121,9 +122,10 @@ def is_prime(num: int) -> bool:
     return all(num % n != 0 for n in range(3, int(num**0.5) + 1, 2))
 
 
-def gen_prime():
+def gen_prime(initial: int = 2) -> Generator:
     """Prime generator."""
-    counter = count(1)
+    initial = max(2, initial) or 2
+    counter = count(initial)
     while True:
-        if is_prime1(n := next(counter)):
+        if is_prime(n := next(counter)):
             yield n

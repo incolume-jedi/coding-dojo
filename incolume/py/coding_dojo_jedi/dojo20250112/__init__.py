@@ -28,16 +28,18 @@ def is_prime_0(num: int | bytes | str) -> bool:
 def is_prime_1(num: int | bytes | str) -> bool:
     """Check if prime."""
     try:
-        if isinstance(num, float) or num != int(num):
+        tnum = int(num)
+        if (
+            (isinstance(num, float) and num != tnum)
+            or tnum <= 1
+            or (tnum > 2 and tnum % 2 == 0)  # noqa: PLR2004
+        ):
             return False
-        num = int(num)
     except (TypeError, ValueError):
         return False
 
-    if num <= 1 or (num > 2 and num % 2 == 0):
-        return False
-    for x in range(3, num, 2):  # noqa: SIM110
-        if (num % x) == 0:
+    for x in range(3, tnum, 2):  # noqa: SIM110
+        if (tnum % x) == 0:
             return False
     return True
 
@@ -46,16 +48,14 @@ def is_prime_1(num: int | bytes | str) -> bool:
 def is_prime_2(num: int) -> bool:
     """Check if prime."""
     try:
-        if isinstance(num, float) or num != int(num):
+        tnum = int(num)
+        if (isinstance(num, float) and tnum != num) or tnum <= 1:
             return False
-        num = int(num)
     except (TypeError, ValueError):
         return False
-    if num <= 1:
-        return False
 
-    for x in range(2, (num // 2) + 1):  # noqa: SIM110
-        if (num % x) == 0:
+    for x in range(2, (tnum // 2) + 1):  # noqa: SIM110
+        if (tnum % x) == 0:
             return False
     return True
 
@@ -63,14 +63,12 @@ def is_prime_2(num: int) -> bool:
 def is_prime_3(num: int) -> bool:
     """Check if prime."""
     try:
-        if isinstance(num, float) or num != int(num):
+        tnum = int(num)
+        if (isinstance(num, float) and num != tnum) or tnum <= 1:
             return False
-        num = int(num)
     except (TypeError, ValueError):
         return False
-    if num <= 1:
-        return False
-    return all(num % x != 0 for x in range(2, num // 2 + 1))
+    return all(num % x != 0 for x in range(2, tnum // 2 + 1))
 
 
 @lru_cache

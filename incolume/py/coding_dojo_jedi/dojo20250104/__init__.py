@@ -14,7 +14,9 @@ from icecream import ic
 
 URL_TAR_FILE: Final[str] = 'https://osprogramadores.com/files/d11/pi-1M.tar.gz'
 URL_RAW_FILE: Final[str] = 'https://pastebin.com/raw/Ak8TCbJk'
-LOCAL_FILE: Path = Path(__file__).parent / 'pi-1M.tgz'
+LOCAL_FILE: Path = (
+    Path(__file__).parents[1] / 'generic_data/text_big/pi-1M.tgz'
+)
 
 
 def download_file(

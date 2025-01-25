@@ -20,7 +20,7 @@ class TestHandlerFiles:
     """Test case class."""
 
     t0: ClassVar = None
-    expected_content: ClassVar[bytes] = b'3.141592'
+    expected_content: ClassVar[bytes] = b'3.1415926535'
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -149,7 +149,10 @@ class TestHandlerFiles:
     )
     def test_download_mock_raw(self, entrance, expected):
         """Unittest."""
-        fmock = Path(*pkg.__package__.split('.')) / 'pi-1M.tgz'
+        fmock = (
+            Path(*pkg.__package__.split('.')).parents[0]
+            / 'generic_data/text_big/pi-1M.tgz'
+        )
         with (
             respx.mock() as rmock,
             tarfile.open(
@@ -201,7 +204,7 @@ class TestHandlerFiles:
     )
     def test_download_mock_tgz(self, entrance, expected):
         """Unittest."""
-        fmock = Path(*pkg.__package__.split('.')) / 'pi-1M.tgz'
+        fmock = pkg.LOCAL_FILE
         with respx.mock() as rmock:
             test_route = rmock.get(entrance.get('url')).mock(
                 return_value=httpx.Response(
@@ -255,7 +258,7 @@ class TestHandlerFiles:
     )
     def test_handler_stream(self, entrance, expected):
         """Unittest."""
-        fmock = Path(*pkg.__package__.split('.')) / 'pi-1M.tgz'
+        fmock = pkg.LOCAL_FILE
         with (
             tarfile.open(fmock, mode='r:gz') as handler,
             respx.mock() as rmock,
@@ -296,7 +299,7 @@ class TestHandlerFiles:
     def test_handler_bigger_mock(self, cmd, entrance):
         """Unittest."""
         with tarfile.open(
-            Path(*pkg.__package__.split('.')) / 'pi-1M.tgz',
+            pkg.LOCAL_FILE,
             mode='r:gz',
         ) as handler:
             file = handler.extractfile(handler.getnames()[0])
@@ -329,7 +332,7 @@ class TestHandlerFiles:
         """Unittest."""
         with (
             tarfile.open(
-                Path(*pkg.__package__.split('.')) / 'pi-1M.tgz',
+                pkg.LOCAL_FILE,
                 mode='r:gz',
             ) as handler,
             respx.mock() as mresp,
@@ -557,7 +560,13 @@ class TestCaseExamples:
         result = ['']
         content = pkg.LOCAL_FILE.with_suffix('.txt').read_text()
         primes = get_prime(10000)
-        ex3.get_bigger_seq(prime_array=primes, array='', begin='', seq='', bigger_seq=result)
+        ex3.get_bigger_seq(
+            prime_array=primes,
+            array='',
+            begin='',
+            seq='',
+            bigger_seq=result,
+        )
         assert result
 
 

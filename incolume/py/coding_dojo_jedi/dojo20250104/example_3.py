@@ -60,7 +60,7 @@ def get_prime(limit: int) -> list[int]:
     return _primes
 
 
-def load_file(_file)->str:
+def load_file(_file) -> str:
     """Carrega os bytes do arquivo em uma array, e remove 3."""
     char = _file.read(1)
     _bytes = ''

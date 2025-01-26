@@ -48,12 +48,13 @@ def check_connectivity(
     timeout: float = 1.8,
 ) -> bool:
     """Check web connectivity."""
-    req = requests.get(url, timeout=timeout)
     try:
+        req = requests.get(url, timeout=timeout)
         if req.status_code == HTTPStatus.OK:
             return True
     except Exception:  # pylint: disable=W0718
-        logging.exception()
+        msg = 'Connection offline.'
+        logging.exception(msg)
     return False
 
 

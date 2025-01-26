@@ -141,7 +141,7 @@ def dojo(**kwargs: dict[str, Any]) -> dict[str]:
     fin = kwargs.get('fin')
     chunk = kwargs.get('chunk')
     logging.debug(ic(fin, chunk))
-    result = {}
+    # uso futuro # result = {}
     count: int = 0
     primes = [x for x in range(10**4, -1, -1) if is_prime(x)]
     sequence = iterator_handler_file(fin=fin)

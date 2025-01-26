@@ -780,7 +780,7 @@ class TestCaseExamples:
         prime_finder = ex0.PrimesPi(
             filename=entrance,
         )
-        with pytest.raises(SystemExit) as excinfo:
+        with pytest.raises(SystemExit) as excinfo:  # noqa: PT012
             prime_finder.run()
             assert excinfo.value.code == expected
 

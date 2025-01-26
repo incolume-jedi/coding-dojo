@@ -508,53 +508,111 @@ class TestHandlerFiles:
 class TestPrimes:
     """Case teste."""
 
+    test0: ClassVar = [
+        ('2', False),
+        ('2i', False),
+        (b'2', False),
+        (2.0, False),
+    ]
+    test1: ClassVar = [
+        (10**5, False),
+        (9323, True),
+        (1, False),
+        (2, True),
+        (3, True),
+        (4, False),
+        (41, True),
+        (59, True),
+        (89, True),
+    ]
+
     @pytest.mark.parametrize(
         'entrance expected'.split(),
-        [
-            ('2', False),
-            ('2i', False),
-            (b'2', False),
-            (2.0, False),
-            (10**5, False),
-            (9323, True),
-            (1, False),
-            (2, True),
-            (3, True),
-            (4, False),
-            (41, True),
-            (59, True),
-            (89, True),
-        ],
+        test0 + test1,
     )
     def test_is_prime(self, entrance, expected):
         """Check is prime number."""
         assert pkg.is_prime(entrance) == expected
 
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        test1,
+    )
+    def test_is_prime_ex0(self, entrance, expected):
+        """Check is prime number."""
+        obj = ex0.PrimesPi(pkg.LOCAL_FILE)
+        assert obj.is_prime(entrance) == expected
+
 
 class TestCaseExamples:
     """Case Examples."""
 
-    def test_example_0(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                pkg.LOCAL_FILE.with_suffix('.txt'),
+                '14590431451723416161791510706177671741511297009743626357169179809791310760755',
+                marks=[
+                    pytest.mark.offci,
+                    pytest.mark.slow,
+                ],
+            ),
+        ],
+    )
+    def test_example_0(self, entrance, expected):
         """Example case."""
         prime_finder = ex0.PrimesPi(
-            filename=pkg.LOCAL_FILE.with_suffix('.txt'),
+            filename=entrance,
         )
         result = prime_finder.run()
-        assert (
-            result == '14590431451723416161791510706177671741511'
-            '297009743626357169179809791310760755'
-        )
+        assert result == expected
 
-    @pytest.mark.skip
-    def test_example_1(self):
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                pkg.LOCAL_FILE.with_suffix('.tar.gz'),
+                1,
+                marks=[
+                    pytest.mark.offci,
+                    pytest.mark.slow,
+                ],
+            ),
+        ],
+    )
+    def test_example_0_xcpt(self, entrance, expected):
         """Example case."""
-        assert ex1.ic_biggest_seq(pkg.LOCAL_FILE.with_suffix('.txt'))
+        prime_finder = ex0.PrimesPi(
+            filename=entrance,
+        )
+        with pytest.raises(SystemExit) as excinfo:
+            prime_finder.run()
+            assert excinfo.value.code == expected
+
+    @pytest.mark.parametrize(
+        'entrance expected'.split(),
+        [
+            pytest.param(
+                pkg.LOCAL_FILE.with_suffix('.txt'),
+                '14590431451723416161791510706177671741511297009743626357169179809791310760755',
+                marks=[
+                    pytest.mark.offci,
+                    pytest.mark.slow,
+                ],
+            ),
+        ],
+    )
+    def test_example_1(self, entrance, expected):
+        """Example case."""
+        assert ex1.ic_biggest_seq(entrance) == expected
 
     @pytest.mark.skip
     def test_example_2(self):
         """Example case."""
         assert ex2.generate_bigger_primes()
 
+    @pytest.mark.skip
     def test_example_3(self):
         """Example case."""
         result = ['']

@@ -70,7 +70,7 @@ def ic_biggest_seq(file_path: Path, upper_limit: int = 10**4) -> str:  # noqa: C
             ):
                 prim_seq[t] = prim_seq[idx] + current_num
 
-    ic(max(prim_seq.values(), key=len, default=''))
+    return ic(max(prim_seq.values(), key=len, default=''))
 
 
 if __name__ == '__main__':

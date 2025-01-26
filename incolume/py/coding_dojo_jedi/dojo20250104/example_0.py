@@ -30,7 +30,7 @@ class PrimesPi:
 
     def is_prime(self, num: int) -> bool:
         """Função para testar se é um número primo."""
-        if num < 2 or num % 2 == 0:
+        if num < 2 or (num % 2 == 0 and num > 2):
             return False
         return all(num % i != 0 for i in range(3, int(sqrt(num)) + 1, 2))
 

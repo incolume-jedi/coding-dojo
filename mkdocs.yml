@@ -47,7 +47,7 @@ nav:
       - Código de Conduta: user_guide/code_of_conduct.md
       - Dojos Resolvidos: 
         # - alfabética: user_guide/dojos-alfabetica.md
-        - por datas: user_guide/dojos-resolvidos.md
+        - por ano: user_guide/dojos-resolvidos.md
       - Facilitadores:
           - dojo (script): user_guide/facilitors/dojo-script.md
       - Gerenciadores:

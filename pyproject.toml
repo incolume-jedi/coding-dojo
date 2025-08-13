@@ -23,6 +23,11 @@ classifiers = [
   "Topic :: Education",
   "License :: Free For Educational Use",
 ]
+dependencies = [
+    "click>=8.2.1",
+    "icecream>=2.1.5",
+    "unidecode>=1.4.0",
+]
 
 [tool.uv.build-backend]
 module-name = "incolume.py.coding_dojo_jedi"
@@ -511,6 +516,14 @@ disallow_untyped_defs = true
 [pycodestyle]
 max_line_length = 79
 ignore = ['E203']
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+    "jupyterlab>=4.4.5",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.8",
+]
 
 [tool.taskipy.variables]
 sumary_file = "incolume/py/coding_dojo_jedi/README.md"

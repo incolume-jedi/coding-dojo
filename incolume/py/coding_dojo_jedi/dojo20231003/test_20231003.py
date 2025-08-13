@@ -21,7 +21,7 @@ class TestCase:
         assert max_sequence([]) == 0
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ([-1, -2, -3, -4], 0),
             ([-10, -2, -3, -1], 0),

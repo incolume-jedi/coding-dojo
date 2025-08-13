@@ -21,7 +21,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (12, True),
             (123, False),
@@ -32,7 +32,7 @@ class TestCase:
         assert pkg.is_even(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test5,
     )
     def test_1(self, entrance, expected) -> NoReturn:
@@ -40,7 +40,7 @@ class TestCase:
         assert pkg.last_digit_for_pow5(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test5,
     )
     def test_2(self, entrance, expected) -> NoReturn:
@@ -48,7 +48,7 @@ class TestCase:
         assert pkg.last_digit_for_pow5(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test7,
     )
     def test_3(self, entrance, expected) -> NoReturn:
@@ -56,7 +56,7 @@ class TestCase:
         assert pkg.last_digit_for_pow7_0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test7,
     )
     def test_4(self, entrance, expected) -> NoReturn:

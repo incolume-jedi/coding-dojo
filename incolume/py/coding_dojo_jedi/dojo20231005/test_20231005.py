@@ -17,7 +17,7 @@ class TestCase:
         assert all(d.parts[-2] == 'coding_dojo_jedi' for d in self.directories)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('20190129', True),
             ('20220714', True),
@@ -71,7 +71,7 @@ class TestCase:
         assert bool(result) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('20190129', True),
             ('20220714', True),

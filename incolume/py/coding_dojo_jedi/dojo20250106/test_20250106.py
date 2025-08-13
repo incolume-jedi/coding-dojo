@@ -31,7 +31,7 @@ class TestCasePreprocessImageOCR:
         assert entrance.is_dir()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 pkg.IMG_DIR,
@@ -58,7 +58,7 @@ class TestCasePreprocessImageOCR:
         assert value.all() == self.obj.reset().img.all()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'img': img0, 'fout': None},
@@ -98,7 +98,7 @@ class TestCasePPIOCR:
         assert self.obj.class_name == 'PPIOCR'
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 img1,

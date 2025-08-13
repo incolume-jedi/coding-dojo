@@ -11,7 +11,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ([], 0),
         ([[1, 2], [3, 4]], 10),
@@ -25,7 +25,7 @@ def test_perimeter(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             108,

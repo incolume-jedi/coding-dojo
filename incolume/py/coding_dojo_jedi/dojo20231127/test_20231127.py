@@ -9,7 +9,7 @@ from incolume.py.coding_dojo_jedi.dojo20231127.dojo20231127 import (
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (2, 'Venus'),
         (5, 'Jupiter'),
@@ -25,7 +25,7 @@ def test_get_planet_name0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (2, 'Venus'),
         (5, 'Jupiter'),

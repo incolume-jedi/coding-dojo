@@ -23,7 +23,7 @@ class CheckDeepl:
 
     @pytest.mark.skip(reason='replaced for test_translate_deepl_api_mock')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests0,
     )
     def test_translate_deepl_api(self, entrance, expected):
@@ -33,7 +33,7 @@ class CheckDeepl:
 
     @pytest.mark.skip(reason='replaced for test_translate_deepl_mock')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests0,
     )
     def test_tranlate_deepl(self, entrance, expected):
@@ -41,7 +41,7 @@ class CheckDeepl:
         assert translate_deepl('Boa Noite', entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests0,
     )
     def test_translate_deepl_api_mock(self, entrance, expected):
@@ -61,7 +61,7 @@ class CheckDeepl:
             assert result['translations'][0]['text'] == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests0,
     )
     def test_tranlate_deepl_mock(self, entrance, expected):

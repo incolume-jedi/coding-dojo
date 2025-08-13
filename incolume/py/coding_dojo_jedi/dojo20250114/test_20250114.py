@@ -16,7 +16,7 @@ class TestCase:
     img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 img0,
@@ -58,7 +58,7 @@ class TestCase:
         assert set(expected.parts[-1:]).issubset(result.parts)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 img1,

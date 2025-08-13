@@ -22,7 +22,7 @@ tests_fizzbuzz = [
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests_fizzbuzz,
 )
 def test_fizzbuzz0(entrance, expected):
@@ -31,7 +31,7 @@ def test_fizzbuzz0(entrance, expected):
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests_fizzbuzz,
 )
 def test_fizzbuzz(entrance, expected):
@@ -40,7 +40,7 @@ def test_fizzbuzz(entrance, expected):
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, '1'),
         (3, 'queijo'),

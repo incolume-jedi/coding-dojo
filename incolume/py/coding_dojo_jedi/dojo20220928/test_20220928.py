@@ -14,7 +14,7 @@ class TestCase:
 
     @pytest.mark.skip
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ([], 0),
             ([-1, -2, -3, -4], 0),

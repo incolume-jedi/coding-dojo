@@ -12,7 +12,6 @@ from tempfile import gettempdir
 pkg.ic.enable()
 
 
-# ruff: noqa: ERA001
 class TestCase0:
     """Test case class."""
 
@@ -46,7 +45,7 @@ class TestCase1:
         ).is_file()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'https://bd-rest.camara.leg.br/server/api/core/bitstreams/1d479a9f-1fb5-4fdf-ad7b-d635382a6cfd/content',

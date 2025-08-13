@@ -33,7 +33,7 @@ def data_fake():
 def generate_dataframe(count: int = 0) -> pd.DataFrame:
     """Generate dataframe."""
     count = count or 10
-    title = 'nome cpf email'.split()
+    title = ['nome', 'cpf', 'email']
     users = (data_fake() for _ in range(count))
     df0 = pd.DataFrame(users, columns=title)
     ic(df0)

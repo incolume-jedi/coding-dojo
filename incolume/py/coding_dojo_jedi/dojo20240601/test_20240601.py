@@ -25,17 +25,17 @@ class TestCase:
 
     test_case_1: ClassVar = [
         ('casa', ['a']),
-        ('mississipi', 'i s'.split()),
-        ('abobrinha', 'a b'.split()),
+        ('mississipi', ['i', 's']),
+        ('abobrinha', ['a', 'b']),
         ('Tudo é difícil até fácil se tornar.', ['i']),
-        ('A base do teto desaba', 'a e'.split()),
+        ('A base do teto desaba', ['a', 'e']),
         ('A cara rajada da jararaca', ['a']),
         ('Socorram-me, subi no ônibus em Marrocos', ['o']),
         ('Me vê se a panela da moça é de aço, Madalena Paes, e vem', ['a']),
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_max_letter_0(self, entrance, expected):
@@ -43,7 +43,7 @@ class TestCase:
         assert pkg.max_letter0(entrance) in expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_max_letter_1(self, entrance, expected):
@@ -51,7 +51,7 @@ class TestCase:
         assert pkg.max_letter1(entrance) in expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_max_letter_2(self, entrance, expected):
@@ -59,7 +59,7 @@ class TestCase:
         assert pkg.max_letter2(entrance) in expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_1,
     )
     def test_max_letter_3(self, entrance, expected):

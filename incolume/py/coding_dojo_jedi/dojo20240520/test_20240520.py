@@ -23,7 +23,7 @@ testes = [
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     testes,
 )
 def test_rot13a(entrance, expected):
@@ -32,7 +32,7 @@ def test_rot13a(entrance, expected):
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     testes,
 )
 def test_rot13b(entrance, expected):
@@ -41,7 +41,7 @@ def test_rot13b(entrance, expected):
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     testes,
 )
 def test_rot13c(entrance, expected):
@@ -50,7 +50,7 @@ def test_rot13c(entrance, expected):
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     testes,
 )
 def test_rot13(entrance, expected):

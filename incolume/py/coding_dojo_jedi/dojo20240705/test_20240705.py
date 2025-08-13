@@ -9,7 +9,7 @@ class TestCase:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(5, 20, marks=[pytest.mark.slow]),
             pytest.param(1, 10, marks=[]),

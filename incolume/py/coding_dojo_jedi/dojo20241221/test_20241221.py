@@ -11,7 +11,7 @@ class TestCase:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param([3], 3, marks=[]),
             pytest.param([3, 1], 5, marks=[]),
@@ -25,7 +25,7 @@ class TestCase:
         assert pkg.dojo(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param([3], 3, marks=[]),
             pytest.param([3, 1], 5, marks=[]),

@@ -34,7 +34,7 @@ class TestDojoFeliz:
 
     @pytest.mark.skip(reason='fail coding.')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         altura_feliz,
     )
     def test_nfeliz(self, entrance, expected):
@@ -43,7 +43,7 @@ class TestDojoFeliz:
         assert obj.height == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         altura_feliz,
     )
     def test_alt_num_feliz(self, entrance, expected):

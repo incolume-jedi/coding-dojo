@@ -15,7 +15,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         t0,
     )
     def test_0(self, entrance, expected) -> NoReturn:
@@ -31,7 +31,7 @@ class TestCase:
         assert lista.head.data == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ({1}, 0),
             ({1, 5, 9}, 2),
@@ -59,7 +59,7 @@ class TestCase:
 
     @pytest.mark.skip(reason='Fail implementation.')
     @pytest.mark.parametrize(
-        'entrance idx expected'.split(),
+        ['entrance', 'idx', 'expected'],
         [
             ([3, 2, 1], 2, [3, 2]),
             ([3, 2, 1], 1, [3, 1]),
@@ -73,7 +73,7 @@ class TestCase:
         assert lista.get_values() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ([1, 2, 3], '3\n2\n1\n'),
             ([1], '1\n'),

@@ -21,7 +21,7 @@ class TestCase:
         assert fx('a') == 'A'
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param('joão da silva e silva', 'João da Silva e Silva'),
             pytest.param(
@@ -40,7 +40,7 @@ class TestCase:
         assert fx(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'joão da silva e silva',
@@ -62,7 +62,7 @@ class TestCase:
         assert fx(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'a casa da benção do senhor',

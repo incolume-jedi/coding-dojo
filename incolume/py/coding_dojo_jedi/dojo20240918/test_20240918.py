@@ -9,7 +9,7 @@ class TestRaspagemWebReportIBGE:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('Norte', ['AC', 'AP', 'AM', 'PA', 'RO', 'RR', 'TO']),
             ('Sul', ['PR', 'SC', 'RS']),
@@ -30,7 +30,7 @@ class TestRaspagemWebReportIBGE:
         assert pkg.UnidadesFederativas
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param('', True, marks=pytest.mark.webtest),
         ],
@@ -40,7 +40,7 @@ class TestRaspagemWebReportIBGE:
         assert pkg.download_html(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param('', True),
         ],
@@ -50,7 +50,7 @@ class TestRaspagemWebReportIBGE:
         assert pkg.scrap_estados(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param('', True, marks=pytest.mark.webtest),
         ],
@@ -70,7 +70,7 @@ class TestRaspagemWebReportIBGE:
 
     @pytest.mark.skip('This test still WIP')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param('', None, marks=pytest.mark.webtest),
         ],

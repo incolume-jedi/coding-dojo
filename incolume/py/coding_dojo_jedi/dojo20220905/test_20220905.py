@@ -12,7 +12,7 @@ from incolume.py.coding_dojo_jedi.dojo20220905.dojo20220905 import stream
     reason='This run only Python 3.8+',
 )
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ('deezer family', 34.9),
         ('Deezer Family', 34.9),

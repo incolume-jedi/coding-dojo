@@ -23,7 +23,7 @@ class TestHandlerFiles:
     expected_content: ClassVar[bytes] = b'3.1415926535'
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -119,7 +119,7 @@ class TestHandlerFiles:
         assert result.is_file()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'dir_output': Path(tempfile.gettempdir())},
@@ -174,7 +174,7 @@ class TestHandlerFiles:
             assert result.is_file()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -218,7 +218,7 @@ class TestHandlerFiles:
             assert result.is_file()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {},
@@ -242,7 +242,7 @@ class TestHandlerFiles:
         assert pkg.handler_file(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {},
@@ -277,7 +277,7 @@ class TestHandlerFiles:
             assert test_route.called
 
     @pytest.mark.parametrize(
-        'cmd entrance'.split(),
+        ['cmd', 'entrance'],
         [
             pytest.param(
                 pkg.handler_file,
@@ -309,7 +309,7 @@ class TestHandlerFiles:
             assert result == expected
 
     @pytest.mark.parametrize(
-        'cmd entrance'.split(),
+        ['cmd', 'entrance'],
         [
             pytest.param(
                 pkg.handler_stream,
@@ -352,7 +352,7 @@ class TestHandlerFiles:
             assert result == expected
 
     @pytest.mark.parametrize(
-        'seq entrance expected'.split(),
+        ['seq', 'entrance', 'expected'],
         [
             pytest.param(1, {}, [b'1']),
             pytest.param(1, {'fin': pkg.LOCAL_FILE}, [b'1']),
@@ -697,7 +697,7 @@ class TestPrimes:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test0 + test1,
     )
     def test_is_prime(self, entrance, expected):
@@ -705,7 +705,7 @@ class TestPrimes:
         assert pkg.is_prime(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test1,
     )
     def test_is_prime_ex0(self, entrance, expected):
@@ -714,7 +714,7 @@ class TestPrimes:
         assert obj.is_prime(entrance) == expected
 
     @pytest.mark.parametrize(
-        'funct expected'.split(),
+        ['funct', 'expected'],
         [
             pytest.param(pkg.is_prime, test2, marks=[]),
             pytest.param(ex0.PrimesPi('').is_prime, test2, marks=[]),
@@ -726,7 +726,7 @@ class TestPrimes:
         assert primes == expected
 
     @pytest.mark.parametrize(
-        'funct expected'.split(),
+        ['funct', 'expected'],
         [
             pytest.param(ex2.get_prime, test2, marks=[]),
             pytest.param(ex3.get_prime, test2, marks=[]),
@@ -742,7 +742,7 @@ class TestCaseExamples:
     """Case Examples."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 pkg.LOCAL_FILE.with_suffix('.txt'),
@@ -763,7 +763,7 @@ class TestCaseExamples:
         assert result == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 pkg.LOCAL_FILE.with_suffix('.tar.gz'),
@@ -785,7 +785,7 @@ class TestCaseExamples:
             assert excinfo.value.code == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 pkg.LOCAL_FILE.with_suffix('.txt'),
@@ -802,7 +802,7 @@ class TestCaseExamples:
         assert ex1.ic_biggest_seq(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -847,7 +847,7 @@ class TestPrimesIntoPI:
     __test__ = False
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'begin': 1, 'seq': '1415926535'},
@@ -866,7 +866,7 @@ class TestPrimesIntoPI:
         assert pkg.find_longest_prime_sequence(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'chunk': 4, 'fin': pkg.LOCAL_FILE},

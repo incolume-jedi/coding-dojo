@@ -88,13 +88,13 @@ class TestCase0:
     def test_2(self):
         """Unit test."""
         o = FJson('usd', ask=1.234)
-        assert set('code ask timestamp create_date'.split()).issubset(
+        assert {'code', 'ask', 'timestamp', 'create_date'}.issubset(
             o.to_dict()['USDBRL'].keys(),
         )
 
     @travel('2024-11-07 12:34:56-03:00')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'code': 'usd', 'ask': 1.23},
@@ -181,7 +181,7 @@ class TestCase0:
 
     @travel('2024-11-07 12:34:56-03:00')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'code': 'usd', 'ask': 1.23},
@@ -256,7 +256,7 @@ class TestCase1:
 
     @travel('2024-11-07 12:34:56-03:00')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param({'code': 'usd', 'ask': 1.23}, 'Última cotação: 1.23'),
             pytest.param({'code': 'eth', 'ask': 12.3}, 'Última cotação: 12.3'),

@@ -15,7 +15,7 @@ class TestCase:
     """Test case dojo."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('www.codewars.com#about', 'www.codewars.com'),
             ('http://www.codewars.com#about', 'http://www.codewars.com'),
@@ -41,7 +41,7 @@ class TestCase:
         assert remove_url_anchor0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('www.codewars.com#about', 'www.codewars.com'),
             ('http://www.codewars.com#about', 'http://www.codewars.com'),
@@ -67,7 +67,7 @@ class TestCase:
         assert remove_url_anchor1(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('www.codewars.com#about', 'www.codewars.com'),
             ('http://www.codewars.com#about', 'http://www.codewars.com'),
@@ -93,7 +93,7 @@ class TestCase:
         assert remove_url_anchor2(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('www.codewars.com#about', 'www.codewars.com'),
             ('http://www.codewars.com#about', 'http://www.codewars.com'),
@@ -119,7 +119,7 @@ class TestCase:
         assert remove_url_anchor3(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('www.codewars.com#about', 'www.codewars.com'),
             ('http://www.codewars.com#about', 'http://www.codewars.com'),

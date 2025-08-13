@@ -44,7 +44,7 @@ class TestCase:
         assert read_tar_gz() == ['pi-1M.txt']
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {'filename': None},
@@ -59,7 +59,7 @@ class TestCase:
         assert out == expected
 
     @pytest.mark.parametrize(
-        'function expected'.split(),
+        ['function', 'expected'],
         [
             (get_content_tar_gz_0, b'3.141592'),
             (get_content_tar_gz_1, b'3.141592'),

@@ -8,7 +8,7 @@ from incolume.py.coding_dojo_jedi.dojo20220909.dojo20220909 import (
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ([1, 2, 'Fizz', 4, 'Buzz', 6], [3, 5]),
         ([1, 'Fizz', 'Buzz', 'Fizz', 5, 'FizzBuzz'], [2, 3]),

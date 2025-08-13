@@ -30,7 +30,7 @@ class TestSolution0:
     ])
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 (t0, 2, 5),
@@ -69,7 +69,7 @@ class TestSolution0:
         assert np.array_equal(r, expected)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param((t0, 0, 1, 1), True, marks=[]),
             pytest.param((t0, 2, 1, 8), False, marks=[]),
@@ -86,7 +86,7 @@ class TestSolution0:
         assert pkg.is_valid(*entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param((t0, 0, 1), [1, 9], marks=[]),
             pytest.param((t0, 2, 1), [4, 9], marks=[]),
@@ -101,7 +101,7 @@ class TestSolution0:
         assert pkg.possibilities(*entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 np.array([
@@ -198,7 +198,7 @@ class TestSolution1:
     obj = pkg.Solution1()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 (t0, 1, 1),
@@ -234,7 +234,7 @@ class TestSolution1:
         assert np.array_equal(r, expected)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param((t0, 0, 1, 1), True, marks=[]),
             pytest.param((t0, 2, 1, 8), False, marks=[]),
@@ -251,7 +251,7 @@ class TestSolution1:
         assert self.obj.is_valid(*entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param((t0, 0, 1), [1, 9], marks=[]),
             pytest.param((t0, 2, 1), [4, 9], marks=[]),
@@ -266,7 +266,7 @@ class TestSolution1:
         assert self.obj.possibilities(*entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 [
@@ -406,7 +406,7 @@ class TestSolution2:
         assert out == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'grid': t0[1], 'row': 0, 'col': 3, 'num': 5},

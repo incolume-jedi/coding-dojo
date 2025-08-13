@@ -32,7 +32,7 @@ class TestCPFCreate:
             create_cpf(entrance)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('000.000.001', '000.000.001-91'),
             (123456789, '123.456.789-09'),

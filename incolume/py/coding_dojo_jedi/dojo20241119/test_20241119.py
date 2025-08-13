@@ -13,7 +13,6 @@ magic = pytest.importorskip('magic')
 filetype = pytest.importorskip('filetype')
 
 
-# ruff: noqa: ERA001
 class TestCase:
     """Test case class."""
 
@@ -22,7 +21,7 @@ class TestCase:
 
     @pytest.mark.offci
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {

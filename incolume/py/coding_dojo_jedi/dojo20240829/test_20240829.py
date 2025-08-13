@@ -35,7 +35,7 @@ class TestCase:
         assert pkg.asdict(pkg.Pessoa(*entrance)) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 (
@@ -89,7 +89,7 @@ class TestCase:
         assert pkg.dojo0(pkg.Pessoa(*entrance)) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 (

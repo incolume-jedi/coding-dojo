@@ -14,7 +14,7 @@ class TestCase:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ({'link': dojo147.url}, 'python-powered-h-50x65.json'),
         ],
@@ -26,7 +26,7 @@ class TestCase:
         assert result.name == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {'json_file': 'python-powered-h-50x65.json'},

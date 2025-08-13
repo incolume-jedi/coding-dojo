@@ -9,7 +9,7 @@ class TestCase:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 ([2, 4, 3], [5, 6, 4]),

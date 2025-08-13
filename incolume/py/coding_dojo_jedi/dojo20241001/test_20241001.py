@@ -63,7 +63,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         t0,
     )
     def test_0(self, entrance, expected) -> NoReturn:

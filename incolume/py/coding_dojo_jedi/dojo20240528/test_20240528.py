@@ -6,7 +6,7 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             (1, 2, 3),

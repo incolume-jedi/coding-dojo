@@ -6,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220907.dojo20220907 import fizzbuzz
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, '1'),
         (3, 'Fizz'),

@@ -20,7 +20,7 @@ class TestCPFInstances:
         assert isinstance(cpf, CPF)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (10000000001, '100.000.000-01'),
             (52998224725, '529.982.247-25'),
@@ -33,7 +33,7 @@ class TestCPFInstances:
         assert CPF(entrance).cpf_number == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('000.000.001-91', True),
             ('000.000.001-92', False),
@@ -48,7 +48,7 @@ class TestCPFInstances:
         assert cpf.is_valid() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('000.000.001-91', True),
             ('000.000.001-92', False),
@@ -81,7 +81,7 @@ class TestCPFInstances:
             CPF(entrance)
 
     @pytest.mark.parametrize(
-        'entrance forma expected'.split(),
+        ['entrance', 'forma', 'expected'],
         [
             (12345678900, 's', '12345678900'),
             (12345678900, 'r', 'CPF(123.456.789-00)'),

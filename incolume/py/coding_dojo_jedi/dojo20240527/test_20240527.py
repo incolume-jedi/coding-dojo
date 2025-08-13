@@ -8,7 +8,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, False),
         (1065, False),

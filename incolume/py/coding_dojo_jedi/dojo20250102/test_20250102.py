@@ -99,7 +99,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
     </html>"""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'doc',
@@ -289,7 +289,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         assert isinstance(pkg.get_list_html(dout), Iterator)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'arquivo1.html',
@@ -488,7 +488,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
         assert result.to_dict().get('items') == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'count': 10},

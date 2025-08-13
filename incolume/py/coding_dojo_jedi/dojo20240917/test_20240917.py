@@ -11,7 +11,7 @@ class TestLongestPalindromeSubString:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected exception'.split(),
+        ['entrance', 'expected', 'exception'],
         [
             ('cbbd', 'bb', None),
             ('forgeeksskeegfor', 'geeksskeeg', None),

@@ -12,7 +12,7 @@ class TestCase:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected raises'.split(),
+        ['entrance', 'expected', 'raises'],
         [
             pytest.param(123456789001, '12345678900188', {}, marks=[]),
             pytest.param(112223330001, '11222333000181', None, marks=[]),

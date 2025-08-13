@@ -6,7 +6,7 @@ from incolume.py.coding_dojo_jedi.dojo20220926.dojo20220926 import protein
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ('UGCGAUGAAUGGGCUCGCUCC', 'CDEWARS'),
         ('AUG', 'M'),

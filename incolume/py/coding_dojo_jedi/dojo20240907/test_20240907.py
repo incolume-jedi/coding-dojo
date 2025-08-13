@@ -15,7 +15,7 @@ class TestCase:
 
     @pytest.mark.skip('fail implementation')
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests,
     )
     def test_0(self, entrance, expected) -> NoReturn:
@@ -23,7 +23,7 @@ class TestCase:
         assert pkg.dojo_0(*entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests,
     )
     def test_1(self, entrance, expected) -> NoReturn:

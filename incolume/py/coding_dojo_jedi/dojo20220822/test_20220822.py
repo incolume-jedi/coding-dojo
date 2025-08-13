@@ -11,7 +11,7 @@ from incolume.py.coding_dojo_jedi.dojo20220822.dojo20220822 import (
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, 1.99),
         (2, 3.98),
@@ -31,7 +31,7 @@ def test_tabela() -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, 2.18),
     ],

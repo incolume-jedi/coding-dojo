@@ -25,7 +25,7 @@ class CheckDojo:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         unittests0,
     )
     def test_twosum0(self, entrance, expected):
@@ -33,7 +33,7 @@ class CheckDojo:
         assert two_sum0(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         unittests0,
     )
     def test_twosum(self, entrance, expected):
@@ -41,7 +41,7 @@ class CheckDojo:
         assert two_sum(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 ['Brett', 'Emily', 'Gregory', 'Pablo', 'Thomas'],
@@ -54,7 +54,7 @@ class CheckDojo:
         assert inverter_names(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ({'quantia': 3, 'array': [19, 7, 11]}, ([19, 11, 7], [7, 11, 19])),
             ({'quantia': 1, 'array': [33, 37, 87, 87, 23]}, ([87], [23])),

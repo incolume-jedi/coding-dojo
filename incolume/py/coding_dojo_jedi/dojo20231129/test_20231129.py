@@ -56,7 +56,7 @@ tests = [
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests,
 )
 def test_perimetro_terrestre_0(entrance, expected) -> None:
@@ -65,7 +65,7 @@ def test_perimetro_terrestre_0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests,
 )
 def test_perimetro_terrestre_1(entrance, expected) -> None:
@@ -74,7 +74,7 @@ def test_perimetro_terrestre_1(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests,
 )
 def test_perimetro_terrestre_2(entrance, expected) -> None:
@@ -83,7 +83,7 @@ def test_perimetro_terrestre_2(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests,
 )
 def test_perimetro_terrestre_3(entrance, expected) -> None:
@@ -92,7 +92,7 @@ def test_perimetro_terrestre_3(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     tests,
 )
 def test_land_permetecal(entrance, expected) -> None:

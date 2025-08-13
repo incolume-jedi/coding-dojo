@@ -24,7 +24,7 @@ class TestCheckCPF:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         elements,
     )
     def test_check_cpf(self, entrance, expected):
@@ -32,7 +32,7 @@ class TestCheckCPF:
         assert check_cpf(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         elements,
     )
     def test_verify_cpf(self, entrance, expected):

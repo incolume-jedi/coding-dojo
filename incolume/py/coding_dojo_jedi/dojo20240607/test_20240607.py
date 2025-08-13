@@ -10,7 +10,7 @@ class TestCase:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ([1, 2, 3, 1], 4),
             ([2, 7, 9, 3, 1], 12),
@@ -23,7 +23,7 @@ class TestCase:
         assert pkg.house_robber(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 [401],

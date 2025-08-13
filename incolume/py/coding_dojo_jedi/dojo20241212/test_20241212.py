@@ -48,7 +48,7 @@ class TestSolucionadorSudoku:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -120,7 +120,7 @@ class TestSolucionadorSudoku:
         assert np.array_equal(response, expected)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -186,7 +186,7 @@ class TestSolucionadorSudoku:
         assert self.obj.is_valid(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -249,7 +249,7 @@ class TestSolucionadorSudoku:
         assert self.obj.possibilities(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 matrizes[1],

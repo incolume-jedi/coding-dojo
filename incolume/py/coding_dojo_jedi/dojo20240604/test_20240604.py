@@ -15,7 +15,7 @@ class TestCase:
     filename = pseudo_filename()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'url': pkg.url},
@@ -160,7 +160,7 @@ class TestCase:
         assert obj.rebaixados() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('Ceará SC', 16),
             ('Atlético-GO', 17),

@@ -8,7 +8,7 @@ class TestFeliz:
     """Test case."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (1, True),
             (2, False),

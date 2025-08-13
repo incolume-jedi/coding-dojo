@@ -19,11 +19,11 @@ url_default: str = 'https://www.todamateria.com.br/estados-do-brasil/'
 dir_report: Path = Path(__file__).parent
 json_report: Path = dir_report / 'estados.json'
 regioes_estados: dict[str, list[str]] = {
-    'Norte': 'AC AP AM PA RO RR TO'.split(),
-    'Nordeste': 'MA PI CE RN PB PE AL SE BA'.split(),
-    'Centro-Oeste': 'DF GO MT MS'.split(),
-    'Sul': 'PR SC RS'.split(),
-    'Sudeste': 'SP RJ MG ES'.split(),
+    'Norte': ['AC', 'AP', 'AM', 'PA', 'RO', 'RR', 'TO'],
+    'Nordeste': ['MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA'],
+    'Centro-Oeste': ['DF', 'GO', 'MT', 'MS'],
+    'Sul': ['PR', 'SC', 'RS'],
+    'Sudeste': ['SP', 'RJ', 'MG', 'ES'],
 }
 estados_regioes = {e: r for r, v in regioes_estados.items() for e in v}
 

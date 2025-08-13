@@ -11,7 +11,7 @@ class TestCase:
     instance: ClassVar = pkg.Caesar(key=2)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (0, pkg.Mode.DECRYPT),
             (1, pkg.Mode.ENCRYPT),
@@ -38,7 +38,7 @@ class TestCase:
         assert isinstance(pkg.Caesar(key=entrance), pkg.Caesar)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 'a ligeira raposa marrom saltou sobre o cachorro cansado!',
@@ -55,7 +55,7 @@ class TestCase:
         assert self.instance.prepara_frase(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {

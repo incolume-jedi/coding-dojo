@@ -15,7 +15,7 @@ class TestLongestConsecutiveSequence:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(t0[0], 4, marks=[]),
             pytest.param(t0[1], 9, marks=[]),
@@ -28,7 +28,7 @@ class TestLongestConsecutiveSequence:
         assert obj.longest_consecutive(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(t0[0], 4, marks=[]),
             pytest.param(t0[1], 9, marks=[]),

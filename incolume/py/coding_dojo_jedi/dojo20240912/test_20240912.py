@@ -11,7 +11,7 @@ class TestCase:
     instance: ClassVar = ''
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (('A'), 1),
             (('AAA', 'b'), 2),

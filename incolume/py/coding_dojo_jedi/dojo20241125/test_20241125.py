@@ -11,7 +11,7 @@ class TestCase:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected exception'.split(),
+        ['entrance', 'expected', 'exception'],
         [
             pytest.param(
                 'a' * 101,

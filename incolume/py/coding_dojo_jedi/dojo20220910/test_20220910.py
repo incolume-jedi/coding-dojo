@@ -11,7 +11,7 @@ from tests.conftest import py310
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, 'Domingo'),
         (2, 'Segunda'),
@@ -31,7 +31,7 @@ def test_weekday0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, 'Domingo'),
         (2, 'Segunda'),
@@ -52,7 +52,7 @@ def test_weekday1(entrance, expected) -> None:
 
 @py310
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (1, 'Domingo'),
         (2, 'Segunda'),

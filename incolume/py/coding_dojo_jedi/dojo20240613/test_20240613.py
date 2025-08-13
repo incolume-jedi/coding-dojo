@@ -28,7 +28,7 @@ class TestCase:
             assert pkg.data_fake() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (15, (15, 3)),
             (None, (10, 3)),
@@ -55,7 +55,7 @@ class TestCase:
         assert pkg.write_xlsx(**entrance)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {

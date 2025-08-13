@@ -4,7 +4,7 @@
 def calculadora(op: str, x: float, y: float) -> float:  # noqa: C901
     """Calculadora básica."""
     result: float = 0
-    operadores = '+ - * ** / // %'.split()
+    operadores = ['+', '-', '*', '**', '/', '//', '%']
     if op not in operadores:
         msg = f'Operador inválido. Use: {" ".join(operadores)}'
         raise ValueError(msg)

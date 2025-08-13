@@ -8,7 +8,7 @@ from incolume.py.coding_dojo_jedi.dojo20220718 import dojo20220718
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (sum([1, 1]), 2),
         (f'{pi:.04f}', '3.1416'),

@@ -27,7 +27,7 @@ def test_max_sequence() -> None:
 )
 @pytest.mark.skip(reason='Implementação não concluída.')
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ([-1, -2, -3, -4], 0),
         ([-10, -2, -3, -1], 0),
@@ -48,7 +48,7 @@ def test_max_sequence1(entrance, expected) -> None:
     reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ([-1, -2, -3, -4], 0),
         ([-10, -2, -3, -1], 0),
@@ -69,7 +69,7 @@ def test_subarray_max_sum(entrance, expected) -> None:
     reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ([-1, -2, -3, -4], 0),
         ([-10, -2, -3, -1], 0),
@@ -90,7 +90,7 @@ def test_maxsubarraysum(entrance, expected) -> None:
     reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ([-1, -2, -3, -4], 0),
         ([-10, -2, -3, -1], 0),

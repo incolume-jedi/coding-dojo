@@ -46,7 +46,7 @@ class TestCase:
         assert pkg.convert_byte_base64(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'link': 'http://this.is.fake.url/image-fake.png'},
@@ -82,7 +82,7 @@ class TestCase:
             assert pkg.download_file(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'link': 'http://this.is.fake.url/image-fake.png'},

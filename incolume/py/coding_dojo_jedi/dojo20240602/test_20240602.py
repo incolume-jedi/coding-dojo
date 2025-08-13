@@ -34,7 +34,7 @@ class TestCaseCBF:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_content(self, entrance, expected):
@@ -44,7 +44,7 @@ class TestCaseCBF:
         assert isinstance(obj.content, dict) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_sort_by_name(self, entrance, expected):
@@ -75,7 +75,7 @@ class TestCaseCBF:
         assert obj.sort_by_name() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_sort_by_point(self, entrance, expected):
@@ -106,7 +106,7 @@ class TestCaseCBF:
         assert obj.sort_by_point() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_classify(self, entrance, expected):
@@ -137,7 +137,7 @@ class TestCaseCBF:
         assert obj.classify() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_libertadores(self, entrance, expected):
@@ -152,7 +152,7 @@ class TestCaseCBF:
         assert obj.classify_libertadores() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_qualific_libertadores(self, entrance, expected):
@@ -165,7 +165,7 @@ class TestCaseCBF:
         assert obj.qualify_libertadores() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_sulamericana(self, entrance, expected):
@@ -182,7 +182,7 @@ class TestCaseCBF:
         assert obj.select_sulamericana() == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case_0,
     )
     def test_rebaixados(self, entrance, expected):
@@ -192,7 +192,7 @@ class TestCaseCBF:
         assert obj.rebaixados() == expected
 
     @pytest.mark.parametrize(
-        'url_path entrance expected'.split(),
+        ['url_path', 'entrance', 'expected'],
         [
             pytest.param(
                 'http://localhost:8000',

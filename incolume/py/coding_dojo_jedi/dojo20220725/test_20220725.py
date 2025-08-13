@@ -10,7 +10,7 @@ from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 
-# ruff: noqa: E501 PT023
+# ruff: noqa: E501
 @pytest.mark.skip(reason='replaced for test_research_mock')
 @pytest.mark.skipif(
     version_info < (3, 9, 0),

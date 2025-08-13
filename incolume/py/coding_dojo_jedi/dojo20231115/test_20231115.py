@@ -13,7 +13,7 @@ TZ: Final[timezone] = timezone('America/Sao_Paulo')
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ({}, 0),
         ({'s': 1}, 1_000),
@@ -86,7 +86,7 @@ def test_millissenconds(entrance, expected) -> None:
 
 # @pytest.mark.skip
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         pytest.param(
             (0, 0, 0),
@@ -118,7 +118,7 @@ def test_millissenconds_exception0(entrance, expected) -> None:
 
 # @pytest.mark.skip
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             {'h': -1, 'm': 0, 's': 0},

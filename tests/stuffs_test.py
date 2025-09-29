@@ -66,7 +66,7 @@ class TestCasePytestExamples:
         """Always skip."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('', ''),
             pytest.param('a', 'a'),

@@ -5,14 +5,110 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.10.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.17.0)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-11-11:
+## [Unreleased]	 &#8212; 	2024-06-15:
 ### Added
+  - Script CLI para gerenciar projeto `dojo --help`;
+  - Script CLI `dojo init --help`;
+  - Fusão do script sumary com script dojo `dojo sumary --help`;
+  - Dojo20240602 - Raspagem Brasileirão 2021 em POO;
+  - Dojo20240603 - Raiz quadrada método júlia;
+  - Dojo20240606 - fatorar código Python;
+  - Dojo20240607 - House robber;
+  - Dojo20240608 - Fatorar algoritmo para calculo raiz (método Júlia);
+  - Dojo20240613 - Sorteio em arquivo xlsx;
+### Deprecated
+  - Script `sumary` será substituido por `dojo sumary`;
+
+## [1.69.0]	 &#8212; 	2025-01-24:
+### Added
+  - Dojo20250106 — Preprocess Images for Text OCR - Inverted Images;
+  - Dojo20250110 — Customizar agregação de funcionalidades com decoradores;
+  - Dojo20250112 — Unificar todas as soluções para validação de números primos;
+  - Dojo20250114 — Preprocess Images for Text OCR - Binarization;
+### Changed
+  - Reorganizado o registro da release 1.60.0;
+
+## [1.68.0]	 &#8212; 	2025-01-15:
+### Changed
+  - Atualização de pacotes das dependências;
+
+## [1.67.0]	 &#8212; 	2025-01-14:
+### Added
+  - Configurado icecream como ferramento default para debug do projeto;
+  - Acrescentado gadgets indicativos nos templates e bolerplate do projeto;
+### Changed
+  - Optimização na execução de testes em `precommit`;
+### Deprecated
+  - Removido diretiva obsoleta notificada na release `poetry@1.8.5`;
+### Fixed
+  - Compatibilidade de código entre Python 3.13 e anteriores;
+  - Tratativa de exceção com contextlib `[suppressible-exception (SIM105)]`;
+  - Proteção de execução para httpx.ReadTimeout em CI/CD;
+  - Proteção CI/CD para `NotFoundFiles`;
+
+## [1.66.0]	 &#8212; 	2025-01-13:
+### Added
+  - Dojo20250102 — Identificar elementos HTML em âncoras no sistema de arquivos;
+
+## [1.65.0]	 &#8212; 	2025-01-07:
+### Added
+  - Dojo20241215 — relatório de presidentes brasileiros com foto em formato json;
+### Changed
+  - Reestruturação do menu para script `dojo`;
+### Fixed
+  - Mocked acesso ao `swapi.dev`;
+  - Aplicado pytest.mark.xpass em alguns testes unitários;
+
+## [1.64.0]	 &#8212; 	2024-12-24:
+### Added
+  - Dojo20241212 — Solucionador de Sudoku;
+  - Dojo20241213 — Longest Consecutive Sequence;
+  - Dojo20241214 — Top K Frequent Elements;
+  - Dojo20241216 — Convert Image to String and write into json file;
+  - Dojo20241220 — Revert String to image from json file;
+  - Dojo20241221 — Sum of Subarray Minimums;
+### Changed
+  - Atualização do boilerplate na geração de README.md para dojo;
+
+## [1.63.0]	 &#8212; 	2024-12-11:
+### Added
+  - Dojo20241128 — Sudoku válido;
+  - Dojo20241211 — Crie número válidos para CNPJ;
+
+## [1.62.1]	 &#8212; 	2024-12-02:
+### Added
+  - Habilitado execução manual para tests-gwa-ci-cd;
+### Fixed
+  - Resolvido AttributeError na execução CI/CD;
+
+## [1.62.0]	 &#8212; 	2024-12-02:
+### Added
+  - Dojo20241126 — New Python 3.13: Replace;
+### Changed
+  - Correção para coleta de títulos para comando `dojo sumary`;
+  - Melhoria da documentação referente ao uso do `uv` para versão futura de Python 3.13;
+
+## [1.61.0]	 &#8212; 	2024-11-29:
+### Added
+  - Dojo20241107  Testes em eventos temporais com time-machine;
+  - Dojo20241125 — Reverse Only Letters;
+  - Dojo20241127 — Criar dígitos verificadores para CNPJ;
+### Removed
+  - Pacote `python-magic` removido por possível incompatibilidade com Python 3.10+;
+
+## [1.60.0]	 &#8212; 	2024-11-26:
+### Added
+  - Dojo20241106 — Recuperar cotação de moedas em tempo real;
   - Dojo20241107 — Testes em eventos temporais com time-machine;
+  - Dojo20241118 — Transformar arquivos binários em base64 para transporte como strings;
+  - Dojo20241119 — Identifique arquivos por MIME Type;
+### Removed
+  - Pacote `python-magic` removido por possível incompatibilidade com Python 3.10+;
 
 ## [1.59.0]	 &#8212; 	2024-11-05:
 ### Fixed
@@ -127,7 +223,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Fixed
   - Correções CI/CD;
 
-## [1.52.0]	 &#8212; 	2024-08-29:
+## [1.52.0]	 &#8212; 	2024-06-01:
 ### Added
   - Dojo20240527 - Permutação em Python;
   - Dojo20240528 - Primos de 4 algarismos;
@@ -142,7 +238,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Implementado mock para API Deepl de tradução;
   - Melhoria de performance na geração do arquivo de sumário;
 
-## [1.51.0]	 &#8212; 	2024-08-29:
+## [1.51.0]	 &#8212; 	2024-05-29:
 ### Added
   - Dojo 20240527 primos de 4 algarismos;
   - Dojo20240526 - Menor palindromo primo de 2 algarismos;
@@ -182,7 +278,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240520 - Rot13;
   - Dojo20240521 - Média de temperatura;
 ### Changed
-  - Acrescentado em desafios de `https://osprogramadores.com/desafios/`;
+  - Acrescentado em desafios: https://osprogramadores.com/desafios/;
 
 ## [1.49.0]	 &#8212; 	2024-05-14:
 ### Added
@@ -257,7 +353,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
   - Correção nas mensagens de changelog para release 1.44.0;
   - Acrescentado condicional em testes unitários para Python 3.10+ a partir de dojos resolvidos no ano 2023;
-  - Lint style `ruff` aplicado a 90% do código;
+  - Lint style **ruff** aplicado a 90% do código;
   - Acrescentado sessão Artefatos ao README de dojo contendo os arquivos de implementação e de testes;
   - CI/CD plenamente funcional;
   - Scripts automatizados para geração de sumário;
@@ -587,4 +683,15 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.58.2]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.1...1.58.2
 [1.58.3]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.2...1.58.3
 [1.59.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.58.3...1.59.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.59.0...Unreleased
+[1.60.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.59.0...1.60.0
+[1.61.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.60.0...1.61.0
+[1.62.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.61.0...1.62.0
+[1.62.1]: https://github.com/incolume-jedi/coding-dojo/compare/1.62.0...1.62.1
+[1.63.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.62.1...1.63.0
+[1.64.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.63.0...1.64.0
+[1.65.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.64.0...1.65.0
+[1.66.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.65.0...1.66.0
+[1.67.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.66.0...1.67.0
+[1.68.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.67.0...1.68.0
+[1.69.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.68.0...1.69.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.69.0...Unreleased

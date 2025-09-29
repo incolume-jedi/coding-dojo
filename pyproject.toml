@@ -26,6 +26,7 @@ classifiers = [
 dependencies = [
     "click>=8.2.1",
     "icecream>=2.1.5",
+    "tqdm>=4.67.1",
     "unidecode>=1.4.0",
 ]
 

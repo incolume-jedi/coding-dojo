@@ -521,6 +521,7 @@ ignore = ['E203']
 [dependency-groups]
 dev = [
     "deepl>=1.22.0",
+    "faker>=37.8.0",
     "fuzzywuzzy>=0.18.0",
     "incolume-py-changelog>=0.17.0",
     "ipykernel>=6.30.1",

@@ -3,6 +3,17 @@
 **Os sites da web mais populares com desafios de programação**
 
 ## B
+
+### [backend-challenges](https://github.com/CollabCodeTech/backend-challenges)
+
+Quer testar seus conhecimentos com desafios de empregos reais? Aqui está uma lista pública de desafios de código aberto de empregos do mundo todo.
+
+[<svg height="25" width="25">
+<polygon points="15,3 6,25 25,25" class="triangle" fill="#4051b5"/>
+Click to Up.
+</svg>](#coding-challenge)
+
+
 ### [Beecrowd](https://www.beecrowd.com.br/judge/pt/)
 
 BeeCrowd é uma plataforma online brasileira de competições de programação, semelhante ao URI Online Judge e ao Codeforces.

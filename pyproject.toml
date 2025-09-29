@@ -81,7 +81,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-python-dotenv = "^0.20.0"
+python-dotenv = ">=0.20.0"
 Unidecode = "^1.3.4"
 requests = "^2.28.1"
 fuzzywuzzy = "^0.18.0"
@@ -519,9 +519,12 @@ ignore = ['E203']
 
 [dependency-groups]
 dev = [
+    "incolume-py-changelog>=0.17.0",
     "ipykernel>=6.30.1",
     "jupyterlab>=4.4.5",
+    "pre-commit>=4.3.0",
     "pytest-cov>=6.2.1",
+    "pytest-mock>=3.15.1",
     "ruff>=0.12.8",
 ]
 

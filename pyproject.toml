@@ -534,6 +534,7 @@ dev = [
     "pytz>=2025.2",
     "respx>=0.22.0",
     "ruff>=0.12.8",
+    "time-machine>=2.19.0",
 ]
 
 [tool.taskipy.variables]

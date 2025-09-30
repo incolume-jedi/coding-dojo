@@ -863,7 +863,7 @@ class TestConsumingIndexPageSWAPI:
         sys.platform.casefold().startswith('win'),
         reason='does not run on windows',
     )
-    @pytest.mark.webtest()
+    @pytest.mark.webtest
     @pytest.mark.xfail(raises=[requests.exceptions.ReadTimeout])
     def test_case_1(self) -> None:
         """Test it."""
@@ -885,7 +885,7 @@ class TestConsumingIndexPageSWAPI:
         sys.platform.casefold().startswith('win'),
         reason='does not run on windows',
     )
-    @pytest.mark.webtest()
+    @pytest.mark.webtest
     @pytest.mark.xfail(
         raises=[
             requests.exceptions.ReadTimeout,
@@ -896,7 +896,7 @@ class TestConsumingIndexPageSWAPI:
         """Test it with mock."""
         assert consuming_api_swapi_index_page_1() == self.values
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     def test_case_4(self) -> None:
         """Test it with mock."""
         with mock.patch(f'{__pkg__}.requests.get') as m_req_get:
@@ -906,8 +906,8 @@ class TestConsumingIndexPageSWAPI:
             assert consuming_api_swapi_index_page_1() == self.values
             assert m_req_get.call_args_list == []
 
-    @pytest.mark.skip()
-    @pytest.mark.webtest()
+    @pytest.mark.skip
+    @pytest.mark.webtest
     def test_case_5(self) -> None:
         """Test it with mock."""
         with mock.patch(

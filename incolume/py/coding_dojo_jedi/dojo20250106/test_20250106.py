@@ -11,7 +11,7 @@ from tempfile import gettempdir
 from copy import copy
 
 
-@pytest.mark.offci()
+@pytest.mark.offci
 class TestCasePreprocessImageOCR:
     """Test case class."""
 
@@ -85,7 +85,7 @@ class TestCasePreprocessImageOCR:
         )
 
 
-@pytest.mark.offci()
+@pytest.mark.offci
 class TestCasePPIOCR:
     """Test case."""
 

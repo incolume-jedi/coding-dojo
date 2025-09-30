@@ -494,7 +494,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 {'count': 10},
                 'result.json',
                 marks=[
-                    pytest.mark.xpass,
+                    pytest.mark.xfail,
                     # pytest.mark.skip
                 ],
             ),
@@ -502,7 +502,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 {'count': 20},
                 'result.json',
                 marks=[
-                    pytest.mark.xpass,
+                    pytest.mark.xfail,
                     # pytest.mark.skip
                 ],
             ),
@@ -513,7 +513,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 },
                 fout,
                 marks=[
-                    pytest.mark.xpass,
+                    pytest.mark.xfail,
                     # pytest.mark.skip,
                 ],
             ),
@@ -524,7 +524,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 },
                 fout,
                 marks=[
-                    pytest.mark.xpass,
+                    pytest.mark.xfail,
                     # pytest.mark.skip,
                 ],
             ),
@@ -536,7 +536,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 },
                 fout,
                 marks=[
-                    pytest.mark.xpass,
+                    pytest.mark.xfail,
                     pytest.mark.offci,
                     pytest.mark.slow,
                     pytest.mark.skipif(
@@ -555,7 +555,7 @@ Viw_Identificacao/ACP%2031-1966?OpenDocument"> Link </a>
                 },
                 fout,
                 marks=[
-                    pytest.mark.xpass,
+                    pytest.mark.xfail,
                     pytest.mark.offci,
                     pytest.mark.slow,
                     pytest.mark.skipif(

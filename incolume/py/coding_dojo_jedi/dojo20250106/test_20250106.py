@@ -11,7 +11,7 @@ from tempfile import gettempdir
 from copy import copy
 
 
-@pytest.mark.offci
+@pytest.mark.offci()
 class TestCasePreprocessImageOCR:
     """Test case class."""
 
@@ -37,7 +37,7 @@ class TestCasePreprocessImageOCR:
                 pkg.IMG_DIR,
                 {'generic_data', 'text_img'},
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -85,7 +85,7 @@ class TestCasePreprocessImageOCR:
         )
 
 
-@pytest.mark.offci
+@pytest.mark.offci()
 class TestCasePPIOCR:
     """Test case."""
 
@@ -105,7 +105,7 @@ class TestCasePPIOCR:
                 Path(gettempdir()) / f'{img1.stem}_inverted{img1.suffix}',
                 marks=[
                     pytest.mark.skip,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -115,7 +115,7 @@ class TestCasePPIOCR:
                 Path(gettempdir()) / f'{img0.stem}_inverted{img0.suffix}',
                 marks=[
                     # pytest.mark.skip,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],

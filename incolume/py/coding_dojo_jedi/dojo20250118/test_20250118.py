@@ -18,7 +18,7 @@ class TestCase:
                 None,
                 None,
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],

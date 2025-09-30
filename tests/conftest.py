@@ -20,9 +20,9 @@ load_dotenv()
 logging.basicConfig(encoding='utf-8', level=os.getenv('LOGGING-LEVEL'))
 
 
-def pytestmark():
-    """Mark for still WIP."""
-    return pytest.mark.skip('This test still WIP')
+# def pytestmark():
+#     """Mark for still WIP."""
+#     return pytest.xfail('This test still WIP')
 
 
 def py38(*args, **kwargs):
@@ -154,7 +154,7 @@ def semver_regex() -> str:
     return r'^\d+(\.\d+){2}((-\w+\.\d+)|(\w+\d+))?$'
 
 
-@pytest.fixture
+@pytest.fixture()
 def fakefile() -> Path:
     """Return fiction file for tests."""
     return genfile(prefix='File-testing-')

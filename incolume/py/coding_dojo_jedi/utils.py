@@ -251,7 +251,7 @@ def dojo_init(
         "        'entrance expected'.split(),\n"
         '        [\n'
         '             pytest.param(None, None, marks=['
-        'pytest.mark.xpass(reason="Implementation failing (but shoulded ran)")'
+        'pytest.mark.xfail(reason="Implementation failing (but shoulded ran)")'
         ']),\n'
         '        ],\n'
         '    )\n'

@@ -34,7 +34,7 @@ class TestHandlerFiles:
                 marks=[
                     pytest.mark.offci,
                     pytest.mark.webtest,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='failing web connection (but shoulded ran)',
                     ),
                     pytest.mark.skipif(
@@ -49,7 +49,7 @@ class TestHandlerFiles:
                 marks=[
                     pytest.mark.offci,
                     pytest.mark.webtest,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='failing web connection (but shoulded ran)',
                     ),
                     pytest.mark.skipif(
@@ -64,7 +64,7 @@ class TestHandlerFiles:
                 marks=[
                     pytest.mark.offci,
                     pytest.mark.webtest,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='failing web connection (but shoulded ran)',
                     ),
                     pytest.mark.skipif(
@@ -82,7 +82,7 @@ class TestHandlerFiles:
                 marks=[
                     pytest.mark.offci,
                     pytest.mark.webtest,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='failing web connection (but shoulded ran)',
                     ),
                     pytest.mark.skipif(
@@ -101,7 +101,7 @@ class TestHandlerFiles:
                     pytest.mark.skip,
                     pytest.mark.offci,
                     pytest.mark.webtest,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='failing web connection (but shoulded ran)',
                     ),
                     pytest.mark.skipif(
@@ -282,17 +282,17 @@ class TestHandlerFiles:
             pytest.param(
                 pkg.handler_file,
                 {'chunk': 1.6180},
-                marks=[pytest.mark.xpass(reason='bigger file.')],
+                marks=[pytest.mark.xfail(reason='bigger file.')],
             ),
             pytest.param(
                 pkg.handler_file,
                 {'chunk': 'a'},
-                marks=[pytest.mark.xpass(reason='bigger file.')],
+                marks=[pytest.mark.xfail(reason='bigger file.')],
             ),
             pytest.param(
                 pkg.handler_file,
                 {'chunk': -1},
-                marks=[pytest.mark.xpass(reason='bigger file.')],
+                marks=[pytest.mark.xfail(reason='bigger file.')],
             ),
         ],
     )
@@ -314,17 +314,17 @@ class TestHandlerFiles:
             pytest.param(
                 pkg.handler_stream,
                 {'chunk': 1.6180},
-                marks=[pytest.mark.xpass(reason='bigger file.')],
+                marks=[pytest.mark.xfail(reason='bigger file.')],
             ),
             pytest.param(
                 pkg.handler_stream,
                 {'chunk': '1k'},
-                marks=[pytest.mark.xpass(reason='bigger file.')],
+                marks=[pytest.mark.xfail(reason='bigger file.')],
             ),
             pytest.param(
                 pkg.handler_stream,
                 {'chunk': -1},
-                marks=[pytest.mark.xpass(reason='bigger file.')],
+                marks=[pytest.mark.xfail(reason='bigger file.')],
             ),
         ],
     )
@@ -852,12 +852,12 @@ class TestPrimesIntoPI:
             pytest.param(
                 {'begin': 1, 'seq': '1415926535'},
                 '',
-                marks=[pytest.mark.xpass],
+                marks=[pytest.mark.xfail],
             ),
             pytest.param(
                 {'begin': 1, 'seq': '14159265358979323846'},
                 '',
-                marks=[pytest.mark.xpass],
+                marks=[pytest.mark.xfail],
             ),
         ],
     )

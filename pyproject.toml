@@ -1,6 +1,6 @@
 [project]
 name = "coding-dojo-jedi"
-version = "1.70.0a5"
+version = "1.70.0a6"
 description = "códigos da guilda jedi incolume"
 requires-python = ">=3.10,<4"
 classifiers = [

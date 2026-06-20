@@ -17,6 +17,11 @@ with contextlib.suppress(FileNotFoundError):
         f'{load(configfile)["tool"]["poetry"]["version"]}\n',
     )
 
+with contextlib.suppress(FileNotFoundError):
+    versionfile.write_text(
+        f'{load(configfile)["project"]["version"]}\n',
+    )
+
 __version__ = versionfile.read_text(encoding='utf-8').strip()
 
 

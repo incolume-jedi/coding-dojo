@@ -33,6 +33,10 @@ dependencies = [
     "unidecode>=1.4.0",
 ]
 
+[project.scripts]
+sumary = 'incolume.py.coding_dojo_jedi.cli:sumary'
+dojo = 'incolume.py.coding_dojo_jedi.cli:dojo'
+
 [tool.uv.build-backend]
 module-name = "incolume.py.coding_dojo_jedi"
 module-root = ""

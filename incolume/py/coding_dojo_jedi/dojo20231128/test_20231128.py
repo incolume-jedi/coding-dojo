@@ -105,7 +105,7 @@ def test_consuming_api_httpbin(mock_requests_get) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             1,
@@ -178,7 +178,7 @@ def test_consuming_api_swapi_one_person(m_req, entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             1,
@@ -708,7 +708,7 @@ class TestConsumingNextPageSWAPI:
             assert self.obj.tratativa1(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance n_page'.split(),
+        ['entrance', 'n_page'],
         [
             (1, 2),
             (0, 7),
@@ -747,7 +747,7 @@ class TestRequests:
         assert m_req_get.call_args_list == [mock.call('abc', timeout=TIMEOUT)]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('ok', True),
             ('status_code', HTTPStatus.OK),
@@ -770,7 +770,7 @@ class TestRequests:
         assert getattr(req, entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance mocking expected'.split(),
+        ['entrance', 'mocking', 'expected'],
         [
             ('ok', {'ok': True, 'status_code': HTTPStatus.OK}, True),
             (
@@ -821,7 +821,7 @@ class TestRequests:
             assert r.headers == self.headers
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('Content-Type', 'application/json'),
             ('content-type', 'application/json'),
@@ -841,7 +841,7 @@ class TestRequests:
 
 
 # @pytest.mark.skip(reason='Falha na chamada WEB; Necessário mock.')
-@pytest.mark.xfail(raises=[requests.exceptions.ReadTimeout])
+@pytest.mark.xfail(raises=[requests.exceptions.ReadTimeout, ConnectionError])
 class TestConsumingIndexPageSWAPI:
     """TestConsumingIndexPageSWAPI class."""
 
@@ -864,6 +864,15 @@ class TestConsumingIndexPageSWAPI:
         reason='does not run on windows',
     )
     @pytest.mark.webtest
+    @pytest.mark.skipif(
+        requests.exceptions.SSLError,
+        reason='Falha no certificado SSL.',
+    )
+    @pytest.mark.xfail(
+        raises=[
+            requests.exceptions.ReadTimeout,
+        ],
+    )
     def test_case_1(self) -> None:
         """Test it."""
         assert consuming_api_swapi_index_page_0() == self.values
@@ -885,6 +894,12 @@ class TestConsumingIndexPageSWAPI:
         reason='does not run on windows',
     )
     @pytest.mark.webtest
+    @pytest.mark.xfail(
+        raises=[
+            requests.exceptions.ReadTimeout,
+            requests.exceptions.ConnectionError,
+        ],
+    )
     def test_case_3(self) -> None:
         """Test it with mock."""
         assert consuming_api_swapi_index_page_1() == self.values

@@ -16,13 +16,13 @@ class TestCase:
     img1: Path = pkg.IMG_DIR / 'ctr-1808-08-25.png'
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 img0,
                 Path('coding-dojo/letter_latest.jpg'),
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -31,7 +31,7 @@ class TestCase:
                 img1,
                 Path('coding-dojo/ctr-1808-08-25_latest.png'),
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -40,7 +40,7 @@ class TestCase:
                 img1,
                 Path(gettempdir()) / 'ctr-1808-08-25_latest.png',
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -58,13 +58,13 @@ class TestCase:
         assert set(expected.parts[-1:]).issubset(result.parts)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 img1,
                 Path(gettempdir()) / f'{img1.stem}_bw{img1.suffix}',
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -73,7 +73,7 @@ class TestCase:
                 img0,
                 Path(gettempdir()) / 'coding-dojo/letter_latest.jpg',
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],

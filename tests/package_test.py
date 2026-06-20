@@ -50,7 +50,7 @@ class TestCase:
     def test_same_version(self, entrance: Path) -> None:
         """Test same version."""
         try:
-            version = load(entrance)['tool']['poetry']['version']
+            version = load(entrance)['project']['version']
         except ValueError:
             version = entrance.read_text().strip()
         assert version == __version__

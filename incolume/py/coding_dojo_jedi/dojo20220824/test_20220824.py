@@ -67,7 +67,7 @@ def test_dna_complementary(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ({}, 0),
         ({'s': 1}, 1_000),
@@ -86,7 +86,7 @@ def test_millissenconds(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             (0, 0, 0),

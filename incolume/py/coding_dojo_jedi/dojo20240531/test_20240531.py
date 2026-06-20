@@ -13,7 +13,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 
 @pytest.mark.parametrize(
-    'function entrance expected'.split(),
+    ['function', 'entrance', 'expected'],
     [
         (last_dig0, (2, 27), 8),
         (last_dig1, (2, 27), 8),
@@ -26,7 +26,7 @@ def test_last_dig(function, entrance, expected):
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ('vinte', 20),
         ('cento e quarenta e cinco', 145),

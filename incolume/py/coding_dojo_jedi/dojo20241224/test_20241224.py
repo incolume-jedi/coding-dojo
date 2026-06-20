@@ -10,8 +10,6 @@ import mimetypes
 from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import check_connectivity
 
-# ruff: noqa: ERA001
-
 
 @pytest.mark.webtest
 @pytest.mark.slow
@@ -29,7 +27,7 @@ class TestPresidenteFoto:
         assert pkg.SOURCE.is_file()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param({}, 'dojo_review.json'),
             pytest.param(
@@ -78,7 +76,7 @@ class TestPresidenteFoto:
         assert set(pkg.content_to_dataframe().columns) == set(pkg.title)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -131,7 +129,7 @@ class TestPresidenteFoto:
             assert pkg.dojo(**entrance).name
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {
@@ -171,7 +169,7 @@ class TestPresidenteFoto:
         assert mime.guess_type(file)[0] == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
@@ -199,7 +197,7 @@ class TestPresidenteFoto:
         assert isinstance(pkg.valid_url_or_path(entrance), expected)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',

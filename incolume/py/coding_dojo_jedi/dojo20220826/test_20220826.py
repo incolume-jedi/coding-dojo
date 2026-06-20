@@ -26,7 +26,7 @@ def test_noexclamation(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             (10),
@@ -110,7 +110,7 @@ def test_tabuada(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ((1.74, 75), 'peso normal'),
         ((1.54, 125), 'Obesidade III'),
@@ -128,7 +128,7 @@ def test_imc0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ((1.74, 75), 'peso normal'),
         ((1.54, 125), 'Obesidade III'),

@@ -20,9 +20,9 @@ load_dotenv()
 logging.basicConfig(encoding='utf-8', level=os.getenv('LOGGING-LEVEL'))
 
 
-def pytestmark():
-    """Mark for still WIP."""
-    return pytest.mark.skip('This test still WIP')
+# def pytestmark():
+#     """Mark for still WIP."""
+#     return pytest.xfail('This test still WIP')
 
 
 def py38(*args, **kwargs):

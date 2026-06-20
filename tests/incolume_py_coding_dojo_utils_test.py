@@ -80,7 +80,7 @@ class TestUtilsModule:
         assert c_links == c_dirs
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ({'fout': filename.with_name('sumario.md')}, 'sumario.md'),
             (
@@ -129,7 +129,7 @@ class TestUtilsModule:
         assert entrance in file.read_bytes()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {

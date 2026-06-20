@@ -18,7 +18,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests,
     )
     def test_0(self, entrance, expected) -> NoReturn:
@@ -26,7 +26,7 @@ class TestCase:
         assert pkg.rot47_0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests,
     )
     def test_1(self, entrance, expected) -> NoReturn:
@@ -34,7 +34,7 @@ class TestCase:
         assert pkg.rot47_1(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         tests,
     )
     def test_2(self, entrance, expected) -> NoReturn:

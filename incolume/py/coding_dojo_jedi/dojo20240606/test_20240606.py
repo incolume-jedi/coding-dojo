@@ -33,7 +33,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_square,
     )
     def test_square_0(self, entrance, expected) -> NoReturn:
@@ -41,7 +41,7 @@ class TestCase:
         assert pkg.calc_square0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_cube,
     )
     def test_cube_0(self, entrance, expected) -> NoReturn:
@@ -49,7 +49,7 @@ class TestCase:
         assert pkg.calc_cube0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_square,
     )
     def test_square_1(self, entrance, expected, caplog) -> NoReturn:
@@ -59,7 +59,7 @@ class TestCase:
             assert 'calc_square executou em' in caplog.text
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_cube,
     )
     def test_cube_1(self, entrance, expected, caplog) -> NoReturn:

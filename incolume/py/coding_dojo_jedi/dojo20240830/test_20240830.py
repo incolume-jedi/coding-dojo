@@ -10,7 +10,7 @@ class TestCase:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        'funct entrance expected'.split(),
+        ['funct', 'entrance', 'expected'],
         [
             pytest.param(
                 pkg.view,
@@ -31,7 +31,7 @@ class TestCase:
             assert out == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('abc', {'a': 1, 'b': 1, 'c': 1}),
             ('mississipi', {'m': 1, 'i': 4, 's': 4, 'p': 1}),

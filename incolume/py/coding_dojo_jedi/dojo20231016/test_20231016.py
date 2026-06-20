@@ -15,7 +15,7 @@ __author__ = '@britodfbr'  # pragma: no cover
     reason='requires python3.10 or higher',
 )
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ('CD', 400),
         ('XC', 90),

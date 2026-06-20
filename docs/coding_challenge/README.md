@@ -3,6 +3,17 @@
 **Os sites da web mais populares com desafios de programação**
 
 ## B
+
+### [backend-challenges](https://github.com/CollabCodeTech/backend-challenges)
+
+Quer testar seus conhecimentos com desafios de empregos reais? Aqui está uma lista pública de desafios de código aberto de empregos do mundo todo.
+
+[<svg height="25" width="25">
+<polygon points="15,3 6,25 25,25" class="triangle" fill="#4051b5"/>
+Click to Up.
+</svg>](#coding-challenge)
+
+
 ### [Beecrowd](https://www.beecrowd.com.br/judge/pt/)
 
 BeeCrowd é uma plataforma online brasileira de competições de programação, semelhante ao URI Online Judge e ao Codeforces.
@@ -283,6 +294,34 @@ Click to Up.
 
 
 ## R
+
+### [design patterns guru](https://refactoring.guru/pt-br/design-patterns)
+
+Padrões de projeto (padrões de design) são soluções típicas para problemas comuns em projeto de software. Cada padrão é como uma planta de construção que você pode personalizar para resolver um problema de projeto particular em seu código.
+
+
+### [Refactoring guru](https://refactoring.guru/pt-br/refactoring)
+
+A fatoração é um processo sistemático de melhoria do código
+sem criar novas funcionalidades que possam transformar
+uma bagunça (código sujo), no código limpo e no design simples.
+
+Código sujo é resultado de inexperiência
+multiplicado por prazos apertados,
+má gestão e desagradável
+atalhos tomados durante o
+processo de desenvolvimento.
+
+Código limpo é código fácil de ler,
+entender e manter. Código limpo faz
+desenvolvimento de software previsível
+e aumenta a qualidade de um produto resultante.
+
+Realizando a fatoração passo a passo e
+executar testes após cada alteração é fundamental
+elementos de fatoração que o tornam
+previsível e seguro.
+
 ### [Rosalind](https://rosalind.info/problems/list-view/)
 
 Rosalind é uma plataforma para aprender bioinformática e programação através da resolução de problemas.

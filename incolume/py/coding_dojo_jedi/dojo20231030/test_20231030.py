@@ -15,7 +15,7 @@ from incolume.py.coding_dojo_jedi.dojo20231030.dojo20231030 import (
 
 
 @pytest.mark.parametrize(
-    'element expected'.split(),
+    ['element', 'expected'],
     [
         pytest.param(
             Point,
@@ -32,7 +32,7 @@ def test_annotations(element, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [(123, 321), (-123, -321), (120, 21), (102, 201), (123456789, 987654321)],
 )
 def test_int_reverso(entrance, expected) -> None:

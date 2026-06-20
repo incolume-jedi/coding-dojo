@@ -31,13 +31,13 @@ class TestCasePreprocessImageOCR:
         assert entrance.is_dir()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 pkg.IMG_DIR,
                 {'generic_data', 'text_img'},
                 marks=[
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -58,7 +58,7 @@ class TestCasePreprocessImageOCR:
         assert value.all() == self.obj.reset().img.all()
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 {'img': img0, 'fout': None},
@@ -98,14 +98,14 @@ class TestCasePPIOCR:
         assert self.obj.class_name == 'PPIOCR'
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(
                 img1,
                 Path(gettempdir()) / f'{img1.stem}_inverted{img1.suffix}',
                 marks=[
                     pytest.mark.skip,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],
@@ -115,7 +115,7 @@ class TestCasePPIOCR:
                 Path(gettempdir()) / f'{img0.stem}_inverted{img0.suffix}',
                 marks=[
                     # pytest.mark.skip,
-                    pytest.mark.xpass(
+                    pytest.mark.xfail(
                         reason='Implementation failing (but shoulded ran)',
                     ),
                 ],

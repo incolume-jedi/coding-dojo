@@ -121,7 +121,7 @@ class TestCase:
         assert research(entrance, timeout=timeout) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_1,
     )
     def test_research_mock(self, entrance, expected) -> None:

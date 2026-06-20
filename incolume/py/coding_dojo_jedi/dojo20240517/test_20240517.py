@@ -37,7 +37,7 @@ class CheckDojo:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         units0,
     )
     def test_is_prime0(self, entrance, expected):
@@ -45,7 +45,7 @@ class CheckDojo:
         assert is_prime0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         units0,
     )
     def test_is_prime1(self, entrance, expected):
@@ -53,7 +53,7 @@ class CheckDojo:
         assert is_prime1(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         units0,
     )
     def test_is_prime(self, entrance, expected):
@@ -82,7 +82,7 @@ class CheckDojo:
         ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (([7, 2, 6, 2, 0], [9, 0, 5, 1, 2, 3]), [0, 1, 2, 3, 5, 6, 7, 9]),
         ],
@@ -92,7 +92,7 @@ class CheckDojo:
         assert merge_matrix0(*entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (([7, 2, 6, 2, 0], [9, 0, 5, 1, 2, 3]), [0, 1, 2, 3, 5, 6, 7, 9]),
         ],

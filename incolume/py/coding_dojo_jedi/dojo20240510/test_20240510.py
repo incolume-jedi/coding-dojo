@@ -15,7 +15,7 @@ class TestNarcisista:
     """Caso test number narcisist."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (1, True),
             (10, False),
@@ -34,7 +34,7 @@ class TestLettersPosition:
     """Case test letter position."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             ('água', {'á': [0], 'a': [3], 'g': [1], 'u': [2]}),
             ('açaí', {'a': [0, 2], 'ç': [1], 'í': [3]}),
@@ -252,7 +252,7 @@ class TestSheep:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_0,
     )
     def test_counting_sheep0(self, entrance, expected):
@@ -260,7 +260,7 @@ class TestSheep:
         assert counting_sheep0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_test_1,
     )
     def test_counting_sheep(self, entrance, expected):

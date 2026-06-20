@@ -17,7 +17,7 @@ class CheckDojoGenCPF:
     """class test."""
 
     @pytest.mark.parametrize(
-        'seed expected'.split(),
+        ['seed', 'expected'],
         [
             (0, '66048764707'),
             (7, '52601815906'),

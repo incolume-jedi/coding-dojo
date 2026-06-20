@@ -8,7 +8,7 @@ from incolume.py.coding_dojo_jedi.dojo20240530 import validar_cnpj
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ('abcdefghijklmn', False),
         ('123', False),

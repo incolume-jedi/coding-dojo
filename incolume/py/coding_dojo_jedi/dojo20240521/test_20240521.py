@@ -436,7 +436,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         testes,
     )
     def test_temp0(self, entrance, expected) -> NoReturn:
@@ -444,7 +444,7 @@ class TestCase:
         assert temp0(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         testes,
     )
     def test_temp1(self, entrance, expected) -> NoReturn:
@@ -452,7 +452,7 @@ class TestCase:
         assert temp1(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         testes,
     )
     def test_temp(self, entrance, expected) -> NoReturn:

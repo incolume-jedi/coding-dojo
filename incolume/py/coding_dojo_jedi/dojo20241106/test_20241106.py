@@ -48,7 +48,7 @@ class TestCase:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 'MDT',
@@ -106,7 +106,7 @@ class TestCase:
         assert result == expected
 
     @pytest.mark.parametrize(
-        'entrance json expected'.split(),
+        ['entrance', 'json', 'expected'],
         [
             pytest.param(
                 'usd',

@@ -43,23 +43,29 @@ def pseudo_filename(**kwargs: str) -> Path:
         return Path(f.name)
 
 
+def genfile(prefix: str = 'File', suffix: str = '') -> Path:
+    """Return empty file."""
+    return pseudo_filename(prefix=prefix, suffix=suffix)
+
+
 def check_connectivity(
     url: str = 'https://google.com',
     timeout: float = 1.8,
 ) -> bool:
     """Check web connectivity."""
-    req = requests.get(url, timeout=timeout)
     try:
+        req = requests.get(url, timeout=timeout)
         if req.status_code == HTTPStatus.OK:
             return True
     except Exception:  # pylint: disable=W0718
-        logging.exception()
+        msg = 'Connection offline.'
+        logging.exception(msg)
     return False
 
 
 def file_filter(file: Path, regex: str = '') -> bool:
     """Filter files."""
-    logging.debug('called %s', stack()[0][3])
+    logging.info(ic('called %s %s', stack()[0][3], file))
     with file.open('rb') as f:
         for line in f:
             if re.search(regex, line, flags=re.IGNORECASE):
@@ -69,19 +75,14 @@ def file_filter(file: Path, regex: str = '') -> bool:
 
 def filesmd(dir_target: Path | None = None) -> list[Path]:
     """Get files.md on directories."""
-    logging.debug('called %s', stack()[0][3])
+    logging.info(ic('called %s', stack()[0][3]))
     regex = rb'## Problema\s*'
     dir_target = dir_target or MD_DIR
     glob = dir_target.rglob('dojo*/*.md')
 
     files = [file for file in glob if file_filter(file, regex)]
-    logging.debug(files)
+    logging.debug(ic(files))
     return files
-
-
-def genfile(prefix: str = 'File', suffix: str = '') -> Path:
-    """Return empty file."""
-    return pseudo_filename(prefix=prefix, suffix=suffix)
 
 
 def sumary(
@@ -98,7 +99,7 @@ def sumary(
         sorted(filesmd(), reverse=reverse),
         start=1,
     ):
-        logging.debug('iteration %s %s', count, filemd)
+        logging.debug(ic('iteration %s %s', count, filemd))
         try:
             result = re.search(
                 regex,
@@ -137,7 +138,7 @@ def generator_sumary(
     is_doc: bool = False,
 ) -> Path:
     """Gerador de sumário."""
-    logging.debug('called %s', stack()[0][3])
+    logging.info(ic('called %s', stack()[0][3]))
     file = fout or (
         Path(__file__)
         .parents[3]
@@ -250,7 +251,7 @@ def dojo_init(
         "        'entrance expected'.split(),\n"
         '        [\n'
         '             pytest.param(None, None, marks=['
-        'pytest.mark.xpass(reason="Implementation failing (but shoulded ran)")'
+        'pytest.mark.xfail(reason="Implementation failing (but shoulded ran)")'
         ']),\n'
         '        ],\n'
         '    )\n'

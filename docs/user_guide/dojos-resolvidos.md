@@ -8,7 +8,7 @@
 
 ---
 
-156 dojos resolvidos
+158 dojos resolvidos
 
 ---
 
@@ -20,6 +20,8 @@
  - [Dojo20250112 &#8212; Unificar todas as soluções para validação de números primos](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250112/README.md){:target="_blank"}
  - [Dojo20250110 &#8212; Customizar agregação de funcionalidades com decoradores](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250110/README.md){:target="_blank"}
  - [Dojo20250106 &#8212; Preprocess Images for Text OCR - Inverted Images](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250106/README.md){:target="_blank"}
+ - [Dojo20250104 &#8212; Primos em Pi](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250104/primos_em_pi.md){:target="_blank"}
+ - [Dojo20250104 &#8212; Leitura parcial de grandes arquivos](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250104/big_files.md){:target="_blank"}
  - [Dojo20250102 &#8212; Identificar elementos HTML em âncoras no sistema de arquivos](https://github.com/incolume-jedi/coding-dojo/tree/dev/incolume/py/coding_dojo_jedi/dojo20250102/README.md){:target="_blank"}
 
 
@@ -190,3 +192,4 @@
 ---
 
 Copyrigth &copy; **Incolume.com.br** since 2010
+

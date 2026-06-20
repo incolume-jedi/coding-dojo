@@ -95,7 +95,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case1,
     )
     def test_0(self, entrance, expected) -> NoReturn:
@@ -103,7 +103,7 @@ class TestCase:
         assert pkg.prepara_frase(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case0,
     )
     def test_1(self, entrance, expected) -> NoReturn:
@@ -111,7 +111,7 @@ class TestCase:
         assert pkg.caesar(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param(False, pkg.Mode.DECRYPT, marks=[]),
             pytest.param(True, pkg.Mode.ENCRYPT, marks=[]),
@@ -124,7 +124,7 @@ class TestCase:
         assert pkg.Mode(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case0,
     )
     def test_3(self, entrance, expected) -> NoReturn:
@@ -134,7 +134,7 @@ class TestCase:
         assert pkg.cesar(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         test_case2,
     )
     def test_4(self, entrance, expected) -> NoReturn:

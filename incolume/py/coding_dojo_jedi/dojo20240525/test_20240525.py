@@ -22,7 +22,7 @@ class Testcase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_0,
     )
     def test_soma0(self, entrance, expected):
@@ -30,7 +30,7 @@ class Testcase:
         assert soma0(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_0,
     )
     def test_soma(self, entrance, expected):
@@ -38,7 +38,7 @@ class Testcase:
         assert soma(entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         case_0,
     )
     def test_soma_py(self, entrance, expected):

@@ -11,7 +11,7 @@ from incolume.py.coding_dojo_jedi.dojo20220817.dojo20220817 import (
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         ('1 2 3 4 5', '5 1'),
         ('1 2 -3 4 5', '5 -3'),
@@ -33,7 +33,7 @@ entrances: list = [
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     entrances,
 )
 def test_mysort0(entrance, expected) -> None:
@@ -42,7 +42,7 @@ def test_mysort0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     entrances,
 )
 def test_mysort1(entrance, expected) -> None:
@@ -51,7 +51,7 @@ def test_mysort1(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     entrances,
 )
 def test_mysort(entrance, expected) -> None:

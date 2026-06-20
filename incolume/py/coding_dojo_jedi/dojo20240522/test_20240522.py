@@ -8,7 +8,7 @@ class TestCase:
     """Test case."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 -232,
@@ -32,7 +32,7 @@ class TestCase:
             is_palindrome(entrance)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (121, True),
             (-121, False),

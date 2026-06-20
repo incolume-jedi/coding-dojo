@@ -8,7 +8,7 @@ class TestNFeliz:
     """Caso de teste para números felizes."""
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (1, [1]),
             (7, [1, 7]),
@@ -58,7 +58,7 @@ class TestNFeliz:
         assert len(list_feliz(entrance)) == entrance
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (2, [1, 7]),
             (5, [1, 7, 10, 13, 19]),

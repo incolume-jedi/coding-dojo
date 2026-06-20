@@ -44,7 +44,7 @@ class TestCase:
     ]
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param({'nums': t0[0], 'k': 2}, [3, 2]),
             pytest.param({'nums': t0[1], 'k': 1}, [1]),
@@ -58,7 +58,7 @@ class TestCase:
         assert self.obj.dojo(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param({'nums': t0[0], 'k': 2}, [3, 2]),
             pytest.param({'nums': t0[1], 'k': 1}, [1]),
@@ -72,7 +72,7 @@ class TestCase:
         assert self.obj.dojo1(**entrance) == expected
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             pytest.param({'nums': t0[0], 'k': 2}, [3, 2]),
             pytest.param({'nums': t0[1], 'k': 1}, [1]),

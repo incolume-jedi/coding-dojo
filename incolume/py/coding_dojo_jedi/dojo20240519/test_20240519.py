@@ -5,7 +5,7 @@ from . import calc_age
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (65, 23725),
         (0, 0),

@@ -9,7 +9,7 @@ from incolume.py.coding_dojo_jedi.dojo20231130.dojo20231130 import (
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             (
@@ -84,7 +84,7 @@ def test_boyermoore_0(entrance, expected) -> None:
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         (
             (

@@ -24,6 +24,20 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Deprecated
   - Script `sumary` será substituido por `dojo sumary`;
 
+## [1.70.0]	 &#8212; 	2026-06-20:
+### Added
+  - Script CLI para gerenciar projeto `dojo --help`;
+  - Script CLI `dojo init --help`;
+  - Fusão do script sumary com script dojo `dojo sumary --help`;
+  - Dojo20240602 - Raspagem Brasileirão 2021 em POO;
+  - Dojo20240603 - Raiz quadrada método júlia;
+  - Dojo20240606 - fatorar código Python;
+  - Dojo20240607 - House robber;
+  - Dojo20240608 - Fatorar algoritmo para calculo raiz (método Júlia);
+  - Dojo20240613 - Sorteio em arquivo xlsx;
+### Deprecated
+  - Script `sumary` será substituido por `dojo sumary`;
+
 ## [1.69.0]	 &#8212; 	2025-01-24:
 ### Added
   - Dojo20250106 — Preprocess Images for Text OCR - Inverted Images;
@@ -694,4 +708,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.67.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.66.0...1.67.0
 [1.68.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.67.0...1.68.0
 [1.69.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.68.0...1.69.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.69.0...Unreleased
+[1.70.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.69.0...1.70.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.70.0...Unreleased

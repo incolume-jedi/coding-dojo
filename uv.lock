@@ -340,7 +340,7 @@ wheels = [
 
 [[package]]
 name = "coding-dojo-jedi"
-version = "1.70.0"
+version = "1.71.0a1"
 source = { editable = "." }
 dependencies = [
     { name = "click" },

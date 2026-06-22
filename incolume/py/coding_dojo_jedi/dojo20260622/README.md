@@ -13,9 +13,11 @@
 
 ## Problema
 
-**Título do problema**
+**Gerar QRCode no formato específico**
 
-Descrição/apresentação do problema.
+Gerar QR Code com fundo transparente logo, e título estilizado na parte inferior.
+
+
 
 ## Exemplos
 

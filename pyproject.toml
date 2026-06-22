@@ -18,6 +18,7 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Natural Language :: Portuguese (Brazilian)",
   "Intended Audience :: Education",
   "Topic :: Education",
@@ -54,43 +55,15 @@ build-backend = "uv_build"
 # requires = ["poetry-core>=1.0.0"]
 # build-backend = "poetry.core.masonry.api"
 
-[tool.poetry]
-name = "coding-dojo-jedi"
-version = "1.70.0a0"
-description = "códigos da guilda jedi incolume"
-documentation='https://incolume-jedi.github.io/coding-dojo/'
-readme = ["README.md", "docs/index.md"]
-repository = "https://github.com/incolume-jedi/coding-dojo/"
-authors = ["Britodfbr <britodfbr@gmail.com>"]
-packages = [{include = "incolume"}]
-
-classifiers = [
-  # https://pypi.org/classifiers/
-  "Development Status :: 5 - Production/Stable",
-  "Operating System :: OS Independent",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3",
-#  "Programming Language :: Python :: 3.6",
-#  "Programming Language :: Python :: 3.7",
-#  "Programming Language :: Python :: 3.8",
-#  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Natural Language :: Portuguese (Brazilian)",
-  "Intended Audience :: Education",
-  "Topic :: Education",
-  "License :: Free For Educational Use",
-]
-
-[tool.poetry.urls]
+[project.urls]
 "Documentation" = "https://incolume-jedi.github.io/coding-dojo/"
 "Source" = "https://github.com/incolume-jedi/coding-dojo/"
 "Git" = "https://github.com/incolume-jedi/coding-dojo.git"
 "Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
 "Bug Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
 
+[tool.poetry]
+version = "1.70.0a0"
 
 [tool.poetry.dependencies]
 python = "^3.10"

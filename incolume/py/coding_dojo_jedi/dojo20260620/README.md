@@ -11,9 +11,7 @@
 
 ---
 
-## Problema
-
-**Inteligência Artificial para Transcrição de Áudio com Whisper Open AI **
+## Inteligência Artificial para Transcrição de Áudio com Whisper Open AI
 
 Transcrever áudio e gerar uma ata.
 
@@ -40,8 +38,8 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 
 ## Referências
-
-https://www.youtube.com/watch?v=ftl8cKnjeDM
+- https://colab.research.google.com/drive/1Y5xMWVB9dJouJmxpCIWy5INJ4k1P_xoZ#scrollTo=u-BZh1VlIyEz
+- https://www.youtube.com/watch?v=ftl8cKnjeDM
 
 N/A - Referências para o dojo, o problema ou para elucidações extras.
 

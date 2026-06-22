@@ -27,11 +27,9 @@ def gen_qrcode(url: str = '', flout: Path | str = '') -> Path:
     return flout
 
 
-def dojo(*args: str, **kwargs: str) -> dict[str]:
+def dojo(**kwargs: str) -> Path:
     """Dojo solution."""
-    kwargs['args'] = args
-    return kwargs
-
+    return gen_qrcode(**kwargs)
 
 def main():
     """Main function."""

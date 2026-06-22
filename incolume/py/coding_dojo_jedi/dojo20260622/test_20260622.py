@@ -24,3 +24,9 @@ class TestCase:
         """Test gen_qrcode."""
         result = pkg.gen_qrcode(**entrance)
         assert result.exists()
+
+
+    def test_dojo(self) -> NoReturn:
+        """Test dojo."""
+        result = pkg.dojo()
+        assert result.exists()

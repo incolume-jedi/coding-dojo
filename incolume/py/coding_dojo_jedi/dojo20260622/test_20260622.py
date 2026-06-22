@@ -12,34 +12,15 @@ class TestCase:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        'entrance',
         [
             pytest.param(
                 {'url': 'http://brito.blog.incolume.com.br', 'flout': ''},
-                True,
                 marks=[],
             ),
         ],
     )
-    def test_gen_qrcode(self, entrance, expected) -> NoReturn:
+    def test_gen_qrcode(self, entrance) -> NoReturn:
         """Test gen_qrcode."""
         result = pkg.gen_qrcode(**entrance)
-        assert result.exists() == expected
-
-    @pytest.mark.parametrize(
-        'entrance expected'.split(),
-        [
-            pytest.param(
-                None,
-                None,
-                marks=[
-                    pytest.mark.xfail(
-                        reason='Implementation failing (but shoulded ran)'
-                    )
-                ],
-            ),
-        ],
-    )
-    def test_0(self, entrance, expected) -> NoReturn:
-        """Unittest."""
-        assert pkg.dojo(entrance) == expected
+        assert result.exists()

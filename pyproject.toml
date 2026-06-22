@@ -41,6 +41,11 @@ dojo = 'incolume.py.coding_dojo_jedi.cli:dojo'
 module-name = "incolume.py.coding_dojo_jedi"
 module-root = ""
 
+[tool.uv.workspace]
+members = [
+    "incolume/py/coding_dojo_jedi/dojo20260622",
+]
+
 [build-system]
 requires = ["uv_build>=0.8.9,<0.9.0"]
 build-backend = "uv_build"

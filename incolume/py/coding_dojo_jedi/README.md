@@ -8,10 +8,12 @@
 
 ---
 
-158 dojos resolvidos
+160 dojos resolvidos
 
 ---
 
+ - [Dojo20260622 &#8212; Gerar QRCode no formato específico](dojo20260622/README.md)
+ - [Dojo20250118 &#8212; Título do problema](dojo20250118/README.md)
  - [Dojo20250114 &#8212; Preprocess Images for Text OCR - Binarization](dojo20250114/README.md)
  - [Dojo20250112 &#8212; Unificar todas as soluções para validação de números primos](dojo20250112/README.md)
  - [Dojo20250110 &#8212; Customizar agregação de funcionalidades com decoradores](dojo20250110/README.md)

@@ -57,6 +57,7 @@ def init(ctx: click.Context, path: str, date: str, tz: str) -> NoReturn:
     files = dojo_init(dojo_path=path, dojo_date=date, time_zone=tz)
     click.secho(
         f'Boilerplate para dojo criado com sucesso em {files[0].parent}.',
+        fg='green',
     )
 
 
@@ -97,9 +98,9 @@ def sumary(
         else 'incolume/py/coding_dojo_jedi/README.md'
     )
     fout = Path(fout)
-    click.echo(f'Sumário em {fout} .. ', nl=False)
+    click.secho(f'Sumário em {fout} .. ', nl=False)
     generator_sumary(fout=fout, reverse=reverse, is_doc=doc)
-    click.echo('criado com sucesso!', color='green')
+    click.secho('criado com sucesso!', color='green')
     return fout.is_file()
 
 
@@ -109,4 +110,7 @@ def show(ctx: click.Context) -> NoReturn:
     """Show configuration."""
     ic(type(ic(ctx)))
     click.secho(f'{ctx.obj}')
-    click.echo('Debug is %s' % ((ctx.obj['debug'] and 'on') or 'off'))
+    click.secho(
+        'Debug is %s' % ((ctx.obj['debug'] and 'on') or 'off'),
+        fg='yellow',
+    )

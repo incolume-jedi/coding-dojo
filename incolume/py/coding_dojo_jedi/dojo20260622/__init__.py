@@ -31,6 +31,7 @@ def dojo(**kwargs: str) -> Path:
     """Dojo solution."""
     return gen_qrcode(**kwargs)
 
+
 def main():
     """Main function."""
     ic('Hello from dojo20260622!')

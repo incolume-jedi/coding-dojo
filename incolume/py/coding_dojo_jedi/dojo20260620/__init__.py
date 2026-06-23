@@ -24,7 +24,7 @@ def transcrever(audio: Path | str, model_name: str = 'turbo') -> str:
 
     # make log-Mel spectrogram and move to the same device as the model
     mel = whisper.log_mel_spectrogram(audio, n_mels=model.dims.n_mels).to(
-        model.device
+        model.device,
     )
 
     # detect the spoken language
@@ -42,7 +42,8 @@ def transcrever(audio: Path | str, model_name: str = 'turbo') -> str:
 def dojo(**kwargs: str) -> dict[str]:
     """Dojo solution."""
     result = transcrever(
-        kwargs.get('audio'), kwargs.get('model_name', 'turbo')
+        kwargs.get('audio'),
+        kwargs.get('model_name', 'turbo'),
     )
     return {'translate': result}
 

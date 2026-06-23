@@ -44,6 +44,7 @@ module-root = ""
 
 [tool.uv.workspace]
 members = [
+    "incolume/py/coding_dojo_jedi/dojo20260620",
     "incolume/py/coding_dojo_jedi/dojo20260622",
 ]
 

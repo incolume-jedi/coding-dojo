@@ -50,5 +50,5 @@ class TestCase:
     )
     def test_1(self, entrance, expected) -> NoReturn:
         """Unittest."""
-        with pytest.raises(**expected):
+        with pytest.raises(**expected):  # noqa: PT010
             assert pkg.house_robber(entrance)

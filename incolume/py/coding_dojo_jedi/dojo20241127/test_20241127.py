@@ -47,7 +47,7 @@ class TestCase:
     def test_0(self, entrance, expected) -> NoReturn:
         """Unittest."""
         if isinstance(expected, dict):
-            with pytest.raises(**expected):
+            with pytest.raises(**expected):  # noqa: PT010
                 pkg.dojo(entrance)
         else:
             assert pkg.dojo(entrance) == expected

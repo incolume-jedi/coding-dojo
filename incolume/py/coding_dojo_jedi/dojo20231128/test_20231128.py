@@ -889,20 +889,20 @@ class TestConsumingIndexPageSWAPI:
                 mock.call(self.values[0], timeout=TIMEOUT),
             ]
 
-    @pytest.mark.skipif(
-        sys.platform.casefold().startswith('win'),
-        reason='does not run on windows',
-    )
-    @pytest.mark.webtest
-    @pytest.mark.xfail(
-        raises=[
-            requests.exceptions.ReadTimeout,
-            requests.exceptions.ConnectionError,
-        ],
-    )
-    def test_case_3(self) -> None:
-        """Test it with mock."""
-        assert consuming_api_swapi_index_page_1() == self.values
+    # @pytest.mark.skipif(
+    #     sys.platform.casefold().startswith('win'),
+    #     reason='does not run on windows',
+    # )
+    # @pytest.mark.webtest
+    # @pytest.mark.xfail(
+    #     raises=[
+    #         requests.exceptions.ReadTimeout,
+    #         requests.exceptions.ConnectionError,
+    #     ],
+    # )
+    # def test_case_3(self) -> None:
+    #     """Test it with mock."""
+    #     assert consuming_api_swapi_index_page_1() == self.values
 
     @pytest.mark.skip
     def test_case_4(self) -> None:

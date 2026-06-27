@@ -76,7 +76,7 @@ class TestCPFInstances:
         """Test it."""
         with pytest.raises(
             expected_exception=ValueError,
-            match='Informe 11 digitos numericos distintos.',
+            match=r'Informe 11 digitos numericos distintos.',
         ):
             CPF(entrance)
 

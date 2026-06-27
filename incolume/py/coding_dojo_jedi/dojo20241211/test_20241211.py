@@ -36,7 +36,7 @@ class TestCase:
         """Unittest."""
         with mock.patch('secrets.randbelow', return_value=5):
             if raises:
-                with pytest.raises(**raises):
+                with pytest.raises(**raises):  # noqa: PT010
                     pkg.gen_cnpj_verify(entrance)
             else:
                 assert pkg.gen_cnpj_verify(entrance) == expected

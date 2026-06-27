@@ -54,7 +54,7 @@ class TestCase:
     def test_0(self, entrance, expected, exception) -> NoReturn:
         """Unittest."""
         if exception:
-            with pytest.raises(**exception):
+            with pytest.raises(**exception):  # noqa: PT010
                 pkg.dojo(entrance)
         else:
             assert pkg.dojo(entrance) == expected

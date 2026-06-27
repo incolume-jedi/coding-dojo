@@ -165,7 +165,7 @@ def test_numeric_values(entrance) -> None:
     """Test numeric values."""
     with pytest.raises(
         ValueError,
-        match='x e y devem ser valores numéricos reais.',
+        match=r'x e y devem ser valores numéricos reais.',
     ):
         calculadora(*entrance)
 

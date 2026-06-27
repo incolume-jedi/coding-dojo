@@ -28,7 +28,7 @@ class TestCase:
     )
     def test_restrictions(self, entrance, expected):
         """Restrictions."""
-        with pytest.raises(**expected):
+        with pytest.raises(**expected):  # noqa: PT010
             is_palindrome(entrance)
 
     @pytest.mark.parametrize(

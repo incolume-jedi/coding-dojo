@@ -135,8 +135,8 @@ def test_millissenconds(entrance, expected) -> None:
 def test_millissenconds_exception(entrance, expected) -> None:
     """Test for millisseconds exceptions."""
     try:
-        with pytest.raises(**expected):
+        with pytest.raises(**expected):  # noqa: PT010
             millisseconds(**entrance)
     except (TypeError, AssertionError):
-        with pytest.raises(**expected):
+        with pytest.raises(**expected):  # noqa: PT010
             millisseconds(*entrance)

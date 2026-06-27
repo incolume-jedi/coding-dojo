@@ -38,7 +38,7 @@ def test_ascii_exception_0() -> None:
     """Teste de exceção para inteiros negativos."""
     with pytest.raises(
         ValueError,
-        match='num deve ser um número entre 0 e 0x10ffff.',
+        match=r'num deve ser um número entre 0 e 0x10ffff.',
     ):
         assert dojo20220718.get_char(-1)
 
@@ -47,6 +47,6 @@ def test_ascii_exception_1() -> None:
     """Teste de exceção para strings."""
     with pytest.raises(
         ValueError,
-        match='num deve ser um número entre 0 e 0x10ffff.',
+        match=r'num deve ser um número entre 0 e 0x10ffff.',
     ):
         assert dojo20220718.get_char('a')  # type: ignore[arg-type]

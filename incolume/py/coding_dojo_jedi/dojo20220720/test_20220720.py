@@ -133,5 +133,5 @@ def test_calculadora(entrance, expected) -> None:
 )
 def test_calculadora_except(entrance, expected) -> None:
     """Test for exceptions."""
-    with pytest.raises(**expected):
+    with pytest.raises(**expected):  # noqa: PT010
         calculadora(*entrance)

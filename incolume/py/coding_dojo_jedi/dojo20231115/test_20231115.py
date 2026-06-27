@@ -112,7 +112,7 @@ def test_millissenconds(entrance, expected) -> None:
 )
 def test_millissenconds_exception0(entrance, expected) -> None:
     """Test for millisseconds exceptions."""
-    with pytest.raises(**expected):
+    with pytest.raises(**expected):  # noqa: PT010
         milissegundos(*entrance)
 
 
@@ -148,5 +148,5 @@ def test_millissenconds_exception0(entrance, expected) -> None:
 )
 def test_millissenconds_exception(entrance, expected) -> None:
     """Test for millisseconds exceptions."""
-    with pytest.raises(**expected):
+    with pytest.raises(**expected):  # noqa: PT010
         milissegundos(**entrance)

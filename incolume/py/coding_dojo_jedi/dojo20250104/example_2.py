@@ -1,4 +1,3 @@
-#!/usr/bin/python
 """Example 2.
 
 author: Alison gh: @imalisoon

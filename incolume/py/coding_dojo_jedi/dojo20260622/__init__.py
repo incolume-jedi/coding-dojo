@@ -15,11 +15,8 @@ def gen_qrcode(url: str = '', flout: Path | str = '') -> Path:
     url = url or 'http://brito.blog.incolume.com.br'
     imagem = qrcode.make(url)
 
-    flout: Path = (
-        Path(flout)
-        if flout
-        else Path(NamedTemporaryFile(prefix='qrcode_', suffix='.png').name)
-    )
+    with NamedTemporaryFile(prefix='qrcode_', suffix='.png') as tmpfl:
+        flout: Path = Path(flout) if flout else Path(tmpfl.name)
 
     # Salva o arquivo gerado
     imagem.save(flout)

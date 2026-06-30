@@ -13,7 +13,7 @@ if os.getenv('DEBUG_MODE'):
     ic.enable()
 
 
-url: str = 'https://pastebin.com/raw/pzwDD2EF'
+url: str = 'https://pastebin.com/raw/8k6FUejT'
 local_file: Path = Path(__file__).parent / 'index.html'
 
 

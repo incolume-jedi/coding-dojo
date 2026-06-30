@@ -41,10 +41,35 @@ class TestCase:
         assert pkg.download(**entrance) == expected
 
     @pytest.mark.xfail(raises=pkg.httpx.ReadTimeout)
-    def test_content(self):
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        [
+            pytest.param(
+                {'url_or_path': pkg.url, 'file_out': filename},
+                True,
+                marks=[pytest.mark.xfail],
+            ),
+            pytest.param(
+                {
+                    'url_or_path': 'https://pastebin.com/raw/8k6FUejT',
+                    'file_out': pseudo_filename(),
+                },
+                True,
+                marks=[pytest.mark.xfail],
+            ),
+            pytest.param(
+                {
+                    'url_or_path': 'https://pastebin.com/raw/pzwDD2EF',
+                    'file_out': pseudo_filename(),
+                },
+                True,
+                marks=[pytest.mark.xfail],
+            ),
+        ],
+    )
+    def test_content(self, entrance, expected) -> NoReturn:
         """Test content."""
-        expected = True
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(**entrance)
         assert isinstance(obj.content, pkg.pd.DataFrame) == expected
 
     def test_sort_by_name(self):

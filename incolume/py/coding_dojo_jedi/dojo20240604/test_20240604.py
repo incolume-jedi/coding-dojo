@@ -2,7 +2,6 @@
 
 from typing import NoReturn
 
-import httpx
 import incolume.py.coding_dojo_jedi.dojo20240604 as pkg
 import pytest
 
@@ -14,24 +13,26 @@ class TestCase:
 
     filename = pseudo_filename()
 
+    def test_instance(self) -> NoReturn:
+        """Unittest."""
+        obj = pkg.CampionatoBrasileiro(pkg.url1, pkg.local_file)
+        assert isinstance(obj, pkg.CampionatoBrasileiro)
+
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
             pytest.param(
-                {'url': pkg.url},
+                {'url': pkg.url1},
                 True,
                 marks=[
-                    pytest.mark.skip(reason='only get index.html'),
                     pytest.mark.webtest,
-                    pytest.mark.xfail(raises=httpx.ReadTimeout),
                 ],
             ),
             pytest.param(
-                {'url': pkg.url, 'fout': pseudo_filename()},
+                {'url': pkg.url1, 'fout': pseudo_filename()},
                 True,
                 marks=[
                     pytest.mark.webtest,
-                    pytest.mark.xfail(raises=httpx.ReadTimeout),
                 ],
             ),
         ],
@@ -40,11 +41,36 @@ class TestCase:
         """Unittest."""
         assert pkg.download(**entrance) == expected
 
-    @pytest.mark.xfail(raises=pkg.httpx.ReadTimeout)
-    def test_content(self):
+    @pytest.mark.skip()
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        [
+            pytest.param(
+                {'url_or_path': pkg.url1, 'file_out': filename},
+                True,
+                marks=[pytest.mark.xfail],
+            ),
+            pytest.param(
+                {
+                    'url_or_path': 'https://pastebin.com/raw/8k6FUejT',
+                    'file_out': pseudo_filename(),
+                },
+                True,
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'url_or_path': 'https://pastebin.com/raw/pzwDD2EF',
+                    'file_out': pseudo_filename(),
+                },
+                True,
+                marks=[pytest.mark.xfail],
+            ),
+        ],
+    )
+    def test_content(self, entrance, expected) -> NoReturn:
         """Test content."""
-        expected = True
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(**entrance)
         assert isinstance(obj.content, pkg.pd.DataFrame) == expected
 
     def test_sort_by_name(self):
@@ -71,7 +97,7 @@ class TestCase:
             'Santos',
             'São Paulo',
         ]
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.sort_by_name() == expected
 
     def test_sort_by_point(self):
@@ -98,7 +124,7 @@ class TestCase:
             'Internacional',
             'Palmeiras',
         ]
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.sort_by_point() == expected
 
     def test_classify(self):
@@ -125,19 +151,19 @@ class TestCase:
             'Avaí',
             'Juventude',
         ]
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.classify() == expected
 
     def test_class_lib(self):
         """Test classify."""
         expected = ['Palmeiras', 'Internacional', 'Fluminense', 'Corinthians']
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.classify_libertadores() == expected
 
     def test_qua_lib(self):
         """Test classify."""
         expected = ['Flamengo', 'Atlético-MG']
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.qualify_libertadores() == expected
 
     def test_selc_sulameric(self):
@@ -150,13 +176,13 @@ class TestCase:
             'Botafogo',
             'Santos',
         ]
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.select_sulamericana() == expected
 
     def test_rebaixados(self):
         """Test classify."""
         expected = ['Ceará SC', 'Atlético-GO', 'Avaí', 'Juventude']
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.rebaixados() == expected
 
     @pytest.mark.parametrize(
@@ -170,5 +196,5 @@ class TestCase:
     )
     def test_clube(self, entrance, expected):
         """Test classify."""
-        obj = pkg.CampionatoBrasileiro(pkg.url, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.clube(entrance) == expected

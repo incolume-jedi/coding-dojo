@@ -13,7 +13,8 @@ if os.getenv('DEBUG_MODE'):
     ic.enable()
 
 
-url: str = 'https://pastebin.com/raw/pzwDD2EF'
+url1: str = 'https://pastebin.com/raw/8k6FUejT'
+url2: str = 'https://pastebin.com/raw/pzwDD2EF'
 local_file: Path = Path(__file__).parent / 'index.html'
 
 
@@ -35,10 +36,12 @@ class CampionatoBrasileiro:
         self.fout: Path = file_out or local_file
         self.content: pd.DataFrame | None = None
         self.__scrap()
+        ic(self.url_or_path, self.fout, self.content.head())
 
     def __scrap(self) -> None:
         """Scrap content."""
         if not self.fout.is_file():
+            ic('not {self.fout}')
             download(self.url_or_path, self.fout)
         self.content = pd.read_html(self.fout, encoding='utf-8')[0]
         self.content = self.content.drop(

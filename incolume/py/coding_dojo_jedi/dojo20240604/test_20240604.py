@@ -41,7 +41,7 @@ class TestCase:
         """Unittest."""
         assert pkg.download(**entrance) == expected
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [

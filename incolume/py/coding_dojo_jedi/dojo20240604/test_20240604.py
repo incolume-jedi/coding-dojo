@@ -13,23 +13,25 @@ class TestCase:
 
     filename = pseudo_filename()
 
-    def test_instance(self) -> NoReturn:
-        """Unittest."""
-        obj = pkg.CampionatoBrasileiro(pkg.url1, pkg.local_file)
-        assert isinstance(obj, pkg.CampionatoBrasileiro)
-
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
             pytest.param(
-                {'url': pkg.url1},
+                {'url': pkg.url1, 'fout': pkg.local_file},
                 True,
                 marks=[
                     pytest.mark.webtest,
                 ],
             ),
             pytest.param(
-                {'url': pkg.url1, 'fout': pseudo_filename()},
+                {'url': pkg.url1, 'fout': filename},
+                True,
+                marks=[
+                    pytest.mark.webtest,
+                ],
+            ),
+            pytest.param(
+                {'url': pkg.url2, 'fout': pseudo_filename()},
                 True,
                 marks=[
                     pytest.mark.webtest,
@@ -40,6 +42,11 @@ class TestCase:
     def test_download(self, entrance, expected) -> NoReturn:
         """Unittest."""
         assert pkg.download(**entrance) == expected
+
+    def test_instance(self) -> NoReturn:
+        """Unittest."""
+        obj = pkg.CampionatoBrasileiro(pkg.url2, pkg.local_file)
+        assert isinstance(obj, pkg.CampionatoBrasileiro)
 
     @pytest.mark.skip
     @pytest.mark.parametrize(
@@ -97,7 +104,7 @@ class TestCase:
             'Santos',
             'São Paulo',
         ]
-        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url2, self.filename)
         assert obj.sort_by_name() == expected
 
     def test_sort_by_point(self):
@@ -124,7 +131,7 @@ class TestCase:
             'Internacional',
             'Palmeiras',
         ]
-        obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
+        obj = pkg.CampionatoBrasileiro(pkg.url2, self.filename)
         assert obj.sort_by_point() == expected
 
     def test_classify(self):

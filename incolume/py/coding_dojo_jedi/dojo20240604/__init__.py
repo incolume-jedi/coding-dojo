@@ -13,14 +13,15 @@ if os.getenv('DEBUG_MODE'):
     ic.enable()
 
 
-url1: str = 'https://pastebin.com/raw/8k6FUejT'
-url2: str = 'https://pastebin.com/raw/pzwDD2EF'
+url1: str = 'https://pastebin.com/raw/pzwDD2EF'
+url2: str = 'https://pastebin.com/raw/8k6FUejT'
 local_file: Path = Path(__file__).parent / 'index.html'
 
 
 def download(url: str, fout: Path | None = None) -> bool:
     """Donwload html file."""
     fout = fout or local_file
+    ic(url, fout)
     if not fout.is_file():
         resp = httpx.get(url=url)
         fout.write_bytes(resp.content)

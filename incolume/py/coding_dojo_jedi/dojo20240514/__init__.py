@@ -5,6 +5,7 @@ import tempfile
 from typing import NoReturn
 
 import pandas as pd
+
 from incolume.py.coding_dojo_jedi.dojo20240513 import (
     Path,
     save_dataframe,
@@ -13,49 +14,49 @@ from incolume.py.coding_dojo_jedi.dojo20240513 import (
 )
 
 
-def gen_conn(filename: str = '') -> sqlite3.Connection:
+def gen_conn(filename: str = "") -> sqlite3.Connection:
     """Generate connection."""
-    with tempfile.NamedTemporaryFile(suffix='.db') as file:
+    with tempfile.NamedTemporaryFile(suffix=".db") as file:
         filename = filename or file.name
     return sqlite3.connect(
         database=Path(filename).resolve().as_posix(),
     )
 
 
-def gen_data_file(ext: str = 'json') -> Path:
+def gen_data_file(ext: str = "json") -> Path:
     """Generate data."""
-    exts = ['csv', 'json', 'xlsx']
+    exts = ["csv", "json", "xlsx"]
     if ext not in exts:
-        excp = 'Valid type file. Only csv, json or xlsx'
+        excp = "Valid type file. Only csv, json or xlsx"
         raise TypeError(excp)
     return save_dataframe(
         scrap(url),
-        filename.with_suffix(f'.{ext}'),
+        filename.with_suffix(f".{ext}"),
         format_output=ext,
     )
 
 
-conn = sqlite3.connect(Path(tempfile.gettempdir()) / 'voltagem.db')
+conn = sqlite3.connect(Path(tempfile.gettempdir()) / "voltagem.db")
 
-filename = Path(__file__).parent.joinpath('fout.xlsx')
+filename = Path(__file__).parent.joinpath("fout.xlsx")
 
 
 def load_db(filein: Path, conn: sqlite3.Connection | None = None) -> NoReturn:
     """Load data on Database."""
     tipo = {
-        'json': pd.read_json,
-        'csv': pd.read_csv,
-        'xlsx': pd.read_excel,
+        "json": pd.read_json,
+        "csv": pd.read_csv,
+        "xlsx": pd.read_excel,
     }
-    dataframe = tipo.get(filein.suffix.strip('.'))(filein)
-    dataframe.to_sql('codigo_voltagem', conn)
+    dataframe = tipo.get(filein.suffix.strip("."))(filein)
+    dataframe.to_sql("codigo_voltagem", conn)
 
 
 def run():
     """Run it."""
-    save_dataframe(scrap(url), filename, format_output='xlsx')
+    save_dataframe(scrap(url), filename, format_output="xlsx")
     load_db(filename, conn=conn)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()

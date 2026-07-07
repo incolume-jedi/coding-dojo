@@ -6,7 +6,7 @@ authors = [
     { name = "Ricardo Brito", email = "brito@incolume.com.br" }
 ]
 maintainers = [
-  { name = "Community Manager", email = "" }
+  { name = "Community Manager", email = "dev@incolume.com.br" }
 ]
 requires-python = ">=3.10,<4"
 classifiers = [

@@ -13,11 +13,11 @@ from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import check_connectivity
 
 
-@pytest.mark.webtest()
-@pytest.mark.slow()
+@pytest.mark.webtest
+@pytest.mark.slow
 @pytest.mark.skipif(
     not check_connectivity(),
-    reason='This test need network connectivity.',
+    reason="This test need network connectivity.",
 )
 class TestPresidenteFoto:
     """Test case class."""
@@ -29,14 +29,12 @@ class TestPresidenteFoto:
         assert pkg.SOURCE.is_file()
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
-            pytest.param({}, 'dojo_review.json'),
+            pytest.param({}, "dojo_review.json"),
             pytest.param(
                 {
-                    'output': (
-                        file := Path(gettempdir(), 'presidente.json').resolve()
-                    ),
+                    "output": (file := Path(gettempdir(), "presidente.json").resolve()),
                 },
                 file.as_posix(),
             ),
@@ -57,16 +55,16 @@ class TestPresidenteFoto:
         assert len(pkg.title)
 
     @pytest.mark.parametrize(
-        'entrance',
+        "entrance",
         [
-            pytest.param('NR', marks=[]),
-            pytest.param('PRESIDENTE', marks=[]),
-            pytest.param('FOTOGRAFIA', marks=[]),
-            pytest.param('MANDATO', marks=[]),
-            pytest.param('PARTIDO', marks=[]),
-            pytest.param('VICE-PRESIDENTE(S)', marks=[]),
-            pytest.param('REFERÊNCIAS E NOTAS', marks=[]),
-            pytest.param('ELEIÇÃO', marks=[]),
+            pytest.param("NR", marks=[]),
+            pytest.param("PRESIDENTE", marks=[]),
+            pytest.param("FOTOGRAFIA", marks=[]),
+            pytest.param("MANDATO", marks=[]),
+            pytest.param("PARTIDO", marks=[]),
+            pytest.param("VICE-PRESIDENTE(S)", marks=[]),
+            pytest.param("REFERÊNCIAS E NOTAS", marks=[]),
+            pytest.param("ELEIÇÃO", marks=[]),
         ],
     )
     def test_title_content(self, entrance):
@@ -79,34 +77,34 @@ class TestPresidenteFoto:
 
     @pytest.mark.xfail(
         raises=urllib.error.HTTPError,
-        reason='HTTP Error 403: Forbidden',
+        reason="HTTP Error 403: Forbidden",
     )
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             pytest.param(
                 {
-                    'url_or_path': pkg.URL,
-                    'file_type': 'json',
-                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                    "url_or_path": pkg.URL,
+                    "file_type": "json",
+                    "output": Path(gettempdir(), "presidente.json").resolve(),
                 },
-                'presidente.json',
+                "presidente.json",
             ),
             pytest.param(
                 {
-                    'url_or_path': pkg.URL,
-                    'file_type': 'csv',
-                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                    "url_or_path": pkg.URL,
+                    "file_type": "csv",
+                    "output": Path(gettempdir(), "presidente.json").resolve(),
                 },
-                'presidente.csv',
+                "presidente.csv",
             ),
             pytest.param(
                 {
-                    'url_or_path': pkg.URL,
-                    'file_type': 'excel',
-                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                    "url_or_path": pkg.URL,
+                    "file_type": "excel",
+                    "output": Path(gettempdir(), "presidente.json").resolve(),
                 },
-                'presidente.xlsx',
+                "presidente.xlsx",
             ),
         ],
     )
@@ -117,55 +115,55 @@ class TestPresidenteFoto:
         assert file.name == expected
 
     @pytest.mark.parametrize(
-        'entrance',
+        "entrance",
         [
             pytest.param(
-                {'file_type': None},
+                {"file_type": None},
                 marks=[],
             ),
             pytest.param(
-                {'file_type': 'tsv'},
+                {"file_type": "tsv"},
                 marks=[],
             ),
         ],
     )
     def test_2_exceptions(self, entrance):
         """Unittest."""
-        with pytest.raises(TypeError, match=''):
+        with pytest.raises(TypeError, match=""):
             assert pkg.dojo(**entrance).name
 
     @pytest.mark.xfail(
         raises=urllib.error.HTTPError,
-        reason='HTTP Error 403: Forbidden',
+        reason="HTTP Error 403: Forbidden",
     )
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             pytest.param(
                 {
-                    'url_or_path': pkg.URL,
-                    'file_type': 'json',
-                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                    "url_or_path": pkg.URL,
+                    "file_type": "json",
+                    "output": Path(gettempdir(), "presidente.json").resolve(),
                 },
-                'application/json',
+                "application/json",
             ),
             pytest.param(
                 {
-                    'url_or_path': pkg.URL,
-                    'file_type': 'csv',
-                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                    "url_or_path": pkg.URL,
+                    "file_type": "csv",
+                    "output": Path(gettempdir(), "presidente.json").resolve(),
                 },
-                'text/csv',
+                "text/csv",
             ),
             pytest.param(
                 {
-                    'url_or_path': pkg.URL,
-                    'file_type': 'excel',
-                    'output': Path(gettempdir(), 'presidente.json').resolve(),
+                    "url_or_path": pkg.URL,
+                    "file_type": "excel",
+                    "output": Path(gettempdir(), "presidente.json").resolve(),
                 },
-                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 marks=[
-                    pytest.mark.skip(reason='Falso positivo'),
+                    pytest.mark.skip(reason="Falso positivo"),
                 ],
             ),
         ],
@@ -179,10 +177,10 @@ class TestPresidenteFoto:
         assert mime.guess_type(file)[0] == expected
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             pytest.param(
-                'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
+                "https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil",
                 str,
             ),
             pytest.param(
@@ -207,10 +205,10 @@ class TestPresidenteFoto:
         assert isinstance(pkg.valid_url_or_path(entrance), expected)
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             pytest.param(
-                'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
+                "https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil",
                 list,
                 marks=[
                     pytest.mark.xfail(

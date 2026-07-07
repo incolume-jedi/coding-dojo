@@ -75,11 +75,7 @@ class Solution1:
     def possibilities(self, sudoku: Board, x: int, y: int) -> Board:
         """Possibilities."""
         sudoku = self.to_ndarray(sudoku)
-        return [
-            value
-            for value in range(1, 10)
-            if self.is_valid(sudoku, x, y, value)
-        ]
+        return [value for value in range(1, 10) if self.is_valid(sudoku, x, y, value)]
 
     def solver(
         self,
@@ -109,14 +105,14 @@ class Solution2:
     # A utility function to print grid
     def printing(self, arr):
         """Printing."""
-        matrix = ''
+        matrix = ""
         for i in range(self.N):
             for j in range(self.N):
-                matrix += f'{arr[i][j]} '
-            matrix += '\n'
+                matrix += f"{arr[i][j]} "
+            matrix += "\n"
         print(matrix)  # noqa: T201
 
-    def is_safe(self, grid: Board, row: int, col: int, num: int) -> bool:  # noqa: C901
+    def is_safe(self, grid: Board, row: int, col: int, num: int) -> bool:
         """Checks whether it will be.
 
         legal to assign num to the
@@ -145,7 +141,7 @@ class Solution2:
                     return False
         return True
 
-    def solve_sudoku(self, grid: Board, row: int, col: int) -> bool:  # noqa: C901
+    def solve_sudoku(self, grid: Board, row: int, col: int) -> bool:
         """Solver sudoku.
 
         Takes a partially filled-in grid and attempts
@@ -222,6 +218,6 @@ class Solution2:
         if self.solve_sudoku(grid, 0, 0):
             self.printing(grid)
         else:
-            print('no solution  exists ')  # noqa: T201
+            print("no solution  exists ")  # noqa: T201
 
             # This code is contributed by sudhanshgupta2019a

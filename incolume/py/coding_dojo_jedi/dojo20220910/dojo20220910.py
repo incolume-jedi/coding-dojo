@@ -2,27 +2,27 @@
 # ruff: noqa: PLR2004
 
 
-def weekday0(num: int) -> str:  # noqa: C901
+def weekday0(num: int) -> str:
     """Retorna o dia da semana.
 
     implementação if elif
     """
     if num == 1:
-        resposta = 'Domingo'
+        resposta = "Domingo"
     elif num == 2:
-        resposta = 'Segunda'
+        resposta = "Segunda"
     elif num == 3:
-        resposta = 'Terça'
+        resposta = "Terça"
     elif num == 4:
-        resposta = 'Quarta'
+        resposta = "Quarta"
     elif num == 5:
-        resposta = 'Quinta'
+        resposta = "Quinta"
     elif num == 6:
-        resposta = 'Sexta'
+        resposta = "Sexta"
     elif num == 7:
-        resposta = 'Sábado'
+        resposta = "Sábado"
     else:
-        resposta = 'Valor inválido'
+        resposta = "Valor inválido"
     return resposta
 
 
@@ -32,50 +32,50 @@ def weekday1(num: int) -> str:
     implementação dict
     """
     semana = {
-        1: 'Domingo',
-        2: 'Segunda',
-        3: 'Terça',
-        4: 'Quarta',
-        5: 'Quinta',
-        6: 'Sexta',
-        7: 'Sábado',
+        1: "Domingo",
+        2: "Segunda",
+        3: "Terça",
+        4: "Quarta",
+        5: "Quinta",
+        6: "Sexta",
+        7: "Sábado",
     }
-    return semana.get(num, 'Valor inválido')
+    return semana.get(num, "Valor inválido")
 
 
 try:
 
-    def weekday(num: int) -> str:  # noqa: C901
+    def weekday(num: int) -> str:
         """Retorna o dia da semana.
 
         implementação match case.
         """
-        result = ''
+        result = ""
         match num:
             case 1:
-                result = 'Domingo'
+                result = "Domingo"
             case 2:
-                result = 'Segunda'
+                result = "Segunda"
             case 3:
-                result = 'Terça'
+                result = "Terça"
             case 4:
-                result = 'Quarta'
+                result = "Quarta"
             case 5:
-                result = 'Quinta'
+                result = "Quinta"
             case 6:
-                result = 'Sexta'
+                result = "Sexta"
             case 7:
-                result = 'Sábado'
+                result = "Sábado"
             case _:
-                result = 'Valor inválido'
+                result = "Valor inválido"
         return result
 
 except SyntaxError as err:
-    MSG = 'This run only Python 3.10+'
+    MSG = "This run only Python 3.10+"
     raise OSError(MSG) from err
 
 
-if __name__ == '__main__':  # pragma: no cover
+if __name__ == "__main__":  # pragma: no cover
     from dis import dis
 
     dis(weekday0)

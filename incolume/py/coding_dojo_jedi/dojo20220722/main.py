@@ -3,9 +3,10 @@
 import sys
 
 import click
+
 from incolume.py.coding_dojo_jedi.dojo20220722.star_wars import research
 
-CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
+CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
 
 # Example from https://stackoverflow.com/a/50442496/5132101
 #
@@ -20,15 +21,15 @@ CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option(
-    '-n',
-    '--name',
+    "-n",
+    "--name",
     type=str,
     default=None,
-    help='Name for search on api',
+    help="Name for search on api",
 )
-def cli(name: str = '') -> dict:
+def cli(name: str = "") -> dict:
     """Command Line Interface."""
-    msg = ''
+    msg = ""
     if not name:
         with click.Context(cli) as ctx:
             click.echo(ctx.get_help())
@@ -48,5 +49,5 @@ def cli(name: str = '') -> dict:
     return personagem
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

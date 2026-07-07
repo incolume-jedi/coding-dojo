@@ -3,22 +3,23 @@
 import sys
 
 import click
+
 from incolume.py.coding_dojo_jedi.dojo20220730.dojo20220730 import research
 
-CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
+CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
 
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option(
-    '-n',
-    '--name',
+    "-n",
+    "--name",
     type=str,
     default=None,
-    help='Name for search on api',
+    help="Name for search on api",
 )
-def run(name: str = '') -> None:
+def run(name: str = "") -> None:
     """Command Line Interface."""
-    msg = ''
+    msg = ""
     if not name:
         with click.Context(run) as ctx:
             click.echo(ctx.get_help())
@@ -38,15 +39,15 @@ def run(name: str = '') -> None:
                 )
                 click.echo(msg)
         except ValueError:
-            encontrados = ', '.join([f'"{f}"' for f in personagens])
+            encontrados = ", ".join([f'"{f}"' for f in personagens])
             click.secho(
                 f'Nenhum personagem "{name}" '
-                f'encontrado, mas encontrei: {encontrados}',
-                fg='yellow',
+                f"encontrado, mas encontrei: {encontrados}",
+                fg="yellow",
             )
     else:
-        click.secho(f'Personagem "{name}" não encontrado', fg='red')
+        click.secho(f'Personagem "{name}" não encontrado', fg="red")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()

@@ -11,33 +11,33 @@ class TestLongestPalindromeSubString:
     t0: ClassVar = None
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected', 'exception'],
+        ["entrance", "expected", "exception"],
         [
-            ('cbbd', 'bb', None),
-            ('forgeeksskeegfor', 'geeksskeeg', None),
-            ('nave', '', None),
+            ("cbbd", "bb", None),
+            ("forgeeksskeegfor", "geeksskeeg", None),
+            ("nave", "", None),
             (
-                'çaç',
-                'çaç',
+                "çaç",
+                "çaç",
                 {
-                    'expected_exception': UnicodeError,
-                    'match': 'Not ASCII characters.',
+                    "expected_exception": UnicodeError,
+                    "match": "Not ASCII characters.",
                 },
             ),
             (
-                'a' * 1001,
-                '',
+                "a" * 1001,
+                "",
                 {
-                    'expected_exception': ValueError,
-                    'match': 'Limit until 1000 characters.',
+                    "expected_exception": ValueError,
+                    "match": "Limit until 1000 characters.",
                 },
             ),
             (
-                'çüç',
-                '',
+                "çüç",
+                "",
                 {
-                    'expected_exception': UnicodeError,
-                    'match': 'Not ASCII characters.',
+                    "expected_exception": UnicodeError,
+                    "match": "Not ASCII characters.",
                 },
             ),
         ],
@@ -45,7 +45,7 @@ class TestLongestPalindromeSubString:
     def test_0(self, exception, entrance, expected) -> NoReturn:
         """Unittest."""
         if exception:
-            with pytest.raises(**exception):  # noqa: PT010
+            with pytest.raises(**exception):
                 pkg.dojo(entrance)
         else:
             assert pkg.dojo(entrance) == expected

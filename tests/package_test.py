@@ -11,15 +11,15 @@ from incolume.py.coding_dojo_jedi import (
 )
 from incolume.py.coding_dojo_jedi.core import load
 
-__author__ = '@britodfbr'  # pragma: no cover
+__author__ = "@britodfbr"  # pragma: no cover
 
 
-@pytest.mark.fast()
+@pytest.mark.fast
 class TestCase:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        'entrance',
+        "entrance",
         [
             configfile,
             versionfile,
@@ -27,10 +27,10 @@ class TestCase:
     )
     def test_exists(self, entrance: Path) -> None:
         """Test if exists files."""
-        assert entrance.exists(), f'{entrance=}'
+        assert entrance.exists(), f"{entrance=}"
 
     @pytest.mark.parametrize(
-        'entrance',
+        "entrance",
         [
             configfile,
             versionfile,
@@ -38,10 +38,10 @@ class TestCase:
     )
     def test_is_file(self, entrance: Path) -> None:
         """Test if are files."""
-        assert entrance.is_file(), f'{entrance=}'
+        assert entrance.is_file(), f"{entrance=}"
 
     @pytest.mark.parametrize(
-        'entrance',
+        "entrance",
         [
             configfile,
             versionfile,
@@ -50,7 +50,7 @@ class TestCase:
     def test_same_version(self, entrance: Path) -> None:
         """Test same version."""
         try:
-            version = load(entrance)['project']['version']
+            version = load(entrance)["project"]["version"]
         except ValueError:
             version = entrance.read_text().strip()
         assert version == __version__

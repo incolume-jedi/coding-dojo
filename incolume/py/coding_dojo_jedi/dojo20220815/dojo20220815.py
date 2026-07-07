@@ -3,8 +3,8 @@
 
 def index0(pos: int) -> str:
     """Problema 1."""
-    s = 'Python'
-    ss = ''
+    s = "Python"
+    ss = ""
     for _ in range(pos + 1):
         ss += s
     return ss[pos]
@@ -12,7 +12,7 @@ def index0(pos: int) -> str:
 
 def index1(pos: int) -> str:
     """Problema 1."""
-    s = 'Python'
+    s = "Python"
     return s[pos % len(s)]
 
 
@@ -23,11 +23,11 @@ def index(palavra: str, pos: int) -> str:
 
 def adedonha(num: int) -> str:
     """Contagem de letras com regras de adedonha."""
-    alfabeto = 'abcdefghijklmnopqrstuvxwyz'
+    alfabeto = "abcdefghijklmnopqrstuvxwyz"
     return alfabeto[num % len(alfabeto) - 1]
 
 
-if __name__ == '__main__':
-    print(  #  noqa: T201
-        index(input('Qual a palavra: '), int(input('Qual a posição: '))),
+if __name__ == "__main__":
+    print(  # noqa: T201
+        index(input("Qual a palavra: "), int(input("Qual a posição: "))),
     )

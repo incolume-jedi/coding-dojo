@@ -45,7 +45,7 @@ class TestCase:
 
     def test_instance(self) -> NoReturn:
         """Unittest."""
-        obj = pkg.CampionatoBrasileiro(pkg.url2, pkg.local_file)
+        obj = pkg.CampionatoBrasileiro(pkg.url1, pkg.local_file)
         assert isinstance(obj, pkg.CampionatoBrasileiro)
 
     @pytest.mark.skip

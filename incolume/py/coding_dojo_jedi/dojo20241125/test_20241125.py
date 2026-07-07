@@ -18,7 +18,7 @@ class TestCase:
                 "",
                 {
                     "expected_exception": SyntaxError,
-                    "match": "Tamanho da frase deve" " ser entre 1 e 100 caracteres.",
+                    "match": "Tamanho da frase deve ser entre 1 e 100 caracteres.",
                 },
                 marks=[],
             ),

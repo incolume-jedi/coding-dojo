@@ -21,18 +21,18 @@ def validate(fizz: list, buzz: list, fizzbuzz: list) -> list | None:
     return None
 
 
-def fizz_buzz_backwards(seq: list[int]) -> list | None:  # noqa: C901
+def fizz_buzz_backwards(seq: list[int]) -> list | None:
     """Aplica validação fizzbuzz a lista."""
     if len(seq) > 100:  # noqa: PLR2004
-        msg = 'Comprimento máximo de 100 elementos.'
+        msg = "Comprimento máximo de 100 elementos."
         raise OverflowError(msg)
     fizz, buzz, fizzbuzz = [], [], []
     for i, x in enumerate(seq, 1):
-        if str(x).casefold() == 'fizz':
+        if str(x).casefold() == "fizz":
             fizz.append(i)
-        elif str(x).casefold() == 'buzz':
+        elif str(x).casefold() == "buzz":
             buzz.append(i)
-        elif str(x).casefold() == 'fizzbuzz':
+        elif str(x).casefold() == "fizzbuzz":
             fizzbuzz.append(i)
 
     return validate(fizz, buzz, fizzbuzz)

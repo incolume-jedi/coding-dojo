@@ -14,24 +14,24 @@ class TestCase:
     filename = pseudo_filename()
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             pytest.param(
-                {'url': pkg.url1, 'fout': pkg.local_file},
+                {"url": pkg.url1, "fout": pkg.local_file},
                 True,
                 marks=[
                     pytest.mark.webtest,
                 ],
             ),
             pytest.param(
-                {'url': pkg.url1, 'fout': filename},
+                {"url": pkg.url1, "fout": filename},
                 True,
                 marks=[
                     pytest.mark.webtest,
                 ],
             ),
             pytest.param(
-                {'url': pkg.url2, 'fout': pseudo_filename()},
+                {"url": pkg.url2, "fout": pseudo_filename()},
                 True,
                 marks=[
                     pytest.mark.webtest,
@@ -44,35 +44,35 @@ class TestCase:
         assert pkg.download(**entrance) == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_instance(self) -> NoReturn:
         """Unittest."""
         obj = pkg.CampionatoBrasileiro(pkg.url1, pkg.local_file)
         assert isinstance(obj, pkg.CampionatoBrasileiro)
 
-    @pytest.mark.skip()
+    @pytest.mark.skip
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             pytest.param(
-                {'url_or_path': pkg.url1, 'file_out': filename},
+                {"url_or_path": pkg.url1, "file_out": filename},
                 True,
                 marks=[pytest.mark.xfail],
             ),
             pytest.param(
                 {
-                    'url_or_path': 'https://pastebin.com/raw/8k6FUejT',
-                    'file_out': pseudo_filename(),
+                    "url_or_path": "https://pastebin.com/raw/8k6FUejT",
+                    "file_out": pseudo_filename(),
                 },
                 True,
                 marks=[],
             ),
             pytest.param(
                 {
-                    'url_or_path': 'https://pastebin.com/raw/pzwDD2EF',
-                    'file_out': pseudo_filename(),
+                    "url_or_path": "https://pastebin.com/raw/pzwDD2EF",
+                    "file_out": pseudo_filename(),
                 },
                 True,
                 marks=[pytest.mark.xfail],
@@ -85,156 +85,156 @@ class TestCase:
         assert isinstance(obj.content, pkg.pd.DataFrame) == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_sort_by_name(self):
         """Test sort."""
         expected = [
-            'América-MG',
-            'Athletico-PR',
-            'Atlético-GO',
-            'Atlético-MG',
-            'Avaí',
-            'Botafogo',
-            'Bragantino',
-            'Ceará SC',
-            'Corinthians',
-            'Coritiba',
-            'Cuiabá',
-            'Flamengo',
-            'Fluminense',
-            'Fortaleza',
-            'Goiás',
-            'Internacional',
-            'Juventude',
-            'Palmeiras',
-            'Santos',
-            'São Paulo',
+            "América-MG",
+            "Athletico-PR",
+            "Atlético-GO",
+            "Atlético-MG",
+            "Avaí",
+            "Botafogo",
+            "Bragantino",
+            "Ceará SC",
+            "Corinthians",
+            "Coritiba",
+            "Cuiabá",
+            "Flamengo",
+            "Fluminense",
+            "Fortaleza",
+            "Goiás",
+            "Internacional",
+            "Juventude",
+            "Palmeiras",
+            "Santos",
+            "São Paulo",
         ]
         obj = pkg.CampionatoBrasileiro(pkg.url2, self.filename)
         assert obj.sort_by_name() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_sort_by_point(self):
         """Test sort."""
         expected = [
-            'Juventude',
-            'Avaí',
-            'Atlético-GO',
-            'Ceará SC',
-            'Cuiabá',
-            'Coritiba',
-            'Bragantino',
-            'Goiás',
-            'Santos',
-            'Botafogo',
-            'América-MG',
-            'São Paulo',
-            'Fortaleza',
-            'Athletico-PR',
-            'Atlético-MG',
-            'Flamengo',
-            'Corinthians',
-            'Fluminense',
-            'Internacional',
-            'Palmeiras',
+            "Juventude",
+            "Avaí",
+            "Atlético-GO",
+            "Ceará SC",
+            "Cuiabá",
+            "Coritiba",
+            "Bragantino",
+            "Goiás",
+            "Santos",
+            "Botafogo",
+            "América-MG",
+            "São Paulo",
+            "Fortaleza",
+            "Athletico-PR",
+            "Atlético-MG",
+            "Flamengo",
+            "Corinthians",
+            "Fluminense",
+            "Internacional",
+            "Palmeiras",
         ]
         obj = pkg.CampionatoBrasileiro(pkg.url2, self.filename)
         assert obj.sort_by_point() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_classify(self):
         """Test classify."""
         expected = [
-            'Palmeiras',
-            'Internacional',
-            'Fluminense',
-            'Corinthians',
-            'Flamengo',
-            'Atlético-MG',
-            'Athletico-PR',
-            'Fortaleza',
-            'São Paulo',
-            'América-MG',
-            'Botafogo',
-            'Santos',
-            'Goiás',
-            'Bragantino',
-            'Coritiba',
-            'Cuiabá',
-            'Ceará SC',
-            'Atlético-GO',
-            'Avaí',
-            'Juventude',
+            "Palmeiras",
+            "Internacional",
+            "Fluminense",
+            "Corinthians",
+            "Flamengo",
+            "Atlético-MG",
+            "Athletico-PR",
+            "Fortaleza",
+            "São Paulo",
+            "América-MG",
+            "Botafogo",
+            "Santos",
+            "Goiás",
+            "Bragantino",
+            "Coritiba",
+            "Cuiabá",
+            "Ceará SC",
+            "Atlético-GO",
+            "Avaí",
+            "Juventude",
         ]
         obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.classify() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_class_lib(self):
         """Test classify."""
-        expected = ['Palmeiras', 'Internacional', 'Fluminense', 'Corinthians']
+        expected = ["Palmeiras", "Internacional", "Fluminense", "Corinthians"]
         obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.classify_libertadores() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_qua_lib(self):
         """Test classify."""
-        expected = ['Flamengo', 'Atlético-MG']
+        expected = ["Flamengo", "Atlético-MG"]
         obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.qualify_libertadores() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_selc_sulameric(self):
         """Test classify."""
         expected = [
-            'Athletico-PR',
-            'Fortaleza',
-            'São Paulo',
-            'América-MG',
-            'Botafogo',
-            'Santos',
+            "Athletico-PR",
+            "Fortaleza",
+            "São Paulo",
+            "América-MG",
+            "Botafogo",
+            "Santos",
         ]
         obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.select_sulamericana() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     def test_rebaixados(self):
         """Test classify."""
-        expected = ['Ceará SC', 'Atlético-GO', 'Avaí', 'Juventude']
+        expected = ["Ceará SC", "Atlético-GO", "Avaí", "Juventude"]
         obj = pkg.CampionatoBrasileiro(pkg.url1, self.filename)
         assert obj.rebaixados() == expected
 
     @pytest.mark.skip(
-        reason='TODO: no way of currently testing this;'
-        ' ValueError: No tables found (on pd.read_html)',
+        reason="TODO: no way of currently testing this;"
+        " ValueError: No tables found (on pd.read_html)",
     )
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
-            ('Ceará SC', 16),
-            ('Atlético-GO', 17),
-            ('Avaí', 18),
-            ('Juventude', 19),
+            ("Ceará SC", 16),
+            ("Atlético-GO", 17),
+            ("Avaí", 18),
+            ("Juventude", 19),
         ],
     )
     def test_clube(self, entrance, expected):

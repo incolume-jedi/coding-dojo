@@ -9,8 +9,9 @@ from typing import TYPE_CHECKING, NoReturn
 
 import cv2
 from icecream import ic
-from incolume.py.coding_dojo_jedi.utils import whoami
 from matplotlib import pyplot as plt
+
+from incolume.py.coding_dojo_jedi.utils import whoami
 
 if sys.version_info >= (3, 11):
     from typing import Self
@@ -20,7 +21,7 @@ else:
 if TYPE_CHECKING:
     import numpy as np
 
-IMG_DIR: Path = Path(__file__).parents[1] / 'generic_data' / 'text_img'
+IMG_DIR: Path = Path(__file__).parents[1] / "generic_data" / "text_img"
 
 
 @whoami
@@ -44,7 +45,7 @@ class PreprocessImageOCR:
         self.__img_path = value
         try:
             self.img_data = plt.imread(self.__img_path)
-            logging.info(ic('Image file loaded.'))
+            logging.info(ic("Image file loaded."))
         except AttributeError:
             pass
         logging.debug(ic(self.img_path))
@@ -52,19 +53,19 @@ class PreprocessImageOCR:
     def save(self, fout: Path | None = None) -> Path:
         """Save current image."""
         fout = fout or (
-            Path.cwd() / f'{self.img_path.stem}_latest{self.img_path.suffix}'
+            Path.cwd() / f"{self.img_path.stem}_latest{self.img_path.suffix}"
         )
         fout = fout.resolve()
         fout.parent.mkdir(exist_ok=True)
         cv2.imwrite(fout, self.img_data)
-        logging.info(ic('Image saved.'))
+        logging.info(ic("Image saved."))
         logging.debug(ic(fout))
         return fout
 
     def reset(self) -> Self:
         """Reset to original image."""
         self.img_data = plt.imread(self.img_path)
-        logging.info(ic('Image reseted.'))
+        logging.info(ic("Image reseted."))
         return self
 
     def display(self, img_path: Path | None = None) -> bool:
@@ -86,10 +87,10 @@ class PreprocessImageOCR:
         ax = fig.add_axes([0, 0, 1, 1])
 
         # Hide spines, ticks, etc.
-        ax.axis('off')
+        ax.axis("off")
 
         # Display the image.
-        ax.imshow(self.img_data, cmap='gray')
+        ax.imshow(self.img_data, cmap="gray")
 
         plt.show()
 
@@ -100,13 +101,13 @@ class PPIOCR(PreprocessImageOCR):
     def inverted(self) -> Self:
         """Inverter bit image."""
         self.img_data = cv2.bitwise_not(self.img_data)
-        logging.info(ic('Inverted image.'))
+        logging.info(ic("Inverted image."))
         return self
 
     def grayscale(self) -> Self:
         """Gray scale image."""
         self.img_data = cv2.cvtColor(self.img_data, cv2.COLOR_BGR2GRAY)
-        logging.info(ic('Gray scale image.'))
+        logging.info(ic("Gray scale image."))
         return self
 
     def black_white(self) -> Self:
@@ -120,13 +121,13 @@ class PPIOCR(PreprocessImageOCR):
         )
         logging.debug(ic(thresh, im_bw))
         self.img_data = im_bw
-        logging.info(ic('black and white image.'))
+        logging.info(ic("black and white image."))
         return self
 
 
-if __name__ == '__main__':
-    img0: Path = IMG_DIR / 'letter.jpg'
-    img1: Path = IMG_DIR / 'ctr-1808-08-25.png'
+if __name__ == "__main__":
+    img0: Path = IMG_DIR / "letter.jpg"
+    img1: Path = IMG_DIR / "ctr-1808-08-25.png"
     obj = PPIOCR(img1)
     obj.display()
     obj.inverted().display()

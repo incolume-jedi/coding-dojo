@@ -8,31 +8,31 @@ class TestCase:
     """Test case."""
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             (
                 -232,
                 {
-                    'expected_exception': ValueError,
-                    'match': 'limited : -231 <= x <= 232',
+                    "expected_exception": ValueError,
+                    "match": "limited : -231 <= x <= 232",
                 },
             ),
             (
                 233,
                 {
-                    'expected_exception': ValueError,
-                    'match': 'limited : -231 <= x <= 232',
+                    "expected_exception": ValueError,
+                    "match": "limited : -231 <= x <= 232",
                 },
             ),
         ],
     )
     def test_restrictions(self, entrance, expected):
         """Restrictions."""
-        with pytest.raises(**expected):  # noqa: PT010
+        with pytest.raises(**expected):
             is_palindrome(entrance)
 
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ["entrance", "expected"],
         [
             (121, True),
             (-121, False),

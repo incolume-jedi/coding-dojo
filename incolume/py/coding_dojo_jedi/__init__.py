@@ -1,7 +1,5 @@
 """Principal Module."""
 
-import logging
-
 from icecream import ic
 from incolume.py.coding_dojo_jedi.core import (
     __author__,

@@ -12,6 +12,7 @@ __author__ = '@britodfbr'
 
 logger = logging.getLogger(__name__)
 
+
 def is_debug_var_actived() -> bool:
     """Check environment variables for debug mode."""
     debug: bool = any(

@@ -10,12 +10,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-06-27:
+## [Unreleased]	 &#8212; 	2026-07-07:
 ### Deprecated
   - Script `sumary` foi substituido por `dojo sumary` e será removido em versões futuras;
 ### Added
   - Dojo20260620-Inteligência Artificial para Transcrição de Áudio com Whisper Open AI;
   - Dojo20260622-Gerar QRCode no formato específico;
+  - Módulo `core` central para reutilizar funções;
 ### Changed
   - Ajustes QA aplicados parcialmente;
 

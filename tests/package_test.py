@@ -7,14 +7,14 @@ import pytest
 from incolume.py.coding_dojo_jedi import (
     __version__,
     configfile,
-    load,
     versionfile,
 )
+from incolume.py.coding_dojo_jedi.core import load
 
 __author__ = '@britodfbr'  # pragma: no cover
 
 
-@pytest.mark.fast
+@pytest.mark.fast()
 class TestCase:
     """Test case class."""
 

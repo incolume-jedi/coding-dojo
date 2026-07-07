@@ -1,30 +1,32 @@
 """Principal Module."""
 
-import contextlib
-import logging
-from pathlib import Path
-
 from icecream import ic
-from toml import load
+from incolume.py.coding_dojo_jedi.core import (
+    __author__,
+    __version__,
+    configfile,
+    is_debug_enabled,
+    logger,
+    module_name,
+    project,
+    versionfile,
+)
 
-__author__ = '@britodfbr'
+__all__ = [
+    '__author__',
+    '__version__',
+    'configfile',
+    'is_debug_enabled',
+    'logger',
+    'module_name',
+    'project',
+    'versionfile',
+]
 
-configfile = Path(__file__).parents[3].joinpath('pyproject.toml')
-versionfile = Path(__file__).parent.joinpath('version.txt')
-
-with contextlib.suppress(FileNotFoundError):
-    versionfile.write_text(
-        f'{load(configfile)["tool"]["poetry"]["version"]}\n',
-    )
-
-with contextlib.suppress(FileNotFoundError):
-    versionfile.write_text(
-        f'{load(configfile)["project"]["version"]}\n',
-    )
-
-__version__ = versionfile.read_text(encoding='utf-8').strip()
-
+is_debug_enabled()
 
 if __name__ == '__main__':
-    logging.debug(ic('%s, %s', configfile, versionfile))
-    logging.debug(ic('Vesion load: %s', __version__))
+    logger.debug(ic('%s, %s', configfile, versionfile))
+    logger.debug(ic('Version load: %s', __version__))
+    logger.debug(ic('Project: %s', project))
+    logger.debug(ic('Module name: %s', module_name))

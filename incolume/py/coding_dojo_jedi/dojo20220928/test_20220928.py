@@ -20,8 +20,16 @@ class TestCase:
             pytest.param([-10, -2, -3, -1], 0, marks=[]),
             pytest.param([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 45, marks=[]),
             pytest.param([10, 1, 2, 3, 4, 5, 6, 7, 8, 9], 55, marks=[]),
-            pytest.param([-2, 1, -3, 4, -1, 2, 1, -5, 4], 6, marks=[pytest.mark.skip(reason='False positive')]),
-            pytest.param([10, -11, 2, 3, 4, 5, -5, 6, 7, -50, 8, -7, 9], 14, marks=[pytest.mark.skip(reason='False positive')]),
+            pytest.param(
+                [-2, 1, -3, 4, -1, 2, 1, -5, 4],
+                6,
+                marks=[pytest.mark.skip(reason='False positive')],
+            ),
+            pytest.param(
+                [10, -11, 2, 3, 4, 5, -5, 6, 7, -50, 8, -7, 9],
+                14,
+                marks=[pytest.mark.skip(reason='False positive')],
+            ),
         ],
     )
     def test_max_sequence(self, entrance: Iterable, expected: int) -> None:

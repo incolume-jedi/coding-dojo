@@ -24,25 +24,25 @@ msg = sys.platform.casefold()
 logging.info(ic(msg))
 
 directory: list[Path] = [
-    Path("z:", "acervo-legis"),
+    Path('z:', 'acervo-legis'),
     Path(
-        "//",
-        "castelo",
-        "saj",
-        "CENTRO DE ESTUDOS",
-        "EQUIPE CEJ",
-        "BRITO",
-        "projetos",
-        "acervo-legis",
+        '//',
+        'castelo',
+        'saj',
+        'CENTRO DE ESTUDOS',
+        'EQUIPE CEJ',
+        'BRITO',
+        'projetos',
+        'acervo-legis',
     ),
 ]
 
 Extentions: TypeAlias = Literal[
-    "doc",
-    "nsf",
-    "pdf",
-    "rtf",
-    "xls",
+    'doc',
+    'nsf',
+    'pdf',
+    'rtf',
+    'xls',
 ]
 CHUNK_MIN: int = 1000
 
@@ -52,7 +52,7 @@ def get_list_html(path_dir: Path | None = None) -> map:
     path_dir = path_dir or directory[0]
     result = filter(
         lambda path: path.is_file(),
-        path_dir.rglob(pattern="**/*.htm*"),
+        path_dir.rglob(pattern='**/*.htm*'),
     )
     logging.info(ic(result))
     return result
@@ -60,29 +60,29 @@ def get_list_html(path_dir: Path | None = None) -> map:
 
 def get_content_html(filename: Path) -> BeautifulSoup:
     """Return HTML content."""
-    with filename.open("rb") as f:
-        return BeautifulSoup(f.read(), "html5lib")
+    with filename.open('rb') as f:
+        return BeautifulSoup(f.read(), 'html5lib')
 
 
 def find_list_ahref(soup: BeautifulSoup) -> list[str, str]:
     """Return a[href]."""
-    return soup.select("a[href]")
+    return soup.select('a[href]')
 
 
 def find_list_ahref_files_0(soup: BeautifulSoup) -> list[str, str]:
     """Return a[href]."""
-    exts = ["doc", "docx", "rtf", "xls", "xlsx", "nsf"]
+    exts = ['doc', 'docx', 'rtf', 'xls', 'xlsx', 'nsf']
     result = []
 
     for ext in exts:
-        result.extend(soup.select(f"a[href*={ext}]"))
+        result.extend(soup.select(f'a[href*={ext}]'))
     return result
 
 
 def find_list_ahref_files(
     soup: BeautifulSoup,
-    ext: Extentions = "",
-    on_raise: Extentions = "doc",
+    ext: Extentions = '',
+    on_raise: Extentions = 'doc',
 ) -> list[Tag]:
     """Return a[href]."""
     try:
@@ -107,7 +107,7 @@ class Item:
         """Serializer self for JSON."""
         obj = copy.copy(self)
         obj.file = self.file.as_posix()
-        obj.items = [x["href"] for x in self.items]
+        obj.items = [x['href'] for x in self.items]
         logging.debug(ic(self.__class__.__name__, inspect.stack()[0][3]))
         return obj.__dict__
 
@@ -116,19 +116,19 @@ def dojo0(*, chunk: int = 0, **kwargs: dict[str:Path]) -> list[Item]:
     """Dojo solution."""
     chunk = max(chunk, CHUNK_MIN)
     result: list[Item] = []
-    for idx, file in enumerate(get_list_html(kwargs.get("path_dir")), 1):
+    for idx, file in enumerate(get_list_html(kwargs.get('path_dir')), 1):
         if not idx % chunk:
-            f = Path(f"result{idx:0>5}.pkl")
-            pickle.dump(result, f.open("wb"))
+            f = Path(f'result{idx:0>5}.pkl')
+            pickle.dump(result, f.open('wb'))
             logging.info(ic(f.name))
         soup = get_content_html(file)
-        res = soup.select("a[href]")
+        res = soup.select('a[href]')
         result.append(Item(file, res))
         logging.debug(ic(idx, result[-1]))
     return result
 
 
-def write_json(content: list[Item], fout: Path, mode: str = "w+") -> Path:
+def write_json(content: list[Item], fout: Path, mode: str = 'w+') -> Path:
     """Write json file.
 
     Args:
@@ -181,15 +181,15 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     """
     logging.debug(ic(inspect.stack()[0][3]))
     result: list[Item] = []
-    extentions = kwargs.get("extentions", get_args(Extentions))
+    extentions = kwargs.get('extentions', get_args(Extentions))
     logging.info(ic(extentions))
-    count = kwargs.get("count", CHUNK_MIN)
+    count = kwargs.get('count', CHUNK_MIN)
     logging.info(ic(count))
-    fout = kwargs.get("fout", Path("result")).with_suffix(".json")
+    fout = kwargs.get('fout', Path('result')).with_suffix('.json')
     logging.info(ic(fout))
 
     for idx, file in tqdm(
-        enumerate(get_list_html(kwargs.get("path_dir"))),
+        enumerate(get_list_html(kwargs.get('path_dir'))),
     ):
         logging.info(ic(idx, file))
 
@@ -198,7 +198,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
         for ext in extentions:
             result[-1].items.extend(find_list_ahref_files(soup, ext=ext))
         if idx % count == 0:
-            logging.debug(ic(inspect.stack()[0][3], "-module-", result))
+            logging.debug(ic(inspect.stack()[0][3], '-module-', result))
             write_json(content=result, fout=fout)
             result.clear()
 

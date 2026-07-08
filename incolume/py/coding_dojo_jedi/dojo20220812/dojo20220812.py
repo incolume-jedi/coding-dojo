@@ -5,9 +5,9 @@ from pprint import pprint
 
 def tower0(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
-    char = char or "*"
+    char = char or '*'
     result = []
-    line = ""
+    line = ''
     for i in range(1, n_floors + 1):
         if i < 3:  # noqa: PLR2004
             line += char * i
@@ -21,7 +21,7 @@ def tower0(n_floors: int, char: str | None = None) -> list:
 
 def tower1(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
-    char = char or "*"
+    char = char or '*'
     result = []
     for i in range(1, n_floors + 1):
         line = char * (i * 2 - 1)
@@ -31,11 +31,12 @@ def tower1(n_floors: int, char: str | None = None) -> list:
 
 def tower(n_floors: int, char: str | None = None) -> list:
     """Construção de piramide ascii."""
-    char = char or "*"
+    char = char or '*'
     return [
-        (char * (i * 2 - 1)).center(n_floors * 2 - 1) for i in range(1, n_floors + 1)
+        (char * (i * 2 - 1)).center(n_floors * 2 - 1)
+        for i in range(1, n_floors + 1)
     ]
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pprint(tower(26))  # noqa: T203

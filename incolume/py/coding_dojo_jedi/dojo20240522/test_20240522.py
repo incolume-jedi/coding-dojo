@@ -8,20 +8,20 @@ class TestCase:
     """Test case."""
 
     @pytest.mark.parametrize(
-        ["entrance", "expected"],
+        ['entrance', 'expected'],
         [
             (
                 -232,
                 {
-                    "expected_exception": ValueError,
-                    "match": "limited : -231 <= x <= 232",
+                    'expected_exception': ValueError,
+                    'match': 'limited : -231 <= x <= 232',
                 },
             ),
             (
                 233,
                 {
-                    "expected_exception": ValueError,
-                    "match": "limited : -231 <= x <= 232",
+                    'expected_exception': ValueError,
+                    'match': 'limited : -231 <= x <= 232',
                 },
             ),
         ],
@@ -32,7 +32,7 @@ class TestCase:
             is_palindrome(entrance)
 
     @pytest.mark.parametrize(
-        ["entrance", "expected"],
+        ['entrance', 'expected'],
         [
             (121, True),
             (-121, False),

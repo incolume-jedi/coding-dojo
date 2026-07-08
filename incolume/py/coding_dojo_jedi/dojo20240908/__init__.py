@@ -27,5 +27,5 @@ def last_digit_for_pow7(expoente: int) -> int:
     """Ultimo digito para potencia de 7."""
     freq = 4
     possible = [7**x % 10 for x in range(1, freq + 1)]
-    logging.debug(expoente, possible)
+    logging.debug('%s, %s', expoente, possible)
     return possible[(expoente % freq) - 1]

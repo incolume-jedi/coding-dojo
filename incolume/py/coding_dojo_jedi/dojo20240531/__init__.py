@@ -1,13 +1,11 @@
 """Module."""
 
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
-__author__ = '@britodfbr'  # pragma: no cover
-
 import logging
 import os
 
 from icecream import ic
+
+__author__ = '@britodfbr'  # pragma: no cover
 
 ic.disable()
 if os.getenv('DEBUG_MODE'):
@@ -22,7 +20,7 @@ def last_dig0(base: int, expoente: int) -> int:
 
 def last_dig1(base: int, expoente: int) -> int:
     """Retorna o ultimo digito de uma potência."""
-    logging.debug(base, expoente)
+    logging.debug('%s, %s', base, expoente)
     result = [int(x) for x in '2486']
     return result[expoente % len(result) - 1]
 

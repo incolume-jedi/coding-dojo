@@ -9,17 +9,17 @@ import math
 
 @py310
 @pytest.mark.parametrize(
-    ["entrance", "expected"],
+    ['entrance', 'expected'],
     [
-        (5, "Ímpar"),
-        (56, "Par"),
-        (567, "Ímpar"),
-        (568, "Par"),
-        (13, "Ímpar"),
-        (17, "Ímpar"),
-        (0, "Par"),
-        (-34, "Par"),
-        (-13, "Ímpar"),
+        (5, 'Ímpar'),
+        (56, 'Par'),
+        (567, 'Ímpar'),
+        (568, 'Par'),
+        (13, 'Ímpar'),
+        (17, 'Ímpar'),
+        (0, 'Par'),
+        (-34, 'Par'),
+        (-13, 'Ímpar'),
     ],
 )
 def test_is_par(entrance, expected) -> None:
@@ -29,12 +29,12 @@ def test_is_par(entrance, expected) -> None:
 
 @py310
 @pytest.mark.parametrize(
-    ["entrance", "exception", "msg"],
+    ['entrance', 'exception', 'msg'],
     [
-        (None, ValueError, "Valor inválido."),
-        ("a", TypeError, "Somente números inteiros."),
-        ((3 + 0j), TypeError, "Somente números inteiros."),
-        (math.pi, TypeError, "Somente números inteiros."),
+        (None, ValueError, 'Valor inválido.'),
+        ('a', TypeError, 'Somente números inteiros.'),
+        ((3 + 0j), TypeError, 'Somente números inteiros.'),
+        (math.pi, TypeError, 'Somente números inteiros.'),
     ],
 )
 def test_is_par_except(entrance, exception, msg) -> None:

@@ -11,7 +11,7 @@ import incolume.py.coding_dojo_jedi.dojo20241216 as dojo147
 
 
 def download_file(
-    link: str = "",
+    link: str = '',
     fout: Path | None = None,
 ) -> dojo147.ImageFile:
     """Donwnload files.
@@ -20,7 +20,7 @@ def download_file(
     fout: full path for output file.
     """
     ans = httpx.get(link, follow_redirects=True)
-    filename = dojo147.url.split("/")[-1]
+    filename = dojo147.url.split('/')[-1]
     fout = filename or fout
     fout = Path(fout)
     b64 = base64.b64encode(ans.content).decode()
@@ -36,8 +36,8 @@ def write_json(**kwargs: str) -> Path:
     obj_img = download_file(**kwargs)
     ic(obj_img)
 
-    json_fout = Path(obj_img.filename).with_suffix(".json")
-    with json_fout.open("w") as f:
+    json_fout = Path(obj_img.filename).with_suffix('.json')
+    with json_fout.open('w') as f:
         json.dump(obj_img.to_dict(), f)
 
     return json_fout
@@ -48,7 +48,7 @@ def recover_image(**kwargs: str) -> Path:
 
     json_file: filename for json file.
     """
-    json_file = Path(kwargs.get("json_file"))
+    json_file = Path(kwargs.get('json_file'))
     with json_file.open() as f:
         result = json.load(f)
     obj_img = dojo147.ImageFile(**result)

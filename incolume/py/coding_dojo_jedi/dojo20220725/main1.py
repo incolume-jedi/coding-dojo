@@ -6,7 +6,7 @@ import click
 
 from incolume.py.coding_dojo_jedi.dojo20220725.star_wars1 import research
 
-CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
+CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 
 # Example from https://stackoverflow.com/a/50442496/5132101
 #
@@ -21,15 +21,15 @@ CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
 
 @click.command(context_settings=CONTEXT_SETTINGS)
 @click.option(
-    "-n",
-    "--name",
+    '-n',
+    '--name',
     type=str,
     default=None,
-    help="Name for search on api",
+    help='Name for search on api',
 )
-def cli(name: str = "") -> None:
+def cli(name: str = '') -> None:
     """Command Line Interface."""
-    msg = ""
+    msg = ''
     if not name:
         with click.Context(cli) as ctx:
             click.echo(ctx.get_help())
@@ -46,8 +46,8 @@ def cli(name: str = "") -> None:
             )
             click.echo(msg)
     else:
-        click.secho(f'Personagem "{name}" não encontrado', fg="red")
+        click.secho(f'Personagem "{name}" não encontrado', fg='red')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     cli()

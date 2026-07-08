@@ -10,7 +10,7 @@ class TestCase:
     """Test case class."""
 
     @pytest.mark.parametrize(
-        ["entrance", "expected"],
+        ['entrance', 'expected'],
         [
             ([1, 2, 3, 1], 4),
             ([2, 7, 9, 3, 1], 12),
@@ -23,27 +23,27 @@ class TestCase:
         assert pkg.house_robber(entrance) == expected
 
     @pytest.mark.parametrize(
-        ["entrance", "expected"],
+        ['entrance', 'expected'],
         [
             (
                 [401],
                 {
-                    "expected_exception": ValueError,
-                    "match": escape("0 <= nums[i] <= 400"),
+                    'expected_exception': ValueError,
+                    'match': escape('0 <= nums[i] <= 400'),
                 },
             ),
             (
                 [-1],
                 {
-                    "expected_exception": ValueError,
-                    "match": escape("0 <= nums[i] <= 400"),
+                    'expected_exception': ValueError,
+                    'match': escape('0 <= nums[i] <= 400'),
                 },
             ),
             (
                 [],
                 {
-                    "expected_exception": IndexError,
-                    "match": escape("1 <= nums.length <= 100"),
+                    'expected_exception': IndexError,
+                    'match': escape('1 <= nums.length <= 100'),
                 },
             ),
         ],

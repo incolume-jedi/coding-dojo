@@ -13,17 +13,17 @@ def land_perimeter_0(arr):
     perimeter = 0
     for i in range(line):
         for j in range(column):
-            if arr[i][j] == "X":
-                if i == 0 or arr[i - 1][j] == "O":
+            if arr[i][j] == 'X':
+                if i == 0 or arr[i - 1][j] == 'O':
                     perimeter += 1
-                if i == line - 1 or arr[i + 1][j] == "O":
+                if i == line - 1 or arr[i + 1][j] == 'O':
                     perimeter += 1
-                if j == 0 or arr[i][j - 1] == "O":
+                if j == 0 or arr[i][j - 1] == 'O':
                     perimeter += 1
-                if j == column - 1 or arr[i][j + 1] == "O":
+                if j == column - 1 or arr[i][j + 1] == 'O':
                     perimeter += 1
 
-    return "Total land perimeter: " + str(perimeter)
+    return 'Total land perimeter: ' + str(perimeter)
 
 
 def land_perimeter_1(grid):
@@ -35,14 +35,14 @@ def land_perimeter_1(grid):
     ans = 0
     for x in range(s):
         for y in range(m):
-            if grid[x][y] == "X":
+            if grid[x][y] == 'X':
                 ans += 4
-                if x < s - 1 and grid[x + 1][y] == "X":
+                if x < s - 1 and grid[x + 1][y] == 'X':
                     ans -= 2
-                if y < m - 1 and grid[x][y + 1] == "X":
+                if y < m - 1 and grid[x][y + 1] == 'X':
                     ans -= 2
 
-    return f"Total land perimeter: {ans}"
+    return f'Total land perimeter: {ans}'
 
 
 def land_perimeter_2(arr):
@@ -55,16 +55,16 @@ def land_perimeter_2(arr):
     for y in range(height):
         width = len(arr[y])
         for x in range(width):
-            if arr[y][x] == "X":
-                if x == 0 or arr[y][x - 1] == "O":
+            if arr[y][x] == 'X':
+                if x == 0 or arr[y][x - 1] == 'O':
                     perimetr += 1
-                if x == width - 1 or arr[y][x + 1] == "O":
+                if x == width - 1 or arr[y][x + 1] == 'O':
                     perimetr += 1
-                if y == 0 or arr[y - 1][x] == "O":
+                if y == 0 or arr[y - 1][x] == 'O':
                     perimetr += 1
-                if y == height - 1 or arr[y + 1][x] == "O":
+                if y == height - 1 or arr[y + 1][x] == 'O':
                     perimetr += 1
-    return "Total land perimeter: " + str(perimetr)
+    return 'Total land perimeter: ' + str(perimetr)
 
 
 def land_perimeter_3(arr):
@@ -74,10 +74,10 @@ def land_perimeter_3(arr):
     """
 
     def land(a):
-        return sum(t == ("X", "X") for r in a for t in zip(r, r[1:])) * 2
+        return sum(t == ('X', 'X') for r in a for t in zip(r, r[1:])) * 2
 
-    return "Total land perimeter: " + str(
-        "".join(arr).count("X") * 4 - land(arr) - land(zip(*arr)),
+    return 'Total land perimeter: ' + str(
+        ''.join(arr).count('X') * 4 - land(arr) - land(zip(*arr)),
     )
 
 
@@ -86,12 +86,17 @@ def land_permetercal(matriz: list) -> str:
 
     def land_next(line_or_column: list) -> int:
         """Count land neighbord."""
-        return sum(t == ("X", "X") for r in line_or_column for t in zip(r, r[1:])) * 2
+        return (
+            sum(t == ('X', 'X') for r in line_or_column for t in zip(r, r[1:]))
+            * 2
+        )
 
     def calc_perim(arr: list) -> int:
         """Calculate perimeter."""
         return (
-            "".join(arr).upper().count("X") * 4 - land_next(arr) - land_next(zip(*arr))
+            ''.join(arr).upper().count('X') * 4
+            - land_next(arr)
+            - land_next(zip(*arr))
         )
 
-    return f"Total land perimeter: {calc_perim(matriz)}"
+    return f'Total land perimeter: {calc_perim(matriz)}'

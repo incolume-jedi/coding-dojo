@@ -16,7 +16,7 @@ from icecream import ic
 def get_set_primes(num_digits: int, upper_limit: int) -> set[str]:
     """Get set primes."""
     primes_set: set[str] = set()
-    primes_set.update("2".zfill(z_qty) for z_qty in range(1, num_digits + 1))
+    primes_set.update('2'.zfill(z_qty) for z_qty in range(1, num_digits + 1))
     sieve_dict: dict[int, int] = {}
     num_counter: count = count(start=3, step=2)
 
@@ -43,7 +43,7 @@ def ic_biggest_seq(file_path: Path, upper_limit: int = 10**4) -> str:
     """Print biggest sequense."""
     try:
         with file_path.open() as fl:
-            pi_digits: str = (t := fl.readline().rstrip())[t.index(".") + 1 :]
+            pi_digits: str = (t := fl.readline().rstrip())[t.index('.') + 1 :]
     except FileNotFoundError as error:
         msg = f"Error: Could open file '{file_path}'."
         raise ValueError(msg) from error
@@ -57,7 +57,7 @@ def ic_biggest_seq(file_path: Path, upper_limit: int = 10**4) -> str:
 
     prim_seq: defaultdict[int, str] = defaultdict(str)
     for idx in range(len(pi_digits)):
-        current_num: str = ""
+        current_num: str = ''
         for qty in range(4):
             try:
                 current_num += pi_digits[(s := idx + qty)]
@@ -70,11 +70,11 @@ def ic_biggest_seq(file_path: Path, upper_limit: int = 10**4) -> str:
             ):
                 prim_seq[t] = prim_seq[idx] + current_num
 
-    return ic(max(prim_seq.values(), key=len, default=""))
+    return ic(max(prim_seq.values(), key=len, default=''))
 
 
-if __name__ == "__main__":
-    pi_digits_file_path: Path = Path(__file__) / "pi-1M.txt"
+if __name__ == '__main__':
+    pi_digits_file_path: Path = Path(__file__) / 'pi-1M.txt'
 
     try:
         ic_biggest_seq(pi_digits_file_path)

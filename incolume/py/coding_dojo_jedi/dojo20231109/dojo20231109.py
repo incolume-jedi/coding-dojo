@@ -6,27 +6,27 @@ from urllib.parse import urlparse, urlunparse
 
 def remove_url_anchor0(url: str) -> str:
     """Remove anchor da url."""
-    return url.split("#", maxsplit=1)[0]
+    return url.split('#', maxsplit=1)[0]
 
 
 def remove_url_anchor1(url: str) -> str:
     """Remove anchor da url."""
     try:
-        return url[: url.index("#")]
+        return url[: url.index('#')]
     except ValueError:
         return url
 
 
 def remove_url_anchor2(url: str) -> str:
     """Remove anchor da url."""
-    regex = r"((ht|f)tp[s]?://)?[\w\.\/\?\-\=]+"
+    regex = r'((ht|f)tp[s]?://)?[\w\.\/\?\-\=]+'
     result = re.search(regex, url, flags=re.IGNORECASE)
     return result.group(0)  # type: ignore[union-attr]
 
 
 def remove_url_anchor3(url: str) -> str:
     """Remove anchor da url."""
-    regex = r"^(.+)#"
+    regex = r'^(.+)#'
     result = re.search(regex, url, flags=re.IGNORECASE)
     try:
         return result.group(1)  # type: ignore[union-attr]
@@ -37,5 +37,5 @@ def remove_url_anchor3(url: str) -> str:
 def remove_url_anchor(url: str) -> str:
     """Remove anchor da url."""
     result = urlparse(url)._asdict()
-    result.update({"fragment": ""})
+    result.update({'fragment': ''})
     return urlunparse(tuple(result.values()))

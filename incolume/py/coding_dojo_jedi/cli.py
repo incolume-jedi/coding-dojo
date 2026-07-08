@@ -12,15 +12,15 @@ from icecream import ic
 from incolume.py.coding_dojo_jedi.utils import TZ, dojo_init, generator_sumary
 
 ic.disable()
-if os.getenv("DEBUG_MODE"):
+if os.getenv('DEBUG_MODE'):
     ic.enable()
 
 
-CONTEXT_SETTINGS = {"help_option_names": ["-h", "--help"]}
+CONTEXT_SETTINGS = {'help_option_names': ['-h', '--help']}
 
 
 @click.group(context_settings=CONTEXT_SETTINGS)
-@click.option("--debug/--no-debug", default=False, help="Activate debug mode.")
+@click.option('--debug/--no-debug', default=False, help='Activate debug mode.')
 @click.pass_context
 def dojo(ctx, **kwargs):
     """Command Line Interface for dojo."""
@@ -30,56 +30,56 @@ def dojo(ctx, **kwargs):
 
 @dojo.command()
 @click.option(
-    "--path",
-    "-p",
-    default=Path().joinpath("incolume", "py", "coding_dojo_jedi").as_posix(),
-    help="Path for dojos directories.",
+    '--path',
+    '-p',
+    default=Path().joinpath('incolume', 'py', 'coding_dojo_jedi').as_posix(),
+    help='Path for dojos directories.',
 )
 @click.option(
-    "--date",
-    "-d",
-    default=f"{datetime.datetime.now(tz=pytz.timezone(TZ)):%Y%m%d}",
+    '--date',
+    '-d',
+    default=f'{datetime.datetime.now(tz=pytz.timezone(TZ)):%Y%m%d}',
     help='Date "%Y%m%d" for dojo boilerplate.',
 )
 @click.option(
-    "--tz",
-    "-t",
+    '--tz',
+    '-t',
     default=TZ,
-    help="Timezone for datetime object.",
+    help='Timezone for datetime object.',
 )
 @click.pass_context
 def init(ctx: click.Context, path: str, date: str, tz: str) -> NoReturn:
     """Initiate a dojo boilerplate."""
     ic(type(ctx))
     ic()
-    date = datetime.datetime.strptime(date, "%Y%m%d").astimezone(
+    date = datetime.datetime.strptime(date, '%Y%m%d').astimezone(
         datetime.timezone.utc,
     )
     files = dojo_init(dojo_path=path, dojo_date=date, time_zone=tz)
     click.secho(
-        f"Boilerplate para dojo criado com sucesso em {files[0].parent}.",
-        fg="green",
+        f'Boilerplate para dojo criado com sucesso em {files[0].parent}.',
+        fg='green',
     )
 
 
 @dojo.command()
 @click.option(
-    "--filename",
-    "-f",
-    default="",
-    help="full filename for sumary file.",
+    '--filename',
+    '-f',
+    default='',
+    help='full filename for sumary file.',
 )
-@click.option("--reverse", "-r", is_flag=True, help="Reverse order.")
+@click.option('--reverse', '-r', is_flag=True, help='Reverse order.')
 @click.option(
-    "--doc",
-    "-d",
+    '--doc',
+    '-d',
     is_flag=True,
-    help="Generate sumary for documentation.",
+    help='Generate sumary for documentation.',
 )
 @click.pass_context
 def sumary(
     ctx: click.Context,
-    filename: str = "",
+    filename: str = '',
     *,
     doc: bool = False,
     reverse: bool = False,
@@ -92,14 +92,16 @@ def sumary(
     """
     ic(type(ic(ctx)))
     fout: Path = filename or (
-        Path(__file__).parents[3].joinpath("docs", "user_guide", "dojos-resolvidos.md")
+        Path(__file__)
+        .parents[3]
+        .joinpath('docs', 'user_guide', 'dojos-resolvidos.md')
         if doc
-        else "incolume/py/coding_dojo_jedi/README.md"
+        else 'incolume/py/coding_dojo_jedi/README.md'
     )
     fout = Path(fout)
-    click.secho(f"Sumário em {fout} .. ", nl=False)
+    click.secho(f'Sumário em {fout} .. ', nl=False)
     generator_sumary(fout=fout, reverse=reverse, is_doc=doc)
-    click.secho("criado com sucesso!", color="green")
+    click.secho('criado com sucesso!', color='green')
     return fout.is_file()
 
 
@@ -108,8 +110,8 @@ def sumary(
 def show(ctx: click.Context) -> NoReturn:
     """Show configuration."""
     ic(type(ic(ctx)))
-    click.secho(f"{ctx.obj}")
+    click.secho(f'{ctx.obj}')
     click.secho(
-        "Debug is %s" % ((ctx.obj["debug"] and "on") or "off"),
-        fg="yellow",
+        'Debug is %s' % ((ctx.obj['debug'] and 'on') or 'off'),
+        fg='yellow',
     )

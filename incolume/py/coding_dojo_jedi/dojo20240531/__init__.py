@@ -1,13 +1,11 @@
 """Module."""
 
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
-__author__ = '@britodfbr'  # pragma: no cover
-
 import logging
 import os
 
 from icecream import ic
+
+__author__ = '@britodfbr'  # pragma: no cover
 
 ic.disable()
 if os.getenv('DEBUG_MODE'):

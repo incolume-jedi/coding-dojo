@@ -9,19 +9,19 @@ from pathlib import Path
 
 def tratativa0() -> None:
     """Descobrir o nome dos diretórios afetados."""
-    dirs = Path().absolute().parent.rglob("2022*")
+    dirs = Path().absolute().parent.rglob('2022*')
     for pasta in dirs:
         print(pasta.name)  # noqa: T201
 
 
 def tratativa1() -> None:
     """Remomear diretório de dojo que começam com numeros."""
-    escopo = sorted(Path(__file__).parents[1].rglob("20*"))
+    escopo = sorted(Path(__file__).parents[1].rglob('20*'))
     for i in escopo:
-        original, novo = i, i.with_name(f"dojo{i.stem}")
+        original, novo = i, i.with_name(f'dojo{i.stem}')
         print(original, novo)  # noqa: T201
         subprocess.run(  # noqa: S603
-            ["git", "mv", original, novo],  # noqa: S607
+            ['git', 'mv', original, novo],  # noqa: S607
             check=False,
         )
 
@@ -31,5 +31,5 @@ def run() -> None:
     tratativa1()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run()

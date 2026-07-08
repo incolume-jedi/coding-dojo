@@ -10,7 +10,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-07:
+## [Unreleased]	 &#8212; 	2026-07-08:
 ### Deprecated
   - Script `sumary` foi substituido por `dojo sumary` e será removido em versões futuras;
 ### Added
@@ -19,6 +19,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Módulo `core` central para reutilizar funções;
 ### Changed
   - Ajustes QA aplicados parcialmente;
+  - Formatação PEP8 através `ruff` aplicada parcialmente;
 
 ## [1.70.0]	 &#8212; 	2026-06-20:
 ### Added

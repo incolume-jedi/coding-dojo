@@ -17,6 +17,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20260620-Inteligência Artificial para Transcrição de Áudio com Whisper Open AI;
   - Dojo20260622-Gerar QRCode no formato específico;
   - Módulo `core` central para reutilizar funções;
+  - Pacote `tomlkit 0.15.0`;
 ### Changed
   - Ajustes QA aplicados parcialmente;
   - Formatação PEP8 através `ruff` aplicada parcialmente;
@@ -24,6 +25,9 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Emancipado configuração para `coverage`;
   - Emancipado configuração para `ruff`;
   - Cobertura mínima para testes de código definida em 85.75%;
+  - Sincronizado versão entre `poetry` e `uv`;
+### Removed
+  - Pacote `toml 0.10.2` compativel até python3.9;
 
 ## [1.70.0]	 &#8212; 	2026-06-20:
 ### Added

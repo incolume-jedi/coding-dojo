@@ -5,8 +5,8 @@ import logging
 from os import getenv
 from pathlib import Path
 
+import tomlkit as toml
 from icecream import ic
-from toml import load
 
 __author__ = '@britodfbr'
 
@@ -41,14 +41,13 @@ configfile = Path(__file__).parents[3].joinpath('pyproject.toml')
 versionfile = Path(__file__).parent.joinpath('version.txt')
 
 with contextlib.suppress(FileNotFoundError):
-    versionfile.write_text(
-        f'{load(configfile)["tool"]["poetry"]["version"]}\n',
-    )
+    config_content = toml.load(configfile.open('rb'))
 
-with contextlib.suppress(FileNotFoundError):
-    versionfile.write_text(
-        f'{load(configfile)["project"]["version"]}\n',
-    )
+current_version = config_content['project']['version']
+
+config_content['tool']['poetry']['version'] = current_version
+toml.dump(config_content, configfile.open('w', encoding='utf-8'))
+versionfile.write_text(f'{current_version}\n', encoding='utf-8')
 
 __version__ = versionfile.read_text(encoding='utf-8').strip()
 module_name = __name__.split('.')[0]

@@ -80,7 +80,6 @@ fuzzywuzzy = "^0.18.0"
 python-Levenshtein = [{version="^0.12.2", python='<=3.7,~3.7'}]
 levenshtein = {version=">=0.22.0", python='>=3.8'}
 click = "^8.1.7"
-toml = "^0.10.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"
@@ -290,6 +289,7 @@ dev = [
     "respx>=0.22.0",
     "ruff>=0.12.8",
     "time-machine>=2.19.0",
+    "tomlkit>=0.15.0",
 ]
 
 [tool.taskipy.variables]

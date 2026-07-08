@@ -11,6 +11,7 @@ omit =
 
 [report]
 ignore_errors = True
+fail_under = 85.75
 precision = 2
 skip_covered = True
 show_missing = True
@@ -29,7 +30,6 @@ exclude_lines =
     def run
     def terminal.
     __author__
-    class IElements
     ic
 
 exclude_also =

@@ -238,7 +238,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Fixed
   - Correções CI/CD;
 
-## [1.52.0]	 &#8212; 	2024-06-01:
+## [1.52.0]	 &#8212; 	2024-08-29:
 ### Added
   - Dojo20240527 - Permutação em Python;
   - Dojo20240528 - Primos de 4 algarismos;
@@ -253,7 +253,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Implementado mock para API Deepl de tradução;
   - Melhoria de performance na geração do arquivo de sumário;
 
-## [1.51.0]	 &#8212; 	2024-05-29:
+## [1.51.0]	 &#8212; 	2024-08-29:
 ### Added
   - Dojo 20240527 primos de 4 algarismos;
   - Dojo20240526 - Menor palindromo primo de 2 algarismos;
@@ -293,7 +293,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240520 - Rot13;
   - Dojo20240521 - Média de temperatura;
 ### Changed
-  - Acrescentado em desafios: https://osprogramadores.com/desafios/;
+  - Acrescentado em desafios de `https://osprogramadores.com/desafios/`;
 
 ## [1.49.0]	 &#8212; 	2024-05-14:
 ### Added
@@ -368,7 +368,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
   - Correção nas mensagens de changelog para release 1.44.0;
   - Acrescentado condicional em testes unitários para Python 3.10+ a partir de dojos resolvidos no ano 2023;
-  - Lint style **ruff** aplicado a 90% do código;
+  - Lint style `ruff` aplicado a 90% do código;
   - Acrescentado sessão Artefatos ao README de dojo contendo os arquivos de implementação e de testes;
   - CI/CD plenamente funcional;
   - Scripts automatizados para geração de sumário;

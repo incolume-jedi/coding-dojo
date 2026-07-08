@@ -1,12 +1,12 @@
 [project]
 name = "coding-dojo-jedi"
-version = "1.71.0a17"
+version = "1.71.0"
 description = "códigos da guilda jedi incolume"
 authors = [
     { name = "Ricardo Brito", email = "brito@incolume.com.br" }
 ]
 maintainers = [
-  { name = "Community Manager", email = "dev@incolume.com.br" }
+  { name = "Community Manager", email = "jedi@incolume.com.br" }
 ]
 requires-python = ">=3.10,<4"
 classifiers = [
@@ -66,7 +66,7 @@ build-backend = "uv_build"
 "Bug Tracker" = "https://github.com/incolume-jedi/coding-dojo/-/issues"
 
 [tool.poetry]
-version = "1.71.0a17"
+version = "1.71.0"
 name = "coding-dojo-jedi"
 description = "códigos da guilda jedi incolume"
 authors = ["Ricardo Brito <brito@incolume.com.br>"]

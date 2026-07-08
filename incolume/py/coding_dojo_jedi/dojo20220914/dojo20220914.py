@@ -29,7 +29,7 @@ def weekday(dia: str, qtd: int) -> str:
     for i, dia_semana in enumerate(DIAS):
         logging.debug(i, dia_semana)
         if dia == dia_semana:
-            return DIAS[(DIAS.index(dia) + qtd) % 7]
+            return DIAS[(i + qtd) % 7]
     return ""
 
 

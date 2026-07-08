@@ -20,6 +20,9 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Changed
   - Ajustes QA aplicados parcialmente;
   - Formatação PEP8 através `ruff` aplicada parcialmente;
+  - Emancipado configuração para `pytest`;
+  - Emancipado configuração para `coverage`;
+  - Emancipado configuração para `ruff`;
 
 ## [1.70.0]	 &#8212; 	2026-06-20:
 ### Added

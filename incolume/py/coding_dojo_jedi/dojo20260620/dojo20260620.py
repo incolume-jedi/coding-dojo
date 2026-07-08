@@ -48,8 +48,8 @@ def dojo(**kwargs: str) -> dict[str]:
     return {'translate': result}
 
 
-def main():
-    """Main function."""
+def main() -> None:
+    """Maint function."""
     ic('Hello from dojo20260620!')
     dojo(audio=Path('insumos', '17_06_2020 20.34.m4a'))
 

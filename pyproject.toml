@@ -1,6 +1,6 @@
 [project]
 name = "coding-dojo-jedi"
-version = "1.71.0a14"
+version = "1.71.0a15"
 description = "códigos da guilda jedi incolume"
 authors = [
     { name = "Ricardo Brito", email = "brito@incolume.com.br" }

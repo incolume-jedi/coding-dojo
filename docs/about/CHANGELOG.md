@@ -23,6 +23,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Emancipado configuração para `pytest`;
   - Emancipado configuração para `coverage`;
   - Emancipado configuração para `ruff`;
+  - Cobertura mínima para testes de código definida em 85.75%;
 
 ## [1.70.0]	 &#8212; 	2026-06-20:
 ### Added

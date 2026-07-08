@@ -11,6 +11,15 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 
 ## [Unreleased]	 &#8212; 	2026-07-08:
+### Added
+  - Acrescentado suporte a `Python 3.14` em CI/CD;
+### Changed
+  - Atualização nas receitas CI/CD;
+### Removed
+  - Descontinuado suporte a `Python 3.9` conforme [Status of Python versions](https://devguide.python.org/versions/#versions);
+  - Removido pacote `toml 0.10.2` em favor de `tomlkit 0.15.0`;
+
+## [1.71.0]	 &#8212; 	2026-07-08:
 ### Deprecated
   - Script `sumary` foi substituido por `dojo sumary` e será removido em versões futuras;
 ### Added
@@ -714,4 +723,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.68.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.67.0...1.68.0
 [1.69.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.68.0...1.69.0
 [1.70.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.69.0...1.70.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.70.0...Unreleased
+[1.71.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.70.0...1.71.0
+[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.71.0...Unreleased

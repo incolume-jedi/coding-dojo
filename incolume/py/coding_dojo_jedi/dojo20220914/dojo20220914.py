@@ -27,7 +27,7 @@ def weekday0(dia: str, qtd: int) -> str:
 def weekday(dia: str, qtd: int) -> str:
     """Exibe dias da semana."""
     for i, dia_semana in enumerate(DIAS):
-        logging.debug(i, dia_semana)
+        logging.debug("%s, %s", i, dia_semana)
         if dia == dia_semana:
             return DIAS[(i + qtd) % 7]
     return ""

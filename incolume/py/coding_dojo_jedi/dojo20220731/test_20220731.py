@@ -4,12 +4,13 @@ import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220731.dojo20220731 import (
     show_table_ascii,
+    show_table_ascii0,
 )
 
 
 def test_show_table_ascii() -> None:
     """Test show table ascii."""
-    assert (65, 'A') in show_table_ascii()
+    assert (65, 'A') in show_table_ascii0()
 
 
 @pytest.mark.parametrize(

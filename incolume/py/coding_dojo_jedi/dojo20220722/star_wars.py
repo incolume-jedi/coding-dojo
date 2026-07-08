@@ -7,6 +7,7 @@ from typing import Any
 
 import dotenv
 import requests
+
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()
@@ -58,6 +59,6 @@ def research(
 
 
 if __name__ == '__main__':
-    print(research('Tion Medon'), end='\n\n')  #  noqa: T201
-    print(research('Luke Skywalker'), end='\n\n')  #  noqa: T201
-    print(research('Obi-Wan Kenobi'), end='\n\n')  #  noqa: T201
+    print(research('Tion Medon'), end='\n\n')  # noqa: T201
+    print(research('Luke Skywalker'), end='\n\n')  # noqa: T201
+    print(research('Obi-Wan Kenobi'), end='\n\n')  # noqa: T201

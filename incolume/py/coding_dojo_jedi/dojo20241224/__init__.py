@@ -11,6 +11,7 @@ import httpx
 import pandas as pd
 from bs4 import BeautifulSoup
 from icecream import ic
+
 from incolume.py.coding_dojo_jedi.dojo20231221 import dojo as v1
 
 Types: TypeAlias = Literal['excel', 'csv', 'json']
@@ -123,7 +124,7 @@ def get_foto(url_or_path: str | Path = '') -> Fotos:
 
 def fotos2string(url_fotos: list[str]) -> list[str]:
     """Download fotos and encoded base64 format."""
-    fotos = [httpx.get(foto).content for foto in url_fotos[:]]
+    fotos = [httpx.get(foto).content for foto in url_fotos.copy()]
     ic(fotos)
     result = [base64.b64encode(foto).decode() for foto in fotos]
     ic(result)

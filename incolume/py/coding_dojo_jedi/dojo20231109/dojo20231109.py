@@ -6,7 +6,7 @@ from urllib.parse import urlparse, urlunparse
 
 def remove_url_anchor0(url: str) -> str:
     """Remove anchor da url."""
-    return url.split('#')[0]
+    return url.split('#', maxsplit=1)[0]
 
 
 def remove_url_anchor1(url: str) -> str:

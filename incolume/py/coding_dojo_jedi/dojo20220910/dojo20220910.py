@@ -2,7 +2,7 @@
 # ruff: noqa: PLR2004
 
 
-def weekday0(num: int) -> str:  # noqa: C901
+def weekday0(num: int) -> str:
     """Retorna o dia da semana.
 
     implementação if elif
@@ -45,7 +45,7 @@ def weekday1(num: int) -> str:
 
 try:
 
-    def weekday(num: int) -> str:  # noqa: C901
+    def weekday(num: int) -> str:
         """Retorna o dia da semana.
 
         implementação match case.

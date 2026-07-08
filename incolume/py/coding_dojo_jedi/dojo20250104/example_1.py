@@ -39,7 +39,7 @@ def get_set_primes(num_digits: int, upper_limit: int) -> set[str]:
     return primes_set
 
 
-def ic_biggest_seq(file_path: Path, upper_limit: int = 10**4) -> str:  # noqa: C901
+def ic_biggest_seq(file_path: Path, upper_limit: int = 10**4) -> str:
     """Print biggest sequense."""
     try:
         with file_path.open() as fl:

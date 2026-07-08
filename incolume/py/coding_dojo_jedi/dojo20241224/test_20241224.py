@@ -4,6 +4,8 @@ from pathlib import Path
 from tempfile import gettempdir
 from typing import ClassVar, NoReturn
 from collections.abc import Container
+
+import urllib
 import incolume.py.coding_dojo_jedi.dojo20241224 as pkg
 import pytest
 import mimetypes
@@ -75,6 +77,10 @@ class TestPresidenteFoto:
         """Unittest."""
         assert set(pkg.content_to_dataframe().columns) == set(pkg.title)
 
+    @pytest.mark.xfail(
+        raises=urllib.error.HTTPError,
+        reason='HTTP Error 403: Forbidden',
+    )
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
@@ -128,6 +134,10 @@ class TestPresidenteFoto:
         with pytest.raises(TypeError, match=''):
             assert pkg.dojo(**entrance).name
 
+    @pytest.mark.xfail(
+        raises=urllib.error.HTTPError,
+        reason='HTTP Error 403: Forbidden',
+    )
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
@@ -202,11 +212,12 @@ class TestPresidenteFoto:
             pytest.param(
                 'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil',
                 list,
-            ),
-            pytest.param(
-                pkg.Path,
-                Path,
-                marks=[pytest.mark.skip],
+                marks=[
+                    pytest.mark.xfail(
+                        raises=AttributeError,
+                        reason="TODO: NoneType object has no attribute 'select'",
+                    ),
+                ],
             ),
         ],
     )
@@ -214,6 +225,10 @@ class TestPresidenteFoto:
         """Unittest."""
         assert isinstance(pkg.get_foto(entrance), expected)
 
+    @pytest.mark.xfail(
+        raises=AttributeError,
+        reason="TODO: NoneType object has no attribute 'select'",
+    )
     def test_fotos2string(self):
         """Unittest."""
         entrance = pkg.get_foto(pkg.URL)

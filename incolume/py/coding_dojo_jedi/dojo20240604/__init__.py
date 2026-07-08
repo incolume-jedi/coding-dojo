@@ -13,13 +13,15 @@ if os.getenv('DEBUG_MODE'):
     ic.enable()
 
 
-url: str = 'https://pastebin.com/raw/pzwDD2EF'
+url1: str = 'https://pastebin.com/raw/pzwDD2EF'
+url2: str = 'https://pastebin.com/raw/8k6FUejT'
 local_file: Path = Path(__file__).parent / 'index.html'
 
 
 def download(url: str, fout: Path | None = None) -> bool:
     """Donwload html file."""
     fout = fout or local_file
+    ic(url, fout)
     if not fout.is_file():
         resp = httpx.get(url=url)
         fout.write_bytes(resp.content)
@@ -35,10 +37,12 @@ class CampionatoBrasileiro:
         self.fout: Path = file_out or local_file
         self.content: pd.DataFrame | None = None
         self.__scrap()
+        ic(self.url_or_path, self.fout, self.content.head())
 
     def __scrap(self) -> None:
         """Scrap content."""
         if not self.fout.is_file():
+            ic('not {self.fout}')
             download(self.url_or_path, self.fout)
         self.content = pd.read_html(self.fout, encoding='utf-8')[0]
         self.content = self.content.drop(

@@ -1,6 +1,6 @@
 """Dojo."""
 
-# ruff: noqa: B905 C901 RUF007
+# ruff: noqa: B905, RUF007
 
 
 def land_perimeter_0(arr):

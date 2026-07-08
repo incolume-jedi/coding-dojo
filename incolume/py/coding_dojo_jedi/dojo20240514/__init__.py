@@ -5,6 +5,7 @@ import tempfile
 from typing import NoReturn
 
 import pandas as pd
+
 from incolume.py.coding_dojo_jedi.dojo20240513 import (
     Path,
     save_dataframe,

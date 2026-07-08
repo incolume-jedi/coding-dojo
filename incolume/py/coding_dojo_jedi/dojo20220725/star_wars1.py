@@ -6,6 +6,7 @@ import os
 
 import dotenv
 import requests
+
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 dotenv.load_dotenv()
@@ -14,7 +15,7 @@ logging.basicConfig(
 )
 
 
-def research(  # noqa: C901
+def research(
     name: str = '',
     url: str = '',
     pagina: int = 0,
@@ -66,6 +67,6 @@ def research(  # noqa: C901
 
 
 if __name__ == '__main__':
-    print(research('Tion Medon'), end='\n\n')  #  noqa: T201
-    print(research('Luke Skywalker'), end='\n\n')  #  noqa: T201
-    print(research('Obi-Wan Kenobi'), end='\n\n')  #  noqa: T201
+    print(research('Tion Medon'), end='\n\n')  # noqa: T201
+    print(research('Luke Skywalker'), end='\n\n')  # noqa: T201
+    print(research('Obi-Wan Kenobi'), end='\n\n')  # noqa: T201

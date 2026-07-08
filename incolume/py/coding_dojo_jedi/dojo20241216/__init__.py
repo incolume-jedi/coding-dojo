@@ -36,7 +36,7 @@ def download_file(link: str = '', fout: Path | None = None) -> httpx.Response:
     fout: full path for output file.
     """
     ans = httpx.get(link, follow_redirects=True)
-    filename = url.split('/')[-1]
+    filename = url.rsplit('/', maxsplit=1)[-1]
     fout = fout or filename
     fout = Path(fout)
     fout.write_bytes(ans.content)

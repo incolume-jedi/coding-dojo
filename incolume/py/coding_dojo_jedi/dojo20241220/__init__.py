@@ -5,8 +5,9 @@ import json
 from pathlib import Path
 
 import httpx
-import incolume.py.coding_dojo_jedi.dojo20241216 as dojo147
 from icecream import ic
+
+import incolume.py.coding_dojo_jedi.dojo20241216 as dojo147
 
 
 def download_file(

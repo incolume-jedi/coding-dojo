@@ -139,6 +139,7 @@ def write_json(content: list[Item], fout: Path, mode: str = 'w+') -> Path:
         Path
     Raises:
         TypeError: ..
+
     """
     final_content: list[str] = []
 
@@ -176,6 +177,7 @@ def dojo(**kwargs: dict[str:Any]) -> Path:
     Raises:
         MemoryError: occurs when the code requires more
             memory than is available in the system's RAM.
+
     """
     logging.debug(ic(inspect.stack()[0][3]))
     result: list[Item] = []

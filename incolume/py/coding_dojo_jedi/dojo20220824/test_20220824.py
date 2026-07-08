@@ -101,8 +101,7 @@ def test_millissenconds(entrance, expected) -> None:
             {
                 'expected_exception': TypeError,
                 'match': escape(
-                    'millisseconds() takes 0 positional '
-                    'arguments but 3 were given',
+                    'millisseconds() takes 0 positional arguments but 3 were given',
                 ),
             },
         ),

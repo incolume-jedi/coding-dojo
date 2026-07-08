@@ -10,19 +10,24 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-06-15:
-### Added
-  - Script CLI para gerenciar projeto `dojo --help`;
-  - Script CLI `dojo init --help`;
-  - Fusão do script sumary com script dojo `dojo sumary --help`;
-  - Dojo20240602 - Raspagem Brasileirão 2021 em POO;
-  - Dojo20240603 - Raiz quadrada método júlia;
-  - Dojo20240606 - fatorar código Python;
-  - Dojo20240607 - House robber;
-  - Dojo20240608 - Fatorar algoritmo para calculo raiz (método Júlia);
-  - Dojo20240613 - Sorteio em arquivo xlsx;
+## [Unreleased]	 &#8212; 	2026-07-08:
 ### Deprecated
-  - Script `sumary` será substituido por `dojo sumary`;
+  - Script `sumary` foi substituido por `dojo sumary` e será removido em versões futuras;
+### Added
+  - Dojo20260620-Inteligência Artificial para Transcrição de Áudio com Whisper Open AI;
+  - Dojo20260622-Gerar QRCode no formato específico;
+  - Módulo `core` central para reutilizar funções;
+  - Pacote `tomlkit 0.15.0`;
+### Changed
+  - Ajustes QA aplicados parcialmente;
+  - Formatação PEP8 através `ruff` aplicada parcialmente;
+  - Emancipado configuração para `pytest`;
+  - Emancipado configuração para `coverage`;
+  - Emancipado configuração para `ruff`;
+  - Cobertura mínima para testes de código definida em 85.75%;
+  - Sincronizado versão entre `poetry` e `uv`;
+### Removed
+  - Pacote `toml 0.10.2` compativel até python3.9;
 
 ## [1.70.0]	 &#8212; 	2026-06-20:
 ### Added
@@ -237,7 +242,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Fixed
   - Correções CI/CD;
 
-## [1.52.0]	 &#8212; 	2024-06-01:
+## [1.52.0]	 &#8212; 	2024-08-29:
 ### Added
   - Dojo20240527 - Permutação em Python;
   - Dojo20240528 - Primos de 4 algarismos;
@@ -252,7 +257,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Implementado mock para API Deepl de tradução;
   - Melhoria de performance na geração do arquivo de sumário;
 
-## [1.51.0]	 &#8212; 	2024-05-29:
+## [1.51.0]	 &#8212; 	2024-08-29:
 ### Added
   - Dojo 20240527 primos de 4 algarismos;
   - Dojo20240526 - Menor palindromo primo de 2 algarismos;
@@ -292,7 +297,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Dojo20240520 - Rot13;
   - Dojo20240521 - Média de temperatura;
 ### Changed
-  - Acrescentado em desafios: https://osprogramadores.com/desafios/;
+  - Acrescentado em desafios de `https://osprogramadores.com/desafios/`;
 
 ## [1.49.0]	 &#8212; 	2024-05-14:
 ### Added
@@ -367,7 +372,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Elementos visuais e estruturais de documentação atualizados com suite MKDocs.;
   - Correção nas mensagens de changelog para release 1.44.0;
   - Acrescentado condicional em testes unitários para Python 3.10+ a partir de dojos resolvidos no ano 2023;
-  - Lint style **ruff** aplicado a 90% do código;
+  - Lint style `ruff` aplicado a 90% do código;
   - Acrescentado sessão Artefatos ao README de dojo contendo os arquivos de implementação e de testes;
   - CI/CD plenamente funcional;
   - Scripts automatizados para geração de sumário;

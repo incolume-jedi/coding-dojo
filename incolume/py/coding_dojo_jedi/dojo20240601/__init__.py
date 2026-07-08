@@ -20,7 +20,7 @@ def max_letter0(frase: str) -> str:
     for letter in frase:
         dic[letter] += 1
     dic[' '] = -1
-    return sorted(dic.items(), key=lambda d: d[1])[-1][0]
+    return max(dic.items(), key=lambda d: d[1])[0]
 
 
 def max_letter1(frase: str) -> str:

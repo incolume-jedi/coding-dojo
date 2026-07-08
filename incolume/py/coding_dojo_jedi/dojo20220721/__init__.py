@@ -10,4 +10,4 @@ def saudacao(timeout: float = 9) -> None:
     r = httpx.get(url, timeout=timeout)
 
     name = r.json()['name']
-    print('Hello,', name + '!')  #  noqa: T201
+    print('Hello,', name + '!')  # noqa: T201

@@ -97,7 +97,7 @@ def consuming_api_swapi_index_page_0(initial_page: int = 1) -> list[Container]:
             timeout=TIMEOUT,
         )
         results.append(url := response.url)
-        print(url)  #  noqa: T201
+        print(url)  # noqa: T201
         check = response.status_code
         initial_page += 1
     return results
@@ -113,7 +113,7 @@ def consuming_api_swapi_index_page_1(initial_page: int = 1) -> list[Container]:
             timeout=TIMEOUT,
         )
         results.append(url := response.url)
-        print(url)  #  noqa: T201
+        print(url)  # noqa: T201
         check = response.ok
         initial_page += 1
     return results

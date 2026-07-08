@@ -25,8 +25,8 @@ class TestCPFCreate:
         with pytest.raises(
             expected_exception=ValueError,
             match=(
-                'O número de entrada deve conter 9 digitos,'
-                ' com ao menos 1 diferente.'
+                r'O número de entrada deve conter 9 digitos,'
+                r' com ao menos 1 diferente.'
             ),
         ):
             create_cpf(entrance)

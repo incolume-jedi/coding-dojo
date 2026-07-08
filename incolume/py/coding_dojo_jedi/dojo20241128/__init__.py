@@ -116,7 +116,7 @@ class Solution2:
             matrix += '\n'
         print(matrix)  # noqa: T201
 
-    def is_safe(self, grid: Board, row: int, col: int, num: int) -> bool:  # noqa: C901
+    def is_safe(self, grid: Board, row: int, col: int, num: int) -> bool:
         """Checks whether it will be.
 
         legal to assign num to the
@@ -145,7 +145,7 @@ class Solution2:
                     return False
         return True
 
-    def solve_sudoku(self, grid: Board, row: int, col: int) -> bool:  # noqa: C901
+    def solve_sudoku(self, grid: Board, row: int, col: int) -> bool:
         """Solver sudoku.
 
         Takes a partially filled-in grid and attempts

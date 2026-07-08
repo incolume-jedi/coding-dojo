@@ -4,6 +4,7 @@ import pytest
 
 from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par
 from tests.conftest import py310
+import math
 
 
 @py310
@@ -33,7 +34,7 @@ def test_is_par(entrance, expected) -> None:
         (None, ValueError, 'Valor inválido.'),
         ('a', TypeError, 'Somente números inteiros.'),
         ((3 + 0j), TypeError, 'Somente números inteiros.'),
-        (3.141592, TypeError, 'Somente números inteiros.'),
+        (math.pi, TypeError, 'Somente números inteiros.'),
     ],
 )
 def test_is_par_except(entrance, exception, msg) -> None:

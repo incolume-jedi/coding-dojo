@@ -10,6 +10,7 @@ from sys import version_info
 import pytest
 from dotenv import load_dotenv
 from icecream import ic, install
+
 from incolume.py.coding_dojo_jedi.utils import genfile
 
 install()
@@ -20,9 +21,9 @@ load_dotenv()
 logging.basicConfig(encoding='utf-8', level=os.getenv('LOGGING-LEVEL'))
 
 
-# def pytestmark():
-#     """Mark for still WIP."""
-#     return pytest.xfail('This test still WIP')
+def still_wip():
+    """Mark for still WIP."""
+    return pytest.xfail('This test still WIP')
 
 
 def py38(*args, **kwargs):

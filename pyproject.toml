@@ -264,6 +264,7 @@ ignore = ['E203']
 
 [dependency-groups]
 dev = [
+    "colorama>=0.4.6 ; sys_platform == 'win32'",
     "deepl>=1.22.0",
     "faker>=37.8.0",
     "filetype>=1.2.0",
@@ -286,6 +287,8 @@ dev = [
     "pytest-mock>=3.15.1",
     "pytest-timeout>=2.4.0",
     "pytz>=2025.2",
+    "pywin32>=311 ; sys_platform == 'win32'",
+    "pywinpty>=3.0.5 ; sys_platform == 'win32'",
     "respx>=0.22.0",
     "ruff>=0.12.8",
     "time-machine>=2.19.0",

@@ -2,7 +2,7 @@
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi
+from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi, bmi0
 
 
 @pytest.mark.parametrize(
@@ -18,7 +18,7 @@ from incolume.py.coding_dojo_jedi.dojo20220805.dojo20220805 import bmi
 )
 def test_bmi0(peso, altura, esperado) -> None:
     """Test bmi."""
-    assert bmi(peso, altura) == esperado
+    assert bmi0(peso, altura) == esperado
 
 
 @pytest.mark.parametrize(

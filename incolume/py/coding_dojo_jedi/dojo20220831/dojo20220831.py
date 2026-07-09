@@ -21,7 +21,7 @@ def conceito0(nota1: float, nota2: float) -> str:
     return f'Média {media}, "E", REPROVADO'
 
 
-def conceito1(nota1: float, nota2: float) -> str:
+def conceito1(nota1: float, nota2: float) -> str:  # pragma: no cover
     """FAIL..."""
     media = (nota1 + nota2) / 2
     if media < 4:

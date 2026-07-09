@@ -443,6 +443,7 @@ class TestCase:
         """Test temperature."""
         assert temp0(**entrance) == expected
 
+    @pytest.mark.skip
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         testes,

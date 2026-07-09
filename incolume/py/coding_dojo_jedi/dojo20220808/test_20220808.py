@@ -2,12 +2,28 @@
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par
-from tests.conftest import py310
+from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par, is_par0
 import math
 
+@pytest.mark.parametrize(
+    ['entrance', 'expected'],
+    [
+        (5, 'Ímpar'),
+        (56, 'Par'),
+        (567, 'Ímpar'),
+        (568, 'Par'),
+        (13, 'Ímpar'),
+        (17, 'Ímpar'),
+        (0, 'Par'),
+        (-34, 'Par'),
+        (-13, 'Ímpar'),
+    ],
+)
+def test_is_par0(entrance, expected) -> None:
+    """Test is_par."""
+    assert is_par0(entrance) == expected
 
-@py310
+
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -27,7 +43,6 @@ def test_is_par(entrance, expected) -> None:
     assert is_par(entrance) == expected
 
 
-@py310
 @pytest.mark.parametrize(
     ['entrance', 'exception', 'msg'],
     [

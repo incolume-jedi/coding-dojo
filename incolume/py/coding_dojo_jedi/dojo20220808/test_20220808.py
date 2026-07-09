@@ -2,8 +2,12 @@
 
 import pytest
 
-from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import is_par, is_par0
+from incolume.py.coding_dojo_jedi.dojo20220808.dojo20220808 import (
+    is_par,
+    is_par0,
+)
 import math
+
 
 @pytest.mark.parametrize(
     ['entrance', 'expected'],

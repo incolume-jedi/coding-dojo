@@ -47,7 +47,10 @@ class TestCase:
                 '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
                 marks=[
                     pytest.mark.skipif(
-                        not (sys.platform.startswith('lin') and sys.version_info < (3, 14)),
+                        not (
+                            sys.platform.startswith('lin')
+                            and sys.version_info < (3, 14)
+                        ),
                         reason='fork only available on Linux',
                     ),
                 ],
@@ -116,7 +119,10 @@ class TestCase:
                 '"Tuesday 25 de December do ano 1" na cidade de "Nazaré"',
                 marks=[
                     pytest.mark.skipif(
-                        not (sys.platform.startswith('lin') and sys.version_info < (3, 14)),
+                        not (
+                            sys.platform.startswith('lin')
+                            and sys.version_info < (3, 14)
+                        ),
                         reason='fork only available on Linux',
                     ),
                 ],

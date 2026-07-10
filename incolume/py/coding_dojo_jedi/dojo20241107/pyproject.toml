@@ -1,0 +1,17 @@
+[project]
+name = "dojo20241107"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10, <4"
+dependencies = [
+    "httpx>=0.28.1",
+    "pytz>=2025.2",
+    "time-machine>=2.19.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "respx>=0.22.0",
+]

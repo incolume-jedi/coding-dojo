@@ -29,6 +29,7 @@ classifiers = [
 dependencies = [
     "click>=8.2.1",
     "deprecated>=1.2.18",
+    "httpx>=0.28.1",
     "icecream>=2.1.5",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
@@ -49,6 +50,10 @@ module-root = ""
 members = [
     "incolume/py/coding_dojo_jedi/dojo20260620",
     "incolume/py/coding_dojo_jedi/dojo20260622",
+    "incolume/py/coding_dojo_jedi/dojo20220721",
+    "incolume/py/coding_dojo_jedi/dojo20241106",
+    "incolume/py/coding_dojo_jedi/dojo20250104",
+    "incolume/py/coding_dojo_jedi/dojo20241107",
 ]
 
 [build-system]
@@ -99,7 +104,6 @@ selenium = "^4.21.0"
 ipykernel = "^6.29.5"
 uv = {version="^0.4.10", optional=true, python='>=3.8'}
 pillow = "^10.3.0"
-respx = "^0.21.1"
 time-machine = "^2.16.0"
 filetype = "^1.2.0"
 puremagic = "^1.28"
@@ -156,6 +160,7 @@ dev = [
     "poetry>=2.4.1",
     "pre-commit>=4.3.0",
     "puremagic>=1.30",
+    "pytest>=9.1.1",
     "pytest-cov>=6.2.1",
     "pytest-env>=1.6.0",
     "pytest-mock>=3.15.1",

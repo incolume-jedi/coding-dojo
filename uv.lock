@@ -11,6 +11,10 @@ resolution-markers = [
 [manifest]
 members = [
     "coding-dojo-jedi",
+    "dojo20220721",
+    "dojo20241106",
+    "dojo20241107",
+    "dojo20250104",
     "dojo20260620",
     "dojo20260622",
 ]
@@ -501,6 +505,7 @@ source = { editable = "." }
 dependencies = [
     { name = "click" },
     { name = "deprecated" },
+    { name = "httpx" },
     { name = "icecream" },
     { name = "pytest-cov" },
     { name = "pytest-mock" },
@@ -529,6 +534,7 @@ dev = [
     { name = "poetry" },
     { name = "pre-commit" },
     { name = "puremagic" },
+    { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-env" },
     { name = "pytest-mock" },
@@ -546,6 +552,7 @@ dev = [
 requires-dist = [
     { name = "click", specifier = ">=8.2.1" },
     { name = "deprecated", specifier = ">=1.2.18" },
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "icecream", specifier = ">=2.1.5" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
     { name = "pytest-mock", specifier = ">=3.15.1" },
@@ -574,6 +581,7 @@ dev = [
     { name = "poetry", specifier = ">=2.4.1" },
     { name = "pre-commit", specifier = ">=4.3.0" },
     { name = "puremagic", specifier = ">=1.30" },
+    { name = "pytest", specifier = ">=9.1.1" },
     { name = "pytest-cov", specifier = ">=6.2.1" },
     { name = "pytest-env", specifier = ">=1.6.0" },
     { name = "pytest-mock", specifier = ">=3.15.1" },
@@ -1083,6 +1091,82 @@ sdist = { url = "https://files.pythonhosted.org/packages/96/8e/709914eb2b5749865
 wheels = [
     { url = "https://files.pythonhosted.org/packages/33/6b/e0547afaf41bf2c42e52430072fa5658766e3d65bd4b03a563d1b6336f57/distlib-0.4.0-py2.py3-none-any.whl", hash = "sha256:9659f7d87e46584a30b5780e43ac7a2143098441670ff0a49d5f9034c54a6c16", size = 469047, upload-time = "2025-07-17T16:51:58.613Z" },
 ]
+
+[[package]]
+name = "dojo20220721"
+version = "0.1.0"
+source = { virtual = "incolume/py/coding_dojo_jedi/dojo20220721" }
+dependencies = [
+    { name = "httpx" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "respx" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "httpx", specifier = ">=0.28.1" }]
+
+[package.metadata.requires-dev]
+dev = [{ name = "respx", specifier = ">=0.22.0" }]
+
+[[package]]
+name = "dojo20241106"
+version = "0.1.0"
+source = { virtual = "incolume/py/coding_dojo_jedi/dojo20241106" }
+dependencies = [
+    { name = "httpx" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "respx" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "httpx", specifier = ">=0.28.1" }]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pytest", specifier = ">=9.1.1" },
+    { name = "respx", specifier = ">=0.22.0" },
+]
+
+[[package]]
+name = "dojo20241107"
+version = "0.1.0"
+source = { virtual = "incolume/py/coding_dojo_jedi/dojo20241107" }
+dependencies = [
+    { name = "httpx" },
+    { name = "pytz" },
+    { name = "time-machine" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "respx" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "pytz", specifier = ">=2025.2" },
+    { name = "time-machine", specifier = ">=2.19.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pytest", specifier = ">=9.1.1" },
+    { name = "respx", specifier = ">=0.22.0" },
+]
+
+[[package]]
+name = "dojo20250104"
+version = "0.1.0"
+source = { virtual = "incolume/py/coding_dojo_jedi/dojo20250104" }
 
 [[package]]
 name = "dojo20260620"

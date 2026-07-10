@@ -32,6 +32,7 @@ dependencies = [
     "icecream>=2.1.5",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
+    "python-dotenv>=1.2.2",
     "tqdm>=4.67.1",
     "unidecode>=1.4.0",
 ]

@@ -1,0 +1,13 @@
+[project]
+name = "dojo20250106"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10, <4"
+dependencies = [
+    "deprecated>=1.2.18",
+    "icecream>=2.1.8",
+    "matplotlib>=3.10.6",
+    "numpy>=2.2.6",
+    "opencv-python>=4.10.0.84",
+]

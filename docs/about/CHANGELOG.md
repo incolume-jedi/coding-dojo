@@ -10,9 +10,9 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-08:
+## [Unreleased]	 &#8212; 	2026-07-11:
 ### Added
-  - Acrescentado suporte a `Python 3.14` em CI/CD;
+  - Acrescentado suporte `lint` a `Python 3.14` em CI/CD;
 ### Changed
   - Atualização nas receitas CI/CD;
 ### Removed

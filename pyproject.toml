@@ -31,8 +31,6 @@ dependencies = [
     "deprecated>=1.2.18",
     "httpx>=0.28.1",
     "icecream>=2.1.5",
-    "pytest-cov>=7.0.0",
-    "pytest-mock>=3.15.1",
     "python-dotenv>=1.2.2",
     "tqdm>=4.67.1",
     "unidecode>=1.4.0",
@@ -56,6 +54,9 @@ members = [
     "incolume/py/coding_dojo_jedi/dojo20260620",
     "incolume/py/coding_dojo_jedi/dojo20260622",
 ]
+
+[tool.uv.sources]
+incolume-py-changelog = { git = "https://github.com/development-incolume/incolume.py.changelog", branch = "tags" }
 
 [build-system]
 requires = ["uv_build>=0.8.9,<0.9.0"]
@@ -87,18 +88,9 @@ mypy = "^1.5.1"
 mypy-extensions = "^1.0.0"
 types-requests = "^2.31.0.5"
 types-toml = "^0.10.8.7"
-# incolume-py-changelog = "^0.7.0"
-# incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", tag = "0.8.0"}
-# incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", rev = "0.10.0"}
-incolume-py-changelog = {git = "https://github.com/development-incolume/incolume.py.changelog", branch = "tags"}
-selenium = "^4.21.0"
 uv = {version="^0.4.10", optional=true, python='>=3.8'}
-pillow = "^10.3.0"
-time-machine = "^2.16.0"
 filetype = "^1.2.0"
 puremagic = "^1.28"
-jsonpickle = "^4.0.1"
-matplotlib = "^3.10.0"
 
 
 [tool.poetry.group.docs.dependencies]

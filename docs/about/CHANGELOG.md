@@ -10,7 +10,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-11:
+## [1.72.0]	 &#8212; 	2026-07-11:
 ### Added
   - Acrescentado suporte `lint` a `Python 3.14` em CI/CD;
 ### Changed
@@ -724,4 +724,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.69.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.68.0...1.69.0
 [1.70.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.69.0...1.70.0
 [1.71.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.70.0...1.71.0
-[Unreleased]: https://github.com/incolume-jedi/coding-dojo/compare/1.71.0...Unreleased
+[1.72.0]: https://github.com/incolume-jedi/coding-dojo/compare/1.71.0...1.72.0

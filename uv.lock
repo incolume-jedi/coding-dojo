@@ -570,7 +570,7 @@ dev = [
     { name = "fuzzywuzzy", specifier = ">=0.18.0" },
     { name = "html5lib", specifier = ">=1.1" },
     { name = "icecream", specifier = ">=2.1.8" },
-    { name = "incolume-py-changelog", specifier = ">=0.17.0" },
+    { name = "incolume-py-changelog", git = "https://github.com/development-incolume/incolume.py.changelog?branch=tags" },
     { name = "ipykernel", specifier = ">=6.30.1" },
     { name = "jupyterlab", specifier = ">=4.4.5" },
     { name = "lxml", specifier = ">=6.0.2" },
@@ -1563,17 +1563,13 @@ wheels = [
 [[package]]
 name = "incolume-py-changelog"
 version = "0.17.0"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/development-incolume/incolume.py.changelog?branch=tags#5eb3da8e2b7f5f5bbc00ac170e203eec8d508434" }
 dependencies = [
     { name = "click" },
     { name = "gitpython" },
     { name = "icecream" },
     { name = "python-dotenv", extra = ["cli"] },
     { name = "toml" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/4f/e7/fab60eadd0bc849d8aef6fb0a76051fa7b97b9169fa01b90412b57a45045/incolume_py_changelog-0.17.0.tar.gz", hash = "sha256:19f6d9a3c79f47ff4c9bde00c20a00c4ad4698691d69897a6def08a67b62bf38", size = 15741, upload-time = "2025-08-17T01:51:23.538Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/d2/34aba8da70dcc6f5ccdfd4a1fc7a6069b9b128b360426bf122e9dba4d6e1/incolume_py_changelog-0.17.0-py3-none-any.whl", hash = "sha256:dd538ce83060dfd19bcd60ba3adbf8460e2141cada73c8859cd3c8293b8d43d2", size = 11297, upload-time = "2025-08-17T01:51:22.432Z" },
 ]
 
 [[package]]

@@ -8,10 +8,11 @@
 
 ---
 
-161 dojos resolvidos
+162 dojos resolvidos
 
 ---
 
+ - [Dojo20260711 &#8212; Os 10 canais mais incríveis de IA (Inteligência Artificial) do Telegram](dojo20260711/README.md)
  - [Dojo20260622 &#8212; Gerar QRCode no formato específico](dojo20260622/README.md)
  - [Dojo20260620 &#8212; Inteligência Artificial para Transcrição de Áudio com Whisper Open AI](dojo20260620/README.md)
  - [Dojo20250118 &#8212; Título do problema](dojo20250118/README.md)

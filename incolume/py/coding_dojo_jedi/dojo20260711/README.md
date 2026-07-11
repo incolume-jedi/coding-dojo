@@ -37,6 +37,7 @@ N/A - Exemplos de solução e resposta do problema. Geralmente utilizado para va
 
 - [dojo](__init__.py)
 - [tests](test_20260711.py)
+- [coding-ia](../../../../docs/coding_ia/README.md)
 
 ## Referências
 

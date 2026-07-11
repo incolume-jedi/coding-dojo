@@ -71,3 +71,10 @@ def test_notas_0() -> None:
     (notas, moedas) = dojo20190129.moedas(0.0)
     assert notas == [0, 0, 0, 0, 0, 0]
     assert moedas == [0, 0, 0, 0, 0, 0]
+
+
+def test_moedas2_0() -> None:
+    """Test for 0.0 BRL."""
+    (notas, moedas) = dojo20190129.moedas2(0.0)
+    assert notas == [0, 0, 0, 0, 0, 0]
+    assert moedas == [0, 0, 0, 0, 0, 0]

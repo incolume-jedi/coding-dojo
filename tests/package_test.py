@@ -9,7 +9,7 @@ from incolume.py.coding_dojo_jedi import (
     configfile,
     versionfile,
 )
-from incolume.py.coding_dojo_jedi.core import load
+from incolume.py.coding_dojo_jedi.core import toml
 
 __author__ = '@britodfbr'  # pragma: no cover
 
@@ -50,7 +50,7 @@ class TestCase:
     def test_same_version(self, entrance: Path) -> None:
         """Test same version."""
         try:
-            version = load(entrance)['project']['version']
+            version = toml.load(entrance.open('rb'))['project']['version']
         except ValueError:
             version = entrance.read_text().strip()
         assert version == __version__

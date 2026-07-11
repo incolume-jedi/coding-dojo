@@ -1,0 +1,14 @@
+[project]
+name = "dojo20220721"
+version = "0.1.0"
+description = "Workshop python iniciante exercícios 1 a 4"
+readme = "README.md"
+requires-python = ">=3.10, <4"
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+[dependency-groups]
+dev = [
+    "respx>=0.22.0",
+]

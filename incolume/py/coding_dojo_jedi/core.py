@@ -41,7 +41,7 @@ configfile = Path(__file__).parents[3].joinpath('pyproject.toml')
 versionfile = Path(__file__).parent.joinpath('version.txt')
 
 with contextlib.suppress(FileNotFoundError):
-    config_content = toml.load(configfile.open('rb'))
+    config_content = toml.load(configfile.open('r', encoding='utf-8'))
 
 current_version = config_content['project']['version']
 

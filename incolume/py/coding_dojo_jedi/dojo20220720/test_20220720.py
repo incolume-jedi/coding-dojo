@@ -7,10 +7,8 @@ import re
 
 import pytest
 from incolume.py.coding_dojo_jedi.dojo20220720.dojo20220720 import calculadora
-from tests.conftest import py38
 
 
-@py38
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
@@ -34,7 +32,6 @@ def test_calculadora(entrance, expected) -> None:
     assert calculadora(*entrance) == expected
 
 
-@py38
 @pytest.mark.parametrize(
     ['entrance', 'expected'],
     [
